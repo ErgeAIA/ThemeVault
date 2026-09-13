@@ -1,6 +1,6 @@
 window.__TV = {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-13T17:05:16+00:00",
+  "generatedAt": "2026-09-13T17:12:59+00:00",
   "generator": "scripts/gen_index.py",
   "singleSourceOfTruth": "themes/<family>/_source/contract.json",
   "families": [
@@ -7805,7 +7805,7 @@ window.__TV = {
           ]
         ],
         [
-          "ANSI / 图谱",
+          "ANSI 备查",
           [
             "color-red",
             "color-orange",
@@ -7814,14 +7814,7 @@ window.__TV = {
             "color-cyan",
             "color-blue",
             "color-purple",
-            "color-pink",
-            "graph-node-tag",
-            "graph-node-attachment",
-            "graph-line",
-            "graph-line-highlight",
-            "graph-color-1",
-            "graph-color-2",
-            "graph-color-3"
+            "color-pink"
           ]
         ]
       ],

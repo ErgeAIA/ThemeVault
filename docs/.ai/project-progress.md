@@ -26,7 +26,8 @@ description: >
   - 优化方案获批（5 阶段）：数据修复 ✅ → 守卫口径 ✅ → 分区生成化 ✅ → 生成器健壮性 → 文档留痕
   - 阶段 1 完成：warm-brown / warm-paper 状态色 + ANSI 共 26 行 rgb()→HEX 显示（DEC-002 显式豁免）
   - 阶段 2 完成：preview.html 亮度/对比度对非 6 位纯色返回 null、徽标显示「—」；structural_of 不再伪造 fonts（nord/tokyonight×3 脏 fonts 清除）
-  - 阶段 3 完成：gen_index.py 新增家族预览配置，INDEX.json/data.js 每家族输出 `sections`/`badgePairs`/`l1RoleMap`（+33.6KB）；preview.html 改数据优先、常量兜底；onepage 登记 FAMILY_ORDER/DISPLAY_NAMES（标签 OnePage）且卡片新增「彩色排版」（8 角色）与「ANSI / 图谱」（15 角色）分区
+  - 阶段 3 完成：gen_index.py 新增家族预览配置，INDEX.json/data.js 每家族输出 `sections`/`badgePairs`/`l1RoleMap`（+33.6KB）；preview.html 改数据优先、常量兜底；onepage 登记 FAMILY_ORDER/DISPLAY_NAMES（标签 OnePage）且卡片新增「彩色排版」（8 角色）与「ANSI 备查」（8 角色）分区
+  - 阶段 3 缺陷修复（用户预览反馈）：graph-* 七角色为 var()/color-mix 公式值，预览页无 CSS 变量上下文渲染成透明块+文字溢出 → 移出卡片分区（tokens/palette.md 原样保留），分区更名「ANSI 备查」；既有 bg-hover/accent-hover/accent-deep 公式色块显示为改前行为，未动（通用「var( 值不上卡」规则待用户决策）
   - 待用户验证：预览刷新——① onepage 两卡片新分区与 OnePage 标签 ② 其余 21 家族卡片分区/徽标与此前一致 ③ ergemd 对比矩阵不回归 ④ 前两阶段遗留项（HEX 显示复制、5 套假对比度改「—」、nord/tokyonight 假字体 tag 消失）
 - **上次更新**：2026-08-07 vibe-init + OnePage 入库
   - OnePage 家族入库：`themes/onepage/`（#073 warm-brown / #074 warm-paper）

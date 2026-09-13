@@ -250,15 +250,14 @@ FAMILY_SECTIONS = {
         ["语法高亮", ["code-keyword", "code-string", "code-number", "code-comment",
                       "code-function", "code-text"]],
     ],
-    # onepage：L1 身份段 + 家族身份资产（typo 彩色排版 / ANSI 与图谱派生，审计 F11）。
-    # accent-active（color-mix）与 shadow（box-shadow 串）不上卡，只留在 tokens。
+    # onepage：L1 身份段 + 家族身份资产（typo 彩色排版 / ANSI 备查通道，审计 F11）。
+    # accent-active（color-mix）、shadow（box-shadow 串）、graph-*（var/color-mix 公式，预览页
+    # 无 CSS 变量上下文渲染不了）不上卡，只留在 tokens。
     "onepage": L1_SECTIONS + [
         ["彩色排版", ["typo-h1", "typo-h2", "typo-h3", "typo-h4", "typo-h5", "typo-h6",
                       "typo-bold", "typo-italic"]],
-        ["ANSI / 图谱", ["color-red", "color-orange", "color-yellow", "color-green", "color-cyan",
-                         "color-blue", "color-purple", "color-pink",
-                         "graph-node-tag", "graph-node-attachment", "graph-line",
-                         "graph-line-highlight", "graph-color-1", "graph-color-2", "graph-color-3"]],
+        ["ANSI 备查", ["color-red", "color-orange", "color-yellow", "color-green", "color-cyan",
+                       "color-blue", "color-purple", "color-pink"]],
     ],
 }
 
