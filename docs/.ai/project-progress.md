@@ -21,13 +21,15 @@ description: >
 - **阶段**：资产仓维护（非运行时项目）；协作记忆已初始化
 - **代码**：`scripts/*.py` 生成器与校验器存在；无应用运行时
 - **工具链**：Python 3 + `scripts/gen_index.py`；codegraph 1.6.0（若已建索引见 `.codegraph/`）
-- **最后更新**：2026-09-14 审计 + 优化方案阶段 3/5（分区/映射生成化）
+- **最后更新**：2026-09-14 审计 + 优化方案阶段 4/5（生成器健壮性）+ var( 通用渲染规则
   - vibe-audit 审计落盘 `docs/.ai/audit/audit-2026-09-13.md`（问题 17 条：中 4 / 低 13）
-  - 优化方案获批（5 阶段）：数据修复 ✅ → 守卫口径 ✅ → 分区生成化 ✅ → 生成器健壮性 → 文档留痕
+  - 优化方案获批（5 阶段）：数据修复 ✅ → 守卫口径 ✅ → 分区生成化 ✅ → 生成器健壮性 ✅ → 文档留痕（待推进）
   - 阶段 1 完成：warm-brown / warm-paper 状态色 + ANSI 共 26 行 rgb()→HEX 显示（DEC-002 显式豁免）
   - 阶段 2 完成：preview.html 亮度/对比度对非 6 位纯色返回 null、徽标显示「—」；structural_of 不再伪造 fonts（nord/tokyonight×3 脏 fonts 清除）
-  - 阶段 3 完成：gen_index.py 新增家族预览配置，INDEX.json/data.js 每家族输出 `sections`/`badgePairs`/`l1RoleMap`（+33.6KB）；preview.html 改数据优先、常量兜底；onepage 登记 FAMILY_ORDER/DISPLAY_NAMES（标签 OnePage）且卡片新增「彩色排版」（8 角色）与「ANSI 备查」（8 角色）分区
-  - 阶段 3 缺陷修复（用户预览反馈）：graph-* 七角色为 var()/color-mix 公式值，预览页无 CSS 变量上下文渲染成透明块+文字溢出 → 移出卡片分区（tokens/palette.md 原样保留），分区更名「ANSI 备查」；既有 bg-hover/accent-hover/accent-deep 公式色块显示为改前行为，未动（通用「var( 值不上卡」规则待用户决策）
+  - 阶段 3 完成：家族预览配置生成化（sections/badgePairs/l1RoleMap 入 data.js，preview 数据优先）；onepage 登记 OnePage 显示名 + 卡片新分区；缺陷修复：graph-* 公式角色移出卡片分区（ANSI 备查 8 角色）
+  - 用户追加决策：含 var( 的值一律不上色块卡 → preview.html 卡片/对比矩阵通用过滤（onepage bg-hover/accent-hover/accent-deep 不再显示）
+  - 阶段 4 完成：F1 编号硬失败（损坏 INDEX.json 拒绝重编号）· F5 字节幂等（数据不变跳过重写，双跑实测零 diff）· F4 requirements.txt（pyyaml）+ AGENTS Toolchain 回填 · F8 jsonc 转义修复 · F9 参数/契约报错 · F17 死参
+  - 待用户验证：① onepage 卡片无透明公式块 ② 其余家族无变化 ③ 其余阶段遗留项（HEX 复制、「—」徽标、假字体 tag、OnePage 标签、ergemd 矩阵）
   - 待用户验证：预览刷新——① onepage 两卡片新分区与 OnePage 标签 ② 其余 21 家族卡片分区/徽标与此前一致 ③ ergemd 对比矩阵不回归 ④ 前两阶段遗留项（HEX 显示复制、5 套假对比度改「—」、nord/tokyonight 假字体 tag 消失）
 - **上次更新**：2026-08-07 vibe-init + OnePage 入库
   - OnePage 家族入库：`themes/onepage/`（#073 warm-brown / #074 warm-paper）

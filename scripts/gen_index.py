@@ -288,16 +288,24 @@ def load_old_numbers(path: Path) -> dict[tuple[str, str], int]:
 
     编号采用「追加分配」策略：已有主题沿用旧号（永不变），新增主题取 max+1。
     首次运行（无旧文件）返回空映射，按当前遍历顺序分配 1..N。
+    旧文件存在但损坏/缺 families 时硬失败——静默重编号会破坏「已有编号永不变」。
     """
     if not path.exists():
         return {}
     try:
         old = json.loads(path.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return {}
+    except (json.JSONDecodeError, OSError) as e:
+        raise SystemExit(
+            f"ERROR: {path} 已存在但无法解析（{e.__class__.__name__}）。"
+            "编号分配拒绝继续（已有编号永不变），请先修复或恢复该文件。"
+        )
+    if not isinstance(old.get("families"), list):
+        raise SystemExit(
+            f"ERROR: {path} 缺少 families 数组，编号分配拒绝继续，请先修复该文件。"
+        )
     return {
         (f["family"], t["id"]): t["number"]
-        for f in old.get("families", [])
+        for f in old["families"]
         for t in f.get("themes", [])
         if "number" in t
     }
@@ -315,6 +323,25 @@ def assign_numbers(families: list[dict]) -> None:
             else:
                 theme["number"] = next_num
                 next_num += 1
+
+
+def needs_write(path: Path, canonical: str, prefix: str = "", suffix: str = "") -> bool:
+    """与磁盘既有内容比对（剔除 generatedAt 后重序列化）；一致返回 False 以跳过重写。
+
+    generatedAt 每次运行都变，直接比较会让零数据改动也产生时间戳 diff；
+    字节幂等 = 数据不变则文件不动（审计 F5）。
+    """
+    if not path.exists():
+        return True
+    raw = path.read_text(encoding="utf-8")
+    if raw == prefix + canonical + "\n" + suffix:
+        return False
+    try:
+        old = json.loads(raw[len(prefix):len(raw) - len(suffix)])
+    except json.JSONDecodeError:
+        return True
+    old.pop("generatedAt", None)
+    return json.dumps(old, ensure_ascii=False, indent=2) != canonical
 
 
 def main() -> int:
@@ -336,7 +363,11 @@ def main() -> int:
         if not contract_path.exists():
             errors.append(f"[{fam_dir.name}] missing _source/contract.json")
             continue
-        contract = json.loads(contract_path.read_text(encoding="utf-8"))
+        try:
+            contract = json.loads(contract_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as e:
+            print(f"ERROR: 契约解析失败 {contract_path}: {e}", file=sys.stderr)
+            return 1
         required = set(contract.get("required", []))
         derived = set(contract.get("derivedOptional", []))
         contract_all = required | derived
@@ -430,20 +461,29 @@ def main() -> int:
     }
 
     if write:
-        INDEX_JSON.write_text(
-            json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        canonical = json.dumps(
+            {k: v for k, v in index.items() if k != "generatedAt"}, ensure_ascii=False, indent=2
         )
-        print(f"wrote {INDEX_JSON.relative_to(ROOT)}")
+        if needs_write(INDEX_JSON, canonical):
+            INDEX_JSON.write_text(
+                json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+            )
+            print(f"wrote {INDEX_JSON.relative_to(ROOT)}")
+        else:
+            print(f"unchanged, skipped {INDEX_JSON.relative_to(ROOT)}")
 
         # SPA 数据：完整 INDEX.json（含每主题 tokens）包成 JS 全局变量，
         # 供 preview.html 双击即开（<script src> 无 file:// CORS 限制，比 fetch 稳）。
         data_js = ROOT / "preview" / "data.js"
         data_js.parent.mkdir(exist_ok=True)
-        data_js.write_text(
-            "window.__TV = " + json.dumps(index, ensure_ascii=False, indent=2) + ";\n",
-            encoding="utf-8",
-        )
-        print(f"wrote {data_js.relative_to(ROOT)}")
+        if needs_write(data_js, canonical, "window.__TV = ", ";\n"):
+            data_js.write_text(
+                "window.__TV = " + json.dumps(index, ensure_ascii=False, indent=2) + ";\n",
+                encoding="utf-8",
+            )
+            print(f"wrote {data_js.relative_to(ROOT)}")
+        else:
+            print(f"unchanged, skipped {data_js.relative_to(ROOT)}")
 
     # human summary（编号 #N 供 INDEX.md 编号列抄写核对；brand 供品牌色核对）
     for f in families:

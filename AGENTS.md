@@ -151,7 +151,7 @@ docs/handoff/             会话交接文档
 
 | 工具 | 精确版本 | 锁定位置 |
 | ---- | -------- | -------- |
-| Python | 系统/环境 PATH（未锁版本） | `scripts/*.py` |
+| Python | ≥ 3.10（PEP 604 语法），小版本未锁；第三方依赖 `pyyaml`（仅 gen_vscode.py，见 `requirements.txt`） | `scripts/*.py` |
 | codegraph | 1.6.0 | `.codegraph/`（索引） |
 
 ## Commands

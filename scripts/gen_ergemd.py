@@ -115,7 +115,7 @@ def extract_feature(text: str) -> str:
     return ""
 
 
-def rgb_to_note(value: str) -> str:
+def rgb_to_note() -> str:
     return "RGB 输入变量（供 rgba 派生）"
 
 
@@ -285,7 +285,7 @@ def main() -> int:
                             )
                         )
                     )
-                    note = rgb_to_note(value) if role.endswith("-rgb") else ""
+                    note = rgb_to_note() if role.endswith("-rgb") else ""
                     pal.append(f"| `--{role}` | `{value}` | {kind} | {note} |")
                     count += 1
                 elif role in base:

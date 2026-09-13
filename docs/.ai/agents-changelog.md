@@ -2,7 +2,7 @@
 title: AGENTS.md Changelog
 type: agents-changelog
 project: ThemeVault
-updated: 2026-08-07
+updated: 2026-09-14
 description: >
   AGENTS.md 的变更记录，AGENTS.md 每改动一次就追加一行，不随日常开发更新。
   只追加，不删除或改写历史。AI 在本文件新增或修改任何条目后，必须同步更新 frontmatter 的 updated 字段为当日日期（YYYY-MM-DD）。
@@ -31,3 +31,9 @@ description: >
 - `<无 References / Self-Maintenance>` → update → 追加指针节与自维护五条
 - `.zcode/plans/plan-sess_*.md` → keep → 会话计划产物，不纳入 AGENTS.md 规则区
 - `AI-MAP.md` / `docs/migration-guide.md` / `docs/adr/` → keep → 已有指针或正文引用，不复述
+
+---
+
+## 2026-09-14 · 审计优化阶段 4（事实区回填）
+
+- `Toolchain 表 Python 行「系统/环境 PATH（未锁版本）」` → update → 补 ≥3.10 下限（PEP 604 语法）与 pyyaml 依赖指针（新增 requirements.txt，仅 gen_vscode.py 需要；审计 F4）

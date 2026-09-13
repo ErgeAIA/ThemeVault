@@ -27,16 +27,25 @@ ROOT = Path(__file__).resolve().parent.parent
 # ---------------- 解析（jsonc：注释 + 尾逗号；yaml：anchors 展开） ----------------
 
 def strip_comments(s: str) -> str:
-    s = re.sub(r"/\*.*?\*/", "", s, flags=re.S)
+    """去 jsonc 注释（字符串感知：\\" 转义不截断，字符串内 /* 与 // 不误删）。"""
     out, in_str, i = [], False, 0
     while i < len(s):
         ch = s[i]
+        if in_str and ch == "\\" and i + 1 < len(s):
+            out.append(ch)
+            out.append(s[i + 1])
+            i += 2
+            continue
         if ch == '"':
             in_str = not in_str
             out.append(ch)
-        elif ch == "/" and not in_str and i + 1 < len(s) and s[i + 1] == "/":
+        elif not in_str and ch == "/" and i + 1 < len(s) and s[i + 1] == "/":
             while i < len(s) and s[i] != "\n":
                 i += 1
+            continue
+        elif not in_str and ch == "/" and i + 1 < len(s) and s[i + 1] == "*":
+            end = s.find("*/", i + 2)
+            i = len(s) if end == -1 else end + 2
             continue
         else:
             out.append(ch)
@@ -499,9 +508,19 @@ def main() -> int:
     if "-h" in sys.argv or "--help" in sys.argv:
         print(__doc__)
         return 0
-    fams = sys.argv[sys.argv.index("--families") + 1].split(",") if "--families" in sys.argv else list(FAMILIES)
+    if "--families" in sys.argv:
+        idx = sys.argv.index("--families")
+        if idx + 1 >= len(sys.argv):
+            print("ERROR: --families 需要逗号分隔的家族名参数", file=sys.stderr)
+            return 2
+        fams = sys.argv[idx + 1].split(",")
+    else:
+        fams = list(FAMILIES)
     src_root = ROOT / ".tmp_src"
     for fam_id in fams:
+        if fam_id not in FAMILIES:
+            print(f"ERROR: 未知家族 {fam_id}（可选：{', '.join(FAMILIES)}）", file=sys.stderr)
+            return 2
         cfg = FAMILIES[fam_id]
         fam_dir = ROOT / "themes" / fam_id
         (fam_dir / "_source").mkdir(parents=True, exist_ok=True)

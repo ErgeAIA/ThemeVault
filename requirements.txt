@@ -1,0 +1,4 @@
+# ThemeVault 生成器第三方依赖。
+# 仅 scripts/gen_vscode.py 需要 pyyaml（解析 YAML anchors + !alpha tag 的 VS Code theme 源）；
+# gen_index.py / gen_catppuccin.py / gen_ergemd.py 仅用标准库。
+pyyaml>=6
