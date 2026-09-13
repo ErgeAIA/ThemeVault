@@ -114,6 +114,7 @@ def structural_of(meta: dict) -> tuple[str | None, list[str], str | None]:
     - parenthesized list right after: identity fonts
     - rest after ·: free-form structural note (radius/focus-ring/world layers)
     Missing line => (None, [], None): family default, treated as sans.
+    Unparseable line => (None, [], raw): keep the note, no invented fonts.
     """
     raw = None
     for key in ("结构令牌", "structural"):
@@ -124,7 +125,7 @@ def structural_of(meta: dict) -> tuple[str | None, list[str], str | None]:
         return None, [], None
     m = STRUCTURAL_RE.match(raw.strip())
     if not m:
-        return None, [raw], raw
+        return None, [], raw
     style, fonts_raw, note = m.group(1), m.group(2), m.group(3)
     fonts = [f.strip() for f in re.split(r"[、/，,]", fonts_raw)] if fonts_raw else []
     return style, [f for f in fonts if f], (note.strip() if note else None)

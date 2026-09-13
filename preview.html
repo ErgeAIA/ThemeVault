@@ -123,7 +123,7 @@
 
 <script src="preview/data.js"></script>
 <script>
-// 家族感知映射（从 gen_preview.py 移植）
+// 家族感知映射（卡片分区 / AA 徽标对 / ergemd L1 映射）
 const SECTION_ROLES = [
   ["背景 / 文本 / 边框", ["bg","bg-surface","bg-surface-2","bg-elevated","bg-hover","text","text-muted","text-dim","border","border-strong","border-focus","card","hairline"]],
   ["强调色", ["accent","accent-hover","accent-deep","accent-secondary","accent-foreground"]],
@@ -163,9 +163,9 @@ function l1Value(s, r){
   return null;
 }
 
-// AA 对比度算法（WCAG）
-function luminance(hex){const h=hex.replace("#","");if(h.length!==6)return 0.5;const rgb=[0,2,4].map(i=>parseInt(h.substr(i,2),16)/255);const lin=c=>c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);return 0.2126*lin(rgb[0])+0.7152*lin(rgb[1])+0.0722*lin(rgb[2]);}
-function contrast(a,b){const la=luminance(a),lb=luminance(b);return(Math.max(la,lb)+0.05)/(Math.min(la,lb)+0.05);}
+// AA 对比度算法（WCAG）；非 6 位纯色（8 位 hex/rgba/gradient）返回 null，与 gen_index.py textContrast=null 同口径
+function luminance(hex){const h=hex.replace("#","");if(h.length!==6)return null;const rgb=[0,2,4].map(i=>parseInt(h.substr(i,2),16)/255);if(rgb.some(c=>isNaN(c)))return null;const lin=c=>c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);return 0.2126*lin(rgb[0])+0.7152*lin(rgb[1])+0.0722*lin(rgb[2]);}
+function contrast(a,b){const la=luminance(a),lb=luminance(b);if(la===null||lb===null)return null;return(Math.max(la,lb)+0.05)/(Math.min(la,lb)+0.05);}
 function fgFor(hex){return luminance(hex)>0.55?"#101014":"#f5f5f7";}
 function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 function titleLink(fam, name){const t=esc(name);return (fam&&fam.sourceRepo)?`<a href="${fam.sourceRepo}" target="_blank" rel="noopener noreferrer">${t}</a>`:t;}
@@ -188,11 +188,13 @@ function renderCard(fam, theme){
   const license = theme.license || "";
   const fontsTag = (theme.fonts && theme.fonts.length) ? `<span class="tag mono-tag">${esc(theme.fonts.join(" · "))}</span>` : "";
 
-  // AA 徽标（家族感知，未登记家族兜底 opensquilla）
+  // AA 徽标（家族感知，未登记家族兜底 opensquilla）；不可测对比度显示 —，不输出伪造数字
   const badgePairs = BADGE_ROLES[family] || BADGE_ROLES.opensquilla;
   const badges = badgePairs.map(([r,bgr])=>{
     if(!tokens[r]||!tokens[bgr])return"";
-    const ratio=contrast(tokens[r],tokens[bgr]);const ok=ratio>=4.5;
+    const ratio=contrast(tokens[r],tokens[bgr]);
+    if(ratio===null)return`<span class="cmp-empty">${r} —</span>`;
+    const ok=ratio>=4.5;
     return`<span style="color:${ok?"#3fb950":"#f85149"}">${r} ${ratio.toFixed(1)} ${ok?"✓":"✗"}</span>`;
   }).join("");
 
