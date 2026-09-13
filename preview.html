@@ -206,9 +206,9 @@ function renderCard(fam, theme){
     ? `<div class="brand-row"><div class="brand-swatch" style="background:${brand.color}"></div><span class="brand-label">品牌色 ${brand.color} · ${bt}</span></div>`
     : "";
 
-  // 分区色块
+  // 分区色块（含 var( 的公式值在预览页无 CSS 变量上下文，渲染不成颜色，不上色块卡）
   const sectionsHtml = sections.map(([title, roles])=>{
-    const swatches = roles.filter(r=>tokens[r]).map(r=>{
+    const swatches = roles.filter(r=>tokens[r]&&!String(tokens[r]).includes("var(")).map(r=>{
       const v=tokens[r];const fg=fgFor(v);
       return`<div class="swatch"><div class="swatch-color" data-hex="${v}" style="background:${v};color:${fg}">${v}</div><div class="swatch-label" title="${r}">${r}</div></div>`;
     }).join("");
@@ -401,7 +401,7 @@ function renderCompare(){
     cells.push(`<div class="cg-cell cg-section" style="grid-column:1/-1">${title}</div>`);
     roles.forEach(r=>{
       cells.push(`<div class="cg-cell cg-role" title="${r}">${r}</div>`);
-      sel.forEach(s=>{const v=l1Value(s,r);cells.push(`<div class="cg-cell">${v?`<div class="cmp-swatch" data-hex="${v}" style="background:${v};color:${fgFor(v)}">${v}</div>`:`<span class="cmp-empty">—</span>`}</div>`);});
+      sel.forEach(s=>{const v=l1Value(s,r);const ok=v&&!String(v).includes("var(");cells.push(`<div class="cg-cell">${ok?`<div class="cmp-swatch" data-hex="${v}" style="background:${v};color:${fgFor(v)}">${v}</div>`:`<span class="cmp-empty">—</span>`}</div>`);});
     });
   });
   document.getElementById("compareView").innerHTML=`
