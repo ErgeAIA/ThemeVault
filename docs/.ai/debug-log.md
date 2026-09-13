@@ -2,7 +2,7 @@
 title: Debug Log
 type: debug-log
 project: ThemeVault
-updated: 2026-08-07
+updated: 2026-09-14
 description: >
   反复调试的 bug 追加记录，优先级与实现事实对齐。只追加，不删除或改写历史。
   AI 在本文件新增或修改任何条目后，必须同步更新 frontmatter 的 updated 字段为当日日期（YYYY-MM-DD）。
@@ -16,4 +16,13 @@ description: >
 
 ***
 
-（尚无。遇阻塞级或反复复现的 bug 时按上格式追加。）
+## BUG-001: 预览色块把 var() 公式值画成透明块
+
+- **日期**：2026-09-14
+- **现象**：用户预览 #073/#074 报「彩色排版显示有异常」——「ANSI / 图谱」分区 graph-* 七角色渲染成透明色块 + 长公式文本溢出压住标签（#074 浅色下为看不见的白块）；onepage 的 bg-hover/accent-hover/accent-deep 三个 L1 角色同病（更早即存在）。
+- **根因**：这些角色的色板值是 `var(--text-accent)` / `color-mix(... var(...) ...)` CSS 变量公式（palette.md:82-88 源码原文），而预览页没有这些 CSS 变量的定义上下文，浏览器无法把公式解析成颜色；数据侧（阶段 3 分区配置）误把公式角色当可上卡的展示色。
+- **修复**：双保险——① 数据侧：graph-* 移出 onepage 卡片分区（提交 `ed933d4`，分区更名「ANSI 备查」）；② 渲染侧：`renderCard` 与对比矩阵通用过滤含 `var(` 的值（提交 `bf0c15c`，显示「—」）。公式角色在 INDEX.json tokens 与 palette.md 中原样保留。
+- **验证限制**：预览渲染效果由用户人工复核（项目惯例不做 MCP 浏览器验证）；断言层确认全仓仅 onepage 存在 var( 值。
+- **教训**：**公式值不是可渲染颜色**——「所见即数据」要求上卡的值必须是预览页可独立解析的纯色/独立 color-mix/rgba；新增家族分区时先检查角色值形态（含 `var(` 的派生公式只进 tokens），渲染侧再兜底过滤一次。
+
+（此前无记录。）

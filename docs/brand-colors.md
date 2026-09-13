@@ -14,7 +14,7 @@
 4. `theme.brand.contrast` 保留 WCAG 白/黑对比度作**参考**（不是文字色建议）——想要更高对比可自行按它选字色，
    或用 `accent-foreground`（比纯黑/纯白更贴合主题）。
 
-## 🤍 浅字按钮（53 套 —— 色块文字 #f5f5f7）
+## 🤍 浅字按钮（55 套 —— 色块文字 #f5f5f7）
 
 > 品牌色多为中等/暗色系（luminance ≤ 0.55）。列中「白字/黑字」为 WCAG 参考对比度。
 
@@ -46,7 +46,8 @@
 | 030 | aura/soft-dark | `#a277ff` | 3.17 | 6.62 | 062 | falcon/dark-green | `#305862` | 7.78 | 2.7 |
 | 031 | dracula/dark | `#bd93f9` | 2.41 | 8.71 | 063 | falcon/dark-green-islands | `#305862` | 7.78 | 2.7 |
 | 032 | nord/dark | `#88c0d0` | 2.0 | 10.5 | 072 | omni/dark | `#41414D` | 10.06 | 2.09 |
-| 033 | solarized/dark | `#268bd2` | 3.68 | 5.71 |    |   |   |   |   |
+| 033 | solarized/dark | `#268bd2` | 3.68 | 5.71 | 073 | onepage/warm-brown | `#6db3a3` | 2.43 | 8.63 |
+| 074 | onepage/warm-paper | `#0e6e63` | 6.12 | 3.43 |    |   |   |   |   |
 
 ## 🖤 深字按钮（16 套 —— 色块文字 #101014）
 

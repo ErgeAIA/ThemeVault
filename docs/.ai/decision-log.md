@@ -16,6 +16,13 @@ description: >
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
 
+## DEC-003: vue 家族缺失角色约定值边界
+
+- **日期**：2026-09-14
+- **背景**：审计 F7 发现 `gen_vscode.py` 的 vue 家族 fallback 含 5 个不在源码中的约定 hex（text-muted `#586e75`、warn `#e6a23c`、danger `#dc322f`、info `#268bd2`、queued `#b58900`，#058/#059 各 5 行；对照组：jellyfish 的 `#00f7ff`/`#FF92A5` 与 vue 的 `#19f9d8` 均见于各自源文件）。与硬性规则 3「色值原文」存在张力；OnePage 入库（DEC-001）对同类缺口按「不发明 hex」处理，两家族口径不一致。
+- **决策**：保留现状（用户 2026-09-14 决策）。vue 家族缺失角色允许「约定值」补位：取值为 Solarized 官方调色板颜色（vue 主题明示基于 Solarized），palette.md 备注已标「来源 约定」、家族 README「缺失角色约定（fallback）」表已列明——该 fallback 表即硬性规则 3 的**显式豁免清单**，范围仅此 5 条，不外推。后续新家族默认「不发明 hex」（对齐 DEC-001）；确需约定值时须在家族 README 登记 fallback 表并在本日志追加 DEC。
+- **验证**：grep `#586e75`/`#e6a23c`/`#dc322f`/`#268bd2`/`#b58900` 确认不在 `themes/vue/_source/*.json`（约定非源码事实）；palette.md 对应行备注含「来源 约定」；`gen_index.py --write` 全绿。
+
 ## DEC-002: onepage 状态色/ANSI 值统一为 HEX 显示
 
 - **日期**：2026-09-14

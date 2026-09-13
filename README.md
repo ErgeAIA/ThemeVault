@@ -107,6 +107,7 @@ ThemeVault/
 - [x] Dracula 家族（dark，官方 dracula.yml → L1 映射，见家族 README）
 - [x] 社区主题 10 家族（nord / solarized / tokyonight / one-dark-pro / night-owl / synthwave / iceberg / kanagawa / everforest / rose-pine）
 - [x] VS Code theme 6 家族（ayu / jellyfish / shades / vue / omni / falcon，21 套主题，`gen_vscode.py` 数据驱动生成）
+- [x] OnePage 家族（warm-brown / warm-paper，Obsidian 固化双配色 + 彩色排版 typo-*，见 DEC-001）
 - [x] 数据驱动预览 SPA（preview.html 读 data.js 运行时渲染：瀑布流 + 自适应卡片 + AA 徽标 + 品牌色 swatch + 主题对比）
 - [x] 主题编号系统（INDEX.json theme.number + INDEX.md 编号列：新增主题追加编号、已有编号不变，直接报编号即可取色）
 - [ ] 下一套主题（候选：shadcn）
