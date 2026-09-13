@@ -1,0 +1,222 @@
+/*
+================================================================================
+ErgeMD 主题系统 - theme-derived.css
+================================================================================
+
+职责：基于主题输入变量生成派生变量
+优先级：高（最后加载，覆盖主题变量）
+
+使用说明：
+- 此文件依赖主题文件的 --accent-*, --brand-* 等变量
+- 使用 rgba(calc(var(--xxx-rgb)), alpha) 模式生成派生变量
+- 所有 alpha 值通过变量控制，支持主题统一调整
+
+================================================================================
+*/
+
+/* ============================================
+   暗色主题派生变量
+   ============================================ */
+[data-theme="dark"],
+[data-theme="aurora"],
+[data-theme="cherry-blossom"],
+[data-theme="cyberpunk"],
+[data-theme="desert-sunset"],
+[data-theme="falcon"],
+[data-theme="forest"],
+[data-theme="monochrome"],
+[data-theme="neon-cyberpunk"],
+[data-theme="ocean"],
+[data-theme="solar-flare"],
+[data-theme="tokyo-night"] {
+
+  /* === Accent 透明度变体 === */
+  --accent-cyan-dim: rgba(var(--accent-cyan-rgb), 0.4);
+  --accent-cyan-glow: rgba(var(--accent-cyan-rgb), 0.6);
+
+  /* === 选区 === */
+  --selection-bg: rgba(var(--accent-cyan-rgb), 0.2);
+  --selection-text: #FAFAFA;
+
+  /* === 交互状态 === */
+  --hover-bg: rgba(255, 255, 255, 0.06);
+  --hover-bg-subtle: rgba(var(--accent-cyan-rgb), 0.03);
+  --hover-bg-light: rgba(255, 255, 255, 0.05);
+  --hover-bg-medium: rgba(255, 255, 255, 0.10);
+  --selected-bg: rgba(var(--accent-cyan-rgb), 0.15);
+  --active-border: rgba(var(--accent-cyan-rgb), 0.30);
+  --divider: rgba(var(--accent-cyan-rgb), 0.10);
+  --danger-hover-bg: rgba(var(--accent-red-rgb), 0.15);
+  --hover-close-bg: rgba(var(--accent-red-rgb), 0.6);
+
+  /* === 表格 === */
+  --table-header-bg: rgba(var(--accent-cyan-rgb), 0.05);
+  --table-header-text: var(--accent-cyan);
+  --table-border: rgba(var(--accent-cyan-rgb), 0.08);
+  --table-hover-bg: rgba(var(--accent-cyan-rgb), 0.03);
+
+  /* === 引用块 === */
+  --blockquote-bg: rgba(var(--accent-purple-rgb), 0.10);
+  --blockquote-text: var(--text-secondary);
+
+  /* === 行内代码 === */
+  --inline-code-bg: rgba(var(--accent-pink-rgb), 0.12);
+  --inline-code-text: var(--accent-pink);
+
+  /* === 代码块 === */
+  --code-label-bg: rgba(var(--accent-cyan-rgb), 0.03);
+  --code-border: rgba(var(--accent-cyan-rgb), 0.08);
+
+  /* === TOC === */
+  --toc-hover-bg: rgba(46, 46, 56, 0.92);
+  --toc-hover-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --toc-text-active: rgba(var(--accent-cyan-rgb), 1);
+  --toc-text-inactive: rgba(180, 180, 200, 0.65);
+
+  /* === Toast === */
+  --toast-info-bg: rgba(var(--accent-cyan-rgb), 0.08);
+  --toast-info-border: rgba(var(--accent-cyan-rgb), 0.20);
+  --toast-success-bg: rgba(var(--accent-green-rgb), 0.08);
+  --toast-success-border: rgba(var(--accent-green-rgb), 0.20);
+  --toast-error-bg: rgba(var(--accent-red-rgb), 0.08);
+  --toast-error-border: rgba(var(--accent-red-rgb), 0.20);
+  --toast-warning-bg: rgba(var(--accent-yellow-rgb), 0.08);
+  --toast-warning-border: rgba(var(--accent-yellow-rgb), 0.20);
+
+  /* === Button Primary === */
+  --btn-primary-bg: rgba(var(--brand-primary-rgb), 0.10);
+  --btn-primary-border: rgba(var(--brand-primary-rgb), 0.20);
+  --btn-primary-hover-bg: rgba(var(--brand-primary-rgb), 0.15);
+
+  /* === Button Secondary === */
+  --btn-secondary-bg: rgba(255, 255, 255, 0.05);
+  --btn-secondary-border: rgba(255, 255, 255, 0.10);
+  --btn-secondary-hover-bg: rgba(255, 255, 255, 0.10);
+
+  /* === Drop Zone === */
+  --drop-zone-border: rgba(var(--brand-primary-rgb), 0.20);
+  --drop-zone-hover-border: rgba(var(--brand-primary-rgb), 0.40);
+
+  /* === Logo === */
+  --logo-bg: linear-gradient(135deg, rgba(var(--brand-primary-rgb), 0.15), rgba(var(--brand-secondary-rgb), 0.10));
+  --logo-border: rgba(var(--brand-primary-rgb), 0.10);
+
+  /* === 搜索高亮 === */
+  --search-highlight: rgba(var(--accent-yellow-rgb), 0.25);
+  --search-highlight-active: rgba(var(--accent-yellow-rgb), 0.50);
+
+  /* === 动画/滑块 === */
+  --slider-glow: 0 0 4px rgba(var(--brand-primary-rgb), 0.3);
+  --pulse-glow-dim: 0 0 5px rgba(var(--brand-primary-rgb), 0.2);
+  --pulse-glow-bright: 0 0 20px rgba(var(--brand-primary-rgb), 0.4);
+}
+
+/* ============================================
+   亮色主题派生变量
+   ============================================ */
+[data-theme="light"],
+[data-theme="solarized-light"] {
+
+  /* === Accent 透明度变体 === */
+  --accent-cyan-dim: rgba(var(--accent-cyan-rgb), 0.4);
+  --accent-cyan-glow: rgba(var(--accent-cyan-rgb), 0.6);
+
+  /* === 选区 === */
+  --selection-bg: rgba(var(--brand-primary-rgb), 0.15);
+  --selection-text: #1A1A1A;
+
+  /* === 交互状态 === */
+  --hover-bg: rgba(0, 0, 0, 0.04);
+  --hover-bg-subtle: rgba(var(--brand-primary-rgb), 0.03);
+  --hover-bg-light: rgba(0, 0, 0, 0.03);
+  --hover-bg-medium: rgba(0, 0, 0, 0.06);
+  --selected-bg: rgba(var(--brand-primary-rgb), 0.10);
+  --active-border: rgba(var(--brand-primary-rgb), 0.30);
+  --divider: rgba(0, 0, 0, 0.08);
+  --danger-hover-bg: rgba(var(--accent-red-rgb), 0.10);
+  --hover-close-bg: rgba(var(--accent-red-rgb), 0.6);
+
+  /* === 表格 === */
+  --table-header-bg: rgba(var(--brand-primary-rgb), 0.04);
+  --table-header-text: var(--brand-primary);
+  --table-border: rgba(0, 0, 0, 0.08);
+  --table-hover-bg: rgba(0, 0, 0, 0.02);
+
+  /* === 引用块 === */
+  --blockquote-bg: rgba(var(--accent-purple-rgb), 0.03);
+  --blockquote-text: var(--text-secondary);
+
+  /* === 行内代码 === */
+  --inline-code-bg: rgba(var(--accent-pink-rgb), 0.06);
+  --inline-code-text: var(--accent-pink);
+
+  /* === 代码块 === */
+  --code-label-bg: rgba(var(--brand-primary-rgb), 0.05);
+  --code-border: rgba(var(--brand-primary-rgb), 0.10);
+
+  /* === TOC === */
+  --toc-hover-bg: rgba(255, 255, 255, 0.95);
+  --toc-hover-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  --toc-text-active: rgba(var(--brand-primary-rgb), 1);
+  --toc-text-inactive: rgba(45, 45, 45, 0.65);
+
+  /* === Toast === */
+  --toast-info-bg: rgba(var(--brand-primary-rgb), 0.06);
+  --toast-info-border: rgba(var(--brand-primary-rgb), 0.15);
+  --toast-success-bg: rgba(var(--accent-green-rgb), 0.06);
+  --toast-success-border: rgba(var(--accent-green-rgb), 0.15);
+  --toast-error-bg: rgba(var(--accent-red-rgb), 0.06);
+  --toast-error-border: rgba(var(--accent-red-rgb), 0.15);
+  --toast-warning-bg: rgba(var(--accent-yellow-rgb), 0.06);
+  --toast-warning-border: rgba(var(--accent-yellow-rgb), 0.15);
+
+  /* === Button Primary === */
+  --btn-primary-bg: rgba(var(--brand-primary-rgb), 0.08);
+  --btn-primary-border: rgba(var(--brand-primary-rgb), 0.20);
+  --btn-primary-hover-bg: rgba(var(--brand-primary-rgb), 0.12);
+
+  /* === Button Secondary === */
+  --btn-secondary-bg: rgba(0, 0, 0, 0.04);
+  --btn-secondary-border: rgba(0, 0, 0, 0.10);
+  --btn-secondary-hover-bg: rgba(0, 0, 0, 0.08);
+
+  /* === Drop Zone === */
+  --drop-zone-border: rgba(var(--brand-primary-rgb), 0.50);
+  --drop-zone-hover-border: rgba(var(--brand-primary-rgb), 0.30);
+
+  /* === Logo === */
+  --logo-bg: linear-gradient(135deg, rgba(var(--brand-primary-rgb), 0.10), rgba(var(--brand-secondary-rgb), 0.08));
+  --logo-border: rgba(var(--brand-primary-rgb), 0.15);
+
+  /* === 搜索高亮 === */
+  --search-highlight: rgba(var(--accent-yellow-rgb), 0.30);
+  --search-highlight-active: rgba(var(--accent-yellow-rgb), 0.55);
+
+  /* === 动画/滑块 === */
+  --slider-glow: 0 0 4px rgba(var(--brand-primary-rgb), 0.20);
+  --pulse-glow-dim: 0 0 5px rgba(var(--brand-primary-rgb), 0.15);
+  --pulse-glow-bright: 0 0 20px rgba(var(--brand-primary-rgb), 0.30);
+}
+
+/* ============================================
+   通用派生变量（所有主题）
+   ============================================ */
+[data-theme] {
+
+  /* === Admonition 变量 === */
+  --admonition-note-bg: rgba(var(--accent-cyan-rgb), 0.08);
+  --admonition-note-border: rgba(var(--accent-cyan-rgb), 0.20);
+  --admonition-tip-bg: rgba(var(--accent-green-rgb), 0.08);
+  --admonition-tip-border: rgba(var(--accent-green-rgb), 0.20);
+  --admonition-warning-bg: rgba(var(--accent-yellow-rgb), 0.08);
+  --admonition-warning-border: rgba(var(--accent-yellow-rgb), 0.20);
+  --admonition-danger-bg: rgba(var(--accent-red-rgb), 0.08);
+  --admonition-danger-border: rgba(var(--accent-red-rgb), 0.20);
+  --admonition-info-bg: rgba(var(--accent-blue-rgb), 0.08);
+  --admonition-info-border: rgba(var(--accent-blue-rgb), 0.20);
+  --admonition-success-bg: rgba(var(--accent-green-rgb), 0.08);
+  --admonition-success-border: rgba(var(--accent-green-rgb), 0.20);
+
+  /* === Hover Close Button === */
+  --hover-close-bg: rgba(var(--accent-red-rgb), 0.6);
+}

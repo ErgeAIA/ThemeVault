@@ -1,0 +1,34 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-xychart.css
+================================================================================
+
+职责：XY Chart XY 图表变量映射
+优先级：Mermaid 层
+
+设计原则：
+- XY Chart 背景使用 --chart-surface-2
+- 标题/标签使用 --chart-text
+- 网格使用 --chart-edge
+- 数据序列使用 --chart-series-*（可更鲜艳）
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === XY Chart 背景 === */
+  --mermaid-xychart-bg: var(--chart-surface-2);
+  --mermaid-xychart-title: var(--chart-text);
+  --mermaid-xychart-label: var(--chart-text-muted);
+  --mermaid-xychart-grid: var(--chart-edge);
+  --mermaid-xychart-border: var(--chart-stroke-0);
+
+  /* === XY Chart 数据序列（可更鲜艳）===
+     chart-series C 值 0.20-0.35，用于数据区分
+     用于柱状图、折线图等数据可视化 */
+  --mermaid-xychart-plot-0: var(--chart-series-0);
+  --mermaid-xychart-plot-1: var(--chart-series-1);
+  --mermaid-xychart-plot-2: var(--chart-series-2);
+  --mermaid-xychart-plot-3: var(--chart-series-3);
+  --mermaid-xychart-plot-4: var(--chart-series-4);
+}

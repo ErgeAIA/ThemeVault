@@ -1,0 +1,31 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-journey.css
+================================================================================
+
+职责：Journey 旅程图变量映射
+优先级：Mermaid 层
+
+设计原则：
+- 旅程背景使用 --chart-surface-1（承载文字）
+- 旅程边框使用 --chart-stroke-0
+- 旅程文字使用 --chart-text
+- 填充色使用 --chart-series-0
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Journey 旅程（承载文字）=== */
+  --mermaid-journey-bg: var(--chart-surface-1);
+  --mermaid-journey-border: var(--chart-stroke-0);
+  --mermaid-journey-text: var(--chart-text);
+
+  /* === Journey 填充色 === */
+  --mermaid-journeyFillColor: var(--chart-series-0);
+
+  /* === Journey 特定变量名 === */
+  --mermaid-journeyBkg: var(--chart-surface-1);
+  --mermaid-journeyBorder: var(--chart-stroke-0);
+  --mermaid-journeyTextColor: var(--chart-text);
+}

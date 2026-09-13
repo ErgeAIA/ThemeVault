@@ -1,0 +1,54 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-c4.css
+================================================================================
+
+职责：C4 Context C4 模型变量映射
+优先级：Mermaid 层
+
+设计原则：
+- Person/Container/Component 背景使用 --chart-surface-*（承载文字）
+- 对应边框使用 --chart-stroke-*
+- 文字使用 --chart-text
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === C4 Person（人物）=== */
+  --mermaid-c4-person-bg: var(--chart-surface-1);
+  --mermaid-c4-person-border: var(--chart-stroke-0);
+  --mermaid-c4-person-text: var(--chart-text);
+
+  /* === C4 System（系统）=== */
+  --mermaid-c4-system-bg: var(--chart-surface-2);
+  --mermaid-c4-system-border: var(--chart-stroke-1);
+  --mermaid-c4-system-text: var(--chart-text);
+
+  /* === C4 Container（容器）=== */
+  --mermaid-c4-container-bg: var(--chart-surface-1);
+  --mermaid-c4-container-border: var(--chart-stroke-2);
+  --mermaid-c4-container-text: var(--chart-text);
+
+  /* === C4 Component（组件）=== */
+  --mermaid-c4-component-bg: var(--chart-surface-1);
+  --mermaid-c4-component-border: var(--chart-stroke-3);
+  --mermaid-c4-component-text: var(--chart-text);
+
+  /* === C4 特定变量名 === */
+  --mermaid-c4PersonBkg: var(--chart-surface-1);
+  --mermaid-c4PersonBorder: var(--chart-stroke-0);
+  --mermaid-c4PersonTextColor: var(--chart-text);
+
+  --mermaid-c4SystemBkg: var(--chart-surface-2);
+  --mermaid-c4SystemBorder: var(--chart-stroke-1);
+  --mermaid-c4SystemTextColor: var(--chart-text);
+
+  --mermaid-c4ContainerBkg: var(--chart-surface-1);
+  --mermaid-c4ContainerBorder: var(--chart-stroke-2);
+  --mermaid-c4ContainerTextColor: var(--chart-text);
+
+  --mermaid-c4ComponentBkg: var(--chart-surface-1);
+  --mermaid-c4ComponentBorder: var(--chart-stroke-3);
+  --mermaid-c4ComponentTextColor: var(--chart-text);
+}

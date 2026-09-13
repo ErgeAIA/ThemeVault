@@ -1,0 +1,31 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-base.css
+================================================================================
+
+职责：Mermaid 基础变量映射
+优先级：Mermaid 层最低
+
+映射关系：
+- 基础图表变量 -> --mermaid-* 基础变量
+- 承载文字背景使用 chart-surface 或 chart-fill
+- 线条使用 chart-edge
+- 边框使用 chart-stroke
+
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === 基础图表变量 === */
+  --mermaid-text: var(--chart-text);
+  --mermaid-edge: var(--chart-edge);
+  --mermaid-cluster-fill: var(--chart-surface-1);
+  --mermaid-label-bg: var(--chart-surface-1);
+
+  /* === 通用节点边框 === */
+  --mermaid-node-stroke: var(--chart-stroke-0);
+
+  /* === 通用节点背景（承载文字）=== */
+  /* 注意：不直接使用 accent/brand 色作为节点背景 */
+}

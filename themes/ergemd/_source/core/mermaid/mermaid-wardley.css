@@ -1,0 +1,34 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-wardley.css
+================================================================================
+
+职责：Wardley Beta 沃德利地图变量映射
+优先级：Mermaid 层
+
+Wardley 图是块状图/关系图：
+- 文本使用 --chart-text
+- 组件背景使用 --chart-fill-*
+- 组件边框使用 --chart-stroke-*
+- 连接线使用 --chart-edge
+
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Wardley 文本 === */
+  --mermaid-wardley-text: var(--chart-text);
+
+  /* === Wardley 组件背景 === */
+  --mermaid-wardley-node-bg: var(--chart-fill-0);
+
+  /* === Wardley 组件边框 === */
+  --mermaid-wardley-node-border: var(--chart-stroke-0);
+
+  /* === Wardley 连接线 === */
+  --mermaid-wardley-line: var(--chart-edge);
+
+  /* === Wardley 绘图区背景 === */
+  --mermaid-wardley-bg: var(--chart-surface-1);
+}

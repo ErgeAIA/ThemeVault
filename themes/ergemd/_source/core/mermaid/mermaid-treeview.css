@@ -1,0 +1,50 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-treeview.css
+================================================================================
+
+职责：TreeView Beta 树形视图变量映射
+优先级：Mermaid 层
+
+TreeView 图是块状图：
+- 文本使用 --chart-text
+- 文件/文件夹背景使用 --chart-fill-*
+- 图标使用 --chart-stroke-*
+- 连接线使用 --chart-edge
+- 高亮背景使用带透明度的 --chart-series-*
+
+基于 Mermaid 11.14.0 TreeView themeVariables:
+- labelFontSize
+- labelColor -> --chart-text
+- lineColor -> --chart-edge
+- iconColor -> --chart-stroke-0 或 --chart-stroke-1
+- descriptionColor -> --chart-text-muted
+- highlightBg -> 带透明度的 --chart-fill-* 或 --chart-series-*
+- highlightStroke -> --chart-stroke-*
+
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === TreeView 标签文本 === */
+  --mermaid-treeview-label: var(--chart-text);
+
+  /* === TreeView 描述文本 === */
+  --mermaid-treeview-description: var(--chart-text-muted);
+
+  /* === TreeView 连接线 === */
+  --mermaid-treeview-line: var(--chart-edge);
+
+  /* === TreeView 图标 === */
+  --mermaid-treeview-icon: var(--chart-stroke-0);
+
+  /* === TreeView 文件/文件夹背景 === */
+  --mermaid-treeview-bg: var(--chart-fill-0);
+
+  /* === TreeView 高亮背景 === */
+  --mermaid-treeview-highlight-bg: var(--chart-fill-0);
+
+  /* === TreeView 高亮边框 === */
+  --mermaid-treeview-highlight-stroke: var(--chart-stroke-0);
+}

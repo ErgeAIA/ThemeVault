@@ -1,0 +1,316 @@
+/*
+================================================================================
+ErgeMD 主题系统 - theme-dark-base.css
+================================================================================
+
+职责：定义暗色主题公共默认值
+优先级：中低（base 层）
+
+覆盖主题：
+- aurora
+- cherry-blossom
+- cyberpunk
+- dark
+- desert-sunset
+- falcon
+- forest
+- monochrome
+- neon-cyberpunk
+- ocean
+- solar-flare
+- tokyo-night
+
+设计原则：
+- 暗色主题共享相同的背景/文字基础值
+- 主题特色色（h1-h6, accent, brand, code）保留在各主题文件中
+- 使用 RGB 输入变量支持 rgba 派生
+
+================================================================================
+*/
+
+/* ============================================
+   暗色主题 Base 选择器
+   ============================================ */
+[data-theme="dark"],
+[data-theme="aurora"],
+[data-theme="cherry-blossom"],
+[data-theme="cyberpunk"],
+[data-theme="desert-sunset"],
+[data-theme="falcon"],
+[data-theme="forest"],
+[data-theme="monochrome"],
+[data-theme="neon-cyberpunk"],
+[data-theme="ocean"],
+[data-theme="solar-flare"],
+[data-theme="tokyo-night"] {
+
+  /* === 基础背景 === */
+  --bg-page: #282830;
+  /* oklch(0.16 0.01 270) */
+  --bg-reader: #2E2E38;
+  /* oklch(0.18 0.01 270) */
+  --bg-sidebar: #222230;
+  /* oklch(0.14 0.01 270) */
+  --bg-code: #262630;
+  /* oklch(0.15 0.01 270) */
+  --bg-secondary: #2E2E38;
+  /* oklch(0.18 0.01 270) */
+  --bg-tertiary: #262630;
+  /* oklch(0.15 0.01 270) */
+
+  /* === 文本颜色 === */
+  --text-primary: #E0E0E0;
+  /* oklch(0.88 0 0) */
+  --text-secondary: #A6A6A6;
+  /* oklch(0.65 0 0) */
+  --text-muted: #808080;
+  /* oklch(0.50 0 0) */
+  --text-heading: #FAFAFA;
+  /* oklch(0.98 0 0) */
+
+  /* === 标题层级 fallback（各主题会覆盖）=== */
+  --h1-color: #FAFAFA;
+  /* oklch(0.98 0 0) */
+  --h2-color: #7AA2F7;
+  /* oklch(0.65 0.20 265) */
+  --h3-color: #BB9AF7;
+  /* oklch(0.62 0.22 285) */
+  --h4-color: #7DCFFF;
+  /* oklch(0.65 0.20 225) */
+  --h5-color: #9ECE6A;
+  /* oklch(0.68 0.18 145) */
+  --h6-color: #788090;
+  /* oklch(0.52 0.02 270) */
+
+  /* === Accent 色 fallback（各主题会覆盖）=== */
+  --accent-cyan: #7DCFFF;
+  /* oklch(0.65 0.20 225) */
+  --accent-pink: #F7768E;
+  /* oklch(0.68 0.22 355) */
+  --accent-purple: #BB9AF7;
+  /* oklch(0.62 0.22 285) */
+  --accent-green: #9ECE6A;
+  /* oklch(0.68 0.18 145) */
+  --accent-yellow: #E0AF68;
+  /* oklch(0.68 0.18 85) */
+  --accent-red: #F7768E;
+  /* oklch(0.68 0.22 355) */
+  --accent-orange: #FF9E64;
+  /* oklch(0.70 0.20 40) */
+  --accent-blue: #7AA2F7;
+  /* oklch(0.65 0.20 265) */
+
+  /* === Brand 色 fallback（各主题会覆盖）=== */
+  --brand-primary: #7DCFFF;
+  /* oklch(0.65 0.20 225) */
+  --brand-secondary: #BB9AF7;
+  /* oklch(0.62 0.22 285) */
+  --brand-gradient: linear-gradient(135deg, #7DCFFF, #BB9AF7);
+  --brand-logo: #7DCFFF;
+  /* oklch(0.65 0.20 225) */
+
+  /* === RGB 输入变量（用于 rgba 合成）=== */
+  --accent-cyan-rgb: 125, 207, 255;
+  --accent-pink-rgb: 247, 118, 142;
+  --accent-purple-rgb: 187, 154, 247;
+  --accent-green-rgb: 158, 206, 106;
+  --accent-yellow-rgb: 224, 175, 104;
+  --accent-red-rgb: 247, 118, 142;
+  --accent-orange-rgb: 255, 158, 100;
+  --accent-blue-rgb: 122, 162, 247;
+  --brand-primary-rgb: 125, 207, 255;
+  --brand-secondary-rgb: 187, 154, 247;
+
+  /* === 滚动条 === */
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: #585860;
+  /* oklch(0.35 0 0) */
+  --scrollbar-thumb-hover: #787880;
+  /* oklch(0.45 0 0) */
+
+  /* === 阴影 === */
+  --shadow-popup: 0 4px 24px rgba(0, 0, 0, 0.5);
+  --shadow-menu: 0 4px 16px rgba(0, 0, 0, 0.4);
+
+  /* === Overlay === */
+  --overlay-bg: rgba(0, 0, 0, 0.85);
+
+  /* === 状态栏 === */
+  --status-bar-bg: rgba(40, 40, 48, 0.80);
+
+  /* === 阅读区 Elevated === */
+  --reader-bg-elevated: #262630;
+  /* oklch(0.15 0.01 270) */
+
+  /* === 交互状态 === */
+  --hover-bg: rgba(255, 255, 255, 0.06);
+  --selected-bg: rgba(125, 207, 255, 0.15);
+  --active-border: rgba(125, 207, 255, 0.30);
+  --divider: rgba(125, 207, 255, 0.10);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+
+  /* === 选区 === */
+  --selection-bg: rgba(125, 207, 255, 0.2);
+  --selection-text: #FAFAFA;
+
+  /* === 表格 === */
+  --table-header-bg: rgba(125, 207, 255, 0.05);
+  --table-header-text: #7DCFFF;
+  --table-border: rgba(125, 207, 255, 0.08);
+  --table-hover-bg: rgba(125, 207, 255, 0.03);
+
+  /* === 引用块 === */
+  --blockquote-bg: rgba(187, 154, 247, 0.10);
+  --blockquote-text: #A6A6A6;
+
+  /* === 行内代码 === */
+  --inline-code-bg: rgba(247, 118, 142, 0.12);
+  --inline-code-text: #F7768E;
+
+  /* === 代码高亮 fallback（各主题会覆盖）=== */
+  --code-keyword: #BB9AF7;
+  --code-string: #9ECE6A;
+  --code-number: #FF9E64;
+  --code-comment: #909096;
+  --code-function: #7DCFFF;
+  --code-text: #E0E0E0;
+  --code-label: #FF9E64;
+  --copy-success: #9ECE6A;
+
+  /* === 代码块 === */
+  --code-label-bg: rgba(125, 207, 255, 0.03);
+  --code-border: rgba(125, 207, 255, 0.08);
+
+  /* === 搜索高亮 === */
+  --search-highlight: rgba(224, 175, 104, 0.25);
+  --search-highlight-active: rgba(224, 175, 104, 0.50);
+
+  /* === 标题栏 === */
+  --titlebar-gradient: linear-gradient(90deg, #7DCFFF, #BB9AF7, #F7768E);
+
+  /* === WelcomePage === */
+  --logo-bg: linear-gradient(135deg, rgba(125, 207, 255, 0.15), rgba(187, 154, 247, 0.10));
+  --logo-border: rgba(125, 207, 255, 0.20);
+  --drop-zone-border: rgba(125, 207, 255, 0.20);
+  --drop-zone-hover-border: rgba(125, 207, 255, 0.40);
+  --btn-primary-bg: rgba(125, 207, 255, 0.10);
+  --btn-primary-border: rgba(125, 207, 255, 0.20);
+  --btn-primary-hover-bg: rgba(125, 207, 255, 0.15);
+  --btn-secondary-bg: rgba(255, 255, 255, 0.05);
+  --btn-secondary-border: rgba(255, 255, 255, 0.10);
+  --btn-secondary-hover-bg: rgba(255, 255, 255, 0.10);
+  --danger-hover-bg: rgba(247, 118, 142, 0.15);
+
+  /* === Toast === */
+  --toast-info-bg: rgba(125, 207, 255, 0.08);
+  --toast-info-border: rgba(125, 207, 255, 0.20);
+  --toast-success-bg: rgba(158, 206, 106, 0.08);
+  --toast-success-border: rgba(158, 206, 106, 0.20);
+  --toast-error-bg: rgba(247, 118, 142, 0.08);
+  --toast-error-border: rgba(247, 118, 142, 0.20);
+  --toast-warning-bg: rgba(224, 175, 104, 0.08);
+  --toast-warning-border: rgba(224, 175, 104, 0.20);
+
+  /* === 动画/滑块 === */
+  --slider-glow: 0 0 4px rgba(125, 207, 255, 0.3);
+  --pulse-glow-dim: 0 0 5px rgba(125, 207, 255, 0.2);
+  --pulse-glow-bright: 0 0 20px rgba(125, 207, 255, 0.4);
+
+  /* === TOC === */
+  --toc-hover-bg: rgba(46, 46, 56, 0.92);
+  --toc-hover-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --toc-text-active: rgba(125, 207, 255, 1);
+  --toc-text-inactive: rgba(180, 180, 200, 0.65);
+
+  /* ============================================
+     图表专用色板 - 暗色主题默认值
+     ============================================
+
+     设计原则：
+     - chart-fill：承载文字的节点背景，必须克制（L 15-25%，C 0.05-0.15）
+     - chart-stroke：边框、连线、分支线，可以更鲜艳（C 0.15-0.25）
+     - chart-series：数据序列色，可以最鲜艳（C 0.20-0.35）
+     - 所有值使用 oklch() 确保亮度和饱和度可控
+     */
+
+  /* === 基础图表变量 === */
+  --chart-text: #E0E0E0;
+  /* oklch(0.88 0 0) */
+  --chart-text-muted: #A6A6A6;
+  /* oklch(0.65 0 0) */
+  --chart-edge: #808080;
+  /* oklch(0.50 0 0) */
+  --chart-label-bg: #282830;
+  /* oklch(0.16 0.01 270) */
+
+  /* === Chart Surface（表面层，用于节点背景）=== */
+  --chart-surface-1: #2E2E38;
+  /* oklch(0.18 0.01 270) - 主要表面 */
+  --chart-surface-2: #282830;
+  /* oklch(0.16 0.01 270) - 次要表面 */
+  --chart-surface-3: #262630;
+  /* oklch(0.15 0.01 270) - 第三级表面 */
+
+  /* === Chart Fill（承载文字的安全填充色）===
+     暗色主题：L 值 15-25%，C 值 0.05-0.15
+     饱和度克制，避免与背景对比过强或过弱 */
+  --chart-fill-0: #3A3A4A;
+  /* oklch(0.22 0.08 270) - 蓝灰 */
+  --chart-fill-1: #3D3D52;
+  /* oklch(0.24 0.07 280) - 紫灰 */
+  --chart-fill-2: #3A4848;
+  /* oklch(0.23 0.06 175) - 青灰 */
+  --chart-fill-3: #48443A;
+  /* oklch(0.24 0.07 85) - 黄灰 */
+  --chart-fill-4: #3A4840;
+  /* oklch(0.22 0.08 145) - 绿灰 */
+  --chart-fill-5: #483A3A;
+  /* oklch(0.23 0.07 25) - 红灰 */
+  --chart-fill-6: #423A48;
+  /* oklch(0.23 0.07 285) - 品红灰 */
+  --chart-fill-7: #484848;
+  /* oklch(0.25 0.05 0) - 中灰 */
+
+  /* === Chart Stroke（边框、连线、分支线强调色）===
+     暗色主题：C 值 0.15-0.25，比 fill 更鲜艳
+     用于边框、连线、分支线等装饰性元素 */
+  --chart-stroke-0: #7AA2F7;
+  /* oklch(0.62 0.22 265) - 蓝色 */
+  --chart-stroke-1: #BB9AF7;
+  /* oklch(0.62 0.22 285) - 紫色 */
+  --chart-stroke-2: #9ECE6A;
+  /* oklch(0.68 0.18 145) - 绿色 */
+  --chart-stroke-3: #E0AF68;
+  /* oklch(0.68 0.18 85) - 黄色 */
+  --chart-stroke-4: #F7768E;
+  /* oklch(0.68 0.22 355) - 粉色 */
+  --chart-stroke-5: #FF9E64;
+  /* oklch(0.70 0.20 40) - 橙色 */
+  --chart-stroke-6: #7DCFFF;
+  /* oklch(0.65 0.20 225) - 青色 */
+  --chart-stroke-7: #C586C0;
+  /* oklch(0.58 0.18 320) - 紫红 */
+
+  /* === Chart Series（数据序列色，可更鲜艳）===
+     暗色主题：C 值 0.20-0.35，可使用高饱和度
+     用于饼图、XY 图等数据可视化
+     允许比节点背景更鲜艳以区分数据 */
+  --chart-series-0: #7DCFFF;
+  /* oklch(0.65 0.20 225) - 青色 */
+  --chart-series-1: #9ECE6A;
+  /* oklch(0.68 0.18 145) - 绿色 */
+  --chart-series-2: #E0AF68;
+  /* oklch(0.68 0.18 85) - 黄色 */
+  --chart-series-3: #F7768E;
+  /* oklch(0.68 0.22 355) - 粉色 */
+  --chart-series-4: #BB9AF7;
+  /* oklch(0.62 0.22 285) - 紫色 */
+  --chart-series-5: #FF9E64;
+  /* oklch(0.70 0.20 40) - 橙色 */
+
+  /* Chart series */
+  --chart-series-6: #7AA2F7;
+  /* oklch(0.62 0.22 265) - 蓝色 */
+  --chart-series-7: #C586C0;
+  /* oklch(0.58 0.18 320) - 紫红 */
+}

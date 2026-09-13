@@ -1,0 +1,26 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-timeline.css
+================================================================================
+
+职责：Timeline 时间线变量映射
+优先级：Mermaid 层
+
+设计原则：
+- 时间刻度背景使用 --chart-surface-*（承载文字）
+- 时间刻度使用 --chart-fill-0 ~ --chart-fill-3
+- 标签文字使用 --chart-text
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Timeline 时间刻度背景（承载文字）=== */
+  --mermaid-timeline-cscale-0: var(--chart-fill-0);
+  --mermaid-timeline-cscale-1: var(--chart-fill-1);
+  --mermaid-timeline-cscale-2: var(--chart-fill-2);
+  --mermaid-timeline-cscale-3: var(--chart-fill-3);
+
+  /* === Timeline 标签文字 === */
+  --mermaid-timeline-label: var(--chart-text);
+}

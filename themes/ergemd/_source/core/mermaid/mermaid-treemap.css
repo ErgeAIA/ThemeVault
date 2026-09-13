@@ -1,0 +1,36 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-treemap.css
+================================================================================
+
+职责：Treemap Beta 树状图变量映射
+优先级：Mermaid 层
+
+Treemap 图是数据序列图：
+- 文本使用 --chart-text
+- 分组背景使用 --chart-surface-*
+- 叶子节点使用 --chart-series-*
+- 边框使用 --chart-stroke-*
+
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Treemap 文本 === */
+  --mermaid-treemap-text: var(--chart-text);
+
+  /* === Treemap 分组背景 === */
+  --mermaid-treemap-group-bg: var(--chart-surface-1);
+
+  /* === Treemap 叶子节点颜色（使用 series 色）=== */
+  --mermaid-treemap-leaf-0: var(--chart-series-0);
+  --mermaid-treemap-leaf-1: var(--chart-series-1);
+  --mermaid-treemap-leaf-2: var(--chart-series-2);
+  --mermaid-treemap-leaf-3: var(--chart-series-3);
+  --mermaid-treemap-leaf-4: var(--chart-series-4);
+  --mermaid-treemap-leaf-5: var(--chart-series-5);
+
+  /* === Treemap 边框 === */
+  --mermaid-treemap-border: var(--chart-stroke-0);
+}

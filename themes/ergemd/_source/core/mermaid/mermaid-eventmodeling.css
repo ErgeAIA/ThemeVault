@@ -1,0 +1,59 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-eventmodeling.css
+================================================================================
+
+职责：Event Modeling 事件建模图变量映射
+优先级：Mermaid 层
+
+Event Modeling 图包含 5 种 box 类型 + 关系线 + 泳道：
+- UI（用户界面）：白底/灰描边
+- Processor（处理器）：紫色调
+- ReadModel（读模型）：绿色调
+- Command（命令）：蓝色调
+- Event（事件）：橙色调
+- 关系线/箭头：与 --chart-edge 对齐
+- 泳道背景：与 --chart-surface-* 对齐
+
+注意：Mermaid 11.15.0 Event Modeling 渲染器直接消费 themeVariables.em* 字段
+并应用到 SVG 内联 fill/stroke 属性，CSS 变量仅作为后备参考。实际生效依靠
+MermaidDiagram.tsx 中传入的 themeVariables（emUiFill/Stroke 等）。
+
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Event Modeling 文本 === */
+  --mermaid-eventmodeling-text: var(--chart-text);
+
+  /* === Event Modeling UI box === */
+  --mermaid-eventmodeling-ui-fill: var(--chart-surface-3);
+  --mermaid-eventmodeling-ui-stroke: var(--chart-stroke-0);
+
+  /* === Event Modeling Processor box === */
+  --mermaid-eventmodeling-processor-fill: var(--chart-fill-2);
+  --mermaid-eventmodeling-processor-stroke: var(--chart-stroke-2);
+
+  /* === Event Modeling ReadModel box === */
+  --mermaid-eventmodeling-readmodel-fill: var(--chart-fill-4);
+  --mermaid-eventmodeling-readmodel-stroke: var(--chart-stroke-4);
+
+  /* === Event Modeling Command box === */
+  --mermaid-eventmodeling-command-fill: var(--chart-fill-0);
+  --mermaid-eventmodeling-command-stroke: var(--chart-stroke-0);
+
+  /* === Event Modeling Event box === */
+  --mermaid-eventmodeling-event-fill: var(--chart-fill-3);
+  --mermaid-eventmodeling-event-stroke: var(--chart-stroke-3);
+
+  /* === Event Modeling 关系线 === */
+  --mermaid-eventmodeling-relation: var(--chart-edge);
+
+  /* === Event Modeling 泳道背景与边框 === */
+  --mermaid-eventmodeling-swimlane-bg: var(--chart-surface-2);
+  --mermaid-eventmodeling-swimlane-stroke: var(--chart-edge);
+
+  /* === Event Modeling 箭头 === */
+  --mermaid-eventmodeling-arrowhead: var(--chart-edge);
+}

@@ -1,0 +1,140 @@
+/*
+================================================================================
+falcon 主题 - 2026-05-08
+================================================================================
+
+重构说明：
+- 继承 theme-dark-base.css 的暗色基础背景/文字
+- 继承 theme-derived.css 的派生变量
+- 通过 core/mermaid/* adapters 生成 Mermaid 最终变量
+- 只保留主题输入变量和 chart palette
+
+主题特色：蓝紫色调 + 青色点缀，类似 Dracula/One Dark 风格
+================================================================================
+*/
+
+[data-theme="falcon"] {
+
+  /* === 标题层级色 - falcon 蓝紫特色 === */
+  --text-heading: #EBEBEB;
+  /* oklch(0.92 0 0) */
+  --h1-color: #EBEBEB;
+  /* oklch(0.92 0 0) */
+  --h2-color: #65BCD9;
+  /* oklch(0.70 0.18 220) - 青色蓝，falcon 主题特色 */
+  --h3-color: #9876AA;
+  /* oklch(0.60 0.14 286) - 紫粉色，falcon 主题特色 */
+  --h4-color: #C58564;
+  /* oklch(0.68 0.18 35) - 橙色，falcon 主题特色 */
+  --h5-color: #50A14F;
+  /* oklch(0.62 0.16 145) - 绿色 */
+  --h6-color: #788795;
+  /* oklch(0.50 0.02 270) - 灰蓝色 */
+
+  /* === Accent 色 - falcon 蓝紫风格 === */
+  --accent-cyan: #65BCD9;
+  /* custom: oklch(0.70 0.18 220) - 青色蓝 */
+  --accent-pink: #FF79C6;
+  /* custom: oklch(0.72 0.18 340) - 粉色 */
+  --accent-purple: #9876AA;
+  /* custom: oklch(0.60 0.14 286) - 紫粉色 */
+  --accent-green: #50A14F;
+  /* custom: oklch(0.62 0.16 145) - 自然绿 */
+  --accent-yellow: #DFAE64;
+  /* custom: oklch(0.78 0.18 80) - 暖黄色 */
+  --accent-orange: #C58564;
+  /* custom: oklch(0.68 0.18 35) - 橙色 */
+  --accent-red: #FF5555;
+  /* custom: oklch(0.65 0.22 25) - 纯红色 */
+
+  /* === RGB 输入变量 === */
+  --accent-cyan-rgb: 101, 188, 217;
+  --accent-pink-rgb: 255, 121, 198;
+  --accent-purple-rgb: 152, 118, 170;
+  --accent-green-rgb: 80, 161, 79;
+  --accent-yellow-rgb: 223, 174, 100;
+  --accent-orange-rgb: 197, 133, 100;
+  --accent-red-rgb: 255, 85, 85;
+  --brand-primary-rgb: 101, 188, 217;
+  --brand-secondary-rgb: 152, 118, 170;
+
+  /* === 代码语义色 - falcon 蓝紫风格 === */
+  --code-keyword: #9876AA;
+  /* custom: oklch(0.60 0.14 286) - 紫粉色关键字 */
+  --code-string: #50A14F;
+  /* custom: oklch(0.62 0.16 145) - 自然绿字符串 */
+  --code-number: #DFAE64;
+  /* custom: oklch(0.78 0.18 80) - 暖黄色数字 */
+  --code-comment: #6B7280;
+  /* oklch(0.55 0.03 270) */
+  --code-function: #65BCD9;
+  /* custom: oklch(0.70 0.18 220) - 青色函数名 */
+  --code-text: #E0E0E0;
+  /* oklch(0.88 0 0) */
+  --code-label: #C58564;
+  /* custom: oklch(0.68 0.18 35) */
+  --copy-success: #50A14F;
+  /* custom: oklch(0.62 0.16 145) */
+
+  /* === Brand 变量 - falcon 蓝紫风格 === */
+  --brand-primary: #65BCD9;
+  /* custom: oklch(0.70 0.18 220) - 青色蓝 */
+  --brand-secondary: #9876AA;
+  /* custom: oklch(0.60 0.14 286) - 紫粉色 */
+  --brand-gradient: linear-gradient(135deg, #65BCD9, #9876AA);
+  /* 使用品牌色 */
+  --brand-logo: #65BCD9;
+  /* custom: oklch(0.70 0.18 220) */
+
+  /* === 主题特例 - falcon 蓝紫渐变 === */
+  --titlebar-gradient: linear-gradient(90deg, #65BCD9, #9876AA, #FF79C6);
+
+  /* === Chart Fill（承载文字背景 - 蓝紫调深灰）===
+     L 值 14-22%，C 值 0.02-0.06，冷调克制 */
+  --chart-fill-0: #2A2C38;
+  --chart-fill-1: #2C2E40;
+  --chart-fill-2: #302A40;
+  --chart-fill-3: #2C3040;
+  --chart-fill-4: #283040;
+  --chart-fill-5: #302C48;
+  --chart-fill-6: #262838;
+  --chart-fill-7: #2C2C40;
+
+  /* === Chart Stroke（边框、连线 - 蓝紫青色调）===
+     L 值 60-72%，C 值 0.14-0.20，falcon 冷色特色 */
+  --chart-stroke-0: #65BCD9;
+  --chart-stroke-1: #9876AA;
+  --chart-stroke-2: #50A14F;
+  --chart-stroke-3: #DFAE64;
+  --chart-stroke-4: #C58564;
+  --chart-stroke-5: #FF79C6;
+  --chart-stroke-6: #7DCFFF;
+  --chart-stroke-7: #FF5555;
+
+  /* === Chart Series（数据序列 - 多色蓝紫系）===
+     L 值 60-78%，C 值 0.14-0.22，falcon 多色特色 */
+  --chart-series-0: #65BCD9;
+  --chart-series-1: #50A14F;
+  --chart-series-2: #C58564;
+  --chart-series-3: #9876AA;
+  --chart-series-4: #DFAE64;
+  --chart-series-5: #FF79C6;
+  --chart-series-6: #7DCFFF;
+  --chart-series-7: #FF5555;
+
+  /* === Obsidian Callout 类型颜色 === */
+  --obsidian-callout-note: #7090c0;
+  --obsidian-callout-abstract: #6090c0;
+  --obsidian-callout-info: #6080c0;
+  --obsidian-callout-todo: #6080c0;
+  --obsidian-callout-tip: #6090a0;
+  --obsidian-callout-success: #60a080;
+  --obsidian-callout-question: #70a060;
+  --obsidian-callout-warning: #c09050;
+  --obsidian-callout-failure: #c06060;
+  --obsidian-callout-danger: #c04040;
+  --obsidian-callout-bug: #b05070;
+  --obsidian-callout-example: #8060b0;
+  --obsidian-callout-quote: #808080;
+
+}

@@ -1,0 +1,27 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-class.css
+================================================================================
+
+职责：Class Diagram 类图变量映射
+优先级：Mermaid 层
+
+设计原则：
+- 类背景使用 --chart-surface-1（承载文字）
+- 类边框使用 --chart-stroke-0
+- 类文字使用 --chart-text
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Class 类（承载文字）=== */
+  --mermaid-class-bg: var(--chart-surface-1);
+  --mermaid-class-border: var(--chart-stroke-0);
+  --mermaid-class-text: var(--chart-text);
+
+  /* === Class Diagram 特定变量名 === */
+  --mermaid-classDefBg: var(--chart-surface-1);
+  --mermaid-classDefBorder: var(--chart-stroke-0);
+  --mermaid-classDefText: var(--chart-text);
+}

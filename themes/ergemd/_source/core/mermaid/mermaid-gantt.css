@@ -1,0 +1,31 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-gantt.css
+================================================================================
+
+职责：Gantt 甘特图变量映射
+优先级：Mermaid 层
+
+设计原则：
+- Section 背景使用 --chart-surface-3
+- Task 背景使用 --chart-surface-1（承载文字）
+- Task 边框使用 --chart-stroke-0
+- Milestone 使用 --chart-fill-0
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Gantt Section（区块背景）=== */
+  --mermaid-gantt-section-bg: var(--chart-surface-3);
+  --mermaid-gantt-section-line: var(--chart-edge);
+
+  /* === Gantt Task（任务条，承载文字）=== */
+  --mermaid-gantt-task-bg: var(--chart-surface-1);
+  --mermaid-gantt-task-border: var(--chart-stroke-0);
+  --mermaid-gantt-task-text: var(--chart-text);
+
+  /* === Gantt Milestone（里程碑）=== */
+  --mermaid-gantt-milestone-bg: var(--chart-fill-0);
+  --mermaid-gantt-milestone-border: var(--chart-stroke-0);
+}

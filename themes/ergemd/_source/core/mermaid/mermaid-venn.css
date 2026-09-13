@@ -1,0 +1,30 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-venn.css
+================================================================================
+
+职责：Venn Beta 维恩图变量映射
+优先级：Mermaid 层
+
+Venn 图是数据序列图：
+- 文本使用 --chart-text
+- 集合区域使用带透明度的 --chart-series-*
+- 边框使用 --chart-stroke-*
+
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Venn 文本 === */
+  --mermaid-venn-text: var(--chart-text);
+
+  /* === Venn 集合颜色（带透明度，用于填充）=== */
+  --mermaid-venn-set-0: var(--chart-series-0);
+  --mermaid-venn-set-1: var(--chart-series-1);
+  --mermaid-venn-set-2: var(--chart-series-2);
+  --mermaid-venn-set-3: var(--chart-series-3);
+
+  /* === Venn 边框 === */
+  --mermaid-venn-border: var(--chart-stroke-0);
+}

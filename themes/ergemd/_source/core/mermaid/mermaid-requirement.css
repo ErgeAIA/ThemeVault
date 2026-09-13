@@ -1,0 +1,28 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-requirement.css
+================================================================================
+
+职责：Requirement Diagram 需求图变量映射
+优先级：Mermaid 层
+
+设计原则：
+- 需求背景使用 --chart-surface-2（承载文字）
+- 元素背景使用 --chart-surface-3（承载文字）
+- 边框使用 --chart-stroke-0
+- 文字使用 --chart-text
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Requirement 需求（承载文字）=== */
+  --mermaid-requirement-bg: var(--chart-surface-2);
+  --mermaid-requirement-text: var(--chart-text);
+  --mermaid-requirement-border: var(--chart-stroke-0);
+
+  /* === Requirement Element 元素（承载文字）=== */
+  --mermaid-requirement-element-bg: var(--chart-surface-3);
+  --mermaid-requirement-element-text: var(--chart-text);
+  --mermaid-requirement-element-border: var(--chart-stroke-1);
+}

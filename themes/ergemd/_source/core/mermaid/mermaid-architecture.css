@@ -1,0 +1,35 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-architecture.css
+================================================================================
+
+职责：Architecture Beta 架构图变量映射
+优先级：Mermaid 层
+
+Architecture 图是块状图：
+- 文本使用 --chart-text
+- 组/群组背景使用 --chart-surface-*
+- 服务/组件背景使用 --chart-fill-*
+- 边框使用 --chart-stroke-*
+- 连接线使用 --chart-edge
+
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Architecture 文本 === */
+  --mermaid-architecture-text: var(--chart-text);
+
+  /* === Architecture 组背景 === */
+  --mermaid-architecture-group-bg: var(--chart-surface-1);
+
+  /* === Architecture 服务背景 === */
+  --mermaid-architecture-service-bg: var(--chart-fill-0);
+
+  /* === Architecture 边框 === */
+  --mermaid-architecture-border: var(--chart-stroke-0);
+
+  /* === Architecture 连接线 === */
+  --mermaid-architecture-line: var(--chart-edge);
+}

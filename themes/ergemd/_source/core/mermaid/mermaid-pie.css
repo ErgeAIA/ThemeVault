@@ -1,0 +1,28 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-pie.css
+================================================================================
+
+职责：Pie 饼图变量映射
+优先级：Mermaid 层
+
+设计原则：
+- Pie 图数据序列使用 --chart-series-*
+- chart-series 可以比 chart-fill 更鲜艳（C 值 0.20-0.35）
+- Pie 图不需要考虑文字对比度问题，因为扇区不承载文字
+- 数据序列之间需要高对比度以区分不同数据
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Pie 数据序列（可更鲜艳）===
+     chart-series C 值 0.20-0.35，用于数据区分
+     不承载文字，允许高饱和度 */
+  --mermaid-pie-0: var(--chart-series-0);
+  --mermaid-pie-1: var(--chart-series-1);
+  --mermaid-pie-2: var(--chart-series-2);
+  --mermaid-pie-3: var(--chart-series-3);
+  --mermaid-pie-4: var(--chart-series-4);
+  --mermaid-pie-5: var(--chart-series-5);
+}

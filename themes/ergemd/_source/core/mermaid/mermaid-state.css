@@ -1,0 +1,31 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-state.css
+================================================================================
+
+职责：State Diagram 状态图变量映射
+优先级：Mermaid 层
+
+设计原则：
+- 状态背景使用 --chart-surface-1（承载文字）
+- 状态边框使用 --chart-stroke-0
+- 状态文字使用 --chart-text
+- 转换箭头使用 --chart-edge
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === State 状态（承载文字）=== */
+  --mermaid-state-bg: var(--chart-surface-1);
+  --mermaid-state-border: var(--chart-stroke-0);
+  --mermaid-state-text: var(--chart-text);
+
+  /* === State Diagram 特定变量名 === */
+  --mermaid-stateBkg: var(--chart-surface-1);
+  --mermaid-stateBorder: var(--chart-stroke-0);
+  --mermaid-stateTextColor: var(--chart-text);
+
+  /* === Transition 转换箭头 === */
+  --mermaid-transitionColor: var(--chart-edge);
+}

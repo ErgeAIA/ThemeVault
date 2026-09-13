@@ -1,0 +1,262 @@
+/*
+================================================================================
+ErgeMD 主题系统 - theme-core.css
+================================================================================
+
+职责：定义全局 CSS 变量默认值（防御性兜底）
+优先级：最低（最先加载）
+
+使用说明：
+- 此文件提供变量接口和 fallback 值
+- 后续 base 文件和主题文件会覆盖这些值
+- 使用 html:not([data-theme]) 确保不影响有 data-theme 的元素
+
+================================================================================
+*/
+
+/* ============================================
+   1. 防御性兜底（只有没有 data-theme 时生效）
+   ============================================ */
+html:not([data-theme]) {
+  /* === 基础背景变量 === */
+  --bg-page: #282830;
+  --bg-reader: #2E2E38;
+  --bg-sidebar: #222230;
+  --bg-code: #262630;
+  --bg-secondary: #2E2E38;
+  --bg-tertiary: #262630;
+
+  /* === 文本变量 === */
+  --text-primary: #E0E0E0;
+  --text-secondary: #A6A6A6;
+  --text-muted: #808080;
+  --text-heading: #FAFAFA;
+
+  /* === 标题层级 fallback === */
+  --h1-color: #FAFAFA;
+  --h2-color: #7AA2F7;
+  --h3-color: #BB9AF7;
+  --h4-color: #7DCFFF;
+  --h5-color: #9ECE6A;
+  --h6-color: #788090;
+
+  /* === Accent 色 fallback === */
+  --accent-cyan: #7DCFFF;
+  --accent-pink: #F7768E;
+  --accent-purple: #BB9AF7;
+  --accent-green: #9ECE6A;
+  --accent-yellow: #E0AF68;
+  --accent-red: #F7768E;
+  --accent-orange: #FF9E64;
+  --accent-blue: #7AA2F7;
+
+  /* === Brand 色 fallback === */
+  --brand-primary: #7DCFFF;
+  --brand-secondary: #BB9AF7;
+  --brand-gradient: linear-gradient(135deg, #7DCFFF, #BB9AF7);
+  --brand-logo: #7DCFFF;
+
+  /* === RGB 输入变量 fallback（用于 rgba 合成）=== */
+  --accent-cyan-rgb: 125, 207, 255;
+  --accent-pink-rgb: 247, 118, 142;
+  --accent-purple-rgb: 187, 154, 247;
+  --accent-green-rgb: 158, 206, 106;
+  --accent-yellow-rgb: 224, 175, 104;
+  --accent-red-rgb: 247, 118, 142;
+  --accent-orange-rgb: 255, 158, 100;
+  --accent-blue-rgb: 122, 162, 247;
+  --brand-primary-rgb: 125, 207, 255;
+  --brand-secondary-rgb: 187, 154, 247;
+
+  /* === Alpha 系数变量 === */
+  --alpha-hover: 0.06;
+  --alpha-hover-light: 0.05;
+  --alpha-hover-medium: 0.10;
+  --alpha-hover-subtle: 0.03;
+  --alpha-selected: 0.15;
+  --alpha-active: 0.30;
+  --alpha-divider: 0.10;
+  --alpha-border-subtle: 0.05;
+  --alpha-code-bg: 0.12;
+  --alpha-inline-code-bg: 0.12;
+  --alpha-code-border: 0.08;
+  --alpha-code-label-bg: 0.03;
+  --alpha-toast-bg: 0.08;
+  --alpha-toast-border: 0.20;
+  --alpha-btn-primary-bg: 0.10;
+  --alpha-btn-primary-border: 0.20;
+  --alpha-btn-secondary-bg: 0.05;
+  --alpha-btn-secondary-border: 0.10;
+  --alpha-drop-zone: 0.15;
+  --alpha-drop-zone-hover: 0.30;
+  --alpha-logo-bg: 0.15;
+  --alpha-logo-border: 0.10;
+  --alpha-table-header-bg: 0.05;
+  --alpha-table-border: 0.08;
+  --alpha-table-hover-bg: 0.03;
+  --alpha-blockquote-bg: 0.10;
+  --alpha-selection-bg: 0.20;
+  --alpha-toc-hover-bg: 0.92;
+  --alpha-toc-text-active: 1;
+  --alpha-toc-text-inactive: 0.65;
+  --alpha-status-bar-bg: 0.80;
+  --alpha-overlay-bg: 0.85;
+  --alpha-danger-hover-bg: 0.15;
+  --alpha-close-hover-bg: 0.60;
+  --alpha-slider-glow: 0.30;
+  --alpha-pulse-glow-dim: 0.20;
+  --alpha-pulse-glow-bright: 0.40;
+  --alpha-search-highlight: 0.25;
+  --alpha-search-highlight-active: 0.50;
+
+  /* === 图表专用色板 fallback === */
+  --chart-text: #E0E0E0;
+  --chart-text-muted: #A6A6A6;
+  --chart-edge: #808080;
+  --chart-label-bg: #282830;
+  --chart-surface-1: #2E2E38;
+  --chart-surface-2: #282830;
+  --chart-surface-3: #262630;
+
+  /* Chart fill（承载文字的安全填充色）fallback */
+  --chart-fill-0: #3A3A4A;
+  --chart-fill-1: #4A4A5A;
+  --chart-fill-2: #5A5A6A;
+  --chart-fill-3: #6A6A7A;
+  --chart-fill-4: #7A7A8A;
+  --chart-fill-5: #8A8A9A;
+  --chart-fill-6: #9A9AAA;
+  --chart-fill-7: #AAAAAA;
+
+  /* Chart stroke（边框、连线、分支线）fallback */
+  --chart-stroke-0: #6AB0FF;
+  --chart-stroke-1: #BB9AF7;
+  --chart-stroke-2: #9ECE6A;
+  --chart-stroke-3: #E0AF68;
+  --chart-stroke-4: #F7768E;
+  --chart-stroke-5: #FF9E64;
+  --chart-stroke-6: #7DCFFF;
+  --chart-stroke-7: #BB9AF7;
+
+  /* Chart series（数据序列色，可更鲜艳）fallback */
+  --chart-series-0: #7DCFFF;
+  --chart-series-1: #9ECE6A;
+  --chart-series-2: #E0AF68;
+  --chart-series-3: #F7768E;
+  --chart-series-4: #BB9AF7;
+  --chart-series-5: #FF9E64;
+  --chart-series-6: #7AA2F7;
+  --chart-series-7: #C586C0;
+
+  /* === 搜索高亮 fallback === */
+  --search-highlight: rgba(224, 175, 104, 0.25);
+  --search-highlight-active: rgba(224, 175, 104, 0.50);
+
+  /* === Admonition fallback === */
+  --admonition-note-bg: rgba(125, 207, 255, 0.08);
+  --admonition-note-border: rgba(125, 207, 255, 0.20);
+  --admonition-tip-bg: rgba(158, 206, 106, 0.08);
+  --admonition-tip-border: rgba(158, 206, 106, 0.20);
+  --admonition-warning-bg: rgba(224, 175, 104, 0.08);
+  --admonition-warning-border: rgba(224, 175, 104, 0.20);
+  --admonition-danger-bg: rgba(247, 118, 142, 0.08);
+  --admonition-danger-border: rgba(247, 118, 142, 0.20);
+  --admonition-info-bg: rgba(125, 207, 255, 0.08);
+  --admonition-info-border: rgba(125, 207, 255, 0.20);
+  --admonition-success-bg: rgba(158, 206, 106, 0.08);
+  --admonition-success-border: rgba(158, 206, 106, 0.20);
+
+  /* === 滚动条 fallback === */
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: #585860;
+  --scrollbar-thumb-hover: #787880;
+
+  /* === 阴影 fallback === */
+  --shadow-popup: 0 4px 24px rgba(0, 0, 0, 0.5);
+  --shadow-menu: 0 4px 16px rgba(0, 0, 0, 0.4);
+
+  /* === 交互状态 fallback === */
+  --hover-bg: rgba(255, 255, 255, var(--alpha-hover));
+  --selected-bg: rgba(125, 207, 255, var(--alpha-selected));
+  --active-border: rgba(125, 207, 255, var(--alpha-active));
+  --divider: rgba(125, 207, 255, var(--alpha-divider));
+  --border-subtle: rgba(255, 255, 255, var(--alpha-border-subtle));
+
+  /* === Overlay fallback === */
+  --overlay-bg: rgba(0, 0, 0, var(--alpha-overlay-bg));
+
+  /* === 阅读区 elevated fallback === */
+  --reader-bg-elevated: #262630;
+
+  /* === 状态栏 fallback === */
+  --status-bar-bg: rgba(40, 40, 48, var(--alpha-status-bar-bg));
+
+  /* === 代码块 fallback === */
+  --code-label-bg: rgba(125, 207, 255, var(--alpha-code-label-bg));
+  --code-border: rgba(125, 207, 255, var(--alpha-code-border));
+
+  /* === TOC fallback === */
+  --toc-hover-bg: rgba(46, 46, 56, var(--alpha-toc-hover-bg));
+  --toc-hover-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --toc-text-active: rgba(125, 207, 255, var(--alpha-toc-text-active));
+  --toc-text-inactive: rgba(180, 180, 200, var(--alpha-toc-text-inactive));
+
+  /* === 表格 fallback === */
+  --table-header-bg: rgba(125, 207, 255, var(--alpha-table-header-bg));
+  --table-header-text: #7DCFFF;
+  --table-border: rgba(125, 207, 255, var(--alpha-table-border));
+  --table-hover-bg: rgba(125, 207, 255, var(--alpha-table-hover-bg));
+
+  /* === 引用块 fallback === */
+  --blockquote-bg: rgba(187, 154, 247, var(--alpha-blockquote-bg));
+  --blockquote-text: #A6A6A6;
+
+  /* === 行内代码 fallback === */
+  --inline-code-bg: rgba(247, 118, 142, var(--alpha-inline-code-bg));
+  --inline-code-text: #F7768E;
+
+  /* === 代码高亮 fallback === */
+  --code-keyword: #BB9AF7;
+  --code-string: #9ECE6A;
+  --code-number: #FF9E64;
+  --code-comment: #909096;
+  --code-function: #7DCFFF;
+  --code-text: #E0E0E0;
+  --code-label: #FF9E64;
+  --copy-success: #9ECE6A;
+
+  /* === 标题栏 fallback === */
+  --titlebar-gradient: linear-gradient(90deg, #7DCFFF, #BB9AF7, #F7768E);
+
+  /* === WelcomePage fallback === */
+  --logo-bg: linear-gradient(135deg, rgba(125, 207, 255, var(--alpha-logo-bg)), rgba(187, 154, 247, 0.10));
+  --logo-border: rgba(125, 207, 255, var(--alpha-logo-border));
+  --drop-zone-border: rgba(125, 207, 255, var(--alpha-drop-zone));
+  --drop-zone-hover-border: rgba(125, 207, 255, var(--alpha-drop-zone-hover));
+  --btn-primary-bg: rgba(125, 207, 255, var(--alpha-btn-primary-bg));
+  --btn-primary-border: rgba(125, 207, 255, var(--alpha-btn-primary-border));
+  --btn-primary-hover-bg: rgba(125, 207, 255, var(--alpha-btn-primary-bg));
+  --btn-secondary-bg: rgba(255, 255, 255, var(--alpha-btn-secondary-bg));
+  --btn-secondary-border: rgba(255, 255, 255, var(--alpha-btn-secondary-border));
+  --btn-secondary-hover-bg: rgba(255, 255, 255, var(--alpha-btn-secondary-bg));
+  --danger-hover-bg: rgba(247, 118, 142, var(--alpha-danger-hover-bg));
+
+  /* === Toast fallback === */
+  --toast-info-bg: rgba(125, 207, 255, var(--alpha-toast-bg));
+  --toast-info-border: rgba(125, 207, 255, var(--alpha-toast-border));
+  --toast-success-bg: rgba(158, 206, 106, var(--alpha-toast-bg));
+  --toast-success-border: rgba(158, 206, 106, var(--alpha-toast-border));
+  --toast-error-bg: rgba(247, 118, 142, var(--alpha-toast-bg));
+  --toast-error-border: rgba(247, 118, 142, var(--alpha-toast-border));
+  --toast-warning-bg: rgba(224, 175, 104, var(--alpha-toast-bg));
+  --toast-warning-border: rgba(224, 175, 104, var(--alpha-toast-border));
+
+  /* === 动画/滑块 fallback === */
+  --slider-glow: 0 0 4px rgba(125, 207, 255, var(--alpha-slider-glow));
+  --pulse-glow-dim: 0 0 5px rgba(125, 207, 255, var(--alpha-pulse-glow-dim));
+  --pulse-glow-bright: 0 0 20px rgba(125, 207, 255, var(--alpha-pulse-glow-bright));
+
+  /* === 选区 fallback === */
+  --selection-bg: rgba(125, 207, 255, var(--alpha-selection-bg));
+  --selection-text: #FAFAFA;
+}

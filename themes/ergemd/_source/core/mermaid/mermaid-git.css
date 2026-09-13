@@ -1,0 +1,34 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-git.css
+================================================================================
+
+职责：Git Graph Git 图表变量映射
+优先级：Mermaid 层
+
+设计原则：
+- 分支线颜色使用 --chart-stroke-*（装饰性连线）
+- 提交节点使用 --chart-stroke-0（边框）和 --chart-fill-0（填充）
+- 标签背景使用 --chart-surface-1
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Git 分支线（装饰性连线）=== */
+  --mermaid-git-branch-0: var(--chart-edge);
+  --mermaid-git-branch-1: var(--chart-stroke-1);
+  --mermaid-git-branch-2: var(--chart-stroke-2);
+  --mermaid-git-branch-3: var(--chart-stroke-3);
+
+  /* === Git 提交节点 === */
+  --mermaid-git-commit: var(--chart-stroke-0);
+  --mermaid-git-commit-border: var(--chart-stroke-0);
+
+  /* === Git 标签 === */
+  --mermaid-git-label-bg: var(--chart-surface-1);
+  --mermaid-git-label-text: var(--chart-text);
+
+  --mermaid-git-tag-bg: var(--chart-fill-1);
+  --mermaid-git-tag-text: var(--chart-text);
+}

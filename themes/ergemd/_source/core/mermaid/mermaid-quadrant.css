@@ -1,0 +1,42 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-quadrant.css
+================================================================================
+
+职责：Quadrant Chart 象限图变量映射
+优先级：Mermaid 层
+
+象限图是数据序列图：
+- X/Y 轴使用 --chart-edge
+- 象限背景使用 --chart-surface-*
+- 数据点使用 --chart-series-*
+- 标题和标签使用 --chart-text
+
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === 象限图背景 === */
+  --mermaid-quadrant-bg: var(--chart-surface-1);
+
+  /* === 象限图标题 === */
+  --mermaid-quadrant-title: var(--chart-text);
+
+  /* === 轴标签 === */
+  --mermaid-quadrant-axis-label: var(--chart-text);
+
+  /* === 轴线 === */
+  --mermaid-quadrant-axis-line: var(--chart-edge);
+
+  /* === 象限边界线 === */
+  --mermaid-quadrant-divider: var(--chart-edge);
+
+  /* === 数据点颜色（使用 series 色）=== */
+  --mermaid-quadrant-point-0: var(--chart-series-0);
+  --mermaid-quadrant-point-1: var(--chart-series-1);
+  --mermaid-quadrant-point-2: var(--chart-series-2);
+  --mermaid-quadrant-point-3: var(--chart-series-3);
+  --mermaid-quadrant-point-4: var(--chart-series-4);
+  --mermaid-quadrant-point-5: var(--chart-series-5);
+}

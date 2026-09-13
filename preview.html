@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ThemeVault 主题预览</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #0f1115; color: #e8e8ee; }
+  header { position: sticky; top: 0; z-index: 10; background: #0f1115ee; backdrop-filter: blur(6px); padding: 16px 24px; border-bottom: 1px solid #262a33; }
+  h1 { margin: 0 0 10px; font-size: 20px; }
+  .controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  input { background: #1a1d24; color: #e8e8ee; border: 1px solid #2c313c; border-radius: 8px; padding: 7px 12px; font-size: 13px; width: 280px; }
+  .chip { background: #1a1d24; border: 1px solid #2c313c; color: #aab; border-radius: 999px; padding: 6px 14px; font-size: 12.5px; cursor: pointer; user-select: none; }
+  .chip.active { background: #3b5bdb; border-color: #3b5bdb; color: #fff; }
+  /* 家族筛选下拉 */
+  .family-filter-wrap { position: relative; display: inline-block; }
+  .family-filter { background: #1a1d24; border: 1px solid #2c313c; color: #e8e8ee; border-radius: 8px; padding: 7px 14px; font-size: 13px; cursor: pointer; }
+  .family-filter:hover { border-color: #3a4250; }
+  .family-dropdown { display: none; position: absolute; top: calc(100% + 4px); left: 0; min-width: 210px; max-height: 60vh; overflow-y: auto; background: #1a1d24; border: 1px solid #2c313c; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.45); z-index: 20; padding: 4px; }
+  .family-dropdown.open { display: block; }
+  .family-item { padding: 7px 12px; border-radius: 5px; cursor: pointer; font-size: 13px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .family-item:hover { background: #262a33; }
+  .family-item.active { background: #3b5bdb; color: #fff; }
+  .family-item .count { opacity: 0.6; font-size: 11px; }
+  /* 瀑布流：卡片高度自适应内容，Token 多自然变高，错落排列 */
+  main { columns: 4 340px; column-gap: 18px; padding: 24px; }
+  .card { break-inside: avoid; margin: 0 0 18px; background: #161a21; border: 1px solid rgba(128,128,140,0.22); border-radius: 12px; overflow: hidden; transition: border-color .15s; }
+  .card:hover { border-color: rgba(128,128,140,0.45); }
+  .card-head { padding: 10px 14px 6px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .card-head b { font-size: 14px; }
+  .card-head b a, .cg-head a { color: inherit; text-decoration: none; cursor: pointer; }
+  .card-head b a:hover, .cg-head a:hover { text-decoration: underline; }
+  .card-head .meta { font-size: 10px; opacity: 0.6; text-align: right; line-height: 1.4; }
+  .badges { padding: 0 14px 6px; display: flex; gap: 14px; flex-wrap: wrap; font-family: ui-monospace, Consolas, monospace; font-size: 10px; }
+  .brand-row { padding: 0 14px 8px; display: flex; align-items: center; gap: 8px; }
+  .brand-swatch { width: 22px; height: 22px; border-radius: 5px; border: 1px solid rgba(128,128,140,0.35); flex-shrink: 0; }
+  .brand-label { font-family: ui-monospace, Consolas, monospace; font-size: 11px; opacity: 0.9; }
+  .section { padding: 4px 14px; }
+  .section-title { font-size: 11px; font-weight: 600; opacity: 0.9; margin: 6px 0 4px; }
+  /* 色块网格：auto-fill + minmax 使每行填满，不满行也均匀（解决两端对齐错乱） */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 6px; }
+  .swatch { border-radius: 5px; overflow: hidden; }
+  .swatch-color { height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-family: ui-monospace, Consolas, monospace; font-size: 9px; }
+  .swatch-label { font-size: 9px; text-align: center; padding: 2px 2px 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0.85; }
+  /* 底部 tags：flex-wrap 自然换行，不硬编码列数 */
+  .tags { padding: 6px 14px 10px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: rgba(128,128,140,0.18); color: inherit; opacity: 0.9; }
+  .tag.num-tag { font-family: ui-monospace, Consolas, monospace; color: #ffd43b; opacity: 1; }
+  .tag.brand-tag { font-family: ui-monospace, Consolas, monospace; color: #ff9e9e; opacity: 1; }
+  .tag.brand-tag .dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+  .tag.mono-tag { font-family: ui-monospace, Consolas, monospace; color: #9ecbff; opacity: 1; }
+  .tag.light { color: #ffd43b; opacity: 1; } .tag.dark { color: #748ffc; opacity: 1; }
+  /* 对比功能 */
+  .cmp-btn { background: #1a1d24; border: 1px solid #2c313c; color: #e8e8ee; border-radius: 8px; padding: 7px 14px; font-size: 13px; cursor: pointer; }
+  .cmp-btn:hover { border-color: #3a4250; }
+  .cmp-btn.active { background: #7c3aed; border-color: #7c3aed; color: #fff; }
+  .compare-bar { display: none; margin-top: 10px; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .compare-bar.open { display: flex; }
+  .compare-bar #cmpStatus { font-size: 13px; }
+  .cmp-go { background: #3b5bdb; border: none; color: #fff; border-radius: 8px; padding: 7px 16px; font-size: 13px; cursor: pointer; }
+  .cmp-go:disabled { opacity: 0.4; cursor: not-allowed; }
+  .cmp-go:not(:disabled):hover { background: #4a68e8; }
+  .cmp-cancel { background: transparent; border: 1px solid #2c313c; color: #aab; border-radius: 8px; padding: 7px 14px; font-size: 13px; cursor: pointer; }
+  .card { position: relative; }
+  .card .cmp-check { display: none; position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.25); color: #fff; border-radius: 6px; padding: 3px 8px; font-size: 11px; cursor: pointer; z-index: 3; }
+  .card.cmp-mode .cmp-check { display: block; }
+  .card.cmp-mode .cmp-check:hover { background: rgba(0,0,0,0.7); }
+  .card.cmp-selected { border-color: #7c3aed; box-shadow: 0 0 0 1px #7c3aed; }
+  .card.cmp-selected .cmp-check { background: #7c3aed; border-color: #7c3aed; }
+  /* 对比结果：grid 布局（上下列对齐）+ 角色列窄 + 上方卡片 + 色块点击复制 */
+  .compare-view { display: none; padding: 24px; }
+  .compare-view.open { display: block; }
+  .compare-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .compare-toolbar b { font-size: 18px; }
+  .cmp-back { background: #1a1d24; border: 1px solid #2c313c; color: #e8e8ee; border-radius: 8px; padding: 7px 16px; font-size: 13px; cursor: pointer; }
+  .compare-grid { display: grid; gap: 1px; background: #232833; border: 1px solid #232833; border-radius: 12px; overflow: hidden; }
+  .compare-grid .cg-cell { padding: 6px 8px; background: #161a21; text-align: center; min-width: 0; overflow: hidden; }
+  .cg-head { background: #1a1d24; font-size: 13px; font-weight: 600; }
+  .th-sub { font-size: 10px; opacity: 0.6; font-weight: 400; }
+  .cg-role { display: flex; align-items: center; justify-content: flex-start; font-size: 13px; background: #1a1d24; white-space: nowrap; line-height: 1.25; }
+  .cg-card-label { background: #11141a; font-size: 13px; color: #889; display: flex; align-items: center; justify-content: center; writing-mode: vertical-rl; }
+  .cg-card-cell { padding: 10px; background: #0f1115; }
+  .cg-card-cell .card { margin: 0; width: 100%; }
+  .cg-section { background: #11141a; font-weight: 600; font-size: 11px; text-align: left; opacity: 0.9; }
+  .cmp-swatch { border-radius: 5px; height: 30px; display: flex; align-items: center; justify-content: center; font-family: ui-monospace, Consolas, monospace; font-size: 9px; margin: 0 auto; min-width: 60px; cursor: pointer; }
+  .cmp-swatch:hover, .swatch-color:hover { outline: 2px solid #fff; outline-offset: 1px; }
+  .swatch-color { cursor: pointer; }
+  .cmp-sub { font-size: 10px; opacity: 0.7; margin-top: 2px; }
+  .cmp-empty { opacity: 0.3; }
+  .copy-toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); background: #3b5bdb; color: #fff; padding: 9px 18px; border-radius: 8px; font-size: 13px; z-index: 100; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  .copy-toast.show { opacity: 1; }
+  footer { padding: 20px 24px; color: #667; font-size: 12px; }
+  .empty { padding: 40px; text-align: center; color: #667; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🦐 ThemeVault 主题预览</h1>
+  <div class="controls">
+    <input id="q" placeholder="搜索主题名 / 家族 / 编号…">
+    <div class="family-filter-wrap">
+      <button class="family-filter" id="familyBtn" type="button">全部家族 ▾</button>
+      <div class="family-dropdown" id="familyDropdown"></div>
+    </div>
+    <span class="chip active" data-s="all">全部</span>
+    <span class="chip" data-s="light">Light</span>
+    <span class="chip" data-s="dark">Dark</span>
+    <button class="cmp-btn" id="cmpBtn" type="button">⚖ 对比</button>
+  </div>
+  <div class="compare-bar" id="compareBar">
+    <span id="cmpStatus">已选 0/4（至少 2 个）</span>
+    <button class="cmp-go" id="cmpGo" type="button" disabled>查看对比</button>
+    <button class="cmp-cancel" id="cmpCancel" type="button">退出选择</button>
+    <button class="cmp-back" id="cmpBackTop" type="button" style="display:none">← 返回</button>
+  </div>
+</header>
+<main id="grid"></main>
+<div class="compare-view" id="compareView"></div>
+<div class="copy-toast" id="copyToast"></div>
+<footer>数据驱动 SPA · 数据源 preview/data.js（由 scripts/gen_index.py 从 INDEX.json 生成）· 色值均取自官方源码</footer>
+
+<script src="preview/data.js"></script>
+<script>
+// 家族感知映射（从 gen_preview.py 移植）
+const SECTION_ROLES = [
+  ["背景 / 文本 / 边框", ["bg","bg-surface","bg-surface-2","bg-elevated","bg-hover","text","text-muted","text-dim","border","border-strong","border-focus","card","hairline"]],
+  ["强调色", ["accent","accent-hover","accent-deep","accent-secondary","accent-foreground"]],
+  ["状态色", ["ok","ok-fill","warn","warn-fill","danger","danger-fill","info","info-fill","queued","queued-fill"]],
+  ["语法高亮", ["syntax-comment","syntax-keyword","syntax-string","syntax-literal","syntax-title","syntax-attr"]],
+];
+const FAMILY_SECTION_ROLES = {
+  ergemd: [
+    ["背景 / 文本", ["bg-page","bg-reader","bg-sidebar","bg-code","bg-secondary","bg-tertiary","text-primary","text-secondary","text-muted","text-heading"]],
+    ["标题层级", ["h1-color","h2-color","h3-color","h4-color","h5-color","h6-color"]],
+    ["强调 / 品牌", ["accent-cyan","accent-pink","accent-purple","accent-green","accent-yellow","accent-orange","accent-red","accent-blue","brand-primary","brand-secondary","brand-logo"]],
+    ["状态色 (callout)", ["obsidian-callout-note","obsidian-callout-info","obsidian-callout-success","obsidian-callout-warning","obsidian-callout-danger"]],
+    ["语法高亮", ["code-keyword","code-string","code-number","code-comment","code-function","code-text"]],
+  ],
+};
+const BADGE_ROLES = {
+  opensquilla: [["text","bg"],["text-muted","bg"],["text-dim","bg"]],
+  catppuccin: [["text","bg"],["text-muted","bg"],["text-dim","bg"]],
+  ergemd: [["text-primary","bg-page"],["text-secondary","bg-page"],["text-muted","bg-page"]],
+};
+const BG_TEXT_ROLES = { ergemd: ["bg-page","text-primary"] };
+
+// L1 → ergemd 原生角色映射（让 ergemd 主题进 L1 对比矩阵；ergemd 无的概念如 border 不映射，显示 —）
+const ERGE_MD_L1_MAP = {
+  "bg":"bg-page", "bg-surface":"bg-reader",
+  "text":"text-primary", "text-muted":"text-secondary", "text-dim":"text-muted",
+  "accent":"accent-blue", "ok":"accent-green", "warn":"accent-yellow",
+  "danger":"accent-red", "info":"accent-cyan", "queued":"accent-purple",
+  "syntax-keyword":"code-keyword", "syntax-string":"code-string", "syntax-literal":"code-number",
+  "syntax-comment":"code-comment", "syntax-title":"code-function"
+};
+// 取主题在 L1 角色 r 上的色值：L1 家族直接取，ergemd 经映射取原生角色。
+function l1Value(s, r){
+  if(!s.theme.tokens) return null;
+  if(s.theme.tokens[r]) return s.theme.tokens[r];
+  if(s.family==="ergemd" && ERGE_MD_L1_MAP[r]) return s.theme.tokens[ERGE_MD_L1_MAP[r]] || null;
+  return null;
+}
+
+// AA 对比度算法（WCAG）
+function luminance(hex){const h=hex.replace("#","");if(h.length!==6)return 0.5;const rgb=[0,2,4].map(i=>parseInt(h.substr(i,2),16)/255);const lin=c=>c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);return 0.2126*lin(rgb[0])+0.7152*lin(rgb[1])+0.0722*lin(rgb[2]);}
+function contrast(a,b){const la=luminance(a),lb=luminance(b);return(Math.max(la,lb)+0.05)/(Math.min(la,lb)+0.05);}
+function fgFor(hex){return luminance(hex)>0.55?"#101014":"#f5f5f7";}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function titleLink(fam, name){const t=esc(name);return (fam&&fam.sourceRepo)?`<a href="${fam.sourceRepo}" target="_blank" rel="noopener noreferrer">${t}</a>`:t;}
+
+function renderCard(fam, theme){
+  if (theme.type !== "value-theme" || !theme.tokens) return "";
+  const family = fam.family;
+  const tokens = theme.tokens;
+  const [bgRole, textRole] = BG_TEXT_ROLES[family] || ["bg","text"];
+  const bg = tokens[bgRole] || "#1e1e2e";
+  const text = tokens[textRole] || "#e5e5e5";
+  const sections = FAMILY_SECTION_ROLES[family] || SECTION_ROLES;
+  const num = theme.number;
+  const numStr = num ? String(num).padStart(3,"0") : "";
+  const numTag = numStr ? `<span class="tag num-tag">#${numStr}</span>` : "";
+  const brand = theme.brand;
+  const bt = brand && brand.buttonText === "dark" ? "深字" : "浅字";
+  const brandTag = brand && brand.color ? `<span class="tag brand-tag"><i class="dot" style="background:${brand.color}"></i>${brand.color}·${bt}</span>` : "";
+  const scheme = theme.scheme || "?";
+  const license = theme.license || "";
+  const fontsTag = (theme.fonts && theme.fonts.length) ? `<span class="tag mono-tag">${esc(theme.fonts.join(" · "))}</span>` : "";
+
+  // AA 徽标（家族感知，未登记家族兜底 opensquilla）
+  const badgePairs = BADGE_ROLES[family] || BADGE_ROLES.opensquilla;
+  const badges = badgePairs.map(([r,bgr])=>{
+    if(!tokens[r]||!tokens[bgr])return"";
+    const ratio=contrast(tokens[r],tokens[bgr]);const ok=ratio>=4.5;
+    return`<span style="color:${ok?"#3fb950":"#f85149"}">${r} ${ratio.toFixed(1)} ${ok?"✓":"✗"}</span>`;
+  }).join("");
+
+  // 品牌色行
+  const brandRow = brand && brand.color
+    ? `<div class="brand-row"><div class="brand-swatch" style="background:${brand.color}"></div><span class="brand-label">品牌色 ${brand.color} · ${bt}</span></div>`
+    : "";
+
+  // 分区色块
+  const sectionsHtml = sections.map(([title, roles])=>{
+    const swatches = roles.filter(r=>tokens[r]).map(r=>{
+      const v=tokens[r];const fg=fgFor(v);
+      return`<div class="swatch"><div class="swatch-color" data-hex="${v}" style="background:${v};color:${fg}">${v}</div><div class="swatch-label" title="${r}">${r}</div></div>`;
+    }).join("");
+    if(!swatches)return"";
+    return`<div class="section"><div class="section-title">${title}</div><div class="swatches">${swatches}</div></div>`;
+  }).join("");
+
+  const tags = `${numTag}${brandTag}<span class="tag ${scheme}">${scheme}</span><span class="tag">${esc(fam.familyDisplayName || family)}</span><span class="tag">${esc(license)}</span>${fontsTag}`;
+
+  return `<div class="card" data-name="${esc(theme.displayName)}" data-family="${esc(family)}" data-scheme="${esc(scheme)}" data-number="${numStr}" style="background:${bg};color:${text}">
+    <button class="cmp-check" data-number="${numStr}">＋ 对比</button>
+    <div class="card-head"><b>${titleLink(fam, theme.displayName)}</b><span class="meta">${scheme} · ${theme.tokenCount} tokens<br>${esc(license)}</span></div>
+    <div class="badges">${badges}</div>
+    ${brandRow}
+    ${sectionsHtml}
+    <div class="tags">${tags}</div>
+  </div>`;
+}
+
+function render(){
+  const grid=document.getElementById("grid");
+  const items=[];
+  for(const fam of window.__TV.families){
+    for(const t of fam.themes){
+      if(t.type!=="value-theme"||!t.tokens) continue;
+      items.push({fam,t});
+    }
+  }
+  items.sort((a,b)=>(a.t.number||0)-(b.t.number||0));  // 卡片按编号序
+  grid.innerHTML=items.map(({fam,t})=>renderCard(fam,t)).join("")||`<div class="empty">无主题</div>`;
+}
+
+let selectedFamily = "all";
+
+function fillFamilyDropdown(){
+  const dd = document.getElementById("familyDropdown");
+  const total = window.__TV.families.reduce((s,f)=>s+f.themes.filter(t=>t.type==="value-theme").length,0);
+  const items = [`<div class="family-item active" data-family="all">全部家族 <span class="count">${total}</span></div>`];
+  const fams = window.__TV.families
+    .map(f=>({f, name:f.familyDisplayName||f.family, n:f.themes.filter(t=>t.type==="value-theme").length}))
+    .filter(x=>x.n>0)
+    .sort((a,b)=>a.name.localeCompare(b.name)||a.f.family.localeCompare(b.f.family));  // 按品牌名首字母
+  for(const {f,name,n} of fams){
+    items.push(`<div class="family-item" data-family="${esc(f.family)}">${esc(name)} <span class="count">${n}</span></div>`);
+  }
+  dd.innerHTML = items.join("");
+  dd.querySelectorAll(".family-item").forEach(it=>it.addEventListener("click",()=>selectFamily(it.dataset.family, it)));
+}
+
+function selectFamily(name, el){
+  selectedFamily = name;
+  document.querySelectorAll(".family-item").forEach(i=>i.classList.remove("active"));
+  if(el) el.classList.add("active");
+  const disp = name==="all" ? "全部家族"
+    : ((window.__TV.families.find(f=>f.family===name)||{}).familyDisplayName || name);
+  document.getElementById("familyBtn").textContent = disp + " ▾";
+  document.getElementById("familyDropdown").classList.remove("open");
+  apply();
+}
+
+function apply(){
+  const q=document.getElementById("q").value.toLowerCase();
+  const schemeEl=document.querySelector(".chip.active");
+  const scheme=schemeEl?schemeEl.dataset.s:"all";
+  document.querySelectorAll(".card").forEach(c=>{
+    const name=(c.dataset.name||"").toLowerCase();
+    const fam=(c.dataset.family||"").toLowerCase();
+    const num=(c.dataset.number||"").toLowerCase();
+    const sch=c.dataset.scheme||"";
+    const q2=q.replace(/^#/,"");
+    const okQ=!q||name.includes(q)||fam.includes(q)||num.includes(q2);
+    const okS=scheme==="all"||sch===scheme;
+    const okF=selectedFamily==="all"||fam===selectedFamily.toLowerCase();
+    c.style.display=(okQ&&okS&&okF)?"":"none";
+  });
+}
+
+function setScheme(el){
+  document.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));
+  el.classList.add("active");
+  apply();
+}
+
+document.getElementById("q").addEventListener("input",apply);
+document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>setScheme(c)));
+// 家族筛选按钮：点击 toggle 下拉；点外部关闭
+document.getElementById("familyBtn").addEventListener("click",e=>{
+  e.stopPropagation();
+  document.getElementById("familyDropdown").classList.toggle("open");
+});
+document.addEventListener("click",()=>document.getElementById("familyDropdown").classList.remove("open"));
+document.getElementById("familyDropdown").addEventListener("click",e=>e.stopPropagation());
+
+// ===== 主题对比功能 =====
+let compareMode=false, compareSelected=[], compareViewOn=false;
+
+function findTheme(number){
+  for(const f of window.__TV.families) for(const t of f.themes)
+    if(t.number===number && t.type==="value-theme") return {family:f.family, theme:t, sourceRepo:f.sourceRepo, familyDisplayName:f.familyDisplayName};
+  return null;
+}
+
+function toggleCompareMode(){
+  compareMode=!compareMode;
+  document.getElementById("cmpBtn").classList.toggle("active",compareMode);
+  document.getElementById("compareBar").classList.toggle("open",compareMode);
+  if(!compareMode){
+    compareSelected=[];
+    if(compareViewOn) backFromCompare();  // 对比页面点「退出选择」时同时关闭对比视图，避免卡空白页
+  }
+  updateCompareBar();
+  document.querySelectorAll(".card").forEach(c=>{
+    c.classList.toggle("cmp-mode",compareMode);
+    if(!compareMode) c.classList.remove("cmp-selected");
+  });
+  // 已选重新高亮
+  compareSelected.forEach(n=>{
+    const card=document.querySelector(`.card[data-number="${String(n).padStart(3,"0")}"]`);
+    if(card){card.classList.add("cmp-selected");}
+  });
+  // 更新已选卡片的按钮文字
+  document.querySelectorAll(".cmp-check").forEach(b=>{
+    const sel=compareSelected.includes(parseInt(b.dataset.number));
+    b.textContent=sel?"✓ 已选":"＋ 对比";
+  });
+}
+
+function toggleSelect(number){
+  const idx=compareSelected.indexOf(number);
+  if(idx>=0){ compareSelected.splice(idx,1); }
+  else { if(compareSelected.length>=4) return; compareSelected.push(number); }
+  const card=document.querySelector(`.card[data-number="${String(number).padStart(3,"0")}"]`);
+  if(card) card.classList.toggle("cmp-selected");
+  // 更新该按钮文字
+  const btn=card&&card.querySelector(".cmp-check");
+  if(btn) btn.textContent = idx>=0 ? "＋ 对比" : "✓ 已选";
+  updateCompareBar();
+}
+
+function updateCompareBar(){
+  document.getElementById("cmpStatus").textContent=`已选 ${compareSelected.length}/4（至少 2 个）`;
+  document.getElementById("cmpGo").disabled=compareSelected.length<2;
+}
+
+function showCompare(){
+  if(compareSelected.length<2) return;
+  compareViewOn=true;
+  renderCompare();
+  document.getElementById("compareView").classList.add("open");
+  document.getElementById("grid").style.display="none";
+  document.getElementById("cmpBackTop").style.display="inline-block";
+  document.querySelector("header").scrollIntoView();
+}
+
+function backFromCompare(){
+  compareViewOn=false;
+  document.getElementById("compareView").classList.remove("open");
+  document.getElementById("grid").style.display="";
+  document.getElementById("cmpBackTop").style.display="none";
+}
+
+function renderCompare(){
+  const nums=[...new Set(compareSelected)];
+  const sel=nums.map(findTheme).filter(Boolean);
+  if(sel.length<2) return;
+  const N=sel.length;
+  const cols=`max-content repeat(${N}, 1fr)`;  // 角色列自适应最长角色名（accent-foreground 单行完整）
+  const cells=[];  // 累积 grid 单元格
+  // 表头行：角色列「角色/维度」+ 各主题名
+  cells.push(`<div class="cg-cell cg-head">角色/维度</div>`);
+  sel.forEach(s=>cells.push(`<div class="cg-cell cg-head">${titleLink(s, s.theme.displayName)}<br><span class="th-sub">#${String(s.theme.number).padStart(3,"0")} ${esc(s.familyDisplayName||s.family)}</span></div>`));
+  // 卡片行：角色列竖排「主题卡片」+ 各主题完整卡片（与下方矩阵列对齐）
+  cells.push(`<div class="cg-cell cg-card-label">主题卡片</div>`);
+  sel.forEach(s=>cells.push(`<div class="cg-cell cg-card-cell">${renderCard(s,s.theme)}</div>`));
+  // 元信息行
+  const metaRows=[
+    ["方案", s=>s.theme.scheme||"—"],
+    ["协议", s=>s.theme.license||"—"],
+    ["令牌数", s=>s.theme.tokenCount],
+    ["品牌色", s=>{const b=s.theme.brand;if(!b||!b.color)return"—";return `<div class="cmp-swatch" data-hex="${b.color}" style="background:${b.color};color:${fgFor(b.color)}">${b.color}</div><div class="cmp-sub">${b.buttonText==="dark"?"深字":"浅字"}</div>`;}],
+  ];
+  metaRows.forEach(([label,fn])=>{cells.push(`<div class="cg-cell cg-role">${label}</div>`);sel.forEach(s=>cells.push(`<div class="cg-cell">${fn(s)}</div>`));});
+  // AA 对比度行
+  [["text","bg"],["text-muted","bg"],["text-dim","bg"]].forEach(([r,bgr])=>{
+    cells.push(`<div class="cg-cell cg-role">${r}对比度</div>`);
+    sel.forEach(s=>{const v=l1Value(s,r),bv=l1Value(s,bgr);if(!v||!bv){cells.push(`<div class="cg-cell"><span class="cmp-empty">—</span></div>`);return;}const ratio=contrast(v,bv);if(!ratio){cells.push(`<div class="cg-cell"><span class="cmp-empty">—</span></div>`);return;}const ok=ratio>=4.5;cells.push(`<div class="cg-cell"><span style="color:${ok?"#3fb950":"#f85149"}">${ratio.toFixed(1)} ${ok?"✓":"✗"}</span></div>`);});
+  });
+  // L1 角色色值矩阵（按 section）
+  SECTION_ROLES.forEach(([title,roles])=>{
+    cells.push(`<div class="cg-cell cg-section" style="grid-column:1/-1">${title}</div>`);
+    roles.forEach(r=>{
+      cells.push(`<div class="cg-cell cg-role" title="${r}">${r}</div>`);
+      sel.forEach(s=>{const v=l1Value(s,r);cells.push(`<div class="cg-cell">${v?`<div class="cmp-swatch" data-hex="${v}" style="background:${v};color:${fgFor(v)}">${v}</div>`:`<span class="cmp-empty">—</span>`}</div>`);});
+    });
+  });
+  document.getElementById("compareView").innerHTML=`
+    <div class="compare-toolbar"><b>主题对比</b>（${N} 个）</div>
+    <div class="compare-grid" style="grid-template-columns:${cols}">${cells.join("")}</div>
+    <p style="color:#667;font-size:12px;margin-top:16px">矩阵按 L1 通用语义角色对比；ergemd 家族经 L1 映射对齐（bg→bg-page、code-keyword→syntax-keyword 等），无对应概念的角色（border/fill/accent 变体等）标 —。点击任意色块复制颜色值。</p>`;
+  document.getElementById("cmpBackTop").addEventListener("click",backFromCompare);
+}
+
+document.getElementById("cmpBtn").addEventListener("click",toggleCompareMode);
+document.getElementById("cmpGo").addEventListener("click",showCompare);
+document.getElementById("cmpCancel").addEventListener("click",toggleCompareMode);
+// 卡片选择按钮（事件委托）
+document.getElementById("grid").addEventListener("click",e=>{
+  const b=e.target.closest(".cmp-check");
+  if(b&&compareMode){ e.stopPropagation(); toggleSelect(parseInt(b.dataset.number)); }
+});
+
+// 色块点击复制颜色值（对比矩阵 + 卡片色块）
+document.addEventListener("click",e=>{
+  const sw=e.target.closest(".cmp-swatch, .swatch-color");
+  if(!sw) return;
+  const hex=(sw.dataset.hex||sw.textContent||"").trim();
+  if(!/^#[0-9a-fA-F]{6}$/.test(hex)) return;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(hex).then(()=>showCopyToast(hex)).catch(()=>showCopyToast(hex));
+  } else { showCopyToast(hex); }  // file:// 无 clipboard 时也提示（实际未复制）
+});
+function showCopyToast(hex){
+  const t=document.getElementById("copyToast");
+  t.textContent="已复制 "+hex;
+  t.classList.add("show");
+  clearTimeout(window.__copyTimer);
+  window.__copyTimer=setTimeout(()=>t.classList.remove("show"),1200);
+}
+
+render();
+fillFamilyDropdown();
+</script>
+</body>
+</html>

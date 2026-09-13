@@ -1,0 +1,34 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-kanban.css
+================================================================================
+
+职责：Kanban 看板图变量映射
+优先级：Mermaid 层
+
+Kanban 是块状图：
+- 文本使用 --chart-text
+- 列背景使用 --chart-surface-*
+- 卡片背景使用 --chart-fill-*
+- 边框使用 --chart-stroke-*
+
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Kanban 文本 === */
+  --mermaid-kanban-text: var(--chart-text);
+
+  /* === Kanban 列背景 === */
+  --mermaid-kanban-column-bg: var(--chart-surface-1);
+
+  /* === Kanban 卡片背景 === */
+  --mermaid-kanban-card-bg: var(--chart-fill-0);
+
+  /* === Kanban 卡片边框 === */
+  --mermaid-kanban-card-border: var(--chart-stroke-0);
+
+  /* === Kanban 列分隔线 === */
+  --mermaid-kanban-divider: var(--chart-edge);
+}

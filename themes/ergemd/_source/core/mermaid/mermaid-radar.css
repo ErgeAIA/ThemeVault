@@ -1,0 +1,24 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-radar.css
+================================================================================
+
+职责：Radar Beta 雷达图变量映射
+优先级：Mermaid 层
+
+Radar 图使用 themeVariables 方式设置曲线颜色（cScale0~4）。
+MermaidDiagram.tsx 中 radar.curve0~4 设置 cScale0~cScale4。
+CSS 变量 --mermaid-radar-curve-0~4 用于主题签名追踪。
+
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Radar 数据曲线（使用 series 色，映射到 cScale0~4）=== */
+  --mermaid-radar-curve-0: var(--chart-series-0);
+  --mermaid-radar-curve-1: var(--chart-series-1);
+  --mermaid-radar-curve-2: var(--chart-series-2);
+  --mermaid-radar-curve-3: var(--chart-series-3);
+  --mermaid-radar-curve-4: var(--chart-series-4);
+}

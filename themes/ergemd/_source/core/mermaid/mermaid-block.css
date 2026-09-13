@@ -1,0 +1,31 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-block.css
+================================================================================
+
+职责：Block Beta 块图变量映射
+优先级：Mermaid 层
+
+Block 图是块状图：
+- 文本使用 --chart-text
+- 块背景使用 --chart-fill-*
+- 块边框使用 --chart-stroke-*
+- 连接线使用 --chart-edge
+
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Block 文本 === */
+  --mermaid-block-text: var(--chart-text);
+
+  /* === Block 背景 === */
+  --mermaid-block-bg: var(--chart-fill-0);
+
+  /* === Block 边框 === */
+  --mermaid-block-border: var(--chart-stroke-0);
+
+  /* === Block 箭头/连接线 === */
+  --mermaid-block-line: var(--chart-edge);
+}

@@ -1,0 +1,22 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-sankey.css
+================================================================================
+
+职责：Sankey 桑基图变量映射
+优先级：Mermaid 层
+
+设计原则：
+- 节点背景使用 --chart-surface-1（承载文字）
+- 节点边框使用 --chart-stroke-0
+- 节点文字使用 --chart-text
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Sankey 节点（承载文字）=== */
+  --mermaid-sankey-node-bg: var(--chart-surface-1);
+  --mermaid-sankey-node-border: var(--chart-stroke-0);
+  --mermaid-sankey-node-text: var(--chart-text);
+}

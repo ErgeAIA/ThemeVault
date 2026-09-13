@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "description": "Iceberg L1 semantic role set (VS Code theme JSON keys mapped to L1 roles). required = 29 standard L1 roles; derivedOptional = status fills + selection.",
+  "required": [
+    "bg",
+    "bg-surface",
+    "bg-surface-2",
+    "bg-elevated",
+    "bg-hover",
+    "text",
+    "text-muted",
+    "text-dim",
+    "border",
+    "border-strong",
+    "border-focus",
+    "card",
+    "hairline",
+    "accent",
+    "accent-hover",
+    "accent-deep",
+    "accent-secondary",
+    "accent-foreground",
+    "ok",
+    "warn",
+    "danger",
+    "info",
+    "queued",
+    "syntax-comment",
+    "syntax-keyword",
+    "syntax-string",
+    "syntax-literal",
+    "syntax-title",
+    "syntax-attr"
+  ],
+  "derivedOptional": [
+    "ok-fill",
+    "warn-fill",
+    "danger-fill",
+    "info-fill",
+    "queued-fill",
+    "selection"
+  ]
+}

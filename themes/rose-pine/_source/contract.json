@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "required": [
+    "bg",
+    "bg-surface",
+    "bg-surface-2",
+    "bg-elevated",
+    "bg-hover",
+    "text",
+    "text-muted",
+    "text-dim",
+    "border",
+    "border-strong",
+    "border-focus",
+    "card",
+    "hairline",
+    "accent",
+    "accent-hover",
+    "accent-deep",
+    "accent-secondary",
+    "accent-foreground",
+    "ok",
+    "warn",
+    "danger",
+    "info",
+    "queued",
+    "syntax-comment",
+    "syntax-keyword",
+    "syntax-string",
+    "syntax-literal",
+    "syntax-title",
+    "syntax-attr"
+  ],
+  "derivedOptional": [
+    "ok-fill",
+    "warn-fill",
+    "danger-fill",
+    "info-fill",
+    "queued-fill"
+  ],
+  "description": "rose-pine L1 semantic role set (named palette mapped to L1 roles)."
+}

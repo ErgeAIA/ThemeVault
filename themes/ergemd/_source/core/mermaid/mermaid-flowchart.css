@@ -1,0 +1,33 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-flowchart.css
+================================================================================
+
+职责：Flowchart 流程图变量映射
+优先级：Mermaid 层
+
+设计原则：
+- 节点背景使用 --chart-surface-*（承载文字）
+- 节点边框使用 --chart-stroke-0
+- 连线使用 --chart-edge
+- 边标签背景使用 --chart-surface-2
+- 子图边框使用 --chart-stroke-0
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Flowchart 节点（承载文字）=== */
+  --mermaid-flowchart-node-bg: var(--chart-surface-1);
+  --mermaid-flowchart-node-border: var(--chart-stroke-0);
+  --mermaid-flowchart-node-text: var(--chart-text);
+
+  /* === Flowchart 连线 === */
+  --mermaid-flowchart-edge: var(--chart-edge);
+
+  /* === Flowchart 边标签（承载文字）=== */
+  --mermaid-flowchart-edge-label-bg: var(--chart-surface-2);
+
+  /* === Flowchart 子图 === */
+  --mermaid-flowchart-subgraph-border: var(--chart-stroke-0);
+}

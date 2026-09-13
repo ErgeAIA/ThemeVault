@@ -1,0 +1,39 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-packet.css
+================================================================================
+
+职责：Packet 数据包图变量映射
+优先级：Mermaid 层
+
+Packet 图通过 patchPacketSvg 后处理注入 scoped CSS 覆盖。
+patchPacketSvg 实际使用的变量：
+- --mermaid-packet-block-bg      (字段矩形背景)
+- --mermaid-packet-block-border  (字段矩形边框)
+- --mermaid-packet-label-text    (字段名称文本)
+- --mermaid-packet-byte-text     (bit 编号文本)
+- --mermaid-packet-title-text    (标题文本)
+
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Packet 文本 === */
+  --mermaid-packet-text: var(--chart-text);
+
+  /* === Packet 块背景（patchPacketSvg 使用） === */
+  --mermaid-packet-block-bg: var(--chart-surface-1);
+
+  /* === Packet 块边框（patchPacketSvg 使用） === */
+  --mermaid-packet-block-border: var(--chart-stroke-0);
+
+  /* === Packet 标签文本（patchPacketSvg 使用） === */
+  --mermaid-packet-label-text: var(--chart-text);
+
+  /* === Packet 字节文本（patchPacketSvg 使用） === */
+  --mermaid-packet-byte-text: var(--chart-text);
+
+  /* === Packet 标题文本（patchPacketSvg 使用） === */
+  --mermaid-packet-title-text: var(--chart-text);
+}

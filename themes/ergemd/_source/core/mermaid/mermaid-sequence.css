@@ -1,0 +1,30 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-sequence.css
+================================================================================
+
+职责：Sequence Diagram 时序图变量映射
+优先级：Mermaid 层
+
+设计原则：
+- Actor 背景使用 --chart-surface-1（承载文字）
+- Actor 边框使用 --chart-stroke-0
+- 信号线使用 --chart-edge
+- 注释背景使用 --chart-surface-2
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Sequence Actor（角色，承载文字）=== */
+  --mermaid-sequence-actor-bg: var(--chart-surface-1);
+  --mermaid-sequence-actor-border: var(--chart-stroke-0);
+  --mermaid-sequence-actor-text: var(--chart-text);
+
+  /* === Sequence 信号线 === */
+  --mermaid-sequence-signal: var(--chart-text);
+
+  /* === Sequence 注释（承载文字）=== */
+  --mermaid-sequence-note-bg: var(--chart-surface-2);
+  --mermaid-sequence-note-text: var(--chart-text);
+}

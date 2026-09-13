@@ -1,0 +1,32 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-ishikawa.css
+================================================================================
+
+职责：Ishikawa 石川图/因果图变量映射
+优先级：Mermaid 层
+
+Ishikawa 图是块状图/关系图：
+- 文本使用 --chart-text
+- 原因/结果块背景使用 --chart-fill-*
+- 主干/分支线使用 --chart-edge
+- 边框使用 --chart-stroke-*
+
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === Ishikawa 文本 === */
+  --mermaid-ishikawa-text: var(--chart-text);
+
+  /* === Ishikawa 原因/结果块背景 === */
+  --mermaid-ishikawa-cause-bg: var(--chart-fill-0);
+  --mermaid-ishikawa-effect-bg: var(--chart-fill-1);
+
+  /* === Ishikawa 边框 === */
+  --mermaid-ishikawa-border: var(--chart-stroke-0);
+
+  /* === Ishikawa 连线 === */
+  --mermaid-ishikawa-line: var(--chart-edge);
+}

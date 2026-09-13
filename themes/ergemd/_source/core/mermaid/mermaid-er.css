@@ -1,0 +1,30 @@
+/*
+================================================================================
+ErgeMD 主题系统 - mermaid-er.css
+================================================================================
+
+职责：ER Diagram 实体关系图变量映射
+优先级：Mermaid 层
+
+设计原则：
+- 实体背景使用 --chart-surface-2（承载文字）
+- 属性背景使用 --chart-surface-1（承载文字）
+- 实体边框使用 --chart-stroke-0
+- 关系线使用 --chart-edge
+================================================================================
+*/
+
+[data-theme] {
+
+  /* === ER 实体（承载文字）=== */
+  --mermaid-er-entity-bg: var(--chart-surface-2);
+  --mermaid-er-entity-border: var(--chart-stroke-0);
+  --mermaid-er-entity-text: var(--chart-text);
+
+  /* === ER 属性（承载文字）=== */
+  --mermaid-er-attribute-bg: var(--chart-surface-1);
+  --mermaid-er-attribute-text: var(--chart-text);
+
+  /* === ER 关系线 === */
+  --mermaid-er-relationship: var(--chart-edge);
+}
