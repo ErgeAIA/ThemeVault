@@ -123,7 +123,8 @@
 
 <script src="preview/data.js"></script>
 <script>
-// 家族感知映射（卡片分区 / AA 徽标对 / ergemd L1 映射）
+// 家族感知映射（卡片分区 / AA 徽标对 / ergemd L1 映射）。
+// data.js 派生字段（fam.sections / fam.badgePairs / fam.l1RoleMap，由 gen_index.py 生成）优先，以下常量仅作兜底。
 const SECTION_ROLES = [
   ["背景 / 文本 / 边框", ["bg","bg-surface","bg-surface-2","bg-elevated","bg-hover","text","text-muted","text-dim","border","border-strong","border-focus","card","hairline"]],
   ["强调色", ["accent","accent-hover","accent-deep","accent-secondary","accent-foreground"]],
@@ -159,7 +160,9 @@ const ERGE_MD_L1_MAP = {
 function l1Value(s, r){
   if(!s.theme.tokens) return null;
   if(s.theme.tokens[r]) return s.theme.tokens[r];
-  if(s.family==="ergemd" && ERGE_MD_L1_MAP[r]) return s.theme.tokens[ERGE_MD_L1_MAP[r]] || null;
+  // 仅 ergemd 经 L1 映射对齐；映射以 data.js 派生（fam.l1RoleMap）优先
+  const map = s.family==="ergemd" ? ((s.fam && s.fam.l1RoleMap) || ERGE_MD_L1_MAP) : null;
+  if(map && map[r]) return s.theme.tokens[map[r]] || null;
   return null;
 }
 
@@ -177,7 +180,7 @@ function renderCard(fam, theme){
   const [bgRole, textRole] = BG_TEXT_ROLES[family] || ["bg","text"];
   const bg = tokens[bgRole] || "#1e1e2e";
   const text = tokens[textRole] || "#e5e5e5";
-  const sections = FAMILY_SECTION_ROLES[family] || SECTION_ROLES;
+  const sections = fam.sections || FAMILY_SECTION_ROLES[family] || SECTION_ROLES;
   const num = theme.number;
   const numStr = num ? String(num).padStart(3,"0") : "";
   const numTag = numStr ? `<span class="tag num-tag">#${numStr}</span>` : "";
@@ -189,7 +192,7 @@ function renderCard(fam, theme){
   const fontsTag = (theme.fonts && theme.fonts.length) ? `<span class="tag mono-tag">${esc(theme.fonts.join(" · "))}</span>` : "";
 
   // AA 徽标（家族感知，未登记家族兜底 opensquilla）；不可测对比度显示 —，不输出伪造数字
-  const badgePairs = BADGE_ROLES[family] || BADGE_ROLES.opensquilla;
+  const badgePairs = fam.badgePairs || BADGE_ROLES[family] || BADGE_ROLES.opensquilla;
   const badges = badgePairs.map(([r,bgr])=>{
     if(!tokens[r]||!tokens[bgr])return"";
     const ratio=contrast(tokens[r],tokens[bgr]);
@@ -304,7 +307,7 @@ let compareMode=false, compareSelected=[], compareViewOn=false;
 
 function findTheme(number){
   for(const f of window.__TV.families) for(const t of f.themes)
-    if(t.number===number && t.type==="value-theme") return {family:f.family, theme:t, sourceRepo:f.sourceRepo, familyDisplayName:f.familyDisplayName};
+    if(t.number===number && t.type==="value-theme") return {family:f.family, fam:f, theme:t, sourceRepo:f.sourceRepo, familyDisplayName:f.familyDisplayName};
   return null;
 }
 

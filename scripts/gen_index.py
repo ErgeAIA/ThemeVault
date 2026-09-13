@@ -207,7 +207,7 @@ def text_contrast_of(tokens: dict, family: str) -> dict | None:
 FAMILY_ORDER = ["opensquilla", "catppuccin", "ergemd", "aura", "dracula", "nord", "solarized",
                 "tokyonight", "one-dark-pro", "night-owl", "synthwave", "iceberg",
                 "kanagawa", "everforest", "rose-pine", "ayu", "jellyfish", "shades",
-                "vue", "falcon", "omni"]
+                "vue", "falcon", "omni", "onepage"]
 
 # 家族显示名（卡片底部标签 / 规范品牌名，首字母大写或品牌官方写法）。
 FAMILY_DISPLAY_NAMES = {
@@ -217,7 +217,64 @@ FAMILY_DISPLAY_NAMES = {
     "synthwave": "Synthwave", "iceberg": "Iceberg", "kanagawa": "Kanagawa",
     "everforest": "Everforest", "rose-pine": "Rosé Pine",
     "ayu": "Ayu", "jellyfish": "JellyFish", "shades": "Shades of Purple",
-    "vue": "Vue Theme", "falcon": "Falcon", "omni": "Omni",
+    "vue": "Vue Theme", "falcon": "Falcon", "omni": "Omni", "onepage": "OnePage",
+}
+
+
+# ── 家族感知预览配置（生成进 INDEX.json 的 family.sections / badgePairs / l1RoleMap）──
+# preview.html 优先读 data.js，内置同款常量兜底；分区/映射的单一事实源从 contract 延伸至此。
+# 未在此登记的家族用 L1_SECTIONS / DEFAULT_BADGE_PAIRS。
+
+L1_SECTIONS = [
+    ["背景 / 文本 / 边框", ["bg", "bg-surface", "bg-surface-2", "bg-elevated", "bg-hover",
+                            "text", "text-muted", "text-dim", "border", "border-strong",
+                            "border-focus", "card", "hairline"]],
+    ["强调色", ["accent", "accent-hover", "accent-deep", "accent-secondary", "accent-foreground"]],
+    ["状态色", ["ok", "ok-fill", "warn", "warn-fill", "danger", "danger-fill",
+                "info", "info-fill", "queued", "queued-fill"]],
+    ["语法高亮", ["syntax-comment", "syntax-keyword", "syntax-string",
+                  "syntax-literal", "syntax-title", "syntax-attr"]],
+]
+
+FAMILY_SECTIONS = {
+    # ergemd：原生角色分区（与家族 README 五段一致）
+    "ergemd": [
+        ["背景 / 文本", ["bg-page", "bg-reader", "bg-sidebar", "bg-code", "bg-secondary",
+                         "bg-tertiary", "text-primary", "text-secondary", "text-muted", "text-heading"]],
+        ["标题层级", ["h1-color", "h2-color", "h3-color", "h4-color", "h5-color", "h6-color"]],
+        ["强调 / 品牌", ["accent-cyan", "accent-pink", "accent-purple", "accent-green", "accent-yellow",
+                         "accent-orange", "accent-red", "accent-blue", "brand-primary",
+                         "brand-secondary", "brand-logo"]],
+        ["状态色 (callout)", ["obsidian-callout-note", "obsidian-callout-info", "obsidian-callout-success",
+                              "obsidian-callout-warning", "obsidian-callout-danger"]],
+        ["语法高亮", ["code-keyword", "code-string", "code-number", "code-comment",
+                      "code-function", "code-text"]],
+    ],
+    # onepage：L1 身份段 + 家族身份资产（typo 彩色排版 / ANSI 与图谱派生，审计 F11）。
+    # accent-active（color-mix）与 shadow（box-shadow 串）不上卡，只留在 tokens。
+    "onepage": L1_SECTIONS + [
+        ["彩色排版", ["typo-h1", "typo-h2", "typo-h3", "typo-h4", "typo-h5", "typo-h6",
+                      "typo-bold", "typo-italic"]],
+        ["ANSI / 图谱", ["color-red", "color-orange", "color-yellow", "color-green", "color-cyan",
+                         "color-blue", "color-purple", "color-pink",
+                         "graph-node-tag", "graph-node-attachment", "graph-line",
+                         "graph-line-highlight", "graph-color-1", "graph-color-2", "graph-color-3"]],
+    ],
+}
+
+DEFAULT_BADGE_PAIRS = [["text", "bg"], ["text-muted", "bg"], ["text-dim", "bg"]]
+FAMILY_BADGE_PAIRS = {
+    "ergemd": [["text-primary", "bg-page"], ["text-secondary", "bg-page"], ["text-muted", "bg-page"]],
+}
+
+# ergemd 原生角色 → L1 对比矩阵映射（仅 ergemd 家族输出，preview 对比视图用）
+ERGEMD_L1_MAP = {
+    "bg": "bg-page", "bg-surface": "bg-reader",
+    "text": "text-primary", "text-muted": "text-secondary", "text-dim": "text-muted",
+    "accent": "accent-blue", "ok": "accent-green", "warn": "accent-yellow",
+    "danger": "accent-red", "info": "accent-cyan", "queued": "accent-purple",
+    "syntax-keyword": "code-keyword", "syntax-string": "code-string", "syntax-literal": "code-number",
+    "syntax-comment": "code-comment", "syntax-title": "code-function",
 }
 
 
@@ -347,6 +404,9 @@ def main() -> int:
             "license": fam_readme.get("license"),
             "contractPath": f"themes/{fam_dir.name}/_source/contract.json",
             "contractVersion": contract.get("version"),
+            "sections": FAMILY_SECTIONS.get(fam_dir.name, L1_SECTIONS),
+            "badgePairs": FAMILY_BADGE_PAIRS.get(fam_dir.name, DEFAULT_BADGE_PAIRS),
+            "l1RoleMap": ERGEMD_L1_MAP if fam_dir.name == "ergemd" else None,
             "themes": themes,
         })
 
