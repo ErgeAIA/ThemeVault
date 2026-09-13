@@ -1,7 +1,7 @@
 # onepage/warm-paper 色板表
 
 > 来源：OnePage `theme.css` @ `4226e57`（MIT）中 `body.theme-light`（暖白纸张）+ 共享 `.theme-light` ANSI/code。
-> 颜色值原文照抄；`color-mix` / `rgb()` 保留源码形态。语义映射见家族 README。
+> 颜色值原文照抄；`color-mix` 保留源码形态。状态色 / ANSI 源为 `--color-*-rgb` 三元组，本表统一转 HEX 显示（DEC-002）。语义映射见家族 README。
 
 ## 中性色（背景 / 文本 / 边框）
 
@@ -35,11 +35,11 @@
 
 | 语义角色 | 颜色值 | 类型 | 备注 |
 |----------|--------|------|------|
-| `--ok` | `rgb(74, 213, 95)` | 功能 | `--color-green`（`--color-green-rgb: 74, 213, 95`） |
-| `--warn` | `rgb(224, 205, 99)` | 功能 | `--color-yellow` |
-| `--danger` | `rgb(254, 112, 112)` | 功能 | `--color-red` |
-| `--info` | `rgb(106, 173, 250)` | 功能 | `--color-blue` |
-| `--queued` | `rgb(187, 158, 245)` | 功能 | `--color-purple` |
+| `--ok` | `#4AD55F` | 功能 | `--color-green`（`--color-green-rgb: 74, 213, 95`）· HEX 显示 |
+| `--warn` | `#E0CD63` | 功能 | `--color-yellow`（`--color-yellow-rgb: 224, 205, 99`）· HEX 显示 |
+| `--danger` | `#FE7070` | 功能 | `--color-red`（`--color-red-rgb: 254, 112, 112`）· HEX 显示 |
+| `--info` | `#6AADFA` | 功能 | `--color-blue`（`--color-blue-rgb: 106, 173, 250`）· HEX 显示 |
+| `--queued` | `#BB9EF5` | 功能 | `--color-purple`（`--color-purple-rgb: 187, 158, 245`）· HEX 显示 |
 
 ## 语法高亮色（仅代码块场景）
 
@@ -71,14 +71,14 @@
 |----------|--------|------|------|
 | `--accent-active` | `color-mix(in srgb, var(--text-accent) 90%, black)` | 派生 | 与 accent-deep 同源 |
 | `--shadow` | `rgba(0, 0, 0, 0.08) 0px 12px 24px -4px, rgba(0, 0, 0, 0.04) 0px 8px 16px -4px` | 派生 | `--shadow-s` 共享层原文 |
-| `--color-red` | `rgb(254, 112, 112)` | 功能 | ANSI 全通道备查 |
-| `--color-orange` | `rgb(242, 154, 100)` | 功能 | |
-| `--color-yellow` | `rgb(224, 205, 99)` | 功能 | |
-| `--color-green` | `rgb(74, 213, 95)` | 功能 | |
-| `--color-cyan` | `rgb(56, 219, 214)` | 功能 | |
-| `--color-blue` | `rgb(106, 173, 250)` | 功能 | |
-| `--color-purple` | `rgb(187, 158, 245)` | 功能 | |
-| `--color-pink` | `rgb(243, 125, 183)` | 功能 | |
+| `--color-red` | `#FE7070` | 功能 | ANSI 全通道备查（`--color-red-rgb: 254, 112, 112`）· HEX 显示 |
+| `--color-orange` | `#F29A64` | 功能 | `--color-orange-rgb: 242, 154, 100` · HEX 显示 |
+| `--color-yellow` | `#E0CD63` | 功能 | `--color-yellow-rgb: 224, 205, 99` · HEX 显示 |
+| `--color-green` | `#4AD55F` | 功能 | `--color-green-rgb: 74, 213, 95` · HEX 显示 |
+| `--color-cyan` | `#38DBD6` | 功能 | `--color-cyan-rgb: 56, 219, 214` · HEX 显示 |
+| `--color-blue` | `#6AADFA` | 功能 | `--color-blue-rgb: 106, 173, 250` · HEX 显示 |
+| `--color-purple` | `#BB9EF5` | 功能 | `--color-purple-rgb: 187, 158, 245` · HEX 显示 |
+| `--color-pink` | `#F37DB7` | 功能 | `--color-pink-rgb: 243, 125, 183` · HEX 显示 |
 | `--graph-node-tag` | `var(--text-accent)` | 派生 | 源码 var 引用 |
 | `--graph-node-attachment` | `color-mix(in srgb, var(--text-accent) 65%, var(--text-muted))` | 派生 | |
 | `--graph-line` | `color-mix(in srgb, var(--text-muted) 28%, transparent)` | 派生 | |

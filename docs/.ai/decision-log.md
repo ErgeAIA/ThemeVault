@@ -2,7 +2,7 @@
 title: Decision Log
 type: decision-log
 project: ThemeVault
-updated: 2026-08-07
+updated: 2026-09-14
 priority: higher-than-prd
 description: >
   开发过程决策日志，优先级高于 PRD；冲突时以本文件最新条目为准并回写 PRD/ADR。
@@ -15,6 +15,13 @@ description: >
 > **优先级高于 PRD**：冲突时以本文件最新决策为准，并回写 PRD/ADR。
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
+
+## DEC-002: onepage 状态色/ANSI 值统一为 HEX 显示
+
+- **日期**：2026-09-14
+- **背景**：#073/#074 的状态色 5 角色 + ANSI 8 通道共 26 行值为 `rgb(r, g, b)` 形态；源码（`_source/theme.css:306` 共享块）本无 hex 原文，而是 `--color-*-rgb` 三元组 + `rgb(var(--color-*-rgb))` 组合公式。rgb() 形态导致预览色块复制被 `^#` 正则拒绝、色块文字色走兜底逻辑，且与全仓 hex 显示惯例不一致。用户明确要求统一为 HEX 显示（2026-09-14，附预览截图）。
+- **决策**：26 行 rgb() 无损换算为 6 位 HEX（0-255 ↔ 两位 hex 一一对应）；备注列保留源三元组指针并标注「HEX 显示」；此为硬性规则 3「色值原文」的**显式豁免**，范围仅这 26 行；color-mix / var / rgba（shadow 等）公式值一律保留源形态不动。豁免先例不外推到其它家族。
+- **验证**：`gen_index.py --write` exit 0、missing=0 out=0；grep 两 palette 值列无残留 rgb(；INDEX.json/data.js #073/#074 tokens 与新 HEX 一致；预览人工验证色块复制与文字色正常。
 
 ## DEC-001: OnePage 入库契约策略
 
