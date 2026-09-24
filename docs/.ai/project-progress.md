@@ -21,7 +21,12 @@ description: >
 - **阶段**：资产仓维护（非运行时项目）；协作记忆已初始化
 - **代码**：`scripts/*.py` 生成器与校验器存在；无应用运行时
 - **工具链**：Python 3 + `scripts/gen_index.py`；codegraph 1.6.0（若已建索引见 `.codegraph/`）
-- **最后更新**：2026-09-14 旧家族 IR 回填
+- **最后更新**：2026-09-14 extract v2 值账本
+  - `extract.json` 升 value-ledger；17MB→814KB（4.8%）；lint 兼容 v1；DEC-009
+- **上次更新**：2026-09-24 References 省 token 简化
+  - AGENTS `## References` 宽表压成「何时 → 路径」短列表（全文入上下文，token 宝贵）
+  - agents-changelog 已留痕；待用户验证：条件式指针可读且够短
+- **上次更新**：2026-09-14 旧家族 IR 回填
   - 21 家族 `intent.json`+`extract.json`；`backfill_intake_ir.py`；lint：legacy pin / alpha-hex / partial
   - everforest 快照无色值定义 → provenance=partial（WARN）；DEC-008；lint/gen_index 绿
 - **上次更新**：2026-09-24 References 补全指引

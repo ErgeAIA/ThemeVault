@@ -16,6 +16,13 @@ description: >
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
 
+## DEC-009: extract 升级为 value-ledger（v2）
+
+- **日期**：2026-09-14
+- **背景**：v1 全量 dump 约 17MB，出现次数无证明价值；真源已在 `_source/`
+- **决策**：extract = 全局唯一值 → witness（schemaVersion 2）；体积约 4.8%；lint 兼容 v1；partial 仍降级
+- **验证**：22 族重生成；lint/gen_index 绿；bytes 16925955 → 814313
+
 ## DEC-008: 旧家族 IR 回填与 partial provenance
 
 - **日期**：2026-09-14

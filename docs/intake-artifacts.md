@@ -33,26 +33,26 @@ themes/<family>/_source/
 | `attribution` | 使用时必须保留的署名字符串 |
 | `collectedAt` | 纳入日期 `YYYY-MM-DD` |
 
-## extract.json
+## extract.json（schemaVersion 2 · value-ledger）
 
-机械、幂等、**无语义映射**。由源文件解析，禁止手改色值。
+**值账本**，不是声明 dump。真源是 `_source/**`；extract 是给 lint 用的**值域索引**（DEC-009）。
 
 | 字段 | 含义 |
 |------|------|
-| `schemaVersion` | 当前 `1` |
+| `schemaVersion` | `2` |
 | `family` / `pin` | 与 intent 一致 |
-| `entries[]` | 一条声明一条 |
-| `entries[].selector` | CSS 选择器或源键路径（如 `body.theme-light`） |
-| `entries[].var` | 变量名（含 `--`） |
-| `entries[].value` | 声明值原文（去掉 CSS 的 `!important` 限定符；不转 hex） |
-| `entries[].kind` | `hex` \| `rgb` \| `rgba` \| `color-mix` \| `var-ref` \| `shadow-or-gradient` \| `other` |
-| `entries[].sourceFile` | 相对 `_source/` 的文件名 |
+| `kind` | 固定 `value-ledger` |
+| `provenance` | `full` \| `partial`（快照不含色值定义时，如 everforest） |
+| `values` | **全局唯一值** → `{ kind, witness, hits }` |
+| `values.*.witness` | `sourceFile` / `var` / `selector`（一条可回源线索） |
+| `values.*.hits` | 源中出现次数（可选信息，不参与判定） |
 
 规则：
 
 1. **extract 不写 L1 角色**——映射只发生在 `palette.md` / mapping profile。
-2. 同一 `(selector, var)` 只保留一条；冲突时选更具体的 selector 并保留较早定义可另存 `entries[].note`。
-3. 重跑 extract 应字节级稳定（排序：`selector` → `var`）。
+2. 成员判定：`palette.value ∈ values`（8 位 hex 可回溯 6 位主体）。
+3. 全量 dump 不入库；要出现次数/全部路径 → `rg` 源文件或 `backfill --force` 临时导出。
+4. 兼容 schemaVersion 1 的 `entries[]`（旧格式仍可被 lint 读取）。
 
 ## 与 palette / DoD 的关系
 
