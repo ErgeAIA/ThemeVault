@@ -22,6 +22,12 @@
   5–33、ergemd 58），主题仅在真正分歧处覆盖。例：`shadow`、`sidebar-bg`、`msg-bubble`、`atmosphere-dawn`。
 - **覆盖（override）**：主题在 derivedOptional 上显式给出与 foundation 默认不同的值。
 - **契约外角色（out-of-contract role）**：palette.md 出现但契约未登记的角色 → 违规，需补契约。
+- **L1-core / L1-reading（ADR-0008）**：L1 v4 分层。core=29 全局 UI；reading=8 阅读排版
+  （`typo-h1`…`typo-h6` / `typo-bold` / `typo-italic`），词表见 `docs/l1-roles.md`。
+- **契约兜底（contract fallback）**：required 在源码无独立值时沿用他角色，备注必须标
+  「契约兜底·同 X」或「契约兜底·取 X」；禁止假完整（见 ADR-0008）。
+- **目标项目 Profile（profile）**：`docs/profiles/<target>.md` + `.mapping.json`，
+  L1 → 目标变量机器可读映射；迁移矩阵不进 migration-guide 线性堆叠。
 
 ## 产物（Artifacts）
 
