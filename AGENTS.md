@@ -177,6 +177,7 @@ docs/handoff/             会话交接文档
 | 旧家族回填 IR | `python scripts/backfill_intake_ir.py [--family <id>] [--force]` | 见 docs/intake-artifacts.md |
 | 生成 extract.json | `python scripts/extract_css_vars.py --src <css> --family <id> --pin <sha> --out themes/<id>/_source/extract.json` | 见 docs/intake-artifacts.md |
 | 脚手架家族 | `python scripts/scaffold_family.py --family <id> --project <n> --repo <url> --license <spdx> --themes <ids…>` | S1，不覆盖既有文件 |
+| 生成/校验 tokens.json | `python scripts/gen_tokens.py [--check]` | 整理 IR，见 docs/organize-ir.md |
 
 ## Conventions
 
@@ -203,6 +204,7 @@ docs/handoff/             会话交接文档
 - S2 手工落盘起步 → 见 themes/_TEMPLATE/
 - 写契约 / 判角色缺口 → 见 docs/l1-roles.md
 - S2 中间产物 intent/extract → 见 docs/intake-artifacts.md
+- 整理层 tokens.json → 见 docs/organize-ir.md
 - 外部项目适配 / 取色转译 → 见 docs/migration-guide.md
 - 目标分发映射（如 ErgeMD）→ 见 docs/profiles/
 - 按钮配色 / 文字建议 → 见 docs/brand-colors.md

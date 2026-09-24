@@ -16,6 +16,13 @@ description: >
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
 
+## DEC-010: 整理层 IR theme.tokens.json
+
+- **日期**：2026-09-14
+- **背景**：palette.md 同时充当决策/机器 IR/人读表；使用阶段需再解析 Markdown
+- **决策**：每主题 `tokens.json`（L1-v4 分层 core/reading/family + fallback）；palette 为人审真源，tokens 为确定性投影；`gen_tokens` + `gen_index` 门禁
+- **验证**：74 套生成成功；`--check` OK；`gen_index --write` 绿
+
 ## DEC-009: extract 升级为 value-ledger（v2）
 
 - **日期**：2026-09-14

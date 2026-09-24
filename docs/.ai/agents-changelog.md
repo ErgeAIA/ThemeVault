@@ -64,6 +64,10 @@ description: >
 
 - `<Conventions>` → update → 每阶段/功能自行分批 commit+push，服务 git 留档
 
+## 2026-09-14 · 整理 IR tokens.json
+
+- `<Commands/References>` → update → gen_tokens 与 docs/organize-ir.md
+
 ---
 
 ## 2026-09-14 · 审计优化阶段 4（事实区回填）
