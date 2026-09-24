@@ -19,9 +19,93 @@
     },
     {
       "selector": ".theme-dark",
+      "var": "--background-modifier-form-field",
+      "value": "var(--interactive-normal)",
+      "kind": "var-ref",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--code-comment",
+      "value": "#5c6370",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--code-function",
+      "value": "#d19a66",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--code-important",
+      "value": "#d19a66",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--code-keyword",
+      "value": "#e16d76",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--code-normal",
+      "value": "#abb2bf",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--code-property",
+      "value": "#62afef",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--code-punctuation",
+      "value": "#abb2bf",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--code-string",
+      "value": "#58b6c2",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--code-tag",
+      "value": "#e16d76",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--code-value",
+      "value": "#c678de",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
       "var": "--color-blue",
       "value": "rgb(var(--color-blue-rgb))",
       "kind": "rgb",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--color-blue-rgb",
+      "value": "86, 148, 218",
+      "kind": "other",
       "sourceFile": "theme.css"
     },
     {
@@ -33,9 +117,23 @@
     },
     {
       "selector": ".theme-dark",
+      "var": "--color-cyan-rgb",
+      "value": "63, 186, 182",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
       "var": "--color-green",
       "value": "rgb(var(--color-green-rgb))",
       "kind": "rgb",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--color-green-rgb",
+      "value": "72, 196, 90",
+      "kind": "other",
       "sourceFile": "theme.css"
     },
     {
@@ -47,9 +145,23 @@
     },
     {
       "selector": ".theme-dark",
+      "var": "--color-orange-rgb",
+      "value": "219, 134, 80",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
       "var": "--color-pink",
       "value": "rgb(var(--color-pink-rgb))",
       "kind": "rgb",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--color-pink-rgb",
+      "value": "222, 103, 147",
+      "kind": "other",
       "sourceFile": "theme.css"
     },
     {
@@ -61,6 +173,13 @@
     },
     {
       "selector": ".theme-dark",
+      "var": "--color-purple-rgb",
+      "value": "142, 125, 194",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
       "var": "--color-red",
       "value": "rgb(var(--color-red-rgb))",
       "kind": "rgb",
@@ -68,9 +187,23 @@
     },
     {
       "selector": ".theme-dark",
+      "var": "--color-red-rgb",
+      "value": "217, 90, 95",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
       "var": "--color-yellow",
       "value": "rgb(var(--color-yellow-rgb))",
       "kind": "rgb",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--color-yellow-rgb",
+      "value": "196, 180, 94",
+      "kind": "other",
       "sourceFile": "theme.css"
     },
     {
@@ -84,6 +217,20 @@
       "selector": ".theme-dark",
       "var": "--font-text-theme",
       "value": "\"SF Pro\"",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--input-shadow",
+      "value": "inset 0 0 0 var(--input-border-width) var(--background-modifier-border)",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--input-shadow-hover",
+      "value": "inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover)",
       "kind": "other",
       "sourceFile": "theme.css"
     },
@@ -120,6 +267,160 @@
       "var": "--titlebar-background-focused",
       "value": "transparent",
       "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--workspace-background-translucent",
+      "value": "rgb(from var(--background-secondary) r g b / var(--translucent-dark-opacity))",
+      "kind": "rgb",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--code-comment",
+      "value": "#b6b9c5",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--code-function",
+      "value": "#b76b02",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--code-important",
+      "value": "#b76b02",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--code-keyword",
+      "value": "#e45749",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--code-normal",
+      "value": "#383a42",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--code-property",
+      "value": "#62afef",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--code-punctuation",
+      "value": "#383a42",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--code-string",
+      "value": "#0d97b3",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--code-tag",
+      "value": "#e45749",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--code-value",
+      "value": "#a626a4",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--color-blue-rgb",
+      "value": "106, 173, 250",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--color-cyan-rgb",
+      "value": "56, 219, 214",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--color-green-rgb",
+      "value": "74, 213, 95",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--color-orange-rgb",
+      "value": "242, 154, 100",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--color-pink-rgb",
+      "value": "243, 125, 183",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--color-purple-rgb",
+      "value": "187, 158, 245",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--color-red-rgb",
+      "value": "254, 112, 112",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--color-yellow-rgb",
+      "value": "224, 205, 99",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--input-shadow",
+      "value": "inset 0 0 0 var(--input-border-width) var(--background-modifier-border)",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--input-shadow-hover",
+      "value": "inset 0 0 0 var(--input-border-width) var(--background-modifier-border-hover)",
+      "kind": "other",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-light",
+      "var": "--workspace-background-translucent",
+      "value": "rgb(from var(--background-secondary) r g b / var(--translucent-light-opacity))",
+      "kind": "rgb",
       "sourceFile": "theme.css"
     },
     {
