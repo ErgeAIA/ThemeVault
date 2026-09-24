@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "family": "falcon",
+  "ir": "L1-v4",
+  "themes": [
+    "dark",
+    "dark-blue",
+    "dark-green",
+    "dark-green-islands",
+    "light-bean-green",
+    "light-buff",
+    "light-celadon",
+    "light-green",
+    "light-green-islands",
+    "light-grey",
+    "light-pink",
+    "light-yellow"
+  ],
+  "map": {
+    "accent": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 12
+    },
+    "accent-deep": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 12
+    },
+    "accent-foreground": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 12
+    },
+    "accent-hover": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 12
+    },
+    "accent-secondary": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 12
+    },
+    "activitybar-inactive": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 12
+    },
+    "bg": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 12
+    },
+    "bg-elevated": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 12
+    },
+    "bg-hover": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 12
+    },
+    "bg-surface": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 12
+    },
+    "bg-surface-2": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 12
+    },
+    "border": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 12
+    },
+    "border-focus": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 12
+    },
+    "border-strong": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 12
+    },
+    "card": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 12
+    },
+    "danger": {
+      "sources": [],
+      "kind": "功能",
+      "themeCount": 12
+    },
+    "danger-fill": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 12
+    },
+    "diff-insert": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 12
+    },
+    "diff-remove": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 12
+    },
+    "hairline": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 12
+    },
+    "info": {
+      "sources": [],
+      "kind": "功能",
+      "themeCount": 12
+    },
+    "info-fill": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 12
+    },
+    "ok": {
+      "sources": [],
+      "kind": "功能",
+      "themeCount": 12
+    },
+    "ok-fill": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 12
+    },
+    "placeholder": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 12
+    },
+    "queued": {
+      "sources": [],
+      "kind": "功能",
+      "themeCount": 12
+    },
+    "queued-fill": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 12
+    },
+    "selection": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 12
+    },
+    "selection-solid": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 12
+    },
+    "statusbar-foreground": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 12
+    },
+    "syntax-attr": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 12
+    },
+    "syntax-comment": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 12
+    },
+    "syntax-keyword": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 12
+    },
+    "syntax-literal": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 12
+    },
+    "syntax-string": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 12
+    },
+    "syntax-title": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 12
+    },
+    "text": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 12
+    },
+    "text-dim": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 12
+    },
+    "text-muted": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 12
+    },
+    "warn": {
+      "sources": [],
+      "kind": "功能",
+      "themeCount": 12
+    },
+    "warn-fill": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 12
+    }
+  }
+}

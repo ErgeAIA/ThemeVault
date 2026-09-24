@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "family": "ayu",
+  "ir": "L1-v4",
+  "themes": [
+    "dark",
+    "light",
+    "mirage"
+  ],
+  "map": {
+    "accent": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 3
+    },
+    "accent-deep": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 3
+    },
+    "accent-foreground": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 3
+    },
+    "accent-hover": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 3
+    },
+    "accent-secondary": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 3
+    },
+    "activitybar-inactive": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 3
+    },
+    "bg": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 3
+    },
+    "bg-elevated": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 3
+    },
+    "bg-hover": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 3
+    },
+    "bg-surface": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 3
+    },
+    "bg-surface-2": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 3
+    },
+    "border": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 3
+    },
+    "border-focus": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 3
+    },
+    "border-strong": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 3
+    },
+    "card": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 3
+    },
+    "danger": {
+      "sources": [],
+      "kind": "功能",
+      "themeCount": 3
+    },
+    "danger-fill": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 3
+    },
+    "diff-insert": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 3
+    },
+    "diff-remove": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 3
+    },
+    "hairline": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 3
+    },
+    "info": {
+      "sources": [],
+      "kind": "功能",
+      "themeCount": 3
+    },
+    "info-fill": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 3
+    },
+    "ok": {
+      "sources": [],
+      "kind": "功能",
+      "themeCount": 3
+    },
+    "ok-fill": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 3
+    },
+    "placeholder": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 3
+    },
+    "queued": {
+      "sources": [],
+      "kind": "功能",
+      "themeCount": 3
+    },
+    "queued-fill": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 3
+    },
+    "selection": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 3
+    },
+    "selection-solid": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 3
+    },
+    "statusbar-foreground": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 3
+    },
+    "syntax-attr": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 3
+    },
+    "syntax-comment": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 3
+    },
+    "syntax-keyword": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 3
+    },
+    "syntax-literal": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 3
+    },
+    "syntax-string": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 3
+    },
+    "syntax-title": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 3
+    },
+    "text": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 3
+    },
+    "text-dim": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 3
+    },
+    "text-muted": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 3
+    },
+    "warn": {
+      "sources": [],
+      "kind": "功能",
+      "themeCount": 3
+    },
+    "warn-fill": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 3
+    }
+  }
+}

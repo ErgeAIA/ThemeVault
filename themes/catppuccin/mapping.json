@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "family": "catppuccin",
+  "ir": "L1-v4",
+  "themes": [
+    "frappe",
+    "latte",
+    "macchiato",
+    "mocha"
+  ],
+  "map": {
+    "accent": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 4
+    },
+    "accent-deep": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 4
+    },
+    "accent-foreground": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 4
+    },
+    "accent-hover": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 4
+    },
+    "accent-secondary": {
+      "sources": [
+        "blue"
+      ],
+      "kind": "强调",
+      "themeCount": 4
+    },
+    "bg": {
+      "sources": [
+        "base"
+      ],
+      "kind": "中性",
+      "themeCount": 4
+    },
+    "bg-elevated": {
+      "sources": [
+        "surface0"
+      ],
+      "kind": "中性",
+      "themeCount": 4
+    },
+    "bg-hover": {
+      "sources": [
+        "surface1"
+      ],
+      "kind": "中性",
+      "themeCount": 4
+    },
+    "bg-surface": {
+      "sources": [
+        "mantle"
+      ],
+      "kind": "中性",
+      "themeCount": 4
+    },
+    "bg-surface-2": {
+      "sources": [
+        "crust"
+      ],
+      "kind": "中性",
+      "themeCount": 4
+    },
+    "border": {
+      "sources": [
+        "surface0"
+      ],
+      "kind": "中性",
+      "themeCount": 4
+    },
+    "border-focus": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 4
+    },
+    "border-strong": {
+      "sources": [
+        "surface1"
+      ],
+      "kind": "中性",
+      "themeCount": 4
+    },
+    "card": {
+      "sources": [
+        "mantle"
+      ],
+      "kind": "中性",
+      "themeCount": 4
+    },
+    "danger": {
+      "sources": [
+        "red"
+      ],
+      "kind": "功能",
+      "themeCount": 4
+    },
+    "danger-fill": {
+      "sources": [],
+      "kind": "功能",
+      "themeCount": 4
+    },
+    "hairline": {
+      "sources": [
+        "crust"
+      ],
+      "kind": "中性",
+      "themeCount": 4
+    },
+    "info": {
+      "sources": [
+        "blue"
+      ],
+      "kind": "功能",
+      "themeCount": 4
+    },
+    "info-fill": {
+      "sources": [
+        "sapphire"
+      ],
+      "kind": "功能",
+      "themeCount": 4
+    },
+    "ok": {
+      "sources": [
+        "green"
+      ],
+      "kind": "功能",
+      "themeCount": 4
+    },
+    "ok-fill": {
+      "sources": [
+        "green"
+      ],
+      "kind": "功能",
+      "themeCount": 4
+    },
+    "queued": {
+      "sources": [
+        "lavender"
+      ],
+      "kind": "功能",
+      "themeCount": 4
+    },
+    "queued-fill": {
+      "sources": [
+        "lavender"
+      ],
+      "kind": "功能",
+      "themeCount": 4
+    },
+    "syntax-attr": {
+      "sources": [
+        "teal"
+      ],
+      "kind": "语法",
+      "themeCount": 4
+    },
+    "syntax-comment": {
+      "sources": [
+        "overlay1"
+      ],
+      "kind": "语法",
+      "themeCount": 4
+    },
+    "syntax-keyword": {
+      "sources": [
+        "mauve"
+      ],
+      "kind": "语法",
+      "themeCount": 4
+    },
+    "syntax-literal": {
+      "sources": [
+        "peach"
+      ],
+      "kind": "语法",
+      "themeCount": 4
+    },
+    "syntax-string": {
+      "sources": [
+        "green"
+      ],
+      "kind": "语法",
+      "themeCount": 4
+    },
+    "syntax-title": {
+      "sources": [
+        "blue"
+      ],
+      "kind": "语法",
+      "themeCount": 4
+    },
+    "text": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 4
+    },
+    "text-dim": {
+      "sources": [
+        "overlay0"
+      ],
+      "kind": "中性",
+      "themeCount": 4
+    },
+    "text-muted": {
+      "sources": [
+        "subtext0"
+      ],
+      "kind": "中性",
+      "themeCount": 4
+    },
+    "warn": {
+      "sources": [
+        "yellow"
+      ],
+      "kind": "功能",
+      "themeCount": 4
+    },
+    "warn-fill": {
+      "sources": [
+        "yellow"
+      ],
+      "kind": "功能",
+      "themeCount": 4
+    }
+  }
+}
