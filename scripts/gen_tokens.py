@@ -77,6 +77,10 @@ def build_tokens(
             "value": meta["value"],
             "kind": meta["kind"],
             "layer": layer,
+            # 对抗审查 B1：拆开「无独立源值」与「纳入期显示豁免」
+            "contractFallback": bool(re.search(r"契约兜底|豁免|继承", meta["note"])),
+            "displayExemption": bool(re.search(r"HEX 显示", meta["note"])),
+            "derivedHint": bool(re.search(r"推导|oklch|约定|未提供", meta["note"])),
             "fallback": bool(FALLBACK_NOTE.search(meta["note"])),
             "note": meta["note"],
         }

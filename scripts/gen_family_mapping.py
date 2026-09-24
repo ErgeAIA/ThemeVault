@@ -52,9 +52,40 @@ def source_hints(note: str, value: str, family: str, role: str) -> list[str]:
     return found
 
 
+README_ROW_RE = re.compile(
+    r"^\|\s*`([a-z0-9-]+)`\s*\|([^|]+)\|([^|]*)\|",
+    re.M,
+)
+
+
+def parse_family_readme_map(path: Path) -> dict[str, list[str]]:
+    """从家族 README 对照表抽取 L1 角色 → 源令牌（第 2 列 + 第 3 列标识）。"""
+    if not path.exists():
+        return {}
+    out: dict[str, list[str]] = {}
+    for m in README_ROW_RE.finditer(path.read_text(encoding="utf-8")):
+        role, col2, col3 = m.group(1), m.group(2), m.group(3)
+        toks = []
+        for part in re.split(r"[\s,/、]+", col2.strip().strip("`")):
+            part = part.strip("`").strip()
+            if part and not part.startswith("#") and part != role:
+                # nord0 / accent12 / --background-primary / editor.background
+                if re.fullmatch(r"[A-Za-z][A-Za-z0-9_.#-]{1,48}", part) or part.startswith("--"):
+                    toks.append(part)
+        for part in re.findall(r"[A-Za-z][A-Za-z0-9_.#-]{1,48}", col3):
+            if any(x in part.lower() for x in ("background", "foreground", "color", "border", "accent", "editor", "list", "button", "side", "status", "title", "terminal", "dropdown", "input", "panel", "tab.", "widget", "selection", "cursor", "comment", "string", "keyword", "constant", "entity", "storage", "meta", "variable", "invalid", "diff", "banner", "badge", "shadow", "focus", "hover", "line", "guide", "ansi")):
+                toks.append(part)
+        if toks:
+            out.setdefault(role, [])
+            for t in toks:
+                if t not in out[role]:
+                    out[role].append(t)
+    return out
+
+
 def build_family_mapping(fam_dir: Path) -> dict:
     fam = fam_dir.name
-    # role -> {sources: sorted set, kind, layer_hint, themes: [ids]}
+    readme_map = parse_family_readme_map(fam_dir / "README.md")
     acc: dict[str, dict] = {}
     themes = sorted(
         p.name for p in fam_dir.iterdir()
@@ -64,6 +95,9 @@ def build_family_mapping(fam_dir: Path) -> dict:
         pal = parse_palette(fam_dir / tid / "palette.md")
         for role, meta in pal.items():
             hints = source_hints(meta["note"], meta["value"], fam, role)
+            for h in readme_map.get(role, []):
+                if h not in hints:
+                    hints.append(h)
             slot = acc.setdefault(role, {"sources": [], "kind": meta["kind"], "themes": []})
             for h in hints:
                 if h not in slot["sources"]:
@@ -110,8 +144,11 @@ def check_family_consistency(fam_dir: Path) -> list[str]:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--check", action="store_true")
+    ap.add_argument("--strict", action="store_true", help="required 无源线索视为错误")
     args = ap.parse_args(argv)
+    strict = args.strict
     errors = 0
+    warnings = 0
     for fam_dir in sorted(p for p in THEMES.iterdir() if p.is_dir() and not p.name.startswith("_")):
         if not (fam_dir / "_source" / "contract.json").exists():
             continue
@@ -120,6 +157,29 @@ def main(argv: list[str] | None = None) -> int:
             print(f"ERROR: {e}", file=sys.stderr)
             errors += 1
         doc = build_family_mapping(fam_dir)
+        # A2：required 角色不得零来源线索（允许显式契约兜底角色仍要有来源说明）
+        contract_p = fam_dir / "_source" / "contract.json"
+        required = set()
+        if contract_p.exists():
+            required = set(json.loads(contract_p.read_text(encoding="utf-8")).get("required", []))
+        for role in sorted(required):
+            meta = doc["map"].get(role)
+            if meta is not None and not meta.get("sources"):
+                msg = f"[{fam_dir.name}] required --{role} 无源变量线索（mapping 为 hints，非完备单源）"
+                if strict:
+                    print(f"ERROR: {msg}", file=sys.stderr)
+                    errors += 1
+                else:
+                    warnings += 1
+                    print(f"WARN: {msg}")
+        # 统计空率（供追踪 A2 完备性）
+        empty_req = sum(
+            1
+            for role in required
+            if doc["map"].get(role) is not None and not doc["map"][role].get("sources")
+        )
+        if empty_req:
+            print(f"STAT: [{fam_dir.name}] required 空线索 {empty_req}/{len(required)}")
         out_p = fam_dir / "mapping.json"
         payload = json.dumps(doc, ensure_ascii=False, indent=2) + "\n"
         if args.check:
@@ -133,7 +193,10 @@ def main(argv: list[str] | None = None) -> int:
             if not out_p.exists() or out_p.read_text(encoding="utf-8") != payload:
                 out_p.write_text(payload, encoding="utf-8")
     mode = "check" if args.check else "write"
-    print(f"gen_family_mapping --{mode}: {'OK' if errors == 0 else f'{errors} error(s)'}")
+    print(
+        f"gen_family_mapping --{mode}: {'OK' if errors == 0 else f'{errors} error(s)'}"
+        f" ({warnings} warn)"
+    )
     return 1 if errors else 0
 
 

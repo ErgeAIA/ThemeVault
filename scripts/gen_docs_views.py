@@ -25,6 +25,12 @@ BEGIN = "<!-- BEGIN:generated {name} -->"
 END = "<!-- END:generated {name} -->"
 
 
+def has_marker(text: str, name: str) -> bool:
+    """Exact marker line match — `index-table` must not match `index-table-DRIFT`."""
+    b = BEGIN.format(name=name)
+    return any(line.strip() == b for line in text.splitlines())
+
+
 def replace_block(text: str, name: str, body: str) -> str:
     b = BEGIN.format(name=name)
     e = END.format(name=name)
@@ -148,7 +154,8 @@ def write_index_md(index: dict) -> str:
     remarks = preserve_remarks(old)
     table = render_index_table(index, remarks)
     stats = render_index_stats(index)
-    if "BEGIN:generated index-table" in old:
+    # 精确标记（禁止子串误判，对抗审查 A1）
+    if has_marker(old, "index-table"):
         text = replace_block(old, "index-table", table)
         text = replace_block(text, "index-stats", stats)
         return text
@@ -171,7 +178,7 @@ def write_index_md(index: dict) -> str:
 def write_ai_map(index: dict) -> str:
     old = AI_MAP.read_text(encoding="utf-8")
     body = render_ai_map(index)
-    if "BEGIN:generated family-status" in old:
+    if has_marker(old, "family-status"):
         return replace_block(old, "family-status", body)
     m = re.search(r"(## 2\. 家族现状[^\n]*\n\n)(.*?)(?=\n## )", old, flags=re.S)
     if not m:

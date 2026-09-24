@@ -383,6 +383,9 @@ def main() -> int:
     except ImportError:
         pass
 
+    # 人读视图依赖落盘的 INDEX.json，故在写完索引后再跑；--check 用于校验模式（对抗审查 A1）。
+    # （调用点见下方 write 分支之后。）
+
     families = []
     all_tokens = 0
     errors = []
@@ -505,14 +508,6 @@ def main() -> int:
         else:
             print(f"unchanged, skipped {INDEX_JSON.relative_to(ROOT)}")
 
-        # 人读视图：INDEX.md / AI-MAP 计数区（organize P3）
-        try:
-            from gen_docs_views import main as _docs_main
-            if _docs_main([]) != 0:
-                return 1
-        except ImportError:
-            pass
-
         # SPA 数据：完整 INDEX.json（含每主题 tokens）包成 JS 全局变量，
         # 供 preview.html 双击即开（<script src> 无 file:// CORS 限制，比 fetch 稳）。
         data_js = ROOT / "preview" / "data.js"
@@ -525,6 +520,14 @@ def main() -> int:
             print(f"wrote {data_js.relative_to(ROOT)}")
         else:
             print(f"unchanged, skipped {data_js.relative_to(ROOT)}")
+
+    # 人读视图：--write 渲染；否则必须 --check（A1：校验模式不得静默放过漂移）。
+    try:
+        from gen_docs_views import main as _docs_main
+        if _docs_main([] if write else ["--check"]) != 0:
+            return 1
+    except ImportError:
+        pass
 
     # human summary（编号 #N 供 INDEX.md 编号列抄写核对；brand 供品牌色核对）
     for f in families:
