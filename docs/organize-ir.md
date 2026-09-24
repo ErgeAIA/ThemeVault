@@ -42,3 +42,19 @@ python scripts/gen_index.py --write   # 内联 gen_tokens 并校验
 - **palette.md 仍是人审真源**；tokens.json 是确定性投影（同 palette → 同 tokens）。
 - 禁止只改 tokens.json 不改 palette（`--check` 会失败）。
 - 使用阶段读 tokens.json + `docs/profiles/*.mapping.json`，不要再解析 Markdown 表。
+
+## 家族映射：family mapping.json（P1）
+
+```
+themes/<family>/mapping.json
+```
+
+- 角色 → 源变量线索（自 palette 备注 `--var` / 反引号标识提取；ergemd 用原生名；`typo-*` 默认 `--typo-*`）。
+- **同族一致性**：各主题 **required** 角色必须齐全且对齐；`derivedOptional` 允许只覆盖分歧处。
+- 家族 README 的对照表改为导读；机器消费以 `mapping.json` 为准。
+
+```powershell
+python scripts/gen_family_mapping.py          # 生成/刷新
+python scripts/gen_family_mapping.py --check  # 漂移或 required 缺失 → exit 1
+```
+

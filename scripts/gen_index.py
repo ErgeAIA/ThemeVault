@@ -374,6 +374,15 @@ def main() -> int:
     except ImportError:
         pass
 
+    # 家族映射单源 + 同族角色集一致性（organize P1）。
+    try:
+        from gen_family_mapping import main as _map_main
+        _mrc = _map_main(["--check"] if not write else [])
+        if _mrc != 0:
+            return 1
+    except ImportError:
+        pass
+
     families = []
     all_tokens = 0
     errors = []
