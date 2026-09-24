@@ -60,6 +60,10 @@ description: >
 - `<Commands>` → update → 增加 backfill_intake_ir
 - `<其余>` → keep
 
+## 2026-09-14 · Git 提交节奏
+
+- `<Conventions>` → update → 每阶段/功能自行分批 commit+push，服务 git 留档
+
 ---
 
 ## 2026-09-14 · 审计优化阶段 4（事实区回填）
@@ -75,3 +79,8 @@ description: >
 
 - `<References 仅「见 X」裸路径>` → update → 改为分组表（索引清单 / 契约规范 / 地图入口 / 过程记忆 / 变更记录），每项写「是什么 / 何时查」
 - `<References 无 CHANGELOG、brand-colors、preview、TEMPLATE 要点>` → update → 补入 `CHANGELOG*.md`、`docs/brand-colors.md`、`preview.html`+`data.js`、`themes/_TEMPLATE/` 说明（原先散落硬性规则/目录速览）
+
+## 2026-09-24 · References 省 token 简化
+
+- `<References 五组宽表「是什么/何时查」>` → update → 压成「何时 → 路径」短列表；AGENTS 全文入上下文，不写人读说明
+- `<纯裸指针>` → drop → 不退回无条件列表（保留触发条件）
