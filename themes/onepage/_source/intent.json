@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "family": "onepage",
+  "source": {
+    "project": "OnePage",
+    "repo": "https://github.com/ivaneye/OnePage",
+    "pin": "4226e57d8d33ee4bb0f0bc00405c3762831799bc",
+    "pinType": "commit",
+    "files": [
+      "theme.css",
+      "LICENSE",
+      "README.md"
+    ],
+    "license": "MIT",
+    "upstream": {
+      "project": "Obsidian-Cupertino",
+      "repo": "https://github.com/aaaaalexis/Obsidian-Cupertino",
+      "license": "MIT",
+      "note": "OnePage 深度定制自 Cupertino；跨项目使用时保留上游 MIT 署名"
+    }
+  },
+  "scope": {
+    "themes": [
+      "warm-paper",
+      "warm-brown"
+    ],
+    "defaultSemantics": "runtime-fallback",
+    "defaultNote": "强调色等为 Style Settings 可覆盖的回退默认：var(--onepage-accent-hex, DEFAULT)；palette 取 DEFAULT"
+  },
+  "attribution": [
+    "OnePage © 2025 一页清 (ivaneye), MIT",
+    "Cupertino (aaaaalexis), MIT"
+  ],
+  "collectedAt": "2026-08-07"
+}
