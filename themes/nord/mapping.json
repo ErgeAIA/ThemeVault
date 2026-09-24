@@ -7,77 +7,127 @@
   ],
   "map": {
     "accent": {
-      "sources": [],
+      "sources": [
+        "nord8",
+        "accent",
+        "color"
+      ],
       "kind": "强调",
       "themeCount": 1
     },
     "accent-deep": {
-      "sources": [],
+      "sources": [
+        "nord10"
+      ],
       "kind": "强调",
       "themeCount": 1
     },
     "accent-foreground": {
-      "sources": [],
+      "sources": [
+        "nord0",
+        "badge",
+        "button.foreground",
+        "accent"
+      ],
       "kind": "强调",
       "themeCount": 1
     },
     "accent-hover": {
-      "sources": [],
+      "sources": [
+        "nord8",
+        "button.hover"
+      ],
       "kind": "强调",
       "themeCount": 1
     },
     "accent-secondary": {
-      "sources": [],
+      "sources": [
+        "nord7"
+      ],
       "kind": "强调",
       "themeCount": 1
     },
     "bg": {
-      "sources": [],
+      "sources": [
+        "nord0",
+        "editor.background"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "bg-elevated": {
-      "sources": [],
+      "sources": [
+        "nord0",
+        "editorWidget.background"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "bg-hover": {
-      "sources": [],
+      "sources": [
+        "nord1",
+        "list.hoverBackground",
+        "lineHighlight"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "bg-surface": {
-      "sources": [],
+      "sources": [
+        "nord1",
+        "statusBar",
+        "input"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "bg-surface-2": {
-      "sources": [],
+      "sources": [
+        "nord2",
+        "selection",
+        "button.secondary"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "border": {
-      "sources": [],
+      "sources": [
+        "nord1",
+        "dropdown",
+        "panel",
+        "sideBar.border"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "border-focus": {
-      "sources": [],
+      "sources": [
+        "nord8",
+        "accent",
+        "list.focusBackground"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "border-strong": {
-      "sources": [],
+      "sources": [
+        "nord2"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "card": {
-      "sources": [],
+      "sources": [
+        "nord1"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "danger": {
-      "sources": [],
+      "sources": [
+        "nord11",
+        "diff"
+      ],
       "kind": "功能",
       "themeCount": 1
     },
@@ -97,12 +147,18 @@
       "themeCount": 1
     },
     "hairline": {
-      "sources": [],
+      "sources": [
+        "nord3",
+        "editorWhitespace"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "info": {
-      "sources": [],
+      "sources": [
+        "nord9",
+        "inputValidation.info"
+      ],
       "kind": "功能",
       "themeCount": 1
     },
@@ -112,7 +168,10 @@
       "themeCount": 1
     },
     "ok": {
-      "sources": [],
+      "sources": [
+        "nord14",
+        "diff"
+      ],
       "kind": "功能",
       "themeCount": 1
     },
@@ -122,7 +181,9 @@
       "themeCount": 1
     },
     "queued": {
-      "sources": [],
+      "sources": [
+        "nord15"
+      ],
       "kind": "功能",
       "themeCount": 1
     },
@@ -132,62 +193,93 @@
       "themeCount": 1
     },
     "selection": {
-      "sources": [],
+      "sources": [
+        "nord2",
+        "editor.selectionBackground"
+      ],
       "kind": "派生",
       "themeCount": 1
     },
     "shadow": {
-      "sources": [],
+      "sources": [
+        "widget.shadow"
+      ],
       "kind": "派生",
       "themeCount": 1
     },
     "sidebar-bg": {
-      "sources": [],
+      "sources": [
+        "nord0",
+        "sideBar.background"
+      ],
       "kind": "派生",
       "themeCount": 1
     },
     "syntax-attr": {
-      "sources": [],
+      "sources": [
+        "nord8"
+      ],
       "kind": "语法",
       "themeCount": 1
     },
     "syntax-comment": {
-      "sources": [],
+      "sources": [
+        "nord3",
+        "comments"
+      ],
       "kind": "语法",
       "themeCount": 1
     },
     "syntax-keyword": {
-      "sources": [],
+      "sources": [
+        "nord9",
+        "keywords"
+      ],
       "kind": "语法",
       "themeCount": 1
     },
     "syntax-literal": {
-      "sources": [],
+      "sources": [
+        "nord15"
+      ],
       "kind": "语法",
       "themeCount": 1
     },
     "syntax-string": {
-      "sources": [],
+      "sources": [
+        "nord14",
+        "strings"
+      ],
       "kind": "语法",
       "themeCount": 1
     },
     "syntax-title": {
-      "sources": [],
+      "sources": [
+        "nord7"
+      ],
       "kind": "语法",
       "themeCount": 1
     },
     "text": {
-      "sources": [],
+      "sources": [
+        "nord4",
+        "editor.foreground"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "text-dim": {
-      "sources": [],
+      "sources": [
+        "nord3"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "text-muted": {
-      "sources": [],
+      "sources": [
+        "nord3",
+        "editorLineNumber"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
@@ -197,7 +289,9 @@
       "themeCount": 1
     },
     "warn": {
-      "sources": [],
+      "sources": [
+        "nord13"
+      ],
       "kind": "功能",
       "themeCount": 1
     },

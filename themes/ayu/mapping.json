@@ -24,7 +24,9 @@
       "themeCount": 3
     },
     "accent-hover": {
-      "sources": [],
+      "sources": [
+        "accent"
+      ],
       "kind": "强调",
       "themeCount": 3
     },
@@ -39,7 +41,9 @@
       "themeCount": 3
     },
     "bg": {
-      "sources": [],
+      "sources": [
+        "editor.background"
+      ],
       "kind": "中性",
       "themeCount": 3
     },
@@ -49,7 +53,9 @@
       "themeCount": 3
     },
     "bg-hover": {
-      "sources": [],
+      "sources": [
+        "list.hoverBackground"
+      ],
       "kind": "中性",
       "themeCount": 3
     },
@@ -59,7 +65,9 @@
       "themeCount": 3
     },
     "bg-surface-2": {
-      "sources": [],
+      "sources": [
+        "activityBar.background"
+      ],
       "kind": "中性",
       "themeCount": 3
     },
@@ -69,7 +77,9 @@
       "themeCount": 3
     },
     "border-focus": {
-      "sources": [],
+      "sources": [
+        "focusBorder"
+      ],
       "kind": "中性",
       "themeCount": 3
     },
@@ -89,12 +99,16 @@
       "themeCount": 3
     },
     "danger-fill": {
-      "sources": [],
+      "sources": [
+        "danger"
+      ],
       "kind": "派生",
       "themeCount": 3
     },
     "diff-insert": {
-      "sources": [],
+      "sources": [
+        "diffEditor.insertedTextBackground"
+      ],
       "kind": "派生",
       "themeCount": 3
     },
@@ -104,7 +118,9 @@
       "themeCount": 3
     },
     "hairline": {
-      "sources": [],
+      "sources": [
+        "border"
+      ],
       "kind": "中性",
       "themeCount": 3
     },
@@ -119,12 +135,16 @@
       "themeCount": 3
     },
     "ok": {
-      "sources": [],
+      "sources": [
+        "terminal.ansiGreen"
+      ],
       "kind": "功能",
       "themeCount": 3
     },
     "ok-fill": {
-      "sources": [],
+      "sources": [
+        "ok"
+      ],
       "kind": "派生",
       "themeCount": 3
     },
@@ -134,7 +154,9 @@
       "themeCount": 3
     },
     "queued": {
-      "sources": [],
+      "sources": [
+        "terminal.ansiMagenta"
+      ],
       "kind": "功能",
       "themeCount": 3
     },
@@ -154,12 +176,16 @@
       "themeCount": 3
     },
     "statusbar-foreground": {
-      "sources": [],
+      "sources": [
+        "statusBar.foreground"
+      ],
       "kind": "派生",
       "themeCount": 3
     },
     "syntax-attr": {
-      "sources": [],
+      "sources": [
+        "tokenColors"
+      ],
       "kind": "语法",
       "themeCount": 3
     },
@@ -169,12 +195,16 @@
       "themeCount": 3
     },
     "syntax-keyword": {
-      "sources": [],
+      "sources": [
+        "tokenColors"
+      ],
       "kind": "语法",
       "themeCount": 3
     },
     "syntax-literal": {
-      "sources": [],
+      "sources": [
+        "tokenColors"
+      ],
       "kind": "语法",
       "themeCount": 3
     },
@@ -199,7 +229,9 @@
       "themeCount": 3
     },
     "text-muted": {
-      "sources": [],
+      "sources": [
+        "editorLineNumber.foreground"
+      ],
       "kind": "中性",
       "themeCount": 3
     },

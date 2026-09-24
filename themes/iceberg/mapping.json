@@ -33,7 +33,9 @@
       "themeCount": 2
     },
     "bg": {
-      "sources": [],
+      "sources": [
+        "editor.background"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
@@ -43,7 +45,9 @@
       "themeCount": 2
     },
     "bg-hover": {
-      "sources": [],
+      "sources": [
+        "list.hoverBackground"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
@@ -53,17 +57,25 @@
       "themeCount": 2
     },
     "bg-surface-2": {
-      "sources": [],
+      "sources": [
+        "statusBar",
+        "input.background"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "border": {
-      "sources": [],
+      "sources": [
+        "panel",
+        "editorWidget.border"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "border-focus": {
-      "sources": [],
+      "sources": [
+        "focusBorder"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
@@ -78,7 +90,9 @@
       "themeCount": 2
     },
     "danger": {
-      "sources": [],
+      "sources": [
+        "terminal.ansiRed"
+      ],
       "kind": "功能",
       "themeCount": 2
     },
@@ -103,7 +117,9 @@
       "themeCount": 2
     },
     "ok": {
-      "sources": [],
+      "sources": [
+        "terminal.ansiGreen"
+      ],
       "kind": "功能",
       "themeCount": 2
     },
@@ -113,7 +129,9 @@
       "themeCount": 2
     },
     "queued": {
-      "sources": [],
+      "sources": [
+        "terminal.ansiMagenta"
+      ],
       "kind": "功能",
       "themeCount": 2
     },
@@ -138,12 +156,19 @@
       "themeCount": 2
     },
     "syntax-keyword": {
-      "sources": [],
+      "sources": [
+        "tokenColors",
+        "keyword"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
     "syntax-literal": {
-      "sources": [],
+      "sources": [
+        "tokenColors",
+        "number",
+        "constant"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
@@ -168,7 +193,9 @@
       "themeCount": 2
     },
     "text-muted": {
-      "sources": [],
+      "sources": [
+        "comment"
+      ],
       "kind": "中性",
       "themeCount": 2
     },

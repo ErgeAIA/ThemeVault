@@ -8,77 +8,118 @@
   ],
   "map": {
     "accent": {
-      "sources": [],
+      "sources": [
+        "blue"
+      ],
       "kind": "强调",
       "themeCount": 2
     },
     "accent-deep": {
-      "sources": [],
+      "sources": [
+        "blue",
+        "accent"
+      ],
       "kind": "强调",
       "themeCount": 2
     },
     "accent-foreground": {
-      "sources": [],
+      "sources": [
+        "base3",
+        "accent"
+      ],
       "kind": "强调",
       "themeCount": 2
     },
     "accent-hover": {
-      "sources": [],
+      "sources": [
+        "cyan",
+        "hover"
+      ],
       "kind": "强调",
       "themeCount": 2
     },
     "accent-secondary": {
-      "sources": [],
+      "sources": [
+        "cyan"
+      ],
       "kind": "强调",
       "themeCount": 2
     },
     "bg": {
-      "sources": [],
+      "sources": [
+        "base03",
+        "base3"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "bg-elevated": {
-      "sources": [],
+      "sources": [
+        "base02",
+        "base2"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "bg-hover": {
-      "sources": [],
+      "sources": [
+        "base02",
+        "base2"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "bg-surface": {
-      "sources": [],
+      "sources": [
+        "base02",
+        "base2"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "bg-surface-2": {
-      "sources": [],
+      "sources": [
+        "base02",
+        "base2"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "border": {
-      "sources": [],
+      "sources": [
+        "base01",
+        "base1"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "border-focus": {
-      "sources": [],
+      "sources": [
+        "cyan"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "border-strong": {
-      "sources": [],
+      "sources": [
+        "base0",
+        "base00"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "card": {
-      "sources": [],
+      "sources": [
+        "base02",
+        "base2"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "danger": {
-      "sources": [],
+      "sources": [
+        "red"
+      ],
       "kind": "功能",
       "themeCount": 2
     },
@@ -88,12 +129,17 @@
       "themeCount": 2
     },
     "hairline": {
-      "sources": [],
+      "sources": [
+        "base02",
+        "base2"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "info": {
-      "sources": [],
+      "sources": [
+        "blue"
+      ],
       "kind": "功能",
       "themeCount": 2
     },
@@ -103,7 +149,9 @@
       "themeCount": 2
     },
     "ok": {
-      "sources": [],
+      "sources": [
+        "green"
+      ],
       "kind": "功能",
       "themeCount": 2
     },
@@ -113,7 +161,9 @@
       "themeCount": 2
     },
     "queued": {
-      "sources": [],
+      "sources": [
+        "violet"
+      ],
       "kind": "功能",
       "themeCount": 2
     },
@@ -123,47 +173,66 @@
       "themeCount": 2
     },
     "syntax-attr": {
-      "sources": [],
+      "sources": [
+        "yellow"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
     "syntax-comment": {
-      "sources": [],
+      "sources": [
+        "base01"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
     "syntax-keyword": {
-      "sources": [],
+      "sources": [
+        "green"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
     "syntax-literal": {
-      "sources": [],
+      "sources": [
+        "orange"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
     "syntax-string": {
-      "sources": [],
+      "sources": [
+        "cyan"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
     "syntax-title": {
-      "sources": [],
+      "sources": [
+        "blue"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
     "text": {
-      "sources": [],
+      "sources": [
+        "base0",
+        "base00"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "text-dim": {
-      "sources": [],
+      "sources": [
+        "base01"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "text-muted": {
-      "sources": [],
+      "sources": [
+        "base1"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
@@ -173,7 +242,9 @@
       "themeCount": 2
     },
     "warn": {
-      "sources": [],
+      "sources": [
+        "yellow"
+      ],
       "kind": "功能",
       "themeCount": 2
     },

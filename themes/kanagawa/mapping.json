@@ -29,12 +29,17 @@
       "themeCount": 3
     },
     "accent-secondary": {
-      "sources": [],
+      "sources": [
+        "syn.statement",
+        "dragonViolet"
+      ],
       "kind": "强调",
       "themeCount": 3
     },
     "bg": {
-      "sources": [],
+      "sources": [
+        "dragonBlack3"
+      ],
       "kind": "中性",
       "themeCount": 3
     },
@@ -54,7 +59,9 @@
       "themeCount": 3
     },
     "bg-surface-2": {
-      "sources": [],
+      "sources": [
+        "dragonBlack0"
+      ],
       "kind": "中性",
       "themeCount": 3
     },
@@ -154,12 +161,16 @@
       "themeCount": 3
     },
     "text": {
-      "sources": [],
+      "sources": [
+        "dragonWhite"
+      ],
       "kind": "中性",
       "themeCount": 3
     },
     "text-dim": {
-      "sources": [],
+      "sources": [
+        "dragonAsh"
+      ],
       "kind": "中性",
       "themeCount": 3
     },

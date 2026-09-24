@@ -91,7 +91,8 @@
     },
     "accent-purple": {
       "sources": [
-        "accent-purple"
+        "accent-purple",
+        "queued"
       ],
       "kind": "强调",
       "themeCount": 14

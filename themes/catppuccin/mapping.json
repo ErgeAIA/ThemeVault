@@ -10,22 +10,32 @@
   ],
   "map": {
     "accent": {
-      "sources": [],
+      "sources": [
+        "mauve"
+      ],
       "kind": "强调",
       "themeCount": 4
     },
     "accent-deep": {
-      "sources": [],
+      "sources": [
+        "mauve"
+      ],
       "kind": "强调",
       "themeCount": 4
     },
     "accent-foreground": {
-      "sources": [],
+      "sources": [
+        "base",
+        "accent"
+      ],
       "kind": "强调",
       "themeCount": 4
     },
     "accent-hover": {
-      "sources": [],
+      "sources": [
+        "pink",
+        "hover"
+      ],
       "kind": "强调",
       "themeCount": 4
     },
@@ -79,7 +89,9 @@
       "themeCount": 4
     },
     "border-focus": {
-      "sources": [],
+      "sources": [
+        "lavender"
+      ],
       "kind": "中性",
       "themeCount": 4
     },
@@ -105,7 +117,9 @@
       "themeCount": 4
     },
     "danger-fill": {
-      "sources": [],
+      "sources": [
+        "maroon"
+      ],
       "kind": "功能",
       "themeCount": 4
     },

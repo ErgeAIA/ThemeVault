@@ -33,7 +33,9 @@
       "themeCount": 12
     },
     "accent-hover": {
-      "sources": [],
+      "sources": [
+        "accent"
+      ],
       "kind": "强调",
       "themeCount": 12
     },
@@ -48,7 +50,9 @@
       "themeCount": 12
     },
     "bg": {
-      "sources": [],
+      "sources": [
+        "editor.background"
+      ],
       "kind": "中性",
       "themeCount": 12
     },
@@ -58,7 +62,9 @@
       "themeCount": 12
     },
     "bg-hover": {
-      "sources": [],
+      "sources": [
+        "list.hoverBackground"
+      ],
       "kind": "中性",
       "themeCount": 12
     },
@@ -68,7 +74,9 @@
       "themeCount": 12
     },
     "bg-surface-2": {
-      "sources": [],
+      "sources": [
+        "activityBar.background"
+      ],
       "kind": "中性",
       "themeCount": 12
     },
@@ -78,7 +86,9 @@
       "themeCount": 12
     },
     "border-focus": {
-      "sources": [],
+      "sources": [
+        "focusBorder"
+      ],
       "kind": "中性",
       "themeCount": 12
     },
@@ -98,12 +108,16 @@
       "themeCount": 12
     },
     "danger-fill": {
-      "sources": [],
+      "sources": [
+        "danger"
+      ],
       "kind": "派生",
       "themeCount": 12
     },
     "diff-insert": {
-      "sources": [],
+      "sources": [
+        "diffEditor.insertedTextBackground"
+      ],
       "kind": "派生",
       "themeCount": 12
     },
@@ -113,7 +127,9 @@
       "themeCount": 12
     },
     "hairline": {
-      "sources": [],
+      "sources": [
+        "border"
+      ],
       "kind": "中性",
       "themeCount": 12
     },
@@ -128,12 +144,16 @@
       "themeCount": 12
     },
     "ok": {
-      "sources": [],
+      "sources": [
+        "terminal.ansiGreen"
+      ],
       "kind": "功能",
       "themeCount": 12
     },
     "ok-fill": {
-      "sources": [],
+      "sources": [
+        "ok"
+      ],
       "kind": "派生",
       "themeCount": 12
     },
@@ -143,7 +163,9 @@
       "themeCount": 12
     },
     "queued": {
-      "sources": [],
+      "sources": [
+        "terminal.ansiMagenta"
+      ],
       "kind": "功能",
       "themeCount": 12
     },
@@ -163,12 +185,16 @@
       "themeCount": 12
     },
     "statusbar-foreground": {
-      "sources": [],
+      "sources": [
+        "statusBar.foreground"
+      ],
       "kind": "派生",
       "themeCount": 12
     },
     "syntax-attr": {
-      "sources": [],
+      "sources": [
+        "tokenColors"
+      ],
       "kind": "语法",
       "themeCount": 12
     },
@@ -178,12 +204,16 @@
       "themeCount": 12
     },
     "syntax-keyword": {
-      "sources": [],
+      "sources": [
+        "tokenColors"
+      ],
       "kind": "语法",
       "themeCount": 12
     },
     "syntax-literal": {
-      "sources": [],
+      "sources": [
+        "tokenColors"
+      ],
       "kind": "语法",
       "themeCount": 12
     },
@@ -208,7 +238,9 @@
       "themeCount": 12
     },
     "text-muted": {
-      "sources": [],
+      "sources": [
+        "editorLineNumber.foreground"
+      ],
       "kind": "中性",
       "themeCount": 12
     },

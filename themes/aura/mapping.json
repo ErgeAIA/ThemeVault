@@ -8,82 +8,138 @@
   ],
   "map": {
     "accent": {
-      "sources": [],
+      "sources": [
+        "accent1",
+        "badge",
+        "cursor",
+        "selection",
+        "focus"
+      ],
       "kind": "强调",
       "themeCount": 2
     },
     "accent-deep": {
-      "sources": [],
+      "sources": [
+        "accent38",
+        "selection"
+      ],
       "kind": "强调",
       "themeCount": 2
     },
     "accent-foreground": {
-      "sources": [],
+      "sources": [
+        "accent12",
+        "badge",
+        "button.foreground"
+      ],
       "kind": "强调",
       "themeCount": 2
     },
     "accent-hover": {
-      "sources": [],
+      "sources": [
+        "accent25",
+        "button.hoverBackground"
+      ],
       "kind": "强调",
       "themeCount": 2
     },
     "accent-secondary": {
-      "sources": [],
+      "sources": [
+        "accent2",
+        "button"
+      ],
       "kind": "强调",
       "themeCount": 2
     },
     "activitybar-inactive": {
-      "sources": [],
+      "sources": [
+        "accent35",
+        "activityBar.inactiveForeground"
+      ],
       "kind": "派生",
       "themeCount": 2
     },
     "bg": {
-      "sources": [],
+      "sources": [
+        "accent12",
+        "editor.background"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "bg-elevated": {
-      "sources": [],
+      "sources": [
+        "accent21",
+        "sideBar.background"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "bg-hover": {
-      "sources": [],
+      "sources": [
+        "accent23",
+        "list.hoverBackground"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "bg-surface": {
-      "sources": [],
+      "sources": [
+        "accent24",
+        "titleBar",
+        "statusBar",
+        "editorWidget.background"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "bg-surface-2": {
-      "sources": [],
+      "sources": [
+        "accent30",
+        "list.activeSelectionBackground"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "border": {
-      "sources": [],
+      "sources": [
+        "accent23",
+        "dropdown",
+        "input.border"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "border-focus": {
-      "sources": [],
+      "sources": [
+        "accent1",
+        "inputOption.activeBorder"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "border-strong": {
-      "sources": [],
+      "sources": [
+        "accent11",
+        "panel",
+        "titleBar",
+        "tab.border"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "card": {
-      "sources": [],
+      "sources": [
+        "accent24",
+        "editorWidget.background"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "danger": {
-      "sources": [],
+      "sources": [
+        "accent5"
+      ],
       "kind": "功能",
       "themeCount": 2
     },
@@ -93,22 +149,33 @@
       "themeCount": 2
     },
     "diff-insert": {
-      "sources": [],
+      "sources": [
+        "accent26",
+        "diffEditor.insertedTextBackground"
+      ],
       "kind": "派生",
       "themeCount": 2
     },
     "diff-remove": {
-      "sources": [],
+      "sources": [
+        "accent27",
+        "diffEditor.removedTextBackground"
+      ],
       "kind": "派生",
       "themeCount": 2
     },
     "hairline": {
-      "sources": [],
+      "sources": [
+        "accent13",
+        "editorWidget.border"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "info": {
-      "sources": [],
+      "sources": [
+        "accent32"
+      ],
       "kind": "功能",
       "themeCount": 2
     },
@@ -118,7 +185,9 @@
       "themeCount": 2
     },
     "ok": {
-      "sources": [],
+      "sources": [
+        "accent2"
+      ],
       "kind": "功能",
       "themeCount": 2
     },
@@ -128,12 +197,17 @@
       "themeCount": 2
     },
     "placeholder": {
-      "sources": [],
+      "sources": [
+        "accent14",
+        "input.placeholderForeground"
+      ],
       "kind": "派生",
       "themeCount": 2
     },
     "queued": {
-      "sources": [],
+      "sources": [
+        "accent6"
+      ],
       "kind": "功能",
       "themeCount": 2
     },
@@ -143,72 +217,115 @@
       "themeCount": 2
     },
     "selection": {
-      "sources": [],
+      "sources": [
+        "accent20",
+        "editor.selectionBackground"
+      ],
       "kind": "派生",
       "themeCount": 2
     },
     "selection-solid": {
-      "sources": [],
+      "sources": [
+        "accent38"
+      ],
       "kind": "派生",
       "themeCount": 2
     },
     "shadow": {
-      "sources": [],
+      "sources": [
+        "accent0",
+        "widget.shadow"
+      ],
       "kind": "派生",
       "themeCount": 2
     },
     "statusbar-foreground": {
-      "sources": [],
+      "sources": [
+        "accent10",
+        "statusBar.foreground"
+      ],
       "kind": "派生",
       "themeCount": 2
     },
     "syntax-attr": {
-      "sources": [],
+      "sources": [
+        "accent6",
+        "entity.other.attribute-name"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
     "syntax-comment": {
-      "sources": [],
+      "sources": [
+        "accent8",
+        "comment"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
     "syntax-keyword": {
-      "sources": [],
+      "sources": [
+        "accent1",
+        "keyword",
+        "storage"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
     "syntax-literal": {
-      "sources": [],
+      "sources": [
+        "accent4"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
     "syntax-string": {
-      "sources": [],
+      "sources": [
+        "accent2",
+        "string",
+        "constant"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
     "syntax-title": {
-      "sources": [],
+      "sources": [
+        "accent3",
+        "entity.name.function"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
     "text": {
-      "sources": [],
+      "sources": [
+        "accent7",
+        "editor.foreground"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "text-dim": {
-      "sources": [],
+      "sources": [
+        "accent8",
+        "tab.inactiveForeground",
+        "comment"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "text-muted": {
-      "sources": [],
+      "sources": [
+        "accent9",
+        "dropdown",
+        "input.foreground"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
     "warn": {
-      "sources": [],
+      "sources": [
+        "accent3"
+      ],
       "kind": "功能",
       "themeCount": 2
     },

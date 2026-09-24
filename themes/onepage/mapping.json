@@ -9,6 +9,7 @@
   "map": {
     "accent": {
       "sources": [
+        "--text-accent`（默认",
         "--onepage-accent-hex"
       ],
       "kind": "强调",
@@ -21,25 +22,33 @@
     },
     "accent-deep": {
       "sources": [
-        "--accent-active"
+        "--accent-active",
+        "color-mix"
       ],
       "kind": "强调",
       "themeCount": 2
     },
     "accent-foreground": {
       "sources": [
-        "--text-on-accent"
+        "--text-on-accent",
+        "--background-primary",
+        "text-on-accent"
       ],
       "kind": "强调",
       "themeCount": 2
     },
     "accent-hover": {
-      "sources": [],
+      "sources": [
+        "--accent-hover",
+        "color-mix"
+      ],
       "kind": "强调",
       "themeCount": 2
     },
     "accent-secondary": {
-      "sources": [],
+      "sources": [
+        "accent"
+      ],
       "kind": "强调",
       "themeCount": 2
     },
@@ -59,7 +68,8 @@
     },
     "bg-hover": {
       "sources": [
-        "--interactive-hover"
+        "--interactive-hover",
+        "color-mix"
       ],
       "kind": "中性",
       "themeCount": 2
@@ -80,7 +90,8 @@
     },
     "border": {
       "sources": [
-        "--color-base-20"
+        "--color-base-20",
+        "identity"
       ],
       "kind": "中性",
       "themeCount": 2
@@ -94,7 +105,8 @@
     },
     "border-strong": {
       "sources": [
-        "--color-base-25"
+        "--color-base-25",
+        "identity"
       ],
       "kind": "中性",
       "themeCount": 2
@@ -165,7 +177,8 @@
     "danger": {
       "sources": [
         "--color-red",
-        "--color-red-rgb"
+        "--color-red-rgb",
+        "ANSI"
       ],
       "kind": "功能",
       "themeCount": 2
@@ -215,7 +228,8 @@
     "info": {
       "sources": [
         "--color-blue",
-        "--color-blue-rgb"
+        "--color-blue-rgb",
+        "ANSI"
       ],
       "kind": "功能",
       "themeCount": 2
@@ -223,7 +237,8 @@
     "ok": {
       "sources": [
         "--color-green",
-        "--color-green-rgb"
+        "--color-green-rgb",
+        "ANSI"
       ],
       "kind": "功能",
       "themeCount": 2
@@ -231,7 +246,8 @@
     "queued": {
       "sources": [
         "--color-purple",
-        "--color-purple-rgb"
+        "--color-purple-rgb",
+        "ANSI"
       ],
       "kind": "功能",
       "themeCount": 2
@@ -365,7 +381,8 @@
     "warn": {
       "sources": [
         "--color-yellow",
-        "--color-yellow-rgb"
+        "--color-yellow-rgb",
+        "ANSI"
       ],
       "kind": "功能",
       "themeCount": 2

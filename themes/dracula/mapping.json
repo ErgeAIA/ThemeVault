@@ -7,27 +7,42 @@
   ],
   "map": {
     "accent": {
-      "sources": [],
+      "sources": [
+        "PURPLE"
+      ],
       "kind": "强调",
       "themeCount": 1
     },
     "accent-deep": {
-      "sources": [],
+      "sources": [
+        "PURPLE",
+        "accent"
+      ],
       "kind": "强调",
       "themeCount": 1
     },
     "accent-foreground": {
-      "sources": [],
+      "sources": [
+        "FG",
+        "accent",
+        "badge",
+        "button.foreground"
+      ],
       "kind": "强调",
       "themeCount": 1
     },
     "accent-hover": {
-      "sources": [],
+      "sources": [
+        "PINK",
+        "hover"
+      ],
       "kind": "强调",
       "themeCount": 1
     },
     "accent-secondary": {
-      "sources": [],
+      "sources": [
+        "CYAN"
+      ],
       "kind": "强调",
       "themeCount": 1
     },
@@ -37,52 +52,82 @@
       "themeCount": 1
     },
     "bg": {
-      "sources": [],
+      "sources": [
+        "BG",
+        "editor.background"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "bg-elevated": {
-      "sources": [],
+      "sources": [
+        "BGLight",
+        "activityBar.background",
+        "dropdown.background"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "bg-hover": {
-      "sources": [],
+      "sources": [
+        "LineHighlight",
+        "list.hoverBackground",
+        "SELECTION"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "bg-surface": {
-      "sources": [],
+      "sources": [
+        "BGDark",
+        "sideBar.background"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "bg-surface-2": {
-      "sources": [],
+      "sources": [
+        "BGDarker",
+        "statusBar.background"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "border": {
-      "sources": [],
+      "sources": [
+        "BGLight",
+        "dropdown.border"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "border-focus": {
-      "sources": [],
+      "sources": [
+        "COMMENT",
+        "focusBorder"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "border-strong": {
-      "sources": [],
+      "sources": [
+        "BGLighter"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "card": {
-      "sources": [],
+      "sources": [
+        "BGDark",
+        "editorWidget.background"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "danger": {
-      "sources": [],
+      "sources": [
+        "RED"
+      ],
       "kind": "功能",
       "themeCount": 1
     },
@@ -102,12 +147,17 @@
       "themeCount": 1
     },
     "hairline": {
-      "sources": [],
+      "sources": [
+        "BGDarker",
+        "tabsBackground"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "info": {
-      "sources": [],
+      "sources": [
+        "CYAN"
+      ],
       "kind": "功能",
       "themeCount": 1
     },
@@ -117,7 +167,9 @@
       "themeCount": 1
     },
     "ok": {
-      "sources": [],
+      "sources": [
+        "GREEN"
+      ],
       "kind": "功能",
       "themeCount": 1
     },
@@ -132,7 +184,10 @@
       "themeCount": 1
     },
     "queued": {
-      "sources": [],
+      "sources": [
+        "PINK",
+        "accent"
+      ],
       "kind": "功能",
       "themeCount": 1
     },
@@ -157,52 +212,81 @@
       "themeCount": 1
     },
     "syntax-attr": {
-      "sources": [],
+      "sources": [
+        "GREEN",
+        "entity.other.attribute-name"
+      ],
       "kind": "语法",
       "themeCount": 1
     },
     "syntax-comment": {
-      "sources": [],
+      "sources": [
+        "COMMENT",
+        "comment"
+      ],
       "kind": "语法",
       "themeCount": 1
     },
     "syntax-keyword": {
-      "sources": [],
+      "sources": [
+        "PINK",
+        "keyword"
+      ],
       "kind": "语法",
       "themeCount": 1
     },
     "syntax-literal": {
-      "sources": [],
+      "sources": [
+        "PURPLE",
+        "constant"
+      ],
       "kind": "语法",
       "themeCount": 1
     },
     "syntax-string": {
-      "sources": [],
+      "sources": [
+        "YELLOW",
+        "string"
+      ],
       "kind": "语法",
       "themeCount": 1
     },
     "syntax-title": {
-      "sources": [],
+      "sources": [
+        "CYAN",
+        "entity.name.type.class"
+      ],
       "kind": "语法",
       "themeCount": 1
     },
     "text": {
-      "sources": [],
+      "sources": [
+        "FG",
+        "editor.foreground"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "text-dim": {
-      "sources": [],
+      "sources": [
+        "COMMENT",
+        "comment"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "text-muted": {
-      "sources": [],
+      "sources": [
+        "COMMENT",
+        "editorLineNumber.foreground"
+      ],
       "kind": "中性",
       "themeCount": 1
     },
     "warn": {
-      "sources": [],
+      "sources": [
+        "YELLOW"
+      ],
       "kind": "功能",
       "themeCount": 1
     },

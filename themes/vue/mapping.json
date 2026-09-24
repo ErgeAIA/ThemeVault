@@ -23,7 +23,9 @@
       "themeCount": 2
     },
     "accent-hover": {
-      "sources": [],
+      "sources": [
+        "accent"
+      ],
       "kind": "强调",
       "themeCount": 2
     },
@@ -38,7 +40,9 @@
       "themeCount": 1
     },
     "bg": {
-      "sources": [],
+      "sources": [
+        "editor.background"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
@@ -48,7 +52,9 @@
       "themeCount": 2
     },
     "bg-hover": {
-      "sources": [],
+      "sources": [
+        "list.hoverBackground"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
@@ -58,7 +64,9 @@
       "themeCount": 2
     },
     "bg-surface-2": {
-      "sources": [],
+      "sources": [
+        "activityBar.background"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
@@ -68,7 +76,9 @@
       "themeCount": 2
     },
     "border-focus": {
-      "sources": [],
+      "sources": [
+        "focusBorder"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
@@ -88,12 +98,16 @@
       "themeCount": 2
     },
     "danger-fill": {
-      "sources": [],
+      "sources": [
+        "danger"
+      ],
       "kind": "派生",
       "themeCount": 2
     },
     "hairline": {
-      "sources": [],
+      "sources": [
+        "border"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
@@ -108,17 +122,23 @@
       "themeCount": 2
     },
     "ok": {
-      "sources": [],
+      "sources": [
+        "terminal.ansiGreen"
+      ],
       "kind": "功能",
       "themeCount": 2
     },
     "ok-fill": {
-      "sources": [],
+      "sources": [
+        "ok"
+      ],
       "kind": "派生",
       "themeCount": 2
     },
     "queued": {
-      "sources": [],
+      "sources": [
+        "terminal.ansiMagenta"
+      ],
       "kind": "功能",
       "themeCount": 2
     },
@@ -138,12 +158,16 @@
       "themeCount": 2
     },
     "statusbar-foreground": {
-      "sources": [],
+      "sources": [
+        "statusBar.foreground"
+      ],
       "kind": "派生",
       "themeCount": 2
     },
     "syntax-attr": {
-      "sources": [],
+      "sources": [
+        "tokenColors"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
@@ -153,12 +177,16 @@
       "themeCount": 2
     },
     "syntax-keyword": {
-      "sources": [],
+      "sources": [
+        "tokenColors"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
     "syntax-literal": {
-      "sources": [],
+      "sources": [
+        "tokenColors"
+      ],
       "kind": "语法",
       "themeCount": 2
     },
@@ -183,7 +211,9 @@
       "themeCount": 2
     },
     "text-muted": {
-      "sources": [],
+      "sources": [
+        "editorLineNumber.foreground"
+      ],
       "kind": "中性",
       "themeCount": 2
     },
