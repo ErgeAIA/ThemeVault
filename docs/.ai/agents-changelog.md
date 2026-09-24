@@ -32,6 +32,11 @@ description: >
 - `.zcode/plans/plan-sess_*.md` → keep → 会话计划产物，不纳入 AGENTS.md 规则区
 - `AI-MAP.md` / `docs/migration-guide.md` / `docs/adr/` → keep → 已有指针或正文引用，不复述
 
+## 2026-08-07 · P0 L1-v4 + ErgeMD profile
+
+- `<References 无 l1-roles/profiles>` → update → 追加 `docs/l1-roles.md`、`docs/profiles/` 指针
+- `<其余 AGENTS.md 条目>` → keep → 硬性规则/工作流未改
+
 ---
 
 ## 2026-09-14 · 审计优化阶段 4（事实区回填）

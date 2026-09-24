@@ -21,7 +21,11 @@ description: >
 - **阶段**：资产仓维护（非运行时项目）；协作记忆已初始化
 - **代码**：`scripts/*.py` 生成器与校验器存在；无应用运行时
 - **工具链**：Python 3 + `scripts/gen_index.py`；codegraph 1.6.0（若已建索引见 `.codegraph/`）
-- **最后更新**：2026-09-14 审计优化方案 5 阶段全部完成
+- **最后更新**：2026-09-14 P0：L1-v4 + ErgeMD profile
+  - 新增 `docs/l1-roles.md`、`docs/adr/0008-l1-v4-reading-and-honesty.md`、`docs/profiles/ergemd.md` + `ergemd.mapping.json`
+  - OnePage accent 兜底备注改「契约兜底」；glossary/migration-guide/AGENTS References 同步；DEC-004
+  - `gen_index.py --write` exit 0；与既有 DEC-002 HEX 豁免不冲突
+- **上次更新**：2026-09-14 审计优化方案 5 阶段全部完成
   - vibe-audit 审计落盘 `docs/.ai/audit/audit-2026-09-13.md`（问题 17 条：中 4 / 低 13）；优化方案分 5 阶段全部交付，每阶段独立提交
   - 阶段 1 ✅ `803359f`：#073/#074 状态色 + ANSI 26 行 rgb()→HEX（DEC-002 显式豁免）
   - 阶段 2 ✅ `168d47f`：预览对比度口径对齐 Python（非 6 位纯色显示「—」）；structural_of 不再伪造 fonts（nord/tokyonight×3 脏数据清除）
@@ -35,5 +39,5 @@ description: >
   - OnePage 家族入库：`themes/onepage/`（#073 warm-brown / #074 warm-paper）
   - `gen_index.py --write` 全绿；INDEX.md / SOURCES.md / AI-MAP.md 已同步
   - vibe-init：`git init`；补齐 `docs/.ai/` 与 `docs/handoff/`；AGENTS.md 增量补 Permissions 等节
-- **下一步**：按用户需求做主题适配或继续入库；入库后必跑 `gen_index.py --write`
+- **下一步**：用 #073/#074 + `docs/profiles/ergemd` 做 ErgeMD 阅读器适配；或 P1（provenance lint / export_tokens）
 - **本阶段禁止**：手改 INDEX.json / preview/data.js；改外部项目源码；未确认协议不落盘

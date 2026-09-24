@@ -182,9 +182,11 @@ docs/handoff/             会话交接文档
 见 INDEX.md
 见 INDEX.json
 见 SOURCES.md
+见 docs/l1-roles.md
 见 docs/migration-guide.md
 见 docs/glossary.md
 见 docs/adr/
+见 docs/profiles/
 见 docs/.ai/agents-changelog.md
 见 docs/.ai/decision-log.md
 见 docs/.ai/debug-log.md

@@ -16,6 +16,13 @@ description: >
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
 
+## DEC-004: L1 v4 分层与缺口诚实 + ErgeMD Profile
+
+- **日期**：2026-08-07
+- **背景**：L1-29 无法承载阅读排版；required 强齐套造成假完整；迁移矩阵在 migration-guide 线性膨胀。与 DEC-002 的 HEX 豁免并行：本条立长期 IR 规则，不覆盖 DEC-002 已落盘的 26 行显示豁免。
+- **决策**：L1 core+reading 词表 `docs/l1-roles.md`（ADR-0008）；缺口必须标契约兜底（同 DEC-003 兜底表精神一致）；目标分发改走 `docs/profiles/`（首个 ErgeMD）
+- **验证**：`gen_index --write` 仍绿；mapping.json 覆盖 core+reading；OnePage typo 对齐 reading
+
 ## DEC-003: vue 家族缺失角色约定值边界
 
 - **日期**：2026-09-14
