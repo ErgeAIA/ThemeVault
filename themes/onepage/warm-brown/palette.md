@@ -28,8 +28,8 @@
 | `--accent` | `#6db3a3` | 强调 | 默认浅青（HSL 166 32% 57%）；冷锚 |
 | `--accent-hover` | `color-mix(in srgb, var(--text-accent) 88%, white)` | 强调 | 源码公式 |
 | `--accent-deep` | `color-mix(in srgb, var(--text-accent) 88%, black)` | 强调 | `--accent-active` 源码公式 |
-| `--accent-secondary` | `#6db3a3` | 强调 | 无独立第二强调，沿用主色；排版轴见 typo-* |
-| `--accent-foreground` | `#262322` | 强调 | 取 bg；源 `--text-on-accent` 为 oklch 派生 |
+| `--accent-secondary` | `#6db3a3` | 强调 | 契约兜底·同 accent（无独立第二强调）；排版轴见 typo-* |
+| `--accent-foreground` | `#262322` | 强调 | 契约兜底·取 bg；源 `--text-on-accent` 为 oklch 派生非固定 hex |
 
 ## 功能状态色（6 通道）
 

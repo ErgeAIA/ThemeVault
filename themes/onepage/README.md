@@ -52,7 +52,7 @@
 | `syntax-literal` | `--code-value` | |
 | `syntax-title` | `--code-function` | |
 | `syntax-attr` | `--code-property` | |
-| `typo-h1`…`typo-h6` / `typo-bold` / `typo-italic` | `--typo-*` | **家族扩展**（derivedOptional），彩色排版 |
+| `typo-h1`…`typo-h6` / `typo-bold` / `typo-italic` | `--typo-*` | **L1-reading**（ADR-0008），彩色排版，成套保留 |
 | `graph-*` | `--graph-*` | 家族扩展，关系图谱 |
 
 ## 结构约定
