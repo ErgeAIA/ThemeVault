@@ -52,5 +52,5 @@ description: >
   - OnePage 家族入库：`themes/onepage/`（#073 warm-brown / #074 warm-paper）
   - `gen_index.py --write` 全绿；INDEX.md / SOURCES.md / AI-MAP.md 已同步
   - vibe-init：`git init`；补齐 `docs/.ai/` 与 `docs/handoff/`；AGENTS.md 增量补 Permissions 等节
-- **下一步**：纳入 P2（extract 脚本/scaffold）或 P3（provenance lint）；或转整理/使用流程审查
+- **下一步**：旧家族渐进补 intent/extract；或转整理/使用流程审查；另有并行会话 CHANGELOG/README 改动未提交
 - **本阶段禁止**：手改 INDEX.json / preview/data.js；改外部项目源码；未确认协议不落盘
