@@ -174,6 +174,7 @@ docs/handoff/             会话交接文档
 | 变更后校验与生成 | `python scripts/gen_index.py --write` | 本文件「变更后必跑」（内含 lint_intake） |
 | 仅校验不落盘 | `python scripts/gen_index.py` | 同上 |
 | 纳入 provenance 门禁 | `python scripts/lint_intake.py [--strict]` | 新纳入用 `--strict` |
+| 旧家族回填 IR | `python scripts/backfill_intake_ir.py [--family <id>] [--force]` | 见 docs/intake-artifacts.md |
 | 生成 extract.json | `python scripts/extract_css_vars.py --src <css> --family <id> --pin <sha> --out themes/<id>/_source/extract.json` | 见 docs/intake-artifacts.md |
 | 脚手架家族 | `python scripts/scaffold_family.py --family <id> --project <n> --repo <url> --license <spdx> --themes <ids…>` | S1，不覆盖既有文件 |
 
@@ -194,25 +195,52 @@ docs/handoff/             会话交接文档
 
 ## References
 
-见 AI-MAP.md
-见 README.md
-见 INDEX.md
-见 INDEX.json
-见 SOURCES.md
-见 docs/l1-roles.md
-见 docs/intake-artifacts.md
-见 docs/migration-guide.md
-见 docs/glossary.md
-见 docs/adr/
-见 docs/profiles/
-见 docs/.ai/agents-changelog.md
-见 docs/.ai/decision-log.md
-见 docs/.ai/debug-log.md
-见 docs/.ai/init-report.md
-见 docs/.ai/project-progress.md
-见 docs/.ai/experience/
-见 docs/handoff/
-见 themes/_TEMPLATE/
+索引与清单（改数据 / 取色时看）：
+
+| 文件 | 是什么 | 何时查 |
+| ---- | ------ | ------ |
+| `INDEX.md` | 人读主题总表（编号 / required·派生覆盖数，与 JSON 同步） | 报编号取色、对总数 |
+| `INDEX.json` | 机器副表（`theme.number` / `palettePath` / `textContrast` / `brand` / `fontStyle` 等；生成物勿手改） | 程序取色、对比度核对 |
+| `SOURCES.md` | 来源登记（仓库地址 / 协议 / 收录主题列表） | 新家族登记、核对协议出处 |
+| `themes/_TEMPLATE/` | 新主题落盘模板（palette.md 五段结构等） | S2 手工入库时复制起步 |
+
+契约与规范（定角色 / 判值域 / 迁移时看）：
+
+| 文件 | 是什么 | 何时查 |
+| ---- | ------ | ------ |
+| `docs/adr/` | 架构决策记录（0001–0008，宪法级；含契约单一源 / 目录布局 / LICENSE / AA / 预览 / ErgeMD / L1-v4） | 规则冲突、回溯口径 |
+| `docs/l1-roles.md` | L1 v4 角色分层（core / reading）与缺口诚实规则 | 写契约、判 required / 契约兜底 |
+| `docs/migration-guide.md` | 全局迁移指南（L1 映射矩阵 + 多目标栈 + 标准取色片段） | 外部项目适配、取色转译 |
+| `docs/glossary.md` | 仓库统一术语口径 | 用词不确定时 |
+| `docs/intake-artifacts.md` | 入库中间产物 `intent.json` / `extract.json` 规范 | S2 产出/核对中间产物 |
+| `docs/profiles/` | 目标分发 profile（如 ErgeMD 的 core/reading 映射） | 给具体目标项目发适配包 |
+| `docs/brand-colors.md` | 每套主题品牌主色 + 按钮文字建议速查 | 外部 AI 选按钮配色 |
+
+项目地图与人类入口（首读 / 汇报时看）：
+
+| 文件 | 是什么 | 何时查 |
+| ---- | ------ | ------ |
+| `AI-MAP.md` | 项目地图（目录职责 / 契约语义 / 数据流 / 适配工作流 / 常见坑） | 首次接触本仓库 |
+| `README.md` | 人类入口（定位 / 职责边界 / 目录约定 / 命名 / 工作流概览；**无进度**） | 对人说明本仓库 |
+| `preview.html` + `preview/data.js` | 数据驱动预览 SPA（data.js 为生成物勿手改） | 视觉验收、AA 徽标复核 |
+
+过程与协作记忆（会话衔接时看；只追加不删历史）：
+
+| 文件 | 是什么 | 何时查 |
+| ---- | ------ | ------ |
+| `docs/.ai/project-progress.md` | **进度唯一出处**（阶段 / 分支 / 待验证 / 下一步） | 会话开始、写进展 |
+| `docs/.ai/decision-log.md` | 决策日志 `DEC-NNN`（优先级高于 PRD） | 做选择前、回溯口径 |
+| `docs/.ai/debug-log.md` | 调试记录 `BUG-NNN` | 反复踩坑、修预览/生成器时 |
+| `docs/.ai/agents-changelog.md` | AGENTS.md 每次改动的处置留痕 | 改本文件前后 |
+| `docs/.ai/init-report.md` | vibe-init 初始化报告 | 回溯协作体系怎么来的 |
+| `docs/.ai/experience/<领域>/` | 可复用经验（正文可改写，历史靠该域 changelog） | 同类问题复用做法 |
+| `docs/handoff/` | 会话交接 `handoff-YYYY-MM-DD-*.md` | 交接 / 看上次会话结论 |
+
+变更记录：
+
+| 文件 | 是什么 | 何时查 |
+| ---- | ------ | ------ |
+| `CHANGELOG.md` / `CHANGELOG.en.md` | 日记式双语变更日志（按 `YYYY-MM-DD` 分隔，无 release） | 对外说明变了什么；`+add` 追加 |
 
 ## Self-Maintenance
 

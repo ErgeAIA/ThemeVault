@@ -21,7 +21,14 @@ description: >
 - **阶段**：资产仓维护（非运行时项目）；协作记忆已初始化
 - **代码**：`scripts/*.py` 生成器与校验器存在；无应用运行时
 - **工具链**：Python 3 + `scripts/gen_index.py`；codegraph 1.6.0（若已建索引见 `.codegraph/`）
-- **最后更新**：2026-09-14 纳入 P2+P3
+- **最后更新**：2026-09-14 旧家族 IR 回填
+  - 21 家族 `intent.json`+`extract.json`；`backfill_intake_ir.py`；lint：legacy pin / alpha-hex / partial
+  - everforest 快照无色值定义 → provenance=partial（WARN）；DEC-008；lint/gen_index 绿
+- **上次更新**：2026-09-24 References 补全指引
+  - AGENTS `## References` 由裸「见 X」改为分组表（索引 / 契约规范 / 地图入口 / 过程记忆 / 变更记录），每项「是什么 / 何时查」
+  - 补入 `CHANGELOG*.md`、`docs/brand-colors.md`、`preview.html`+`data.js`、`themes/_TEMPLATE/`
+  - agents-changelog 已留痕；待用户验证：References 一眼可知用途
+- **上次更新**：2026-09-14 纳入 P2+P3
   - `extract_css_vars.py` / `scaffold_family.py` / `lint_intake.py`；`gen_index` 内联 provenance 门禁
   - onepage extract 重生成（136 条）lint OK；DEC-007；Commands 表已登记工具
 - **上次更新**：2026-09-24 README 剥离进度 + 双语变更日志

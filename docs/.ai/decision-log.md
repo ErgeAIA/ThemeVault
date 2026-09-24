@@ -16,6 +16,13 @@ description: >
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
 
+## DEC-008: 旧家族 IR 回填与 partial provenance
+
+- **日期**：2026-09-14
+- **背景**：21 个家族缺 intent/extract；部分 `_source` 不含色值定义（everforest）
+- **决策**：`backfill_intake_ir.py` 机械回填；legacy pin；8 位 hex 允许 6 位主体回溯；`provenance=partial` 值域 WARN
+- **验证**：`lint_intake` exit 0（68 条 everforest WARN）；`gen_index` 绿
+
 ## DEC-007: 纳入 P2/P3 工具链与 provenance 门禁
 
 - **日期**：2026-09-14

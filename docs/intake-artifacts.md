@@ -65,6 +65,20 @@ palette.md    → L1 映射 + 兜底/豁免标记（人审层）
 
 豁免值（DEC 登记）允许不在 extract 的「原文 hex」中出现，但必须能在 extract 找到**约定依据**或在 DEC 写明来源。
 
+## 旧家族回填
+
+历史家族（DEC-006 渐进）用 `scripts/backfill_intake_ir.py` 生成：
+
+- `pinType: "legacy"` / `pin: "unrecorded-legacy-intake"`（入库时未钉 commit）
+- `extract` 自 `_source/**` 机械扫取（CSS/JSON/YAML/Lua/Vim/literal hex）
+- 快照不含色值定义时：`extract.provenance: "partial"`，值域证明降级为 WARN
+
+```powershell
+python scripts/backfill_intake_ir.py            # 仅补缺失
+python scripts/backfill_intake_ir.py --force    # 重生成
+python scripts/lint_intake.py
+```
+
 ## 模板与工具
 
 见 `themes/_TEMPLATE/_source/intent.example.json` 与 `extract.example.json`。

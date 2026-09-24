@@ -55,6 +55,11 @@ description: >
 - `<Commands 表>` → update → 增加 lint_intake / extract_css_vars / scaffold_family
 - `<DoD>` → keep → 值域由 lint 强制可回溯
 
+## 2026-09-14 · 旧家族 IR 回填
+
+- `<Commands>` → update → 增加 backfill_intake_ir
+- `<其余>` → keep
+
 ---
 
 ## 2026-09-14 · 审计优化阶段 4（事实区回填）
@@ -65,3 +70,8 @@ description: >
 
 - `<Conventions 无 README 进度边界>` → update → 追加「README 不写当前进度/待办；进度唯一出处 docs/.ai/project-progress.md」
 - `README.md「当前进度」清单（含已完项与待办）` → drop → 整节删除；进度归 project-progress.md 管理
+
+## 2026-09-24 · References 补全指引
+
+- `<References 仅「见 X」裸路径>` → update → 改为分组表（索引清单 / 契约规范 / 地图入口 / 过程记忆 / 变更记录），每项写「是什么 / 何时查」
+- `<References 无 CHANGELOG、brand-colors、preview、TEMPLATE 要点>` → update → 补入 `CHANGELOG*.md`、`docs/brand-colors.md`、`preview.html`+`data.js`、`themes/_TEMPLATE/` 说明（原先散落硬性规则/目录速览）
