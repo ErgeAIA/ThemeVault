@@ -100,12 +100,17 @@ def lint_family(fam_dir: Path, strict: bool) -> tuple[list[str], list[str]]:
             return errors, warnings
         if intent.get("schemaVersion") != 1:
             errors.append(f"[{fam}] intent.schemaVersion != 1")
-        if not (intent.get("source") or {}).get("pin"):
+        pin = (intent.get("source") or {}).get("pin")
+        pin_type = (intent.get("source") or {}).get("pinType")
+        if not pin and pin_type != "legacy":
             errors.append(f"[{fam}] intent.source.pin 为空")
         if not (intent.get("source") or {}).get("license"):
             errors.append(f"[{fam}] intent.source.license 为空")
-        if not (intent.get("source") or {}).get("repo"):
+        if not (intent.get("source") or {}).get("repo") and pin_type != "legacy":
+            # legacy backfill may have empty repo if README parse missed
             errors.append(f"[{fam}] intent.source.repo 为空")
+        elif not (intent.get("source") or {}).get("repo"):
+            warnings.append(f"[{fam}] intent.source.repo 为空（legacy 回填）")
     if has_extract:
         try:
             extract = json.loads(extract_p.read_text(encoding="utf-8"))
@@ -123,6 +128,8 @@ def lint_family(fam_dir: Path, strict: bool) -> tuple[list[str], list[str]]:
                     break
 
     vals, hexes = extract_index(extract) if extract else (set(), set())
+    # 快照不含色值定义（如 everforest.vim 只有 highlight 引用）→ 值域证明降级为 WARN
+    partial = bool(extract) and extract.get("provenance") == "partial"
 
     for theme_dir in sorted(p for p in fam_dir.iterdir() if p.is_dir() and not p.name.startswith("_")):
         palette = theme_dir / "palette.md"
@@ -140,12 +147,27 @@ def lint_family(fam_dir: Path, strict: bool) -> tuple[list[str], list[str]]:
             nv = norm_hex(value)
             if value in vals or value.lower() in vals or nv in hexes:
                 continue
+            # 8-digit hex: allow if 6-digit body is extract-backed (alpha composition)
+            if re.fullmatch(r"#[0-9a-fA-F]{8}", value) and norm_hex(value[:7]) in hexes:
+                continue
+            if re.fullmatch(r"#[0-9a-fA-F]{8}", nv) and nv[:7] in hexes:
+                continue
+            # rgb triplet components (r, g, b)
+            if re.fullmatch(r"\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}", value):
+                if any(value.replace(" ", "") == ev.replace(" ", "") or value in ev for ev in vals):
+                    continue
+                # also accept when extract has rgb(r, g, b) form
+                alt = f"rgb({value})"
+                if alt in vals or alt.replace(" ", "") in {v.replace(" ", "") for v in vals}:
+                    continue
             # allow value that is a literal substring of some extract value
             if any(value and value in ev for ev in vals):
                 continue
-            errors.append(
-                f"[{fam}/{tid}] --{role} 值不可回溯 extract 且备注无豁免标记: {value!r}"
-            )
+            msg = f"[{fam}/{tid}] --{role} 值不可回溯 extract 且备注无豁免标记: {value!r}"
+            if partial:
+                warnings.append(msg + "（provenance=partial）")
+            else:
+                errors.append(msg)
     return errors, warnings
 
 
