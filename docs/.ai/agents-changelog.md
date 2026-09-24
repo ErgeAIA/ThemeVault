@@ -2,7 +2,7 @@
 title: AGENTS.md Changelog
 type: agents-changelog
 project: ThemeVault
-updated: 2026-09-14
+updated: 2026-09-24
 description: >
   AGENTS.md 的变更记录，AGENTS.md 每改动一次就追加一行，不随日常开发更新。
   只追加，不删除或改写历史。AI 在本文件新增或修改任何条目后，必须同步更新 frontmatter 的 updated 字段为当日日期（YYYY-MM-DD）。
@@ -50,8 +50,18 @@ description: >
 - `<DoD 清单>` → update → 增加中间产物勾选项
 - `<References>` → update → 增加 `docs/intake-artifacts.md`
 
+## 2026-09-14 · P2/P3 纳入工具与门禁
+
+- `<Commands 表>` → update → 增加 lint_intake / extract_css_vars / scaffold_family
+- `<DoD>` → keep → 值域由 lint 强制可回溯
+
 ---
 
 ## 2026-09-14 · 审计优化阶段 4（事实区回填）
 
 - `Toolchain 表 Python 行「系统/环境 PATH（未锁版本）」` → update → 补 ≥3.10 下限（PEP 604 语法）与 pyyaml 依赖指针（新增 requirements.txt，仅 gen_vscode.py 需要；审计 F4）
+
+## 2026-09-24 · README 不写进度
+
+- `<Conventions 无 README 进度边界>` → update → 追加「README 不写当前进度/待办；进度唯一出处 docs/.ai/project-progress.md」
+- `README.md「当前进度」清单（含已完项与待办）` → drop → 整节删除；进度归 project-progress.md 管理

@@ -171,8 +171,11 @@ docs/handoff/             会话交接文档
 
 | 场景 | 命令原文 | 来源 |
 | ---- | -------- | ---- |
-| 变更后校验与生成 | `python scripts/gen_index.py --write` | 本文件「变更后必跑」 |
+| 变更后校验与生成 | `python scripts/gen_index.py --write` | 本文件「变更后必跑」（内含 lint_intake） |
 | 仅校验不落盘 | `python scripts/gen_index.py` | 同上 |
+| 纳入 provenance 门禁 | `python scripts/lint_intake.py [--strict]` | 新纳入用 `--strict` |
+| 生成 extract.json | `python scripts/extract_css_vars.py --src <css> --family <id> --pin <sha> --out themes/<id>/_source/extract.json` | 见 docs/intake-artifacts.md |
+| 脚手架家族 | `python scripts/scaffold_family.py --family <id> --project <n> --repo <url> --license <spdx> --themes <ids…>` | S1，不覆盖既有文件 |
 
 ## Conventions
 
@@ -182,6 +185,7 @@ docs/handoff/             会话交接文档
 - 字体 / radius 等结构类令牌**不进颜色契约**（ADR-0001 / ADR-0006），字体信息在
   INDEX.json 的 `fontStyle` / `fonts` / `structuralNote` 字段（源：README「结构令牌」行）。
 - 会话文档体系固定：进度写 `docs/.ai/project-progress.md`；决策写 `docs/.ai/decision-log.md`；两者只追加不删历史。
+- **README 不写当前进度 / 待办清单**；进度唯一出处是 `docs/.ai/project-progress.md`（README 只保留定位、约定、概览）。
 - bug 追加 `docs/.ai/debug-log.md`，格式 `BUG-NNN`；只追加不删历史。
 - 交接写 `docs/handoff/`，命名 `handoff-YYYY-MM-DD-*.md`。
 - 改 `docs/.ai` 或 handoff 须同步 frontmatter `updated` 为当日。

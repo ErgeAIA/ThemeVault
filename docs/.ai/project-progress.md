@@ -21,7 +21,14 @@ description: >
 - **阶段**：资产仓维护（非运行时项目）；协作记忆已初始化
 - **代码**：`scripts/*.py` 生成器与校验器存在；无应用运行时
 - **工具链**：Python 3 + `scripts/gen_index.py`；codegraph 1.6.0（若已建索引见 `.codegraph/`）
-- **最后更新**：2026-09-14 P1 纳入中间产物
+- **最后更新**：2026-09-14 纳入 P2+P3
+  - `extract_css_vars.py` / `scaffold_family.py` / `lint_intake.py`；`gen_index` 内联 provenance 门禁
+  - onepage extract 重生成（136 条）lint OK；DEC-007；Commands 表已登记工具
+- **上次更新**：2026-09-24 README 剥离进度 + 双语变更日志
+  - README 删除「当前进度」清单；AGENTS Conventions 明确「进度唯一出处 project-progress.md」；agents-changelog 已留痕
+  - 新增 `CHANGELOG.md` / `CHANGELOG.en.md` / `.changelog-manager.json`（日记式按日分隔，无 release）
+  - 待用户验证：README 无进度残留；CHANGELOG 双语条目一一对应
+- **上次更新**：2026-09-14 P1 纳入中间产物
   - `docs/intake-artifacts.md` + `_TEMPLATE` 示例；`themes/onepage/_source/{intent,extract}.json` 试点
   - AGENTS S2/DoD/References 接线；DEC-006
 - **上次更新**：2026-09-14 P0 纳入 DoD

@@ -16,6 +16,13 @@ description: >
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
 
+## DEC-007: 纳入 P2/P3 工具链与 provenance 门禁
+
+- **日期**：2026-09-14
+- **背景**：intent/extract 有规范无工具；值域忠实无机器闸
+- **决策**：新增 `extract_css_vars.py` / `scaffold_family.py` / `lint_intake.py`；`gen_index` 内联 lint（缺 IR 旧家族 WARN，有 IR 则值域必须可回溯或备注豁免）；新纳入 DoD 要求 `--strict`
+- **验证**：onepage lint OK；scaffold 冒烟通过；`gen_index --write` exit 0
+
 ## DEC-006: 纳入中间产物 intent.json / extract.json
 
 - **日期**：2026-09-14

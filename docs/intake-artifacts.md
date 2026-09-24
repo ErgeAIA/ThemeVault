@@ -65,6 +65,23 @@ palette.md    → L1 映射 + 兜底/豁免标记（人审层）
 
 豁免值（DEC 登记）允许不在 extract 的「原文 hex」中出现，但必须能在 extract 找到**约定依据**或在 DEC 写明来源。
 
-## 模板
+## 模板与工具
 
 见 `themes/_TEMPLATE/_source/intent.example.json` 与 `extract.example.json`。
+
+| 工具 | 用途 |
+|------|------|
+| `scripts/extract_css_vars.py` | 从 CSS 机械生成 `extract.json`（可重跑） |
+| `scripts/scaffold_family.py` | 新家族骨架（intent/contract/README/palette 占位） |
+| `scripts/lint_intake.py` | provenance 门禁；`gen_index` 已内联调用 |
+
+```powershell
+python scripts/extract_css_vars.py --src themes/onepage/_source/theme.css `
+  --family onepage --pin <sha> `
+  --selector body.theme-light --selector body.theme-dark `
+  --selector .theme-light --selector .theme-dark `
+  --out themes/onepage/_source/extract.json
+python scripts/lint_intake.py          # 旧家族缺 IR = WARN
+python scripts/lint_intake.py --strict # 新纳入 = 缺 IR 即 ERROR
+python scripts/gen_index.py --write
+```
