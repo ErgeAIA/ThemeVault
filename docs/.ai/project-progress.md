@@ -21,7 +21,10 @@ description: >
 - **阶段**：资产仓维护（非运行时项目）；协作记忆已初始化
 - **代码**：`scripts/*.py` 生成器与校验器存在；无应用运行时
 - **工具链**：Python 3 + `scripts/gen_index.py`；codegraph 1.6.0（若已建索引见 `.codegraph/`）
-- **最后更新**：2026-09-14 P0：L1-v4 + ErgeMD profile
+- **最后更新**：2026-09-14 P0 纳入 DoD
+  - AGENTS.md：S0 增加 pin/默认值语义；S2 值域三态+映射可审；S5 自检升级为纳入 DoD 清单
+  - DEC-005；agents-changelog 已留痕；`gen_index` 绿
+- **上次更新**：2026-09-14 P0：L1-v4 + ErgeMD profile
   - 新增 `docs/l1-roles.md`、`docs/adr/0008-l1-v4-reading-and-honesty.md`、`docs/profiles/ergemd.md` + `ergemd.mapping.json`
   - OnePage accent 兜底备注改「契约兜底」；glossary/migration-guide/AGENTS References 同步；DEC-004
   - `gen_index.py --write` exit 0；与既有 DEC-002 HEX 豁免不冲突
@@ -39,5 +42,5 @@ description: >
   - OnePage 家族入库：`themes/onepage/`（#073 warm-brown / #074 warm-paper）
   - `gen_index.py --write` 全绿；INDEX.md / SOURCES.md / AI-MAP.md 已同步
   - vibe-init：`git init`；补齐 `docs/.ai/` 与 `docs/handoff/`；AGENTS.md 增量补 Permissions 等节
-- **下一步**：用 #073/#074 + `docs/profiles/ergemd` 做 ErgeMD 阅读器适配；或 P1（provenance lint / export_tokens）
+- **下一步**：纳入 P1（intent/extract 中间产物）或整理/使用流程审查；新主题入库一律走纳入 DoD
 - **本阶段禁止**：手改 INDEX.json / preview/data.js；改外部项目源码；未确认协议不落盘

@@ -37,6 +37,13 @@ description: >
 - `<References 无 l1-roles/profiles>` → update → 追加 `docs/l1-roles.md`、`docs/profiles/` 指针
 - `<其余 AGENTS.md 条目>` → keep → 硬性规则/工作流未改
 
+## 2026-09-14 · P0 纳入 DoD
+
+- `<S0 无 pin/默认值语义>` → update → 增加 pin 钉住与默认值语义声明
+- `<S2 无值域诚实/映射可审>` → update → 增加 ADR-0008 值域三态与 reading 成套要求
+- `<S5/自查清单>` → update → 升级为「纳入 DoD」：pin、豁免清单、契约兜底、映射可审
+- `<其余条目>` → keep → 未改
+
 ---
 
 ## 2026-09-14 · 审计优化阶段 4（事实区回填）

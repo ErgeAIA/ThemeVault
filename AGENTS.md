@@ -88,8 +88,9 @@ python scripts/gen_index.py --write   # 校验契约覆盖 + 生成 INDEX.json +
 **S0 侦察（先调研，不写任何文件）**
 - `web_search` / `web_fetch` 打开链接：确认仓库性质、主题文件位置（tokens.css / palette.json / CSS 变量块）。
 - 确认协议：查 LICENSE / README / package.json。**协议不明确 = 不落盘**，先问用户（ADR-0004）。
-- 判断角色词表：L1（bg/text/border/accent/ok-warn-danger-info-queued/syntax）还是原生词表
-  （bg-page/accent-cyan…）→ 决定契约方式（S1）。
+- **钉住 pin**：记录来源 URL + **commit SHA**（或不可变 blob/文件 hash）；无 pin 不得进入 S2。
+- 判断角色词表：L1（见 `docs/l1-roles.md` core/reading）还是原生词表 → 决定契约方式（S1）。
+- 声明默认值语义：入库的是「源码固化默认」还是「可运行时覆盖的回退默认」（如 Style Settings）。
 
 **S1 家族判定**
 - 已有同来源家族 → 加入现有家族，不新建。
@@ -100,11 +101,16 @@ python scripts/gen_index.py --write   # 校验契约覆盖 + 生成 INDEX.json +
   - 零散 / 手工调色 → 按 `themes/_TEMPLATE/` 手工落盘，契约人工核定。
 
 **S2 落盘**
-- `_source/`：原始源码文件**原样拷入**（只读快照）+ `contract.json`（required / derivedOptional）。
+- `_source/`：原始源码文件**原样拷入**（只读快照）+ `contract.json`（required / derivedOptional）+ pin 备注
+  （`_source/README.md` 写清 URL@commit / hash）。
 - `themes/<family>/<id>/palette.md`：按 `_TEMPLATE/palette.md` 五段结构（中性 / 强调 / 功能 / 语法 /
   派生），表格 `| --role | value | 类型 | 备注 |`；值原文照抄；继承 base 层的角色在备注列标注
   「继承 dark/light-base」并给出解析值（如 ergemd）。
-- `themes/<family>/<id>/README.md`：`## 元信息` 键完整 —— 来源项目 / 来源仓库链接 / 原始主题 ID /
+- **值域诚实（ADR-0008）**：每个值必须是 ① `_source` 原文/子串 ② 公式原文（`color-mix`/`var()`/`rgb()`）
+  ③ 显式豁免（家族 README fallback 表 + `docs/.ai/decision-log.md` 登记）。禁止发明 hex；无独立值用
+  「契约兜底·同 X / 取 X」标注。
+- **映射可审**：家族 README 须含 L1（或原生）对照要点；reading 轴（`typo-*`）有则成套写入 derivedOptional。
+- `themes/<family>/<id>/README.md`：`## 元信息` 键完整 —— 来源项目 / 来源仓库链接（含 pin）/ 原始主题 ID /
   显示名 / 协议 / 色彩方案 / 主题类型 / 提取方式 / 显式颜色令牌数 / 结构令牌（可选，格式
   `mono（IBM Plex Mono）· 硬角（radius-none）`）；另写迁移备注（特殊点 / 署名 / world 层装饰）。
 - 家族 README.md 成员表同步更新。
@@ -119,14 +125,17 @@ python scripts/gen_index.py --write   # 校验契约覆盖 + 生成 INDEX.json +
 - `preview.html` 是数据驱动 SPA，读 `preview/data.js`；`gen_index.py --write` 已在 S3 生成 data.js，**无需额外步骤**。
 - 检查 AA 徽标：标红（✗）项记录到交付摘要，**不擅自改值**（硬性规则 7）。
 
-**S5 交付摘要**
-- 汇报：家族 / 主题、light-dark 方案、令牌数、契约 required/derivedOptional、协议、fontStyle、
-  AA 标红项、需要用户决策的点（如弱对比是否要修、协议确认）。
+**S5 交付摘要（纳入 DoD 未过 = 不得宣称已纳入）**
+- 汇报：家族 / 主题、light-dark 方案、令牌数、契约 required/derivedOptional、协议、pin、fontStyle、
+  AA 标红项、值域（原文/公式/豁免）统计、需要用户决策的点。
 
-**自查清单（交付前逐项过）**
+**纳入 DoD 自检清单（交付前逐项过）**
 - [ ] 协议已确认（未确认 = 不落盘）
-- [ ] 色值全部原文，未改写 / 未转 hex
+- [ ] **pin 已记录**（URL@commit 或文件 hash，写入 `_source` 与主题 README）
+- [ ] 色值全部原文或公式原文；**豁免仅有 DEC 登记的显式清单**
+- [ ] 无独立值的 required 已标「契约兜底·同 X / 取 X」
 - [ ] palette.md 角色 ⊆ 契约，required 无缺、无越界角色
+- [ ] L1-core 映射可审；L1-reading 有则成套（`docs/l1-roles.md`）
 - [ ] INDEX.md 与 INDEX.json 数字一致
 - [ ] `gen_index.py --write` 全绿（missing=0 out=0，已生成 INDEX.json + preview/data.js）
 - [ ] 预览页 `preview.html` 刷新后新主题已反映（SPA 读 data.js）
