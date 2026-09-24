@@ -505,6 +505,14 @@ def main() -> int:
         else:
             print(f"unchanged, skipped {INDEX_JSON.relative_to(ROOT)}")
 
+        # 人读视图：INDEX.md / AI-MAP 计数区（organize P3）
+        try:
+            from gen_docs_views import main as _docs_main
+            if _docs_main([]) != 0:
+                return 1
+        except ImportError:
+            pass
+
         # SPA 数据：完整 INDEX.json（含每主题 tokens）包成 JS 全局变量，
         # 供 preview.html 双击即开（<script src> 无 file:// CORS 限制，比 fetch 稳）。
         data_js = ROOT / "preview" / "data.js"

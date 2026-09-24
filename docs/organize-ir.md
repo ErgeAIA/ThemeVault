@@ -58,3 +58,13 @@ python scripts/gen_family_mapping.py          # 生成/刷新
 python scripts/gen_family_mapping.py --check  # 漂移或 required 缺失 → exit 1
 ```
 
+## 人读视图生成化（P3）
+
+`INDEX.md` 索引表、统计区与 `AI-MAP.md` 家族现状表由 `scripts/gen_docs_views.py` 从
+`INDEX.json` 渲染（`<!-- BEGIN:generated … -->` 标记内）。手写只保留标记外散文与
+INDEX.md **备注列**（按编号保留）。
+
+```powershell
+python scripts/gen_docs_views.py [--check]
+```
+
