@@ -365,6 +365,15 @@ def main() -> int:
     except ImportError:
         pass
 
+    # 整理层 IR：theme.tokens.json 生成/一致性（P0 organize）。
+    try:
+        from gen_tokens import main as _tokens_main
+        _trc = _tokens_main(["--check"] if not write else [])
+        if _trc != 0:
+            return 1
+    except ImportError:
+        pass
+
     families = []
     all_tokens = 0
     errors = []
@@ -423,6 +432,7 @@ def main() -> int:
                 "type": type_of(meta, has_palette),
                 "path": f"themes/{fam_dir.name}/{tid}",
                 "palettePath": f"themes/{fam_dir.name}/{tid}/palette.md" if has_palette else None,
+                "tokensPath": f"themes/{fam_dir.name}/{tid}/tokens.json" if has_palette else None,
                 "license": license_of(meta) or fam_readme.get("license"),
                 "licenseNote": meta.get("特殊点") if "Nord" in meta.get("特殊点", "") else None,
                 "fontStyle": font_style,
