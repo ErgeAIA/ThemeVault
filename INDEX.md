@@ -6,20 +6,23 @@
 
 | 编号 | 主题目录 | 来源项目 | 主题 ID | 显示名 | 协议 | 方案 | required 角色 | 派生覆盖 | 状态 | 备注 |
 |-----|----------|----------|---------|--------|------|------|---------------|----------|------|------|
-| 001 | `themes/opensquilla/arctic` | opensquilla | arctic | Arctic | Apache-2.0 | dark | 29 | 2（elev 派生） | ✅ 已提取 | **Nord 衍生（MIT，需署名）** |
+<!-- BEGIN:generated index-table -->
+| 编号 | 主题目录 | 来源项目 | 主题 ID | 显示名 | 协议 | 方案 | required 角色 | 派生覆盖 | 状态 | 备注 |
+|-----|----------|----------|---------|--------|------|------|---------------|----------|------|------|
+| 001 | `themes/opensquilla/arctic` | opensquilla | arctic | Arctic | Apache-2.0 | dark | 29 | 2 | ✅ 已提取 | **Nord 衍生（MIT，需署名）** |
 | 002 | `themes/opensquilla/crt-green` | opensquilla | crt-green | CRT Green | Apache-2.0 | dark | 29 | 0 | ✅ 已提取 | 绿屏 CRT |
-| 003 | `themes/opensquilla/dark` | opensquilla | dark | Dark | Apache-2.0 | dark | 29 | 2（msg-bubble + warn-fill） | ✅ 已提取 | 中性石墨，6 通道状态谱 |
-| 004 | `themes/opensquilla/ember` | opensquilla | ember | Ember | Apache-2.0 | dark | 29 | 0（world 辉光在 skin 层） | ✅ 已提取 | 火山暖暗 |
-| 005 | `themes/opensquilla/light` | opensquilla | light | Light | Apache-2.0 | light | 29 | 23（sidebar 9 + 阴影/elev 8 + fill 5 + atmosphere） | ✅ 已提取 | Lark 结构逻辑 + 暖橙品牌 |
-| 006 | `themes/opensquilla/miami` | opensquilla | miami | Miami | Apache-2.0 | light | 29 | 8（shadow/scrim/elev 派生） | ✅ 已提取 | 迈阿密日光 |
+| 003 | `themes/opensquilla/dark` | opensquilla | dark | Dark | Apache-2.0 | dark | 29 | 2 | ✅ 已提取 | 中性石墨，6 通道状态谱 |
+| 004 | `themes/opensquilla/ember` | opensquilla | ember | Ember | Apache-2.0 | dark | 29 | 0 | ✅ 已提取 | 火山暖暗 |
+| 005 | `themes/opensquilla/light` | opensquilla | light | Light | Apache-2.0 | light | 29 | 23 | ✅ 已提取 | Lark 结构逻辑 + 暖橙品牌 |
+| 006 | `themes/opensquilla/miami` | opensquilla | miami | Miami | Apache-2.0 | light | 29 | 8 | ✅ 已提取 | 迈阿密日光 |
 | 007 | `themes/opensquilla/out-of-register` | opensquilla | out-of-register | Out-of-Register | Apache-2.0 | both | 0（继承 ground） | — | ✅ 已记录 | **expressive skin**（路由级，非独立色板） |
-| 008 | `themes/opensquilla/synthwave` | opensquilla | synthwave | Synthwave | Apache-2.0 | dark | 29 | 0（world 网格在 skin 层） | ✅ 已提取 | retrowave 霓虹 |
-| 009 | `themes/opensquilla/terminal` | opensquilla | terminal | Terminal | Apache-2.0 | dark | 29 | 0（world 扫描线在 skin 层） | ✅ 已提取 | 琥珀 CRT |
-| 010 | `themes/opensquilla/vapor` | opensquilla | vapor | Vapor | Apache-2.0 | dark | 29 | 0（world 网格在 skin 层） | ✅ 已提取 | 蒸汽波深葡萄 |
-| 011 | `themes/catppuccin/frappe` | catppuccin | frappe | Frappe | MIT | dark | 29 | 5（状态 fill） | ✅ 已提取 | 中深（官方 Frappe） |
-| 012 | `themes/catppuccin/latte` | catppuccin | latte | Latte | MIT | light | 29 | 5（状态 fill） | ✅ 已提取 | 官方 26 色命名调色板 → L1 映射（mauve 主强调） |
-| 013 | `themes/catppuccin/macchiato` | catppuccin | macchiato | Macchiato | MIT | dark | 29 | 5（状态 fill） | ✅ 已提取 | 深色（官方 Macchiato） |
-| 014 | `themes/catppuccin/mocha` | catppuccin | mocha | Mocha | MIT | dark | 29 | 5（状态 fill） | ✅ 已提取 | 最深，最流行（官方 Mocha） |
+| 008 | `themes/opensquilla/synthwave` | opensquilla | synthwave | Synthwave | Apache-2.0 | dark | 29 | 0 | ✅ 已提取 | retrowave 霓虹 |
+| 009 | `themes/opensquilla/terminal` | opensquilla | terminal | Terminal | Apache-2.0 | dark | 29 | 0 | ✅ 已提取 | 琥珀 CRT |
+| 010 | `themes/opensquilla/vapor` | opensquilla | vapor | Vapor | Apache-2.0 | dark | 29 | 0 | ✅ 已提取 | 蒸汽波深葡萄 |
+| 011 | `themes/catppuccin/frappe` | catppuccin | frappe | Frappe | MIT | dark | 29 | 5 | ✅ 已提取 | 中深（官方 Frappe） |
+| 012 | `themes/catppuccin/latte` | catppuccin | latte | Latte | MIT | light | 29 | 5 | ✅ 已提取 | 官方 26 色命名调色板 → L1 映射（mauve 主强调） |
+| 013 | `themes/catppuccin/macchiato` | catppuccin | macchiato | Macchiato | MIT | dark | 29 | 5 | ✅ 已提取 | 深色（官方 Macchiato） |
+| 014 | `themes/catppuccin/mocha` | catppuccin | mocha | Mocha | MIT | dark | 29 | 5 | ✅ 已提取 | 最深，最流行（官方 Mocha） |
 | 015 | `themes/ergemd/aurora` | ergemd | aurora | Aurora | AGPL-3.0 | dark | 34 | 52 | ✅ 已提取 | 青绿色调（cyan/teal），类似 VS Code One Dark |
 | 016 | `themes/ergemd/cherry-blossom` | ergemd | cherry-blossom | Cherry Blossom | AGPL-3.0 | dark | 34 | 52 | ✅ 已提取 | 粉色/樱花系，柔和紫色调 |
 | 017 | `themes/ergemd/cyberpunk` | ergemd | cyberpunk | Cyberpunk | AGPL-3.0 | dark | 34 | 33 | ✅ 已提取 | 赛博朋克霓虹（高饱和青/品红/橙/绿） |
@@ -78,37 +81,22 @@
 | 070 | `themes/falcon/light-pink` | falcon | light-pink | Falcon Light Pink | MIT | light | 29 | 7 | ✅ 已提取 | 浅色粉调 |
 | 071 | `themes/falcon/light-yellow` | falcon | light-yellow | Falcon Light Yellow | MIT | light | 29 | 7 | ✅ 已提取 | 浅色黄调 |
 | 072 | `themes/omni/dark` | omni | dark | Omni | MIT | dark | 29 | 7 | ✅ 已提取 | Rocketseat 深紫调，粉红品牌（#FF79C6） |
-| 073 | `themes/onepage/warm-brown` | onepage | warm-brown | Warm Brown · Cool Anchor | MIT | dark | 29 | 25（typo 8 + graph 7 + ANSI 8 + accent-active/shadow） | ✅ 已提取 | Obsidian 暖棕·冷锚；冷青强调 #6db3a3；基于 Cupertino |
-| 074 | `themes/onepage/warm-paper` | onepage | warm-paper | Warm Paper | MIT | light | 29 | 25（typo 8 + graph 7 + ANSI 8 + accent-active/shadow） | ✅ 已提取 | Obsidian 暖白纸张；深青强调 #0e6e63；基于 Cupertino |
-
-> **编号** = 全局唯一引用号（由 `scripts/gen_index.py` 自动分配，对应 INDEX.json 的 `theme.number` 字段）：
-> 新增主题追加 `max+1`，**已有编号永不变**；需要某套配色时直接说编号即可（如「#007 的配色」）。
-> 表内行序 = 编号序，与 INDEX.json 数组同构；家族内按目录名排序（opensquilla 家族内为字母序）。
-> aura 家族契约 required 29 / derivedOptional 13（accent 阶梯映射，见家族 README「L1 语义角色映射」）。
-> dracula 家族契约 required 29 / derivedOptional 12（11 色命名色板 → L1 映射，见家族 README「L1 语义角色映射」）。
-> nord 家族契约 required 29 / derivedOptional 11；solarized 家族契约 required 29 / derivedOptional 6；
-> tokyonight 家族契约 required 29 / derivedOptional 9；one-dark-pro / night-owl / synthwave / iceberg
-> 家族契约 required 29 / derivedOptional 5–6；
-> kanagawa / everforest / rose-pine 家族契约 required 29 / derivedOptional 5
-> （均为命名色板 → L1 映射，见家族 README）。
-> ergemd 家族契约由脚本数据驱动生成（required 34 / derivedOptional 58），角色为 ErgeMD 原生变量名（bg-page、accent-cyan、obsidian-callout-* 等），迁移映射见家族 README「L1 语义角色映射建议」。
-> onepage 家族契约 required 29 / derivedOptional 25（含 typo 彩色排版 8 项，迁移阅读器时建议整组保留）。
+| 073 | `themes/onepage/warm-brown` | onepage | warm-brown | Warm Brown · Cool Anchor（暖棕·冷锚） | MIT | dark | 29 | 25 | ✅ 已提取 | Obsidian 暖棕·冷锚；冷青强调 #6db3a3；基于 Cupertino |
+| 074 | `themes/onepage/warm-paper` | onepage | warm-paper | Warm Paper（暖白纸张） | MIT | light | 29 | 25 | ✅ 已提取 | Obsidian 暖白纸张；深青强调 #0e6e63；基于 Cupertino |
+<!-- END:generated index-table -->
 
 ## 统计
 
+<!-- BEGIN:generated index-stats -->
 - 已入库来源项目：**22**（opensquilla、catppuccin、ergemd、aura、dracula、nord、solarized、tokyonight、one-dark-pro、night-owl、synthwave、iceberg、kanagawa、everforest、rose-pine、ayu、jellyfish、shades、vue、falcon、omni、onepage）
-- value theme：**73 套**（22 light + 51 dark）
-- expressive skin：**1 套**（out-of-register，路由级叠加层）
-- **L1 语义角色契约**（每家族 `_source/contract.json`，唯一事实源，见 ADR-0001）：
-  - opensquilla / catppuccin / aura / dracula / nord / solarized / tokyonight / one-dark-pro / night-owl / synthwave / iceberg / kanagawa / everforest / rose-pine：required **29**；derivedOptional（opensquilla/catppuccin **33**、aura **13**、dracula **12**、nord **11**、tokyonight **9**、night-owl/synthwave/iceberg **6**、one-dark-pro/solarized/kanagawa/everforest/rose-pine **5**）
-  - ergemd（数据驱动生成）：required **34** / derivedOptional **58**（原生变量名）
-  - ayu / jellyfish / shades / vue / omni / falcon（VS Code theme 系列，脚本生成）：required **29** / derivedOptional **12**（同 dracula 派生集）
-  - onepage（Obsidian 固化双配色）：required **29** / derivedOptional **25**（typo + graph + ANSI + accent-active/shadow）
-- 色板表令牌总量（73 套 value theme，`palette.md` 行数，由 `scripts/gen_index.py` 校验）：**3510 个**
-- 源码令牌总量（opensquilla tokens.css 变量，含结构/焦点环非纯色令牌）：**341 个**
-- 协议分布：Apache-2.0 × 14（opensquilla 10 + tokyonight 3 + jellyfish 1；opensquilla 的 arctic 为 Nord MIT 衍生需署名）+ MIT × 46（catppuccin 4 + aura 2 + dracula 1 + nord 1 + solarized 2 + one-dark-pro 1 + night-owl 2 + synthwave 1 + iceberg 2 + kanagawa 3 + everforest 2 + rose-pine 3 + ayu 3 + shades 2 + vue 2 + omni 1 + falcon 12 + onepage 2）+ AGPL-3.0 × 14（ergemd）
+- value theme：**73 套**（21 light + 52 dark）
+- expressive skin：**1 套**
+- stats（INDEX.json）：familyCount 22 / themeCount 74 / valueThemeCount 73 / skinCount 1 / tokenTotal 3510
+- 色板表令牌总量：**3510 个**
+- 协议分布（value theme）：MIT × 46 + AGPL-3.0 × 14 + Apache-2.0 × 13
 
-> 以上 required/派生覆盖/令牌数均为机器生成值（`scripts/gen_index.py`），人工手写数字一律以脚本为准。
+> 本节由 `scripts/gen_docs_views.py` 从 `INDEX.json` 生成，禁止手改。
+<!-- END:generated index-stats -->
 
 ## 检索提示
 

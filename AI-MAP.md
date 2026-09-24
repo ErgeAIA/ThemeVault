@@ -45,13 +45,14 @@ ThemeVault/
 
 ## 2. 家族现状（2026-08-07）
 
+<!-- BEGIN:generated family-status -->
 22 个家族 / 74 套主题（73 value theme + 1 skin，数字以 `INDEX.json` 的 `stats` 为准：
-familyCount 22 / themeCount 74 / valueThemeCount 73 / skinCount 1 / tokenTotal 3510，22 light + 51 dark）。
+familyCount 22 / themeCount 74 / valueThemeCount 73 / skinCount 1 / tokenTotal 3510，21 light + 52 dark）。
 
 | 家族 | 主题数 | 方案 | 契约版本 | required/derived | 角色命名 | 来源 |
 |------|--------|------|----------|------------------|----------|------|
-| opensquilla | 9 + 1 skin | 2L+7D+both | v3 | 29/33 | L1 通用 | Apache-2.0 |
-| catppuccin | 4 | 1L+3D | v3 | 29/33 | L1 通用 | MIT（palette.json） |
+| opensquilla | 9 + 1 skin | 2L+7D+1both | v3 | 29/33 | L1 通用 | Apache-2.0 |
+| catppuccin | 4 | 1L+3D | v3 | 29/33 | L1 通用 | MIT |
 | ergemd | 14 | 2L+12D | v1 | 34/58 | ErgeMD 原生名 | AGPL-3.0 |
 | aura | 2 | 0L+2D | v1 | 29/13 | L1 通用 | MIT |
 | dracula | 1 | 0L+1D | v1 | 29/12 | L1 通用 | MIT |
@@ -69,14 +70,12 @@ familyCount 22 / themeCount 74 / valueThemeCount 73 / skinCount 1 / tokenTotal 3
 | jellyfish | 1 | 0L+1D | v1 | 29/12 | L1 通用 | Apache-2.0 |
 | shades | 2 | 0L+2D | v1 | 29/12 | L1 通用 | MIT |
 | vue | 2 | 0L+2D | v1 | 29/12 | L1 通用 | MIT |
-| omni | 1 | 0L+1D | v1 | 29/12 | L1 通用 | MIT |
 | falcon | 12 | 8L+4D | v1 | 29/12 | L1 通用 | MIT |
-| onepage | 2 | 1L+1D | v1 | 29/25 | L1 通用 + typo 扩展 | MIT（基于 Cupertino MIT） |
+| omni | 1 | 0L+1D | v1 | 29/12 | L1 通用 | MIT |
+| onepage | 2 | 1L+1D | v1 | 29/25 | L1 + typo 扩展 | MIT |
 
-- **角色命名**：21 家族用 L1 通用语义名（其中 6 个 VS Code theme 系列由语义键提取为 L1；
-  onepage 额外扩展 typo 彩色排版）；ergemd 用源码原生变量名（bg-page/accent-cyan/obsidian-callout-*）。
-  跨家族迁移用 `docs/migration-guide.md` 映射矩阵转译。
-- 完整来源/协议清单见 `SOURCES.md`，逐主题编号见 `INDEX.md`（#001–#074，新增追加、已有不变）。
+> 本表由 `scripts/gen_docs_views.py` 生成，禁止手改计数。
+<!-- END:generated family-status -->
 
 ## 3. 核心概念速查
 
