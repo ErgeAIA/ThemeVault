@@ -43,20 +43,31 @@ python scripts/gen_index.py --write   # 内联 gen_tokens 并校验
 - 禁止只改 tokens.json 不改 palette（`--check` 会失败）。
 - 使用阶段读 tokens.json + `docs/profiles/*.mapping.json`，不要再解析 Markdown 表。
 
-## 家族映射：family mapping.json（P1）
+## 家族映射：family mapping.json（P1 · hints 级）
 
 ```
 themes/<family>/mapping.json
 ```
 
-- 角色 → 源变量线索（自 palette 备注 `--var` / 反引号标识提取；ergemd 用原生名；`typo-*` 默认 `--typo-*`）。
-- **同族一致性**：各主题 **required** 角色必须齐全且对齐；`derivedOptional` 允许只覆盖分歧处。
-- 家族 README 的对照表改为导读；机器消费以 `mapping.json` 为准。
+- **定位（对抗审查 A2 降级）**：角色 → 源变量**线索缓存**（palette 备注 + 家族 README 对照表），
+  **不是完备单源**。完备对照仍以各家族 README 映射表 / `docs/migration-guide.md` 为准。
+- `--strict`：required 角色零线索 → ERROR（新家族/补全验收用）；默认 WARN + STAT 空率。
+- 同族一致性：各主题 **required** 角色必须齐全；`derivedOptional` 允许只覆盖分歧处。
 
 ```powershell
 python scripts/gen_family_mapping.py          # 生成/刷新
-python scripts/gen_family_mapping.py --check  # 漂移或 required 缺失 → exit 1
+python scripts/gen_family_mapping.py --check
+python scripts/gen_family_mapping.py --strict # 完备性门禁
 ```
+
+## tokens 负载语义（B1）
+
+| 字段 | 含义 |
+|------|------|
+| `contractFallback` | 无独立源值，契约兜底（同 X / 取 X / 继承） |
+| `displayExemption` | 纳入期显示豁免（如 DEC-002 HEX 显示），**不是设计缺口** |
+| `derivedHint` | 推导 / 约定 / oklch / 未提供 |
+| `fallback` | 上三者 OR（兼容旧读者） |
 
 ## 人读视图生成化（P3）
 

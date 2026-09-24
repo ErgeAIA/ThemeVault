@@ -68,6 +68,11 @@ description: >
 
 - `<Commands/References>` → update → gen_tokens 与 docs/organize-ir.md
 
+## 2026-09-14 · 对抗修复 A1/A2/B1
+
+- `<Commands mapping>` → update → --strict；mapping 定位改为 hints
+- `<organize-ir>` → update → B1 负载语义字段
+
 ---
 
 ## 2026-09-14 · 审计优化阶段 4（事实区回填）

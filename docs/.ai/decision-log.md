@@ -16,6 +16,16 @@ description: >
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
 
+## DEC-013: 对抗审查修复（A1/A2/B1）
+
+- **日期**：2026-09-14
+- **背景**：整理 P0–P3 对抗审查发现门禁漏洞、mapping 空心、fallback 语义混用
+- **决策**：
+  - A1：`gen_index` 校验模式强制 `gen_docs_views --check`
+  - A2：`mapping.json` **降级为 hints**（README 对照表 + 备注抽取）；空率 STAT；`--strict` 才对零线索 ERROR；完备映射仍以家族 README / migration-guide 为准
+  - B1：tokens 拆分 `contractFallback` / `displayExemption` / `derivedHint`
+- **验证**：A1 人为漂移 exit≠0；required 空线索 287/643（hints 级，已知）；gen_index 绿
+
 ## DEC-012: 人读视图生成化
 
 - **日期**：2026-09-14

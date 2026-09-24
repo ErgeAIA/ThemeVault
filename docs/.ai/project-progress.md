@@ -21,7 +21,9 @@ description: >
 - **阶段**：资产仓维护（非运行时项目）；协作记忆已初始化
 - **代码**：`scripts/*.py` 生成器与校验器存在；无应用运行时
 - **工具链**：Python 3 + `scripts/gen_index.py`；codegraph 1.6.0（若已建索引见 `.codegraph/`）
-- **最后更新**：2026-09-14 整理 P3：人读视图生成化
+- **最后更新**：2026-09-14 整理对抗修复 A1/A2/B1
+  - gen_index 校验路径强制 docs --check；mapping 降级 hints + --strict；tokens 负载语义拆分；DEC-013
+- **上次更新**：2026-09-14 整理 P3：人读视图生成化
   - `gen_docs_views.py`；INDEX.md/AI-MAP 标记区与 INDEX.json 对齐；DEC-012
 - **上次更新**：2026-09-14 整理 P1：family mapping.json
   - 22 族 `mapping.json`；同族 required 一致性门禁；gen_index 内联；DEC-011
