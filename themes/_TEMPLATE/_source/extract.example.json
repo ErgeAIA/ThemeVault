@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "family": "example-family",
+  "pin": "0000000000000000000000000000000000000000",
+  "entries": [
+    {
+      "selector": ":root",
+      "var": "--bg",
+      "value": "#101014",
+      "kind": "hex",
+      "sourceFile": "theme.css"
+    },
+    {
+      "selector": ".theme-dark",
+      "var": "--accent",
+      "value": "color-mix(in srgb, var(--bg) 10%, white)",
+      "kind": "color-mix",
+      "sourceFile": "theme.css"
+    }
+  ]
+}

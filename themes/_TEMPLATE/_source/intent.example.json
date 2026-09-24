@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "family": "example-family",
+  "source": {
+    "project": "ExampleTheme",
+    "repo": "https://github.com/example/repo",
+    "pin": "0000000000000000000000000000000000000000",
+    "pinType": "commit",
+    "files": ["theme.css", "LICENSE"],
+    "license": "MIT",
+    "upstream": {
+      "project": null,
+      "repo": null,
+      "license": null,
+      "note": null
+    }
+  },
+  "scope": {
+    "themes": ["light", "dark"],
+    "defaultSemantics": "frozen-default",
+    "defaultNote": "入库为源码固化默认值；若源为 var(--x, DEFAULT)，DEFAULT 进 palette"
+  },
+  "attribution": [],
+  "collectedAt": "YYYY-MM-DD"
+}
