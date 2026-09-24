@@ -178,6 +178,7 @@ docs/handoff/             会话交接文档
 | 生成 extract.json | `python scripts/extract_css_vars.py --src <css> --family <id> --pin <sha> --out themes/<id>/_source/extract.json` | 见 docs/intake-artifacts.md |
 | 脚手架家族 | `python scripts/scaffold_family.py --family <id> --project <n> --repo <url> --license <spdx> --themes <ids…>` | S1，不覆盖既有文件 |
 | 生成/校验 tokens.json | `python scripts/gen_tokens.py [--check]` | 整理 IR，见 docs/organize-ir.md |
+| 生成/校验 family mapping | `python scripts/gen_family_mapping.py [--check]` | 同上 |
 
 ## Conventions
 

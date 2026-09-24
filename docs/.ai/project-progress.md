@@ -21,7 +21,9 @@ description: >
 - **阶段**：资产仓维护（非运行时项目）；协作记忆已初始化
 - **代码**：`scripts/*.py` 生成器与校验器存在；无应用运行时
 - **工具链**：Python 3 + `scripts/gen_index.py`；codegraph 1.6.0（若已建索引见 `.codegraph/`）
-- **最后更新**：2026-09-14 整理 P0：theme.tokens.json
+- **最后更新**：2026-09-14 整理 P1：family mapping.json
+  - 22 族 `mapping.json`；同族 required 一致性门禁；gen_index 内联；DEC-011
+- **上次更新**：2026-09-14 整理 P0：theme.tokens.json
   - 74 套 `tokens.json`（core/reading/family + fallback）；`gen_tokens.py`；gen_index 内联；DEC-010
 - **上次更新**：2026-09-14 extract v2 值账本
   - `extract.json` 升 value-ledger；17MB→814KB（4.8%）；lint 兼容 v1；DEC-009

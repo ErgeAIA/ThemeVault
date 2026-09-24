@@ -16,6 +16,13 @@ description: >
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
 
+## DEC-011: 家族 mapping 单源与 required 一致性
+
+- **日期**：2026-09-14
+- **背景**：源变量→L1 映射散落 README/migration-guide/palette 备注；derivedOptional 覆盖面本就因主题而异
+- **决策**：`themes/<family>/mapping.json` 为机器单源；一致性仅强制 **required 对齐**；README 对照表降为导读
+- **验证**：22 族生成 OK；`gen_family_mapping --check` 与 `gen_index` 绿
+
 ## DEC-010: 整理层 IR theme.tokens.json
 
 - **日期**：2026-09-14
