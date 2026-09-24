@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "family": "opensquilla",
+  "source": {
+    "project": "opensquilla/opensquilla",
+    "repo": "https://github.com/opensquilla/opensquilla",
+    "pin": "unrecorded-legacy-intake",
+    "pinType": "legacy",
+    "files": [
+      "_colors.json",
+      "arctic.manifest.ts",
+      "arctic.tokens.css",
+      "check-theme-contract.mjs",
+      "contract.json",
+      "crt-green.manifest.ts",
+      "crt-green.tokens.css",
+      "dark.manifest.ts",
+      "dark.tokens.css",
+      "ember.manifest.ts",
+      "ember.tokens.css",
+      "extract.json",
+      "foundation.css",
+      "intent.json",
+      "light.manifest.ts",
+      "light.tokens.css",
+      "miami.manifest.ts",
+      "miami.tokens.css",
+      "synthwave.manifest.ts",
+      "synthwave.tokens.css",
+      "terminal.manifest.ts",
+      "terminal.tokens.css",
+      "vapor.manifest.ts",
+      "vapor.tokens.css"
+    ],
+    "license": "Apache-2.0",
+    "upstream": {
+      "project": null,
+      "repo": null,
+      "license": null,
+      "note": null
+    }
+  },
+  "scope": {
+    "themes": [
+      "arctic",
+      "crt-green",
+      "dark",
+      "ember",
+      "light",
+      "miami",
+      "synthwave",
+      "terminal",
+      "vapor"
+    ],
+    "defaultSemantics": "frozen-default",
+    "defaultNote": "回填 IR：入库时未记录运行时覆盖语义；按源码固化值处理"
+  },
+  "attribution": [],
+  "collectedAt": "2026-09-24",
+  "backfilled": true
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "family": "falcon",
+  "source": {
+    "project": "Falcon",
+    "repo": "https://github.com/panxiaoan/falcon-vscode-themes",
+    "pin": "unrecorded-legacy-intake",
+    "pinType": "legacy",
+    "files": [
+      "contract.json",
+      "dark/blue.yml",
+      "dark/dark.yml",
+      "dark/green-islands.yml",
+      "dark/green.yml",
+      "extract.json",
+      "intent.json",
+      "light/bean-green.yml",
+      "light/buff.yml",
+      "light/celadon.yml",
+      "light/green-islands.yml",
+      "light/green.yml",
+      "light/grey.yml",
+      "light/pink.yml",
+      "light/yellow.yml"
+    ],
+    "license": "MIT",
+    "upstream": {
+      "project": null,
+      "repo": null,
+      "license": null,
+      "note": "contract.source.ref=default branch (2026-08)"
+    }
+  },
+  "scope": {
+    "themes": [
+      "dark",
+      "dark-blue",
+      "dark-green",
+      "dark-green-islands",
+      "light-bean-green",
+      "light-buff",
+      "light-celadon",
+      "light-green",
+      "light-green-islands",
+      "light-grey",
+      "light-pink",
+      "light-yellow"
+    ],
+    "defaultSemantics": "frozen-default",
+    "defaultNote": "回填 IR：入库时未记录运行时覆盖语义；按源码固化值处理"
+  },
+  "attribution": [],
+  "collectedAt": "2026-09-24",
+  "backfilled": true
+}

@@ -1,0 +1,700 @@
+{
+  "schemaVersion": 1,
+  "family": "omni",
+  "pin": "unrecorded-legacy-intake",
+  "entries": [
+    {
+      "selector": "literal",
+      "var": "hex@1010",
+      "value": "#ed4556",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1048",
+      "value": "#e7de79",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1086",
+      "value": "#00F769",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1124",
+      "value": "#78D1E1",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1162",
+      "value": "#988bc7",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1200",
+      "value": "#A4FFFF",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1238",
+      "value": "#F7F7FB",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1322",
+      "value": "#e7de79",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1360",
+      "value": "#7159C1",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1407",
+      "value": "#44475A75",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1447",
+      "value": "#FFFFFF1A",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1487",
+      "value": "#E1E1E6",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1525",
+      "value": "#44475A70",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1583",
+      "value": "#252131",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1621",
+      "value": "#201B2D",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1688",
+      "value": "#13111B",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1755",
+      "value": "#15121E",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@242",
+      "value": "#191622",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@280",
+      "value": "#E1E1E6",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@318",
+      "value": "#41414D",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@356",
+      "value": "#5A4B81",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@394",
+      "value": "#988bc7",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@432",
+      "value": "#67e480",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@470",
+      "value": "#E89E64",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@508",
+      "value": "#FF79C6",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@546",
+      "value": "#78D1E1",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@584",
+      "value": "#E96379",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@622",
+      "value": "#e7de79",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@668",
+      "value": "#201B2D",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@706",
+      "value": "#FF79C6",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@744",
+      "value": "#e7de79",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@782",
+      "value": "#67e480",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@820",
+      "value": "#78D1E1",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@858",
+      "value": "#988bc7",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@896",
+      "value": "#A1EFE4",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@934",
+      "value": "#E1E1E6",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@972",
+      "value": "#626483",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#00F769",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#13111B",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#15121E",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#191622",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#201B2D",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#252131",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#41414D",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#44475A70",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#44475A75",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#5A4B81",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#626483",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#67e480",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#7159C1",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#78D1E1",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#988bc7",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#A1EFE4",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#A4FFFF",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#E1E1E6",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#E89E64",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#E96379",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#F7F7FB",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#FF79C6",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#FFFFFF1A",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#e7de79",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "quoted-hex",
+      "var": "hex-literal",
+      "value": "#ed4556",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "BG",
+      "value": "#191622",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "BGDark",
+      "value": "#13111B",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "BGDarker",
+      "value": "#15121E",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "BGLight",
+      "value": "#201B2D",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "BGLighter",
+      "value": "#252131",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR0",
+      "value": "#201B2D",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR1",
+      "value": "#FF79C6",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR10",
+      "value": "#00F769",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR11",
+      "value": "#e7de79",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR12",
+      "value": "#78D1E1",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR13",
+      "value": "#988bc7",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR14",
+      "value": "#A4FFFF",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR15",
+      "value": "#F7F7FB",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR2",
+      "value": "#67e480",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR3",
+      "value": "#e7de79",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR4",
+      "value": "#78D1E1",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR5",
+      "value": "#988bc7",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR6",
+      "value": "#A1EFE4",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR7",
+      "value": "#E1E1E6",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR8",
+      "value": "#626483",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COLOR9",
+      "value": "#ed4556",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "COMMENT",
+      "value": "#5A4B81",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "CYAN",
+      "value": "#988bc7",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "FG",
+      "value": "#E1E1E6",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "GREEN",
+      "value": "#67e480",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "LineHighlight",
+      "value": "#44475A75",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "NonText",
+      "value": "#FFFFFF1A",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "ORANGE",
+      "value": "#E89E64",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "PINK",
+      "value": "#FF79C6",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "PURPLE",
+      "value": "#78D1E1",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "RED",
+      "value": "#E96379",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "SELECTION",
+      "value": "#41414D",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "TAB_DROP_BG",
+      "value": "#44475A70",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "TEMP_PROPERTY_QUOTES",
+      "value": "#7159C1",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "TEMP_QUOTES",
+      "value": "#e7de79",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "WHITE",
+      "value": "#E1E1E6",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    },
+    {
+      "selector": "yaml-anchor",
+      "var": "YELLOW",
+      "value": "#e7de79",
+      "kind": "hex",
+      "sourceFile": "omni.yml"
+    }
+  ]
+}

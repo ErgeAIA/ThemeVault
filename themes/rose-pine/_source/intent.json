@@ -1,31 +1,31 @@
 {
   "schemaVersion": 1,
-  "family": "onepage",
+  "family": "rose-pine",
   "source": {
-    "project": "OnePage",
-    "repo": "https://github.com/ivaneye/OnePage",
+    "project": "rose-pine/rose-pine-theme",
+    "repo": "https://github.com/rose-pine/rose-pine-theme",
     "pin": "unrecorded-legacy-intake",
     "pinType": "legacy",
     "files": [
       "LICENSE",
-      "README.md",
       "contract.json",
       "extract.json",
       "intent.json",
-      "theme.css"
+      "palette.lua"
     ],
     "license": "MIT",
     "upstream": {
       "project": null,
       "repo": null,
       "license": null,
-      "note": "contract.source.ref=4226e57d8d33ee4bb0f0bc00405c3762831799bc"
+      "note": null
     }
   },
   "scope": {
     "themes": [
-      "warm-brown",
-      "warm-paper"
+      "dawn",
+      "main",
+      "moon"
     ],
     "defaultSemantics": "frozen-default",
     "defaultNote": "回填 IR：入库时未记录运行时覆盖语义；按源码固化值处理"

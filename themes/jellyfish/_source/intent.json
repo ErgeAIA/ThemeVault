@@ -1,31 +1,28 @@
 {
   "schemaVersion": 1,
-  "family": "onepage",
+  "family": "jellyfish",
   "source": {
-    "project": "OnePage",
-    "repo": "https://github.com/ivaneye/OnePage",
+    "project": "JellyFish",
+    "repo": "https://github.com/pawelborkar/vscode-jellyfish",
     "pin": "unrecorded-legacy-intake",
     "pinType": "legacy",
     "files": [
-      "LICENSE",
-      "README.md",
+      "JellyFish.json",
       "contract.json",
       "extract.json",
-      "intent.json",
-      "theme.css"
+      "intent.json"
     ],
-    "license": "MIT",
+    "license": "Apache-2.0",
     "upstream": {
       "project": null,
       "repo": null,
       "license": null,
-      "note": "contract.source.ref=4226e57d8d33ee4bb0f0bc00405c3762831799bc"
+      "note": "contract.source.ref=default branch (2026-08)"
     }
   },
   "scope": {
     "themes": [
-      "warm-brown",
-      "warm-paper"
+      "dark"
     ],
     "defaultSemantics": "frozen-default",
     "defaultNote": "回填 IR：入库时未记录运行时覆盖语义；按源码固化值处理"

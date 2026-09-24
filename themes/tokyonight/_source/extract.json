@@ -1,0 +1,6699 @@
+{
+  "schemaVersion": 1,
+  "family": "tokyonight",
+  "pin": "unrecorded-legacy-intake",
+  "entries": [
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#0C0E14",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#16161e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#191B29",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#1a1b26",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#1abc9c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#1b1e2d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#1e2030",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#1f2335",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#222436",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#24283b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#292e42",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#2ac3de",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#2f334d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#3d59a1",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#3e68d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#414868",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#444a73",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#449dab",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#565f89",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#6183bb",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#636da6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#65bcff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#73daca",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#7aa2f7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#7ca1f2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#7dcfff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#828bb8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#82aaff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#86e1fc",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#914c54",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#9d7cd8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#9ece6a",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#a9b1d6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#b8db87",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#bb9af7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#c099ff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#c0caf5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#c3e88d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#c53b53",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#c8d3f5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#db4b4b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#e0af68",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#e26a75",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#f7768e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#fca7ea",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#ff757f",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#ff966c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#ff9e64",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "value",
+      "value": "#ffc777",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#0C0E14",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#16161e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#191B29",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#1a1b26",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#1abc9c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#1b1e2d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#1e2030",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#1f2335",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#222436",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#24283b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#292e42",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#2ac3de",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#2f334d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#3d59a1",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#3e68d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#414868",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#444a73",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#449dab",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#565f89",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#6183bb",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#636da6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#65bcff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#73daca",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#7aa2f7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#7ca1f2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#7dcfff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#828bb8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#82aaff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#86e1fc",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#914c54",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#9d7cd8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#9ece6a",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#a9b1d6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#b8db87",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#bb9af7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#c099ff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#c0caf5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#c3e88d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#c53b53",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#c8d3f5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#db4b4b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#e0af68",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#e26a75",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#f7768e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#fca7ea",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#ff757f",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#ff966c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#ff9e64",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "fallback:json-kv",
+      "var": "value",
+      "value": "#ffc777",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[0].value",
+      "value": "#b8db87",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[100].value",
+      "value": "#7ca1f2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[101].value",
+      "value": "#7dcfff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[102].value",
+      "value": "#828bb8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[103].value",
+      "value": "#82aaff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[104].value",
+      "value": "#86e1fc",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[105].value",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[106].value",
+      "value": "#914c54",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[107].value",
+      "value": "#9d7cd8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[108].value",
+      "value": "#9ece6a",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[109].value",
+      "value": "#a9b1d6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[10].value",
+      "value": "#828bb8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[110].value",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[111].value",
+      "value": "#b8db87",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[112].value",
+      "value": "#bb9af7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[113].value",
+      "value": "#c099ff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[114].value",
+      "value": "#c0caf5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[115].value",
+      "value": "#c3e88d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[116].value",
+      "value": "#c53b53",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[117].value",
+      "value": "#c8d3f5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[118].value",
+      "value": "#db4b4b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[119].value",
+      "value": "#e0af68",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[11].value",
+      "value": "#222436",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[120].value",
+      "value": "#e26a75",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[121].value",
+      "value": "#f7768e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[122].value",
+      "value": "#fca7ea",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[123].value",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[124].value",
+      "value": "#ff757f",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[125].value",
+      "value": "#ff966c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[126].value",
+      "value": "#ff9e64",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[127].value",
+      "value": "#ffc777",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[128].value",
+      "value": "#0C0E14",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[129].value",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[12].value",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[130].value",
+      "value": "#16161e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[131].value",
+      "value": "#191B29",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[132].value",
+      "value": "#1a1b26",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[133].value",
+      "value": "#1abc9c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[134].value",
+      "value": "#1b1e2d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[135].value",
+      "value": "#1e2030",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[136].value",
+      "value": "#1f2335",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[137].value",
+      "value": "#222436",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[138].value",
+      "value": "#24283b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[139].value",
+      "value": "#292e42",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[13].value",
+      "value": "#c3e88d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[140].value",
+      "value": "#2ac3de",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[141].value",
+      "value": "#2f334d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[142].value",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[143].value",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[144].value",
+      "value": "#3d59a1",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[145].value",
+      "value": "#3e68d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[146].value",
+      "value": "#414868",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[147].value",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[148].value",
+      "value": "#444a73",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[149].value",
+      "value": "#449dab",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[14].value",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[150].value",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[151].value",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[152].value",
+      "value": "#565f89",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[153].value",
+      "value": "#6183bb",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[154].value",
+      "value": "#636da6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[155].value",
+      "value": "#65bcff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[156].value",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[157].value",
+      "value": "#73daca",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[158].value",
+      "value": "#7aa2f7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[159].value",
+      "value": "#7ca1f2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[15].value",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[160].value",
+      "value": "#7dcfff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[161].value",
+      "value": "#828bb8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[162].value",
+      "value": "#82aaff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[163].value",
+      "value": "#86e1fc",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[164].value",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[165].value",
+      "value": "#914c54",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[166].value",
+      "value": "#9d7cd8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[167].value",
+      "value": "#9ece6a",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[168].value",
+      "value": "#a9b1d6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[169].value",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[16].value",
+      "value": "#c099ff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[170].value",
+      "value": "#b8db87",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[171].value",
+      "value": "#bb9af7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[172].value",
+      "value": "#c099ff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[173].value",
+      "value": "#c0caf5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[174].value",
+      "value": "#c3e88d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[175].value",
+      "value": "#c53b53",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[176].value",
+      "value": "#c8d3f5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[177].value",
+      "value": "#db4b4b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[178].value",
+      "value": "#e0af68",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[179].value",
+      "value": "#e26a75",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[17].value",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[180].value",
+      "value": "#f7768e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[181].value",
+      "value": "#fca7ea",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[182].value",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[183].value",
+      "value": "#ff757f",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[184].value",
+      "value": "#ff966c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[185].value",
+      "value": "#ff9e64",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[186].value",
+      "value": "#ffc777",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[187].value",
+      "value": "#b8db87",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[188].value",
+      "value": "#222436",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[189].value",
+      "value": "#1e2030",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[18].value",
+      "value": "#ff966c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[190].value",
+      "value": "#191B29",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[191].value",
+      "value": "#2f334d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[192].value",
+      "value": "#82aaff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[193].value",
+      "value": "#3e68d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[194].value",
+      "value": "#65bcff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[195].value",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[196].value",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[197].value",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[198].value",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[199].value",
+      "value": "#7ca1f2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[19].value",
+      "value": "#fca7ea",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[1].value",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[200].value",
+      "value": "#636da6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[201].value",
+      "value": "#86e1fc",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[202].value",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[203].value",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[204].value",
+      "value": "#e26a75",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[205].value",
+      "value": "#c8d3f5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[206].value",
+      "value": "#828bb8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[207].value",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[208].value",
+      "value": "#c3e88d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[209].value",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[20].value",
+      "value": "#ff757f",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[210].value",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[211].value",
+      "value": "#c099ff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[212].value",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[213].value",
+      "value": "#ff966c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[214].value",
+      "value": "#fca7ea",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[215].value",
+      "value": "#ff757f",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[216].value",
+      "value": "#c53b53",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[217].value",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[218].value",
+      "value": "#444a73",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[219].value",
+      "value": "#ffc777",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[21].value",
+      "value": "#c53b53",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[220].value",
+      "value": "#1a1b26",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[221].value",
+      "value": "#16161e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[222].value",
+      "value": "#0C0E14",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[223].value",
+      "value": "#449dab",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[224].value",
+      "value": "#24283b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[225].value",
+      "value": "#1f2335",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[226].value",
+      "value": "#1b1e2d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[227].value",
+      "value": "#292e42",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[228].value",
+      "value": "#7aa2f7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[229].value",
+      "value": "#3d59a1",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[22].value",
+      "value": "#1e2030",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[230].value",
+      "value": "#2ac3de",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[231].value",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[232].value",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[233].value",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[234].value",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[235].value",
+      "value": "#6183bb",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[236].value",
+      "value": "#565f89",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[237].value",
+      "value": "#7dcfff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[238].value",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[239].value",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[23].value",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[240].value",
+      "value": "#914c54",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[241].value",
+      "value": "#c0caf5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[242].value",
+      "value": "#a9b1d6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[243].value",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[244].value",
+      "value": "#9ece6a",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[245].value",
+      "value": "#73daca",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[246].value",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[247].value",
+      "value": "#bb9af7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[248].value",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[249].value",
+      "value": "#ff9e64",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[24].value",
+      "value": "#444a73",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[250].value",
+      "value": "#9d7cd8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[251].value",
+      "value": "#f7768e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[252].value",
+      "value": "#db4b4b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[253].value",
+      "value": "#1abc9c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[254].value",
+      "value": "#414868",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[255].value",
+      "value": "#e0af68",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[25].value",
+      "value": "#ffc777",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[26].value",
+      "value": "#1a1b26",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[27].value",
+      "value": "#16161e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[28].value",
+      "value": "#0C0E14",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[29].value",
+      "value": "#449dab",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[2].value",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[30].value",
+      "value": "#24283b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[31].value",
+      "value": "#1f2335",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[32].value",
+      "value": "#1b1e2d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[33].value",
+      "value": "#191B29",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[34].value",
+      "value": "#292e42",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[35].value",
+      "value": "#7aa2f7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[36].value",
+      "value": "#3d59a1",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[37].value",
+      "value": "#2ac3de",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[38].value",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[39].value",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[3].value",
+      "value": "#7ca1f2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[40].value",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[41].value",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[42].value",
+      "value": "#6183bb",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[43].value",
+      "value": "#565f89",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[44].value",
+      "value": "#2f334d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[45].value",
+      "value": "#7dcfff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[46].value",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[47].value",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[48].value",
+      "value": "#914c54",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[49].value",
+      "value": "#c0caf5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[4].value",
+      "value": "#636da6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[50].value",
+      "value": "#a9b1d6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[51].value",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[52].value",
+      "value": "#9ece6a",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[53].value",
+      "value": "#73daca",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[54].value",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[55].value",
+      "value": "#82aaff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[56].value",
+      "value": "#bb9af7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[57].value",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[58].value",
+      "value": "#ff9e64",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[59].value",
+      "value": "#9d7cd8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[5].value",
+      "value": "#86e1fc",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[60].value",
+      "value": "#f7768e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[61].value",
+      "value": "#db4b4b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[62].value",
+      "value": "#1abc9c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[63].value",
+      "value": "#414868",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[64].value",
+      "value": "#e0af68",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[65].value",
+      "value": "#3e68d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[66].value",
+      "value": "#65bcff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[67].value",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[68].value",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[69].value",
+      "value": "#0C0E14",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[6].value",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[70].value",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[71].value",
+      "value": "#16161e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[72].value",
+      "value": "#191B29",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[73].value",
+      "value": "#1a1b26",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[74].value",
+      "value": "#1abc9c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[75].value",
+      "value": "#1b1e2d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[76].value",
+      "value": "#1e2030",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[77].value",
+      "value": "#1f2335",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[78].value",
+      "value": "#222436",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[79].value",
+      "value": "#24283b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[7].value",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[80].value",
+      "value": "#292e42",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[81].value",
+      "value": "#2ac3de",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[82].value",
+      "value": "#2f334d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[83].value",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[84].value",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[85].value",
+      "value": "#3d59a1",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[86].value",
+      "value": "#3e68d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[87].value",
+      "value": "#414868",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[88].value",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[89].value",
+      "value": "#444a73",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[8].value",
+      "value": "#e26a75",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[90].value",
+      "value": "#449dab",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[91].value",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[92].value",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[93].value",
+      "value": "#565f89",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[94].value",
+      "value": "#6183bb",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[95].value",
+      "value": "#636da6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[96].value",
+      "value": "#65bcff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[97].value",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[98].value",
+      "value": "#73daca",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[99].value",
+      "value": "#7aa2f7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json",
+      "var": "entries[9].value",
+      "value": "#c8d3f5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#0C0E14",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#16161e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#191B29",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#1a1b26",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#1abc9c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#1b1e2d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#1e2030",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#1f2335",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#222436",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#24283b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#292e42",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#2ac3de",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#2f334d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#3d59a1",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#3e68d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#414868",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#444a73",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#449dab",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#565f89",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#6183bb",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#636da6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#65bcff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#73daca",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#7aa2f7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#7ca1f2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#7dcfff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#828bb8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#82aaff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#86e1fc",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#914c54",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#9d7cd8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#9ece6a",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#a9b1d6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#b8db87",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#bb9af7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#c099ff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#c0caf5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#c3e88d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#c53b53",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#c8d3f5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#db4b4b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#e0af68",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#e26a75",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#f7768e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#fca7ea",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#ff757f",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#ff966c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#ff9e64",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:assign",
+      "var": "value",
+      "value": "#ffc777",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#0C0E14",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#16161e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#191B29",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#1a1b26",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#1abc9c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#1b1e2d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#1e2030",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#1f2335",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#222436",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#24283b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#292e42",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#2ac3de",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#2f334d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#3d59a1",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#3e68d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#414868",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#444a73",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#449dab",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#565f89",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#6183bb",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#636da6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#65bcff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#73daca",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#7aa2f7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#7ca1f2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#7dcfff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#828bb8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#82aaff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#86e1fc",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#914c54",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#9d7cd8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#9ece6a",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#a9b1d6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#b8db87",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#bb9af7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#c099ff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#c0caf5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#c3e88d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#c53b53",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#c8d3f5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#db4b4b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#e0af68",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#e26a75",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#f7768e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#fca7ea",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#ff757f",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#ff966c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#ff9e64",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "json:json-kv",
+      "var": "value",
+      "value": "#ffc777",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@10098",
+      "value": "#e0af68",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@10252",
+      "value": "#3e68d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@10406",
+      "value": "#65bcff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@10560",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@10714",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@10864",
+      "value": "#0C0E14",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@11014",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1113",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@11164",
+      "value": "#16161e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@11314",
+      "value": "#191B29",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@11464",
+      "value": "#1a1b26",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@11614",
+      "value": "#1abc9c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@11764",
+      "value": "#1b1e2d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@11914",
+      "value": "#1e2030",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@12064",
+      "value": "#1f2335",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@12214",
+      "value": "#222436",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@12364",
+      "value": "#24283b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@12514",
+      "value": "#292e42",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@12664",
+      "value": "#2ac3de",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1268",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@12814",
+      "value": "#2f334d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@12964",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@13114",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@13264",
+      "value": "#3d59a1",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@13414",
+      "value": "#3e68d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@13564",
+      "value": "#414868",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@13714",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@13864",
+      "value": "#444a73",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@14014",
+      "value": "#449dab",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@14164",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1423",
+      "value": "#e26a75",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@14314",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@14464",
+      "value": "#565f89",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@14614",
+      "value": "#6183bb",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@14764",
+      "value": "#636da6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@14914",
+      "value": "#65bcff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@15064",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@15214",
+      "value": "#73daca",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@15364",
+      "value": "#7aa2f7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@15514",
+      "value": "#7ca1f2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@15664",
+      "value": "#7dcfff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1578",
+      "value": "#c8d3f5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@15814",
+      "value": "#828bb8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@15964",
+      "value": "#82aaff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@16114",
+      "value": "#86e1fc",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@16264",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@16414",
+      "value": "#914c54",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@16564",
+      "value": "#9d7cd8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@16714",
+      "value": "#9ece6a",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@16864",
+      "value": "#a9b1d6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@17014",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@17164",
+      "value": "#b8db87",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@17314",
+      "value": "#bb9af7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1733",
+      "value": "#828bb8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@17464",
+      "value": "#c099ff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@17614",
+      "value": "#c0caf5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@17764",
+      "value": "#c3e88d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@17914",
+      "value": "#c53b53",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@18064",
+      "value": "#c8d3f5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@18214",
+      "value": "#db4b4b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@183",
+      "value": "#b8db87",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@18364",
+      "value": "#e0af68",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@18514",
+      "value": "#e26a75",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@18664",
+      "value": "#f7768e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@18814",
+      "value": "#fca7ea",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@1887",
+      "value": "#222436",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@18964",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@19114",
+      "value": "#ff757f",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@19264",
+      "value": "#ff966c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@19414",
+      "value": "#ff9e64",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@19564",
+      "value": "#ffc777",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@19715",
+      "value": "#0C0E14",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@19866",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@20017",
+      "value": "#16161e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@20168",
+      "value": "#191B29",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@20319",
+      "value": "#1a1b26",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@2042",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@20470",
+      "value": "#1abc9c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@20621",
+      "value": "#1b1e2d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@20772",
+      "value": "#1e2030",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@20923",
+      "value": "#1f2335",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@21074",
+      "value": "#222436",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@21225",
+      "value": "#24283b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@21376",
+      "value": "#292e42",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@21527",
+      "value": "#2ac3de",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@21678",
+      "value": "#2f334d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@21829",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@2197",
+      "value": "#c3e88d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@21980",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@22131",
+      "value": "#3d59a1",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@22282",
+      "value": "#3e68d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@22433",
+      "value": "#414868",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@22584",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@22735",
+      "value": "#444a73",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@22886",
+      "value": "#449dab",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@23037",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@23188",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@23339",
+      "value": "#565f89",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@23490",
+      "value": "#6183bb",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@2352",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@23641",
+      "value": "#636da6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@23792",
+      "value": "#65bcff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@23943",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@24094",
+      "value": "#73daca",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@24245",
+      "value": "#7aa2f7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@24396",
+      "value": "#7ca1f2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@24547",
+      "value": "#7dcfff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@24698",
+      "value": "#828bb8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@24849",
+      "value": "#82aaff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@25000",
+      "value": "#86e1fc",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@2507",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@25151",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@25302",
+      "value": "#914c54",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@25453",
+      "value": "#9d7cd8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@25604",
+      "value": "#9ece6a",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@25755",
+      "value": "#a9b1d6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@25906",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@26057",
+      "value": "#b8db87",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@26208",
+      "value": "#bb9af7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@26359",
+      "value": "#c099ff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@26510",
+      "value": "#c0caf5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@2662",
+      "value": "#c099ff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@26661",
+      "value": "#c3e88d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@26812",
+      "value": "#c53b53",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@26963",
+      "value": "#c8d3f5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@27114",
+      "value": "#db4b4b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@27265",
+      "value": "#e0af68",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@27416",
+      "value": "#e26a75",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@27567",
+      "value": "#f7768e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@27718",
+      "value": "#fca7ea",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@27869",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@28020",
+      "value": "#ff757f",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@2817",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@28171",
+      "value": "#ff966c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@28322",
+      "value": "#ff9e64",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@28473",
+      "value": "#ffc777",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@28621",
+      "value": "#b8db87",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@28764",
+      "value": "#222436",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@28912",
+      "value": "#1e2030",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@29061",
+      "value": "#191B29",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@29214",
+      "value": "#2f334d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@29359",
+      "value": "#82aaff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@29505",
+      "value": "#3e68d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@29651",
+      "value": "#65bcff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@2972",
+      "value": "#ff966c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@29797",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@29943",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@30089",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@30235",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@30382",
+      "value": "#7ca1f2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@30530",
+      "value": "#636da6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@30675",
+      "value": "#86e1fc",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@30821",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@30967",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@31114",
+      "value": "#e26a75",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@31257",
+      "value": "#c8d3f5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@3127",
+      "value": "#fca7ea",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@31405",
+      "value": "#828bb8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@31555",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@31701",
+      "value": "#c3e88d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@31848",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@31995",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@32143",
+      "value": "#c099ff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@32292",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@32439",
+      "value": "#ff966c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@32586",
+      "value": "#fca7ea",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@32730",
+      "value": "#ff757f",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@3282",
+      "value": "#ff757f",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@32875",
+      "value": "#c53b53",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@33020",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@33175",
+      "value": "#444a73",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@33322",
+      "value": "#ffc777",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@33465",
+      "value": "#1a1b26",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@33614",
+      "value": "#16161e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@33764",
+      "value": "#0C0E14",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@338",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@33909",
+      "value": "#449dab",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@34053",
+      "value": "#24283b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@34202",
+      "value": "#1f2335",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@34352",
+      "value": "#1b1e2d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@3437",
+      "value": "#c53b53",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@34506",
+      "value": "#292e42",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@34652",
+      "value": "#7aa2f7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@34799",
+      "value": "#3d59a1",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@34946",
+      "value": "#2ac3de",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@35093",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@35240",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@35387",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@35534",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@35682",
+      "value": "#6183bb",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@35831",
+      "value": "#565f89",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@3591",
+      "value": "#1e2030",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@35977",
+      "value": "#7dcfff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@36124",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@36271",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@36419",
+      "value": "#914c54",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@36563",
+      "value": "#c0caf5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@36712",
+      "value": "#a9b1d6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@36863",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@37010",
+      "value": "#9ece6a",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@37158",
+      "value": "#73daca",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@37306",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@37455",
+      "value": "#bb9af7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@3746",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@37605",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@37753",
+      "value": "#ff9e64",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@37901",
+      "value": "#9d7cd8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@38046",
+      "value": "#f7768e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@38192",
+      "value": "#db4b4b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@38338",
+      "value": "#1abc9c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@38494",
+      "value": "#414868",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@38642",
+      "value": "#e0af68",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@3901",
+      "value": "#444a73",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@4056",
+      "value": "#ffc777",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@4211",
+      "value": "#1a1b26",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@4366",
+      "value": "#16161e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@4521",
+      "value": "#0C0E14",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@4676",
+      "value": "#449dab",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@4831",
+      "value": "#24283b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@493",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@4986",
+      "value": "#1f2335",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@5141",
+      "value": "#1b1e2d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@5295",
+      "value": "#191B29",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@5450",
+      "value": "#292e42",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@5605",
+      "value": "#7aa2f7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@5760",
+      "value": "#3d59a1",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@5915",
+      "value": "#2ac3de",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@6070",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@6225",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@6380",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@648",
+      "value": "#7ca1f2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@6535",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@6690",
+      "value": "#6183bb",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@6845",
+      "value": "#565f89",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@6999",
+      "value": "#2f334d",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@7154",
+      "value": "#7dcfff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@7309",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@7464",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@7619",
+      "value": "#914c54",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@7774",
+      "value": "#c0caf5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@7929",
+      "value": "#a9b1d6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@803",
+      "value": "#636da6",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@8084",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@8239",
+      "value": "#9ece6a",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@8394",
+      "value": "#73daca",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@8549",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@8703",
+      "value": "#82aaff",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@8858",
+      "value": "#bb9af7",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@9013",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@9168",
+      "value": "#ff9e64",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@9323",
+      "value": "#9d7cd8",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@9478",
+      "value": "#f7768e",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@958",
+      "value": "#86e1fc",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@9633",
+      "value": "#db4b4b",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@9788",
+      "value": "#1abc9c",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@9943",
+      "value": "#414868",
+      "kind": "hex",
+      "sourceFile": "extract.json"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@963",
+      "value": "#000000",
+      "kind": "hex",
+      "sourceFile": "init.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "add",
+      "value": "#b8db87",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "bg",
+      "value": "#222436",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "bg_dark",
+      "value": "#1e2030",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "bg_dark1",
+      "value": "#191B29",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "bg_highlight",
+      "value": "#2f334d",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "blue",
+      "value": "#82aaff",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "blue0",
+      "value": "#3e68d7",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "blue1",
+      "value": "#65bcff",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "blue2",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "blue5",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "blue6",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "blue7",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "change",
+      "value": "#7ca1f2",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "comment",
+      "value": "#636da6",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "cyan",
+      "value": "#86e1fc",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "dark3",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "dark5",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "delete",
+      "value": "#e26a75",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "fg",
+      "value": "#c8d3f5",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "fg_dark",
+      "value": "#828bb8",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "fg_gutter",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "green",
+      "value": "#c3e88d",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "green1",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "green2",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "magenta",
+      "value": "#c099ff",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "magenta2",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "orange",
+      "value": "#ff966c",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "purple",
+      "value": "#fca7ea",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "red",
+      "value": "#ff757f",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "red1",
+      "value": "#c53b53",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "teal",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "terminal_black",
+      "value": "#444a73",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "yellow",
+      "value": "#ffc777",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "add",
+      "value": "#b8db87",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "bg",
+      "value": "#222436",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "bg_dark",
+      "value": "#1e2030",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "bg_dark1",
+      "value": "#191B29",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "bg_highlight",
+      "value": "#2f334d",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "blue",
+      "value": "#82aaff",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "blue0",
+      "value": "#3e68d7",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "blue1",
+      "value": "#65bcff",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "blue2",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "blue5",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "blue6",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "blue7",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "change",
+      "value": "#7ca1f2",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "comment",
+      "value": "#636da6",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "cyan",
+      "value": "#86e1fc",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "dark3",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "dark5",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "delete",
+      "value": "#e26a75",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "fg",
+      "value": "#c8d3f5",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "fg_dark",
+      "value": "#828bb8",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "fg_gutter",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "green",
+      "value": "#c3e88d",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "green1",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "green2",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "magenta",
+      "value": "#c099ff",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "magenta2",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "orange",
+      "value": "#ff966c",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "purple",
+      "value": "#fca7ea",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "red",
+      "value": "#ff757f",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "red1",
+      "value": "#c53b53",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "teal",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "terminal_black",
+      "value": "#444a73",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "yellow",
+      "value": "#ffc777",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@109",
+      "value": "#2f334d",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@129",
+      "value": "#82aaff",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@150",
+      "value": "#3e68d7",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@171",
+      "value": "#65bcff",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@192",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@213",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@234",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@255",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@278",
+      "value": "#636da6",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@298",
+      "value": "#86e1fc",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@319",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@34",
+      "value": "#222436",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@340",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@358",
+      "value": "#c8d3f5",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@381",
+      "value": "#828bb8",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@406",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@427",
+      "value": "#c3e88d",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@449",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@471",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@494",
+      "value": "#c099ff",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@518",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@540",
+      "value": "#ff966c",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@562",
+      "value": "#fca7ea",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@57",
+      "value": "#1e2030",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@581",
+      "value": "#ff757f",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@601",
+      "value": "#c53b53",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@621",
+      "value": "#4fd6be",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@651",
+      "value": "#444a73",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@673",
+      "value": "#ffc777",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@704",
+      "value": "#b8db87",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@728",
+      "value": "#7ca1f2",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@752",
+      "value": "#e26a75",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@81",
+      "value": "#191B29",
+      "kind": "hex",
+      "sourceFile": "moon.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "bg",
+      "value": "#1a1b26",
+      "kind": "hex",
+      "sourceFile": "night.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "bg_dark",
+      "value": "#16161e",
+      "kind": "hex",
+      "sourceFile": "night.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "bg_dark1",
+      "value": "#0C0E14",
+      "kind": "hex",
+      "sourceFile": "night.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "bg",
+      "value": "#1a1b26",
+      "kind": "hex",
+      "sourceFile": "night.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "bg_dark",
+      "value": "#16161e",
+      "kind": "hex",
+      "sourceFile": "night.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "bg_dark1",
+      "value": "#0C0E14",
+      "kind": "hex",
+      "sourceFile": "night.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@130",
+      "value": "#1a1b26",
+      "kind": "hex",
+      "sourceFile": "night.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@153",
+      "value": "#16161e",
+      "kind": "hex",
+      "sourceFile": "night.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@177",
+      "value": "#0C0E14",
+      "kind": "hex",
+      "sourceFile": "night.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "add",
+      "value": "#449dab",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "bg",
+      "value": "#24283b",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "bg_dark",
+      "value": "#1f2335",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "bg_dark1",
+      "value": "#1b1e2d",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "bg_highlight",
+      "value": "#292e42",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "blue",
+      "value": "#7aa2f7",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "blue0",
+      "value": "#3d59a1",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "blue1",
+      "value": "#2ac3de",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "blue2",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "blue5",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "blue6",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "blue7",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "change",
+      "value": "#6183bb",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "comment",
+      "value": "#565f89",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "cyan",
+      "value": "#7dcfff",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "dark3",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "dark5",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "delete",
+      "value": "#914c54",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "fg",
+      "value": "#c0caf5",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "fg_dark",
+      "value": "#a9b1d6",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "fg_gutter",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "green",
+      "value": "#9ece6a",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "green1",
+      "value": "#73daca",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "green2",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "magenta",
+      "value": "#bb9af7",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "magenta2",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "orange",
+      "value": "#ff9e64",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "purple",
+      "value": "#9d7cd8",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "red",
+      "value": "#f7768e",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "red1",
+      "value": "#db4b4b",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "teal",
+      "value": "#1abc9c",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "terminal_black",
+      "value": "#414868",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "code:assign",
+      "var": "yellow",
+      "value": "#e0af68",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "add",
+      "value": "#449dab",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "bg",
+      "value": "#24283b",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "bg_dark",
+      "value": "#1f2335",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "bg_dark1",
+      "value": "#1b1e2d",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "bg_highlight",
+      "value": "#292e42",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "blue",
+      "value": "#7aa2f7",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "blue0",
+      "value": "#3d59a1",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "blue1",
+      "value": "#2ac3de",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "blue2",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "blue5",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "blue6",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "blue7",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "change",
+      "value": "#6183bb",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "comment",
+      "value": "#565f89",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "cyan",
+      "value": "#7dcfff",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "dark3",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "dark5",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "delete",
+      "value": "#914c54",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "fg",
+      "value": "#c0caf5",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "fg_dark",
+      "value": "#a9b1d6",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "fg_gutter",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "green",
+      "value": "#9ece6a",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "green1",
+      "value": "#73daca",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "green2",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "magenta",
+      "value": "#bb9af7",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "magenta2",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "orange",
+      "value": "#ff9e64",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "purple",
+      "value": "#9d7cd8",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "red",
+      "value": "#f7768e",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "red1",
+      "value": "#db4b4b",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "teal",
+      "value": "#1abc9c",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "terminal_black",
+      "value": "#414868",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "fallback:assign",
+      "var": "yellow",
+      "value": "#e0af68",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@115",
+      "value": "#292e42",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@135",
+      "value": "#7aa2f7",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@156",
+      "value": "#3d59a1",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@177",
+      "value": "#2ac3de",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@198",
+      "value": "#0db9d7",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@219",
+      "value": "#89ddff",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@240",
+      "value": "#b4f9f8",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@261",
+      "value": "#394b70",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@284",
+      "value": "#565f89",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@304",
+      "value": "#7dcfff",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@325",
+      "value": "#545c7e",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@346",
+      "value": "#737aa2",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@364",
+      "value": "#c0caf5",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@387",
+      "value": "#a9b1d6",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@40",
+      "value": "#24283b",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@412",
+      "value": "#3b4261",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@433",
+      "value": "#9ece6a",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@455",
+      "value": "#73daca",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@477",
+      "value": "#41a6b5",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@500",
+      "value": "#bb9af7",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@524",
+      "value": "#ff007c",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@546",
+      "value": "#ff9e64",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@568",
+      "value": "#9d7cd8",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@587",
+      "value": "#f7768e",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@607",
+      "value": "#db4b4b",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@627",
+      "value": "#1abc9c",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@63",
+      "value": "#1f2335",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@657",
+      "value": "#414868",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@679",
+      "value": "#e0af68",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@710",
+      "value": "#449dab",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@734",
+      "value": "#6183bb",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@758",
+      "value": "#914c54",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    },
+    {
+      "selector": "literal",
+      "var": "hex@87",
+      "value": "#1b1e2d",
+      "kind": "hex",
+      "sourceFile": "storm.lua"
+    }
+  ]
+}
