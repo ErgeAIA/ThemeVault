@@ -79,7 +79,8 @@ python scripts/gen_index.py --write   # 校验契约覆盖 + 生成 INDEX.json +
 > 预览页 `preview.html` 是静态 SPA，读 `preview/data.js` 运行时渲染——
 > `gen_index.py --write` 更新 data.js 后，刷新浏览器即反映新主题，**无需重生成预览**。
 
-- `INDEX.md` 是手写总表：每增删一套主题同步增删行，**数字必须与 INDEX.json 一致**（以脚本输出为准）。
+- `INDEX.md` 索引表与统计区由 `gen_docs_views.py` 从 `INDEX.json` **生成**（`<!-- BEGIN:generated -->`），
+  备注列可手改并按编号保留；**禁止手改编号/计数**。AI-MAP 家族现状表同源生成。
 
 ### 新增主题工作流（用户给开源主题链接时）
 
@@ -179,6 +180,7 @@ docs/handoff/             会话交接文档
 | 脚手架家族 | `python scripts/scaffold_family.py --family <id> --project <n> --repo <url> --license <spdx> --themes <ids…>` | S1，不覆盖既有文件 |
 | 生成/校验 tokens.json | `python scripts/gen_tokens.py [--check]` | 整理 IR，见 docs/organize-ir.md |
 | 生成/校验 family mapping | `python scripts/gen_family_mapping.py [--check]` | 同上 |
+| 生成/校验 INDEX.md·AI-MAP 视图 | `python scripts/gen_docs_views.py [--check]` | 整理 P3 |
 
 ## Conventions
 

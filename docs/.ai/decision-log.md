@@ -16,6 +16,13 @@ description: >
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
 
+## DEC-012: 人读视图生成化
+
+- **日期**：2026-09-14
+- **背景**：INDEX.md / AI-MAP 计数手抄易漂移
+- **决策**：`gen_docs_views.py` 从 INDEX.json 渲染标记区；备注列按编号保留；gen_index --write 内联
+- **验证**：`--check` OK；gen_index 绿
+
 ## DEC-011: 家族 mapping 单源与 required 一致性
 
 - **日期**：2026-09-14
