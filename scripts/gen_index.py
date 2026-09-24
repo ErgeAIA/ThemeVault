@@ -351,6 +351,20 @@ def main() -> int:
         return 0
     write = "--write" in sys.argv[1:]
 
+    # 纳入 DoD / provenance（P3）：与契约覆盖同门禁；缺 IR 的旧家族仅警告。
+    try:
+        from lint_intake import lint_all as _lint_all
+        _ie, _iw = _lint_all(THEMES, strict=False)
+        for _w in _iw:
+            print(f"WARN: {_w}")
+        for _e in _ie:
+            print(f"ERROR: {_e}", file=sys.stderr)
+        if _ie:
+            print(f"lint_intake: {len(_ie)} error(s)", file=sys.stderr)
+            return 1
+    except ImportError:
+        pass
+
     families = []
     all_tokens = 0
     errors = []
