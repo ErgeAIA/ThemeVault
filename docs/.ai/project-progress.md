@@ -21,7 +21,10 @@ description: >
 - **阶段**：资产仓维护（非运行时项目）；协作记忆已初始化
 - **代码**：`scripts/*.py` 生成器与校验器存在；无应用运行时
 - **工具链**：Python 3 + `scripts/gen_index.py`；codegraph 1.6.0（若已建索引见 `.codegraph/`）
-- **最后更新**：2026-09-14 P0 纳入 DoD
+- **最后更新**：2026-09-14 P1 纳入中间产物
+  - `docs/intake-artifacts.md` + `_TEMPLATE` 示例；`themes/onepage/_source/{intent,extract}.json` 试点
+  - AGENTS S2/DoD/References 接线；DEC-006
+- **上次更新**：2026-09-14 P0 纳入 DoD
   - AGENTS.md：S0 增加 pin/默认值语义；S2 值域三态+映射可审；S5 自检升级为纳入 DoD 清单
   - DEC-005；agents-changelog 已留痕；`gen_index` 绿
 - **上次更新**：2026-09-14 P0：L1-v4 + ErgeMD profile
@@ -42,5 +45,5 @@ description: >
   - OnePage 家族入库：`themes/onepage/`（#073 warm-brown / #074 warm-paper）
   - `gen_index.py --write` 全绿；INDEX.md / SOURCES.md / AI-MAP.md 已同步
   - vibe-init：`git init`；补齐 `docs/.ai/` 与 `docs/handoff/`；AGENTS.md 增量补 Permissions 等节
-- **下一步**：纳入 P1（intent/extract 中间产物）或整理/使用流程审查；新主题入库一律走纳入 DoD
+- **下一步**：纳入 P2（extract 脚本/scaffold）或 P3（provenance lint）；或转整理/使用流程审查
 - **本阶段禁止**：手改 INDEX.json / preview/data.js；改外部项目源码；未确认协议不落盘

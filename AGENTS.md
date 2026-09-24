@@ -103,6 +103,9 @@ python scripts/gen_index.py --write   # 校验契约覆盖 + 生成 INDEX.json +
 **S2 落盘**
 - `_source/`：原始源码文件**原样拷入**（只读快照）+ `contract.json`（required / derivedOptional）+ pin 备注
   （`_source/README.md` 写清 URL@commit / hash）。
+- **纳入中间产物（P1，新纳入必须）**：`_source/intent.json` + `_source/extract.json`（规范见
+  `docs/intake-artifacts.md`；模板 `themes/_TEMPLATE/_source/*.example.json`）。
+  extract 只做机械抽取无 L1 映射；值域证明以 extract 回溯为准。
 - `themes/<family>/<id>/palette.md`：按 `_TEMPLATE/palette.md` 五段结构（中性 / 强调 / 功能 / 语法 /
   派生），表格 `| --role | value | 类型 | 备注 |`；值原文照抄；继承 base 层的角色在备注列标注
   「继承 dark/light-base」并给出解析值（如 ergemd）。
@@ -132,6 +135,7 @@ python scripts/gen_index.py --write   # 校验契约覆盖 + 生成 INDEX.json +
 **纳入 DoD 自检清单（交付前逐项过）**
 - [ ] 协议已确认（未确认 = 不落盘）
 - [ ] **pin 已记录**（URL@commit 或文件 hash，写入 `_source` 与主题 README）
+- [ ] **intent.json + extract.json 已落盘**（新纳入；规范 `docs/intake-artifacts.md`）
 - [ ] 色值全部原文或公式原文；**豁免仅有 DEC 登记的显式清单**
 - [ ] 无独立值的 required 已标「契约兜底·同 X / 取 X」
 - [ ] palette.md 角色 ⊆ 契约，required 无缺、无越界角色
@@ -192,6 +196,7 @@ docs/handoff/             会话交接文档
 见 INDEX.json
 见 SOURCES.md
 见 docs/l1-roles.md
+见 docs/intake-artifacts.md
 见 docs/migration-guide.md
 见 docs/glossary.md
 见 docs/adr/

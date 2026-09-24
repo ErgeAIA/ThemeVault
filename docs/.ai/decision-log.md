@@ -16,6 +16,13 @@ description: >
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
 
+## DEC-006: 纳入中间产物 intent.json / extract.json
+
+- **日期**：2026-09-14
+- **背景**：纳入缺可回放中间 IR；palette 值域证明只能靠事后 diff 源码
+- **决策**：新纳入必须落 `_source/intent.json` + `extract.json`（`docs/intake-artifacts.md`）；extract 机械无 L1；OnePage 为试点（93 条）
+- **验证**：模板 + onepage 试点；AGENTS S2/DoD 已接线；`gen_index` 绿
+
 ## DEC-005: 纳入 DoD（pin / 值域三态 / 映射可审）
 
 - **日期**：2026-09-14

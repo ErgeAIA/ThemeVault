@@ -44,6 +44,12 @@ description: >
 - `<S5/自查清单>` → update → 升级为「纳入 DoD」：pin、豁免清单、契约兜底、映射可审
 - `<其余条目>` → keep → 未改
 
+## 2026-09-14 · P1 纳入中间产物
+
+- `<S2 无 intent/extract>` → update → 新增强制 `intent.json`/`extract.json` 与规范指针
+- `<DoD 清单>` → update → 增加中间产物勾选项
+- `<References>` → update → 增加 `docs/intake-artifacts.md`
+
 ---
 
 ## 2026-09-14 · 审计优化阶段 4（事实区回填）
