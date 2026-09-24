@@ -1,15 +1,11 @@
 #!/usr/bin/env python3
 """Provenance / intake DoD lint for ThemeVault.
 
-Checks per family (see docs/intake-artifacts.md + AGENTS 纳入 DoD):
-  - intent.json / extract.json schema + pin consistency when present
-  - palette.md values are formula | extract-backed | explicit fallback note
-Legacy families without intake IR emit warnings only (progressive, DEC-006).
+extract.json value ledger (schemaVersion 2): palette values must be
+formula | ledger-backed | explicit fallback note. Supports legacy
+schemaVersion 1 entry lists. See docs/intake-artifacts.md.
 
 Usage: python scripts/lint_intake.py [--strict]
-  --strict  missing intent/extract is an error (for new intakes)
-
-Exit 1 if any error.
 """
 from __future__ import annotations
 
@@ -57,12 +53,20 @@ def load_palette(path: Path) -> dict[str, dict]:
     return tokens
 
 
-def extract_index(extract: dict) -> tuple[set[str], set[str]]:
-    """Return (normalized values, normalized hex including rgb conversions)."""
+def extract_index(extract: dict) -> tuple[set[str], set[str], bool]:
+    """Return (normalized values, hex set incl. rgb conversions, has_values)."""
     vals: set[str] = set()
     hexes: set[str] = set()
-    for e in extract.get("entries", []):
-        v = e.get("value", "").strip()
+    raw_values: list[str] = []
+    if extract.get("schemaVersion") == 2 and isinstance(extract.get("values"), dict):
+        raw_values = list(extract["values"].keys())
+    else:
+        for e in extract.get("entries", []):
+            raw_values.append(e.get("value", ""))
+    for v in raw_values:
+        v = (v or "").strip()
+        if not v:
+            continue
         vals.add(v)
         vals.add(v.lower())
         h = rgb_to_hex(v)
@@ -71,7 +75,7 @@ def extract_index(extract: dict) -> tuple[set[str], set[str]]:
         nh = norm_hex(v)
         if nh.startswith("#"):
             hexes.add(nh)
-    return vals, hexes
+    return vals, hexes, bool(vals)
 
 
 def lint_family(fam_dir: Path, strict: bool) -> tuple[list[str], list[str]]:
@@ -107,7 +111,6 @@ def lint_family(fam_dir: Path, strict: bool) -> tuple[list[str], list[str]]:
         if not (intent.get("source") or {}).get("license"):
             errors.append(f"[{fam}] intent.source.license 为空")
         if not (intent.get("source") or {}).get("repo") and pin_type != "legacy":
-            # legacy backfill may have empty repo if README parse missed
             errors.append(f"[{fam}] intent.source.repo 为空")
         elif not (intent.get("source") or {}).get("repo"):
             warnings.append(f"[{fam}] intent.source.repo 为空（legacy 回填）")
@@ -117,18 +120,29 @@ def lint_family(fam_dir: Path, strict: bool) -> tuple[list[str], list[str]]:
         except json.JSONDecodeError as e:
             errors.append(f"[{fam}] extract.json 解析失败: {e}")
             return errors, warnings
-        if extract.get("schemaVersion") != 1:
-            errors.append(f"[{fam}] extract.schemaVersion != 1")
+        ver = extract.get("schemaVersion")
+        if ver not in (1, 2):
+            errors.append(f"[{fam}] extract.schemaVersion 不受支持: {ver}")
         if intent and extract.get("pin") != intent.get("source", {}).get("pin"):
             errors.append(f"[{fam}] extract.pin != intent.source.pin")
-        for i, e in enumerate(extract.get("entries", [])):
-            for k in ("selector", "var", "value", "kind", "sourceFile"):
-                if k not in e:
-                    errors.append(f"[{fam}] extract.entries[{i}] 缺字段 {k}")
-                    break
+        if ver == 2:
+            values = extract.get("values")
+            if not isinstance(values, dict):
+                errors.append(f"[{fam}] extract.values 必须为对象（value-ledger）")
+            else:
+                for i, (val, meta) in enumerate(values.items()):
+                    if not isinstance(meta, dict) or "witness" not in meta:
+                        errors.append(f"[{fam}] extract.values[{val!r}] 缺 witness")
+                        if i > 5:
+                            break
+        else:
+            for i, e in enumerate(extract.get("entries", [])):
+                for k in ("selector", "var", "value", "kind", "sourceFile"):
+                    if k not in e:
+                        errors.append(f"[{fam}] extract.entries[{i}] 缺字段 {k}")
+                        break
 
-    vals, hexes = extract_index(extract) if extract else (set(), set())
-    # 快照不含色值定义（如 everforest.vim 只有 highlight 引用）→ 值域证明降级为 WARN
+    vals, hexes, has_vals = extract_index(extract) if extract else (set(), set(), False)
     partial = bool(extract) and extract.get("provenance") == "partial"
 
     for theme_dir in sorted(p for p in fam_dir.iterdir() if p.is_dir() and not p.name.startswith("_")):
@@ -142,25 +156,22 @@ def lint_family(fam_dir: Path, strict: bool) -> tuple[list[str], list[str]]:
                 continue
             if FALLBACK_NOTE.search(note):
                 continue
-            if extract is None:
+            if extract is None or not has_vals:
                 continue
             nv = norm_hex(value)
             if value in vals or value.lower() in vals or nv in hexes:
                 continue
-            # 8-digit hex: allow if 6-digit body is extract-backed (alpha composition)
             if re.fullmatch(r"#[0-9a-fA-F]{8}", value) and norm_hex(value[:7]) in hexes:
                 continue
             if re.fullmatch(r"#[0-9a-fA-F]{8}", nv) and nv[:7] in hexes:
                 continue
-            # rgb triplet components (r, g, b)
             if re.fullmatch(r"\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}", value):
-                if any(value.replace(" ", "") == ev.replace(" ", "") or value in ev for ev in vals):
-                    continue
-                # also accept when extract has rgb(r, g, b) form
                 alt = f"rgb({value})"
-                if alt in vals or alt.replace(" ", "") in {v.replace(" ", "") for v in vals}:
+                if any(
+                    value.replace(" ", "") == ev.replace(" ", "") or value in ev or alt in ev
+                    for ev in vals
+                ):
                     continue
-            # allow value that is a literal substring of some extract value
             if any(value and value in ev for ev in vals):
                 continue
             msg = f"[{fam}/{tid}] --{role} 值不可回溯 extract 且备注无豁免标记: {value!r}"

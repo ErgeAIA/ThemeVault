@@ -86,11 +86,29 @@ def extract_entries(text: str, selectors: list[str], source_file: str) -> list[d
 
 def build_extract(src: Path, family: str, pin: str, selectors: list[str]) -> dict:
     text = src.read_text(encoding="utf-8")
+    entries = extract_entries(text, selectors, src.name)
+    values: dict[str, dict] = {}
+    for e in entries:
+        v = e["value"]
+        if v in values:
+            values[v]["hits"] = values[v].get("hits", 1) + 1
+        else:
+            values[v] = {
+                "kind": e["kind"],
+                "witness": {
+                    "sourceFile": e["sourceFile"],
+                    "var": e["var"],
+                    "selector": e["selector"],
+                },
+                "hits": 1,
+            }
     return {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "family": family,
         "pin": pin,
-        "entries": extract_entries(text, selectors, src.name),
+        "kind": "value-ledger",
+        "provenance": "full",
+        "values": dict(sorted(values.items())),
     }
 
 

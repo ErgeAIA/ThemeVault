@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 """Backfill intake IR (intent.json + extract.json) for ThemeVault families.
 
-Reads existing `_source/` snapshots (no network) and emits mechanical extract
-across CSS / JSON / YAML / Lua / TS / Vim color declarations. Never invents
-values. Legacy pin uses pinType=legacy (see docs/intake-artifacts.md).
+extract.json is a **value ledger** (schemaVersion 2): one entry per unique
+color value + a single witness (sourceFile / var / selector). Ground truth
+stays in `_source/**`; this is an index for provenance lint (see
+docs/intake-artifacts.md). Rebuild anytime with --force.
 
 Usage:
-  python scripts/backfill_intake_ir.py           # all families missing IR
+  python scripts/backfill_intake_ir.py
   python scripts/backfill_intake_ir.py --family nord
-  python scripts/backfill_intake_ir.py --force   # rewrite existing IR
+  python scripts/backfill_intake_ir.py --force
 """
 from __future__ import annotations
 
 import argparse
 import json
 import re
-import sys
 from datetime import date
 from pathlib import Path
 
@@ -26,10 +26,12 @@ HEX_RE = re.compile(r"#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})\b")
 RGB_RE = re.compile(r"rgba?\([^)]+\)")
 HSL_RE = re.compile(r"hsla?\([^)]+\)")
 CSS_VAR_RE = re.compile(r"(--[a-zA-Z0-9-]+)\s*:\s*([^;]+)")
-# lua/ts style: key = "#abc" or key = "rgb(...)"
 ASSIGN_RE = re.compile(
     r"['\"]?([A-Za-z0-9_./-]+)['\"]?\s*[=:]\s*['\"]([^'\"]+)['\"]"
 )
+JSON_KV_RE = re.compile(r"['\"]([A-Za-z0-9_./#-]+)['\"]\s*:\s*['\"]([^'\"]+)['\"]")
+YAML_KV_RE = re.compile(r"^(\s*)([A-Za-z0-9_./#-]+)\s*:\s*([^\s#][^#\n]*)$", re.M)
+RGB_TRIPLET_RE = re.compile(r"^\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}$")
 COLOR_KEY_HINT = re.compile(
     r"color|background|bg|text|fg|border|accent|shadow|selection|highlight|"
     r"foreground|ansi|code|syntax|brand|palette|comment|string|keyword|"
@@ -44,25 +46,15 @@ def kind_of(val: str) -> str:
         return "var-ref"
     if "color-mix" in v:
         return "color-mix"
-    if "rgb(" in v or "rgba(" in v:
-        return "rgb" if "rgb(" in v else "rgba"
+    if "rgb(" in v:
+        return "rgb"
+    if "rgba(" in v:
+        return "rgba"
     if v.startswith("#"):
         return "hex"
-    if "hsl(" in v or "hsla(" in v:
-        return "other"
     if "linear-gradient" in v:
         return "shadow-or-gradient"
     return "other"
-
-
-RGB_TRIPLET_RE = re.compile(r"^\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}$")
-# raw "key": "#hex" / key: #hex fallbacks
-JSON_KV_RE = re.compile(
-    r"['\"]([A-Za-z0-9_./#-]+)['\"]\s*:\s*['\"]([^'\"]+)['\"]"
-)
-YAML_KV_RE = re.compile(
-    r"^(\s*)([A-Za-z0-9_./#-]+)\s*:\s*([^\s#][^#\n]*)$", re.M
-)
 
 
 def looks_color(val: str) -> bool:
@@ -80,102 +72,112 @@ def looks_color(val: str) -> bool:
     )
 
 
-def add_entry(entries: list, seen: set, selector: str, var: str, value: str, source_file: str) -> None:
-    val = value.strip().rstrip(";").strip()
-    if val.endswith("!important"):
-        val = val[: -len("!important")].strip()
-    key = (source_file, selector, var, val)
-    if key in seen:
+def norm_value(val: str) -> str:
+    v = val.strip()
+    if v.endswith("!important"):
+        v = v[: -len("!important")].strip()
+    return v if len(v) < 300 else v[:300] + "…"
+
+
+def add_value(
+    ledger: dict[str, dict],
+    value: str,
+    kind: str,
+    source_file: str,
+    var: str,
+    selector: str,
+) -> None:
+    v = norm_value(value)
+    if not v:
         return
-    seen.add(key)
-    entries.append({
-        "selector": selector,
-        "var": var,
-        "value": val if len(val) < 300 else val[:300] + "…",
-        "kind": kind_of(val),
-        "sourceFile": source_file,
-    })
+    # first witness wins (stable enough; rebuild is deterministic by scan order)
+    if v in ledger:
+        ledger[v]["hits"] = ledger[v].get("hits", 1) + 1
+        return
+    ledger[v] = {
+        "kind": kind,
+        "witness": {
+            "sourceFile": source_file,
+            "var": var,
+            "selector": selector,
+        },
+        "hits": 1,
+    }
 
 
-def extract_from_css(text: str, rel: str, entries: list, seen: set) -> None:
-    for m in CSS_VAR_RE.finditer(text):
-        var, val = m.group(1), m.group(2)
-        if looks_color(val) or COLOR_KEY_HINT.search(var):
-            if looks_color(val) or kind_of(val.strip()) in ("var-ref", "color-mix"):
-                add_entry(entries, seen, "css", var, val, rel)
-    # raw string pairs fallback
-    extract_pairs(text, rel, entries, seen, selector="css-text")
+def add_entry_raw(ledger, selector, var, value, source_file) -> None:
+    val = norm_value(value)
+    if looks_color(val) or kind_of(val) in ("var-ref", "color-mix"):
+        add_value(ledger, val, kind_of(val), source_file, var, selector)
 
 
-def extract_pairs(text: str, rel: str, entries: list, seen: set, selector: str) -> None:
+def walk_json(obj, path: str, rel: str, ledger: dict) -> None:
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            walk_json(v, f"{path}.{k}" if path else k, rel, ledger)
+    elif isinstance(obj, list):
+        for i, v in enumerate(obj):
+            walk_json(v, f"{path}[{i}]", rel, ledger)
+    elif isinstance(obj, str) and looks_color(obj):
+        add_value(ledger, obj, kind_of(obj), rel, path or "(root)", "json")
+
+
+def extract_pairs(text: str, rel: str, ledger: dict, selector: str) -> None:
     for rx, sel in ((JSON_KV_RE, "json-kv"), (YAML_KV_RE, "yaml-kv"), (ASSIGN_RE, "assign")):
         for m in rx.finditer(text):
             groups = m.groups()
             key = groups[-2] if len(groups) >= 2 else groups[0]
-            val = groups[-1]
-            val = (val or "").strip().strip("'\"").strip()
+            val = (groups[-1] or "").strip().strip("'\"").strip()
             if val and looks_color(val):
-                add_entry(entries, seen, f"{selector}:{sel}", str(key), val, rel)
+                add_value(ledger, val, kind_of(val), rel, str(key), f"{selector}:{sel}")
 
 
-def extract_from_json(text: str, rel: str, entries: list, seen: set) -> None:
-    parsed = False
+def extract_from_css(text: str, rel: str, ledger: dict) -> None:
+    for m in CSS_VAR_RE.finditer(text):
+        var, val = m.group(1), m.group(2)
+        add_entry_raw(ledger, "css", var, val, rel)
+    extract_pairs(text, rel, ledger, "css-text")
+
+
+def extract_from_json(text: str, rel: str, ledger: dict) -> None:
     for candidate in (text, re.sub(r"^\s*//.*$", "", text, flags=re.M)):
         try:
             obj = json.loads(candidate)
         except json.JSONDecodeError:
             continue
-        walk_json(obj, "", rel, entries, seen)
-        parsed = True
+        walk_json(obj, "", rel, ledger)
         break
-    extract_pairs(text, rel, entries, seen, selector="json")
+    extract_pairs(text, rel, ledger, "json")
 
 
-def extract_from_yaml(text: str, rel: str, entries: list, seen: set) -> None:
-    extract_pairs(text, rel, entries, seen, selector="yaml")
-    extract_from_lua_ts(text, rel, entries, seen)
+def extract_from_yaml(text: str, rel: str, ledger: dict) -> None:
+    extract_pairs(text, rel, ledger, "yaml")
 
 
-def extract_from_lua_ts(text: str, rel: str, entries: list, seen: set) -> None:
-    extract_pairs(text, rel, entries, seen, selector="code")
+def extract_from_lua_ts(text: str, rel: str, ledger: dict) -> None:
+    extract_pairs(text, rel, ledger, "code")
     for m in re.finditer(r"([A-Za-z0-9_]+)\s*=\s*(#[0-9a-fA-F]{3,8})", text):
-        add_entry(entries, seen, "code", m.group(1), m.group(2), rel)
-    # everforest.vim / solarized style: gui=#hex
+        add_value(ledger, m.group(2), "hex", rel, m.group(1), "code")
     for m in re.finditer(r"([A-Za-z0-9_]+)\s*=\s*([0-9a-fA-F]{6})\b", text):
         if COLOR_KEY_HINT.search(m.group(1)):
-            add_entry(entries, seen, "code", m.group(1), "#" + m.group(2), rel)
+            add_value(ledger, "#" + m.group(2), "hex", rel, m.group(1), "code")
 
 
-def walk_json(obj, path: str, rel: str, entries: list, seen: set) -> None:
-    if isinstance(obj, dict):
-        for k, v in obj.items():
-            walk_json(v, f"{path}.{k}" if path else k, rel, entries, seen)
-    elif isinstance(obj, list):
-        for i, v in enumerate(obj):
-            walk_json(v, f"{path}[{i}]", rel, entries, seen)
-    elif isinstance(obj, str):
-        if looks_color(obj):
-            add_entry(entries, seen, "json", path or "(root)", obj, rel)
-
-
-def extract_bare_hexes(text: str, rel: str, entries: list, seen: set) -> None:
-    """Last-resort harvest: every hex literal with nearest left identifier."""
+def extract_bare_hexes(text: str, rel: str, ledger: dict) -> None:
     for m in HEX_RE.finditer(text):
         start = m.start()
         line_start = text.rfind("\n", 0, start) + 1
         prefix = text[line_start:start]
         idm = re.search(r"([A-Za-z0-9_.#/-]+)\s*$", prefix)
         var = idm.group(1) if idm else f"hex@{start}"
-        add_entry(entries, seen, "literal", var, m.group(0), rel)
-    # YAML anchors: &BG '#282A36'
+        add_value(ledger, m.group(0), "hex", rel, var, "literal")
     for m in re.finditer(r"&([A-Za-z0-9_]+)\s+'(#[0-9a-fA-F]{3,8})'", text):
-        add_entry(entries, seen, "yaml-anchor", m.group(1), m.group(2), rel)
-    # vim script lists: '#2d353b'
+        add_value(ledger, m.group(2), "hex", rel, m.group(1), "yaml-anchor")
     for m in re.finditer(r"'(#[0-9a-fA-F]{3,8})'", text):
-        add_entry(entries, seen, "quoted-hex", "hex-literal", m.group(1), rel)
+        add_value(ledger, m.group(1), "hex", rel, "hex-literal", "quoted-hex")
 
 
-def extract_file(path: Path, src_root: Path, entries: list, seen: set) -> None:
+def extract_file(path: Path, src_root: Path, ledger: dict) -> None:
     rel = str(path.relative_to(src_root)).replace("\\", "/")
     if path.name.lower() in ("license", "license.txt", "license.md"):
         return
@@ -185,37 +187,15 @@ def extract_file(path: Path, src_root: Path, entries: list, seen: set) -> None:
         return
     suf = path.suffix.lower()
     if suf == ".css":
-        extract_from_css(text, rel, entries, seen)
+        extract_from_css(text, rel, ledger)
     elif suf == ".json":
-        extract_from_json(text, rel, entries, seen)
+        extract_from_json(text, rel, ledger)
     elif suf in (".yml", ".yaml"):
-        extract_from_yaml(text, rel, entries, seen)
-    elif suf in (".lua", ".ts", ".mjs", ".js", ".vim", "") or path.name in ("solarized",):
-        extract_from_lua_ts(text, rel, entries, seen)
+        extract_from_yaml(text, rel, ledger)
     else:
-        extract_from_lua_ts(text, rel, entries, seen)
-    extract_bare_hexes(text, rel, entries, seen)
-    extract_pairs(text, rel, entries, seen, selector="fallback")
-    rel = str(path.relative_to(src_root)).replace("\\", "/")
-    if path.name.lower() in ("license", "license.txt", "license.md"):
-        return
-    try:
-        text = path.read_text(encoding="utf-8")
-    except (UnicodeDecodeError, OSError):
-        return
-    suf = path.suffix.lower()
-    if suf == ".css":
-        extract_from_css(text, rel, entries, seen)
-    elif suf == ".json":
-        extract_from_json(text, rel, entries, seen)
-    elif suf in (".yml", ".yaml"):
-        extract_from_yaml(text, rel, entries, seen)
-    elif suf in (".lua", ".ts", ".mjs", ".js", ".vim", "") or path.name in ("solarized",):
-        extract_from_lua_ts(text, rel, entries, seen)
-    else:
-        extract_from_lua_ts(text, rel, entries, seen)
-    extract_bare_hexes(text, rel, entries, seen)
-    extract_pairs(text, rel, entries, seen, selector="fallback")
+        extract_from_lua_ts(text, rel, ledger)
+    extract_bare_hexes(text, rel, ledger)
+    extract_pairs(text, rel, ledger, "fallback")
 
 
 def family_meta(fam_dir: Path) -> dict:
@@ -261,12 +241,12 @@ def write_ir(fam_dir: Path, force: bool) -> str | None:
         return "skip"
     meta = family_meta(fam_dir)
     themes = themes_of(fam_dir)
-    entries: list = []
-    seen: set = set()
+    ledger: dict[str, dict] = {}
     for f in sorted(src.rglob("*")):
         if f.is_file():
-            extract_file(f, src, entries, seen)
-    entries.sort(key=lambda e: (e["sourceFile"], e["selector"], e["var"], e["value"]))
+            extract_file(f, src, ledger)
+    # deterministic key order
+    values = {k: ledger[k] for k in sorted(ledger.keys())}
     pin = "unrecorded-legacy-intake"
     pin_type = "legacy"
     intent = {
@@ -279,10 +259,16 @@ def write_ir(fam_dir: Path, force: bool) -> str | None:
             "pinType": pin_type,
             "files": sorted(
                 str(f.relative_to(src)).replace("\\", "/")
-                for f in src.rglob("*") if f.is_file()
+                for f in src.rglob("*")
+                if f.is_file() and f.name not in ("intent.json", "extract.json")
             ),
             "license": meta["license"] or "UNKNOWN",
-            "upstream": {"project": None, "repo": None, "license": None, "note": meta["note"] or None},
+            "upstream": {
+                "project": None,
+                "repo": None,
+                "license": None,
+                "note": meta["note"] or None,
+            },
         },
         "scope": {
             "themes": themes,
@@ -294,18 +280,31 @@ def write_ir(fam_dir: Path, force: bool) -> str | None:
         "backfilled": True,
     }
     extract = {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "family": fam,
         "pin": pin,
-        "entries": entries,
+        "kind": "value-ledger",
+        "values": values,
     }
+    # preserve partial flag if previously set (everforest-style)
+    old_extract_p = src / "extract.json"
+    if old_extract_p.exists():
+        try:
+            old = json.loads(old_extract_p.read_text(encoding="utf-8"))
+            if old.get("provenance") == "partial":
+                extract["provenance"] = "partial"
+                extract["provenanceNote"] = old.get("provenanceNote")
+        except json.JSONDecodeError:
+            pass
+    if not extract.get("provenance"):
+        extract["provenance"] = "full"
     (src / "intent.json").write_text(
         json.dumps(intent, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     (src / "extract.json").write_text(
         json.dumps(extract, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-    return f"ok entries={len(entries)}"
+    return f"ok values={len(values)}"
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -313,17 +312,14 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--family")
     ap.add_argument("--force", action="store_true")
     args = ap.parse_args(argv)
-    fams = []
     for p in sorted(THEMES.iterdir()):
         if not p.is_dir() or p.name.startswith("_"):
             continue
         if args.family and p.name != args.family:
             continue
-        fams.append(p)
-    for fam in fams:
-        status = write_ir(fam, force=args.force)
+        status = write_ir(p, force=args.force)
         if status:
-            print(f"{fam.name}: {status}")
+            print(f"{p.name}: {status}")
     return 0
 
 
