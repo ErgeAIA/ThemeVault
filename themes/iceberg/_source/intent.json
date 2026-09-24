@@ -9,10 +9,8 @@
     "files": [
       "LICENSE.txt",
       "contract.json",
-      "extract.json",
       "iceberg-light.color-theme.json",
-      "iceberg.color-theme.json",
-      "intent.json"
+      "iceberg.color-theme.json"
     ],
     "license": "UNKNOWN",
     "upstream": {

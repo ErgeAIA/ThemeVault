@@ -8,9 +8,7 @@
     "pinType": "legacy",
     "files": [
       "JellyFish.json",
-      "contract.json",
-      "extract.json",
-      "intent.json"
+      "contract.json"
     ],
     "license": "Apache-2.0",
     "upstream": {

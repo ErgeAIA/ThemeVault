@@ -9,8 +9,6 @@
     "files": [
       "LICENSE",
       "contract.json",
-      "extract.json",
-      "intent.json",
       "synthwave-color-theme.json"
     ],
     "license": "UNKNOWN",

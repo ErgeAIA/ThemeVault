@@ -10,8 +10,6 @@
       "LICENSE",
       "colors.lua",
       "contract.json",
-      "extract.json",
-      "intent.json",
       "themes.lua"
     ],
     "license": "MIT",

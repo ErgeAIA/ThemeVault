@@ -10,8 +10,6 @@
       "LICENSE",
       "README.md",
       "contract.json",
-      "extract.json",
-      "intent.json",
       "theme.css"
     ],
     "license": "MIT",

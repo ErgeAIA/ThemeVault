@@ -8,9 +8,7 @@
     "pinType": "legacy",
     "files": [
       "contract.json",
-      "dracula.yml",
-      "extract.json",
-      "intent.json"
+      "dracula.yml"
     ],
     "license": "MIT",
     "upstream": {

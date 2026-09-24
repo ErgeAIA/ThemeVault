@@ -13,8 +13,6 @@
       "common.ts",
       "contract.json",
       "dark.ts",
-      "extract.json",
-      "intent.json",
       "soft-dark.ts"
     ],
     "license": "MIT",

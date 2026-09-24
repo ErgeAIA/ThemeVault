@@ -1,8 +1,9 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "family": "everforest",
   "pin": "unrecorded-legacy-intake",
-  "entries": [],
+  "kind": "value-ledger",
+  "values": {},
   "provenance": "partial",
   "provenanceNote": "everforest.vim 仅含 highlight 引用，色值定义在未快照的 everforest#get_palette；值域证明降级为 WARN"
 }

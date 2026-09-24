@@ -9,8 +9,6 @@
     "files": [
       "LICENSE",
       "contract.json",
-      "extract.json",
-      "intent.json",
       "palette.lua"
     ],
     "license": "MIT",

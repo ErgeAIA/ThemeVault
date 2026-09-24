@@ -8,8 +8,6 @@
     "pinType": "legacy",
     "files": [
       "contract.json",
-      "extract.json",
-      "intent.json",
       "vue-hc.json",
       "vue-theme.json"
     ],

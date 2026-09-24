@@ -10,9 +10,7 @@
       "LICENSE",
       "contract.json",
       "day.lua",
-      "extract.json",
       "init.lua",
-      "intent.json",
       "moon.lua",
       "night.lua",
       "storm.lua"

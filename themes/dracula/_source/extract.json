@@ -1,714 +1,252 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "family": "dracula",
   "pin": "unrecorded-legacy-intake",
-  "entries": [
-    {
-      "selector": "literal",
-      "var": "hex@1078",
-      "value": "#E9F284",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@1116",
-      "value": "#8BE9FE",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@1156",
-      "value": "#44475A75",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@1189",
-      "value": "#FFFFFF1A",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@1222",
-      "value": "#FFFFFF",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@1253",
-      "value": "#44475A70",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@1304",
-      "value": "#424450",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@1335",
-      "value": "#343746",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@1395",
-      "value": "#21222C",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@1455",
-      "value": "#191A21",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@220",
-      "value": "#282A36",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@247",
-      "value": "#F8F8F2",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@274",
-      "value": "#44475A",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@301",
-      "value": "#6272A4",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@328",
-      "value": "#8BE9FD",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@355",
-      "value": "#50FA7B",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@382",
-      "value": "#FFB86C",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@409",
-      "value": "#FF79C6",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@436",
-      "value": "#BD93F9",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@463",
-      "value": "#FF5555",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@490",
-      "value": "#F1FA8C",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@529",
-      "value": "#21222C",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@560",
-      "value": "#FF5555",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@591",
-      "value": "#50FA7B",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@622",
-      "value": "#F1FA8C",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@653",
-      "value": "#BD93F9",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@684",
-      "value": "#FF79C6",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@715",
-      "value": "#8BE9FD",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@746",
-      "value": "#F8F8F2",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@777",
-      "value": "#6272A4",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@808",
-      "value": "#FF6E6E",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@839",
-      "value": "#69FF94",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@870",
-      "value": "#FFFFA5",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@901",
-      "value": "#D6ACFF",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@932",
-      "value": "#FF92DF",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@963",
-      "value": "#A4FFFF",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "literal",
-      "var": "hex@994",
-      "value": "#FFFFFF",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#191A21",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#21222C",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#282A36",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#343746",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#424450",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#44475A",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#44475A70",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#44475A75",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#50FA7B",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#6272A4",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#69FF94",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#8BE9FD",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#8BE9FE",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#A4FFFF",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#BD93F9",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#D6ACFF",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#E9F284",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#F1FA8C",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#F8F8F2",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#FF5555",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#FF6E6E",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#FF79C6",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#FF92DF",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#FFB86C",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#FFFFA5",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#FFFFFF",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "quoted-hex",
-      "var": "hex-literal",
-      "value": "#FFFFFF1A",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "BG",
-      "value": "#282A36",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "BGDark",
-      "value": "#21222C",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "BGDarker",
-      "value": "#191A21",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "BGLight",
-      "value": "#343746",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "BGLighter",
-      "value": "#424450",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR0",
-      "value": "#21222C",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR1",
-      "value": "#FF5555",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR10",
-      "value": "#69FF94",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR11",
-      "value": "#FFFFA5",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR12",
-      "value": "#D6ACFF",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR13",
-      "value": "#FF92DF",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR14",
-      "value": "#A4FFFF",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR15",
-      "value": "#FFFFFF",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR2",
-      "value": "#50FA7B",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR3",
-      "value": "#F1FA8C",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR4",
-      "value": "#BD93F9",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR5",
-      "value": "#FF79C6",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR6",
-      "value": "#8BE9FD",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR7",
-      "value": "#F8F8F2",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR8",
-      "value": "#6272A4",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COLOR9",
-      "value": "#FF6E6E",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "COMMENT",
-      "value": "#6272A4",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "CYAN",
-      "value": "#8BE9FD",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "FG",
-      "value": "#F8F8F2",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "GREEN",
-      "value": "#50FA7B",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "LineHighlight",
-      "value": "#44475A75",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "NonText",
-      "value": "#FFFFFF1A",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "ORANGE",
-      "value": "#FFB86C",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "PINK",
-      "value": "#FF79C6",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "PURPLE",
-      "value": "#BD93F9",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "RED",
-      "value": "#FF5555",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "SELECTION",
-      "value": "#44475A",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "TAB_DROP_BG",
-      "value": "#44475A70",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "TEMP_PROPERTY_QUOTES",
-      "value": "#8BE9FE",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "TEMP_QUOTES",
-      "value": "#E9F284",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "WHITE",
-      "value": "#FFFFFF",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
-    },
-    {
-      "selector": "yaml-anchor",
-      "var": "YELLOW",
-      "value": "#F1FA8C",
-      "kind": "hex",
-      "sourceFile": "dracula.yml"
+  "kind": "value-ledger",
+  "values": {
+    "#191A21": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@1455",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#21222C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@529",
+        "selector": "literal"
+      },
+      "hits": 36
+    },
+    "#282A36": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@220",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#343746": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@1335",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#424450": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@1304",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#44475A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@274",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#44475A70": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@1253",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#44475A75": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@1156",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#50FA7B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@355",
+        "selector": "literal"
+      },
+      "hits": 36
+    },
+    "#6272A4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@301",
+        "selector": "literal"
+      },
+      "hits": 36
+    },
+    "#69FF94": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@839",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#8BE9FD": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@328",
+        "selector": "literal"
+      },
+      "hits": 36
+    },
+    "#8BE9FE": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@1116",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#A4FFFF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@963",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#BD93F9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@436",
+        "selector": "literal"
+      },
+      "hits": 36
+    },
+    "#D6ACFF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@901",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#E9F284": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@1078",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#F1FA8C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@490",
+        "selector": "literal"
+      },
+      "hits": 36
+    },
+    "#F8F8F2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@247",
+        "selector": "literal"
+      },
+      "hits": 36
+    },
+    "#FF5555": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@463",
+        "selector": "literal"
+      },
+      "hits": 36
+    },
+    "#FF6E6E": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@808",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#FF79C6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@409",
+        "selector": "literal"
+      },
+      "hits": 36
+    },
+    "#FF92DF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@932",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#FFB86C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@382",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#FFFFA5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@870",
+        "selector": "literal"
+      },
+      "hits": 21
+    },
+    "#FFFFFF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@994",
+        "selector": "literal"
+      },
+      "hits": 36
+    },
+    "#FFFFFF1A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.yml",
+        "var": "hex@1189",
+        "selector": "literal"
+      },
+      "hits": 21
     }
-  ]
+  },
+  "provenance": "full"
 }

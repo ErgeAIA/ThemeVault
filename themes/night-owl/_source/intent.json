@@ -10,9 +10,7 @@
       "LICENSE.md",
       "Night Owl-Light-color-theme.json",
       "Night Owl-color-theme.json",
-      "contract.json",
-      "extract.json",
-      "intent.json"
+      "contract.json"
     ],
     "license": "UNKNOWN",
     "upstream": {

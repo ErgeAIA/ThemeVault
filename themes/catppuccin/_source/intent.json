@@ -8,9 +8,7 @@
     "pinType": "legacy",
     "files": [
       "contract.json",
-      "extract.json",
       "frappe.json",
-      "intent.json",
       "latte.json",
       "macchiato.json",
       "mocha.json"

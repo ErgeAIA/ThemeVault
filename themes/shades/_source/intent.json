@@ -8,8 +8,6 @@
     "pinType": "legacy",
     "files": [
       "contract.json",
-      "extract.json",
-      "intent.json",
       "shades-of-purple.json",
       "shades-super-dark.json"
     ],

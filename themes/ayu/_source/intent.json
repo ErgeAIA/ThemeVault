@@ -10,9 +10,7 @@
       "ayu-dark-unbordered.json",
       "ayu-light-unbordered.json",
       "ayu-mirage-unbordered.json",
-      "contract.json",
-      "extract.json",
-      "intent.json"
+      "contract.json"
     ],
     "license": "MIT",
     "upstream": {

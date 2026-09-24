@@ -9,9 +9,7 @@
     "files": [
       "LICENSE",
       "contract.json",
-      "everforest.vim",
-      "extract.json",
-      "intent.json"
+      "everforest.vim"
     ],
     "license": "MIT",
     "upstream": {
@@ -27,7 +25,7 @@
       "light"
     ],
     "defaultSemantics": "frozen-default",
-    "defaultNote": "快照不含 palette 定义（autoload 未拷入）；palette.md 为 medium 调色板映射，见家族 README"
+    "defaultNote": "回填 IR：入库时未记录运行时覆盖语义；按源码固化值处理"
   },
   "attribution": [],
   "collectedAt": "2026-09-24",
