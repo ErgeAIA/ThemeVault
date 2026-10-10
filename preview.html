@@ -44,6 +44,9 @@
   .swatch { border-radius: 5px; overflow: hidden; }
   .swatch-color { height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-family: ui-monospace, Consolas, monospace; font-size: 9px; }
   .swatch-label { font-size: 9px; text-align: center; padding: 2px 2px 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0.85; }
+  /* 代码块模拟：底色 / 边框 / 语法色均取主题角色（家族感知），直观展示高亮实际效果 */
+  .code-block { margin: 8px 14px 4px; padding: 8px 10px; border-radius: 6px; border: 1px solid rgba(128,128,140,0.3); font-family: ui-monospace, Consolas, monospace; font-size: 11px; line-height: 1.6; white-space: pre; overflow-x: auto; }
+  .code-block .cl { display: block; }
   /* 底部 tags：flex-wrap 自然换行，不硬编码列数 */
   .tags { padding: 6px 14px 10px; display: flex; flex-wrap: wrap; gap: 5px; }
   .tag { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: rgba(128,128,140,0.18); color: inherit; opacity: 0.9; }
@@ -147,6 +150,44 @@ const BADGE_ROLES = {
 };
 const BG_TEXT_ROLES = { ergemd: ["bg-page","text-primary"] };
 
+// 代码块模拟：语法角色 → 代码语义（家族感知）。
+// L1 通用 syntax-* / ergemd code-* / opencode 驼峰 syntaxXxx；角色缺失时降级为主题 text 色。
+const SYNTAX_ROLE_MAP = {
+  _default: {keyword:"syntax-keyword", string:"syntax-string", number:"syntax-literal", comment:"syntax-comment", fn:"syntax-title", attr:"syntax-attr"},
+  ergemd: {keyword:"code-keyword", string:"code-string", number:"code-number", comment:"code-comment", fn:"code-function", text:"code-text"},
+  opencode: {keyword:"syntaxKeyword", string:"syntaxString", number:"syntaxNumber", comment:"syntaxComment", fn:"syntaxFunction", variable:"syntaxVariable", type:"syntaxType", operator:"syntaxOperator", punctuation:"syntaxPunctuation"},
+};
+// 代码块底色角色（家族感知；默认 bg-surface）
+const CODE_BG_ROLE = { ergemd: "bg-code", opencode: "backgroundPanel" };
+// CODE_LINES 短键 → 代码语义（对应 SYNTAX_ROLE_MAP 的键）；d 不映射，直接用 text
+const CODE_TOKEN_MAP = {c:"comment", k:"keyword", s:"string", n:"number", f:"fn", v:"variable", t:"type", o:"operator", p:"punctuation"};
+// 示例代码：[语义键, 文本]；c=注释 k=关键字 s=字符串 n=数字 f=函数名 v=变量 t=类型 o=运算符 p=标点 d=默认
+const CODE_LINES = [
+  [["c", "// 主题预览 · syntax highlight"]],
+  [["k", "const"], ["v", " theme"], ["o", " = "], ["p", "{ "], ["v", "name"], ["o", ": "], ["s", '"ember"'], ["p", ", "], ["v", "size"], ["o", ": "], ["n", "42"], ["p", " }"]],
+  [["k", "function"], ["f", " pick"], ["p", "("], ["v", "t"], ["o", ": "], ["t", "Theme"], ["p", ") {"]],
+  [["d", "  "], ["k", "return"], ["v", " t"], ["o", "."], ["v", "name"], ["o", " + "], ["s", '":"'], ["o", " + "], ["v", "theme.size"], ["p", ";"]],
+  [["p", "}"]],
+];
+
+// 渲染代码块模拟：底色 / 边框 / 文字取主题角色，语法按家族映射上色；
+// 公式值（含 var(）无 CSS 变量上下文，不强行上色，降级为 text（与色块区同口径）。
+function codeBlockHtml(fam, tokens, bg, text){
+  const sm = SYNTAX_ROLE_MAP[fam.family] || SYNTAX_ROLE_MAP._default;
+  const usable = v => (v && !String(v).includes("var(")) ? v : null;
+  const codeBg = usable(tokens[CODE_BG_ROLE[fam.family] || "bg-surface"]) || bg;
+  const codeBorder = usable(tokens.border) || "rgba(128,128,140,0.3)";
+  const colorOf = key => {
+    const sem = CODE_TOKEN_MAP[key];
+    const role = sem ? sm[sem] : null;
+    return (role && usable(tokens[role])) || text;
+  };
+  const lines = CODE_LINES.map(line =>
+    `<span class="cl">` + line.map(([k, s]) => `<span style="color:${esc(colorOf(k))}">${esc(s)}</span>`).join("") + `</span>`
+  ).join("");
+  return `<div class="code-block" style="background:${esc(codeBg)};color:${esc(text)};border-color:${esc(codeBorder)}">${lines}</div>`;
+}
+
 // L1 → ergemd 原生角色映射（让 ergemd 主题进 L1 对比矩阵；ergemd 无的概念如 border 不映射，显示 —）
 const ERGE_MD_L1_MAP = {
   "bg":"bg-page", "bg-surface":"bg-reader",
@@ -216,6 +257,7 @@ function renderCard(fam, theme){
     return`<div class="section"><div class="section-title">${title}</div><div class="swatches">${swatches}</div></div>`;
   }).join("");
 
+  const codeHtml = codeBlockHtml(fam, tokens, bg, text);
   const tags = `${numTag}${brandTag}<span class="tag ${scheme}">${scheme}</span><span class="tag">${esc(fam.familyDisplayName || family)}</span><span class="tag">${esc(license)}</span>${fontsTag}`;
 
   return `<div class="card" data-name="${esc(theme.displayName)}" data-family="${esc(family)}" data-scheme="${esc(scheme)}" data-number="${numStr}" style="background:${bg};color:${text}">
@@ -224,6 +266,7 @@ function renderCard(fam, theme){
     <div class="badges">${badges}</div>
     ${brandRow}
     ${sectionsHtml}
+    ${codeHtml}
     <div class="tags">${tags}</div>
   </div>`;
 }
