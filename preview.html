@@ -58,6 +58,10 @@
   .tag.brand-tag .dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
   .tag.mono-tag { font-family: ui-monospace, Consolas, monospace; color: #9ecbff; opacity: 1; }
   .tag.light { color: #ffd43b; opacity: 1; } .tag.dark { color: #748ffc; opacity: 1; }
+  /* 复制色板徽章：跟在中文名后，点击复制该主题完整调色板信息（可直接发给 AI） */
+  .copy-palette { margin-left: 6px; font-family: inherit; font-size: 11px; font-weight: 400; padding: 2px 9px; border-radius: 999px; background: rgba(128,128,140,0.18); color: inherit; border: 1px solid rgba(128,128,140,0.32); cursor: pointer; vertical-align: 2px; }
+  .copy-palette:hover { background: rgba(128,128,140,0.34); }
+  .copy-palette:active { transform: translateY(1px); }
   /* 对比功能 */
   .cmp-btn { background: #1a1d24; border: 1px solid #2c313c; color: #e8e8ee; border-radius: 8px; padding: 8px 14px; font-size: 14px; cursor: pointer; }
   .cmp-btn:hover { border-color: #3a4250; }
@@ -303,6 +307,7 @@ function renderCard(fam, theme){
   const codeHtml = codeBlockHtml(fam, tokens, bg, text);
   // 中文名（译名表登记才有）；用 | 分隔，避免与主题名自带的连字符混淆（如 catppuccin-frappe）
   const zhSuffix = theme.zhName ? ` | ${esc(theme.zhName)}` : "";
+  const copyBadge = `<button class="copy-palette" type="button" data-number="${numStr}" title="复制调色板信息（可直接发给 AI）">复制色板</button>`;
   const schemeColor = scheme==="light" ? NUM_COLOR : pickReadable("#3b4bb8", "#748ffc");
   // 背景非纯色时标注源值，避免误以为该色是主题实色
   const bgNoteTag = bgPlain ? "" : `<span class="tag" title="源值为 ${esc(rawBg)}，预览回退中性底">背景源值 ${esc(rawBg)}</span>`;
@@ -310,7 +315,7 @@ function renderCard(fam, theme){
 
   return `<div class="card" data-name="${esc(theme.displayName)}" data-zh="${esc(theme.zhName || "")}" data-family="${esc(family)}" data-scheme="${esc(scheme)}" data-number="${numStr}" style="background:${bg};color:${text}">
     <button class="cmp-check" data-number="${numStr}">＋ 对比</button>
-    <div class="card-head"><b>${titleLink(fam, theme.displayName)}${zhSuffix}</b><span class="meta">${scheme} · ${theme.tokenCount} tokens<br>${esc(license)}</span></div>
+    <div class="card-head"><b>${titleLink(fam, theme.displayName)}${zhSuffix}${copyBadge}</b><span class="meta">${scheme} · ${theme.tokenCount} tokens<br>${esc(license)}</span></div>
     <div class="badges">${badges}</div>
     ${brandRow}
     ${sectionsHtml}
@@ -517,6 +522,8 @@ document.getElementById("grid").addEventListener("click",e=>{
 
 // 色块点击复制颜色值（对比矩阵 + 卡片色块）
 document.addEventListener("click",e=>{
+  const cp=e.target.closest(".copy-palette");
+  if(cp){ e.stopPropagation(); copyPalette(cp.dataset.number); return; }
   const sw=e.target.closest(".cmp-swatch, .swatch-color");
   if(!sw) return;
   const hex=(sw.dataset.hex||sw.textContent||"").trim();
@@ -531,6 +538,63 @@ function showCopyToast(hex){
   t.classList.add("show");
   clearTimeout(window.__copyTimer);
   window.__copyTimer=setTimeout(()=>t.classList.remove("show"),1200);
+}
+
+// ===== 复制调色板信息（可直接发给 AI）=====
+// 内容 = 元信息 + 全部语义角色色值 + 文本对比度 + 品牌色，供外部 AI 直接取色适配。
+function paletteTextOf(numStr){
+  const f=findTheme(parseInt(numStr,10));
+  if(!f) return "";
+  const t=f.theme, fam=f.fam||{};
+  const bgRole=(BG_TEXT_ROLES[fam.family]||["bg","text"])[0];
+  const L=[];
+  L.push(`# ThemeVault 主题 #${String(t.number).padStart(3,"0")} ${t.displayName}${t.zhName?` | ${t.zhName}`:""}`);
+  L.push(`- 家族：${fam.familyDisplayName||fam.family||"—"}　主题 ID：${t.id}（${t.scheme||"?"}）`);
+  L.push(`- 协议：${t.license||"—"}`);
+  if(fam.sourceRepo) L.push(`- 来源：${fam.sourceRepo}`);
+  L.push(`- 色板文件：themes/${fam.family}/${t.id}/palette.md`);
+  if(t.tokens&&t.tokens[bgRole]) L.push(`- 主背景（${bgRole}）：${t.tokens[bgRole]}`);
+  L.push("");
+  L.push("## 调色板（语义角色 = 色值；均取自官方源码原文，未改写）");
+  for(const [k,v] of Object.entries(t.tokens||{})) L.push(`- ${k} = ${v}`);
+  if(t.textContrast){
+    L.push("", "## 文本对比度（对背景，WCAG）");
+    for(const [k,v] of Object.entries(t.textContrast)) L.push(`- ${k} = ${v===null?"—":v}`);
+  }
+  if(t.brand&&t.brand.color){
+    L.push("", "## 品牌色与按钮文字");
+    L.push(`- 品牌色：${t.brand.color}（建议按钮文字：${t.brand.buttonText==="dark"?"深字":"浅字"}）`);
+  }
+  L.push("", "> 取色时背景与文字须成对取用；对比度 < 4.5 的项为主题自身事实（已知偏差），不要擅自改值。");
+  return L.join("\n");
+}
+
+async function copyPalette(numStr){
+  const text=paletteTextOf(numStr);
+  if(!text){ showCopyMsg("未找到该主题"); return; }
+  try{
+    if(navigator.clipboard){ await navigator.clipboard.writeText(text); }
+    else { throw new Error("no clipboard"); }
+    showCopyMsg("已复制调色板信息，可直接发给 AI");
+  }catch(err){
+    // file:// 或权限受限时回退：textarea + execCommand
+    try{
+      const ta=document.createElement("textarea");
+      ta.value=text; ta.style.position="fixed"; ta.style.opacity="0";
+      document.body.appendChild(ta); ta.select();
+      const ok=document.execCommand("copy");
+      document.body.removeChild(ta);
+      showCopyMsg(ok?"已复制调色板信息，可直接发给 AI":"复制失败，请手动选取");
+    }catch(e2){ showCopyMsg("复制失败，请手动选取"); }
+  }
+}
+
+function showCopyMsg(msg){
+  const t=document.getElementById("copyToast");
+  t.textContent=msg;
+  t.classList.add("show");
+  clearTimeout(window.__copyTimer);
+  window.__copyTimer=setTimeout(()=>t.classList.remove("show"),1800);
 }
 
 render();
