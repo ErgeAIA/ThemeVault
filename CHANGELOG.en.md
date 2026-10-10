@@ -24,6 +24,7 @@ This project has **no release artifacts**. Changes are separated by date, like a
 - Compare matrix: added an opencode -> L1 role mapping; the opencode family previously rendered as an entirely empty column
 - Readability: AA badges and number / brand / font / scheme tags now pick the higher-contrast variant (dark or light) against the card background (was as low as 1.32 on light theme cards; now worst case 5.98 / 6.47)
 - Preview polish: empty state when a filter matches nothing, Esc-to-close and `aria-expanded` on the family dropdown, press feedback on controls, unified radius scale (6 / 8 / 12), code sample no longer references a real theme name
+- Cards whose background is `transparent` (lucent-orng / lucent-orng-light) fall back to a scheme-appropriate neutral base; previously the transparent card showed the page's dark background and, combined with dark theme text, was unreadable. The source value is labeled on the card
 
 ## 2026-09-24
 
