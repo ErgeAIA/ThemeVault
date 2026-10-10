@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 THEMES = ROOT / "themes"
-ROLE_RE = re.compile(r"^\|\s*`(--[a-z0-9-]+)`\s*\|\s*`([^`]*)`\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|$")
+ROLE_RE = re.compile(r"^\|\s*`(--[a-zA-Z0-9-]+)`\s*\|\s*`([^`]*)`\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|$")
 FALLBACK_NOTE = re.compile(
     r"契约兜底|豁免|约定|HEX 显示|继承|oklch|推导|未提供"
 )

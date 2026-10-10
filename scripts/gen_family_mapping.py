@@ -20,7 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 THEMES = ROOT / "themes"
 ROLE_RE = re.compile(
-    r"^\|\s*`(--[a-z0-9-]+)`\s*\|\s*`([^`]*)`\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|$"
+    r"^\|\s*`(--[a-zA-Z0-9-]+)`\s*\|\s*`([^`]*)`\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|$"
 )
 SRC_HINT_RE = re.compile(r"(`--[a-zA-Z0-9-]+`|--[a-zA-Z0-9-]+|`[a-zA-Z][a-zA-Z0-9_.-]{1,40}`)")
 

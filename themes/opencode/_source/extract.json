@@ -1,0 +1,8057 @@
+{
+  "schemaVersion": 2,
+  "family": "opencode",
+  "pin": "9839cb3eabe94a494fea4b17f4e50b1d6372d5ce",
+  "kind": "value-ledger",
+  "provenance": "full",
+  "values": {
+    "#000000": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "background"
+      },
+      "hits": 4
+    },
+    "#002b36": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#0043ce": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "primary"
+      },
+      "hits": 9
+    },
+    "#0062D1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "secondary"
+      },
+      "hits": 1
+    },
+    "#0062d1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "success"
+      },
+      "hits": 10
+    },
+    "#0066cc": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "primary"
+      },
+      "hits": 5
+    },
+    "#0070F3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "primary"
+      },
+      "hits": 6
+    },
+    "#007197": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "markdownLinkText"
+      },
+      "hits": 4
+    },
+    "#0072c3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "markdownLinkText"
+      },
+      "hits": 4
+    },
+    "#007B80": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "syntaxNumber"
+      },
+      "hits": 1
+    },
+    "#007d79": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "warning"
+      },
+      "hits": 3
+    },
+    "#007f95": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "info"
+      },
+      "hits": 3
+    },
+    "#0088ff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "primary"
+      },
+      "hits": 6
+    },
+    "#00B0FF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "info"
+      },
+      "hits": 2
+    },
+    "#00CEB9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "syntaxString"
+      },
+      "hits": 2
+    },
+    "#00E676": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "success"
+      },
+      "hits": 2
+    },
+    "#00FF88": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "success"
+      },
+      "hits": 2
+    },
+    "#00acc1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "accent"
+      },
+      "hits": 12
+    },
+    "#00bcd4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "primary"
+      },
+      "hits": 6
+    },
+    "#00efff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "secondary"
+      },
+      "hits": 2
+    },
+    "#010409": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#011627": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nightowl.json",
+        "var": "background"
+      },
+      "hits": 2
+    },
+    "#0184bc": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "accent"
+      },
+      "hits": 6
+    },
+    "#033a16": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 2
+    },
+    "#034CFF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "accent"
+      },
+      "hits": 4
+    },
+    "#036e43": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "success"
+      },
+      "hits": 5
+    },
+    "#04a5e5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "markdownLinkText"
+      },
+      "hits": 4
+    },
+    "#073642": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 9
+    },
+    "#076678": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "primary"
+      },
+      "hits": 4
+    },
+    "#08bdba": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "syntaxType"
+      },
+      "hits": 1
+    },
+    "#0969da": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "primary"
+      },
+      "hits": 8
+    },
+    "#0A0A0A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "text"
+      },
+      "hits": 5
+    },
+    "#0AC7AC": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "markdownLinkText"
+      },
+      "hits": 3
+    },
+    "#0B0E14": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#0B1D0F": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#0D1017": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#0F131A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#0F2613": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#0a0a0a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "selectedListItemText"
+      },
+      "hits": 4
+    },
+    "#0a0e0a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#0a2e1a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nightowl.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 4
+    },
+    "#0b253a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nightowl.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 6
+    },
+    "#0d1117": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#0d2818": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vesper.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 2
+    },
+    "#0e130d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#0e1e2e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#0f0f0f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "background"
+      },
+      "hits": 2
+    },
+    "#0f1b11": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#0f2418": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 2
+    },
+    "#100F0F": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#101010": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vesper.json",
+        "var": "text"
+      },
+      "hits": 14
+    },
+    "#10101a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 1
+    },
+    "#11111b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#11151C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#111c18": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "text"
+      },
+      "hits": 7
+    },
+    "#121212": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 1
+    },
+    "#121f18": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#122738": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#12A594": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "markdownLinkText"
+      },
+      "hits": 4
+    },
+    "#12C905": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "success"
+      },
+      "hits": 2
+    },
+    "#132616": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#141414": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "text"
+      },
+      "hits": 15
+    },
+    "#14141413": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#141414ad": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "textMuted"
+      },
+      "hits": 9
+    },
+    "#141c12": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#15141b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 3
+    },
+    "#15241c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#152515": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#161616": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "text"
+      },
+      "hits": 6
+    },
+    "#161b22": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#162535": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "orng.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#162620": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#171717": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "text"
+      },
+      "hits": 10
+    },
+    "#171721": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#179299": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "info"
+      },
+      "hits": 1
+    },
+    "#181818": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#181825": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#181926": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#1885541a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 2
+    },
+    "#18FFFF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "info"
+      },
+      "hits": 2
+    },
+    "#191724": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#191a21": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#193549": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "text"
+      },
+      "hits": 6
+    },
+    "#198038": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "success"
+      },
+      "hits": 5
+    },
+    "#1A102B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#1A1A1A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#1A2D1A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#1C1B1A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#1C1C1C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#1E222A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#1F1F1F": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "background"
+      },
+      "hits": 2
+    },
+    "#1F1F28": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#1a1a1a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 13
+    },
+    "#1a1b26": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#1a2520": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#1a2a3d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "orng.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#1a3a1a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 4
+    },
+    "#1a3a2a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 4
+    },
+    "#1a7f37": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "success"
+      },
+      "hits": 3
+    },
+    "#1b1414": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#1b2b34": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 4
+    },
+    "#1b7c83": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "accent"
+      },
+      "hits": 5
+    },
+    "#1cc24b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "primary"
+      },
+      "hits": 9
+    },
+    "#1e1a29": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#1e1e1e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "backgroundElement"
+      },
+      "hits": 3
+    },
+    "#1e1e2a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "diffContextBg"
+      },
+      "hits": 4
+    },
+    "#1e1e2e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#1e1f1c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "monokai.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 3
+    },
+    "#1e2030": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 6
+    },
+    "#1e2132": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palenight.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 3
+    },
+    "#1e272c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 3
+    },
+    "#1e2a1b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#1e2a25": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#1e66f5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "primary"
+      },
+      "hits": 5
+    },
+    "#1e725c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "diffAdded"
+      },
+      "hits": 3
+    },
+    "#1f1212": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#1f1d2e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#1f2d3a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 2
+    },
+    "#1f4662": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#1f8a65": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "success"
+      },
+      "hits": 3
+    },
+    "#1f8a651f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 2
+    },
+    "#1faa90": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "primary"
+      },
+      "hits": 10
+    },
+    "#202820": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#203022": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "text"
+      },
+      "hits": 5
+    },
+    "#20303b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 4
+    },
+    "#205EA6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "primary"
+      },
+      "hits": 4
+    },
+    "#206595": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "markdownHeading"
+      },
+      "hits": 4
+    },
+    "#21202e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#21222c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#21252b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#21262d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#222436": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#223025": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 4
+    },
+    "#232323": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#232634": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#23372B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#241515": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#241b2f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#242424": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#24273a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "background"
+      },
+      "hits": 2
+    },
+    "#24292f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#24312b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#24837B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "info"
+      },
+      "hits": 6
+    },
+    "#24f6d9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "secondary"
+      },
+      "hits": 10
+    },
+    "#251515": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#252E25": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#25be6a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "success"
+      },
+      "hits": 3
+    },
+    "#261212": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#26161a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#262335": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "text"
+      },
+      "hits": 6
+    },
+    "#26233a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#262626": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "borderSubtle"
+      },
+      "hits": 2
+    },
+    "#263238": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "text"
+      },
+      "hits": 6
+    },
+    "#268bd2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "primary"
+      },
+      "hits": 8
+    },
+    "#272735": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#272822": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "monokai.json",
+        "var": "text"
+      },
+      "hits": 6
+    },
+    "#281a1a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vesper.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 2
+    },
+    "#282726": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#282828": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "background"
+      },
+      "hits": 4
+    },
+    "#282C34": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 1
+    },
+    "#282a36": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "text"
+      },
+      "hits": 6
+    },
+    "#282c34": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#283427": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#286983": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "success"
+      },
+      "hits": 5
+    },
+    "#29203A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 1
+    },
+    "#292929": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#292c3c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 4
+    },
+    "#292d3e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palenight.json",
+        "var": "text"
+      },
+      "hits": 6
+    },
+    "#29342b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 4
+    },
+    "#2A1314": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#2A2A37": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#2B303B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "text"
+      },
+      "hits": 5
+    },
+    "#2D1A1A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#2D1C1C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#2D4F67": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "primary"
+      },
+      "hits": 7
+    },
+    "#2DD5B7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "primary"
+      },
+      "hits": 7
+    },
+    "#2E3440": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "text"
+      },
+      "hits": 5
+    },
+    "#2F2F2F": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#2F8B32": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "syntaxString"
+      },
+      "hits": 1
+    },
+    "#2a1216": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 2
+    },
+    "#2a1a1599": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "backgroundMenu"
+      },
+      "hits": 1
+    },
+    "#2a2139": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#2a2222": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#2a2827": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#2aa198": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "accent"
+      },
+      "hits": 12
+    },
+    "#2affdf": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "accent"
+      },
+      "hits": 6
+    },
+    "#2c313a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#2c382b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#2d1b1b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nightowl.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 4
+    },
+    "#2d1f26": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 5
+    },
+    "#2d2d2d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#2d353b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#2d5a7b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "markdownHorizontalRule"
+      },
+      "hits": 1
+    },
+    "#2e3c2b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 4
+    },
+    "#2e7de9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "primary"
+      },
+      "hits": 6
+    },
+    "#2eff6a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "primary"
+      },
+      "hits": 2
+    },
+    "#2f242b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 4
+    },
+    "#303030": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#303446": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "background"
+      },
+      "hits": 2
+    },
+    "#30363d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#30b3ff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "info"
+      },
+      "hits": 12
+    },
+    "#313244": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#31748f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "primary"
+      },
+      "hits": 10
+    },
+    "#318795": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "info"
+      },
+      "hits": 15
+    },
+    "#32232a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#322929": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#32302f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#32363F": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#32364a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palenight.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#333c43": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#33b1ff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "primary"
+      },
+      "hits": 6
+    },
+    "#343f44": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#353b45": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#354933": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#35a77c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "info"
+      },
+      "hits": 5
+    },
+    "#362020": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#36292b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#363644": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#363646": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#363a4f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#36f9f6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "primary"
+      },
+      "hits": 6
+    },
+    "#37222c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 5
+    },
+    "#37474f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "backgroundElement"
+      },
+      "hits": 3
+    },
+    "#3760bf": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#383a42": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#388E3C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "success"
+      },
+      "hits": 1
+    },
+    "#392F49": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#393f4a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#39BAE6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "info"
+      },
+      "hits": 4
+    },
+    "#39adb5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "accent"
+      },
+      "hits": 6
+    },
+    "#39c5cf": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "accent"
+      },
+      "hits": 5
+    },
+    "#3AA99F": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "info"
+      },
+      "hits": 6
+    },
+    "#3B2C59": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "text"
+      },
+      "hits": 5
+    },
+    "#3B4252": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "textMuted"
+      },
+      "hits": 7
+    },
+    "#3C1618": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#3DD598": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "success"
+      },
+      "hits": 1
+    },
+    "#3a1a1a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 4
+    },
+    "#3a1a2a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 4
+    },
+    "#3a1f2d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 2
+    },
+    "#3a2a31": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 4
+    },
+    "#3a2d2f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#3a94c5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "secondary"
+      },
+      "hits": 1
+    },
+    "#3b7dd8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode.json",
+        "var": "primary"
+      },
+      "hits": 5
+    },
+    "#3c2a32": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#3c2b2b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 4
+    },
+    "#3c3836": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "text"
+      },
+      "hits": 7
+    },
+    "#3c3c3c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "borderSubtle"
+      },
+      "hits": 3
+    },
+    "#3c7cab": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "secondary"
+      },
+      "hits": 2
+    },
+    "#3d4a44": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#3d7560": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "syntaxFunction"
+      },
+      "hits": 1
+    },
+    "#3d7a52": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "accent"
+      },
+      "hits": 9
+    },
+    "#3d9a57": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode.json",
+        "var": "success"
+      },
+      "hits": 3
+    },
+    "#3ddbd9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "syntaxNumber"
+      },
+      "hits": 1
+    },
+    "#3e3d32": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "monokai.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#3f191a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#3f3f3f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "text"
+      },
+      "hits": 6
+    },
+    "#3fa266": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "success"
+      },
+      "hits": 2
+    },
+    "#3fa26633": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 2
+    },
+    "#3fb950": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "success"
+      },
+      "hits": 3
+    },
+    "#403E3C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#403d52": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#4078f2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "primary"
+      },
+      "hits": 6
+    },
+    "#40a02b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "success"
+      },
+      "hits": 5
+    },
+    "#414559": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#427b58": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "accent"
+      },
+      "hits": 6
+    },
+    "#434C5E": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "backgroundElement"
+      },
+      "hits": 4
+    },
+    "#4385BE": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "secondary"
+      },
+      "hits": 4
+    },
+    "#44475a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#454545": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "borderActive"
+      },
+      "hits": 2
+    },
+    "#45475a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#459451": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "syntaxOperator"
+      },
+      "hits": 1
+    },
+    "#465bd1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "secondary"
+      },
+      "hits": 5
+    },
+    "#46A758": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "success"
+      },
+      "hits": 5
+    },
+    "#484848": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#489447": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 1
+    },
+    "#494d64": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "borderActive"
+      },
+      "hits": 2
+    },
+    "#495495": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#4976eb": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palenight.json",
+        "var": "primary"
+      },
+      "hits": 6
+    },
+    "#4B5059": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#4C566A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "border"
+      },
+      "hits": 8
+    },
+    "#4FA66D": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "success"
+      },
+      "hits": 2
+    },
+    "#4c4f69": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#4caf50": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "success"
+      },
+      "hits": 9
+    },
+    "#4db380": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 3
+    },
+    "#4f4f4f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 3
+    },
+    "#4f5f4f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 2
+    },
+    "#4fd6be": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "diffAdded"
+      },
+      "hits": 3
+    },
+    "#504945": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#509475": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "syntaxFunction"
+      },
+      "hits": 1
+    },
+    "#50E3C2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "markdownImageText"
+      },
+      "hits": 1
+    },
+    "#50a14f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "success"
+      },
+      "hits": 4
+    },
+    "#50fa7b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "diffAdded"
+      },
+      "hits": 11
+    },
+    "#51576d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "borderActive"
+      },
+      "hits": 2
+    },
+    "#525252": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "markdownCodeBlock"
+      },
+      "hits": 2
+    },
+    "#5266eb": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "primary"
+      },
+      "hits": 6
+    },
+    "#528BFF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "primary"
+      },
+      "hits": 3
+    },
+    "#52A8FF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "secondary"
+      },
+      "hits": 5
+    },
+    "#535461": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#53685B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "textMuted"
+      },
+      "hits": 10
+    },
+    "#54433A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "text"
+      },
+      "hits": 5
+    },
+    "#545454": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#54546D": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#545c7e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#546e7a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "textMuted"
+      },
+      "hits": 4
+    },
+    "#549e6a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "accent"
+      },
+      "hits": 6
+    },
+    "#555555": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "syntaxComment"
+      },
+      "hits": 1
+    },
+    "#556156": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#55a583": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 1
+    },
+    "#564f43": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#565B66": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "textMuted"
+      },
+      "hits": 2
+    },
+    "#56949f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "info"
+      },
+      "hits": 2
+    },
+    "#56B6C2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "info"
+      },
+      "hits": 2
+    },
+    "#56b6c2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "info"
+      },
+      "hits": 21
+    },
+    "#575279": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#575653": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#57606a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "textMuted"
+      },
+      "hits": 4
+    },
+    "#585b70": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#586e75": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "textMuted"
+      },
+      "hits": 7
+    },
+    "#587539": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "success"
+      },
+      "hits": 3
+    },
+    "#58a6ff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "primary"
+      },
+      "hits": 8
+    },
+    "#594B74": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#595755": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "orng.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#595959": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#59595b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#59C2FF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "primary"
+      },
+      "hits": 5
+    },
+    "#5C6370": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "syntaxComment"
+      },
+      "hits": 1
+    },
+    "#5E409D": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "secondary"
+      },
+      "hits": 3
+    },
+    "#5E81AC": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "primary"
+      },
+      "hits": 4
+    },
+    "#5F5C5B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#5a5955": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#5a607d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#5b5951": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#5b5d63": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#5b6078": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "borderSubtle"
+      },
+      "hits": 2
+    },
+    "#5c5c8a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "textMuted"
+      },
+      "hits": 4
+    },
+    "#5c6370": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "textMuted"
+      },
+      "hits": 5
+    },
+    "#5c6a72": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#5c6b7d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "textMuted"
+      },
+      "hits": 4
+    },
+    "#5c9cf5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode.json",
+        "var": "secondary"
+      },
+      "hits": 1
+    },
+    "#5dac7e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 1
+    },
+    "#5f4f4f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 2
+    },
+    "#5f5e4f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#5f5f5f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#5f6969": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#5f7e97": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nightowl.json",
+        "var": "textMuted"
+      },
+      "hits": 14
+    },
+    "#5f7f5f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "syntaxComment"
+      },
+      "hits": 1
+    },
+    "#5f7f8f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "primary"
+      },
+      "hits": 6
+    },
+    "#5f8f5f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "success"
+      },
+      "hits": 5
+    },
+    "#5f8f8f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "accent"
+      },
+      "hits": 6
+    },
+    "#606060": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#6182b8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "primary"
+      },
+      "hits": 5
+    },
+    "#61AFEF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "primary"
+      },
+      "hits": 5
+    },
+    "#61afef": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "primary"
+      },
+      "hits": 6
+    },
+    "#61ffca": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "success"
+      },
+      "hits": 5
+    },
+    "#6200FF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "primary"
+      },
+      "hits": 4
+    },
+    "#626880": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "borderSubtle"
+      },
+      "hits": 2
+    },
+    "#6272a4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "textMuted"
+      },
+      "hits": 12
+    },
+    "#62D4FF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "info"
+      },
+      "hits": 1
+    },
+    "#62ff94": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "success"
+      },
+      "hits": 6
+    },
+    "#637777": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nightowl.json",
+        "var": "syntaxComment"
+      },
+      "hits": 2
+    },
+    "#63C46D": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "diffAdded"
+      },
+      "hits": 4
+    },
+    "#63b07a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 3
+    },
+    "#65615c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#65737E": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vesper.json",
+        "var": "markdownHorizontalRule"
+      },
+      "hits": 2
+    },
+    "#657b83": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#665c54": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#666666": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 5
+    },
+    "#66800B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "success"
+      },
+      "hits": 4
+    },
+    "#66d9ef": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "monokai.json",
+        "var": "primary"
+      },
+      "hits": 12
+    },
+    "#67060c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 2
+    },
+    "#676e95": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palenight.json",
+        "var": "textMuted"
+      },
+      "hits": 5
+    },
+    "#686865": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#686868": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "monokai.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#689d6a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "diffHunkHeader"
+      },
+      "hits": 1
+    },
+    "#6929c4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "markdownEmph"
+      },
+      "hits": 2
+    },
+    "#6A717D": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "syntaxComment"
+      },
+      "hits": 1
+    },
+    "#6C6F77": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#6C717C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "textMuted"
+      },
+      "hits": 3
+    },
+    "#6C7380": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#6F6E69": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "textMuted"
+      },
+      "hits": 11
+    },
+    "#6a6a6a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vesper.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#6a6e70": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 2
+    },
+    "#6ba1e6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "success"
+      },
+      "hits": 10
+    },
+    "#6c6875": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#6c6f85": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "markdownHorizontalRule"
+      },
+      "hits": 1
+    },
+    "#6c71c4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "secondary"
+      },
+      "hits": 6
+    },
+    "#6d6d6d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "textMuted"
+      },
+      "hits": 7
+    },
+    "#6e6a86": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "textMuted"
+      },
+      "hits": 4
+    },
+    "#6f6f6f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "textMuted"
+      },
+      "hits": 8
+    },
+    "#6f9ba6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "primary"
+      },
+      "hits": 3
+    },
+    "#707070": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "textMuted"
+      },
+      "hits": 3
+    },
+    "#70707d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "textMuted"
+      },
+      "hits": 5
+    },
+    "#7073930f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#7073931a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#7086b5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "diffContext"
+      },
+      "hits": 10
+    },
+    "#70b489": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 1
+    },
+    "#727169": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "textMuted"
+      },
+      "hits": 5
+    },
+    "#727272": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "textMuted"
+      },
+      "hits": 3
+    },
+    "#72f1b8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "success"
+      },
+      "hits": 3
+    },
+    "#737a8c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#737aa2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#748476": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "textMuted"
+      },
+      "hits": 6
+    },
+    "#75715e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "monokai.json",
+        "var": "textMuted"
+      },
+      "hits": 12
+    },
+    "#757575": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "syntaxComment"
+      },
+      "hits": 1
+    },
+    "#76946A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "info"
+      },
+      "hits": 8
+    },
+    "#77698E": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#7791a6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nightowl.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 2
+    },
+    "#77becf": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "info"
+      },
+      "hits": 3
+    },
+    "#77c599": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "success"
+      },
+      "hits": 5
+    },
+    "#77c59933": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 2
+    },
+    "#77ffaf": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 1
+    },
+    "#78a9ff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "secondary"
+      },
+      "hits": 5
+    },
+    "#79740e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "success"
+      },
+      "hits": 6
+    },
+    "#797593": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "syntaxOperator"
+      },
+      "hits": 2
+    },
+    "#7A5AF8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "primary"
+      },
+      "hits": 3
+    },
+    "#7A7A7A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "syntaxComment"
+      },
+      "hits": 1
+    },
+    "#7BE0B0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "success"
+      },
+      "hits": 1
+    },
+    "#7DD4FF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "info"
+      },
+      "hits": 1
+    },
+    "#7E848F": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#7E9CD8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "primary"
+      },
+      "hits": 5
+    },
+    "#7FD962": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "success"
+      },
+      "hits": 2
+    },
+    "#7a8478": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "textMuted"
+      },
+      "hits": 4
+    },
+    "#7b5bb6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode.json",
+        "var": "secondary"
+      },
+      "hits": 1
+    },
+    "#7c4dff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "secondary"
+      },
+      "hits": 5
+    },
+    "#7c6f64": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "textMuted"
+      },
+      "hits": 5
+    },
+    "#7c7f93": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "textMuted"
+      },
+      "hits": 3
+    },
+    "#7d848f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "textMuted"
+      },
+      "hits": 4
+    },
+    "#7dffaa": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 1
+    },
+    "#7f9f7f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "success"
+      },
+      "hits": 4
+    },
+    "#7fbbb3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "secondary"
+      },
+      "hits": 1
+    },
+    "#7fd88f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode.json",
+        "var": "success"
+      },
+      "hits": 3
+    },
+    "#7fdbca": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nightowl.json",
+        "var": "secondary"
+      },
+      "hits": 10
+    },
+    "#808080": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "textMuted"
+      },
+      "hits": 8
+    },
+    "#808792": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#81A1C1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "secondary"
+      },
+      "hits": 10
+    },
+    "#81a1c1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "secondary"
+      },
+      "hits": 4
+    },
+    "#81c8be": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "info"
+      },
+      "hits": 2
+    },
+    "#8250df": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "secondary"
+      },
+      "hits": 2
+    },
+    "#828b87": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#828bb8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "diffContext"
+      },
+      "hits": 13
+    },
+    "#829181": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#82AAFF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nightowl.json",
+        "var": "primary"
+      },
+      "hits": 16
+    },
+    "#82D2CE": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "markdownLink"
+      },
+      "hits": 3
+    },
+    "#82aaff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "primary"
+      },
+      "hits": 17
+    },
+    "#839496": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#83a598": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "primary"
+      },
+      "hits": 4
+    },
+    "#83c092": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "info"
+      },
+      "hits": 5
+    },
+    "#848bbd": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "textMuted"
+      },
+      "hits": 4
+    },
+    "#859289": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#859900": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "success"
+      },
+      "hits": 12
+    },
+    "#868990": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "textMuted"
+      },
+      "hits": 3
+    },
+    "#86e1fc": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "markdownLinkText"
+      },
+      "hits": 4
+    },
+    "#878580": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#878787": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "textMuted"
+      },
+      "hits": 5
+    },
+    "#8796b0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palenight.json",
+        "var": "textMuted"
+      },
+      "hits": 5
+    },
+    "#879A39": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "success"
+      },
+      "hits": 4
+    },
+    "#8839ef": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "secondary"
+      },
+      "hits": 3
+    },
+    "#888883": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#888888": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "syntaxComment"
+      },
+      "hits": 1
+    },
+    "#88C0D0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "primary"
+      },
+      "hits": 6
+    },
+    "#88c0d0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "primary"
+      },
+      "hits": 5
+    },
+    "#898989": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#8990a3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "textMuted"
+      },
+      "hits": 3
+    },
+    "#89AF5B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 1
+    },
+    "#89b4fa": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "primary"
+      },
+      "hits": 5
+    },
+    "#89dceb": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "markdownLinkText"
+      },
+      "hits": 4
+    },
+    "#89ddff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "accent"
+      },
+      "hits": 12
+    },
+    "#8A6F00": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "syntaxType"
+      },
+      "hits": 1
+    },
+    "#8B7EC8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "accent"
+      },
+      "hits": 3
+    },
+    "#8B95A7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "textMuted"
+      },
+      "hits": 6
+    },
+    "#8C8C8C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "textMuted"
+      },
+      "hits": 3
+    },
+    "#8CD3CB": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "markdownLink"
+      },
+      "hits": 3
+    },
+    "#8E4BE3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "syntaxComment"
+      },
+      "hits": 1
+    },
+    "#8E4EC6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "accent"
+      },
+      "hits": 4
+    },
+    "#8F8F8F": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "textMuted"
+      },
+      "hits": 4
+    },
+    "#8FBCBB": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "accent"
+      },
+      "hits": 12
+    },
+    "#8a8a8a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "textMuted"
+      },
+      "hits": 9
+    },
+    "#8aadf4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "primary"
+      },
+      "hits": 10
+    },
+    "#8b8b8b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vesper.json",
+        "var": "syntaxComment"
+      },
+      "hits": 2
+    },
+    "#8b949e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "textMuted"
+      },
+      "hits": 4
+    },
+    "#8b9b9f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#8bd5ca": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "info"
+      },
+      "hits": 2
+    },
+    "#8be9fd": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "accent"
+      },
+      "hits": 10
+    },
+    "#8c6c3e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "markdownBlockQuote"
+      },
+      "hits": 3
+    },
+    "#8ca391": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "textMuted"
+      },
+      "hits": 5
+    },
+    "#8cb6ff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "markdownHeading"
+      },
+      "hits": 2
+    },
+    "#8cd0d3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "primary"
+      },
+      "hits": 6
+    },
+    "#8da101": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "primary"
+      },
+      "hits": 8
+    },
+    "#8da4e2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "primary"
+      },
+      "hits": 10
+    },
+    "#8da4f5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "primary"
+      },
+      "hits": 10
+    },
+    "#8ec07c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "accent"
+      },
+      "hits": 5
+    },
+    "#8f3f71": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "secondary"
+      },
+      "hits": 3
+    },
+    "#8f5f5f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "error"
+      },
+      "hits": 4
+    },
+    "#8f5f8f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "secondary"
+      },
+      "hits": 1
+    },
+    "#8f7f5f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "info"
+      },
+      "hits": 2
+    },
+    "#8f8f5f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "warning"
+      },
+      "hits": 5
+    },
+    "#8f8f8f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#8f909a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#8fb28f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 2
+    },
+    "#907aa9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "secondary"
+      },
+      "hits": 4
+    },
+    "#9082A4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "textMuted"
+      },
+      "hits": 3
+    },
+    "#908caa": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "syntaxOperator"
+      },
+      "hits": 2
+    },
+    "#9090a0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#9099b2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#90a4ae": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "textMuted"
+      },
+      "hits": 4
+    },
+    "#91b859": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "success"
+      },
+      "hits": 10
+    },
+    "#91d7e3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "markdownLinkText"
+      },
+      "hits": 8
+    },
+    "#928374": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "textMuted"
+      },
+      "hits": 5
+    },
+    "#928BA0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "textMuted"
+      },
+      "hits": 3
+    },
+    "#9398a2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#9399b2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "textMuted"
+      },
+      "hits": 3
+    },
+    "#939ab7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "textMuted"
+      },
+      "hits": 6
+    },
+    "#939f91": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#93E9F6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "syntaxNumber"
+      },
+      "hits": 1
+    },
+    "#93a1a1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "textMuted"
+      },
+      "hits": 7
+    },
+    "#93e0e3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "accent"
+      },
+      "hits": 6
+    },
+    "#9491a6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#949BA7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#949cb8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "textMuted"
+      },
+      "hits": 6
+    },
+    "#94e2d5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "info"
+      },
+      "hits": 1
+    },
+    "#957FB8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "secondary"
+      },
+      "hits": 6
+    },
+    "#95999e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#959bc1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#9699a8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#97f1d8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 1
+    },
+    "#9854f1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "secondary"
+      },
+      "hits": 3
+    },
+    "#986801": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "info"
+      },
+      "hits": 4
+    },
+    "#9893a5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "textMuted"
+      },
+      "hits": 4
+    },
+    "#98971a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "diffAdded"
+      },
+      "hits": 1
+    },
+    "#989aa4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#98BB6C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "success"
+      },
+      "hits": 8
+    },
+    "#98C379": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "success"
+      },
+      "hits": 2
+    },
+    "#98c379": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "success"
+      },
+      "hits": 4
+    },
+    "#999999": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "borderActive"
+      },
+      "hits": 2
+    },
+    "#99FFE4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vesper.json",
+        "var": "secondary"
+      },
+      "hits": 10
+    },
+    "#99d1db": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "markdownLinkText"
+      },
+      "hits": 8
+    },
+    "#9D7A00": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "syntaxType"
+      },
+      "hits": 1
+    },
+    "#9E9389": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "textMuted"
+      },
+      "hits": 5
+    },
+    "#9a5feb": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "secondary"
+      },
+      "hits": 1
+    },
+    "#9a6700": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "warning"
+      },
+      "hits": 2
+    },
+    "#9aa2a6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#9b9b95": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "monokai.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#9c27b0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "accent"
+      },
+      "hits": 6
+    },
+    "#9ccfd8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "primary"
+      },
+      "hits": 7
+    },
+    "#9d0006": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "error"
+      },
+      "hits": 4
+    },
+    "#9d7cd8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode.json",
+        "var": "accent"
+      },
+      "hits": 3
+    },
+    "#9d9da8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "textMuted"
+      },
+      "hits": 5
+    },
+    "#9da9a0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#9dff65": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "syntaxNumber"
+      },
+      "hits": 1
+    },
+    "#9e94d5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "syntaxString"
+      },
+      "hits": 1
+    },
+    "#9eff80": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "success"
+      },
+      "hits": 4
+    },
+    "#9f1853": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "accent"
+      },
+      "hits": 4
+    },
+    "#9f9f9f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "textMuted"
+      },
+      "hits": 4
+    },
+    "#A02F6F": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "markdownImage"
+      },
+      "hits": 1
+    },
+    "#A0A0A0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vesper.json",
+        "var": "textMuted"
+      },
+      "hits": 16
+    },
+    "#A3BE8C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "success"
+      },
+      "hits": 10
+    },
+    "#A5FF90": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "syntaxString"
+      },
+      "hits": 1
+    },
+    "#A626A4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "syntaxKeyword"
+      },
+      "hits": 1
+    },
+    "#A753AE": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "info"
+      },
+      "hits": 2
+    },
+    "#A8A78C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#A9D977": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 1
+    },
+    "#AAA0FA": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "markdownHeading"
+      },
+      "hits": 1
+    },
+    "#AAD94C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 3
+    },
+    "#ABB2BF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "text"
+      },
+      "hits": 5
+    },
+    "#ACB6BF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "diffContext"
+      },
+      "hits": 3
+    },
+    "#AD8301": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "markdownBlockQuote"
+      },
+      "hits": 3
+    },
+    "#ADADAD": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#AEAAA8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#AF3029": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "error"
+      },
+      "hits": 3
+    },
+    "#AFA8BB": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#B362FF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "syntaxComment"
+      },
+      "hits": 1
+    },
+    "#B388FF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "primary"
+      },
+      "hits": 4
+    },
+    "#B48EAD": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "syntaxNumber"
+      },
+      "hits": 2
+    },
+    "#B7B5AC": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "border"
+      },
+      "hits": 3
+    },
+    "#BC5215": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "accent"
+      },
+      "hits": 5
+    },
+    "#BF616A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "error"
+      },
+      "hits": 6
+    },
+    "#BF7AF0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "markdownHeading"
+      },
+      "hits": 2
+    },
+    "#BFBDB6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#C1C497": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "text"
+      },
+      "hits": 6
+    },
+    "#C38D9D": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "borderActive"
+      },
+      "hits": 6
+    },
+    "#C45F00": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "syntaxKeyword"
+      },
+      "hits": 1
+    },
+    "#C5D5C5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#C678DD": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "syntaxKeyword"
+      },
+      "hits": 1
+    },
+    "#C792FF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "primary"
+      },
+      "hits": 3
+    },
+    "#CE5D97": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "markdownImage"
+      },
+      "hits": 1
+    },
+    "#CECDC3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#D08770": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "warning"
+      },
+      "hits": 4
+    },
+    "#D0A215": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "markdownBlockQuote"
+      },
+      "hits": 3
+    },
+    "#D0D0D0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#D14D41": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "error"
+      },
+      "hits": 3
+    },
+    "#D19A66": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "warning"
+      },
+      "hits": 2
+    },
+    "#D2689C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "secondary"
+      },
+      "hits": 3
+    },
+    "#D27E99": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "accent"
+      },
+      "hits": 4
+    },
+    "#D2A6FF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "secondary"
+      },
+      "hits": 3
+    },
+    "#D2CCDD": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#D4CBBF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#D500F9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "syntaxKeyword"
+      },
+      "hits": 1
+    },
+    "#D5D4B8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#D5E5D5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#D61F1F": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 1
+    },
+    "#D6D6D6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#D6F5D6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#D7A657": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "warning"
+      },
+      "hits": 6
+    },
+    "#D85462": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "accent"
+      },
+      "hits": 2
+    },
+    "#D8DEE9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "backgroundElement"
+      },
+      "hits": 4
+    },
+    "#D95757": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "error"
+      },
+      "hits": 1
+    },
+    "#D9DADE": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#DA702C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "primary"
+      },
+      "hits": 5
+    },
+    "#DBDBDB": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#DC3545": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "error"
+      },
+      "hits": 1
+    },
+    "#DCD4C9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#DCD7BA": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "text"
+      },
+      "hits": 5
+    },
+    "#DCDE8D": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "primary"
+      },
+      "hits": 3
+    },
+    "#DDD0E8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#DDE8D6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#E04D7A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "syntaxNumber"
+      },
+      "hits": 1
+    },
+    "#E06C75": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "accent"
+      },
+      "hits": 4
+    },
+    "#E0E0E0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#E394DC": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "markdownCode"
+      },
+      "hits": 2
+    },
+    "#E3DCD2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#E5484D": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "error"
+      },
+      "hits": 3
+    },
+    "#E5C07B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "warning"
+      },
+      "hits": 1
+    },
+    "#E5C736": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "warning"
+      },
+      "hits": 1
+    },
+    "#E5E9F0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 6
+    },
+    "#E6B450": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "accent"
+      },
+      "hits": 1
+    },
+    "#E6B673": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "warning"
+      },
+      "hits": 4
+    },
+    "#E6E4D9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#E6F9E9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#E7C8CB": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#E7E8EB": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 1
+    },
+    "#E82424": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "error"
+      },
+      "hits": 4
+    },
+    "#E8E7CC": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#E8E8E8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vesper.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#E93D82": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "markdownStrong"
+      },
+      "hits": 3
+    },
+    "#EADEF3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 1
+    },
+    "#EAE4D7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#EAEAEA": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "backgroundElement"
+      },
+      "hits": 3
+    },
+    "#EAF3E4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#EBCB8B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "markdownStrong"
+      },
+      "hits": 2
+    },
+    "#EC5B2B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "primary"
+      },
+      "hits": 38
+    },
+    "#ECEFF4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "text"
+      },
+      "hits": 2
+    },
+    "#EDB2F1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "info"
+      },
+      "hits": 2
+    },
+    "#EDEDED": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "text"
+      },
+      "hits": 10
+    },
+    "#EE7948": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "secondary"
+      },
+      "hits": 10
+    },
+    "#EF5350": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nightowl.json",
+        "var": "error"
+      },
+      "hits": 6
+    },
+    "#EFB080": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "syntaxFunction"
+      },
+      "hits": 2
+    },
+    "#F07178": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 1
+    },
+    "#F0F0F0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "background"
+      },
+      "hits": 2
+    },
+    "#F24A4A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 1
+    },
+    "#F26D78": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "diffRemoved"
+      },
+      "hits": 1
+    },
+    "#F29668": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "syntaxOperator"
+      },
+      "hits": 1
+    },
+    "#F2A700": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "markdownEmph"
+      },
+      "hits": 2
+    },
+    "#F2DADA": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#F2E9DE": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#F2F0E5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#F3F3F3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#F5F0FF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "text"
+      },
+      "hits": 5
+    },
+    "#F5F6F8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "onedarkpro.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#F6F5DD": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#F75590": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "markdownStrong"
+      },
+      "hits": 3
+    },
+    "#F78C6C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nightowl.json",
+        "var": "syntaxNumber"
+      },
+      "hits": 2
+    },
+    "#F7C948": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "warning"
+      },
+      "hits": 1
+    },
+    "#F7D8DB": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#F7EBFF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#F7F7F7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#F8C762": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "markdownStrong"
+      },
+      "hits": 2
+    },
+    "#F8F8F8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#FAB283": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "primary"
+      },
+      "hits": 3
+    },
+    "#FAD000": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "syntaxType"
+      },
+      "hits": 1
+    },
+    "#FAFAFA": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 1
+    },
+    "#FBE6E6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "kanagawa.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#FC533A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "error"
+      },
+      "hits": 2
+    },
+    "#FCD53A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "warning"
+      },
+      "hits": 2
+    },
+    "#FDECED": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#FF0080": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "accent"
+      },
+      "hits": 2
+    },
+    "#FF00FF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "syntaxKeyword"
+      },
+      "hits": 1
+    },
+    "#FF1744": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "error"
+      },
+      "hits": 2
+    },
+    "#FF4081": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "accent"
+      },
+      "hits": 2
+    },
+    "#FF5345": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "error"
+      },
+      "hits": 2
+    },
+    "#FF6166": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "diffRemoved"
+      },
+      "hits": 2
+    },
+    "#FF628C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "syntaxNumber"
+      },
+      "hits": 1
+    },
+    "#FF6BD5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "accent"
+      },
+      "hits": 3
+    },
+    "#FF7AC6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "accent"
+      },
+      "hits": 3
+    },
+    "#FF8080": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vesper.json",
+        "var": "error"
+      },
+      "hits": 6
+    },
+    "#FF8F40": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "syntaxKeyword"
+      },
+      "hits": 1
+    },
+    "#FF9500": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "warning"
+      },
+      "hits": 1
+    },
+    "#FF9D00": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "syntaxKeyword"
+      },
+      "hits": 1
+    },
+    "#FFAB00": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "warning"
+      },
+      "hits": 1
+    },
+    "#FFB224": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "warning"
+      },
+      "hits": 3
+    },
+    "#FFB454": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "markdownStrong"
+      },
+      "hits": 2
+    },
+    "#FFC799": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vesper.json",
+        "var": "primary"
+      },
+      "hits": 22
+    },
+    "#FFD580": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "shadesofpurple.json",
+        "var": "warning"
+      },
+      "hits": 1
+    },
+    "#FFDC17": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "oc-2.json",
+        "var": "warning"
+      },
+      "hits": 1
+    },
+    "#FFE5E5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vercel.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#FFEA00": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "warning"
+      },
+      "hits": 1
+    },
+    "#FFF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vesper.json",
+        "var": "text"
+      },
+      "hits": 11
+    },
+    "#FFF7F1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "accent"
+      },
+      "hits": 8
+    },
+    "#FFFCF0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "flexoki.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#FFFFFF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "amoled.json",
+        "var": "text"
+      },
+      "hits": 7
+    },
+    "#a0a0a0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#a0a1a7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "textMuted"
+      },
+      "hits": 5
+    },
+    "#a0a2af": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palenight.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#a0a5a7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#a277ff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "primary"
+      },
+      "hits": 12
+    },
+    "#a44200": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "warning"
+      },
+      "hits": 3
+    },
+    "#a5adcb": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "markdownHorizontalRule"
+      },
+      "hits": 2
+    },
+    "#a5adce": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "markdownHorizontalRule"
+      },
+      "hits": 2
+    },
+    "#a626a4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "secondary"
+      },
+      "hits": 3
+    },
+    "#a6accd": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palenight.json",
+        "var": "text"
+      },
+      "hits": 5
+    },
+    "#a6adc8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "markdownHorizontalRule"
+      },
+      "hits": 1
+    },
+    "#a6b0a0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "textMuted"
+      },
+      "hits": 4
+    },
+    "#a6d189": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "success"
+      },
+      "hits": 10
+    },
+    "#a6da95": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "success"
+      },
+      "hits": 10
+    },
+    "#a6e22e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "monokai.json",
+        "var": "accent"
+      },
+      "hits": 12
+    },
+    "#a6e3a1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "success"
+      },
+      "hits": 5
+    },
+    "#a7b6f8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "secondary"
+      },
+      "hits": 3
+    },
+    "#a7c080": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "primary"
+      },
+      "hits": 8
+    },
+    "#a8527a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "secondary"
+      },
+      "hits": 3
+    },
+    "#a854f2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palenight.json",
+        "var": "secondary"
+      },
+      "hits": 3
+    },
+    "#a8a29e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#a9aeb6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nord.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#a9afbc": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "markdownCodeBlock"
+      },
+      "hits": 3
+    },
+    "#aad482": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 1
+    },
+    "#abb2bf": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#acb0be": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#adb7c9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "textMuted"
+      },
+      "hits": 3
+    },
+    "#ae81ff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "monokai.json",
+        "var": "secondary"
+      },
+      "hits": 10
+    },
+    "#af3a03": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "warning"
+      },
+      "hits": 3
+    },
+    "#b0175f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "error"
+      },
+      "hits": 3
+    },
+    "#b084eb": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "accent"
+      },
+      "hits": 6
+    },
+    "#b0851f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "markdownBlockQuote"
+      },
+      "hits": 9
+    },
+    "#b15c00": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "accent"
+      },
+      "hits": 4
+    },
+    "#b3003f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "syntaxKeyword"
+      },
+      "hits": 1
+    },
+    "#b4637a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "error"
+      },
+      "hits": 4
+    },
+    "#b4b7c814": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#b4b7c81f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#b57614": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "info"
+      },
+      "hits": 3
+    },
+    "#b58900": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "warning"
+      },
+      "hits": 6
+    },
+    "#b5a020": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "warning"
+      },
+      "hits": 2
+    },
+    "#b8004933": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 2
+    },
+    "#b8448b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "syntaxNumber"
+      },
+      "hits": 1
+    },
+    "#b8b8b8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#b8bb26": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "success"
+      },
+      "hits": 5
+    },
+    "#b8db87": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 3
+    },
+    "#b9ff9f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "diffHighlightAdded"
+      },
+      "hits": 1
+    },
+    "#bc4c00": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "info"
+      },
+      "hits": 4
+    },
+    "#bc8cff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "secondary"
+      },
+      "hits": 2
+    },
+    "#bcc0cc": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "borderActive"
+      },
+      "hits": 1
+    },
+    "#bd93f9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "primary"
+      },
+      "hits": 10
+    },
+    "#bdae93": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#be95ff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "markdownEmph"
+      },
+      "hits": 2
+    },
+    "#bf3989": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "markdownCode"
+      },
+      "hits": 1
+    },
+    "#c099ff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "secondary"
+      },
+      "hits": 3
+    },
+    "#c18401": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "warning"
+      },
+      "hits": 3
+    },
+    "#c3c3cc": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#c3e88d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "success"
+      },
+      "hits": 13
+    },
+    "#c4a7e7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "secondary"
+      },
+      "hits": 4
+    },
+    "#c53b53": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "diffRemoved"
+      },
+      "hits": 10
+    },
+    "#c5d5c5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 3
+    },
+    "#c5e478": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nightowl.json",
+        "var": "success"
+      },
+      "hits": 10
+    },
+    "#c678dd": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "secondary"
+      },
+      "hits": 3
+    },
+    "#c6a0f6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "secondary"
+      },
+      "hits": 6
+    },
+    "#c6d0f5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "text"
+      },
+      "hits": 8
+    },
+    "#c7392d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "error"
+      },
+      "hits": 3
+    },
+    "#c770ff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "accent"
+      },
+      "hits": 4
+    },
+    "#c792ea": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "secondary"
+      },
+      "hits": 13
+    },
+    "#c8c8c2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#c8c9ce": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#c8d3f5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#c94d24": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "accent"
+      },
+      "hits": 6
+    },
+    "#c9d1d9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#c9e3cb": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#ca9ee6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "secondary"
+      },
+      "hits": 6
+    },
+    "#cad3f5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "text"
+      },
+      "hits": 8
+    },
+    "#cb4b16": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "info"
+      },
+      "hits": 4
+    },
+    "#cba6f7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "secondary"
+      },
+      "hits": 3
+    },
+    "#cc241d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "diffRemoved"
+      },
+      "hits": 1
+    },
+    "#cc9393": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "error"
+      },
+      "hits": 3
+    },
+    "#ccd0da": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#cdd6f4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#cec99e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#cf222e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "error"
+      },
+      "hits": 5
+    },
+    "#cf2d56": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "error"
+      },
+      "hits": 2
+    },
+    "#cf2d5614": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 2
+    },
+    "#d032751a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 2
+    },
+    "#d0d0c0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#d0d0d0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "monokai.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#d0d7de": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#d0e5f5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "orng.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#d1383d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "error"
+      },
+      "hits": 6
+    },
+    "#d19a66": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "info"
+      },
+      "hits": 3
+    },
+    "#d1d1d2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#d20f39": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "error"
+      },
+      "hits": 4
+    },
+    "#d29922": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "info"
+      },
+      "hits": 4
+    },
+    "#d2d2d2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#d33682": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "syntaxNumber"
+      },
+      "hits": 2
+    },
+    "#d3869b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "secondary"
+      },
+      "hits": 3
+    },
+    "#d3bdb9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#d3c6aa": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#d3dae3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#d4d4d4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "borderSubtle"
+      },
+      "hits": 3
+    },
+    "#d53a3a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 1
+    },
+    "#d5c4a1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#d5d6db": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#d5e5d5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 3
+    },
+    "#d5e5da": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#d65145": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 1
+    },
+    "#d68c27": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode.json",
+        "var": "accent"
+      },
+      "hits": 6
+    },
+    "#d699b6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "accent"
+      },
+      "hits": 3
+    },
+    "#d6deeb": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nightowl.json",
+        "var": "text"
+      },
+      "hits": 10
+    },
+    "#d6e7d2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#d6f0d9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#d7827e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "accent"
+      },
+      "hits": 5
+    },
+    "#d8d8d2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#d8dee4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#dae1d7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#dafbe1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 2
+    },
+    "#db704b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "warning"
+      },
+      "hits": 2
+    },
+    "#db9f9c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 1
+    },
+    "#dbbc7f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "markdownBlockQuote"
+      },
+      "hits": 3
+    },
+    "#dc322f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "error"
+      },
+      "hits": 6
+    },
+    "#dc8cc3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "secondary"
+      },
+      "hits": 1
+    },
+    "#dca3a3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 1
+    },
+    "#dcd8a4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#dcdccc": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "text"
+      },
+      "hits": 5
+    },
+    "#dcdcdc": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#dce0e8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#dddde5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#defbe6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 2
+    },
+    "#df69ba": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "accent"
+      },
+      "hits": 3
+    },
+    "#df8e1d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "warning"
+      },
+      "hits": 4
+    },
+    "#dfa000": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "markdownBlockQuote"
+      },
+      "hits": 3
+    },
+    "#dfaf8f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "info"
+      },
+      "hits": 2
+    },
+    "#dfdad9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "border"
+      },
+      "hits": 2
+    },
+    "#dfdfe0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "syntaxVariable"
+      },
+      "hits": 1
+    },
+    "#e06c75": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "error"
+      },
+      "hits": 9
+    },
+    "#e0cf9f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "markdownEmph"
+      },
+      "hits": 1
+    },
+    "#e0def4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#e0e0d0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#e0e0e0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "borderSubtle"
+      },
+      "hits": 8
+    },
+    "#e0e0e1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#e0edfa": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "orng.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#e0eee5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#e0efde": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#e0ffe0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 4
+    },
+    "#e1e2e7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#e1f3df": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "diffAddedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#e26a75": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 5
+    },
+    "#e2c7c3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#e34671": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "error"
+      },
+      "hits": 2
+    },
+    "#e3b341": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "warning"
+      },
+      "hits": 2
+    },
+    "#e45649": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "error"
+      },
+      "hits": 3
+    },
+    "#e4e4e4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "text"
+      },
+      "hits": 7
+    },
+    "#e4e4e413": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "border"
+      },
+      "hits": 1
+    },
+    "#e4e4e45e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "textMuted"
+      },
+      "hits": 6
+    },
+    "#e4ebe1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#e53935": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "error"
+      },
+      "hits": 6
+    },
+    "#e5c07b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "markdownEmph"
+      },
+      "hits": 10
+    },
+    "#e5c890": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "warning"
+      },
+      "hits": 8
+    },
+    "#e5d5d5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#e5f2f3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 2
+    },
+    "#e67e80": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "error"
+      },
+      "hits": 2
+    },
+    "#e69875": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "warning"
+      },
+      "hits": 3
+    },
+    "#e6db74": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "monokai.json",
+        "var": "warning"
+      },
+      "hits": 3
+    },
+    "#e6e9ef": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#e6ff57": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "warning"
+      },
+      "hits": 6
+    },
+    "#e75e78": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 1
+    },
+    "#e78284": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "error"
+      },
+      "hits": 8
+    },
+    "#e7c8cb": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 4
+    },
+    "#e7e7e8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#e8828b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 1
+    },
+    "#e8e8e2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#e8e8e8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "borderSubtle"
+      },
+      "hits": 2
+    },
+    "#e8ecf1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#e8f5e8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vesper.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 2
+    },
+    "#e8f5e9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 8
+    },
+    "#e91e63": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "error"
+      },
+      "hits": 9
+    },
+    "#e9d3d6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#ea76cb": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "accent"
+      },
+      "hits": 1
+    },
+    "#ea9d34": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "warning"
+      },
+      "hits": 3
+    },
+    "#eaeaeb": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#eafbe9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 1
+    },
+    "#eb6f92": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "error"
+      },
+      "hits": 4
+    },
+    "#ebbcba": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "accent"
+      },
+      "hits": 5
+    },
+    "#ebdbb2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "text"
+      },
+      "hits": 7
+    },
+    "#ebebdb": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#ecc48d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "nightowl.json",
+        "var": "warning"
+      },
+      "hits": 6
+    },
+    "#ed8796": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "error"
+      },
+      "hits": 8
+    },
+    "#edecee": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "text"
+      },
+      "hits": 4
+    },
+    "#ededed": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#ee5396": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "error"
+      },
+      "hits": 1
+    },
+    "#eed49f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "warning"
+      },
+      "hits": 8
+    },
+    "#eee0e0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "osaka-jade.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#eee8d5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "solarized.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 9
+    },
+    "#eeeeee": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "text"
+      },
+      "hits": 15
+    },
+    "#eeeeee87": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 1
+    },
+    "#eef3ea": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#eeffff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "text"
+      },
+      "hits": 5
+    },
+    "#ef9f76": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "diffHunkHeader"
+      },
+      "hits": 6
+    },
+    "#efebd4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#eff1f5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#efffef": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "diffAddedBg"
+      },
+      "hits": 2
+    },
+    "#f07178": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "error"
+      },
+      "hits": 6
+    },
+    "#f0dfaf": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "warning"
+      },
+      "hits": 4
+    },
+    "#f0f0f0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "monokai.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 3
+    },
+    "#f0f0f1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#f0f3f6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#f1b467": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "warning"
+      },
+      "hits": 1
+    },
+    "#f1c21b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "warning"
+      },
+      "hits": 1
+    },
+    "#f1fa8c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "warning"
+      },
+      "hits": 6
+    },
+    "#f2d2d2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#f2e9e1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#f2f4f8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "text"
+      },
+      "hits": 2
+    },
+    "#f38ba8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "error"
+      },
+      "hits": 4
+    },
+    "#f3f3f3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#f44336": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "error"
+      },
+      "hits": 3
+    },
+    "#f4511e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "info"
+      },
+      "hits": 6
+    },
+    "#f4b8e4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-frappe.json",
+        "var": "accent"
+      },
+      "hits": 2
+    },
+    "#f4ede8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "borderSubtle"
+      },
+      "hits": 1
+    },
+    "#f4f0d9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#f4f4f4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 3
+    },
+    "#f4f5f9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "backgroundElement"
+      },
+      "hits": 2
+    },
+    "#f52a65": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 7
+    },
+    "#f57d26": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "warning"
+      },
+      "hits": 3
+    },
+    "#f5a742": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode.json",
+        "var": "warning"
+      },
+      "hits": 3
+    },
+    "#f5a97f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "diffHunkHeader"
+      },
+      "hits": 6
+    },
+    "#f5bde6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin-macchiato.json",
+        "var": "accent"
+      },
+      "hits": 2
+    },
+    "#f5c2e7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "accent"
+      },
+      "hits": 1
+    },
+    "#f5e2e1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "diffRemovedLineNumberBg"
+      },
+      "hits": 1
+    },
+    "#f5e8e8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "vesper.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 2
+    },
+    "#f5f0eb": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "orng.json",
+        "var": "backgroundElement"
+      },
+      "hits": 1
+    },
+    "#f5f5e5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#f5f5f5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 7
+    },
+    "#f5f7fa": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#f694ff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "secondary"
+      },
+      "hits": 5
+    },
+    "#f6c177": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "warning"
+      },
+      "hits": 3
+    },
+    "#f6dfe2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#f6f8fa": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#f78c6c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palenight.json",
+        "var": "info"
+      },
+      "hits": 3
+    },
+    "#f7d8db": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 4
+    },
+    "#f85149": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "error"
+      },
+      "hits": 3
+    },
+    "#f85552": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "error"
+      },
+      "hits": 2
+    },
+    "#f8f8f2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "text"
+      },
+      "hits": 11
+    },
+    "#f92672": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "monokai.json",
+        "var": "error"
+      },
+      "hits": 12
+    },
+    "#f9e2af": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "warning"
+      },
+      "hits": 4
+    },
+    "#f9e5e5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#fab283": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode.json",
+        "var": "primary"
+      },
+      "hits": 5
+    },
+    "#fab387": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "diffHunkHeader"
+      },
+      "hits": 3
+    },
+    "#fabd2f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "info"
+      },
+      "hits": 3
+    },
+    "#faf4ed": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#fafafa": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "background"
+      },
+      "hits": 7
+    },
+    "#fb4934": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "error"
+      },
+      "hits": 3
+    },
+    "#fbf1c7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#fbfcfd": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#fc6b83": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 1
+    },
+    "#fc92b4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "error"
+      },
+      "hits": 3
+    },
+    "#fc92b433": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 2
+    },
+    "#fc9b6f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "mercury.json",
+        "var": "warning"
+      },
+      "hits": 3
+    },
+    "#fce5e8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 2
+    },
+    "#fce9e8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "one-dark.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 1
+    },
+    "#fcfcfc": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cursor.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#fd971f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "monokai.json",
+        "var": "warning"
+      },
+      "hits": 7
+    },
+    "#fdf6e3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "everforest.json",
+        "var": "background"
+      },
+      "hits": 2
+    },
+    "#fe4450": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "error"
+      },
+      "hits": 2
+    },
+    "#fe640b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "catppuccin.json",
+        "var": "diffHunkHeader"
+      },
+      "hits": 3
+    },
+    "#fe8019": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "gruvbox.json",
+        "var": "warning"
+      },
+      "hits": 3
+    },
+    "#fede5d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "warning"
+      },
+      "hits": 3
+    },
+    "#ff0088": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "error"
+      },
+      "hits": 2
+    },
+    "#ff4b4b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "error"
+      },
+      "hits": 4
+    },
+    "#ff5555": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "error"
+      },
+      "hits": 6
+    },
+    "#ff5722": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "info"
+      },
+      "hits": 7
+    },
+    "#ff5e5b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 1
+    },
+    "#ff5fb3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 1
+    },
+    "#ff628c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "markdownStrong"
+      },
+      "hits": 2
+    },
+    "#ff6767": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "error"
+      },
+      "hits": 3
+    },
+    "#ff6b6b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "diffRemoved"
+      },
+      "hits": 1
+    },
+    "#ff7171": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 1
+    },
+    "#ff757f": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "error"
+      },
+      "hits": 2
+    },
+    "#ff79c6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "secondary"
+      },
+      "hits": 10
+    },
+    "#ff7b72": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "markdownCode"
+      },
+      "hits": 3
+    },
+    "#ff7eb6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "accent"
+      },
+      "hits": 1
+    },
+    "#ff7edb": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "secondary"
+      },
+      "hits": 4
+    },
+    "#ff8b39": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "synthwave84.json",
+        "var": "info"
+      },
+      "hits": 3
+    },
+    "#ff966c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "accent"
+      },
+      "hits": 4
+    },
+    "#ff9800": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "warning"
+      },
+      "hits": 6
+    },
+    "#ff9999": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "diffHighlightRemoved"
+      },
+      "hits": 1
+    },
+    "#ff9d00": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "info"
+      },
+      "hits": 4
+    },
+    "#ffa83d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "matrix.json",
+        "var": "markdownEmph"
+      },
+      "hits": 4
+    },
+    "#ffb300": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "warning"
+      },
+      "hits": 6
+    },
+    "#ffb86c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "info"
+      },
+      "hits": 4
+    },
+    "#ffc600": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "warning"
+      },
+      "hits": 3
+    },
+    "#ffc777": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "tokyonight.json",
+        "var": "markdownBlockQuote"
+      },
+      "hits": 3
+    },
+    "#ffca85": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "aura.json",
+        "var": "warning"
+      },
+      "hits": 2
+    },
+    "#ffcb6b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "material.json",
+        "var": "warning"
+      },
+      "hits": 9
+    },
+    "#ffe0e0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "dracula.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 4
+    },
+    "#ffebe9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "github.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 2
+    },
+    "#ffebee": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "cobalt2.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 8
+    },
+    "#ffefef": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 2
+    },
+    "#fff1f1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "diffRemovedBg"
+      },
+      "hits": 2
+    },
+    "#fff5f099": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "backgroundMenu"
+      },
+      "hits": 1
+    },
+    "#fffaf3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "rosepine.json",
+        "var": "backgroundPanel"
+      },
+      "hits": 2
+    },
+    "#ffffef": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "zenburn.json",
+        "var": "background"
+      },
+      "hits": 1
+    },
+    "#ffffff": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "background"
+      },
+      "hits": 21
+    },
+    "diffContext": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "ayu.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 2
+    },
+    "textMuted": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "carbonfox.json",
+        "var": "diffLineNumber"
+      },
+      "hits": 14
+    },
+    "transparent": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "lucent-orng.json",
+        "var": "background"
+      },
+      "hits": 16
+    }
+  }
+}

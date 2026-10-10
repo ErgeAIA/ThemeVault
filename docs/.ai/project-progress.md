@@ -2,7 +2,7 @@
 title: Project Progress
 type: project-progress
 project: ThemeVault
-updated: 2026-09-14
+updated: 2026-10-10
 description: >
   项目开发进度实时记录：阶段、分支、代码状态、最近进展。每次会话更新。
   AI 在本文件新增进展或修改当前状态后，必须同步更新 frontmatter 的 updated 字段为当日日期（YYYY-MM-DD）。
@@ -17,6 +17,10 @@ description: >
 
 ## 当前状态
 
+- **今日（2026-10-10）**：导入决策已下（4 条）：①全量导入，落盘加 `opencode` 前缀区分；②同名同色池者也保留为 OpenCode 变体；③为 TV 缺失 light 的现有同名家族补 light 方案（取自 DSH 对应主题 light 方案）；④先核查协议。
+  - **S0 协议核查(完成)**：DSH 仓库 `LICENSE`=MIT（FeatherHunter 2026，聚合层明确）；`THIRD_PARTY_NOTICES.md` 不存在(404)；37 主 json 均无内置 license/author 字段→协议需从上游确认。结论：DSH 以 MIT 聚合分发；主题上游协议对 TV 已收录同名来源复用（MIT/Apache-2.0），新名字多为知名 MIT/Apache 主题，落盘逐主题标注上游协议+必要署名（如 nord 的 Sven Greb）。**整体可落盘**。pin=`9839cb3`（v2.0.26）。
+  - **S1 设计(已定)**：单一 `opencode` 家族（用户确认），数据驱动 `scripts/gen_opencode.py` 生成。DSH 主题 JSON 实为 **VS Code 风格原生角色**（background/text/accent/error/warning/success/info/primary/secondary/border*/syntax*/diff*/markdown* 共 50）；35 双方案(dark+light)+2 单方案(aura/ayu)。desktop-2.0 的 4 个与主 json 重复已去重。
+  - **S2 落盘(进行)**：**S2-A 已完成**——`gen_opencode.py` 生成 opencode 家族 72 套主题(dark+` -light` 变体)、contract/intent/extract/family README；放宽 3 个解析器 `ROLE_RE` 以支持 OpenCode 驼峰角色名；`gen_index.py --write` 全绿（familyCount=23, themeCount=146, opencode #107–#146, missing=0/out=0）。4 个精简主题(amoled/oc-2/onedarkpro/shadesofpurple, 28 角色)缺 textMuted+syntax*，已降级为 derivedOptional。AA 标红：`opencode/solarized-light` textOnBg=4.13（浅背景，不改值）。**S2-B 待做**：为 TV 现有仅-dark 同名家族(synthwave/tokyonight/nord/dracula/one-dark-pro/shades)补 light 变体（取自 DSH 对应主题 light 方案，需 OpenCode→L1 映射）。
 - **当前分支**：main（已有提交，基线以 `git log` 为准）
 - **阶段**：资产仓维护（非运行时项目）；协作记忆已初始化
 - **代码**：`scripts/*.py` 生成器与校验器存在；无应用运行时

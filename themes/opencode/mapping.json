@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "family": "opencode",
+  "ir": "L1-v4",
+  "themes": [
+    "amoled",
+    "amoled-light",
+    "aura",
+    "ayu",
+    "carbonfox",
+    "carbonfox-light",
+    "catppuccin",
+    "catppuccin-frappe",
+    "catppuccin-frappe-light",
+    "catppuccin-light",
+    "catppuccin-macchiato",
+    "catppuccin-macchiato-light",
+    "cobalt2",
+    "cobalt2-light",
+    "cursor",
+    "cursor-light",
+    "dracula",
+    "dracula-light",
+    "everforest",
+    "everforest-light",
+    "flexoki",
+    "flexoki-light",
+    "github",
+    "github-light",
+    "gruvbox",
+    "gruvbox-light",
+    "kanagawa",
+    "kanagawa-light",
+    "lucent-orng",
+    "lucent-orng-light",
+    "material",
+    "material-light",
+    "matrix",
+    "matrix-light",
+    "mercury",
+    "mercury-light",
+    "monokai",
+    "monokai-light",
+    "nightowl",
+    "nightowl-light",
+    "nord",
+    "nord-light",
+    "oc-2",
+    "oc-2-light",
+    "one-dark",
+    "one-dark-light",
+    "onedarkpro",
+    "onedarkpro-light",
+    "opencode",
+    "opencode-light",
+    "orng",
+    "orng-light",
+    "osaka-jade",
+    "osaka-jade-light",
+    "palenight",
+    "palenight-light",
+    "rosepine",
+    "rosepine-light",
+    "shadesofpurple",
+    "shadesofpurple-light",
+    "solarized",
+    "solarized-light",
+    "synthwave84",
+    "synthwave84-light",
+    "tokyonight",
+    "tokyonight-light",
+    "vercel",
+    "vercel-light",
+    "vesper",
+    "vesper-light",
+    "zenburn",
+    "zenburn-light"
+  ],
+  "map": {
+    "accent": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 72
+    },
+    "background": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 72
+    },
+    "backgroundElement": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 72
+    },
+    "backgroundMenu": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 2
+    },
+    "backgroundPanel": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 72
+    },
+    "border": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 72
+    },
+    "borderActive": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 72
+    },
+    "borderSubtle": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 64
+    },
+    "diffAdded": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "diffAddedBg": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "diffAddedLineNumberBg": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "diffContext": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "diffContextBg": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "diffHighlightAdded": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "diffHighlightRemoved": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "diffHunkHeader": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "diffLineNumber": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "diffRemoved": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "diffRemovedBg": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "diffRemovedLineNumberBg": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "error": {
+      "sources": [],
+      "kind": "功能",
+      "themeCount": 72
+    },
+    "info": {
+      "sources": [],
+      "kind": "功能",
+      "themeCount": 72
+    },
+    "markdownBlockQuote": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 72
+    },
+    "markdownCode": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 72
+    },
+    "markdownCodeBlock": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "markdownEmph": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 72
+    },
+    "markdownHeading": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 72
+    },
+    "markdownHorizontalRule": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 72
+    },
+    "markdownImage": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "markdownImageText": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "markdownLink": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 72
+    },
+    "markdownLinkText": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "markdownListEnumeration": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "markdownListItem": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "markdownStrong": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 72
+    },
+    "markdownText": {
+      "sources": [],
+      "kind": "派生",
+      "themeCount": 64
+    },
+    "primary": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 72
+    },
+    "secondary": {
+      "sources": [],
+      "kind": "强调",
+      "themeCount": 64
+    },
+    "selectedListItemText": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 4
+    },
+    "success": {
+      "sources": [],
+      "kind": "功能",
+      "themeCount": 72
+    },
+    "syntaxComment": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 72
+    },
+    "syntaxFunction": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 72
+    },
+    "syntaxKeyword": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 72
+    },
+    "syntaxNumber": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 72
+    },
+    "syntaxOperator": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 72
+    },
+    "syntaxPunctuation": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 64
+    },
+    "syntaxString": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 72
+    },
+    "syntaxType": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 72
+    },
+    "syntaxVariable": {
+      "sources": [],
+      "kind": "语法",
+      "themeCount": 72
+    },
+    "text": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 72
+    },
+    "textMuted": {
+      "sources": [],
+      "kind": "中性",
+      "themeCount": 72
+    },
+    "warning": {
+      "sources": [],
+      "kind": "功能",
+      "themeCount": 72
+    }
+  }
+}

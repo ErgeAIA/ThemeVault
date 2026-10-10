@@ -30,6 +30,7 @@
 | 20 | omni | https://github.com/getomni/visual-studio-code | MIT | `dark` | © Rocketseat；数据源为 `src/omni.yml`（YAML 锚点体系 + `!alpha` 派生） |
 | 21 | falcon | https://github.com/panxiaoan/falcon-vscode-themes | MIT | `dark` `dark-blue` `dark-green` `dark-green-islands` `light-bean-green` `light-buff` `light-celadon` `light-green` `light-green-islands` `light-grey` `light-pink` `light-yellow` | © Xiaoan Pan；温和护眼系列 12 套；数据源为 `src/{dark,light}/*.yml`（YAML 锚点 + `!alpha` 派生；ansi 键名有错位，绿存于 ansiBrightPURPLE） |
 | 22 | onepage | https://github.com/ivaneye/OnePage | MIT | `warm-paper` `warm-brown` | © 2025 一页清（ivaneye）；Obsidian 主题，基于 [Cupertino](https://github.com/aaaaalexis/Obsidian-Cupertino)（MIT）；数据源为固定 commit `4226e57` 的 `theme.css` 固化双配色 + 彩色排版 `--typo-*` |
+| 23 | opencode | https://github.com/anomalyco/opencode | MIT（聚合分发：FeatherHunter/dsh-opencode-palette @ `9839cb3`，MIT） | 见 `themes/opencode/README.md` 成员表（37 逻辑主题，35 含 `-light` 变体） | OpenCode 主题集经 DSH 聚合；各原主题上游协议以原项目为准（多为 MIT/Apache-2.0）；Nord 衍生需保留 Sven Greb 署名；数据源 `src/themes/*.json`（OpenCode defs+theme 格式，VS Code 风格角色） |
 
 ## 维护约定
 

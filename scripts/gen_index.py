@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent
 THEMES = ROOT / "themes"
 INDEX_JSON = ROOT / "INDEX.json"
 
-ROLE_RE = re.compile(r"^\|\s*`(--[a-z0-9-]+)`\s*\|\s*`([^`]*)`\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|$")
+ROLE_RE = re.compile(r"^\|\s*`(--[a-zA-Z0-9-]+)`\s*\|\s*`([^`]*)`\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|$")
 META_RE = re.compile(r"^\s*(?:-\s+)?\*\*(.+?)\*\*[：:]\s*(.+?)\s*$")
 FAMILY_SRC_RE = re.compile(r"来源项目[：:]\s*\[?([^\]]*?)\]?\(([^)]*)\)?")
 LICENSE_RE = re.compile(r"（([^（）]*?(?:Apache-2\.0|MIT|AGPL-3\.0)[^（）]*?)）")
@@ -178,6 +178,8 @@ def brand_of(tokens: dict) -> dict | None:
 # L1 家族用 bg + text/text-muted/text-dim；ergemd 用 bg-page + text-primary/text-secondary/text-muted。
 TEXT_CONTRAST_ROLES = {
     "ergemd": ("bg-page", {"text-primary": "textOnBg", "text-secondary": "textMutedOnBg", "text-muted": "textDimOnBg"}),
+    # opencode 原生角色：background 为主背景，text/textMuted 为文本（无 text-dim）。
+    "opencode": ("background", {"text": "textOnBg", "textMuted": "textMutedOnBg"}),
 }
 
 
@@ -207,7 +209,7 @@ def text_contrast_of(tokens: dict, family: str) -> dict | None:
 FAMILY_ORDER = ["opensquilla", "catppuccin", "ergemd", "aura", "dracula", "nord", "solarized",
                 "tokyonight", "one-dark-pro", "night-owl", "synthwave", "iceberg",
                 "kanagawa", "everforest", "rose-pine", "ayu", "jellyfish", "shades",
-                "vue", "falcon", "omni", "onepage"]
+                "vue", "falcon", "omni", "onepage", "opencode"]
 
 # 家族显示名（卡片底部标签 / 规范品牌名，首字母大写或品牌官方写法）。
 FAMILY_DISPLAY_NAMES = {
@@ -218,6 +220,7 @@ FAMILY_DISPLAY_NAMES = {
     "everforest": "Everforest", "rose-pine": "Rosé Pine",
     "ayu": "Ayu", "jellyfish": "JellyFish", "shades": "Shades of Purple",
     "vue": "Vue Theme", "falcon": "Falcon", "omni": "Omni", "onepage": "OnePage",
+    "opencode": "OpenCode",
 }
 
 
@@ -259,11 +262,29 @@ FAMILY_SECTIONS = {
         ["ANSI 备查", ["color-red", "color-orange", "color-yellow", "color-green", "color-cyan",
                        "color-blue", "color-purple", "color-pink"]],
     ],
+    # opencode：OpenCode 原生角色分区（非 L1）。角色集为 VS Code 风格背景/文本/强调/功能/语法/markdown/diff。
+    "opencode": [
+        ["背景 / 文本 / 边框", ["background", "backgroundPanel", "backgroundElement",
+                             "text", "textMuted", "border", "borderActive", "borderSubtle"]],
+        ["强调色", ["primary", "secondary", "accent"]],
+        ["状态色", ["error", "warning", "success", "info"]],
+        ["语法高亮", ["syntaxComment", "syntaxKeyword", "syntaxFunction", "syntaxVariable",
+                      "syntaxString", "syntaxNumber", "syntaxType", "syntaxOperator", "syntaxPunctuation"]],
+        ["Markdown / Diff", ["markdownText", "markdownHeading", "markdownLink", "markdownLinkText",
+                             "markdownCode", "markdownBlockQuote", "markdownEmph", "markdownStrong",
+                             "markdownHorizontalRule", "markdownListItem", "markdownListEnumeration",
+                             "markdownImage", "markdownImageText", "markdownCodeBlock",
+                             "diffAdded", "diffRemoved", "diffContext", "diffHunkHeader",
+                             "diffHighlightAdded", "diffHighlightRemoved", "diffAddedBg",
+                             "diffRemovedBg", "diffContextBg", "diffLineNumber",
+                             "diffAddedLineNumberBg", "diffRemovedLineNumberBg"]],
+    ],
 }
 
 DEFAULT_BADGE_PAIRS = [["text", "bg"], ["text-muted", "bg"], ["text-dim", "bg"]]
 FAMILY_BADGE_PAIRS = {
     "ergemd": [["text-primary", "bg-page"], ["text-secondary", "bg-page"], ["text-muted", "bg-page"]],
+    "opencode": [["text", "background"], ["textMuted", "background"]],
 }
 
 # ergemd 原生角色 → L1 对比矩阵映射（仅 ergemd 家族输出，preview 对比视图用）
@@ -540,7 +561,7 @@ def main() -> int:
             tc = t.get("textContrast")
             tc_s = ""
             if tc and tc.get("textOnBg") is not None and tc["textOnBg"] < 4.5:
-                tc_s = f" ⚠️textOnBg={tc['textOnBg']}"
+                tc_s = f" AA-WARN(textOnBg={tc['textOnBg']})"
             print(f"{f['family']}/{t['id']} #{t['number']:03d} tokens={t['tokenCount']} missing={len(t['requiredMissing'])} out={len(t['outOfContractRoles'])}{extra}{brand_s}{tc_s}")
     print(json.dumps(stats, ensure_ascii=False))
 
