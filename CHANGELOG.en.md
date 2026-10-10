@@ -18,6 +18,7 @@ This project has **no release artifacts**. Changes are separated by date, like a
 - Register the AA contrast warnings of both solarized light themes (`solarized/light` #034, `opencode/solarized-light` #136, textOnBg 4.13) as known deviations — source values kept unchanged (DEC-015)
 - one-dark-pro / shades stay dark-only: their DSH sources are a reduced 28-role variant missing text-muted + syntax*, which would require heavy contract fallbacks (DEC-014)
 - Remove the "Current progress" section from root `README.md`; `docs/.ai/project-progress.md` is now the single source for progress, and open TODOs were migrated there
+- opencode light variants whose values are identical to dark (catppuccin-frappe / catppuccin-macchiato / nightowl, 3 themes) are now archived as dark, so the Light filter no longer shows dark-looking themes; **no color values were changed**, only the archival label (noted in palette and README)
 
 ### Fixed
 - Card background: the opencode family uses native `background`, not the L1 `bg`, so every card fell back to a placeholder dark tone (35 light themes rendered dark). Added `BG_TEXT_ROLES` / `BADGE_ROLES` entries

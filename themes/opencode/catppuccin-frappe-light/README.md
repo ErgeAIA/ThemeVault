@@ -7,11 +7,11 @@
 - **原始主题 ID**：`catppuccin-frappe`
 - **显示名**：catppuccin-frappe
 - **协议**：MIT（DSH 聚合分发；各原主题上游协议以原项目为准）
-- **色彩方案**：light
+- **色彩方案**：dark
 - **主题类型**：value theme（全局）
 - **提取方式**：基于 DSH 主题 JSON（OpenCode defs+theme 格式），解析 defs 引用与 dark/light 双方案，生成原生角色色板表
 - **显式颜色令牌数**：见 palette.md（50 原生角色）
-- **特殊点**：OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）
+- **特殊点**：OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）；源 light 与 dark 取值相同（仅 1 个角色不同），本变体按 dark 归档（色值未改写）
 
 ## 迁移备注
 

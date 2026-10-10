@@ -91,10 +91,10 @@
 | 080 | `themes/opencode/carbonfox-light` | opencode | carbonfox-light | carbonfox | MIT | light | 9 | 41 | ✅ 已提取 |  |
 | 081 | `themes/opencode/catppuccin` | opencode | catppuccin | catppuccin | MIT | dark | 9 | 41 | ✅ 已提取 |  |
 | 082 | `themes/opencode/catppuccin-frappe` | opencode | catppuccin-frappe | catppuccin-frappe | MIT | dark | 9 | 41 | ✅ 已提取 |  |
-| 083 | `themes/opencode/catppuccin-frappe-light` | opencode | catppuccin-frappe-light | catppuccin-frappe | MIT | light | 9 | 41 | ✅ 已提取 |  |
+| 083 | `themes/opencode/catppuccin-frappe-light` | opencode | catppuccin-frappe-light | catppuccin-frappe | MIT | dark | 9 | 41 | ✅ 已提取 |  |
 | 084 | `themes/opencode/catppuccin-light` | opencode | catppuccin-light | catppuccin | MIT | light | 9 | 41 | ✅ 已提取 |  |
 | 085 | `themes/opencode/catppuccin-macchiato` | opencode | catppuccin-macchiato | catppuccin-macchiato | MIT | dark | 9 | 41 | ✅ 已提取 |  |
-| 086 | `themes/opencode/catppuccin-macchiato-light` | opencode | catppuccin-macchiato-light | catppuccin-macchiato | MIT | light | 9 | 41 | ✅ 已提取 |  |
+| 086 | `themes/opencode/catppuccin-macchiato-light` | opencode | catppuccin-macchiato-light | catppuccin-macchiato | MIT | dark | 9 | 41 | ✅ 已提取 |  |
 | 087 | `themes/opencode/cobalt2` | opencode | cobalt2 | cobalt2 | MIT | dark | 9 | 41 | ✅ 已提取 |  |
 | 088 | `themes/opencode/cobalt2-light` | opencode | cobalt2-light | cobalt2 | MIT | light | 9 | 41 | ✅ 已提取 |  |
 | 089 | `themes/opencode/cursor` | opencode | cursor | cursor | MIT | dark | 9 | 41 | ✅ 已提取 |  |
@@ -122,7 +122,7 @@
 | 111 | `themes/opencode/monokai` | opencode | monokai | monokai | MIT | dark | 9 | 41 | ✅ 已提取 |  |
 | 112 | `themes/opencode/monokai-light` | opencode | monokai-light | monokai | MIT | light | 9 | 41 | ✅ 已提取 |  |
 | 113 | `themes/opencode/nightowl` | opencode | nightowl | nightowl | MIT | dark | 9 | 41 | ✅ 已提取 |  |
-| 114 | `themes/opencode/nightowl-light` | opencode | nightowl-light | nightowl | MIT | light | 9 | 41 | ✅ 已提取 |  |
+| 114 | `themes/opencode/nightowl-light` | opencode | nightowl-light | nightowl | MIT | dark | 9 | 41 | ✅ 已提取 |  |
 | 115 | `themes/opencode/nord` | opencode | nord | nord | MIT | dark | 9 | 41 | ✅ 已提取 |  |
 | 116 | `themes/opencode/nord-light` | opencode | nord-light | nord | MIT | light | 9 | 41 | ✅ 已提取 |  |
 | 117 | `themes/opencode/oc-2` | opencode | oc-2 | oc-2 | MIT | dark | 9 | 19 | ✅ 已提取 |  |
@@ -165,7 +165,7 @@
 
 <!-- BEGIN:generated index-stats -->
 - 已入库来源项目：**23**（opensquilla、catppuccin、ergemd、aura、dracula、nord、solarized、tokyonight、one-dark-pro、night-owl、synthwave、iceberg、kanagawa、everforest、rose-pine、ayu、jellyfish、shades、vue、falcon、omni、onepage、opencode）
-- value theme：**149 套**（60 light + 89 dark）
+- value theme：**149 套**（57 light + 92 dark）
 - expressive skin：**1 套**
 - stats（INDEX.json）：familyCount 23 / themeCount 150 / valueThemeCount 149 / skinCount 1 / tokenTotal 7079
 - 色板表令牌总量：**7079 个**

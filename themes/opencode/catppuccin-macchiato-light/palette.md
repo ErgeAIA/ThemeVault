@@ -2,7 +2,8 @@
 
 > 来源：https://github.com/FeatherHunter/dsh-opencode-palette（MIT 聚合）@ `9839cb3`，原始主题 `catppuccin-macchiato`。
 > 颜色值为 DSH 主题 JSON 解析后原文（defs 引用已展开为 hex），未改写。
-> 本表为 OpenCode 原生角色，light 方案。
+> 本表为 OpenCode 原生角色，dark 方案。
+> ⚠ 源 light 与 dark 取值相同（仅 1 个角色不同），本变体按 dark 归档；色值未改写。
 
 ## 中性色（背景 / 文本 / 边框）
 

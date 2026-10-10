@@ -18,6 +18,7 @@
 - solarized 两个 light 主题（`solarized/light` #034、`opencode/solarized-light` #136）的 AA 对比度告警（textOnBg 4.13）登记为已知偏差豁免，保留源值不改（DEC-015）
 - one-dark-pro / shades 维持仅 dark（不补 light）：DSH 对应源为精简 28 角色版，缺 text-muted + syntax*，补到 L1 会产生大量契约兜底（DEC-014）
 - 根目录 `README.md` 移除「当前进度」节；进度唯一出处为 `docs/.ai/project-progress.md`，待办已转存
+- opencode 家族中 light 与 dark 取值相同的变体（catppuccin-frappe / catppuccin-macchiato / nightowl，共 3 个）改按 dark 归档，避免 Light 筛选下出现深色主题；**色值未改写**，仅在 palette 与 README 注明归档依据
 
 ### 修复
 - 预览卡片底色：opencode 家族用原生 `background` 而非 L1 `bg`，此前全部回退兜底色（35 套 light 主题显示成深色）；已补 `BG_TEXT_ROLES` / `BADGE_ROLES`

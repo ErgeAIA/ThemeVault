@@ -47,6 +47,20 @@ AA_EXEMPTIONS = {
                        "此为 solarized 设计特征（柔和低对比），属源主题事实，不改值。",
 }
 
+# light 变体与 dark 取值差异 ≤ 该阈值时，判定为「源未提供独立 light 配色」，按 dark 归档。
+# （DSH 部分主题标了双方案但 light 与 dark 同值，如 catppuccin-frappe / macchiato / nightowl）
+LIGHT_SAME_AS_DARK_MAX_DIFF = 2
+
+
+def light_variant_scheme(roles: dict) -> tuple[str, int]:
+    """判定 light 变体的归档方案：与 dark 实质同值时返回 "dark"。
+
+    返回 (effective_scheme, diff_count)，diff_count = dark/light 取值不同的角色数。
+    仅改归档标注，不改写任何色值。
+    """
+    diff = sum(1 for _, (dark, light) in roles.items() if dark != light)
+    return ("dark", diff) if diff <= LIGHT_SAME_AS_DARK_MAX_DIFF else ("light", diff)
+
 
 def classify(role: str) -> str:
     """Map a raw OpenCode role to a palette section kind."""
@@ -209,16 +223,20 @@ def main() -> int:
         "派生": "派生 / 场景色（markdown / diff；主题显式值）",
     }
 
-    def palette_text(tid: str, roles: dict, scheme_label: str, is_light: bool) -> str:
+    def palette_text(tid: str, roles: dict, scheme_label: str, is_light: bool,
+                     eff_scheme: str = "", diff: int = 0) -> str:
         dirname = f"{tid}-light" if is_light else tid
         exempt = AA_EXEMPTIONS.get(dirname)
+        eff = eff_scheme or ("light" if is_light else "dark")
         out = [
             f"# opencode/{dirname} 色板表",
             "",
             f"> 来源：{SRC_REPO}（MIT 聚合）@ `{PIN_SHORT}`，原始主题 `{tid}`。",
             "> 颜色值为 DSH 主题 JSON 解析后原文（defs 引用已展开为 hex），未改写。",
-            f"> 本表为 OpenCode 原生角色，{'light' if is_light else 'dark'} 方案。",
+            f"> 本表为 OpenCode 原生角色，{eff} 方案。",
         ]
+        if is_light and eff == "dark":
+            out.append(f"> ⚠ 源 light 与 dark 取值相同（仅 {diff} 个角色不同），本变体按 dark 归档；色值未改写。")
         if exempt:
             out.append(f"> ⚠ **AA 已知偏差（不改值）**：{exempt}")
         out.append("")
@@ -246,12 +264,15 @@ def main() -> int:
             out.append("")
         return "\n".join(out)
 
-    def readme_text(tid: str, scheme_label: str, is_light: bool) -> str:
+    def readme_text(tid: str, scheme_label: str, is_light: bool,
+                    eff_scheme: str = "", diff: int = 0) -> str:
         name = tid
-        scheme = "light" if is_light else "dark"
+        scheme = eff_scheme or ("light" if is_light else "dark")
         dirname = f"{tid}-light" if is_light else tid
         exempt = AA_EXEMPTIONS.get(dirname)
         special = "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）"
+        if is_light and scheme == "dark":
+            special += f"；源 light 与 dark 取值相同（仅 {diff} 个角色不同），本变体按 dark 归档（色值未改写）"
         if exempt:
             special += f"；**AA 已知偏差（不改值）**：{exempt}"
         return "\n".join([
@@ -293,12 +314,13 @@ def main() -> int:
         (td / "palette.md").write_text(palette_text(tid, roles, scheme, False), encoding="utf-8")
         (td / "README.md").write_text(readme_text(tid, scheme, False), encoding="utf-8")
         theme_count += 1
-        # light (dual only)
+        # light (dual only)；与 dark 实质同值时按 dark 归档（避免 light 列表里出现深色主题）
         if scheme == "dual":
+            eff, diff = light_variant_scheme(roles)
             tl = FAMILY / f"{tid}-light"
             tl.mkdir(exist_ok=True)
-            (tl / "palette.md").write_text(palette_text(tid, roles, scheme, True), encoding="utf-8")
-            (tl / "README.md").write_text(readme_text(tid, scheme, True), encoding="utf-8")
+            (tl / "palette.md").write_text(palette_text(tid, roles, scheme, True, eff, diff), encoding="utf-8")
+            (tl / "README.md").write_text(readme_text(tid, scheme, True, eff, diff), encoding="utf-8")
             theme_count += 1
     print(f"wrote {theme_count} theme dirs (dark + light siblings)")
 

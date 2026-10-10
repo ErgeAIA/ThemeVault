@@ -1,6 +1,6 @@
 window.__TV = {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T15:19:05+00:00",
+  "generatedAt": "2026-10-10T16:22:13+00:00",
   "generator": "scripts/gen_index.py",
   "singleSourceOfTruth": "themes/<family>/_source/contract.json",
   "families": [
@@ -9121,13 +9121,13 @@ window.__TV = {
         {
           "id": "catppuccin-frappe-light",
           "displayName": "catppuccin-frappe",
-          "scheme": "light",
+          "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/catppuccin-frappe-light",
           "palettePath": "themes/opencode/catppuccin-frappe-light/palette.md",
           "tokensPath": "themes/opencode/catppuccin-frappe-light/tokens.json",
           "license": "MIT",
-          "licenseNote": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
+          "licenseNote": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）；源 light 与 dark 取值相同（仅 1 个角色不同），本变体按 dark 归档（色值未改写）",
           "fontStyle": null,
           "fonts": [],
           "structuralNote": null,
@@ -9201,7 +9201,7 @@ window.__TV = {
             "markdownStrong": "#ef9f76",
             "markdownText": "#c6d0f5"
           },
-          "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
+          "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）；源 light 与 dark 取值相同（仅 1 个角色不同），本变体按 dark 归档（色值未改写）",
           "number": 83
         },
         {
@@ -9379,13 +9379,13 @@ window.__TV = {
         {
           "id": "catppuccin-macchiato-light",
           "displayName": "catppuccin-macchiato",
-          "scheme": "light",
+          "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/catppuccin-macchiato-light",
           "palettePath": "themes/opencode/catppuccin-macchiato-light/palette.md",
           "tokensPath": "themes/opencode/catppuccin-macchiato-light/tokens.json",
           "license": "MIT",
-          "licenseNote": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
+          "licenseNote": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）；源 light 与 dark 取值相同（仅 1 个角色不同），本变体按 dark 归档（色值未改写）",
           "fontStyle": null,
           "fonts": [],
           "structuralNote": null,
@@ -9459,7 +9459,7 @@ window.__TV = {
             "markdownStrong": "#f5a97f",
             "markdownText": "#cad3f5"
           },
-          "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
+          "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）；源 light 与 dark 取值相同（仅 1 个角色不同），本变体按 dark 归档（色值未改写）",
           "number": 86
         },
         {
@@ -11791,13 +11791,13 @@ window.__TV = {
         {
           "id": "nightowl-light",
           "displayName": "nightowl",
-          "scheme": "light",
+          "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/nightowl-light",
           "palettePath": "themes/opencode/nightowl-light/palette.md",
           "tokensPath": "themes/opencode/nightowl-light/tokens.json",
           "license": "MIT",
-          "licenseNote": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
+          "licenseNote": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）；源 light 与 dark 取值相同（仅 0 个角色不同），本变体按 dark 归档（色值未改写）",
           "fontStyle": null,
           "fonts": [],
           "structuralNote": null,
@@ -11871,7 +11871,7 @@ window.__TV = {
             "markdownStrong": "#ecc48d",
             "markdownText": "#d6deeb"
           },
-          "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
+          "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）；源 light 与 dark 取值相同（仅 0 个角色不同），本变体按 dark 归档（色值未改写）",
           "number": 114
         },
         {
