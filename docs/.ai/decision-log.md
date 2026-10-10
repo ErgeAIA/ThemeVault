@@ -2,7 +2,7 @@
 title: Decision Log
 type: decision-log
 project: ThemeVault
-updated: 2026-09-14
+updated: 2026-10-10
 priority: higher-than-prd
 description: >
   开发过程决策日志，优先级高于 PRD；冲突时以本文件最新条目为准并回写 PRD/ADR。
@@ -15,6 +15,13 @@ description: >
 > **优先级高于 PRD**：冲突时以本文件最新决策为准，并回写 PRD/ADR。
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
+
+## DEC-014: S2-B light 补充跳过 one-dark-pro / shades
+
+- **日期**：2026-10-10
+- **背景**：S2-B 为 TV 现有仅-dark 同名家族补 light 变体（取自 DSH 对应主题 light 方案，经 OpenCode→L1 映射）。one-dark-pro/shades 的 DSH 对应源（onedarkpro/shadesofpurple）是精简 28 角色版，缺 `textMuted` + 全部 6 个 L1 语法角色；TV 现有 one-dark-pro/shades 家族契约 required=29 L1-core（含 text-muted + 6 syntax）。
+- **决策**：跳过这两个家族的 light 补充（用户 2026-10-10 确认）。理由：补到 L1 会产生大量 required 契约兜底甚至缺失（text-muted 只能"同 text"、6 个 syntax 无 DSH 值需编造兜底），违反 ADR-0008「禁止发明 hex」。opencode 家族已含 onedarkpro/shadesofpurple 的 light（DSH 精简源），可直接取用，不重复落盘到 TV L1 家族。
+- **验证**：gen_index 全绿（themeCount=150，无越界）；已落盘 light 家族 synthwave/tokyonight/nord/dracula 经 OpenCode→L1 映射，29 required 全填 + 契约兜底标注。
 
 ## DEC-013: 对抗审查修复（A1/A2/B1）
 
