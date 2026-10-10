@@ -4,3 +4,6 @@
 # Python
 __pycache__/
 *.py[cod]
+
+# 本地 IDE 会话状态（计划 / 索引等，勿入库）
+.zcode/
