@@ -3,13 +3,14 @@
 > 来源：https://github.com/FeatherHunter/dsh-opencode-palette（MIT 聚合）@ `9839cb3`，原始主题 `solarized`。
 > 颜色值为 DSH 主题 JSON 解析后原文（defs 引用已展开为 hex），未改写。
 > 本表为 OpenCode 原生角色，light 方案。
+> ⚠ **AA 已知偏差（不改值）**：text(#657b83) 对 background(#fdf6e3) 对比度 4.13 < 4.5；此为 solarized 设计特征（柔和低对比），属源主题事实，不改值。
 
 ## 中性色（背景 / 文本 / 边框）
 
 | 语义角色 | 颜色值 | 类型 | 备注 |
 |----------|--------|------|------|
 | `--background` | `#fdf6e3` | 中性 | OpenCode `background` |
-| `--text` | `#657b83` | 中性 | OpenCode `text` |
+| `--text` | `#657b83` | 中性 | OpenCode `text`；AA 已知偏差（见顶部说明，不改值） |
 | `--border` | `#eee8d5` | 中性 | OpenCode `border` |
 | `--backgroundElement` | `#eee8d5` | 中性 | OpenCode `backgroundElement` |
 | `--backgroundPanel` | `#eee8d5` | 中性 | OpenCode `backgroundPanel` |

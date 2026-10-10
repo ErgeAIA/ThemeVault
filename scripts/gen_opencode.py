@@ -40,6 +40,13 @@ REQUIRED = [
     "error", "warning", "success", "info",
 ]
 
+# AA 对比度已知偏差豁免（硬性规则 7）：源主题事实，不改值，仅登记说明。
+# key = 落盘目录名（<id> 或 <id>-light）；value = 标注文本（写入 palette 顶部与 README「特殊点」）。
+AA_EXEMPTIONS = {
+    "solarized-light": "text(#657b83) 对 background(#fdf6e3) 对比度 4.13 < 4.5；"
+                       "此为 solarized 设计特征（柔和低对比），属源主题事实，不改值。",
+}
+
 
 def classify(role: str) -> str:
     """Map a raw OpenCode role to a palette section kind."""
@@ -203,14 +210,18 @@ def main() -> int:
     }
 
     def palette_text(tid: str, roles: dict, scheme_label: str, is_light: bool) -> str:
+        dirname = f"{tid}-light" if is_light else tid
+        exempt = AA_EXEMPTIONS.get(dirname)
         out = [
-            f"# opencode/{tid}{'-light' if is_light else ''} 色板表",
+            f"# opencode/{dirname} 色板表",
             "",
             f"> 来源：{SRC_REPO}（MIT 聚合）@ `{PIN_SHORT}`，原始主题 `{tid}`。",
             "> 颜色值为 DSH 主题 JSON 解析后原文（defs 引用已展开为 hex），未改写。",
             f"> 本表为 OpenCode 原生角色，{'light' if is_light else 'dark'} 方案。",
-            "",
         ]
+        if exempt:
+            out.append(f"> ⚠ **AA 已知偏差（不改值）**：{exempt}")
+        out.append("")
         # group roles by section, preserve REQUIRED order within section
         grouped = {k: [] for k in section_order}
         for role in sorted(roles.keys(), key=lambda r: (REQUIRED.index(r) if r in REQUIRED else 999, r)):
@@ -229,6 +240,8 @@ def main() -> int:
                 dark, light = roles[role]
                 v = light if is_light else dark
                 note = f"OpenCode `{role}`" + ("" if v is not None else "；DSH 未提供该方案值")
+                if exempt and role == "text":
+                    note += "；AA 已知偏差（见顶部说明，不改值）"
                 out.append(f"| `--{role}` | `{v}` | {sec} | {note} |")
             out.append("")
         return "\n".join(out)
@@ -236,8 +249,13 @@ def main() -> int:
     def readme_text(tid: str, scheme_label: str, is_light: bool) -> str:
         name = tid
         scheme = "light" if is_light else "dark"
+        dirname = f"{tid}-light" if is_light else tid
+        exempt = AA_EXEMPTIONS.get(dirname)
+        special = "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）"
+        if exempt:
+            special += f"；**AA 已知偏差（不改值）**：{exempt}"
         return "\n".join([
-            f"# opencode/{tid}{'-light' if is_light else ''} 主题说明",
+            f"# opencode/{dirname} 主题说明",
             "",
             "## 元信息",
             "",
@@ -250,7 +268,7 @@ def main() -> int:
             "- **主题类型**：value theme（全局）",
             "- **提取方式**：基于 DSH 主题 JSON（OpenCode defs+theme 格式），解析 defs 引用与 dark/light 双方案，生成原生角色色板表",
             "- **显式颜色令牌数**：见 palette.md（50 原生角色）",
-            f"- **特殊点**：OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
+            f"- **特殊点**：{special}",
             "",
             "## 迁移备注",
             "",

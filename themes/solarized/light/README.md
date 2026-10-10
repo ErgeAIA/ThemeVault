@@ -11,6 +11,7 @@
 - **主题类型**：value theme（全局）
 - **提取方式**：基于真实源码 `xresources/solarized`（官方色值）+ `vim-colors-solarized/colors/solarized.vim`（GUI 16 色，权威语义映射）
 - **显式颜色令牌数**：29 required + 6 derivedOptional（见 palette.md）
+- **特殊点**：AA 已知偏差（不改值）：text(#657b83) 对 bg(#fdf6e3) 对比度 4.13 < 4.5；此为 solarized 设计特征（柔和低对比），属源主题事实，不改值。
 
 ## 迁移备注
 

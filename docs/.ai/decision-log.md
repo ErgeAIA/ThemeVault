@@ -16,6 +16,13 @@ description: >
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
 
+## DEC-015: solarized 两个 light 主题的 AA 已知偏差登记豁免（不改值）
+
+- **日期**：2026-10-10
+- **背景**：`gen_index` AA 守卫（text 对 bg 对比度 <4.5）实际报出 **2 个**标红，均为 solarized light 同源同值（text=#657b83 base00 / bg=#fdf6e3 base3，对比度 4.13）：①`solarized/light` #034（TV 原有 L1 家族，源：官方 xresources + vim-colors-solarized）；②`opencode/solarized-light` #136（DSH 聚合源）。solarized 设计本就柔和低对比，4.13 是其设计特征而非缺陷；硬性规则 7 禁止悄悄「修复」源值。
+- **决策**：**不改值**（用户 2026-10-10 确认「登记豁免·不改值」），仅登记为已知偏差：在 palette 顶部引用块 + `text` 角色备注 + 主题 README「特殊点」标注「AA 已知偏差·源主题事实·不改值」。opencode 侧改 `gen_opencode.py` 增加 `AA_EXEMPTIONS` 常量注入（避免生成器重跑覆盖标注）；solarized 侧为手工落盘（无生成脚本）直接改。`gen_index` 仍 print AA-WARN —— 属已决的信息提示，非未决告警。
+- **验证**：`gen_index --write` 全绿（exit 0，themeCount=150，missing=0/out=0）；两个 AA-WARN 保留（未改值，符合预期）；改动仅限标注（palette/README/tokens 备注）+ 生成器豁免常量，未改动任何色值。
+
 ## DEC-014: S2-B light 补充跳过 one-dark-pro / shades
 
 - **日期**：2026-10-10

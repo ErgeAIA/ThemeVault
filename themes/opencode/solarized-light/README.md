@@ -11,7 +11,7 @@
 - **主题类型**：value theme（全局）
 - **提取方式**：基于 DSH 主题 JSON（OpenCode defs+theme 格式），解析 defs 引用与 dark/light 双方案，生成原生角色色板表
 - **显式颜色令牌数**：见 palette.md（50 原生角色）
-- **特殊点**：OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）
+- **特殊点**：OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）；**AA 已知偏差（不改值）**：text(#657b83) 对 background(#fdf6e3) 对比度 4.13 < 4.5；此为 solarized 设计特征（柔和低对比），属源主题事实，不改值。
 
 ## 迁移备注
 

@@ -1,6 +1,6 @@
 window.__TV = {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T14:21:09+00:00",
+  "generatedAt": "2026-10-10T15:19:05+00:00",
   "generator": "scripts/gen_index.py",
   "singleSourceOfTruth": "themes/<family>/_source/contract.json",
   "families": [
@@ -3952,7 +3952,7 @@ window.__TV = {
             "queued-fill": "#6c71c4",
             "text-secondary": "#657b83"
           },
-          "notes": "",
+          "notes": "AA 已知偏差（不改值）：text(#657b83) 对 bg(#fdf6e3) 对比度 4.13 < 4.5；此为 solarized 设计特征（柔和低对比），属源主题事实，不改值。",
           "number": 34
         }
       ]
@@ -13559,7 +13559,7 @@ window.__TV = {
           "palettePath": "themes/opencode/solarized-light/palette.md",
           "tokensPath": "themes/opencode/solarized-light/tokens.json",
           "license": "MIT",
-          "licenseNote": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
+          "licenseNote": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）；**AA 已知偏差（不改值）**：text(#657b83) 对 background(#fdf6e3) 对比度 4.13 < 4.5；此为 solarized 设计特征（柔和低对比），属源主题事实，不改值。",
           "fontStyle": null,
           "fonts": [],
           "structuralNote": null,
@@ -13633,7 +13633,7 @@ window.__TV = {
             "markdownStrong": "#cb4b16",
             "markdownText": "#657b83"
           },
-          "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
+          "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）；**AA 已知偏差（不改值）**：text(#657b83) 对 background(#fdf6e3) 对比度 4.13 < 4.5；此为 solarized 设计特征（柔和低对比），属源主题事实，不改值。",
           "number": 136
         },
         {

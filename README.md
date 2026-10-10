@@ -97,21 +97,5 @@ ThemeVault/
 - `docs/adr/`：0001 契约单一事实源 / 0002 目录布局 / 0003 INDEX.json / 0004 许可证与 provenance / 0005 AA 对比度守卫 / 0006 预览约定 / 0007 ErgeMD 数据驱动契约
 - `docs/glossary.md`：全仓库统一术语
 
-## 当前进度
-
-- [x] opensquilla（9 value theme + 1 skin，已全量提取并产资产文档）
-- [x] 目录迁移 themes/<family>/<id>/ + INDEX.json 生成器 + 宪法文档（ADR × 7 + glossary）
-- [x] Catppuccin 家族（latte / frappe / macchiato / mocha，官方 palette.json → L1 映射）
-- [x] ErgeMD 家族（AGPL-3.0 自有开源项目，14 套主题，数据驱动契约 + 源码快照，见 ADR-0007）
-- [x] Aura 家族（dark / soft-dark，官方 accent 阶梯 → L1 映射，见家族 README）
-- [x] Dracula 家族（dark，官方 dracula.yml → L1 映射，见家族 README）
-- [x] 社区主题 10 家族（nord / solarized / tokyonight / one-dark-pro / night-owl / synthwave / iceberg / kanagawa / everforest / rose-pine）
-- [x] VS Code theme 6 家族（ayu / jellyfish / shades / vue / omni / falcon，21 套主题，`gen_vscode.py` 数据驱动生成）
-- [x] OnePage 家族（warm-brown / warm-paper，Obsidian 固化双配色 + 彩色排版 typo-*，见 DEC-001）
-- [x] 数据驱动预览 SPA（preview.html 读 data.js 运行时渲染：瀑布流 + 自适应卡片 + AA 徽标 + 品牌色 swatch + 主题对比）
-- [x] 主题编号系统（INDEX.json theme.number + INDEX.md 编号列：新增主题追加编号、已有编号不变，直接报编号即可取色）
-- [ ] 下一套主题（候选：shadcn）
-- [ ] 预览卡片元素细化（代码块模拟等，见 ADR-0006）
-
 ---
 *本仓库由主题收集需求驱动，非自动生成。每套主题须经人工确认「喜欢」才入库。*

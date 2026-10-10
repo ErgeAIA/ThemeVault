@@ -2,6 +2,7 @@
 
 > 来源：solarized（Ethan Schoonover）官方 `xresources/solarized` + `vim-colors-solarized`（GUI 16 色）。
 > 颜色值为源码原文，未改写。语义角色 → Solarized 命名色映射规则见家族 README「L1 语义角色映射」。
+> ⚠ **AA 已知偏差（不改值）**：text(#657b83) 对 bg(#fdf6e3) 对比度 4.13 < 4.5；此为 solarized 设计特征（柔和低对比），属源主题事实，不改值。
 
 ## 中性色（背景 / 文本 / 边框）
 
@@ -12,7 +13,7 @@
 | `--bg-surface-2` | `#eee8d5` | 中性 | base2（light 背景仅两档，与 surface 同值） |
 | `--bg-elevated` | `#eee8d5` | 中性 | base2 |
 | `--bg-hover` | `#eee8d5` | 中性 | base2 |
-| `--text` | `#657b83` | 中性 | base00，主文本 |
+| `--text` | `#657b83` | 中性 | base00，主文本；AA 已知偏差（见顶部说明，不改值） |
 | `--text-muted` | `#93a1a1` | 中性 | base1 |
 | `--text-dim` | `#586e75` | 中性 | base01（注释/弱文本） |
 | `--border` | `#93a1a1` | 中性 | base1 |
