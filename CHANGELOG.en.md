@@ -19,6 +19,12 @@ This project has **no release artifacts**. Changes are separated by date, like a
 - one-dark-pro / shades stay dark-only: their DSH sources are a reduced 28-role variant missing text-muted + syntax*, which would require heavy contract fallbacks (DEC-014)
 - Remove the "Current progress" section from root `README.md`; `docs/.ai/project-progress.md` is now the single source for progress, and open TODOs were migrated there
 
+### Fixed
+- Card background: the opencode family uses native `background`, not the L1 `bg`, so every card fell back to a placeholder dark tone (35 light themes rendered dark). Added `BG_TEXT_ROLES` / `BADGE_ROLES` entries
+- Compare matrix: added an opencode -> L1 role mapping; the opencode family previously rendered as an entirely empty column
+- Readability: AA badges and number / brand / font / scheme tags now pick the higher-contrast variant (dark or light) against the card background (was as low as 1.32 on light theme cards; now worst case 5.98 / 6.47)
+- Preview polish: empty state when a filter matches nothing, Esc-to-close and `aria-expanded` on the family dropdown, press feedback on controls, unified radius scale (6 / 8 / 12), code sample no longer references a real theme name
+
 ## 2026-09-24
 
 ### Added

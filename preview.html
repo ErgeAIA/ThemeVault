@@ -14,6 +14,8 @@
   input { background: #1a1d24; color: #e8e8ee; border: 1px solid #2c313c; border-radius: 8px; padding: 7px 12px; font-size: 13px; width: 280px; }
   .chip { background: #1a1d24; border: 1px solid #2c313c; color: #aab; border-radius: 999px; padding: 6px 14px; font-size: 12.5px; cursor: pointer; user-select: none; }
   .chip.active { background: #3b5bdb; border-color: #3b5bdb; color: #fff; }
+  /* 触觉反馈：按下时下沉 1px */
+  .chip:active, .cmp-btn:active, .cmp-go:active, .cmp-cancel:active, .cmp-back:active, .family-filter:active, .family-item:active { transform: translateY(1px); }
   /* 家族筛选下拉 */
   .family-filter-wrap { position: relative; display: inline-block; }
   .family-filter { background: #1a1d24; border: 1px solid #2c313c; color: #e8e8ee; border-radius: 8px; padding: 7px 14px; font-size: 13px; cursor: pointer; }
@@ -32,18 +34,18 @@
   .card-head b { font-size: 14px; }
   .card-head b a, .cg-head a { color: inherit; text-decoration: none; cursor: pointer; }
   .card-head b a:hover, .cg-head a:hover { text-decoration: underline; }
-  .card-head .meta { font-size: 10px; opacity: 0.6; text-align: right; line-height: 1.4; }
+  .card-head .meta { font-size: 10px; opacity: 0.85; text-align: right; line-height: 1.4; }
   .badges { padding: 0 14px 6px; display: flex; gap: 14px; flex-wrap: wrap; font-family: ui-monospace, Consolas, monospace; font-size: 10px; }
   .brand-row { padding: 0 14px 8px; display: flex; align-items: center; gap: 8px; }
-  .brand-swatch { width: 22px; height: 22px; border-radius: 5px; border: 1px solid rgba(128,128,140,0.35); flex-shrink: 0; }
+  .brand-swatch { width: 22px; height: 22px; border-radius: 6px; border: 1px solid rgba(128,128,140,0.35); flex-shrink: 0; }
   .brand-label { font-family: ui-monospace, Consolas, monospace; font-size: 11px; opacity: 0.9; }
   .section { padding: 4px 14px; }
   .section-title { font-size: 11px; font-weight: 600; opacity: 0.9; margin: 6px 0 4px; }
   /* 色块网格：auto-fill + minmax 使每行填满，不满行也均匀（解决两端对齐错乱） */
   .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 6px; }
-  .swatch { border-radius: 5px; overflow: hidden; }
-  .swatch-color { height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-family: ui-monospace, Consolas, monospace; font-size: 9px; }
-  .swatch-label { font-size: 9px; text-align: center; padding: 2px 2px 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0.85; }
+  .swatch { border-radius: 6px; overflow: hidden; }
+  .swatch-color { height: 30px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: ui-monospace, Consolas, monospace; font-size: 9px; }
+  .swatch-label { font-size: 9px; text-align: center; padding: 2px 2px 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0.9; }
   /* 代码块模拟：底色 / 边框 / 语法色均取主题角色（家族感知），直观展示高亮实际效果 */
   .code-block { margin: 8px 14px 4px; padding: 8px 10px; border-radius: 6px; border: 1px solid rgba(128,128,140,0.3); font-family: ui-monospace, Consolas, monospace; font-size: 11px; line-height: 1.6; white-space: pre; overflow-x: auto; }
   .code-block .cl { display: block; }
@@ -87,7 +89,7 @@
   .cg-card-cell { padding: 10px; background: #0f1115; }
   .cg-card-cell .card { margin: 0; width: 100%; }
   .cg-section { background: #11141a; font-weight: 600; font-size: 11px; text-align: left; opacity: 0.9; }
-  .cmp-swatch { border-radius: 5px; height: 30px; display: flex; align-items: center; justify-content: center; font-family: ui-monospace, Consolas, monospace; font-size: 9px; margin: 0 auto; min-width: 60px; cursor: pointer; }
+  .cmp-swatch { border-radius: 6px; height: 30px; display: flex; align-items: center; justify-content: center; font-family: ui-monospace, Consolas, monospace; font-size: 9px; margin: 0 auto; min-width: 60px; cursor: pointer; }
   .cmp-swatch:hover, .swatch-color:hover { outline: 2px solid #fff; outline-offset: 1px; }
   .swatch-color { cursor: pointer; }
   .cmp-sub { font-size: 10px; opacity: 0.7; margin-top: 2px; }
@@ -120,9 +122,10 @@
   </div>
 </header>
 <main id="grid"></main>
+<div id="emptyState" class="empty" style="display:none">没有匹配的主题，试试清空搜索或切换家族 / 方案。</div>
 <div class="compare-view" id="compareView"></div>
 <div class="copy-toast" id="copyToast"></div>
-<footer>数据驱动 SPA · 数据源 preview/data.js（由 scripts/gen_index.py 从 INDEX.json 生成）· 色值均取自官方源码</footer>
+<footer>数据驱动 SPA，数据源 preview/data.js（由 scripts/gen_index.py 从 INDEX.json 生成），色值均取自官方源码</footer>
 
 <script src="preview/data.js"></script>
 <script>
@@ -147,8 +150,10 @@ const BADGE_ROLES = {
   opensquilla: [["text","bg"],["text-muted","bg"],["text-dim","bg"]],
   catppuccin: [["text","bg"],["text-muted","bg"],["text-dim","bg"]],
   ergemd: [["text-primary","bg-page"],["text-secondary","bg-page"],["text-muted","bg-page"]],
+  opencode: [["text","background"],["textMuted","background"]],
 };
-const BG_TEXT_ROLES = { ergemd: ["bg-page","text-primary"] };
+// 卡片底色 / 文字角色（家族感知）：opencode 用原生 background/text，不是 L1 的 bg/text
+const BG_TEXT_ROLES = { ergemd: ["bg-page","text-primary"], opencode: ["background","text"] };
 
 // 代码块模拟：语法角色 → 代码语义（家族感知）。
 // L1 通用 syntax-* / ergemd code-* / opencode 驼峰 syntaxXxx；角色缺失时降级为主题 text 色。
@@ -164,7 +169,7 @@ const CODE_TOKEN_MAP = {c:"comment", k:"keyword", s:"string", n:"number", f:"fn"
 // 示例代码：[语义键, 文本]；c=注释 k=关键字 s=字符串 n=数字 f=函数名 v=变量 t=类型 o=运算符 p=标点 d=默认
 const CODE_LINES = [
   [["c", "// 主题预览 · syntax highlight"]],
-  [["k", "const"], ["v", " theme"], ["o", " = "], ["p", "{ "], ["v", "name"], ["o", ": "], ["s", '"ember"'], ["p", ", "], ["v", "size"], ["o", ": "], ["n", "42"], ["p", " }"]],
+  [["k", "const"], ["v", " theme"], ["o", " = "], ["p", "{ "], ["v", "name"], ["o", ": "], ["s", '"vault"'], ["p", ", "], ["v", "size"], ["o", ": "], ["n", "42"], ["p", " }"]],
   [["k", "function"], ["f", " pick"], ["p", "("], ["v", "t"], ["o", ": "], ["t", "Theme"], ["p", ") {"]],
   [["d", "  "], ["k", "return"], ["v", " t"], ["o", "."], ["v", "name"], ["o", " + "], ["s", '":"'], ["o", " + "], ["v", "theme.size"], ["p", ";"]],
   [["p", "}"]],
@@ -188,7 +193,7 @@ function codeBlockHtml(fam, tokens, bg, text){
   return `<div class="code-block" style="background:${esc(codeBg)};color:${esc(text)};border-color:${esc(codeBorder)}">${lines}</div>`;
 }
 
-// L1 → ergemd 原生角色映射（让 ergemd 主题进 L1 对比矩阵；ergemd 无的概念如 border 不映射，显示 —）
+// L1 → ergemd 原生角色映射（让 ergemd 主题进 L1 对比矩阵；ergemd 无的概念如 border 不映射，显示「无」）
 const ERGE_MD_L1_MAP = {
   "bg":"bg-page", "bg-surface":"bg-reader",
   "text":"text-primary", "text-muted":"text-secondary", "text-dim":"text-muted",
@@ -197,12 +202,26 @@ const ERGE_MD_L1_MAP = {
   "syntax-keyword":"code-keyword", "syntax-string":"code-string", "syntax-literal":"code-number",
   "syntax-comment":"code-comment", "syntax-title":"code-function"
 };
-// 取主题在 L1 角色 r 上的色值：L1 家族直接取，ergemd 经映射取原生角色。
+// L1 → opencode 原生角色映射（opencode 用 background/text/驼峰 syntaxXxx；
+// 不经映射时对比矩阵的 L1 角色列会整列为空，故必须登记）
+const OPENCODE_L1_MAP = {
+  "bg":"background", "bg-surface":"backgroundPanel", "bg-surface-2":"backgroundElement",
+  "text":"text", "text-muted":"textMuted",
+  "accent":"accent", "accent-secondary":"secondary",
+  "border":"border", "border-strong":"borderActive", "border-subtle":"borderSubtle",
+  "error":"error", "warning":"warning", "success":"success", "info":"info",
+  "syntax-keyword":"syntaxKeyword", "syntax-string":"syntaxString", "syntax-literal":"syntaxNumber",
+  "syntax-comment":"syntaxComment", "syntax-title":"syntaxFunction", "syntax-variable":"syntaxVariable",
+  "syntax-type":"syntaxType"
+};
+const L1_MAPS = { ergemd: ERGE_MD_L1_MAP, opencode: OPENCODE_L1_MAP };
+// 取主题在 L1 角色 r 上的色值：L1 家族直接取，ergemd / opencode 经各自映射取原生角色。
 function l1Value(s, r){
   if(!s.theme.tokens) return null;
   if(s.theme.tokens[r]) return s.theme.tokens[r];
-  // 仅 ergemd 经 L1 映射对齐；映射以 data.js 派生（fam.l1RoleMap）优先
-  const map = s.family==="ergemd" ? ((s.fam && s.fam.l1RoleMap) || ERGE_MD_L1_MAP) : null;
+  // 映射以 data.js 派生（fam.l1RoleMap）优先，兜底用常量
+  const def = L1_MAPS[s.family];
+  const map = def ? ((s.fam && s.fam.l1RoleMap) || def) : null;
   if(map && map[r]) return s.theme.tokens[map[r]] || null;
   return null;
 }
@@ -224,22 +243,30 @@ function renderCard(fam, theme){
   const sections = fam.sections || FAMILY_SECTION_ROLES[family] || SECTION_ROLES;
   const num = theme.number;
   const numStr = num ? String(num).padStart(3,"0") : "";
-  const numTag = numStr ? `<span class="tag num-tag">#${numStr}</span>` : "";
+  // 卡片底色自适应：深色 / 浅色两套候选取对比度更高者
+  // （比固定亮度阈值更稳：中间调背景上阈值法可能出现两端都不足）
+  const pickReadable = (darkC, lightC) => (contrast(darkC, bg) ?? 0) >= (contrast(lightC, bg) ?? 0) ? darkC : lightC;
+  const NUM_COLOR = pickReadable("#6b4e00", "#ffd43b");
+  const BRAND_TEXT_COLOR = pickReadable("#7a2450", "#ff9e9e");
+  const MONO_COLOR = pickReadable("#1c4f8a", "#9ecbff");
+  const OK_COLOR = pickReadable("#0b5a2a", "#6ee787");
+  const BAD_COLOR = pickReadable("#8f1d13", "#ff8a80");
+  const numTag = numStr ? `<span class="tag num-tag" style="color:${NUM_COLOR}">#${numStr}</span>` : "";
   const brand = theme.brand;
   const bt = brand && brand.buttonText === "dark" ? "深字" : "浅字";
-  const brandTag = brand && brand.color ? `<span class="tag brand-tag"><i class="dot" style="background:${brand.color}"></i>${brand.color}·${bt}</span>` : "";
+  const brandTag = brand && brand.color ? `<span class="tag brand-tag" style="color:${BRAND_TEXT_COLOR}"><i class="dot" style="background:${brand.color}"></i>${brand.color}·${bt}</span>` : "";
   const scheme = theme.scheme || "?";
   const license = theme.license || "";
-  const fontsTag = (theme.fonts && theme.fonts.length) ? `<span class="tag mono-tag">${esc(theme.fonts.join(" · "))}</span>` : "";
+  const fontsTag = (theme.fonts && theme.fonts.length) ? `<span class="tag mono-tag" style="color:${MONO_COLOR}">${esc(theme.fonts.join(" · "))}</span>` : "";
 
-  // AA 徽标（家族感知，未登记家族兜底 opensquilla）；不可测对比度显示 —，不输出伪造数字
+  // AA 徽标（家族感知，未登记家族兜底 opensquilla）；不可测对比度显示「无」，不输出伪造数字
   const badgePairs = fam.badgePairs || BADGE_ROLES[family] || BADGE_ROLES.opensquilla;
   const badges = badgePairs.map(([r,bgr])=>{
     if(!tokens[r]||!tokens[bgr])return"";
     const ratio=contrast(tokens[r],tokens[bgr]);
-    if(ratio===null)return`<span class="cmp-empty">${r} —</span>`;
+    if(ratio===null)return`<span class="cmp-empty">${r} 无</span>`;
     const ok=ratio>=4.5;
-    return`<span style="color:${ok?"#3fb950":"#f85149"}">${r} ${ratio.toFixed(1)} ${ok?"✓":"✗"}</span>`;
+    return`<span style="color:${ok?OK_COLOR:BAD_COLOR}">${r} ${ratio.toFixed(1)} ${ok?"✓":"✗"}</span>`;
   }).join("");
 
   // 品牌色行
@@ -258,7 +285,8 @@ function renderCard(fam, theme){
   }).join("");
 
   const codeHtml = codeBlockHtml(fam, tokens, bg, text);
-  const tags = `${numTag}${brandTag}<span class="tag ${scheme}">${scheme}</span><span class="tag">${esc(fam.familyDisplayName || family)}</span><span class="tag">${esc(license)}</span>${fontsTag}`;
+  const schemeColor = scheme==="light" ? NUM_COLOR : pickReadable("#3b4bb8", "#748ffc");
+  const tags = `${numTag}${brandTag}<span class="tag ${scheme}" style="color:${schemeColor}">${scheme}</span><span class="tag">${esc(fam.familyDisplayName || family)}</span><span class="tag">${esc(license)}</span>${fontsTag}`;
 
   return `<div class="card" data-name="${esc(theme.displayName)}" data-family="${esc(family)}" data-scheme="${esc(scheme)}" data-number="${numStr}" style="background:${bg};color:${text}">
     <button class="cmp-check" data-number="${numStr}">＋ 对比</button>
@@ -327,6 +355,9 @@ function apply(){
     const okF=selectedFamily==="all"||fam===selectedFamily.toLowerCase();
     c.style.display=(okQ&&okS&&okF)?"":"none";
   });
+  const visible=[...document.querySelectorAll(".card")].filter(c=>c.style.display!=="none").length;
+  const es=document.getElementById("emptyState");
+  if(es) es.style.display = visible ? "none" : "block";
 }
 
 function setScheme(el){
@@ -338,11 +369,11 @@ function setScheme(el){
 document.getElementById("q").addEventListener("input",apply);
 document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>setScheme(c)));
 // 家族筛选按钮：点击 toggle 下拉；点外部关闭
-document.getElementById("familyBtn").addEventListener("click",e=>{
-  e.stopPropagation();
-  document.getElementById("familyDropdown").classList.toggle("open");
-});
-document.addEventListener("click",()=>document.getElementById("familyDropdown").classList.remove("open"));
+const famBtn=document.getElementById("familyBtn"), famDd=document.getElementById("familyDropdown");
+function setFamilyDropdown(open){ famDd.classList.toggle("open",open); famBtn.setAttribute("aria-expanded",open?"true":"false"); }
+famBtn.addEventListener("click",e=>{ e.stopPropagation(); setFamilyDropdown(!famDd.classList.contains("open")); });
+document.addEventListener("click",()=>setFamilyDropdown(false));
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") setFamilyDropdown(false); });
 document.getElementById("familyDropdown").addEventListener("click",e=>e.stopPropagation());
 
 // ===== 主题对比功能 =====
@@ -437,20 +468,20 @@ function renderCompare(){
   // AA 对比度行
   [["text","bg"],["text-muted","bg"],["text-dim","bg"]].forEach(([r,bgr])=>{
     cells.push(`<div class="cg-cell cg-role">${r}对比度</div>`);
-    sel.forEach(s=>{const v=l1Value(s,r),bv=l1Value(s,bgr);if(!v||!bv){cells.push(`<div class="cg-cell"><span class="cmp-empty">—</span></div>`);return;}const ratio=contrast(v,bv);if(!ratio){cells.push(`<div class="cg-cell"><span class="cmp-empty">—</span></div>`);return;}const ok=ratio>=4.5;cells.push(`<div class="cg-cell"><span style="color:${ok?"#3fb950":"#f85149"}">${ratio.toFixed(1)} ${ok?"✓":"✗"}</span></div>`);});
+    sel.forEach(s=>{const v=l1Value(s,r),bv=l1Value(s,bgr);if(!v||!bv){cells.push(`<div class="cg-cell"><span class="cmp-empty">无</span></div>`);return;}const ratio=contrast(v,bv);if(!ratio){cells.push(`<div class="cg-cell"><span class="cmp-empty">无</span></div>`);return;}const ok=ratio>=4.5;cells.push(`<div class="cg-cell"><span style="color:${ok?"#3fb950":"#f85149"}">${ratio.toFixed(1)} ${ok?"✓":"✗"}</span></div>`);});
   });
   // L1 角色色值矩阵（按 section）
   SECTION_ROLES.forEach(([title,roles])=>{
     cells.push(`<div class="cg-cell cg-section" style="grid-column:1/-1">${title}</div>`);
     roles.forEach(r=>{
       cells.push(`<div class="cg-cell cg-role" title="${r}">${r}</div>`);
-      sel.forEach(s=>{const v=l1Value(s,r);const ok=v&&!String(v).includes("var(");cells.push(`<div class="cg-cell">${ok?`<div class="cmp-swatch" data-hex="${v}" style="background:${v};color:${fgFor(v)}">${v}</div>`:`<span class="cmp-empty">—</span>`}</div>`);});
+      sel.forEach(s=>{const v=l1Value(s,r);const ok=v&&!String(v).includes("var(");cells.push(`<div class="cg-cell">${ok?`<div class="cmp-swatch" data-hex="${v}" style="background:${v};color:${fgFor(v)}">${v}</div>`:`<span class="cmp-empty">无</span>`}</div>`);});
     });
   });
   document.getElementById("compareView").innerHTML=`
     <div class="compare-toolbar"><b>主题对比</b>（${N} 个）</div>
     <div class="compare-grid" style="grid-template-columns:${cols}">${cells.join("")}</div>
-    <p style="color:#667;font-size:12px;margin-top:16px">矩阵按 L1 通用语义角色对比；ergemd 家族经 L1 映射对齐（bg→bg-page、code-keyword→syntax-keyword 等），无对应概念的角色（border/fill/accent 变体等）标 —。点击任意色块复制颜色值。</p>`;
+    <p style="color:#667;font-size:12px;margin-top:16px">矩阵按 L1 通用语义角色对比；ergemd 家族经 L1 映射对齐（bg→bg-page、code-keyword→syntax-keyword 等），无对应概念的角色（border/fill/accent 变体等）标「无」。点击任意色块复制颜色值。</p>`;
   document.getElementById("cmpBackTop").addEventListener("click",backFromCompare);
 }
 

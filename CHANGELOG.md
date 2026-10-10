@@ -19,6 +19,12 @@
 - one-dark-pro / shades 维持仅 dark（不补 light）：DSH 对应源为精简 28 角色版，缺 text-muted + syntax*，补到 L1 会产生大量契约兜底（DEC-014）
 - 根目录 `README.md` 移除「当前进度」节；进度唯一出处为 `docs/.ai/project-progress.md`，待办已转存
 
+### 修复
+- 预览卡片底色：opencode 家族用原生 `background` 而非 L1 `bg`，此前全部回退兜底色（35 套 light 主题显示成深色）；已补 `BG_TEXT_ROLES` / `BADGE_ROLES`
+- 主题对比矩阵：新增 opencode → L1 角色映射，此前 opencode 家族整列为空
+- 预览可读性：AA 徽标与编号 / 品牌 / 字体 / 方案 tag 改为按卡片底色明暗择优取色（此前浅色主题卡片上对比度低至 1.32，现最差 5.98 / 6.47）
+- 预览补充：筛选无结果显示空状态提示；家族下拉支持 Esc 关闭与 `aria-expanded`；控件增加按下反馈；圆角体系统一为 6 / 8 / 12；代码块示例不再指向真实主题名
+
 ## 2026-09-24
 
 ### 新增
