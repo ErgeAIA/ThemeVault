@@ -10,11 +10,11 @@
 | `night` | Tokyo Night | dark | value theme | 默认 flavor，最深背景（由 storm 派生） |
 | `storm` | Tokyo Night Storm | dark | value theme | 基础 palette，标准深色 |
 | `moon` | Tokyo Night Moon | dark | value theme | 独立紫调月夜 |
+| `light` | tokyonight Light | light | value theme | DSH 补充 light（OpenCode→L1 映射） |
 
 > **day 变体（light）**：官方第 4 个 flavor，由 `day.lua` 在运行时对 night palette 做
 > `Util.invert()` + blend 反转生成，无静态色值可抄，故不单列色板；需要 light 方案时按
 > 「night 反转」的官方机制自行生成（`_source/day.lua` 有完整逻辑）。
-
 ## L1 语义角色映射（本家族统一）
 
 > Tokyo Night 的 lua palette 是**命名色表**（bg/fg/comment/blue/cyan/green/magenta/orange/purple/

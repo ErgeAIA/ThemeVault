@@ -741,6 +741,123 @@
         "selector": "json"
       },
       "hits": 83
+    },
+    "#fafafa": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/synthwave84.json",
+        "var": "background",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#f5f5f5": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/synthwave84.json",
+        "var": "backgroundPanel",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#eeeeee": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/synthwave84.json",
+        "var": "backgroundElement",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#5c5c8a": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/synthwave84.json",
+        "var": "textMuted",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#e0e0e0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/synthwave84.json",
+        "var": "border",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#00bcd4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/synthwave84.json",
+        "var": "borderActive",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#f0f0f0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/synthwave84.json",
+        "var": "borderSubtle",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#9c27b0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/synthwave84.json",
+        "var": "accent",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#f44336": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/synthwave84.json",
+        "var": "error",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#ff9800": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/synthwave84.json",
+        "var": "warning",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#4caf50": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/synthwave84.json",
+        "var": "success",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#ff5722": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/synthwave84.json",
+        "var": "info",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#e91e63": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/synthwave84.json",
+        "var": "syntaxKeyword",
+        "selector": "json"
+      },
+      "hits": 0
     }
   },
   "provenance": "full"

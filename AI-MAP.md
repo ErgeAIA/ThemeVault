@@ -46,8 +46,8 @@ ThemeVault/
 ## 2. 家族现状（2026-08-07）
 
 <!-- BEGIN:generated family-status -->
-23 个家族 / 146 套主题（145 value theme + 1 skin，数字以 `INDEX.json` 的 `stats` 为准：
-familyCount 23 / themeCount 146 / valueThemeCount 145 / skinCount 1 / tokenTotal 6940，56 light + 89 dark）。
+23 个家族 / 150 套主题（149 value theme + 1 skin，数字以 `INDEX.json` 的 `stats` 为准：
+familyCount 23 / themeCount 150 / valueThemeCount 149 / skinCount 1 / tokenTotal 7079，60 light + 89 dark）。
 
 | 家族 | 主题数 | 方案 | 契约版本 | required/derived | 角色命名 | 来源 |
 |------|--------|------|----------|------------------|----------|------|
@@ -55,13 +55,13 @@ familyCount 23 / themeCount 146 / valueThemeCount 145 / skinCount 1 / tokenTotal
 | catppuccin | 4 | 1L+3D | v3 | 29/33 | L1 通用 | MIT |
 | ergemd | 14 | 2L+12D | v1 | 34/58 | ErgeMD 原生名 | AGPL-3.0 |
 | aura | 2 | 0L+2D | v1 | 29/13 | L1 通用 | MIT |
-| dracula | 1 | 0L+1D | v1 | 29/12 | L1 通用 | MIT |
-| nord | 1 | 0L+1D | v1 | 29/11 | L1 通用 | MIT |
+| dracula | 2 | 1L+1D | v1 | 29/12 | L1 通用 | MIT |
+| nord | 2 | 1L+1D | v1 | 29/11 | L1 通用 | MIT |
 | solarized | 2 | 1L+1D | v1 | 29/6 | L1 通用 | MIT |
-| tokyonight | 3 | 0L+3D | v1 | 29/9 | L1 通用 | Apache-2.0 |
+| tokyonight | 4 | 1L+3D | v1 | 29/9 | L1 通用 | MIT |
 | one-dark-pro | 1 | 0L+1D | v1 | 29/5 | L1 通用 | MIT |
 | night-owl | 2 | 1L+1D | v1 | 29/6 | L1 通用 | MIT |
-| synthwave | 1 | 0L+1D | v1 | 29/6 | L1 通用 | MIT |
+| synthwave | 2 | 1L+1D | v1 | 29/6 | L1 通用 | MIT |
 | iceberg | 2 | 1L+1D | v1 | 29/6 | L1 通用 | MIT |
 | kanagawa | 3 | 1L+2D | v1 | 29/5 | L1 通用 | MIT |
 | everforest | 2 | 1L+1D | v1 | 29/5 | L1 通用 | MIT |

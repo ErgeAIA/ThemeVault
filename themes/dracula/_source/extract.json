@@ -246,6 +246,132 @@
         "selector": "literal"
       },
       "hits": 21
+    },
+    "#f8f8f2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/dracula.json",
+        "var": "background",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#e8e8e2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/dracula.json",
+        "var": "backgroundPanel",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#d8d8d2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/dracula.json",
+        "var": "backgroundElement",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#282a36": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/dracula.json",
+        "var": "text",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#6272a4": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/dracula.json",
+        "var": "textMuted",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#c8c8c2": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/dracula.json",
+        "var": "border",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#bd93f9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/dracula.json",
+        "var": "borderActive",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#e0e0e0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/dracula.json",
+        "var": "borderSubtle",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#8be9fd": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/dracula.json",
+        "var": "accent",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#ff5555": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/dracula.json",
+        "var": "error",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#f1fa8c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/dracula.json",
+        "var": "warning",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#50fa7b": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/dracula.json",
+        "var": "success",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#ffb86c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/dracula.json",
+        "var": "info",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#ff79c6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/dracula.json",
+        "var": "syntaxKeyword",
+        "selector": "json"
+      },
+      "hits": 0
     }
   },
   "provenance": "full"

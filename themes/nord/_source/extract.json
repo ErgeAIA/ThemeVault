@@ -786,6 +786,51 @@
         "selector": "json"
       },
       "hits": 37
+    },
+    "#E5E9F0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/nord.json",
+        "var": "backgroundPanel",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#2E3440": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/nord.json",
+        "var": "text",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#3B4252": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/nord.json",
+        "var": "textMuted",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#4C566A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/nord.json",
+        "var": "border",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#434C5E": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/nord.json",
+        "var": "borderActive",
+        "selector": "json"
+      },
+      "hits": 0
     }
   },
   "provenance": "full"

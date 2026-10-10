@@ -155,17 +155,21 @@
 | 144 | `themes/opencode/vesper-light` | opencode | vesper-light | vesper | MIT | light | 9 | 41 | ✅ 已提取 |  |
 | 145 | `themes/opencode/zenburn` | opencode | zenburn | zenburn | MIT | dark | 9 | 41 | ✅ 已提取 |  |
 | 146 | `themes/opencode/zenburn-light` | opencode | zenburn-light | zenburn | MIT | light | 9 | 41 | ✅ 已提取 |  |
+| 147 | `themes/dracula/light` | dracula | light | dracula Light | MIT | light | 29 | 6 | ✅ 已提取 |  |
+| 148 | `themes/nord/light` | nord | light | nord Light | MIT | light | 29 | 6 | ✅ 已提取 |  |
+| 149 | `themes/tokyonight/light` | tokyonight | light | tokyonight Light | MIT | light | 29 | 5 | ✅ 已提取 |  |
+| 150 | `themes/synthwave/light` | synthwave | light | synthwave84 Light | MIT | light | 29 | 6 | ✅ 已提取 |  |
 <!-- END:generated index-table -->
 
 ## 统计
 
 <!-- BEGIN:generated index-stats -->
 - 已入库来源项目：**23**（opensquilla、catppuccin、ergemd、aura、dracula、nord、solarized、tokyonight、one-dark-pro、night-owl、synthwave、iceberg、kanagawa、everforest、rose-pine、ayu、jellyfish、shades、vue、falcon、omni、onepage、opencode）
-- value theme：**145 套**（56 light + 89 dark）
+- value theme：**149 套**（60 light + 89 dark）
 - expressive skin：**1 套**
-- stats（INDEX.json）：familyCount 23 / themeCount 146 / valueThemeCount 145 / skinCount 1 / tokenTotal 6940
-- 色板表令牌总量：**6940 个**
-- 协议分布（value theme）：MIT × 118 + AGPL-3.0 × 14 + Apache-2.0 × 13
+- stats（INDEX.json）：familyCount 23 / themeCount 150 / valueThemeCount 149 / skinCount 1 / tokenTotal 7079
+- 色板表令牌总量：**7079 个**
+- 协议分布（value theme）：MIT × 122 + AGPL-3.0 × 14 + Apache-2.0 × 13
 
 > 本节由 `scripts/gen_docs_views.py` 从 `INDEX.json` 生成，禁止手改。
 <!-- END:generated index-stats -->

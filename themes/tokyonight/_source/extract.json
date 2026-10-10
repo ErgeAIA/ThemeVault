@@ -543,6 +543,132 @@
         "selector": "json"
       },
       "hits": 93
+    },
+    "#e1e2e7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/tokyonight.json",
+        "var": "background",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#d5d6db": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/tokyonight.json",
+        "var": "backgroundPanel",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#c8c9ce": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/tokyonight.json",
+        "var": "backgroundElement",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#3760bf": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/tokyonight.json",
+        "var": "text",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#8990a3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/tokyonight.json",
+        "var": "textMuted",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#737a8c": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/tokyonight.json",
+        "var": "border",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#5a607d": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/tokyonight.json",
+        "var": "borderActive",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#9699a8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/tokyonight.json",
+        "var": "borderSubtle",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#b15c00": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/tokyonight.json",
+        "var": "accent",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#2e7de9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/tokyonight.json",
+        "var": "primary",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#f52a65": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/tokyonight.json",
+        "var": "error",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#587539": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/tokyonight.json",
+        "var": "success",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#9854f1": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/tokyonight.json",
+        "var": "syntaxKeyword",
+        "selector": "json"
+      },
+      "hits": 0
+    },
+    "#8c6c3e": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "opencode/_source/tokyonight.json",
+        "var": "syntaxType",
+        "selector": "json"
+      },
+      "hits": 0
     }
   },
   "provenance": "full"

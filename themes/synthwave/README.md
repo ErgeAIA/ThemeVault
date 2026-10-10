@@ -8,9 +8,9 @@
 | 主题 ID | 显示名 | 方案 | 类型 | 说明 |
 |---------|--------|------|------|------|
 | `dark` | Synthwave 84 | dark | value theme | 霓虹 dark |
+| `light` | synthwave84 Light | light | value theme | DSH 补充 light（OpenCode→L1 映射） |
 
 > 霓虹风格；文本保持白色（README 明示）
-
 ## L1 语义角色映射（本家族统一）
 
 > 本家族主题是 **VS Code 语义键集**（editor.* / sideBar.* / terminal.ansi* + tokenColors），

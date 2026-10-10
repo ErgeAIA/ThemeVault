@@ -3,6 +3,7 @@
   "family": "tokyonight",
   "ir": "L1-v4",
   "themes": [
+    "light",
     "moon",
     "night",
     "storm"
@@ -13,14 +14,14 @@
         "blue"
       ],
       "kind": "强调",
-      "themeCount": 3
+      "themeCount": 4
     },
     "accent-deep": {
       "sources": [
         "blue0"
       ],
       "kind": "强调",
-      "themeCount": 3
+      "themeCount": 4
     },
     "accent-foreground": {
       "sources": [
@@ -28,7 +29,7 @@
         "accent"
       ],
       "kind": "强调",
-      "themeCount": 3
+      "themeCount": 4
     },
     "accent-hover": {
       "sources": [
@@ -36,87 +37,94 @@
         "hover"
       ],
       "kind": "强调",
-      "themeCount": 3
+      "themeCount": 4
     },
     "accent-secondary": {
       "sources": [
+        "primary",
         "cyan"
       ],
       "kind": "强调",
-      "themeCount": 3
+      "themeCount": 4
     },
     "bg": {
-      "sources": [],
+      "sources": [
+        "background"
+      ],
       "kind": "中性",
-      "themeCount": 3
+      "themeCount": 4
     },
     "bg-elevated": {
       "sources": [
         "bg"
       ],
       "kind": "中性",
-      "themeCount": 3
+      "themeCount": 4
     },
     "bg-hover": {
       "sources": [
         "bg_highlight"
       ],
       "kind": "中性",
-      "themeCount": 3
+      "themeCount": 4
     },
     "bg-surface": {
       "sources": [
+        "backgroundPanel",
         "bg_dark"
       ],
       "kind": "中性",
-      "themeCount": 3
+      "themeCount": 4
     },
     "bg-surface-2": {
       "sources": [
+        "backgroundElement",
         "bg_dark1"
       ],
       "kind": "中性",
-      "themeCount": 3
+      "themeCount": 4
     },
     "border": {
       "sources": [
         "dark3"
       ],
       "kind": "中性",
-      "themeCount": 3
+      "themeCount": 4
     },
     "border-focus": {
       "sources": [
         "blue"
       ],
       "kind": "中性",
-      "themeCount": 3
+      "themeCount": 4
     },
     "border-strong": {
       "sources": [
+        "borderActive",
         "dark5"
       ],
       "kind": "中性",
-      "themeCount": 3
+      "themeCount": 4
     },
     "card": {
       "sources": [
         "bg_dark"
       ],
       "kind": "中性",
-      "themeCount": 3
+      "themeCount": 4
     },
     "danger": {
       "sources": [
+        "error",
         "red"
       ],
       "kind": "功能",
-      "themeCount": 3
+      "themeCount": 4
     },
     "danger-fill": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 3
+      "themeCount": 4
     },
     "git-add": {
       "sources": [],
@@ -135,90 +143,98 @@
     },
     "hairline": {
       "sources": [
+        "borderSubtle",
         "fg_gutter"
       ],
       "kind": "中性",
-      "themeCount": 3
+      "themeCount": 4
     },
     "info": {
       "sources": [
         "blue"
       ],
       "kind": "功能",
-      "themeCount": 3
+      "themeCount": 4
     },
     "info-fill": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 3
+      "themeCount": 4
     },
     "ok": {
       "sources": [
+        "success",
         "green"
       ],
       "kind": "功能",
-      "themeCount": 3
+      "themeCount": 4
     },
     "ok-fill": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 3
+      "themeCount": 4
     },
     "queued": {
       "sources": [
         "magenta"
       ],
       "kind": "功能",
-      "themeCount": 3
+      "themeCount": 4
     },
     "queued-fill": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 3
+      "themeCount": 4
     },
     "syntax-attr": {
       "sources": [
+        "syntaxVariable",
         "yellow"
       ],
       "kind": "语法",
-      "themeCount": 3
+      "themeCount": 4
     },
     "syntax-comment": {
       "sources": [
+        "syntaxComment",
         "comment"
       ],
       "kind": "语法",
-      "themeCount": 3
+      "themeCount": 4
     },
     "syntax-keyword": {
       "sources": [
+        "syntaxKeyword",
         "purple",
         "keyword"
       ],
       "kind": "语法",
-      "themeCount": 3
+      "themeCount": 4
     },
     "syntax-literal": {
       "sources": [
+        "syntaxNumber",
         "orange"
       ],
       "kind": "语法",
-      "themeCount": 3
+      "themeCount": 4
     },
     "syntax-string": {
       "sources": [
+        "syntaxString",
         "green",
         "string"
       ],
       "kind": "语法",
-      "themeCount": 3
+      "themeCount": 4
     },
     "syntax-title": {
       "sources": [
+        "syntaxType",
         "blue"
       ],
       "kind": "语法",
-      "themeCount": 3
+      "themeCount": 4
     },
     "terminal-black": {
       "sources": [
@@ -233,33 +249,35 @@
         "fg"
       ],
       "kind": "中性",
-      "themeCount": 3
+      "themeCount": 4
     },
     "text-dim": {
       "sources": [
         "fg_gutter"
       ],
       "kind": "中性",
-      "themeCount": 3
+      "themeCount": 4
     },
     "text-muted": {
       "sources": [
+        "textMuted",
         "fg_dark"
       ],
       "kind": "中性",
-      "themeCount": 3
+      "themeCount": 4
     },
     "warn": {
       "sources": [
+        "warning",
         "orange"
       ],
       "kind": "功能",
-      "themeCount": 3
+      "themeCount": 4
     },
     "warn-fill": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 3
+      "themeCount": 4
     }
   }
 }

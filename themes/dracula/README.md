@@ -8,7 +8,7 @@
 | 主题 ID | 显示名 | 方案 | 类型 | 说明 |
 |---------|--------|------|------|------|
 | `dark` | Dracula | dark | value theme | 经典暗色（官方唯一主题，无 light 变体） |
-
+| `light` | dracula Light | light | value theme | DSH 补充 light（OpenCode→L1 映射） |
 ## L1 语义角色映射（本家族统一）
 
 > Dracula 是**命名色板**（base 11 色 + UI 变体 4 色），不是 UI 令牌集。下表是本仓库把

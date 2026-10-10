@@ -8,10 +8,10 @@
 | 主题 ID | 显示名 | 方案 | 类型 | 说明 |
 |---------|--------|------|------|------|
 | `dark` | Nord | dark | value theme | 北极蓝极简 palette，官方唯一方案（无 light 变体） |
+| `light` | nord Light | light | value theme | DSH 补充 light（OpenCode→L1 映射） |
 
 > **生态主仓库**：nordtheme/nord 是聚合仓库（16 色 palette + 各平台 ports）；UI 语义取自 VS Code 端口。
 > 本仓库收录 Nord 本体 palette 为 1 套 dark value theme。
-
 ## L1 语义角色映射（本家族统一）
 
 > Nord 是**命名色板**（16 色：Polar Night nord0–3、Snow Storm nord4–6、Frost nord7–10、Aurora

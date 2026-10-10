@@ -3,65 +3,72 @@
   "family": "synthwave",
   "ir": "L1-v4",
   "themes": [
-    "dark"
+    "dark",
+    "light"
   ],
   "map": {
     "accent": {
       "sources": [],
       "kind": "强调",
-      "themeCount": 1
+      "themeCount": 2
     },
     "accent-deep": {
       "sources": [],
       "kind": "强调",
-      "themeCount": 1
+      "themeCount": 2
     },
     "accent-foreground": {
       "sources": [],
       "kind": "强调",
-      "themeCount": 1
+      "themeCount": 2
     },
     "accent-hover": {
       "sources": [],
       "kind": "强调",
-      "themeCount": 1
+      "themeCount": 2
     },
     "accent-secondary": {
-      "sources": [],
+      "sources": [
+        "primary"
+      ],
       "kind": "强调",
-      "themeCount": 1
+      "themeCount": 2
     },
     "bg": {
       "sources": [
-        "editor.background"
+        "editor.background",
+        "background"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "bg-elevated": {
       "sources": [],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "bg-hover": {
       "sources": [
         "list.hoverBackground"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "bg-surface": {
-      "sources": [],
+      "sources": [
+        "backgroundPanel"
+      ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "bg-surface-2": {
       "sources": [
         "statusBar",
-        "input.background"
+        "input.background",
+        "backgroundElement"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "border": {
       "sources": [
@@ -69,144 +76,163 @@
         "editorWidget.border"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "border-focus": {
       "sources": [
         "focusBorder"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "border-strong": {
-      "sources": [],
+      "sources": [
+        "borderActive"
+      ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "card": {
       "sources": [],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "danger": {
       "sources": [
-        "terminal.ansiRed"
+        "terminal.ansiRed",
+        "error"
       ],
       "kind": "功能",
-      "themeCount": 1
+      "themeCount": 2
     },
     "danger-fill": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 1
+      "themeCount": 2
     },
     "hairline": {
-      "sources": [],
+      "sources": [
+        "borderSubtle"
+      ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "info": {
       "sources": [],
       "kind": "功能",
-      "themeCount": 1
+      "themeCount": 2
     },
     "info-fill": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 1
+      "themeCount": 2
     },
     "ok": {
       "sources": [
-        "terminal.ansiGreen"
+        "terminal.ansiGreen",
+        "success"
       ],
       "kind": "功能",
-      "themeCount": 1
+      "themeCount": 2
     },
     "ok-fill": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 1
+      "themeCount": 2
     },
     "queued": {
       "sources": [
         "terminal.ansiMagenta"
       ],
       "kind": "功能",
-      "themeCount": 1
+      "themeCount": 2
     },
     "queued-fill": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 1
+      "themeCount": 2
     },
     "selection": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 1
+      "themeCount": 2
     },
     "syntax-attr": {
-      "sources": [],
+      "sources": [
+        "syntaxVariable"
+      ],
       "kind": "语法",
-      "themeCount": 1
+      "themeCount": 2
     },
     "syntax-comment": {
-      "sources": [],
+      "sources": [
+        "syntaxComment"
+      ],
       "kind": "语法",
-      "themeCount": 1
+      "themeCount": 2
     },
     "syntax-keyword": {
       "sources": [
         "tokenColors",
-        "keyword"
+        "keyword",
+        "syntaxKeyword"
       ],
       "kind": "语法",
-      "themeCount": 1
+      "themeCount": 2
     },
     "syntax-literal": {
       "sources": [
         "tokenColors",
         "number",
-        "constant"
+        "constant",
+        "syntaxNumber"
       ],
       "kind": "语法",
-      "themeCount": 1
+      "themeCount": 2
     },
     "syntax-string": {
-      "sources": [],
+      "sources": [
+        "syntaxString"
+      ],
       "kind": "语法",
-      "themeCount": 1
+      "themeCount": 2
     },
     "syntax-title": {
-      "sources": [],
+      "sources": [
+        "syntaxType"
+      ],
       "kind": "语法",
-      "themeCount": 1
+      "themeCount": 2
     },
     "text": {
       "sources": [],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "text-dim": {
       "sources": [],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "text-muted": {
       "sources": [
-        "comment"
+        "comment",
+        "textMuted"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "warn": {
-      "sources": [],
+      "sources": [
+        "warning"
+      ],
       "kind": "功能",
-      "themeCount": 1
+      "themeCount": 2
     },
     "warn-fill": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 1
+      "themeCount": 2
     }
   }
 }

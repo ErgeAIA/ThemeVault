@@ -3,7 +3,8 @@
   "family": "nord",
   "ir": "L1-v4",
   "themes": [
-    "dark"
+    "dark",
+    "light"
   ],
   "map": {
     "accent": {
@@ -13,14 +14,14 @@
         "color"
       ],
       "kind": "强调",
-      "themeCount": 1
+      "themeCount": 2
     },
     "accent-deep": {
       "sources": [
         "nord10"
       ],
       "kind": "强调",
-      "themeCount": 1
+      "themeCount": 2
     },
     "accent-foreground": {
       "sources": [
@@ -30,7 +31,7 @@
         "accent"
       ],
       "kind": "强调",
-      "themeCount": 1
+      "themeCount": 2
     },
     "accent-hover": {
       "sources": [
@@ -38,22 +39,24 @@
         "button.hover"
       ],
       "kind": "强调",
-      "themeCount": 1
+      "themeCount": 2
     },
     "accent-secondary": {
       "sources": [
-        "nord7"
+        "nord7",
+        "primary"
       ],
       "kind": "强调",
-      "themeCount": 1
+      "themeCount": 2
     },
     "bg": {
       "sources": [
         "nord0",
-        "editor.background"
+        "editor.background",
+        "background"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "bg-elevated": {
       "sources": [
@@ -61,7 +64,7 @@
         "editorWidget.background"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "bg-hover": {
       "sources": [
@@ -70,25 +73,27 @@
         "lineHighlight"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "bg-surface": {
       "sources": [
         "nord1",
         "statusBar",
-        "input"
+        "input",
+        "backgroundPanel"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "bg-surface-2": {
       "sources": [
         "nord2",
         "selection",
-        "button.secondary"
+        "button.secondary",
+        "backgroundElement"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "border": {
       "sources": [
@@ -98,7 +103,7 @@
         "sideBar.border"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "border-focus": {
       "sources": [
@@ -107,34 +112,36 @@
         "list.focusBackground"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "border-strong": {
       "sources": [
-        "nord2"
+        "nord2",
+        "borderActive"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "card": {
       "sources": [
         "nord1"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "danger": {
       "sources": [
         "nord11",
-        "diff"
+        "diff",
+        "error"
       ],
       "kind": "功能",
-      "themeCount": 1
+      "themeCount": 2
     },
     "danger-fill": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 1
+      "themeCount": 2
     },
     "diff-insert": {
       "sources": [],
@@ -149,10 +156,11 @@
     "hairline": {
       "sources": [
         "nord3",
-        "editorWhitespace"
+        "editorWhitespace",
+        "borderSubtle"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "info": {
       "sources": [
@@ -160,37 +168,38 @@
         "inputValidation.info"
       ],
       "kind": "功能",
-      "themeCount": 1
+      "themeCount": 2
     },
     "info-fill": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 1
+      "themeCount": 2
     },
     "ok": {
       "sources": [
         "nord14",
-        "diff"
+        "diff",
+        "success"
       ],
       "kind": "功能",
-      "themeCount": 1
+      "themeCount": 2
     },
     "ok-fill": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 1
+      "themeCount": 2
     },
     "queued": {
       "sources": [
         "nord15"
       ],
       "kind": "功能",
-      "themeCount": 1
+      "themeCount": 2
     },
     "queued-fill": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 1
+      "themeCount": 2
     },
     "selection": {
       "sources": [
@@ -198,7 +207,7 @@
         "editor.selectionBackground"
       ],
       "kind": "派生",
-      "themeCount": 1
+      "themeCount": 2
     },
     "shadow": {
       "sources": [
@@ -217,48 +226,54 @@
     },
     "syntax-attr": {
       "sources": [
-        "nord8"
+        "nord8",
+        "syntaxVariable"
       ],
       "kind": "语法",
-      "themeCount": 1
+      "themeCount": 2
     },
     "syntax-comment": {
       "sources": [
         "nord3",
-        "comments"
+        "comments",
+        "syntaxComment"
       ],
       "kind": "语法",
-      "themeCount": 1
+      "themeCount": 2
     },
     "syntax-keyword": {
       "sources": [
         "nord9",
-        "keywords"
+        "keywords",
+        "syntaxKeyword"
       ],
       "kind": "语法",
-      "themeCount": 1
+      "themeCount": 2
     },
     "syntax-literal": {
       "sources": [
-        "nord15"
+        "nord15",
+        "syntaxNumber"
       ],
       "kind": "语法",
-      "themeCount": 1
+      "themeCount": 2
     },
     "syntax-string": {
       "sources": [
         "nord14",
-        "strings"
+        "strings",
+        "syntaxString"
       ],
       "kind": "语法",
-      "themeCount": 1
+      "themeCount": 2
     },
     "syntax-title": {
       "sources": [
-        "nord7"
+        "nord7",
+        "syntaxType"
       ],
       "kind": "语法",
-      "themeCount": 1
+      "themeCount": 2
     },
     "text": {
       "sources": [
@@ -266,22 +281,23 @@
         "editor.foreground"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "text-dim": {
       "sources": [
         "nord3"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "text-muted": {
       "sources": [
         "nord3",
-        "editorLineNumber"
+        "editorLineNumber",
+        "textMuted"
       ],
       "kind": "中性",
-      "themeCount": 1
+      "themeCount": 2
     },
     "text-secondary": {
       "sources": [],
@@ -290,15 +306,16 @@
     },
     "warn": {
       "sources": [
-        "nord13"
+        "nord13",
+        "warning"
       ],
       "kind": "功能",
-      "themeCount": 1
+      "themeCount": 2
     },
     "warn-fill": {
       "sources": [],
       "kind": "派生",
-      "themeCount": 1
+      "themeCount": 2
     }
   }
 }

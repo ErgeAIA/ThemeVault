@@ -20,12 +20,21 @@
   },
   "scope": {
     "themes": [
-      "dark"
+      "dark",
+      "light"
     ],
     "defaultSemantics": "frozen-default",
     "defaultNote": "回填 IR：入库时未记录运行时覆盖语义；按源码固化值处理"
   },
   "attribution": [],
   "collectedAt": "2026-09-24",
-  "backfilled": true
+  "backfilled": true,
+  "lightSupplement": {
+    "project": "FeatherHunter/dsh-opencode-palette",
+    "repo": "https://github.com/FeatherHunter/dsh-opencode-palette",
+    "pin": "9839cb3",
+    "dshTheme": "dracula",
+    "scheme": "light",
+    "note": "light 方案补充自 DSH OpenCode 主题集（与 dark 不同源；dark 源为各自原始 VS Code 主题）"
+  }
 }
