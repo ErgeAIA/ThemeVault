@@ -6,6 +6,19 @@
 
 ## [Unreleased]
 
+## 2026-10-10
+
+### 新增
+- 新增 `opencode` 家族：DSH OpenCode 主题集（@`9839cb3`，MIT 聚合）72 套主题变体（35 双方案 dark/light + 2 单方案），由 `scripts/gen_opencode.py` 数据驱动生成，含家族 contract / intent / extract / mapping
+- 为 synthwave / tokyonight / nord / dracula 4 个家族补充 light 方案（`scripts/gen_s2b_light.py`，DSH OpenCode→L1 映射，29 required 全填 + 契约兜底标注）
+- 主题总数 101 → 150，家族数 22 → 23
+
+### 变更
+- `gen_opencode.py` 新增 `AA_EXEMPTIONS` 常量：为主题注入 AA 对比度已知偏差标注（仅标注，不改值）
+- solarized 两个 light 主题（`solarized/light` #034、`opencode/solarized-light` #136）的 AA 对比度告警（textOnBg 4.13）登记为已知偏差豁免，保留源值不改（DEC-015）
+- one-dark-pro / shades 维持仅 dark（不补 light）：DSH 对应源为精简 28 角色版，缺 text-muted + syntax*，补到 L1 会产生大量契约兜底（DEC-014）
+- 根目录 `README.md` 移除「当前进度」节；进度唯一出处为 `docs/.ai/project-progress.md`，待办已转存
+
 ## 2026-09-24
 
 ### 新增
