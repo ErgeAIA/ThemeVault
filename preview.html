@@ -301,14 +301,16 @@ function renderCard(fam, theme){
   }).join("");
 
   const codeHtml = codeBlockHtml(fam, tokens, bg, text);
+  // 中文名（译名表登记才有）；用 | 分隔，避免与主题名自带的连字符混淆（如 catppuccin-frappe）
+  const zhSuffix = theme.zhName ? ` | ${esc(theme.zhName)}` : "";
   const schemeColor = scheme==="light" ? NUM_COLOR : pickReadable("#3b4bb8", "#748ffc");
   // 背景非纯色时标注源值，避免误以为该色是主题实色
   const bgNoteTag = bgPlain ? "" : `<span class="tag" title="源值为 ${esc(rawBg)}，预览回退中性底">背景源值 ${esc(rawBg)}</span>`;
   const tags = `${numTag}${brandTag}<span class="tag ${scheme}" style="color:${schemeColor}">${scheme}</span>${bgNoteTag}<span class="tag">${esc(fam.familyDisplayName || family)}</span><span class="tag">${esc(license)}</span>${fontsTag}`;
 
-  return `<div class="card" data-name="${esc(theme.displayName)}" data-family="${esc(family)}" data-scheme="${esc(scheme)}" data-number="${numStr}" style="background:${bg};color:${text}">
+  return `<div class="card" data-name="${esc(theme.displayName)}" data-zh="${esc(theme.zhName || "")}" data-family="${esc(family)}" data-scheme="${esc(scheme)}" data-number="${numStr}" style="background:${bg};color:${text}">
     <button class="cmp-check" data-number="${numStr}">＋ 对比</button>
-    <div class="card-head"><b>${titleLink(fam, theme.displayName)}</b><span class="meta">${scheme} · ${theme.tokenCount} tokens<br>${esc(license)}</span></div>
+    <div class="card-head"><b>${titleLink(fam, theme.displayName)}${zhSuffix}</b><span class="meta">${scheme} · ${theme.tokenCount} tokens<br>${esc(license)}</span></div>
     <div class="badges">${badges}</div>
     ${brandRow}
     ${sectionsHtml}
@@ -368,7 +370,8 @@ function apply(){
     const num=(c.dataset.number||"").toLowerCase();
     const sch=c.dataset.scheme||"";
     const q2=q.replace(/^#/,"");
-    const okQ=!q||name.includes(q)||fam.includes(q)||num.includes(q2);
+    const zh=(c.dataset.zh||"").toLowerCase();
+    const okQ=!q||name.includes(q)||fam.includes(q)||num.includes(q2)||zh.includes(q);
     const okS=scheme==="all"||sch===scheme;
     const okF=selectedFamily==="all"||fam===selectedFamily.toLowerCase();
     c.style.display=(okQ&&okS&&okF)?"":"none";
@@ -471,7 +474,7 @@ function renderCompare(){
   const cells=[];  // 累积 grid 单元格
   // 表头行：角色列「角色/维度」+ 各主题名
   cells.push(`<div class="cg-cell cg-head">角色/维度</div>`);
-  sel.forEach(s=>cells.push(`<div class="cg-cell cg-head">${titleLink(s, s.theme.displayName)}<br><span class="th-sub">#${String(s.theme.number).padStart(3,"0")} ${esc(s.familyDisplayName||s.family)}</span></div>`));
+  sel.forEach(s=>cells.push(`<div class="cg-cell cg-head">${titleLink(s, s.theme.displayName)}${s.theme.zhName?` | ${esc(s.theme.zhName)}`:""}<br><span class="th-sub">#${String(s.theme.number).padStart(3,"0")} ${esc(s.familyDisplayName||s.family)}</span></div>`));
   // 卡片行：角色列竖排「主题卡片」+ 各主题完整卡片（与下方矩阵列对齐）
   cells.push(`<div class="cg-cell cg-card-label">主题卡片</div>`);
   sel.forEach(s=>cells.push(`<div class="cg-cell cg-card-cell">${renderCard(s,s.theme)}</div>`));

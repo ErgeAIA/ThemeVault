@@ -8,6 +8,11 @@ This project has **no release artifacts**. Changes are separated by date, like a
 
 ## 2026-10-11
 
+### Added
+- Chinese theme names: added a curated translation table `scripts/zh_names.json` (113 unique theme names); `gen_index.py` emits `zhName`, card titles render as "English | Chinese", and search matches Chinese names
+- Separator is `|` rather than `-`: several theme names contain hyphens (catppuccin-frappe / one-dark / osaka-jade), which would be ambiguous
+- The `onepage` family already carries Chinese in its display name, so nothing is appended there
+
 ### Changed
 - Preview readability: columns changed from 4 / 340px to 3 / 440px (fewer cards per row, wider cards), gutter 18 -> 22px
 - Type scale lifted: theme name 14 -> 17px, swatch hex 9 -> 12px and role label 9 -> 11px, code block 11 -> 13px (line-height 1.7), meta and AA badges 10 -> 12px, tags 11 -> 12.5px; smallest size on the page raised from 9px to 11px

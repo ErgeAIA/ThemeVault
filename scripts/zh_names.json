@@ -1,0 +1,161 @@
+{
+  "_comment": "主题中文名（人工核定）。结构：<家族> -> <显示名> -> 中文名。未登记的主题不显示中文名（预览不追加分隔符）。同名 dark/light 变体共享一条。品牌名（GitHub / Vercel / OpenCode / OC-2）保留原文。",
+
+  "aura": {
+    "Aura Dark": "光晕·暗",
+    "Aura Soft Dark": "光晕·柔暗"
+  },
+  "ayu": {
+    "Ayu Dark": "阿玉·暗",
+    "Ayu Light": "阿玉·亮",
+    "Ayu Mirage": "阿玉·幻景"
+  },
+  "catppuccin": {
+    "Frappe": "芙拉佩",
+    "Latte": "拿铁",
+    "Macchiato": "玛奇朵",
+    "Mocha": "摩卡"
+  },
+  "dracula": {
+    "Dracula": "德古拉",
+    "dracula Light": "德古拉·亮"
+  },
+  "ergemd": {
+    "Aurora": "极光",
+    "Cherry Blossom": "樱花",
+    "Cyberpunk": "赛博朋克",
+    "Dark": "暗色",
+    "Desert Sunset": "沙漠落日",
+    "Falcon": "猎鹰",
+    "Forest": "森林",
+    "Light": "亮色",
+    "Monochrome": "单色",
+    "Neon Cyberpunk": "霓虹赛博朋克",
+    "Ocean": "海洋",
+    "Solar Flare": "太阳耀斑",
+    "Solarized Light": "日晒·亮",
+    "Tokyo Night": "东京之夜"
+  },
+  "everforest": {
+    "Everforest": "常青森林",
+    "Everforest Light": "常青森林·亮"
+  },
+  "falcon": {
+    "Falcon Dark": "猎鹰·暗",
+    "Falcon Dark Blue": "猎鹰·暗蓝",
+    "Falcon Dark Green": "猎鹰·暗绿",
+    "Falcon Dark Green(Islands)": "猎鹰·暗绿（群岛）",
+    "Falcon Light Bean Green": "猎鹰·亮豆绿",
+    "Falcon Light Buff": "猎鹰·亮浅褐",
+    "Falcon Light Celadon": "猎鹰·亮青瓷",
+    "Falcon Light Green": "猎鹰·亮绿",
+    "Falcon Light Green(Islands)": "猎鹰·亮绿（群岛）",
+    "Falcon Light Grey": "猎鹰·亮灰",
+    "Falcon Light Pink": "猎鹰·亮粉",
+    "Falcon Light Yellow": "猎鹰·亮黄"
+  },
+  "iceberg": {
+    "Iceberg": "冰山",
+    "Iceberg Light": "冰山·亮"
+  },
+  "jellyfish": {
+    "JellyFish": "水母"
+  },
+  "kanagawa": {
+    "Kanagawa Dragon": "神奈川·龙",
+    "Kanagawa Lotus": "神奈川·莲",
+    "Kanagawa Wave": "神奈川·浪"
+  },
+  "night-owl": {
+    "Light Owl": "亮色猫头鹰",
+    "Night Owl": "夜枭"
+  },
+  "nord": {
+    "Nord": "诺德",
+    "nord Light": "诺德·亮"
+  },
+  "omni": {
+    "Omni": "全能"
+  },
+  "one-dark-pro": {
+    "One Dark Pro": "一暗·专业版"
+  },
+  "opencode": {
+    "amoled": "纯黑",
+    "aura": "光晕",
+    "ayu": "阿玉",
+    "carbonfox": "碳狐",
+    "catppuccin": "卡布奇诺",
+    "catppuccin-frappe": "卡布奇诺·芙拉佩",
+    "catppuccin-macchiato": "卡布奇诺·玛奇朵",
+    "cobalt2": "钴蓝 2",
+    "cursor": "光标",
+    "dracula": "德古拉",
+    "everforest": "常青森林",
+    "flexoki": "弗莱科基",
+    "github": "GitHub",
+    "gruvbox": "格鲁夫盒",
+    "kanagawa": "神奈川",
+    "lucent-orng": "明橙",
+    "material": "材质",
+    "matrix": "矩阵",
+    "mercury": "水星",
+    "monokai": "莫诺凯",
+    "nightowl": "夜枭",
+    "nord": "诺德",
+    "oc-2": "OC-2",
+    "one-dark": "一暗",
+    "onedarkpro": "一暗·专业版",
+    "opencode": "OpenCode",
+    "orng": "橙",
+    "osaka-jade": "大阪翡翠",
+    "palenight": "苍白之夜",
+    "rosepine": "玫瑰松",
+    "shadesofpurple": "紫韵",
+    "solarized": "日晒",
+    "synthwave84": "合成波 84",
+    "tokyonight": "东京之夜",
+    "vercel": "Vercel",
+    "vesper": "晚祷",
+    "zenburn": "禅燃"
+  },
+  "opensquilla": {
+    "Arctic": "北极",
+    "CRT Green": "CRT 绿",
+    "Dark": "暗色",
+    "Ember": "余烬",
+    "Light": "亮色",
+    "Miami": "迈阿密",
+    "Out-of-Register": "套色偏移",
+    "Synthwave": "合成波",
+    "Terminal": "终端",
+    "Vapor": "蒸汽"
+  },
+  "rose-pine": {
+    "Rose Pine": "玫瑰松",
+    "Rose Pine Dawn": "玫瑰松·黎明",
+    "Rose Pine Moon": "玫瑰松·月"
+  },
+  "shades": {
+    "Shades of Purple": "紫韵",
+    "Shades of Purple (Super Dark)": "紫韵·超暗"
+  },
+  "solarized": {
+    "Solarized Dark": "日晒·暗",
+    "Solarized Light": "日晒·亮"
+  },
+  "synthwave": {
+    "Synthwave 84": "合成波 84",
+    "synthwave84 Light": "合成波 84·亮"
+  },
+  "tokyonight": {
+    "Tokyo Night": "东京之夜",
+    "Tokyo Night Moon": "东京之夜·月",
+    "Tokyo Night Storm": "东京之夜·风暴",
+    "tokyonight Light": "东京之夜·亮"
+  },
+  "vue": {
+    "Vue Theme": "Vue 主题",
+    "Vue Theme High Contrast": "Vue 主题·高对比"
+  }
+}

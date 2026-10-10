@@ -20,6 +20,27 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 THEMES = ROOT / "themes"
 INDEX_JSON = ROOT / "INDEX.json"
+# 主题中文名（人工核定的译名表，结构：<家族> -> <显示名> -> 中文名）
+ZH_NAMES_JSON = Path(__file__).resolve().parent / "zh_names.json"
+
+
+def load_zh_names() -> dict:
+    """加载主题中文名译名表；文件缺失或解析失败时返回空表（不影响生成）。"""
+    if not ZH_NAMES_JSON.exists():
+        return {}
+    try:
+        data = json.loads(ZH_NAMES_JSON.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    return {k: v for k, v in data.items() if not k.startswith("_")}
+
+
+ZH_NAMES = load_zh_names()
+
+
+def zh_name_of(family: str, display_name: str) -> str | None:
+    """主题中文名；未登记返回 None（预览不追加分隔符）。"""
+    return ZH_NAMES.get(family, {}).get(display_name)
 
 ROLE_RE = re.compile(r"^\|\s*`(--[a-zA-Z0-9-]+)`\s*\|\s*`([^`]*)`\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|$")
 META_RE = re.compile(r"^\s*(?:-\s+)?\*\*(.+?)\*\*[：:]\s*(.+?)\s*$")
@@ -461,6 +482,7 @@ def main() -> int:
             themes.append({
                 "id": tid,
                 "displayName": meta.get("显示名", tid),
+                "zhName": zh_name_of(fam_dir.name, meta.get("显示名", tid)),
                 "scheme": scheme_of(meta),
                 "type": type_of(meta, has_palette),
                 "path": f"themes/{fam_dir.name}/{tid}",

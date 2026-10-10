@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T16:22:13+00:00",
+  "generatedAt": "2026-10-10T17:38:36+00:00",
   "generator": "scripts/gen_index.py",
   "singleSourceOfTruth": "themes/<family>/_source/contract.json",
   "families": [
@@ -87,6 +87,7 @@
         {
           "id": "arctic",
           "displayName": "Arctic",
+          "zhName": "北极",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opensquilla/arctic",
@@ -155,6 +156,7 @@
         {
           "id": "crt-green",
           "displayName": "CRT Green",
+          "zhName": "CRT 绿",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opensquilla/crt-green",
@@ -221,6 +223,7 @@
         {
           "id": "dark",
           "displayName": "Dark",
+          "zhName": "暗色",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opensquilla/dark",
@@ -289,6 +292,7 @@
         {
           "id": "ember",
           "displayName": "Ember",
+          "zhName": "余烬",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opensquilla/ember",
@@ -358,6 +362,7 @@
         {
           "id": "light",
           "displayName": "Light",
+          "zhName": "亮色",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opensquilla/light",
@@ -447,6 +452,7 @@
         {
           "id": "miami",
           "displayName": "Miami",
+          "zhName": "迈阿密",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opensquilla/miami",
@@ -521,6 +527,7 @@
         {
           "id": "out-of-register",
           "displayName": "Out-of-Register",
+          "zhName": "套色偏移",
           "scheme": "both",
           "type": "expressive-skin",
           "path": "themes/opensquilla/out-of-register",
@@ -546,6 +553,7 @@
         {
           "id": "synthwave",
           "displayName": "Synthwave",
+          "zhName": "合成波",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opensquilla/synthwave",
@@ -615,6 +623,7 @@
         {
           "id": "terminal",
           "displayName": "Terminal",
+          "zhName": "终端",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opensquilla/terminal",
@@ -683,6 +692,7 @@
         {
           "id": "vapor",
           "displayName": "Vapor",
+          "zhName": "蒸汽",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opensquilla/vapor",
@@ -831,6 +841,7 @@
         {
           "id": "frappe",
           "displayName": "Frappe",
+          "zhName": "芙拉佩",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/catppuccin/frappe",
@@ -902,6 +913,7 @@
         {
           "id": "latte",
           "displayName": "Latte",
+          "zhName": "拿铁",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/catppuccin/latte",
@@ -973,6 +985,7 @@
         {
           "id": "macchiato",
           "displayName": "Macchiato",
+          "zhName": "玛奇朵",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/catppuccin/macchiato",
@@ -1044,6 +1057,7 @@
         {
           "id": "mocha",
           "displayName": "Mocha",
+          "zhName": "摩卡",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/catppuccin/mocha",
@@ -1223,6 +1237,7 @@
         {
           "id": "aurora",
           "displayName": "Aurora",
+          "zhName": "极光",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/ergemd/aurora",
@@ -1352,6 +1367,7 @@
         {
           "id": "cherry-blossom",
           "displayName": "Cherry Blossom",
+          "zhName": "樱花",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/ergemd/cherry-blossom",
@@ -1481,6 +1497,7 @@
         {
           "id": "cyberpunk",
           "displayName": "Cyberpunk",
+          "zhName": "赛博朋克",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/ergemd/cyberpunk",
@@ -1610,6 +1627,7 @@
         {
           "id": "dark",
           "displayName": "Dark",
+          "zhName": "暗色",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/ergemd/dark",
@@ -1739,6 +1757,7 @@
         {
           "id": "desert-sunset",
           "displayName": "Desert Sunset",
+          "zhName": "沙漠落日",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/ergemd/desert-sunset",
@@ -1868,6 +1887,7 @@
         {
           "id": "falcon",
           "displayName": "Falcon",
+          "zhName": "猎鹰",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/ergemd/falcon",
@@ -1997,6 +2017,7 @@
         {
           "id": "forest",
           "displayName": "Forest",
+          "zhName": "森林",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/ergemd/forest",
@@ -2126,6 +2147,7 @@
         {
           "id": "light",
           "displayName": "Light",
+          "zhName": "亮色",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/ergemd/light",
@@ -2255,6 +2277,7 @@
         {
           "id": "monochrome",
           "displayName": "Monochrome",
+          "zhName": "单色",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/ergemd/monochrome",
@@ -2384,6 +2407,7 @@
         {
           "id": "neon-cyberpunk",
           "displayName": "Neon Cyberpunk",
+          "zhName": "霓虹赛博朋克",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/ergemd/neon-cyberpunk",
@@ -2513,6 +2537,7 @@
         {
           "id": "ocean",
           "displayName": "Ocean",
+          "zhName": "海洋",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/ergemd/ocean",
@@ -2642,6 +2667,7 @@
         {
           "id": "solar-flare",
           "displayName": "Solar Flare",
+          "zhName": "太阳耀斑",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/ergemd/solar-flare",
@@ -2771,6 +2797,7 @@
         {
           "id": "solarized-light",
           "displayName": "Solarized Light",
+          "zhName": "日晒·亮",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/ergemd/solarized-light",
@@ -2900,6 +2927,7 @@
         {
           "id": "tokyo-night",
           "displayName": "Tokyo Night",
+          "zhName": "东京之夜",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/ergemd/tokyo-night",
@@ -3111,6 +3139,7 @@
         {
           "id": "dark",
           "displayName": "Aura Dark",
+          "zhName": "光晕·暗",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/aura/dark",
@@ -3190,6 +3219,7 @@
         {
           "id": "soft-dark",
           "displayName": "Aura Soft Dark",
+          "zhName": "光晕·柔暗",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/aura/soft-dark",
@@ -3351,6 +3381,7 @@
         {
           "id": "dark",
           "displayName": "Dracula",
+          "zhName": "德古拉",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/dracula/dark",
@@ -3429,6 +3460,7 @@
         {
           "id": "light",
           "displayName": "dracula Light",
+          "zhName": "德古拉·亮",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/dracula/light",
@@ -3583,6 +3615,7 @@
         {
           "id": "dark",
           "displayName": "Nord",
+          "zhName": "诺德",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/nord/dark",
@@ -3660,6 +3693,7 @@
         {
           "id": "light",
           "displayName": "nord Light",
+          "zhName": "诺德·亮",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/nord/light",
@@ -3814,6 +3848,7 @@
         {
           "id": "dark",
           "displayName": "Solarized Dark",
+          "zhName": "日晒·暗",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/solarized/dark",
@@ -3886,6 +3921,7 @@
         {
           "id": "light",
           "displayName": "Solarized Light",
+          "zhName": "日晒·亮",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/solarized/light",
@@ -4040,6 +4076,7 @@
         {
           "id": "light",
           "displayName": "tokyonight Light",
+          "zhName": "东京之夜·亮",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/tokyonight/light",
@@ -4111,6 +4148,7 @@
         {
           "id": "moon",
           "displayName": "Tokyo Night Moon",
+          "zhName": "东京之夜·月",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/tokyonight/moon",
@@ -4186,6 +4224,7 @@
         {
           "id": "night",
           "displayName": "Tokyo Night",
+          "zhName": "东京之夜",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/tokyonight/night",
@@ -4261,6 +4300,7 @@
         {
           "id": "storm",
           "displayName": "Tokyo Night Storm",
+          "zhName": "东京之夜·风暴",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/tokyonight/storm",
@@ -4418,6 +4458,7 @@
         {
           "id": "dark",
           "displayName": "One Dark Pro",
+          "zhName": "一暗·专业版",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/one-dark-pro/dark",
@@ -4571,6 +4612,7 @@
         {
           "id": "dark",
           "displayName": "Night Owl",
+          "zhName": "夜枭",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/night-owl/dark",
@@ -4643,6 +4685,7 @@
         {
           "id": "light",
           "displayName": "Light Owl",
+          "zhName": "亮色猫头鹰",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/night-owl/light",
@@ -4797,6 +4840,7 @@
         {
           "id": "dark",
           "displayName": "Synthwave 84",
+          "zhName": "合成波 84",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/synthwave/dark",
@@ -4869,6 +4913,7 @@
         {
           "id": "light",
           "displayName": "synthwave84 Light",
+          "zhName": "合成波 84·亮",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/synthwave/light",
@@ -5023,6 +5068,7 @@
         {
           "id": "dark",
           "displayName": "Iceberg",
+          "zhName": "冰山",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/iceberg/dark",
@@ -5095,6 +5141,7 @@
         {
           "id": "light",
           "displayName": "Iceberg Light",
+          "zhName": "冰山·亮",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/iceberg/light",
@@ -5249,6 +5296,7 @@
         {
           "id": "dragon",
           "displayName": "Kanagawa Dragon",
+          "zhName": "神奈川·龙",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/kanagawa/dragon",
@@ -5320,6 +5368,7 @@
         {
           "id": "lotus",
           "displayName": "Kanagawa Lotus",
+          "zhName": "神奈川·莲",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/kanagawa/lotus",
@@ -5391,6 +5440,7 @@
         {
           "id": "wave",
           "displayName": "Kanagawa Wave",
+          "zhName": "神奈川·浪",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/kanagawa/wave",
@@ -5544,6 +5594,7 @@
         {
           "id": "dark",
           "displayName": "Everforest",
+          "zhName": "常青森林",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/everforest/dark",
@@ -5615,6 +5666,7 @@
         {
           "id": "light",
           "displayName": "Everforest Light",
+          "zhName": "常青森林·亮",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/everforest/light",
@@ -5768,6 +5820,7 @@
         {
           "id": "dawn",
           "displayName": "Rose Pine Dawn",
+          "zhName": "玫瑰松·黎明",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/rose-pine/dawn",
@@ -5839,6 +5892,7 @@
         {
           "id": "main",
           "displayName": "Rose Pine",
+          "zhName": "玫瑰松",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/rose-pine/main",
@@ -5910,6 +5964,7 @@
         {
           "id": "moon",
           "displayName": "Rose Pine Moon",
+          "zhName": "玫瑰松·月",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/rose-pine/moon",
@@ -6063,6 +6118,7 @@
         {
           "id": "dark",
           "displayName": "Ayu Dark",
+          "zhName": "阿玉·暗",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/ayu/dark",
@@ -6141,6 +6197,7 @@
         {
           "id": "light",
           "displayName": "Ayu Light",
+          "zhName": "阿玉·亮",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/ayu/light",
@@ -6219,6 +6276,7 @@
         {
           "id": "mirage",
           "displayName": "Ayu Mirage",
+          "zhName": "阿玉·幻景",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/ayu/mirage",
@@ -6379,6 +6437,7 @@
         {
           "id": "dark",
           "displayName": "JellyFish",
+          "zhName": "水母",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/jellyfish/dark",
@@ -6537,6 +6596,7 @@
         {
           "id": "dark",
           "displayName": "Shades of Purple",
+          "zhName": "紫韵",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/shades/dark",
@@ -6608,6 +6668,7 @@
         {
           "id": "super-dark",
           "displayName": "Shades of Purple (Super Dark)",
+          "zhName": "紫韵·超暗",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/shades/super-dark",
@@ -6761,6 +6822,7 @@
         {
           "id": "dark",
           "displayName": "Vue Theme",
+          "zhName": "Vue 主题",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/vue/dark",
@@ -6835,6 +6897,7 @@
         {
           "id": "high-contrast",
           "displayName": "Vue Theme High Contrast",
+          "zhName": "Vue 主题·高对比",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/vue/high-contrast",
@@ -6992,6 +7055,7 @@
         {
           "id": "dark",
           "displayName": "Falcon Dark",
+          "zhName": "猎鹰·暗",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/falcon/dark",
@@ -7070,6 +7134,7 @@
         {
           "id": "dark-blue",
           "displayName": "Falcon Dark Blue",
+          "zhName": "猎鹰·暗蓝",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/falcon/dark-blue",
@@ -7148,6 +7213,7 @@
         {
           "id": "dark-green",
           "displayName": "Falcon Dark Green",
+          "zhName": "猎鹰·暗绿",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/falcon/dark-green",
@@ -7226,6 +7292,7 @@
         {
           "id": "dark-green-islands",
           "displayName": "Falcon Dark Green(Islands)",
+          "zhName": "猎鹰·暗绿（群岛）",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/falcon/dark-green-islands",
@@ -7304,6 +7371,7 @@
         {
           "id": "light-bean-green",
           "displayName": "Falcon Light Bean Green",
+          "zhName": "猎鹰·亮豆绿",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/falcon/light-bean-green",
@@ -7382,6 +7450,7 @@
         {
           "id": "light-buff",
           "displayName": "Falcon Light Buff",
+          "zhName": "猎鹰·亮浅褐",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/falcon/light-buff",
@@ -7460,6 +7529,7 @@
         {
           "id": "light-celadon",
           "displayName": "Falcon Light Celadon",
+          "zhName": "猎鹰·亮青瓷",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/falcon/light-celadon",
@@ -7538,6 +7608,7 @@
         {
           "id": "light-green",
           "displayName": "Falcon Light Green",
+          "zhName": "猎鹰·亮绿",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/falcon/light-green",
@@ -7616,6 +7687,7 @@
         {
           "id": "light-green-islands",
           "displayName": "Falcon Light Green(Islands)",
+          "zhName": "猎鹰·亮绿（群岛）",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/falcon/light-green-islands",
@@ -7694,6 +7766,7 @@
         {
           "id": "light-grey",
           "displayName": "Falcon Light Grey",
+          "zhName": "猎鹰·亮灰",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/falcon/light-grey",
@@ -7772,6 +7845,7 @@
         {
           "id": "light-pink",
           "displayName": "Falcon Light Pink",
+          "zhName": "猎鹰·亮粉",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/falcon/light-pink",
@@ -7850,6 +7924,7 @@
         {
           "id": "light-yellow",
           "displayName": "Falcon Light Yellow",
+          "zhName": "猎鹰·亮黄",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/falcon/light-yellow",
@@ -8010,6 +8085,7 @@
         {
           "id": "dark",
           "displayName": "Omni",
+          "zhName": "全能",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/omni/dark",
@@ -8196,6 +8272,7 @@
         {
           "id": "warm-brown",
           "displayName": "Warm Brown · Cool Anchor（暖棕·冷锚）",
+          "zhName": null,
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/onepage/warm-brown",
@@ -8287,6 +8364,7 @@
         {
           "id": "warm-paper",
           "displayName": "Warm Paper（暖白纸张）",
+          "zhName": null,
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/onepage/warm-paper",
@@ -8477,6 +8555,7 @@
         {
           "id": "amoled",
           "displayName": "amoled",
+          "zhName": "纯黑",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/amoled",
@@ -8541,6 +8620,7 @@
         {
           "id": "amoled-light",
           "displayName": "amoled",
+          "zhName": "纯黑",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/amoled-light",
@@ -8605,6 +8685,7 @@
         {
           "id": "aura",
           "displayName": "aura",
+          "zhName": "光晕",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/aura",
@@ -8691,6 +8772,7 @@
         {
           "id": "ayu",
           "displayName": "ayu",
+          "zhName": "阿玉",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/ayu",
@@ -8777,6 +8859,7 @@
         {
           "id": "carbonfox",
           "displayName": "carbonfox",
+          "zhName": "碳狐",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/carbonfox",
@@ -8863,6 +8946,7 @@
         {
           "id": "carbonfox-light",
           "displayName": "carbonfox",
+          "zhName": "碳狐",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/carbonfox-light",
@@ -8949,6 +9033,7 @@
         {
           "id": "catppuccin",
           "displayName": "catppuccin",
+          "zhName": "卡布奇诺",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/catppuccin",
@@ -9035,6 +9120,7 @@
         {
           "id": "catppuccin-frappe",
           "displayName": "catppuccin-frappe",
+          "zhName": "卡布奇诺·芙拉佩",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/catppuccin-frappe",
@@ -9121,6 +9207,7 @@
         {
           "id": "catppuccin-frappe-light",
           "displayName": "catppuccin-frappe",
+          "zhName": "卡布奇诺·芙拉佩",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/catppuccin-frappe-light",
@@ -9207,6 +9294,7 @@
         {
           "id": "catppuccin-light",
           "displayName": "catppuccin",
+          "zhName": "卡布奇诺",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/catppuccin-light",
@@ -9293,6 +9381,7 @@
         {
           "id": "catppuccin-macchiato",
           "displayName": "catppuccin-macchiato",
+          "zhName": "卡布奇诺·玛奇朵",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/catppuccin-macchiato",
@@ -9379,6 +9468,7 @@
         {
           "id": "catppuccin-macchiato-light",
           "displayName": "catppuccin-macchiato",
+          "zhName": "卡布奇诺·玛奇朵",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/catppuccin-macchiato-light",
@@ -9465,6 +9555,7 @@
         {
           "id": "cobalt2",
           "displayName": "cobalt2",
+          "zhName": "钴蓝 2",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/cobalt2",
@@ -9551,6 +9642,7 @@
         {
           "id": "cobalt2-light",
           "displayName": "cobalt2",
+          "zhName": "钴蓝 2",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/cobalt2-light",
@@ -9637,6 +9729,7 @@
         {
           "id": "cursor",
           "displayName": "cursor",
+          "zhName": "光标",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/cursor",
@@ -9723,6 +9816,7 @@
         {
           "id": "cursor-light",
           "displayName": "cursor",
+          "zhName": "光标",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/cursor-light",
@@ -9809,6 +9903,7 @@
         {
           "id": "dracula",
           "displayName": "dracula",
+          "zhName": "德古拉",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/dracula",
@@ -9895,6 +9990,7 @@
         {
           "id": "dracula-light",
           "displayName": "dracula",
+          "zhName": "德古拉",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/dracula-light",
@@ -9981,6 +10077,7 @@
         {
           "id": "everforest",
           "displayName": "everforest",
+          "zhName": "常青森林",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/everforest",
@@ -10067,6 +10164,7 @@
         {
           "id": "everforest-light",
           "displayName": "everforest",
+          "zhName": "常青森林",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/everforest-light",
@@ -10153,6 +10251,7 @@
         {
           "id": "flexoki",
           "displayName": "flexoki",
+          "zhName": "弗莱科基",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/flexoki",
@@ -10239,6 +10338,7 @@
         {
           "id": "flexoki-light",
           "displayName": "flexoki",
+          "zhName": "弗莱科基",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/flexoki-light",
@@ -10325,6 +10425,7 @@
         {
           "id": "github",
           "displayName": "github",
+          "zhName": "GitHub",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/github",
@@ -10411,6 +10512,7 @@
         {
           "id": "github-light",
           "displayName": "github",
+          "zhName": "GitHub",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/github-light",
@@ -10497,6 +10599,7 @@
         {
           "id": "gruvbox",
           "displayName": "gruvbox",
+          "zhName": "格鲁夫盒",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/gruvbox",
@@ -10583,6 +10686,7 @@
         {
           "id": "gruvbox-light",
           "displayName": "gruvbox",
+          "zhName": "格鲁夫盒",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/gruvbox-light",
@@ -10669,6 +10773,7 @@
         {
           "id": "kanagawa",
           "displayName": "kanagawa",
+          "zhName": "神奈川",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/kanagawa",
@@ -10755,6 +10860,7 @@
         {
           "id": "kanagawa-light",
           "displayName": "kanagawa",
+          "zhName": "神奈川",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/kanagawa-light",
@@ -10841,6 +10947,7 @@
         {
           "id": "lucent-orng",
           "displayName": "lucent-orng",
+          "zhName": "明橙",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/lucent-orng",
@@ -10929,6 +11036,7 @@
         {
           "id": "lucent-orng-light",
           "displayName": "lucent-orng",
+          "zhName": "明橙",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/lucent-orng-light",
@@ -11017,6 +11125,7 @@
         {
           "id": "material",
           "displayName": "material",
+          "zhName": "材质",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/material",
@@ -11103,6 +11212,7 @@
         {
           "id": "material-light",
           "displayName": "material",
+          "zhName": "材质",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/material-light",
@@ -11189,6 +11299,7 @@
         {
           "id": "matrix",
           "displayName": "matrix",
+          "zhName": "矩阵",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/matrix",
@@ -11275,6 +11386,7 @@
         {
           "id": "matrix-light",
           "displayName": "matrix",
+          "zhName": "矩阵",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/matrix-light",
@@ -11361,6 +11473,7 @@
         {
           "id": "mercury",
           "displayName": "mercury",
+          "zhName": "水星",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/mercury",
@@ -11447,6 +11560,7 @@
         {
           "id": "mercury-light",
           "displayName": "mercury",
+          "zhName": "水星",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/mercury-light",
@@ -11533,6 +11647,7 @@
         {
           "id": "monokai",
           "displayName": "monokai",
+          "zhName": "莫诺凯",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/monokai",
@@ -11619,6 +11734,7 @@
         {
           "id": "monokai-light",
           "displayName": "monokai",
+          "zhName": "莫诺凯",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/monokai-light",
@@ -11705,6 +11821,7 @@
         {
           "id": "nightowl",
           "displayName": "nightowl",
+          "zhName": "夜枭",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/nightowl",
@@ -11791,6 +11908,7 @@
         {
           "id": "nightowl-light",
           "displayName": "nightowl",
+          "zhName": "夜枭",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/nightowl-light",
@@ -11877,6 +11995,7 @@
         {
           "id": "nord",
           "displayName": "nord",
+          "zhName": "诺德",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/nord",
@@ -11963,6 +12082,7 @@
         {
           "id": "nord-light",
           "displayName": "nord",
+          "zhName": "诺德",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/nord-light",
@@ -12049,6 +12169,7 @@
         {
           "id": "oc-2",
           "displayName": "oc-2",
+          "zhName": "OC-2",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/oc-2",
@@ -12113,6 +12234,7 @@
         {
           "id": "oc-2-light",
           "displayName": "oc-2",
+          "zhName": "OC-2",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/oc-2-light",
@@ -12177,6 +12299,7 @@
         {
           "id": "one-dark",
           "displayName": "one-dark",
+          "zhName": "一暗",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/one-dark",
@@ -12263,6 +12386,7 @@
         {
           "id": "one-dark-light",
           "displayName": "one-dark",
+          "zhName": "一暗",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/one-dark-light",
@@ -12349,6 +12473,7 @@
         {
           "id": "onedarkpro",
           "displayName": "onedarkpro",
+          "zhName": "一暗·专业版",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/onedarkpro",
@@ -12413,6 +12538,7 @@
         {
           "id": "onedarkpro-light",
           "displayName": "onedarkpro",
+          "zhName": "一暗·专业版",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/onedarkpro-light",
@@ -12477,6 +12603,7 @@
         {
           "id": "opencode",
           "displayName": "opencode",
+          "zhName": "OpenCode",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/opencode",
@@ -12563,6 +12690,7 @@
         {
           "id": "opencode-light",
           "displayName": "opencode",
+          "zhName": "OpenCode",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/opencode-light",
@@ -12649,6 +12777,7 @@
         {
           "id": "orng",
           "displayName": "orng",
+          "zhName": "橙",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/orng",
@@ -12736,6 +12865,7 @@
         {
           "id": "orng-light",
           "displayName": "orng",
+          "zhName": "橙",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/orng-light",
@@ -12823,6 +12953,7 @@
         {
           "id": "osaka-jade",
           "displayName": "osaka-jade",
+          "zhName": "大阪翡翠",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/osaka-jade",
@@ -12909,6 +13040,7 @@
         {
           "id": "osaka-jade-light",
           "displayName": "osaka-jade",
+          "zhName": "大阪翡翠",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/osaka-jade-light",
@@ -12995,6 +13127,7 @@
         {
           "id": "palenight",
           "displayName": "palenight",
+          "zhName": "苍白之夜",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/palenight",
@@ -13081,6 +13214,7 @@
         {
           "id": "palenight-light",
           "displayName": "palenight",
+          "zhName": "苍白之夜",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/palenight-light",
@@ -13167,6 +13301,7 @@
         {
           "id": "rosepine",
           "displayName": "rosepine",
+          "zhName": "玫瑰松",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/rosepine",
@@ -13253,6 +13388,7 @@
         {
           "id": "rosepine-light",
           "displayName": "rosepine",
+          "zhName": "玫瑰松",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/rosepine-light",
@@ -13339,6 +13475,7 @@
         {
           "id": "shadesofpurple",
           "displayName": "shadesofpurple",
+          "zhName": "紫韵",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/shadesofpurple",
@@ -13403,6 +13540,7 @@
         {
           "id": "shadesofpurple-light",
           "displayName": "shadesofpurple",
+          "zhName": "紫韵",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/shadesofpurple-light",
@@ -13467,6 +13605,7 @@
         {
           "id": "solarized",
           "displayName": "solarized",
+          "zhName": "日晒",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/solarized",
@@ -13553,6 +13692,7 @@
         {
           "id": "solarized-light",
           "displayName": "solarized",
+          "zhName": "日晒",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/solarized-light",
@@ -13639,6 +13779,7 @@
         {
           "id": "synthwave84",
           "displayName": "synthwave84",
+          "zhName": "合成波 84",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/synthwave84",
@@ -13725,6 +13866,7 @@
         {
           "id": "synthwave84-light",
           "displayName": "synthwave84",
+          "zhName": "合成波 84",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/synthwave84-light",
@@ -13811,6 +13953,7 @@
         {
           "id": "tokyonight",
           "displayName": "tokyonight",
+          "zhName": "东京之夜",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/tokyonight",
@@ -13897,6 +14040,7 @@
         {
           "id": "tokyonight-light",
           "displayName": "tokyonight",
+          "zhName": "东京之夜",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/tokyonight-light",
@@ -13983,6 +14127,7 @@
         {
           "id": "vercel",
           "displayName": "vercel",
+          "zhName": "Vercel",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/vercel",
@@ -14069,6 +14214,7 @@
         {
           "id": "vercel-light",
           "displayName": "vercel",
+          "zhName": "Vercel",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/vercel-light",
@@ -14155,6 +14301,7 @@
         {
           "id": "vesper",
           "displayName": "vesper",
+          "zhName": "晚祷",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/vesper",
@@ -14241,6 +14388,7 @@
         {
           "id": "vesper-light",
           "displayName": "vesper",
+          "zhName": "晚祷",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/vesper-light",
@@ -14327,6 +14475,7 @@
         {
           "id": "zenburn",
           "displayName": "zenburn",
+          "zhName": "禅燃",
           "scheme": "dark",
           "type": "value-theme",
           "path": "themes/opencode/zenburn",
@@ -14413,6 +14562,7 @@
         {
           "id": "zenburn-light",
           "displayName": "zenburn",
+          "zhName": "禅燃",
           "scheme": "light",
           "type": "value-theme",
           "path": "themes/opencode/zenburn-light",
