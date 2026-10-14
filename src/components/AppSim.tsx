@@ -1028,6 +1028,12 @@ export default function AppSim({ entry }: { entry: ThemeEntry }) {
   const [collapsed, setCollapsed] = useState(false)
   const [example, setExample] = useState<string | null>(null)
 
+  // 侧栏分组 = 常规导航 + 示例子页直达
+  const navGroups: { group: string; items: { label: string; icon: string; badge?: number; sub?: boolean }[] }[] = [
+    ...NAV,
+    { group: '示例', items: EXAMPLES.map((e) => ({ label: e.title, icon: '✧', sub: true })) },
+  ]
+
   const vars = themeVars(entry) as unknown as CSSProperties
   const Page = PAGES[current] ?? Overview
 
@@ -1049,28 +1055,38 @@ export default function AppSim({ entry }: { entry: ThemeEntry }) {
             )}
           </div>
           <nav className="sim-nav">
-            {NAV.map((g) => (
+            {navGroups.map((g) => (
               <div key={g.group} className="sim-nav-group">
                 {!collapsed && <div className="sim-nav-title">{g.group}</div>}
-                {g.items.map((it) => (
-                  <button
-                    key={it.label}
-                    className={`sim-nav-item${current === it.label ? ' on' : ''}`}
-                    onClick={() => {
-                      setCurrent(it.label)
-                      setExample(null)
-                    }}
-                    title={it.label}
-                  >
-                    <span className="sim-nav-icon">{it.icon}</span>
-                    {!collapsed && (
-                      <>
-                        <span className="sim-nav-label">{it.label}</span>
-                        {it.badge != null && <span className="sim-nav-badge">{it.badge}</span>}
-                      </>
-                    )}
-                  </button>
-                ))}
+                {g.items.map((it) => {
+                  const active = it.sub
+                    ? current === '示例' && example === it.label
+                    : current === it.label && !(it.label === '示例' && example)
+                  return (
+                    <button
+                      key={it.label}
+                      className={`sim-nav-item${active ? ' on' : ''}`}
+                      onClick={() => {
+                        if (it.sub) {
+                          setCurrent('示例')
+                          setExample(it.label)
+                        } else {
+                          setCurrent(it.label)
+                          setExample(null)
+                        }
+                      }}
+                      title={it.label}
+                    >
+                      <span className="sim-nav-icon">{it.icon}</span>
+                      {!collapsed && (
+                        <>
+                          <span className="sim-nav-label">{it.label}</span>
+                          {it.badge != null && <span className="sim-nav-badge">{it.badge}</span>}
+                        </>
+                      )}
+                    </button>
+                  )
+                })}
               </div>
             ))}
           </nav>
