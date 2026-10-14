@@ -23,6 +23,7 @@ export interface TVTheme {
   structuralNote: string | null
   license: string
   licenseNote: string | null
+  tokenCount?: number
   brand: TVBrand
   textContrast: {
     textOnBg: number | null
@@ -37,6 +38,8 @@ export interface TVFamily {
   familyDisplayName: string
   license: string
   l1RoleMap?: Record<string, string>
+  sections?: [string, string[]][]
+  badgePairs?: [string, string][]
   themes: TVTheme[]
 }
 
@@ -229,3 +232,112 @@ export function themeFontStacks(entry: ThemeEntry): FontStacks {
       : 'ui-monospace, monospace'
   return { heading: primary, body: primary, code: mono, ui: primary }
 }
+
+// ===== 卡片分区角色（与 preview.html 同口径；家族派生 sections 优先）=====
+
+const SECTION_ROLES: [string, string[]][] = [
+  [
+    '背景 / 文本 / 边框',
+    ['bg', 'bg-surface', 'bg-surface-2', 'bg-elevated', 'bg-hover', 'text', 'text-muted', 'text-dim', 'border', 'border-strong', 'border-focus', 'card', 'hairline'],
+  ],
+  ['强调色', ['accent', 'accent-hover', 'accent-deep', 'accent-secondary', 'accent-foreground']],
+  ['状态色', ['ok', 'ok-fill', 'warn', 'warn-fill', 'danger', 'danger-fill', 'info', 'info-fill', 'queued', 'queued-fill']],
+  ['语法高亮', ['syntax-comment', 'syntax-keyword', 'syntax-string', 'syntax-literal', 'syntax-title', 'syntax-attr']],
+]
+
+const FAMILY_SECTION_ROLES: Record<string, [string, string[]][]> = {
+  ergemd: [
+    ['背景 / 文本', ['bg-page', 'bg-reader', 'bg-sidebar', 'bg-code', 'bg-secondary', 'bg-tertiary', 'text-primary', 'text-secondary', 'text-muted', 'text-heading']],
+    ['标题层级', ['h1-color', 'h2-color', 'h3-color', 'h4-color', 'h5-color', 'h6-color']],
+    ['强调 / 品牌', ['accent-cyan', 'accent-pink', 'accent-purple', 'accent-green', 'accent-yellow', 'accent-orange', 'accent-red', 'accent-blue', 'brand-primary', 'brand-secondary', 'brand-logo']],
+    ['状态色 (callout)', ['obsidian-callout-note', 'obsidian-callout-info', 'obsidian-callout-success', 'obsidian-callout-warning', 'obsidian-callout-danger']],
+    ['语法高亮', ['code-keyword', 'code-string', 'code-number', 'code-comment', 'code-function', 'code-text']],
+  ],
+}
+
+const BADGE_ROLES: Record<string, [string, string][]> = {
+  opensquilla: [['text', 'bg'], ['text-muted', 'bg'], ['text-dim', 'bg']],
+  catppuccin: [['text', 'bg'], ['text-muted', 'bg'], ['text-dim', 'bg']],
+  ergemd: [['text-primary', 'bg-page'], ['text-secondary', 'bg-page'], ['text-muted', 'bg-page']],
+  opencode: [['text', 'background'], ['textMuted', 'background']],
+}
+
+/** 卡片分区：家族派生 sections 优先，否则 ergemd 专用 / 通用兜底。 */
+export function cardSections(entry: ThemeEntry): [string, string[]][] {
+  return entry.fam.sections ?? FAMILY_SECTION_ROLES[entry.fam.family] ?? SECTION_ROLES
+}
+
+const usable = (v: string | undefined): string | null =>
+  v && !v.includes('var(') ? v : null
+
+/** 家族感知 AA 对比度徽标（text/bg 等角色对），返回可读文本与是否通过。 */
+export function badgeInfos(entry: ThemeEntry): {
+  role: string
+  text: string
+  ratio: number | null
+  ok: boolean | null
+}[] {
+  const tokens = entry.theme.tokens || {}
+  const pairs = entry.fam.badgePairs ?? BADGE_ROLES[entry.fam.family] ?? BADGE_ROLES.opensquilla
+  return pairs.map(([r, bgr]) => {
+    const a = usable(tokens[r])
+    const b = usable(tokens[bgr])
+    if (!a || !b) return { role: r, text: `${r} 无`, ratio: null, ok: null }
+    const ratio = contrast(a, b)
+    if (ratio === null) return { role: r, text: `${r} 无`, ratio: null, ok: null }
+    const ok = ratio >= 4.5
+    return { role: r, text: `${r} ${ratio.toFixed(1)} ${ok ? '✓' : '✗'}`, ratio, ok }
+  })
+}
+
+/** AA 通过情况：已测对数 / 失败数。 */
+export function health(entry: ThemeEntry): { tested: number; fail: number } {
+  const b = badgeInfos(entry).filter((x) => x.ratio !== null)
+  return { tested: b.length, fail: b.filter((x) => !x.ok).length }
+}
+
+/** 卡片底色：家族 bg 角色实色，非纯色回退中性底，否则透明会露出深色页底。 */
+export function cardBg(entry: ThemeEntry): string {
+  const bgRole = entry.fam.family === 'ergemd' ? 'bg-page' : entry.fam.family === 'opencode' ? 'background' : 'bg'
+  const raw = entry.theme.tokens?.[bgRole]
+  if (raw && /^#[0-9a-fA-F]{6}$/.test(raw)) return raw
+  return entry.theme.scheme === 'light' ? '#f5f5f7' : '#101014'
+}
+
+// ===== 代码块高亮（家族感知，与 preview.html 同口径）=====
+
+const SYNTAX_ROLE_MAP: Record<string, Record<string, string>> = {
+  _default: { keyword: 'syntax-keyword', string: 'syntax-string', number: 'syntax-literal', comment: 'syntax-comment', fn: 'syntax-title', attr: 'syntax-attr' },
+  ergemd: { keyword: 'code-keyword', string: 'code-string', number: 'code-number', comment: 'code-comment', fn: 'code-function', text: 'code-text' },
+  opencode: {
+    keyword: 'syntaxKeyword', string: 'syntaxString', number: 'syntaxNumber', comment: 'syntaxComment',
+    fn: 'syntaxFunction', variable: 'syntaxVariable', type: 'syntaxType', operator: 'syntaxOperator', punctuation: 'syntaxPunctuation',
+  },
+}
+const CODE_BG_ROLE: Record<string, string> = { ergemd: 'bg-code', opencode: 'backgroundPanel' }
+const CODE_TOKEN_MAP: Record<string, string> = { c: 'comment', k: 'keyword', s: 'string', n: 'number', f: 'fn', v: 'variable', t: 'type', o: 'operator', p: 'punctuation' }
+const CODE_LINES: [string, string][][] = [
+  [['c', '// 主题预览 · syntax highlight']],
+  [['k', 'const'], ['v', ' theme'], ['o', ' = '], ['p', '{ '], ['v', 'name'], ['o', ': '], ['s', '"vault"'], ['p', ', '], ['v', 'size'], ['o', ': '], ['n', '42'], ['p', ' }']],
+  [['k', 'function'], ['f', ' pick'], ['p', '('], ['v', 't'], ['o', ': '], ['t', 'Theme'], ['p', ') {']],
+  [['d', '  '], ['k', 'return'], ['v', ' t'], ['o', '.'], ['v', 'name'], ['o', ' + '], ['s', '":"'], ['o', ' + '], ['v', 'theme.size'], ['p', ';']],
+  [['p', '}']],
+]
+
+/** 代码块按家族映射上色，返回每行 token（颜色 + 文本）；非纯色降级为 text。 */
+export function codeBlockLines(entry: ThemeEntry): { color: string; text: string }[][] {
+  const fam = entry.fam.family
+  const sm = SYNTAX_ROLE_MAP[fam] ?? SYNTAX_ROLE_MAP._default
+  const tokens = entry.theme.tokens || {}
+  const text = l1Value(entry, 'text') || '#e5e5e5'
+  const codeBg = usable(tokens[CODE_BG_ROLE[fam] ?? 'bg-surface'])
+  const colorOf = (key: string): string => {
+    const sem = CODE_TOKEN_MAP[key]
+    const role = sem ? sm[sem] : null
+    return (role && usable(tokens[role])) || text
+  }
+  return CODE_LINES.map((line) => line.map(([k, s]) => ({ color: colorOf(k), text: s })))
+}
+
+export const codeBlockBg = (entry: ThemeEntry): string | null =>
+  usable(entry.theme.tokens?.[CODE_BG_ROLE[entry.fam.family] ?? 'bg-surface']) ?? null
