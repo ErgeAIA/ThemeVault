@@ -47,7 +47,14 @@
   .swatch-color { height: 38px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-family: ui-monospace, Consolas, monospace; font-size: 12px; font-variant-numeric: tabular-nums; }
   .swatch-label { font-size: 11px; text-align: center; padding: 3px 2px 5px; white-space: normal; word-break: break-word; line-height: 1.25; opacity: 0.9; }
   /* 代码块模拟：底色 / 边框 / 语法色均取主题角色（家族感知），直观展示高亮实际效果 */
-  .code-block { margin: 10px 16px 6px; padding: 10px 12px; border-radius: 6px; border: 1px solid rgba(128,128,140,0.3); font-family: ui-monospace, Consolas, monospace; font-size: 13px; line-height: 1.7; white-space: pre; overflow-x: auto; }
+  .code-block { margin: 6px 0 0; padding: 10px 12px; border-radius: 6px; border: 1px solid rgba(128,128,140,0.3); font-family: ui-monospace, Consolas, monospace; font-size: 13px; line-height: 1.7; white-space: pre; overflow-x: auto; }
+  /* 代码块默认折叠，降低每张卡的重复视觉噪音（点击 summary 展开） */
+  .code-details { margin: 10px 16px 6px; }
+  .code-details summary { cursor: pointer; font-size: 12px; opacity: .8; padding: 2px 0; user-select: none; list-style: none; }
+  .code-details summary::-webkit-details-marker { display: none; }
+  .code-details summary::before { content: "▸ "; }
+  .code-details[open] summary::before { content: "▾ "; }
+  .code-details summary:hover { opacity: 1; }
   .code-block .cl { display: block; }
   /* 底部 tags：flex-wrap 自然换行，不硬编码列数 */
   .tags { padding: 8px 16px 12px; display: flex; flex-wrap: wrap; gap: 6px; }
@@ -55,11 +62,12 @@
   .tag.num-tag { font-family: ui-monospace, Consolas, monospace; color: #ffd43b; opacity: 1; font-variant-numeric: tabular-nums; }
   .tag.brand-tag { font-family: ui-monospace, Consolas, monospace; color: #ff9e9e; opacity: 1; }
   .tag.brand-tag .dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
-  .tag.mono-tag { font-family: ui-monospace, Consolas, monospace; color: #9ecbff; opacity: 1; }
+  .tag.mono-tag { font-family: ui-monospace, Consolas, monospace; color: #9ecbff; opacity: 1; font-weight: 600; background: rgba(158,203,255,0.14); }
+  .tag.health-tag { background: transparent; border: 1px solid; opacity: 1; font-variant-numeric: tabular-nums; }
   .tag.light { color: #ffd43b; opacity: 1; } .tag.dark { color: #748ffc; opacity: 1; }
   /* 复制色板徽章：跟在中文名后，点击复制该主题完整调色板信息（可直接发给 AI） */
-  .copy-palette { margin-left: 6px; font-family: inherit; font-size: 11px; font-weight: 400; padding: 2px 9px; border-radius: 999px; background: rgba(128,128,140,0.18); color: inherit; border: 1px solid rgba(128,128,140,0.32); cursor: pointer; vertical-align: 2px; }
-  .copy-palette:hover { background: rgba(128,128,140,0.34); }
+  .copy-palette { margin-left: 6px; font-family: inherit; font-size: 11px; font-weight: 400; padding: 2px 9px; border-radius: 999px; background: transparent; color: inherit; border: 1px solid currentColor; opacity: .7; cursor: pointer; vertical-align: 2px; }
+  .copy-palette:hover { opacity: 1; background: color-mix(in srgb, currentColor 12%, transparent); }
   .copy-palette:active { transform: translateY(1px); }
   /* 对比功能 */
   .cmp-btn { background: #1a1d24; border: 1px solid #2c313c; color: #e8e8ee; border-radius: 8px; padding: 8px 14px; font-size: 14px; cursor: pointer; }
@@ -76,7 +84,7 @@
   .card .cmp-check { display: none; position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.25); color: #fff; border-radius: 6px; padding: 3px 8px; font-size: 11px; cursor: pointer; z-index: 3; }
   .card.cmp-mode .cmp-check { display: block; }
   .card.cmp-mode .cmp-check:hover { background: rgba(0,0,0,0.7); }
-  .card.cmp-selected { border-color: #7c3aed; box-shadow: 0 0 0 1px #7c3aed; }
+  .card.cmp-selected { border-color: #7c3aed; box-shadow: 0 0 0 2px #7c3aed, 0 0 0 5px rgba(124,58,237,0.22); }
   .card.cmp-selected .cmp-check { background: #7c3aed; border-color: #7c3aed; }
   /* 对比结果：grid 布局（上下列对齐）+ 角色列窄 + 上方卡片 + 色块点击复制 */
   .compare-view { display: none; padding: 24px; }
@@ -89,6 +97,7 @@
   .cg-head { background: #1a1d24; font-size: 14px; font-weight: 600; }
   .th-sub { font-size: 11px; opacity: 0.6; font-weight: 400; }
   .cg-role { display: flex; align-items: center; justify-content: flex-start; font-size: 14px; background: #1a1d24; white-space: nowrap; line-height: 1.25; }
+  .cg-diff { box-shadow: inset 3px 0 0 #7c3aed; }
   .cg-card-label { background: #11141a; font-size: 14px; color: #889; display: flex; align-items: center; justify-content: center; writing-mode: vertical-rl; }
   .cg-card-cell { padding: 10px; background: #0f1115; }
   .cg-card-cell .card { margin: 0; width: 100%; }
@@ -127,6 +136,9 @@
     <span class="chip active" data-s="all">全部</span>
     <span class="chip" data-s="light">Light</span>
     <span class="chip" data-s="dark">Dark</span>
+    <span class="chip active" data-sort="num">编号序</span>
+    <span class="chip" data-sort="aa">对比度最差</span>
+    <span class="chip" id="onlyFailChip">只看 ✗</span>
     <button class="cmp-btn" id="cmpBtn" type="button">⚖ 对比</button>
   </div>
   <div class="compare-bar" id="compareBar">
@@ -286,13 +298,17 @@ function renderCard(fam, theme){
 
   // AA 徽标（家族感知，未登记家族兜底 opensquilla）；不可测对比度显示「无」，不输出伪造数字
   const badgePairs = fam.badgePairs || BADGE_ROLES[family] || BADGE_ROLES.opensquilla;
-  const badges = badgePairs.map(([r,bgr])=>{
-    if(!tokens[r]||!tokens[bgr])return"";
+  const badgeInfos = badgePairs.map(([r,bgr])=>{
+    if(!tokens[r]||!tokens[bgr])return{r,txt:`<span class="cmp-empty" title="该主题未定义 ${r}/${bgr} 角色">${r} 无</span>`,ratio:null};
     const ratio=contrast(tokens[r],tokens[bgr]);
-    if(ratio===null)return`<span class="cmp-empty">${r} 无</span>`;
+    if(ratio===null)return{r,txt:`<span class="cmp-empty" title="含非纯色值,无法测对比度">${r} 无</span>`,ratio:null};
     const ok=ratio>=4.5;
-    return`<span style="color:${ok?OK_COLOR:BAD_COLOR}">${r} ${ratio.toFixed(1)} ${ok?"✓":"✗"}</span>`;
-  }).join("");
+    return{r,txt:`<span style="color:${ok?OK_COLOR:BAD_COLOR}" title="${r} 对 ${bgr} 的 WCAG 对比度,≥4.5 为 AA 通过">${r} ${ratio.toFixed(1)} ${ok?"✓":"✗"}</span>`,ratio,ok};
+  });
+  const tested=badgeInfos.filter(b=>b.ratio!==null);
+  const failCount=tested.filter(b=>!b.ok).length;
+  const badges=badgeInfos.map(b=>b.txt).join("");
+  const healthTag=tested.length?`<span class="tag health-tag" style="color:${failCount?BAD_COLOR:OK_COLOR};border-color:${failCount?BAD_COLOR:OK_COLOR}">AA ${tested.length-failCount}/${tested.length}${failCount?` · ${failCount}✗`:""}</span>`:"";
 
   // 品牌色行
   const brandRow = brand && brand.color
@@ -316,18 +332,20 @@ function renderCard(fam, theme){
     return`<div class="section"><div class="section-title">${title}</div><div class="swatches">${swatches}</div></div>`;
   }).join("");
 
-  const codeHtml = codeBlockHtml(fam, tokens, bg, text);
+  const isMono = (theme.fontStyle||"").includes("mono");
+  const headFont = isMono ? ' style="font-family: ui-monospace, Consolas, monospace"' : "";
+  const codeHtml = `<details class="code-details"><summary>语法高亮演示</summary>${codeBlockHtml(fam, tokens, bg, text)}</details>`;
   // 中文名（译名表登记才有）；用 | 分隔，避免与主题名自带的连字符混淆（如 catppuccin-frappe）
   const zhSuffix = theme.zhName ? ` | ${esc(theme.zhName)}` : "";
   const copyBadge = `<button class="copy-palette" type="button" data-number="${numStr}" title="复制调色板信息（可直接发给 AI）">复制色板</button>`;
   const schemeColor = scheme==="light" ? NUM_COLOR : pickReadable("#3b4bb8", "#748ffc");
   // 背景非纯色时标注源值，避免误以为该色是主题实色
   const bgNoteTag = bgPlain ? "" : `<span class="tag" title="源值为 ${esc(rawBg)}，预览回退中性底">背景源值 ${esc(rawBg)}</span>`;
-  const tags = `${numTag}${brandTag}<span class="tag ${scheme}" style="color:${schemeColor}">${scheme}</span>${bgNoteTag}<span class="tag">${esc(fam.familyDisplayName || family)}</span><span class="tag">${esc(license)}</span>${fontsTag}`;
+  const tags = `${numTag}${brandTag}${healthTag}<span class="tag ${scheme}" style="color:${schemeColor}">${scheme}</span>${bgNoteTag}<span class="tag">${esc(fam.familyDisplayName || family)}</span><span class="tag">${esc(license)}</span>${fontsTag}`;
 
-  return `<div class="card" data-name="${esc(theme.displayName)}" data-zh="${esc(theme.zhName || "")}" data-family="${esc(family)}" data-scheme="${esc(scheme)}" data-number="${numStr}" style="background:${bg};color:${text}">
+  return `<div class="card" data-name="${esc(theme.displayName)}" data-zh="${esc(theme.zhName || "")}" data-family="${esc(family)}" data-scheme="${esc(scheme)}" data-number="${numStr}" data-fail="${hasFail(theme)?1:0}" style="background:${bg};color:${text}">
     <button class="cmp-check" data-number="${numStr}">＋ 对比</button>
-    <div class="card-head"><b>${titleLink(fam, theme.displayName)}${zhSuffix}${copyBadge}</b><span class="meta">${scheme} · ${theme.tokenCount} tokens<br>${esc(license)}</span></div>
+    <div class="card-head"><b${headFont}>${titleLink(fam, theme.displayName)}${zhSuffix}${copyBadge}</b><span class="meta">${scheme} · ${theme.tokenCount} tokens<br>${esc(license)}</span></div>
     <div class="badges">${badges}</div>
     ${brandRow}
     ${accentBtn}
@@ -346,11 +364,13 @@ function render(){
       items.push({fam,t});
     }
   }
-  items.sort((a,b)=>(a.t.number||0)-(b.t.number||0));  // 卡片按编号序
+  items.sort((a,b)=> sortMode==="aa" ? (minRatio(a.t)-minRatio(b.t)) : ((a.t.number||0)-(b.t.number||0)));
   grid.innerHTML=items.map(({fam,t})=>renderCard(fam,t)).join("")||`<div class="empty">无主题</div>`;
+  apply();
 }
 
 let selectedFamily = "all";
+let sortMode="num", onlyFail=false;
 
 function fillFamilyDropdown(){
   const dd = document.getElementById("familyDropdown");
@@ -392,7 +412,8 @@ function apply(){
     const okQ=!q||name.includes(q)||fam.includes(q)||num.includes(q2)||zh.includes(q);
     const okS=scheme==="all"||sch===scheme;
     const okF=selectedFamily==="all"||fam===selectedFamily.toLowerCase();
-    c.style.display=(okQ&&okS&&okF)?"":"none";
+    const okFail=!onlyFail||c.dataset.fail==="1";
+    c.style.display=(okQ&&okS&&okF&&okFail)?"":"none";
   });
   const visible=[...document.querySelectorAll(".card")].filter(c=>c.style.display!=="none").length;
   const es=document.getElementById("emptyState");
@@ -400,13 +421,25 @@ function apply(){
 }
 
 function setScheme(el){
-  document.querySelectorAll(".chip").forEach(c=>c.classList.remove("active"));
+  if(el.dataset.s==null) return;  // 排序 / 过滤 chip 不触发方案切换
+  document.querySelectorAll(".chip[data-s]").forEach(c=>c.classList.remove("active"));
   el.classList.add("active");
   apply();
 }
+function minRatio(t){ const tc=t.textContrast; if(!tc) return Infinity; const vs=Object.values(tc).filter(v=>typeof v==="number"); return vs.length?Math.min(...vs):Infinity; }
+function hasFail(t){ const tc=t.textContrast; if(!tc) return false; return Object.values(tc).some(v=>typeof v==="number"&&v<4.5); }
+function setSort(el){
+  document.querySelectorAll(".chip[data-sort]").forEach(c=>c.classList.remove("active"));
+  el.classList.add("active");
+  sortMode=el.dataset.sort;
+  render();
+}
 
 document.getElementById("q").addEventListener("input",apply);
-document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>setScheme(c)));
+document.querySelectorAll(".chip[data-s]").forEach(c=>c.addEventListener("click",()=>setScheme(c)));
+document.querySelectorAll(".chip[data-sort]").forEach(c=>c.addEventListener("click",()=>setSort(c)));
+const onlyFailChip=document.getElementById("onlyFailChip");
+onlyFailChip.addEventListener("click",()=>{ onlyFail=!onlyFail; onlyFailChip.classList.toggle("active",onlyFail); apply(); });
 // 家族筛选按钮：点击 toggle 下拉；点外部关闭
 const famBtn=document.getElementById("familyBtn"), famDd=document.getElementById("familyDropdown");
 function setFamilyDropdown(open){ famDd.classList.toggle("open",open); famBtn.setAttribute("aria-expanded",open?"true":"false"); }
@@ -494,8 +527,7 @@ function renderCompare(){
   cells.push(`<div class="cg-cell cg-head">角色/维度</div>`);
   sel.forEach(s=>cells.push(`<div class="cg-cell cg-head">${titleLink(s, s.theme.displayName)}${s.theme.zhName?` | ${esc(s.theme.zhName)}`:""}<br><span class="th-sub">#${String(s.theme.number).padStart(3,"0")} ${esc(s.familyDisplayName||s.family)}</span></div>`));
   // 卡片行：角色列竖排「主题卡片」+ 各主题完整卡片（与下方矩阵列对齐）
-  cells.push(`<div class="cg-cell cg-card-label">主题卡片</div>`);
-  sel.forEach(s=>cells.push(`<div class="cg-cell cg-card-cell">${renderCard(s,s.theme)}</div>`));
+  // 已移除完整卡片行（与矩阵重复信息）：主题整体预览见表头主题名+编号,色值以矩阵为准,差异由 cg-diff 标记
   // 元信息行
   const metaRows=[
     ["方案", s=>s.theme.scheme||"—"],
@@ -513,7 +545,10 @@ function renderCompare(){
   SECTION_ROLES.forEach(([title,roles])=>{
     cells.push(`<div class="cg-cell cg-section" style="grid-column:1/-1">${title}</div>`);
     roles.forEach(r=>{
-      cells.push(`<div class="cg-cell cg-role" title="${r}">${r}</div>`);
+      const vals=sel.map(s=>l1Value(s,r));
+      const hasCount=vals.filter(v=>v&&!String(v).includes("var(")).length;
+      const diff=hasCount>0&&hasCount<N;
+      cells.push(`<div class="cg-cell cg-role${diff?" cg-diff":""}" title="${r}${diff?"（仅部分主题含此角色）":""}">${r}</div>`);
       sel.forEach(s=>{const v=l1Value(s,r);const ok=v&&!String(v).includes("var(");cells.push(`<div class="cg-cell">${ok?`<div class="cmp-swatch" data-hex="${v}" style="background:${v};color:${fgFor(v)}">${v}</div>`:`<span class="cmp-empty">无</span>`}</div>`);});
     });
   });
