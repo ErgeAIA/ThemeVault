@@ -855,6 +855,8 @@ a.sim-icon-btn {
   display: flex;
   flex-direction: column;
   background: var(--tv-bg);
+  border-top-left-radius: 14px;
+  overflow: hidden;
 }
 
 .sim-top {
