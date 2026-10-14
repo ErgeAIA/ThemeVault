@@ -855,8 +855,6 @@ a.sim-icon-btn {
   display: flex;
   flex-direction: column;
   background: var(--tv-bg);
-  border-top-left-radius: 14px;
-  overflow: hidden;
 }
 
 .sim-top {
@@ -949,6 +947,8 @@ a.sim-icon-btn {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  background: var(--tv-bg);
+  border-top-left-radius: 14px;
 }
 
 .sim-pagehead {
