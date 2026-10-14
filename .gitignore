@@ -13,3 +13,6 @@ node_modules/
 dist/
 *.local
 *.tsbuildinfo
+
+# 本地工作目录（esbuild 绕过副本 / 验收脚本与截图）
+.tmp/

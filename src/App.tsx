@@ -1,188 +1,137 @@
 import { useEffect, useMemo, useState, type CSSProperties } from 'react'
 import {
-  fontThemes,
-  FONT_ROLES,
-  AVAILABLE_FONTS,
-  buildFamily,
-  categoryOf,
-  type FontRole,
-} from './data/fontThemes'
-import { loadGoogleFonts, primaryFamily } from './lib/fontLoader'
+  allThemes,
+  THEME_FONT_ID,
+  themeFontStacks,
+  themeVars,
+  type FontStacks,
+  type ThemeEntry,
+} from './data/tv'
+import { fontThemes } from './data/fontThemes'
+import { loadGoogleFonts } from './lib/fontLoader'
+import PaletteGallery from './components/PaletteGallery'
+import AppSim from './components/AppSim'
 
-type StyleVars = CSSProperties & Record<`--${string}`, string>
+type Mode = 'gallery' | 'sim'
 
-export default function App() {
-  const [selectedId, setSelectedId] = useState(fontThemes[0].id)
-  const [overrides, setOverrides] = useState<Partial<Record<FontRole, string>>>({})
-  const [dark, setDark] = useState(false)
+const FONT_SCHEMES = [
+  { id: THEME_FONT_ID, name: '跟随主题', description: '使用主题声明的字体' },
+  ...fontThemes.map((f) => ({ id: f.id, name: f.name, description: f.description })),
+]
 
-  const theme = useMemo(
-    () => fontThemes.find((t) => t.id === selectedId) ?? fontThemes[0],
-    [selectedId],
-  )
+const DEFAULT_ENTRY =
+  allThemes.find((t) => t.fam.family === 'opensquilla' && t.theme.id === 'ember') ?? allThemes[0]
 
-  const current = useMemo(() => {
-    const c: Record<FontRole, string> = { ...theme.fonts }
-    ;(Object.keys(overrides) as FontRole[]).forEach((r) => {
-      if (overrides[r]) c[r] = overrides[r] as string
-    })
-    return c
-  }, [theme, overrides])
-
-  const families = useMemo(
-    () => (Object.values(current) as string[]).map(primaryFamily),
-    [current],
-  )
-
-  useEffect(() => {
-    loadGoogleFonts(families)
-  }, [families])
-
-  const setRole = (role: FontRole, name: string) => {
-    setOverrides((prev) => ({ ...prev, [role]: buildFamily(name, categoryOf(name)) }))
-  }
-  const resetRole = (role: FontRole) => {
-    setOverrides((prev) => {
-      const n = { ...prev }
-      delete n[role]
-      return n
-    })
-  }
-
-  const styleVars: StyleVars = {
-    '--font-heading': current.heading,
-    '--font-body': current.body,
-    '--font-code': current.code,
-    '--font-ui': current.ui,
-  }
-
-  const cssText = `:root{\n  --font-heading: ${current.heading};\n  --font-body: ${current.body};\n  --font-code: ${current.code};\n  --font-ui: ${current.ui};\n}`
-
-  return (
-    <div className={`app${dark ? ' dark' : ''}`}>
-      <header className="topbar">
-        <div className="brand">
-          <span className="logo">🦐</span>
-          <div>
-            <h1>ThemeVault · 字体搭配仿真器</h1>
-            <p>切换标题 / 正文 / 代码 / 界面字体组合，实时看到真实效果。</p>
-          </div>
-        </div>
-        <button className="theme-toggle" onClick={() => setDark((d) => !d)}>
-          {dark ? '☀ 浅色' : '🌙 深色'}
-        </button>
-      </header>
-
-      <div className="layout">
-        <aside className="sidebar">
-          <h2>字体方案</h2>
-          <div className="scheme-list">
-            {fontThemes.map((t) => (
-              <button
-                key={t.id}
-                className={`scheme-card${t.id === selectedId ? ' active' : ''}`}
-                onClick={() => {
-                  setSelectedId(t.id)
-                  setOverrides({})
-                }}
-              >
-                <span className="scheme-name">{t.name}</span>
-                <span className="scheme-desc">{t.description}</span>
-              </button>
-            ))}
-          </div>
-
-          <h2>逐个元素微调</h2>
-          <div className="role-tweaks">
-            {FONT_ROLES.map(({ key, label }) => (
-              <div className="tweak-row" key={key}>
-                <label>{label}</label>
-                <select
-                  value={primaryFamily(current[key])}
-                  onChange={(e) => setRole(key, e.target.value)}
-                >
-                  {AVAILABLE_FONTS.map((f) => (
-                    <option key={f.name} value={f.name}>
-                      {f.name}
-                    </option>
-                  ))}
-                </select>
-                <button
-                  className="reset"
-                  onClick={() => resetRole(key)}
-                  title="恢复方案默认值"
-                >
-                  ↺
-                </button>
-              </div>
-            ))}
-          </div>
-
-          <button
-            className="copy-btn"
-            onClick={() => navigator.clipboard?.writeText(cssText)}
-          >
-            复制 CSS 变量
-          </button>
-        </aside>
-
-        <main className="canvas" style={styleVars}>
-          <Canvas />
-        </main>
-      </div>
-    </div>
-  )
+function firstQuotedName(stack: string): string | null {
+  const m = /"([^"]+)"/.exec(stack)
+  return m ? m[1] : null
 }
 
-function Canvas() {
+export default function App() {
+  const [mode, setMode] = useState<Mode>(() => {
+    const s = localStorage.getItem('tvMode')
+    return s === 'gallery' || s === 'sim' ? s : 'sim'
+  })
+  const [num, setNum] = useState<number>(() => {
+    const n = Number(localStorage.getItem('tvTheme'))
+    return allThemes.some((t) => t.theme.number === n) ? n : DEFAULT_ENTRY.theme.number
+  })
+  const [fontId, setFontId] = useState<string>(() => {
+    const s = localStorage.getItem('tvFont')
+    return s && FONT_SCHEMES.some((f) => f.id === s) ? s : THEME_FONT_ID
+  })
+
+  const entry: ThemeEntry = useMemo(
+    () => allThemes.find((t) => t.theme.number === num) ?? DEFAULT_ENTRY,
+    [num],
+  )
+
+  const stacks: FontStacks = useMemo(() => {
+    if (fontId === THEME_FONT_ID) return themeFontStacks(entry)
+    return fontThemes.find((f) => f.id === fontId)?.fonts ?? themeFontStacks(entry)
+  }, [fontId, entry])
+
+  useEffect(() => {
+    const names = new Set<string>()
+    for (const s of Object.values(stacks)) {
+      const n = firstQuotedName(s)
+      if (n) names.add(n)
+    }
+    loadGoogleFonts([...names])
+  }, [stacks])
+
+  useEffect(() => {
+    localStorage.setItem('tvMode', mode)
+    localStorage.setItem('tvTheme', String(num))
+    localStorage.setItem('tvFont', fontId)
+  }, [mode, num, fontId])
+
+  const vars = {
+    ...themeVars(entry),
+    '--tv-font-heading': stacks.heading,
+    '--tv-font-body': stacks.body,
+    '--tv-font-code': stacks.code,
+    '--tv-font-ui': stacks.ui,
+  } as unknown as CSSProperties
+
   return (
-    <div className="demo">
-      <section className="demo-block">
-        <span className="role-tag">标题 · Heading</span>
-        <h1 className="demo-h1">设计系统的呼吸感</h1>
-        <h2 className="demo-h2">字体的层级与节奏</h2>
-        <h3 className="demo-h3">次级标题示例</h3>
-      </section>
-
-      <section className="demo-block">
-        <span className="role-tag">正文 · Body</span>
-        <p className="demo-p">
-          好的字体搭配像空气：用户不会注意它，却始终被它托住。标题负责第一眼的性格，
-          正文承载长时间阅读的信噪比，代码需要等宽与清晰，界面元素则要在密集操作中保持克制。
-          下面这段中文用于检验中文字形与西文混排的协调度。The quick brown fox jumps over the lazy dog.
-        </p>
-      </section>
-
-      <section className="demo-block">
-        <span className="role-tag">界面 · UI</span>
-        <div className="demo-ui">
-          <button className="btn btn-primary">主要按钮</button>
-          <button className="btn btn-secondary">次要按钮</button>
-          <button className="btn btn-ghost">幽灵按钮</button>
-          <input className="demo-input" placeholder="输入框示例 Input" />
-          <span className="badge">Badge 标签</span>
-          <span className="chip">Chip 选择</span>
+    <div className="app" style={vars}>
+      <header className="top">
+        <div className="top-brand">
+          <span className="top-logo">◐</span>
+          <div className="top-title">
+            <h1>ThemeVault</h1>
+            <p>主题色板 × 字体 · 界面仿真工作台</p>
+          </div>
         </div>
-      </section>
-
-      <section className="demo-block">
-        <span className="role-tag">代码 · Code</span>
-        <pre className="demo-code">{`function greet(name: string) {
-  // heading / body / code 各司其职
-  return \`Hello, \${name}!\`
-}`}</pre>
-      </section>
-
-      <section className="demo-block">
-        <span className="role-tag">卡片 · Card</span>
-        <div className="demo-card">
-          <h4 className="card-title">卡片标题</h4>
-          <p className="card-text">
-            卡片内混合标题、正文与按钮，检验搭配在真实组件里的整体观感。
-          </p>
-          <button className="btn btn-primary">查看详情</button>
+        <nav className="top-modes" aria-label="视图切换">
+          <button className={mode === 'gallery' ? 'on' : ''} onClick={() => setMode('gallery')}>
+            ▦ 调色板海选
+          </button>
+          <button className={mode === 'sim' ? 'on' : ''} onClick={() => setMode('sim')}>
+            ◱ 界面仿真
+          </button>
+        </nav>
+        <div className="top-ctrls">
+          <label>
+            主题
+            <select value={num} onChange={(e) => setNum(Number(e.target.value))}>
+              {allThemes.map(({ theme }) => (
+                <option key={theme.number} value={theme.number}>
+                  #{theme.number} {theme.displayName}
+                  {theme.zhName ? ` · ${theme.zhName}` : ''}
+                </option>
+              ))}
+            </select>
+          </label>
+          {mode === 'sim' && (
+            <label>
+              字体
+              <select value={fontId} onChange={(e) => setFontId(e.target.value)}>
+                {FONT_SCHEMES.map((f) => (
+                  <option key={f.id} value={f.id}>
+                    {f.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
         </div>
-      </section>
+      </header>
+
+      {mode === 'gallery' ? (
+        <main className="page">
+          <PaletteGallery
+            selectedNumber={num}
+            onSelect={(e) => {
+              setNum(e.theme.number)
+              setMode('sim')
+            }}
+          />
+        </main>
+      ) : (
+        <AppSim entry={entry} />
+      )}
     </div>
   )
 }
