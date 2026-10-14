@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 2,
+  "family": "erge",
+  "pin": "DEC-017 @ 2026-10-14 (本对话推导)",
+  "kind": "value-ledger",
+  "provenance": "full",
+  "values": {
+    "#0E7490": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "syntax-attr",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#171614": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "accent-foreground",
+        "selector": ":root"
+      },
+      "hits": 2
+    },
+    "#1A1714": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "bg",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#1E55C7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "syntax-title",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#241F1B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "bg-surface",
+        "selector": ":root"
+      },
+      "hits": 2
+    },
+    "#257552": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "ok",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#2C2620": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "bg-surface-2",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#2E2823": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "bg-elevated",
+        "selector": ":root"
+      },
+      "hits": 2
+    },
+    "#2E7D32": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "syntax-string",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#2E8A5F": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "ok-fill",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#322A24": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "bg-hover",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#3A342D": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "border",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#4353B8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "info",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#4A4339": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "border-strong",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#55524C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "text-muted",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#5F6B7A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "syntax-comment",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#6478D9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "info-fill",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#6B51C6": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "queued",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#706E69": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "text-dim",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#858079": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "text-dim",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#8A5700": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "syntax-literal",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#8A6410": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "warn",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#8B6FE0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "queued-fill",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#8E24AA": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "syntax-keyword",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#9E3A08": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "accent-deep",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#B2820B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "warn-fill",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#B84A14": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "accent-deep",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#C2382E": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "danger",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#C2460B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "accent-hover",
+        "selector": ":root"
+      },
+      "hits": 2
+    },
+    "#C9A48C": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "border-focus",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#C9C2B8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "text-muted",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#D15723": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "accent-hover",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#D2CCBE": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "border-strong",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#E0564A": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "danger-fill",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#E2DDD3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "border",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#EDE8DE": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "bg-surface-2",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#F07A3D": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "accent-secondary",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#F2570F": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "accent",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#F2E9E0": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "hairline",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#F3E5DB": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "bg-hover",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#F3EDE7": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "text",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#FAF1E9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "bg",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#FBE8DD": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "bg-surface",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#FF6A2B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "accent",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#FF7A3D": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "accent-secondary",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#FFFFFF": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "bg-elevated",
+        "selector": ":root"
+      },
+      "hits": 2
+    }
+  }
+}

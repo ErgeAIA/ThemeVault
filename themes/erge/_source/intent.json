@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "family": "erge",
+  "source": {
+    "project": "Erge (原创派生品牌色)",
+    "repo": "原创派生 · 无外部开源仓库（待用户确认）",
+    "pin": "DEC-017 @ 2026-10-14 (本对话推导)",
+    "pinType": "derivation",
+    "files": ["palette.md"],
+    "license": "Custom (© 2026 ErgeAIA; 保留署名)",
+    "upstream": {
+      "project": null,
+      "repo": null,
+      "license": null,
+      "note": "原创派生，非第三方衍生"
+    }
+  },
+  "scope": {
+    "themes": ["light", "dark"],
+    "defaultSemantics": "frozen-default",
+    "defaultNote": "原创固化默认色板；功能色/语法色沿用 opensquilla 语义色（DEC-017 豁免）"
+  },
+  "attribution": ["© 2026 ErgeAIA"],
+  "collectedAt": "2026-10-14"
+}

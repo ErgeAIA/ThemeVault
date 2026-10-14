@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T17:38:36+00:00",
+  "generatedAt": "2026-10-14T06:36:11+00:00",
   "generator": "scripts/gen_index.py",
   "singleSourceOfTruth": "themes/<family>/_source/contract.json",
   "families": [
@@ -14647,13 +14647,244 @@
           "number": 146
         }
       ]
+    },
+    {
+      "family": "erge",
+      "familyDisplayName": "ErgeAIA",
+      "sourceProject": "erge",
+      "sourceRepo": null,
+      "license": null,
+      "contractPath": "themes/erge/_source/contract.json",
+      "contractVersion": 3,
+      "sections": [
+        [
+          "背景 / 文本 / 边框",
+          [
+            "bg",
+            "bg-surface",
+            "bg-surface-2",
+            "bg-elevated",
+            "bg-hover",
+            "text",
+            "text-muted",
+            "text-dim",
+            "border",
+            "border-strong",
+            "border-focus",
+            "card",
+            "hairline"
+          ]
+        ],
+        [
+          "强调色",
+          [
+            "accent",
+            "accent-hover",
+            "accent-deep",
+            "accent-secondary",
+            "accent-foreground"
+          ]
+        ],
+        [
+          "状态色",
+          [
+            "ok",
+            "ok-fill",
+            "warn",
+            "warn-fill",
+            "danger",
+            "danger-fill",
+            "info",
+            "info-fill",
+            "queued",
+            "queued-fill"
+          ]
+        ],
+        [
+          "语法高亮",
+          [
+            "syntax-comment",
+            "syntax-keyword",
+            "syntax-string",
+            "syntax-literal",
+            "syntax-title",
+            "syntax-attr"
+          ]
+        ]
+      ],
+      "badgePairs": [
+        [
+          "text",
+          "bg"
+        ],
+        [
+          "text-muted",
+          "bg"
+        ],
+        [
+          "text-dim",
+          "bg"
+        ]
+      ],
+      "l1RoleMap": null,
+      "themes": [
+        {
+          "id": "dark",
+          "displayName": "Dark",
+          "zhName": null,
+          "scheme": "dark",
+          "type": "value-theme",
+          "path": "themes/erge/dark",
+          "palettePath": "themes/erge/dark/palette.md",
+          "tokensPath": "themes/erge/dark/tokens.json",
+          "license": "Custom",
+          "licenseNote": null,
+          "fontStyle": null,
+          "fonts": [],
+          "structuralNote": null,
+          "tokenCount": 39,
+          "requiredCount": 29,
+          "requiredMissing": [],
+          "derivedOverrideCount": 10,
+          "outOfContractRoles": [],
+          "status": "extracted",
+          "brand": {
+            "color": "#F2570F",
+            "buttonText": "light",
+            "contrast": {
+              "white": 3.42,
+              "black": 6.15
+            }
+          },
+          "textContrast": {
+            "textOnBg": 15.37,
+            "textMutedOnBg": 10.11,
+            "textDimOnBg": 4.56
+          },
+          "tokens": {
+            "bg": "#1A1714",
+            "bg-surface": "#241F1B",
+            "bg-surface-2": "#2C2620",
+            "bg-elevated": "#2E2823",
+            "bg-hover": "#322A24",
+            "text": "#F3EDE7",
+            "text-muted": "#C9C2B8",
+            "text-dim": "#858079",
+            "border": "#3A342D",
+            "border-strong": "#4A4339",
+            "border-focus": "#C2460B",
+            "card": "#241F1B",
+            "hairline": "#2E2823",
+            "accent": "#F2570F",
+            "accent-hover": "#C2460B",
+            "accent-deep": "#9E3A08",
+            "accent-secondary": "#FF7A3D",
+            "accent-foreground": "#171614",
+            "ok": "#257552",
+            "ok-fill": "#2E8A5F",
+            "warn": "#8A6410",
+            "warn-fill": "#B2820B",
+            "danger": "#C2382E",
+            "danger-fill": "#E0564A",
+            "info": "#4353B8",
+            "info-fill": "#6478D9",
+            "queued": "#6B51C6",
+            "queued-fill": "#8B6FE0",
+            "ok-on-dark": "color-mix(in srgb, #257552 80%, #FFFFFF 20%)",
+            "warn-on-dark": "color-mix(in srgb, #8A6410 82%, #FFFFFF 18%)",
+            "danger-on-dark": "color-mix(in srgb, #C2382E 78%, #FFFFFF 22%)",
+            "info-on-dark": "color-mix(in srgb, #4353B8 74%, #FFFFFF 26%)",
+            "queued-on-dark": "color-mix(in srgb, #6B51C6 79%, #FFFFFF 21%)",
+            "syntax-comment": "#5F6B7A",
+            "syntax-keyword": "#8E24AA",
+            "syntax-string": "#2E7D32",
+            "syntax-literal": "#8A5700",
+            "syntax-title": "#1E55C7",
+            "syntax-attr": "#0E7490"
+          },
+          "notes": "",
+          "number": 151
+        },
+        {
+          "id": "light",
+          "displayName": "Light",
+          "zhName": null,
+          "scheme": "light",
+          "type": "value-theme",
+          "path": "themes/erge/light",
+          "palettePath": "themes/erge/light/palette.md",
+          "tokensPath": "themes/erge/light/tokens.json",
+          "license": "Custom",
+          "licenseNote": null,
+          "fontStyle": null,
+          "fonts": [],
+          "structuralNote": null,
+          "tokenCount": 34,
+          "requiredCount": 29,
+          "requiredMissing": [],
+          "derivedOverrideCount": 5,
+          "outOfContractRoles": [],
+          "status": "extracted",
+          "brand": {
+            "color": "#FF6A2B",
+            "buttonText": "light",
+            "contrast": {
+              "white": 2.86,
+              "black": 7.35
+            }
+          },
+          "textContrast": {
+            "textOnBg": 16.21,
+            "textMutedOnBg": 6.98,
+            "textDimOnBg": 4.57
+          },
+          "tokens": {
+            "bg": "#FAF1E9",
+            "bg-surface": "#FBE8DD",
+            "bg-surface-2": "#EDE8DE",
+            "bg-elevated": "#FFFFFF",
+            "bg-hover": "#F3E5DB",
+            "text": "#171614",
+            "text-muted": "#55524C",
+            "text-dim": "#706E69",
+            "border": "#E2DDD3",
+            "border-strong": "#D2CCBE",
+            "border-focus": "#C9A48C",
+            "card": "#FFFFFF",
+            "hairline": "#F2E9E0",
+            "accent": "#FF6A2B",
+            "accent-hover": "#D15723",
+            "accent-deep": "#B84A14",
+            "accent-secondary": "#F07A3D",
+            "accent-foreground": "#171614",
+            "ok": "#257552",
+            "ok-fill": "#2E8A5F",
+            "warn": "#8A6410",
+            "warn-fill": "#B2820B",
+            "danger": "#C2382E",
+            "danger-fill": "#E0564A",
+            "info": "#4353B8",
+            "info-fill": "#6478D9",
+            "queued": "#6B51C6",
+            "queued-fill": "#8B6FE0",
+            "syntax-comment": "#5F6B7A",
+            "syntax-keyword": "#8E24AA",
+            "syntax-string": "#2E7D32",
+            "syntax-literal": "#8A5700",
+            "syntax-title": "#1E55C7",
+            "syntax-attr": "#0E7490"
+          },
+          "notes": "",
+          "number": 152
+        }
+      ]
     }
   ],
   "stats": {
-    "familyCount": 23,
-    "themeCount": 150,
-    "valueThemeCount": 149,
+    "familyCount": 24,
+    "themeCount": 152,
+    "valueThemeCount": 151,
     "skinCount": 1,
-    "tokenTotal": 7079
+    "tokenTotal": 7152
   }
 }

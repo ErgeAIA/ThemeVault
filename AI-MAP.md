@@ -46,8 +46,8 @@ ThemeVault/
 ## 2. 家族现状（2026-08-07）
 
 <!-- BEGIN:generated family-status -->
-23 个家族 / 150 套主题（149 value theme + 1 skin，数字以 `INDEX.json` 的 `stats` 为准：
-familyCount 23 / themeCount 150 / valueThemeCount 149 / skinCount 1 / tokenTotal 7079，57 light + 92 dark）。
+24 个家族 / 152 套主题（151 value theme + 1 skin，数字以 `INDEX.json` 的 `stats` 为准：
+familyCount 24 / themeCount 152 / valueThemeCount 151 / skinCount 1 / tokenTotal 7152，58 light + 93 dark）。
 
 | 家族 | 主题数 | 方案 | 契约版本 | required/derived | 角色命名 | 来源 |
 |------|--------|------|----------|------------------|----------|------|
@@ -74,6 +74,7 @@ familyCount 23 / themeCount 150 / valueThemeCount 149 / skinCount 1 / tokenTotal
 | omni | 1 | 0L+1D | v1 | 29/12 | L1 通用 | MIT |
 | onepage | 2 | 1L+1D | v1 | 29/25 | L1 + typo 扩展 | MIT |
 | opencode | 72 | 32L+40D | v3 | 9/43 | L1 通用 | MIT |
+| erge | 2 | 1L+1D | v3 | 29/38 | L1 通用 | Custom |
 
 > 本表由 `scripts/gen_docs_views.py` 生成，禁止手改计数。
 <!-- END:generated family-status -->

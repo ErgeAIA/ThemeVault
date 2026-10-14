@@ -159,17 +159,19 @@
 | 148 | `themes/nord/light` | nord | light | nord Light | MIT | light | 29 | 6 | ✅ 已提取 |  |
 | 149 | `themes/tokyonight/light` | tokyonight | light | tokyonight Light | MIT | light | 29 | 5 | ✅ 已提取 |  |
 | 150 | `themes/synthwave/light` | synthwave | light | synthwave84 Light | MIT | light | 29 | 6 | ✅ 已提取 |  |
+| 151 | `themes/erge/dark` | erge | dark | Dark | Custom | dark | 29 | 10 | ✅ 已提取 |  |
+| 152 | `themes/erge/light` | erge | light | Light | Custom | light | 29 | 5 | ✅ 已提取 |  |
 <!-- END:generated index-table -->
 
 ## 统计
 
 <!-- BEGIN:generated index-stats -->
-- 已入库来源项目：**23**（opensquilla、catppuccin、ergemd、aura、dracula、nord、solarized、tokyonight、one-dark-pro、night-owl、synthwave、iceberg、kanagawa、everforest、rose-pine、ayu、jellyfish、shades、vue、falcon、omni、onepage、opencode）
-- value theme：**149 套**（57 light + 92 dark）
+- 已入库来源项目：**24**（opensquilla、catppuccin、ergemd、aura、dracula、nord、solarized、tokyonight、one-dark-pro、night-owl、synthwave、iceberg、kanagawa、everforest、rose-pine、ayu、jellyfish、shades、vue、falcon、omni、onepage、opencode、erge）
+- value theme：**151 套**（58 light + 93 dark）
 - expressive skin：**1 套**
-- stats（INDEX.json）：familyCount 23 / themeCount 150 / valueThemeCount 149 / skinCount 1 / tokenTotal 7079
-- 色板表令牌总量：**7079 个**
-- 协议分布（value theme）：MIT × 122 + AGPL-3.0 × 14 + Apache-2.0 × 13
+- stats（INDEX.json）：familyCount 24 / themeCount 152 / valueThemeCount 151 / skinCount 1 / tokenTotal 7152
+- 色板表令牌总量：**7152 个**
+- 协议分布（value theme）：MIT × 122 + AGPL-3.0 × 14 + Apache-2.0 × 13 + Custom × 2
 
 > 本节由 `scripts/gen_docs_views.py` 从 `INDEX.json` 生成，禁止手改。
 <!-- END:generated index-stats -->

@@ -31,6 +31,7 @@
 | 21 | falcon | https://github.com/panxiaoan/falcon-vscode-themes | MIT | `dark` `dark-blue` `dark-green` `dark-green-islands` `light-bean-green` `light-buff` `light-celadon` `light-green` `light-green-islands` `light-grey` `light-pink` `light-yellow` | © Xiaoan Pan；温和护眼系列 12 套；数据源为 `src/{dark,light}/*.yml`（YAML 锚点 + `!alpha` 派生；ansi 键名有错位，绿存于 ansiBrightPURPLE） |
 | 22 | onepage | https://github.com/ivaneye/OnePage | MIT | `warm-paper` `warm-brown` | © 2025 一页清（ivaneye）；Obsidian 主题，基于 [Cupertino](https://github.com/aaaaalexis/Obsidian-Cupertino)（MIT）；数据源为固定 commit `4226e57` 的 `theme.css` 固化双配色 + 彩色排版 `--typo-*` |
 | 23 | opencode | https://github.com/anomalyco/opencode | MIT（聚合分发：FeatherHunter/dsh-opencode-palette @ `9839cb3`，MIT） | 见 `themes/opencode/README.md` 成员表（37 逻辑主题，35 含 `-light` 变体） | OpenCode 主题集经 DSH 聚合；各原主题上游协议以原项目为准（多为 MIT/Apache-2.0）；Nord 衍生需保留 Sven Greb 署名；数据源 `src/themes/*.json`（OpenCode defs+theme 格式，VS Code 风格角色） |
+| 24 | erge | 原创派生 · 无外部开源仓库（待用户确认） | Custom（© 2026 ErgeAIA，保留署名） | `light` `dark` | 原创派生品牌色（非第三方衍生）；pin=DEC-017 @ 2026-10-14（本对话推导）；功能色/语法色沿用 opensquilla 语义色（DEC-017 豁免） |
 
 ## 维护约定
 

@@ -234,7 +234,7 @@ FAMILY_ORDER = ["opensquilla", "catppuccin", "ergemd", "aura", "dracula", "nord"
 
 # 家族显示名（卡片底部标签 / 规范品牌名，首字母大写或品牌官方写法）。
 FAMILY_DISPLAY_NAMES = {
-    "opensquilla": "OpenSquilla", "catppuccin": "Catppuccin", "ergemd": "ErgeMD",
+    "opensquilla": "OpenSquilla", "catppuccin": "Catppuccin", "ergemd": "ErgeMD", "erge": "ErgeAIA",
     "aura": "Aura", "dracula": "Dracula", "nord": "Nord", "solarized": "Solarized",
     "tokyonight": "Tokyo Night", "one-dark-pro": "One Dark Pro", "night-owl": "Night Owl",
     "synthwave": "Synthwave", "iceberg": "Iceberg", "kanagawa": "Kanagawa",
