@@ -63,6 +63,9 @@
   .tag.brand-tag { font-family: ui-monospace, Consolas, monospace; color: #ff9e9e; opacity: 1; }
   .tag.brand-tag .dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
   .tag.mono-tag { font-family: ui-monospace, Consolas, monospace; color: #9ecbff; opacity: 1; font-weight: 600; background: rgba(158,203,255,0.14); }
+  .font-id { padding: 8px 16px 12px; border-top: 1px solid rgba(128,128,140,0.18); }
+  .font-id-name { font-size: 11px; opacity: 0.72; margin-bottom: 5px; font-family: ui-monospace, Consolas, monospace; }
+  .font-id-sample { font-size: 19px; line-height: 1.45; letter-spacing: 0.2px; }
   .tag.health-tag { background: transparent; border: 1px solid; opacity: 1; font-variant-numeric: tabular-nums; }
   .tag.light { color: #ffd43b; opacity: 1; } .tag.dark { color: #748ffc; opacity: 1; }
   /* 复制色板徽章：跟在中文名后，点击复制该主题完整调色板信息（可直接发给 AI） */
@@ -139,6 +142,7 @@
     <span class="chip active" data-sort="num">编号序</span>
     <span class="chip" data-sort="aa">对比度最差</span>
     <span class="chip" id="onlyFailChip">只看 ✗</span>
+    <label class="chip font-load-toggle" style="cursor:pointer;user-select:none"><input type="checkbox" id="fontLoadToggle" style="vertical-align:-1px;margin-right:4px"> 加载 Web 字体</label>
     <button class="cmp-btn" id="cmpBtn" type="button">⚖ 对比</button>
   </div>
   <div class="compare-bar" id="compareBar">
@@ -334,6 +338,9 @@ function renderCard(fam, theme){
 
   const isMono = (theme.fontStyle||"").includes("mono");
   const headFont = isMono ? ' style="font-family: ui-monospace, Consolas, monospace"' : "";
+  const fontStack = (theme.fonts && theme.fonts.length) ? theme.fonts.join(", ") : (isMono ? "ui-monospace, Consolas, monospace" : "system-ui, sans-serif");
+  const fontLabel = (theme.fonts && theme.fonts.length) ? theme.fonts.join(" · ") : (isMono ? "等宽 mono（未声明具体字体）" : "默认（无声明）");
+  const fontIdBlock = `<div class="font-id"><div class="font-id-name">字体身份 · ${esc(fontLabel)}</div><div class="font-id-sample" style="font-family:${esc(fontStack)}">AÅ Bb Cc Gg 字体 Ag 123 — The quick brown fox</div></div>`;
   const codeHtml = `<details class="code-details"><summary>语法高亮演示</summary>${codeBlockHtml(fam, tokens, bg, text)}</details>`;
   // 中文名（译名表登记才有）；用 | 分隔，避免与主题名自带的连字符混淆（如 catppuccin-frappe）
   const zhSuffix = theme.zhName ? ` | ${esc(theme.zhName)}` : "";
@@ -349,6 +356,7 @@ function renderCard(fam, theme){
     <div class="badges">${badges}</div>
     ${brandRow}
     ${accentBtn}
+    ${fontIdBlock}
     ${sectionsHtml}
     ${codeHtml}
     <div class="tags">${tags}</div>
@@ -433,6 +441,37 @@ function setSort(el){
   el.classList.add("active");
   sortMode=el.dataset.sort;
   render();
+}
+
+// ===== 可选加载 Web 字体（默认关,破坏自包含,用户主动开启）=====
+const GENERIC_FONTS = new Set(["monospace","serif","sans-serif","system-ui","ui-monospace","ui-sans-serif","ui-serif","cursive","fantasy","ui-rounded","default","inherit"]);
+function collectWebFonts(){
+  const s=new Set();
+  for(const fam of window.__TV.families) for(const t of fam.themes){
+    if(t.type!=="value-theme"||!t.fonts) continue;
+    for(const f of t.fonts){ const ff=(f||"").trim(); if(ff && !GENERIC_FONTS.has(ff.toLowerCase())) s.add(ff); }
+  }
+  return [...s];
+}
+let _webFontsLoaded=false;
+function loadWebFonts(){
+  if(_webFontsLoaded) return;
+  const fonts=collectWebFonts();
+  if(!fonts.length) return;
+  const famParam=fonts.map(f=>encodeURIComponent(f).replace(/%20/g,"+")).join("&family=");
+  const link=document.createElement("link");
+  link.rel="stylesheet";
+  link.href=`https://fonts.googleapis.com/css2?family=${famParam}&display=swap`;
+  document.head.appendChild(link);
+  _webFontsLoaded=true;
+}
+const fontToggle=document.getElementById("fontLoadToggle");
+if(fontToggle){
+  if(localStorage.getItem("tvFontLoad")==="1"){ fontToggle.checked=true; loadWebFonts(); }
+  fontToggle.addEventListener("change",e=>{
+    if(e.target.checked) loadWebFonts();
+    try{ localStorage.setItem("tvFontLoad", e.target.checked?"1":"0"); }catch(_){}
+  });
 }
 
 document.getElementById("q").addEventListener("input",apply);
