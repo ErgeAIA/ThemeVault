@@ -178,10 +178,10 @@ const NAV: { group: string; items: NavItem[] }[] = [
   {
     group: '关于我',
     items: [
+      { label: 'B站', icon: 'bili', href: 'https://space.bilibili.com/67221461' },
       { label: '个人主页', icon: 'home', href: 'https://ergeaia.github.io/' },
       { label: 'GitHub', icon: 'github', href: 'https://github.com/ErgeAIA' },
       { label: '邮箱', icon: 'mail', href: 'mailto:ergeaia@agent.qq.com' },
-      { label: 'B站', icon: 'bili', href: 'https://space.bilibili.com/67221461' },
     ],
   },
   {
