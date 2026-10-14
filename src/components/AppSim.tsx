@@ -1,4 +1,4 @@
-import { useEffect, useState, type CSSProperties, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import Prism from 'prismjs'
 import 'prismjs/components/prism-typescript'
 import { allThemes, fgFor, themeVars, type ThemeEntry } from '../data/tv'
@@ -15,6 +15,62 @@ function useMediaQuery(query: string): boolean {
     return () => mq.removeEventListener('change', onChange)
   }, [query])
   return matches
+}
+
+function ThemeSelect({ num, setNum }: { num: number; setNum: (n: number) => void }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (!ref.current?.contains(e.target as Node)) setOpen(false)
+    }
+    window.addEventListener('mousedown', onClick)
+    return () => window.removeEventListener('mousedown', onClick)
+  }, [])
+
+  const current = allThemes.find(({ theme }) => theme.number === num)?.theme ?? allThemes[0]?.theme
+
+  return (
+    <div className="sim-select" ref={ref}>
+      <button
+        type="button"
+        className={`sim-select-btn${open ? ' open' : ''}`}
+        onClick={() => setOpen((v) => !v)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+      >
+        <span className="sim-select-current">
+          {current
+            ? `#${current.number} ${current.displayName}${current.zhName ? ` · ${current.zhName}` : ''} · ${current.scheme}`
+            : '主题'}
+        </span>
+      </button>
+      {open && (
+        <div className="sim-select-list" role="listbox">
+          {allThemes.map(({ theme }) => {
+            const selected = theme.number === num
+            const label = `#${theme.number} ${theme.displayName}${theme.zhName ? ` · ${theme.zhName}` : ''} · ${theme.scheme}`
+            return (
+              <button
+                key={theme.number}
+                type="button"
+                role="option"
+                aria-selected={selected}
+                className={`sim-select-item${selected ? ' current' : ''}`}
+                onClick={() => {
+                  setNum(theme.number)
+                  setOpen(false)
+                }}
+              >
+                <span>{label}</span>
+                {selected && <span className="sim-select-check">✓</span>}
+              </button>
+            )
+          })}
+        </div>
+      )}
+    </div>
+  )
 }
 
 // 侧栏导航（结构参考 xieyi examples#sidebar，纯 CSS + --tv-* 变量实现）
@@ -1220,14 +1276,7 @@ export default function AppSim({
               <div className="top-ctrls">
                 <label>
                   主题
-                  <select value={num} onChange={(e) => setNum(Number(e.target.value))}>
-                    {allThemes.map(({ theme }) => (
-                      <option key={theme.number} value={theme.number}>
-                        #{theme.number} {theme.displayName}
-                        {theme.zhName ? ` · ${theme.zhName}` : ''}
-                      </option>
-                    ))}
-                  </select>
+                  <ThemeSelect num={num} setNum={setNum} />
                 </label>
                 <label className="sim-font-label">
                   字体

@@ -191,6 +191,97 @@ code {
   border-color: var(--tv-focus);
 }
 
+/* 自定义主题下拉（区分 light/dark + 高亮当前项） */
+.sim-select {
+  position: relative;
+  display: inline-block;
+}
+
+.sim-select-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  max-width: 240px;
+  padding: 5px 22px 5px 8px;
+  border-radius: 7px;
+  border: 1px solid var(--tv-border);
+  background: var(--tv-surface-2);
+  color: var(--tv-text);
+  font-size: 12.5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.sim-select-btn::after {
+  content: '▾';
+  position: absolute;
+  right: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: var(--tv-dim);
+}
+
+.sim-select-btn.open::after {
+  content: '▴';
+}
+
+.sim-select-current {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sim-select-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 100;
+  min-width: 260px;
+  max-width: 320px;
+  max-height: 360px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid var(--tv-border);
+  background: var(--tv-card);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.sim-select-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--tv-text);
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.sim-select-item:hover {
+  background: var(--tv-hover);
+}
+
+.sim-select-item.current {
+  background: color-mix(in srgb, var(--tv-accent) 14%, transparent);
+  color: var(--tv-accent);
+  font-weight: 600;
+}
+
+.sim-select-check {
+  font-size: 11px;
+}
+
 /* ===== 通用页面容器（海选）===== */
 
 .page {
@@ -1773,6 +1864,10 @@ a.sim-icon-btn {
   }
 
   .top-ctrls select {
+    max-width: 150px;
+  }
+
+  .sim-select-btn {
     max-width: 150px;
   }
 
