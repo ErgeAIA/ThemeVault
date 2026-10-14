@@ -36,6 +36,12 @@ description: >
   - 校验：`pnpm build`（tsc --noEmit + vite build）本地通过；`.gitignore` 补 `*.tsbuildinfo`。
   - 后续：预览页「字体身份」与仿真器是否整合进 React 主页，待用户看 React 主页后定（preview.html 字体身份改动已单独提交）。
   - CI 修复：① `pnpm/action-setup@v4` 与 `package.json` 的 `packageManager` 版本冲突（删除 `version: 12`）；② pnpm 12 的构建脚本许可须写在 `pnpm-workspace.yaml` 的 `allowBuilds` 字段，已批准 `esbuild` 并推送修复。
+  - **字体仿真器升级为「界面仿真工作台」（用户主导需求）**：参考 xieyi（本地项目，只读未改）examples#sidebar 骨架，重写为双视图 React SPA：
+    - **调色板海选**（`src/components/PaletteGallery.tsx`）：移植 preview 卡片核心（编号/中文名/scheme 徽标/AA 徽标/9 关键角色色块），搜索 + light/dark 筛选；点击卡片 = 应用主题并跳转仿真。
+    - **界面仿真**（`src/components/AppSim.tsx`）：可收起侧栏 + 分组导航 + 面包屑顶栏 + 内容区常用组件全集（统计卡/表格(状态徽章/标签页)/表单(输入/下拉/开关/复选/滑块)/Alert/进度条/按钮组/徽章/代码块(syntax-* 高亮)/动态流）。
+    - **数据层**（`src/data/tv.ts`）：副作用导入生成物 `preview/data.js`（未改动），复刻 preview.html 的家族感知 L1 解析（l1RoleMap + ergemd/opencode 兜底映射）与 WCAG 对比度；`themeVars()` 产出 `--tv-*` CSS 变量表（含角色回退链），切主题 = 换变量全站即时重渲染；字体新增「跟随主题」方案（theme.fonts / fontStyle）。
+    - Playwright 验收通过：ember 默认视图、海选网格、切 #44 Kanagawa 全站换肤、海选点卡跳仿真，均正常。
+  - **本地 esbuild 构建被杀软锁定的绕过**：`vite build` 报 `remove %TEMP%\esbuild-<hex>: Access is denied`（esbuild.exe 启动时复制自身到临时目录、退出清理被安全软件锁文件）；node 直调 esbuild 一切正常，仅在 vite 构建时必现。绕过：复制 esbuild.exe 到仓库内 `.tmp/`（已 gitignore），构建前 `$env:ESBUILD_BINARY_PATH` 指向该副本。CI（Linux）不受影响。
 - **当前分支**：main（已有提交，基线以 `git log` 为准）
 - **阶段**：资产仓维护（非运行时项目）；协作记忆已初始化
 - **代码**：`scripts/*.py` 生成器与校验器存在；无应用运行时
