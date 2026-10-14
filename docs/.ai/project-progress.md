@@ -109,3 +109,14 @@ description: >
   - `gen_index --write` 全绿：`erge/dark #151 missing=0 out=0 derived=10` 退出码 0。
 - **决策2（近黑按钮文字定稿）**：Erge Light/Dark 主色按钮 / 色块文字 = `accent-foreground` 近黑（实测 6.33 / 5.29 过 AA），定为规范。遗留（用户 2026-10-14 已决不改）：`gen_index` 的 `brand.buttonText` 仍按 `lum(accent)>0.55` 判为「浅字」（`erge/dark brand=#F2570F(light)`），与近黑实际矛盾且导致预览品牌色块显示白字——属全局 `brand_of` 逻辑（影响所有有 accent-foreground 的主题）；保留仓库既有口径，适配时按 `accent-foreground` 取用。
 - **已决**：① 近黑按钮文字定稿，全局 `brand_of` 不修正（保留既有 WCAG 亮度口径，仅文档标注已知不一致）；② on-dark 补丁已 `git commit`；③ 不装 chromium 截图验证（暂缓）。
+
+## 预览页 P0 阅读体验优化（2026-10-14，impeccable 第一性原理审查后）
+
+- **定位共识**：`preview.html` 本质是「调色板」——作用是让人一眼扫过、知道采用某主题后界面大概什么样。
+  用户另提「通用应用界面 + 切换主题即时预览」（需后端服务）为**单独方向**，本页保留，后续单论。
+- **P0 优化（已落地，`preview.html` 应用源码手改，未动数据）**：
+  - 浏览从「错落瀑布流 `columns:3 440px`」改为「对齐网格 `grid repeat(auto-fill,minmax(380px,1fr))` + `align-items:start`」——卡片按编号顺序规整排列，解决编号资产库的可寻址 / 顺序扫读问题。
+  - 色块角色名（`.swatch-label`）由单行省略改为「可换行不截断」，长角色名（如 `accent-foreground`）完整可读。
+  - 色块文字 `fgFor()` 由亮度阈值（`luminance>0.55`）改为 **WCAG 对比算法**（`contrast` 选深/浅字较高者），统一提升卡片色块 / 品牌色块 / 对比矩阵色块的小字可读性（与 AA 守卫口径一致）。
+- **P1–P3 待办（未做，留待后续）**：操作层 UI 中性化（浅色卡上可读）、AA 徽标自解释 + 健康度摘要、对比视图差异高亮、代码块降噪、字体身份感知、阅读辅助控件（只看 ✗ / 按对比度排序）。
+- **未提交**：本次 `preview.html` 改动尚未 `git commit`（待用户确认）。
