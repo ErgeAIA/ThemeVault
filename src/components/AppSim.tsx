@@ -1098,7 +1098,17 @@ export default function AppSim({ entry }: { entry: ThemeEntry }) {
                   <div className="sim-user-name">{USER.name}</div>
                   <div className="sim-user-role">{USER.role}</div>
                 </div>
-                <span className="sim-user-gear">⚙</span>
+                <button
+                  className="sim-user-gear"
+                  aria-label="前往设置"
+                  title="前往设置"
+                  onClick={() => {
+                    setCurrent('设置')
+                    setExample(null)
+                  }}
+                >
+                  ⚙
+                </button>
               </>
             )}
           </div>
@@ -1129,9 +1139,14 @@ export default function AppSim({ entry }: { entry: ThemeEntry }) {
             </div>
             <div className="sim-top-right">
               <input className="sim-search" placeholder="搜索… ⌘K" />
-              <button className="sim-icon-btn sim-bell" aria-label="通知">
+              <a
+                className="sim-icon-btn sim-bell"
+                href="mailto:ergeaia@agent.qq.com"
+                aria-label="联系邮箱"
+                title="ergeaia@agent.qq.com"
+              >
                 ✉<i className="sim-dot" />
-              </button>
+              </a>
               <Avatar entry={entry} sm />
             </div>
           </header>

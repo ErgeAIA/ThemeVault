@@ -550,8 +550,26 @@ code {
   color: var(--tv-dim);
 }
 
+a.sim-icon-btn {
+  display: inline-grid;
+  place-items: center;
+  text-decoration: none;
+}
+
 .sim-user-gear {
+  border: none;
+  background: transparent;
+  padding: 3px;
+  border-radius: 6px;
   color: var(--tv-dim);
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.12s, background 0.12s;
+}
+
+.sim-user-gear:hover {
+  color: var(--tv-text);
+  background: var(--tv-hover);
 }
 
 /* 主区 */
