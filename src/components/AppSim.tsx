@@ -99,6 +99,8 @@ const NAV_ICONS: Record<string, string> = {
     'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8 M22 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75',
   sub: 'M9 18l6-6-6-6',
   caret: 'M6 9l6 6 6-6',
+  mail: 'M3 7l9 6 9-6 M3 7h18v10H3z',
+  home: 'M3 10.5 12 4l9 6.5 M5 9.5V20h14V9.5',
 }
 
 function NavGlyph({ name }: { name: string }) {
@@ -119,7 +121,38 @@ function NavGlyph({ name }: { name: string }) {
   )
 }
 
-const NAV: { group: string; items: { label: string; icon: string }[] }[] = [
+// 关于我分组图标：GitHub 用品牌实心标，B站用显示器风格标，其余复用线条图标
+function AboutGlyph({ name }: { name: string }) {
+  if (name === 'github') {
+    return (
+      <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+      </svg>
+    )
+  }
+  if (name === 'bili') {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        width="18"
+        height="18"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M7 4l2 2.2 M17 4l-2 2.2 M5 6.2h14v10.5H5z M9 11.2h.01 M15 11.2h.01" />
+      </svg>
+    )
+  }
+  return <NavGlyph name={name} />
+}
+
+type NavItem = { label: string; icon: string; href?: string }
+
+const NAV: { group: string; items: NavItem[] }[] = [
   {
     group: '工作台',
     items: [
@@ -140,6 +173,15 @@ const NAV: { group: string; items: { label: string; icon: string }[] }[] = [
     items: [
       { label: '设置', icon: 'settings' },
       { label: '成员', icon: 'members' },
+    ],
+  },
+  {
+    group: '关于我',
+    items: [
+      { label: '个人主页', icon: 'home', href: 'https://ergeaia.github.io/' },
+      { label: 'GitHub', icon: 'github', href: 'https://github.com/ErgeAIA' },
+      { label: '邮箱', icon: 'mail', href: 'mailto:ergeaia@agent.qq.com' },
+      { label: 'B站', icon: 'bili', href: 'https://space.bilibili.com/67221461' },
     ],
   },
 ]
@@ -1383,7 +1425,13 @@ export default function AppSim({
   // 侧栏分组：示例子页作为「示例」菜单的子项（手风琴展开），不再单独成组
   const navGroups: {
     group: string
-    items: { label: string; icon: string; sub?: boolean; children?: { label: string; sub: boolean }[] }[]
+    items: {
+      label: string
+      icon: string
+      sub?: boolean
+      href?: string
+      children?: { label: string; sub: boolean }[]
+    }[]
   }[] = NAV.map((g) => ({
     ...g,
     items: g.items.map((it) =>
@@ -1432,37 +1480,52 @@ export default function AppSim({
                     : current === it.label && !(it.label === '示例' && example)
                   return (
                     <div key={it.label} className="sim-nav-wrap">
-                      <button
-                        className={`sim-nav-item${active ? ' on' : ''}${hasChildren ? ' has-children' : ''}${expanded ? ' expanded' : ''}`}
-                        onClick={() => {
-                          if (it.sub) {
-                            setCurrent('示例')
-                            setExample(it.label)
-                          } else {
-                            setCurrent(it.label)
-                            setExample(null)
-                          }
-                          if (hasChildren) {
-                            setOpenNav((o) => ({ ...o, [it.label]: !o[it.label] }))
-                          }
-                          setDrawer(false)
-                        }}
-                        title={it.label}
-                      >
-                        <span className="sim-nav-icon">
-                          <NavGlyph name={it.icon} />
-                        </span>
-                        {!collapsed && (
-                          <>
-                            <span className="sim-nav-label">{it.label}</span>
-                            {hasChildren && (
-                              <span className={`sim-nav-caret${expanded ? ' open' : ''}`}>
-                                <NavGlyph name="caret" />
-                              </span>
-                            )}
-                          </>
-                        )}
-                      </button>
+                      {it.href ? (
+                        <a
+                          className={`sim-nav-item${active ? ' on' : ''}`}
+                          href={it.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={it.label}
+                        >
+                          <span className="sim-nav-icon">
+                            <AboutGlyph name={it.icon} />
+                          </span>
+                          {!collapsed && <span className="sim-nav-label">{it.label}</span>}
+                        </a>
+                      ) : (
+                        <button
+                          className={`sim-nav-item${active ? ' on' : ''}${hasChildren ? ' has-children' : ''}${expanded ? ' expanded' : ''}`}
+                          onClick={() => {
+                            if (it.sub) {
+                              setCurrent('示例')
+                              setExample(it.label)
+                            } else {
+                              setCurrent(it.label)
+                              setExample(null)
+                            }
+                            if (hasChildren) {
+                              setOpenNav((o) => ({ ...o, [it.label]: !o[it.label] }))
+                            }
+                            setDrawer(false)
+                          }}
+                          title={it.label}
+                        >
+                          <span className="sim-nav-icon">
+                            <NavGlyph name={it.icon} />
+                          </span>
+                          {!collapsed && (
+                            <>
+                              <span className="sim-nav-label">{it.label}</span>
+                              {hasChildren && (
+                                <span className={`sim-nav-caret${expanded ? ' open' : ''}`}>
+                                  <NavGlyph name="caret" />
+                                </span>
+                              )}
+                            </>
+                          )}
+                        </button>
+                      )}
                       {!collapsed &&
                         hasChildren &&
                         expanded &&
@@ -1571,27 +1634,6 @@ export default function AppSim({
                   />
                 </label>
               </div>
-              <a
-                className="gh-link"
-                href="https://github.com/ErgeAIA/ThemeVault"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="GitHub 仓库"
-                aria-label="GitHub 仓库"
-              >
-                <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
-                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
-                </svg>
-              </a>
-              <a
-                className="sim-icon-btn sim-bell"
-                href="mailto:ergeaia@agent.qq.com"
-                aria-label="联系邮箱"
-                title="ergeaia@agent.qq.com"
-              >
-                ✉<i className="sim-dot" />
-              </a>
-              <Avatar entry={entry} sm />
             </div>
           </header>
 

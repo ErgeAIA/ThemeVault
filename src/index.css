@@ -723,6 +723,12 @@ code {
   font-weight: 600;
 }
 
+a.sim-nav-item {
+  text-decoration: none;
+  color: var(--tv-muted);
+  cursor: pointer;
+}
+
 .sim-nav-icon {
   flex-shrink: 0;
   width: 18px;
