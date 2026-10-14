@@ -17,7 +17,22 @@ function useMediaQuery(query: string): boolean {
   return matches
 }
 
-function ThemeSelect({ num, setNum }: { num: number; setNum: (n: number) => void }) {
+interface SelectOption<T extends string | number> {
+  value: T
+  label: string
+}
+
+function CustomSelect<T extends string | number>({
+  value,
+  options,
+  onChange,
+  ariaLabel,
+}: {
+  value: T
+  options: SelectOption<T>[]
+  onChange: (v: T) => void
+  ariaLabel: string
+}) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -28,7 +43,7 @@ function ThemeSelect({ num, setNum }: { num: number; setNum: (n: number) => void
     return () => window.removeEventListener('mousedown', onClick)
   }, [])
 
-  const current = allThemes.find(({ theme }) => theme.number === num)?.theme ?? allThemes[0]?.theme
+  const current = options.find((o) => o.value === value)
 
   return (
     <div className="sim-select" ref={ref}>
@@ -38,31 +53,27 @@ function ThemeSelect({ num, setNum }: { num: number; setNum: (n: number) => void
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="listbox"
         aria-expanded={open}
+        aria-label={ariaLabel}
       >
-        <span className="sim-select-current">
-          {current
-            ? `#${current.number} ${current.displayName}${current.zhName ? ` · ${current.zhName}` : ''} · ${current.scheme}`
-            : '主题'}
-        </span>
+        <span className="sim-select-current">{current ? current.label : '选择'}</span>
       </button>
       {open && (
         <div className="sim-select-list" role="listbox">
-          {allThemes.map(({ theme }) => {
-            const selected = theme.number === num
-            const label = `#${theme.number} ${theme.displayName}${theme.zhName ? ` · ${theme.zhName}` : ''} · ${theme.scheme}`
+          {options.map((o) => {
+            const selected = o.value === value
             return (
               <button
-                key={theme.number}
+                key={String(o.value)}
                 type="button"
                 role="option"
                 aria-selected={selected}
                 className={`sim-select-item${selected ? ' current' : ''}`}
                 onClick={() => {
-                  setNum(theme.number)
+                  onChange(o.value)
                   setOpen(false)
                 }}
               >
-                <span>{label}</span>
+                <span>{o.label}</span>
                 {selected && <span className="sim-select-check">✓</span>}
               </button>
             )
@@ -74,27 +85,59 @@ function ThemeSelect({ num, setNum }: { num: number; setNum: (n: number) => void
 }
 
 // 侧栏导航（结构参考 xieyi examples#sidebar，纯 CSS + --tv-* 变量实现）
-const NAV: { group: string; items: { label: string; icon: string; badge?: number }[] }[] = [
+// 侧栏图标（线条风格 SVG，统一 currentColor 描边）
+const NAV_ICONS: Record<string, string> = {
+  overview: 'M3 3h18v18H3z M3 9h18 M9 21V9',
+  chart: 'M3 3v18h18 M18 17V9 M13 17V5 M8 17v-3',
+  components: 'M12 2 2 7l10 5 10-5-10-5z M2 17l10 5 10-5 M2 12l10 5 10-5',
+  examples: 'M3 3h18v18H3z M3 9h18 M3 15h18 M9 3v18',
+  resources: 'M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z',
+  settings:
+    'M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z',
+  members:
+    'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8 M22 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75',
+  sub: 'M9 18l6-6-6-6',
+}
+
+function NavGlyph({ name }: { name: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width="18"
+      height="18"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d={NAV_ICONS[name] ?? NAV_ICONS.sub} />
+    </svg>
+  )
+}
+
+const NAV: { group: string; items: { label: string; icon: string }[] }[] = [
   {
     group: '工作台',
     items: [
-      { label: '概览', icon: '◈' },
-      { label: '数据分析', icon: '▲' },
+      { label: '概览', icon: 'overview' },
+      { label: '数据分析', icon: 'chart' },
     ],
   },
   {
     group: '内容',
     items: [
-      { label: '组件', icon: '▣', badge: 28 },
-      { label: '示例', icon: '✦', badge: 52 },
-      { label: '资源', icon: '❏' },
+      { label: '组件', icon: 'components' },
+      { label: '示例', icon: 'examples' },
+      { label: '资源', icon: 'resources' },
     ],
   },
   {
     group: '系统',
     items: [
-      { label: '设置', icon: '⚙' },
-      { label: '成员', icon: '◉' },
+      { label: '设置', icon: 'settings' },
+      { label: '成员', icon: 'members' },
     ],
   },
 ]
@@ -871,10 +914,18 @@ function MiniSidebar() {
       <div style={{ display: 'flex' }}>
         <div className="mini-side">
           <div className="mini-brand">写意 v1.4</div>
-          <div className="mini-nav on">◈ 概览</div>
-          <div className="mini-nav">▲ 数据分析</div>
-          <div className="mini-nav">▣ 组件</div>
-          <div className="mini-nav">⚙ 设置</div>
+          <div className="mini-nav on">
+            <NavGlyph name="overview" /> 概览
+          </div>
+          <div className="mini-nav">
+            <NavGlyph name="chart" /> 数据分析
+          </div>
+          <div className="mini-nav">
+            <NavGlyph name="components" /> 组件
+          </div>
+          <div className="mini-nav">
+            <NavGlyph name="settings" /> 设置
+          </div>
         </div>
         <div style={{ flex: 1, minWidth: 0 }}>
           <div className="mini-top">首页 / 概览</div>
@@ -1146,9 +1197,9 @@ export default function AppSim({
   const toggleSidebar = () => (isMobile ? setDrawer((d) => !d) : setCollapsed((c) => !c))
 
   // 侧栏分组 = 常规导航 + 示例子页直达
-  const navGroups: { group: string; items: { label: string; icon: string; badge?: number; sub?: boolean }[] }[] = [
+  const navGroups: { group: string; items: { label: string; icon: string; sub?: boolean }[] }[] = [
     ...NAV,
-    { group: '示例', items: EXAMPLES.map((e) => ({ label: e.title, icon: '✧', sub: true })) },
+    { group: '示例', items: EXAMPLES.map((e) => ({ label: e.title, icon: 'sub', sub: true })) },
   ]
 
   const vars = themeVars(entry) as unknown as CSSProperties
@@ -1201,11 +1252,12 @@ export default function AppSim({
                       }}
                       title={it.label}
                     >
-                      <span className="sim-nav-icon">{it.icon}</span>
+                      <span className="sim-nav-icon">
+                        <NavGlyph name={it.icon} />
+                      </span>
                       {!collapsed && (
                         <>
                           <span className="sim-nav-label">{it.label}</span>
-                          {it.badge != null && <span className="sim-nav-badge">{it.badge}</span>}
                         </>
                       )}
                     </button>
@@ -1231,7 +1283,7 @@ export default function AppSim({
                     setExample(null)
                   }}
                 >
-                  ⚙
+                  <NavGlyph name="settings" />
                 </button>
               </>
             )}
@@ -1276,17 +1328,24 @@ export default function AppSim({
               <div className="top-ctrls">
                 <label>
                   主题
-                  <ThemeSelect num={num} setNum={setNum} />
+                  <CustomSelect
+                    ariaLabel="选择主题"
+                    value={num}
+                    onChange={(v) => setNum(v as number)}
+                    options={allThemes.map(({ theme }) => ({
+                      value: theme.number,
+                      label: `#${theme.number} ${theme.displayName}${theme.zhName ? ` · ${theme.zhName}` : ''} · ${theme.scheme}`,
+                    }))}
+                  />
                 </label>
                 <label className="sim-font-label">
                   字体
-                  <select value={fontId} onChange={(e) => setFontId(e.target.value)}>
-                    {fontSchemes.map((f) => (
-                      <option key={f.id} value={f.id}>
-                        {f.name}
-                      </option>
-                    ))}
-                  </select>
+                  <CustomSelect
+                    ariaLabel="选择字体"
+                    value={fontId}
+                    onChange={(v) => setFontId(v as string)}
+                    options={fontSchemes.map((f) => ({ value: f.id, label: f.name }))}
+                  />
                 </label>
               </div>
               <a

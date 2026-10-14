@@ -725,8 +725,15 @@ code {
 
 .sim-nav-icon {
   flex-shrink: 0;
-  width: 16px;
-  text-align: center;
+  width: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.sim-nav-icon svg {
+  display: block;
 }
 
 .sim-side.collapsed .sim-nav-item {
@@ -739,16 +746,6 @@ code {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.sim-nav-badge {
-  flex-shrink: 0;
-  font-size: 10px;
-  padding: 1px 6px;
-  border-radius: 999px;
-  background: var(--tv-surface-2);
-  color: var(--tv-dim);
-  font-variant-numeric: tabular-nums;
 }
 
 .sim-user {
@@ -821,6 +818,10 @@ a.sim-icon-btn {
 .sim-user-gear:hover {
   color: var(--tv-text);
   background: var(--tv-hover);
+}
+
+.sim-user-gear svg {
+  display: block;
 }
 
 /* 主区 */
@@ -1691,6 +1692,15 @@ a.sim-icon-btn {
   padding: 5px 9px;
   border-radius: 6px;
   color: var(--tv-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mini-nav svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
 }
 
 .mini-nav.on {
