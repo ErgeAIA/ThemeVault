@@ -28,7 +28,7 @@ function minRatio(e: ThemeEntry): number {
   return vs.length ? Math.min(...vs) : Infinity
 }
 
-function paletteText(e: ThemeEntry): string {
+export function paletteText(e: ThemeEntry): string {
   const t = e.theme
   const bgRole = e.fam.family === 'ergemd' ? 'bg-page' : e.fam.family === 'opencode' ? 'background' : 'bg'
   const L: string[] = []

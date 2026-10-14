@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
+import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import Prism from 'prismjs'
 import 'prismjs/components/prism-typescript'
-import { allThemes, fgFor, themeVars, type ThemeEntry } from '../data/tv'
+import { allThemes, fgFor, themeVars, type FontStacks, type ThemeEntry } from '../data/tv'
+import { paletteText } from './PaletteGallery'
 
 function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState(
@@ -258,14 +259,28 @@ function Avatar({ entry, sm }: { entry: ThemeEntry; sm?: boolean }) {
   )
 }
 
-function PageHead({ title, desc, action }: { title: string; desc: string; action?: string }) {
+function PageHead({
+  title,
+  desc,
+  action,
+  onAction,
+}: {
+  title: string
+  desc: string
+  action?: string
+  onAction?: () => void
+}) {
   return (
     <div className="sim-pagehead">
       <div>
         <h2>{title}</h2>
         <p>{desc}</p>
       </div>
-      {action && <button className="btn primary">＋ {action}</button>}
+      {action && (
+        <button className="btn primary" onClick={onAction}>
+          ＋ {action}
+        </button>
+      )}
     </div>
   )
 }
@@ -284,7 +299,7 @@ function CardHead({ title, desc, extra }: { title: string; desc?: string; extra?
 
 // ===== 概览 =====
 
-function Overview() {
+function Overview({ onExport }: { onExport?: () => void } = {}) {
   const [tab, setTab] = useState<(typeof TABS)[number]>('全部')
   const [notify, setNotify] = useState(true)
   const [emailUp, setEmailUp] = useState(true)
@@ -297,7 +312,7 @@ function Overview() {
 
   return (
     <>
-      <PageHead title="概览" desc="主题应用后的界面演示 · 演示数据" action="新建主题" />
+      <PageHead title="概览" desc="主题应用后的界面演示 · 演示数据" action="资产导出" onAction={onExport} />
 
       <div className="sim-stats">
         {STATS.map((s) => (
@@ -1162,6 +1177,101 @@ function ExampleDetail({ title, onBack }: { title: string; onBack: () => void })
   )
 }
 
+// 把已选主题 + 字体方案打包成 AI 可直接消费的资产文本（调色板 + 字体栈 + 可粘贴 CSS 变量）。
+function buildAssetText(entry: ThemeEntry, schemeName: string, stacks: FontStacks): string {
+  const themePart = paletteText(entry)
+  const fontPart = [
+    '## 字体方案',
+    `- 方案：${schemeName}`,
+    `- heading：${stacks.heading}`,
+    `- body：${stacks.body}`,
+    `- code：${stacks.code}`,
+    `- ui：${stacks.ui}`,
+    '',
+    '> 中文界面已统一追加 CJK 回退（PingFang SC / Microsoft YaHei / Noto Sans SC），切换字体方案在中文下同样可见。',
+  ].join('\n')
+
+  const vars = themeVars(entry)
+  const cssBody = Object.entries({
+    ...vars,
+    '--tv-font-heading': stacks.heading,
+    '--tv-font-body': stacks.body,
+    '--tv-font-code': stacks.code,
+    '--tv-font-ui': stacks.ui,
+  })
+    .map(([k, v]) => `  ${k}: ${v};`)
+    .join('\n')
+  const cssPart = ['## CSS 变量（直接粘贴到 :root 或 .app）', ':root {', cssBody, '}'].join('\n')
+
+  return `${themePart}\n\n${fontPart}\n\n${cssPart}\n`
+}
+
+function ExportModal({
+  entry,
+  schemeName,
+  stacks,
+  onClose,
+}: {
+  entry: ThemeEntry
+  schemeName: string
+  stacks: FontStacks
+  onClose: () => void
+}) {
+  const text = useMemo(() => buildAssetText(entry, schemeName, stacks), [entry, schemeName, stacks])
+  const [copied, setCopied] = useState(false)
+
+  const copy = () => {
+    const done = () => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    }
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done))
+    } else {
+      fallbackCopy(text, done)
+    }
+  }
+
+  return (
+    <div className="export-backdrop" onClick={onClose}>
+      <div className="export-box" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
+        <div className="export-head">
+          <h3>资产导出 · 主题 + 字体</h3>
+          <button className="export-x" onClick={onClose} aria-label="关闭">
+            ✕
+          </button>
+        </div>
+        <p className="export-sub">
+          一键复制后可直接交给 AI 使用：主题调色板（语义角色 = 色值）+ 字体方案 + 可粘贴的 CSS 变量。
+        </p>
+        <textarea className="export-text" readOnly value={text} spellCheck={false} />
+        <div className="export-actions">
+          <button className="btn primary" onClick={copy}>
+            {copied ? '已复制 ✓' : '复制全部'}
+          </button>
+          <span className="export-hint">或手动选中上方文本复制</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function fallbackCopy(text: string, done: () => void) {
+  const ta = document.createElement('textarea')
+  ta.value = text
+  ta.style.position = 'fixed'
+  ta.style.opacity = '0'
+  document.body.appendChild(ta)
+  ta.select()
+  try {
+    document.execCommand('copy')
+    done()
+  } catch {
+    /* 忽略：复制失败交给用户手动复制 */
+  }
+  document.body.removeChild(ta)
+}
+
 const PAGES: Record<string, () => ReactNode> = {
   概览: Overview,
   数据分析: Analytics,
@@ -1181,6 +1291,7 @@ export default function AppSim({
   setNum,
   setMode,
   fontSchemes,
+  stacks,
 }: {
   entry: ThemeEntry
   fontId: string
@@ -1189,12 +1300,14 @@ export default function AppSim({
   setNum: (n: number) => void
   setMode: (m: SimMode) => void
   fontSchemes: { id: string; name: string; description: string }[]
+  stacks: FontStacks
 }) {
   const [current, setCurrent] = useState('概览')
   const [collapsed, setCollapsed] = useState(false)
   const [example, setExample] = useState<string | null>(null)
   const [drawer, setDrawer] = useState(false)
   const [openNav, setOpenNav] = useState<Record<string, boolean>>({ 示例: true })
+  const [exportOpen, setExportOpen] = useState(false)
   const isMobile = useMediaQuery('(max-width: 960px)')
   const toggleSidebar = () => (isMobile ? setDrawer((d) => !d) : setCollapsed((c) => !c))
 
@@ -1213,6 +1326,7 @@ export default function AppSim({
 
   const vars = themeVars(entry) as unknown as CSSProperties
   const Page = PAGES[current] ?? Overview
+  const schemeName = fontSchemes.find((f) => f.id === fontId)?.name ?? fontId
 
   return (
     <div className="sim" style={vars}>
@@ -1417,12 +1531,22 @@ export default function AppSim({
               <ExampleDetail title={example} onBack={() => setExample(null)} />
             ) : current === '示例' ? (
               <ExamplesPage onOpen={setExample} />
+            ) : current === '概览' ? (
+              <Overview onExport={() => setExportOpen(true)} />
             ) : (
               <Page />
             )}
           </div>
         </div>
       </div>
+      {exportOpen && (
+        <ExportModal
+          entry={entry}
+          schemeName={schemeName}
+          stacks={stacks}
+          onClose={() => setExportOpen(false)}
+        />
+      )}
     </div>
   )
 }

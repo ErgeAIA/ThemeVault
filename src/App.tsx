@@ -139,6 +139,7 @@ export default function App() {
           setNum={setNum}
           setMode={setMode}
           fontSchemes={FONT_SCHEMES}
+          stacks={stacks}
         />
       )}
     </div>
