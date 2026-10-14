@@ -1206,6 +1206,50 @@ function buildAssetText(entry: ThemeEntry, schemeName: string, stacks: FontStack
   return `${themePart}\n\n${fontPart}\n\n${cssPart}\n`
 }
 
+// 把字体栈拆成 Tailwind fontFamily 可用的数组（去掉两端引号，统一单引号包裹）。
+function stackToArray(stack: string): string[] {
+  return stack
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map((s) => s.replace(/^"|"$/g, ''))
+}
+
+// Tailwind 风格导出：把语义色板映射为 theme.extend.colors.tv.* + 字体族，可直接粘进 tailwind.config。
+function buildTailwindText(entry: ThemeEntry, schemeName: string, stacks: FontStacks): string {
+  const t = entry.theme
+  const vars = themeVars(entry)
+  const colorLines = Object.entries(vars)
+    .filter(([k]) => k !== '--tv-radius')
+    .map(([k, v]) => {
+      const name = k.replace(/^--tv-/, '')
+      return `        '${name}': '${v}',`
+    })
+  const ff = (stack: string) => stackToArray(stack).map((s) => `'${s}'`).join(', ')
+  return [
+    `/** Tailwind 风格导出 · ThemeVault 主题 #${String(t.number).padStart(3, '0')} ${t.displayName}${t.zhName ? ` | ${t.zhName}` : ''} · 字体方案：${schemeName} */`,
+    "/** @type {import('tailwindcss').Config} */",
+    'module.exports = {',
+    '  theme: {',
+    '    extend: {',
+    '      colors: {',
+    '        tv: {',
+    ...colorLines,
+    '        },',
+    '      },',
+    '      fontFamily: {',
+    `        heading: [${ff(stacks.heading)}],`,
+    `        body: [${ff(stacks.body)}],`,
+    `        code: [${ff(stacks.code)}],`,
+    `        ui: [${ff(stacks.ui)}],`,
+    '      },',
+    '    },',
+    '  },',
+    '}',
+    '',
+  ].join('\n')
+}
+
 function ExportModal({
   entry,
   schemeName,
@@ -1217,7 +1261,14 @@ function ExportModal({
   stacks: FontStacks
   onClose: () => void
 }) {
-  const text = useMemo(() => buildAssetText(entry, schemeName, stacks), [entry, schemeName, stacks])
+  const [fmt, setFmt] = useState<'asset' | 'tailwind'>('asset')
+  const text = useMemo(
+    () =>
+      fmt === 'tailwind'
+        ? buildTailwindText(entry, schemeName, stacks)
+        : buildAssetText(entry, schemeName, stacks),
+    [fmt, entry, schemeName, stacks],
+  )
   const [copied, setCopied] = useState(false)
 
   const copy = () => {
@@ -1242,8 +1293,26 @@ function ExportModal({
           </button>
         </div>
         <p className="export-sub">
-          一键复制后可直接交给 AI 使用：主题调色板（语义角色 = 色值）+ 字体方案 + 可粘贴的 CSS 变量。
+          一键复制后可直接交给 AI 使用。两种格式任选：<b>主题资产</b>（调色板 + 字体 + CSS 变量）或 <b>Tailwind 风格</b>（tailwind.config 配色 + 字体族）。
         </p>
+        <div className="export-tabs" role="tablist">
+          <button
+            role="tab"
+            aria-selected={fmt === 'asset'}
+            className={fmt === 'asset' ? 'on' : ''}
+            onClick={() => setFmt('asset')}
+          >
+            主题资产
+          </button>
+          <button
+            role="tab"
+            aria-selected={fmt === 'tailwind'}
+            className={fmt === 'tailwind' ? 'on' : ''}
+            onClick={() => setFmt('tailwind')}
+          >
+            Tailwind 风格
+          </button>
+        </div>
         <textarea className="export-text" readOnly value={text} spellCheck={false} />
         <div className="export-actions">
           <button className="btn primary" onClick={copy}>

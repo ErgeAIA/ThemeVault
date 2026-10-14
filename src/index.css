@@ -2016,6 +2016,42 @@ a.sim-icon-btn {
   color: var(--tv-dim);
 }
 
+.export-sub b {
+  color: var(--tv-text);
+  font-weight: 600;
+}
+
+.export-tabs {
+  flex-shrink: 0;
+  display: flex;
+  gap: 6px;
+  margin: 12px 16px 0;
+}
+
+.export-tabs button {
+  flex: 1;
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--tv-border);
+  background: var(--tv-bg);
+  color: var(--tv-muted);
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.export-tabs button:hover {
+  color: var(--tv-text);
+  border-color: var(--tv-border-strong);
+}
+
+.export-tabs button.on {
+  background: var(--tv-accent);
+  border-color: var(--tv-accent);
+  color: var(--tv-accent-fg);
+  font-weight: 600;
+}
+
 .export-text {
   flex: 1;
   min-height: 320px;
