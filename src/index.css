@@ -129,6 +129,21 @@ code {
   gap: 10px;
 }
 
+.gh-link {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--tv-dim);
+  transition: color 0.12s, background 0.12s;
+}
+
+.gh-link:hover {
+  color: var(--tv-text);
+  background: var(--tv-hover);
+}
+
 .top-ctrls label {
   display: flex;
   align-items: center;
