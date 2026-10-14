@@ -35,6 +35,7 @@ description: >
   - 部署：新增 `.github/workflows/deploy.yml`，push main 触发 `pnpm install --frozen-lockfile` + `GITHUB_PAGES=1 pnpm build`，发 GitHub Pages（`base=/ThemeVault/`，与仓库名一致）；Pages Source 已设为 GitHub Actions。
   - 校验：`pnpm build`（tsc --noEmit + vite build）本地通过；`.gitignore` 补 `*.tsbuildinfo`。
   - 后续：预览页「字体身份」与仿真器是否整合进 React 主页，待用户看 React 主页后定（preview.html 字体身份改动已单独提交）。
+  - CI 修复：① `pnpm/action-setup@v4` 与 `package.json` 的 `packageManager` 版本冲突（删除 `version: 12`）；② pnpm 12 的构建脚本许可须写在 `pnpm-workspace.yaml` 的 `allowBuilds` 字段，已批准 `esbuild` 并推送修复。
 - **当前分支**：main（已有提交，基线以 `git log` 为准）
 - **阶段**：资产仓维护（非运行时项目）；协作记忆已初始化
 - **代码**：`scripts/*.py` 生成器与校验器存在；无应用运行时
