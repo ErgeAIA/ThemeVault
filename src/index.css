@@ -4,6 +4,30 @@
 
 * {
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--tv-dim) 35%, transparent) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--tv-dim) 35%, transparent);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--tv-dim) 55%, transparent);
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 html,
@@ -249,16 +273,6 @@ code {
   border-color: var(--tv-focus);
 }
 
-.chip.font-load-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.chip.font-load-toggle input {
-  vertical-align: -1px;
-  cursor: pointer;
-}
 
 /* ===== 海选完整预览卡片（移植自 preview.html 主题预览）===== */
 
@@ -399,38 +413,6 @@ code {
   opacity: 0.85;
 }
 
-.pg-code {
-  margin-top: 9px;
-}
-
-.pg-code summary {
-  cursor: pointer;
-  font-size: 11.5px;
-  opacity: 0.8;
-  padding: 2px 0;
-  user-select: none;
-}
-
-.pg-code summary:hover {
-  opacity: 1;
-}
-
-.pg-codeblock {
-  margin-top: 6px;
-  padding: 9px 11px;
-  border-radius: 6px;
-  border: 1px solid;
-  font-family: var(--tv-font-code);
-  font-size: 12px;
-  line-height: 1.7;
-  white-space: pre;
-  overflow-x: auto;
-}
-
-.pg-code-line {
-  display: block;
-}
-
 .pg-tags {
   display: flex;
   flex-wrap: wrap;
@@ -501,7 +483,7 @@ code {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding: 16px 18px;
   margin-bottom: 14px;
   border-radius: var(--tv-radius);
@@ -517,7 +499,8 @@ code {
 .gal-hero-text p {
   font-size: 13px;
   color: var(--tv-muted);
-  max-width: 640px;
+  max-width: none;
+  white-space: nowrap;
   line-height: 1.5;
 }
 
@@ -1335,6 +1318,26 @@ a.sim-icon-btn {
   color: var(--tv-syn-literal);
 }
 
+.tk-f {
+  color: var(--tv-syn-function);
+}
+
+.tk-v {
+  color: var(--tv-syn-variable);
+}
+
+.tk-t {
+  color: var(--tv-syn-type);
+}
+
+.tk-o {
+  color: var(--tv-syn-operator);
+}
+
+.tk-p {
+  color: var(--tv-syn-punctuation);
+}
+
 /* 动态流 */
 
 .feed {
@@ -1785,6 +1788,14 @@ a.sim-icon-btn {
   .sim-demo-badge {
     display: none;
   }
+
+  .gal-hero {
+    flex-wrap: wrap;
+  }
+
+  .gal-hero-text p {
+    white-space: normal;
+  }
 }
 
 /* ===== 移动端抽屉遮罩（默认隐藏，仅 ≤960px 生效）===== */
@@ -1820,8 +1831,24 @@ a.sim-icon-btn {
   }
 }
 
-/* 仿真框架可读性下限：低对比主题下仍可见分隔 */
+/* 仿真界面分隔线全去掉 */
+.sim-shell,
 .sim-side,
-.sim-top {
-  box-shadow: inset 0 0 0 1px rgba(128, 128, 140, 0.14);
+.sim-brand,
+.sim-user,
+.sim-top,
+.p,
+.code,
+.tbl th,
+.tbl td,
+.res-row,
+.member,
+.mini-wrap,
+.mini-brand,
+.mini-side,
+.mini-top,
+.mini-stat,
+.kan-card,
+.alert {
+  border-color: transparent !important;
 }

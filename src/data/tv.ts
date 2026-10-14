@@ -211,6 +211,11 @@ export function themeVars(entry: ThemeEntry): Record<string, string> {
     '--tv-syn-literal': first('syntax-literal') ?? warn,
     '--tv-syn-title': first('syntax-title') ?? accent,
     '--tv-syn-attr': first('syntax-attr', 'syntax-variable', 'syntax-type') ?? accent,
+    '--tv-syn-function': first('syntax-title', 'syntax-function') ?? accent,
+    '--tv-syn-variable': first('syntax-attr', 'syntax-variable') ?? text,
+    '--tv-syn-type': first('syntax-type', 'syntax-title') ?? accent,
+    '--tv-syn-operator': first('syntax-operator') ?? dim,
+    '--tv-syn-punctuation': first('syntax-punctuation') ?? dim,
     '--tv-radius': entry.theme.structuralNote?.includes('radius-none') ? '0px' : '12px',
   }
 }

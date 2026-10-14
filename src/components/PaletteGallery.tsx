@@ -4,8 +4,6 @@ import {
   badgeInfos,
   cardBg,
   cardSections,
-  codeBlockBg,
-  codeBlockLines,
   contrast,
   families,
   fgFor,
@@ -15,9 +13,7 @@ import {
 } from '../data/tv'
 
 const SCHEME_LABEL: Record<string, string> = { light: 'Light', dark: 'Dark' }
-const GENERIC_FONTS = new Set([
-  'monospace', 'serif', 'sans-serif', 'system-ui', 'ui-monospace', 'ui-sans-serif', 'ui-serif', 'cursive', 'fantasy', 'ui-rounded', 'default', 'inherit',
-])
+
 
 /** 选与底色对比度更高的文字色，保证 tag / 色块标签可读。 */
 function readableOn(bg: string): string {
@@ -69,7 +65,6 @@ export default function PaletteGallery({
   const [family, setFamily] = useState<string>('all')
   const [sortMode, setSortMode] = useState<'num' | 'aa'>('num')
   const [onlyFail, setOnlyFail] = useState(false)
-  const [webFontsOn, setWebFontsOn] = useState(false)
 
   const familyOptions = useMemo(() => {
     return families
@@ -97,27 +92,7 @@ export default function PaletteGallery({
       .sort((a, b) => (sortMode === 'aa' ? minRatio(a) - minRatio(b) : a.theme.number - b.theme.number))
   }, [query, scheme, family, onlyFail, sortMode])
 
-  // 可选加载 Web 字体（默认关，破坏自包含，用户主动开启）
-  useEffect(() => {
-    if (!webFontsOn) return
-    const fonts = Array.from(
-      new Set(
-        allThemes.flatMap((e) =>
-          (e.theme.fonts ?? []).map((f) => f.trim()).filter((f) => f && !GENERIC_FONTS.has(f.toLowerCase())),
-        ),
-      ),
-    )
-    if (!fonts.length) return
-    const link = document.createElement('link')
-    link.rel = 'stylesheet'
-    link.href = `https://fonts.googleapis.com/css2?family=${fonts
-      .map((f) => encodeURIComponent(f).replace(/%20/g, '+'))
-      .join('&family=')}&display=swap`
-    document.head.appendChild(link)
-    return () => {
-      document.head.removeChild(link)
-    }
-  }, [webFontsOn])
+
 
   // ⌘K / "/" 聚焦搜索（真实可用的键盘加速器，便于快速跳主题）
   const searchRef = useRef<HTMLInputElement>(null)
@@ -187,9 +162,6 @@ export default function PaletteGallery({
         <button className={`chip${onlyFail ? ' on' : ''}`} onClick={() => setOnlyFail((v) => !v)}>
           只看 ✗
         </button>
-        <label className="chip font-load-toggle">
-          <input type="checkbox" checked={webFontsOn} onChange={(e) => setWebFontsOn(e.target.checked)} /> 加载 Web 字体
-        </label>
         <span className="gal-count">
           {list.length} / {allThemes.length} 套
         </span>
@@ -219,14 +191,16 @@ export default function PaletteGallery({
             : isMono
               ? '等宽 mono（未声明具体字体）'
               : '默认（无声明）'
-          const codeBg = codeBlockBg(entry)
-          const codeLines = codeBlockLines(entry)
-
           return (
             <div
               key={`${fam.family}/${theme.id}`}
               className={`pg-card${isSel ? ' selected' : ''}`}
-              style={{ background: bg, color: text }}
+              style={{
+                background: bg,
+                color: text,
+                borderColor: isSel ? (brand?.color || accent || '#ffffff') : undefined,
+                boxShadow: isSel ? `0 0 0 2px ${brand?.color || accent || '#ffffff'}` : undefined,
+              }}
               onClick={() => onSelect(entry)}
               title="点击应用此主题到界面仿真"
             >
@@ -309,28 +283,6 @@ export default function PaletteGallery({
                   </div>
                 )
               })}
-
-              <details className="pg-code">
-                <summary>语法高亮演示</summary>
-                <div
-                  className="pg-codeblock"
-                  style={{
-                    background: codeBg ?? bg,
-                    color: text,
-                    borderColor: 'rgba(128,128,140,0.3)',
-                  }}
-                >
-                  {codeLines.map((line, i) => (
-                    <span className="pg-code-line" key={i}>
-                      {line.map((tk, j) => (
-                        <span key={j} style={{ color: tk.color }}>
-                          {tk.text}
-                        </span>
-                      ))}
-                    </span>
-                  ))}
-                </div>
-              </details>
 
               <div className="pg-tags">
                 <span className="pg-tag num" style={{ color: ink }}>

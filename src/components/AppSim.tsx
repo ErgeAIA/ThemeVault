@@ -1,4 +1,6 @@
 import { useEffect, useState, type CSSProperties, type ReactNode } from 'react'
+import Prism from 'prismjs'
+import 'prismjs/components/prism-typescript'
 import { allThemes, fgFor, themeVars, type ThemeEntry } from '../data/tv'
 
 function useMediaQuery(query: string): boolean {
@@ -90,25 +92,49 @@ export function applyTheme(theme) {
   return { ok: true, theme: theme.number }
 }`
 
-const TOKEN_RE = /(\/\/.*$)|('[^']*')|(`[^`]*`)|\b(import|from|export|function|const|for|of|return|true|false)\b|\b(\d+(?:\.\d+)?)\b/gm
+const TOKEN_CLASS: Record<string, string | undefined> = {
+  comment: 'tk-c',
+  string: 'tk-s',
+  'template-string': 'tk-s',
+  keyword: 'tk-k',
+  boolean: 'tk-k',
+  function: 'tk-f',
+  'function-variable': 'tk-f',
+  'class-name': 'tk-t',
+  type: 'tk-t',
+  variable: 'tk-v',
+  property: 'tk-v',
+  number: 'tk-l',
+  operator: 'tk-o',
+  punctuation: 'tk-p',
+}
+
+function renderTokens(tokens: Array<string | Prism.Token>, keyBase: string): ReactNode[] {
+  return tokens.map((tk, i) => {
+    const key = `${keyBase}-${i}`
+    if (typeof tk === 'string') {
+      return tk ? <span key={key}>{tk}</span> : null
+    }
+    const cls = TOKEN_CLASS[tk.type]
+    let children: ReactNode
+    if (Array.isArray(tk.content)) {
+      children = renderTokens(tk.content as Array<string | Prism.Token>, key)
+    } else if (typeof tk.content === 'string') {
+      children = tk.content
+    } else {
+      children = renderTokens([tk.content], key)
+    }
+    return (
+      <span key={key} className={cls}>
+        {children}
+      </span>
+    )
+  })
+}
 
 function highlightCode(code: string): ReactNode[] {
-  const out: ReactNode[] = []
-  let last = 0
-  let key = 0
-  for (const m of code.matchAll(TOKEN_RE)) {
-    const i = m.index ?? 0
-    if (i > last) out.push(code.slice(last, i))
-    const cls = m[1] || m[2] || m[3] ? 'c' : m[4] ? 'k' : 'l'
-    out.push(
-      <span key={key++} className={`tk-${cls}`}>
-        {m[0]}
-      </span>,
-    )
-    last = i + m[0].length
-  }
-  if (last < code.length) out.push(code.slice(last))
-  return out
+  const tokens = Prism.tokenize(code, Prism.languages.typescript)
+  return renderTokens(tokens, '0')
 }
 
 const FEED = [
