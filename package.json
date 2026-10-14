@@ -5,9 +5,9 @@
   "packageManager": "pnpm@12.11.2",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "dev": "node dev.mjs",
+    "build": "tsc --noEmit && node dev.mjs build",
+    "preview": "node dev.mjs preview"
   },
   "dependencies": {
     "react": "^19.0.0",
