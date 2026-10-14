@@ -226,16 +226,21 @@ export type FontStacks = Record<'heading' | 'body' | 'code' | 'ui', string>
 
 export const THEME_FONT_ID = 'theme'
 
+// 中文回退家族（与 fontThemes 保持一致），让跟随主题时中文也能落到一致字体。
+const CJK_SANS = '"PingFang SC", "Microsoft YaHei", "Noto Sans SC"'
+
 /** 「跟随主题」字体栈：主题声明 fonts[0] 为标题/正文/界面，fonts[1]（或等宽声明）为代码。 */
 export function themeFontStacks(entry: ThemeEntry): FontStacks {
   const fonts = entry.theme.fonts ?? []
   const isMono = (entry.theme.fontStyle ?? '').includes('mono')
-  const primary = fonts[0] ? `"${fonts[0]}", system-ui, sans-serif` : 'system-ui, sans-serif'
+  const primary = fonts[0]
+    ? `"${fonts[0]}", system-ui, sans-serif, ${CJK_SANS}`
+    : `system-ui, sans-serif, ${CJK_SANS}`
   const mono = fonts[1]
-    ? `"${fonts[1]}", ui-monospace, monospace`
+    ? `"${fonts[1]}", ui-monospace, monospace, ${CJK_SANS}`
     : fonts[0] && isMono
-      ? `"${fonts[0]}", ui-monospace, monospace`
-      : 'ui-monospace, monospace'
+      ? `"${fonts[0]}", ui-monospace, monospace, ${CJK_SANS}`
+      : `ui-monospace, monospace, ${CJK_SANS}`
   return { heading: primary, body: primary, code: mono, ui: primary }
 }
 

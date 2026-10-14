@@ -38,10 +38,15 @@ export const AVAILABLE_FONTS: FontMeta[] = [
   { name: 'Fira Code', category: 'mono' },
 ]
 
+const CJK_SANS = '"PingFang SC", "Microsoft YaHei", "Noto Sans SC"'
+const CJK_SERIF = '"Songti SC", "SimSun", "Noto Serif SC"'
+
+// 回退链统一追加中文家族：拉丁字体不含中文字形，否则中文会落到各系统默认字体，
+// 导致「切换字体方案」在中文界面几乎看不出变化。
 const FALLBACK: Record<FontCategory, string> = {
-  sans: 'system-ui, sans-serif',
-  serif: 'Georgia, serif',
-  mono: 'ui-monospace, monospace',
+  sans: `system-ui, sans-serif, ${CJK_SANS}`,
+  serif: `Georgia, serif, ${CJK_SERIF}`,
+  mono: `ui-monospace, monospace, ${CJK_SANS}`,
 }
 
 export function buildFamily(name: string, category: FontCategory): string {
@@ -52,34 +57,23 @@ export function categoryOf(name: string): FontCategory {
   return AVAILABLE_FONTS.find((f) => f.name === name)?.category ?? 'sans'
 }
 
-// 流行 UI 字体搭配方案：每个方案为 标题/正文/代码/界面 分配字体。
+// 精选 UI 字体簇：每簇 ≤3 家族、等宽同源优先、回退链含中文（见 FALLBACK）。
 export const fontThemes: FontTheme[] = [
   {
-    id: 'inter-allround',
-    name: 'Inter 全能',
-    description: '全站 Inter，代码用 JetBrains Mono，干净现代的默认之选。',
+    id: 'system',
+    name: '系统默认',
+    description: 'system-ui + 等宽，零字体负载、原生平台感，中文走系统字体。',
     fonts: {
-      heading: buildFamily('Inter', 'sans'),
-      body: buildFamily('Inter', 'sans'),
-      code: buildFamily('JetBrains Mono', 'mono'),
-      ui: buildFamily('Inter', 'sans'),
-    },
-  },
-  {
-    id: 'space-ibm',
-    name: 'Space Grotesk × IBM Plex',
-    description: '几何感标题配人文无衬线正文，代码 IBM Plex Mono（取自 ThemeVault 主题数据）。',
-    fonts: {
-      heading: buildFamily('Space Grotesk', 'sans'),
-      body: buildFamily('IBM Plex Sans', 'sans'),
-      code: buildFamily('IBM Plex Mono', 'mono'),
-      ui: buildFamily('Space Grotesk', 'sans'),
+      heading: `system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, ${CJK_SANS}`,
+      body: `system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, ${CJK_SANS}`,
+      code: `ui-monospace, SFMono-Regular, Menlo, monospace, ${CJK_SANS}`,
+      ui: `system-ui, -apple-system, "Segoe UI", Roboto, sans-serif, ${CJK_SANS}`,
     },
   },
   {
     id: 'geist-modern',
     name: 'Geist 现代',
-    description: 'Vercel 出品的无衬线，代码用 Geist Mono，极简科技感。',
+    description: 'Vercel 出品的 Geist + Geist Mono，同源等宽，极简科技感。',
     fonts: {
       heading: buildFamily('Geist', 'sans'),
       body: buildFamily('Geist', 'sans'),
@@ -88,14 +82,47 @@ export const fontThemes: FontTheme[] = [
     },
   },
   {
+    id: 'ibm-plex',
+    name: 'IBM Plex 套装',
+    description: 'IBM Plex Sans + IBM Plex Mono，全家同源最协调，人文无衬线。',
+    fonts: {
+      heading: buildFamily('IBM Plex Sans', 'sans'),
+      body: buildFamily('IBM Plex Sans', 'sans'),
+      code: buildFamily('IBM Plex Mono', 'mono'),
+      ui: buildFamily('IBM Plex Sans', 'sans'),
+    },
+  },
+  {
+    id: 'space-grotesk',
+    name: 'Space Grotesk 展示',
+    description: 'Space Grotesk 几何标题 + Inter 正文，显示体对比建立层级，代码 IBM Plex Mono。',
+    fonts: {
+      heading: buildFamily('Space Grotesk', 'sans'),
+      body: buildFamily('Inter', 'sans'),
+      code: buildFamily('IBM Plex Mono', 'mono'),
+      ui: buildFamily('Inter', 'sans'),
+    },
+  },
+  {
     id: 'editorial-serif',
     name: '编辑衬线',
-    description: 'Playfair 标题 + Source Serif 正文，长文阅读气质，代码 JetBrains Mono。',
+    description: 'Playfair 展示标题 + Source Serif 4 正文/界面，长文阅读气质，代码 JetBrains Mono（压到 3 家族）。',
     fonts: {
       heading: buildFamily('Playfair Display', 'serif'),
       body: buildFamily('Source Serif 4', 'serif'),
       code: buildFamily('JetBrains Mono', 'mono'),
-      ui: buildFamily('Source Sans 3', 'sans'),
+      ui: buildFamily('Source Serif 4', 'serif'),
+    },
+  },
+  {
+    id: 'friendly-rounded',
+    name: '圆润亲和',
+    description: 'Quicksand 标题 + Nunito 正文/界面，友好可爱，代码 Fira Code。',
+    fonts: {
+      heading: buildFamily('Quicksand', 'sans'),
+      body: buildFamily('Nunito', 'sans'),
+      code: buildFamily('Fira Code', 'mono'),
+      ui: buildFamily('Nunito', 'sans'),
     },
   },
   {
@@ -107,39 +134,6 @@ export const fontThemes: FontTheme[] = [
       body: buildFamily('IBM Plex Mono', 'mono'),
       code: buildFamily('IBM Plex Mono', 'mono'),
       ui: buildFamily('IBM Plex Mono', 'mono'),
-    },
-  },
-  {
-    id: 'friendly-rounded',
-    name: '圆润亲和',
-    description: 'Quicksand 标题 + Nunito 正文，友好可爱，代码 Fira Code。',
-    fonts: {
-      heading: buildFamily('Quicksand', 'sans'),
-      body: buildFamily('Nunito', 'sans'),
-      code: buildFamily('Fira Code', 'mono'),
-      ui: buildFamily('Nunito', 'sans'),
-    },
-  },
-  {
-    id: 'technical-archivo',
-    name: '技术感 Archivo',
-    description: 'Archivo 紧凑无衬线配 Inter 正文，仪表盘 / 后台风格。',
-    fonts: {
-      heading: buildFamily('Archivo', 'sans'),
-      body: buildFamily('Inter', 'sans'),
-      code: buildFamily('JetBrains Mono', 'mono'),
-      ui: buildFamily('Inter', 'sans'),
-    },
-  },
-  {
-    id: 'tokyo-night-ish',
-    name: 'Tokyo Night 风',
-    description: 'Space Grotesk 标题 + IBM Plex Sans 正文，冷调科技，代码 IBM Plex Mono。',
-    fonts: {
-      heading: buildFamily('Space Grotesk', 'sans'),
-      body: buildFamily('IBM Plex Sans', 'sans'),
-      code: buildFamily('IBM Plex Mono', 'mono'),
-      ui: buildFamily('IBM Plex Sans', 'sans'),
     },
   },
 ]
