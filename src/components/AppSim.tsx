@@ -184,6 +184,16 @@ const NAV: { group: string; items: NavItem[] }[] = [
       { label: 'B站', icon: 'bili', href: 'https://space.bilibili.com/67221461' },
     ],
   },
+  {
+    group: '其它作品',
+    items: [
+      { label: 'AI Vault', icon: 'home', href: 'https://ergeaia.github.io/aivault-site/' },
+      { label: 'XieYi', icon: 'home', href: 'https://ergeaia.github.io/xieyi/' },
+      { label: 'ErgeMD', icon: 'github', href: 'https://github.com/ErgeAIA/ErgeMD' },
+      { label: 'ErgeHash', icon: 'github', href: 'https://github.com/ErgeAIA/ErgeHash' },
+      { label: 'ErgeAIA-skills', icon: 'github', href: 'https://github.com/ErgeAIA/ErgeAIA-skills' },
+    ],
+  },
 ]
 
 const USER = { name: '宝藏二哥AIA', initial: '宝', role: '管理员' }
