@@ -16,26 +16,26 @@ description: >
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
 
-## DEC-017: Erge 品牌色原创入库（erge 家族 Light/Dark）
+## DEC-017: ErgeAIA 品牌色原创入库（erge 家族 Light/Dark）
 
 - **日期**：2026-10-14
-- **背景**：用户将自调的 Erge 品牌色（橙红家族，原创派生，非外部开源）纳入 ThemeVault 当正式主题，用于软件 UI / 网站配色；huiyi 现有模板不动（仅参考）。主色：Light `#FF6A2B`、Dark `#F2570F`（深版调沉：L↓C↑H↓ 更沉）。原创无外部仓库，按用户授权「协议自定、pin=本对话结论」。
+- **背景**：用户将自调的 ErgeAIA 品牌色（橙红家族，原创派生，非外部开源）纳入 ThemeVault 当正式主题，用于软件 UI / 网站配色；huiyi 现有模板不动（仅参考）。主色：Light `#FF6A2B`、Dark `#F2570F`（深版调沉：L↓C↑H↓ 更沉）。原创无外部仓库，按用户授权「协议自定、pin=本对话结论」。
 - **决策**：
   - 新建 `erge` 家族（第 24 号），`contract.json` 复用 opensquilla 的 L1 v4 required/derivedOptional（29 required + derivedOptional），角色用 L1 标准命名（`bg/text/text-muted/text-dim/accent/accent-hover/accent-deep/accent-secondary/accent-foreground`、功能 6 通道、语法 6）；预览分区/AA 徽标直接套用默认 L1 配置。
   - `text-dim` 经 OKLCH 推导加深到过 AA：Light `#706E69`（on bg 4.57）、Dark `#858079`（on bg 4.56）。
   - `accent-foreground` 两版均 `#171614`（近黑），作为主色块/按钮文字（WCAG：黑 on `#FF6A2B`=7.35、on `#F2570F`=6.15，均达标）；此处为**亮主色配近黑文字**（橙红主色偏亮，白字不达标）。
-  - 功能色 / 语法色沿用 opensquilla 语义色（橙红家族配套），在 Erge `extract.json` 作为原创账本登记 + 家族 README fallback 表登记，属 ADR-0008 显式豁免。
+  - 功能色 / 语法色沿用 opensquilla 语义色（橙红家族配套），在 ErgeAIA `extract.json` 作为原创账本登记 + 家族 README fallback 表登记，属 ADR-0008 显式豁免。
   - 协议：`license=Custom（© 2026 Erge，保留署名）`；`pin=DEC-017 @ 2026-10-14（本对话推导）`，`pinType=derivation`；`repo=原创派生·无外部开源仓库`——**协议/仓库为待用户最终确认的占位**（遵守「协议未确认不假装已定」）。
   - 预览：改 `preview.html` 让主色色块/按钮文字优先用 `accent-foreground`（若主题定义），并新增「实心主色按钮」小样，满足用户验收「近黑文字按钮」效果；`gen_index` 的 `brand.buttonText` 仍按 WCAG 亮度阈值判（`#F2570F` lum≈0.258→标「浅字」），与 accent-foreground 实际近黑不一致属仓库既有口径，适配时按 accent-foreground 取用。
-- **验证**：`gen_index --write` 全绿；`lint_intake` 通过；预览刷新 Erge 卡片显示近黑文字主色块。
+- **验证**：`gen_index --write` 全绿；`lint_intake` 通过；预览刷新 ErgeAIA 卡片显示近黑文字主色块。
 
-## DEC-018: Erge Dark 补 on-dark 提亮变体 + 近黑按钮定稿
+## DEC-018: ErgeAIA Dark 补 on-dark 提亮变体 + 近黑按钮定稿
 
 - **日期**：2026-10-14
-- **背景**：impeccable 审查发现 Erge Dark 功能状态色（ok/warn/danger/info/queued）在深底 `#1A1714` 作前景对比度 2.69–3.32 全 FAIL（WCAG AA 要求 ≥4.5）；这些功能色沿用 opensquilla 浅底语义色（DEC-017 豁免值来源，但未豁免深底适配）。近黑按钮文字（accent-foreground `#171614`）两版实测达标（6.33 / 5.29），白字 FAIL（2.86 / 3.42）。`brand.buttonText` 用 `lum(accent)>0.55` 判为「浅字」，与 accent-foreground 近黑矛盾。
+- **背景**：impeccable 审查发现 ErgeAIA Dark 功能状态色（ok/warn/danger/info/queued）在深底 `#1A1714` 作前景对比度 2.69–3.32 全 FAIL（WCAG AA 要求 ≥4.5）；这些功能色沿用 opensquilla 浅底语义色（DEC-017 豁免值来源，但未豁免深底适配）。近黑按钮文字（accent-foreground `#171614`）两版实测达标（6.33 / 5.29），白字 FAIL（2.86 / 3.42）。`brand.buttonText` 用 `lum(accent)>0.55` 判为「浅字」，与 accent-foreground 近黑矛盾。
 - **决策**：
-  - 为 Erge Dark 新增 5 个 `*-on-dark` 提亮变体，用 `color-mix(in srgb, <原功能色> N%, #FFFFFF (100-N)%)` 派生（白 18–26%），深底对比度 ≥4.5（AA）。登记进 `contract.json` `derivedOptional`；用公式而非裸 hex（`lint_intake` 对公式跳过账本校验，ADR-0008 豁免，可复算、不污染 extract 账本）。
-  - 近黑按钮文字定为 Erge Light/Dark 规范（accent-foreground `#171614`）；`brand.buttonText` 标签与预览白字不一致属全局 `brand_of` 逻辑，用户 2026-10-14 决定**不修正**（保留仓库既有 WCAG 亮度口径），仅此文档标注已知不一致，适配时按 `accent-foreground` 取用。
+  - 为 ErgeAIA Dark 新增 5 个 `*-on-dark` 提亮变体，用 `color-mix(in srgb, <原功能色> N%, #FFFFFF (100-N)%)` 派生（白 18–26%），深底对比度 ≥4.5（AA）。登记进 `contract.json` `derivedOptional`；用公式而非裸 hex（`lint_intake` 对公式跳过账本校验，ADR-0008 豁免，可复算、不污染 extract 账本）。
+  - 近黑按钮文字定为 ErgeAIA Light/Dark 规范（accent-foreground `#171614`）；`brand.buttonText` 标签与预览白字不一致属全局 `brand_of` 逻辑，用户 2026-10-14 决定**不修正**（保留仓库既有 WCAG 亮度口径），仅此文档标注已知不一致，适配时按 `accent-foreground` 取用。
 - **验证**：`gen_index --write` 全绿（erge/dark #151 missing=0 out=0 derived=10，exit 0）；`lint_intake` 通过。
 
 ## DEC-016: 主题中文名（zhName）与分隔符约定
