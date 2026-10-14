@@ -7,3 +7,9 @@ __pycache__/
 
 # 本地 IDE 会话状态（计划 / 索引等，勿入库）
 .zcode/
+
+# Node / 前端构建产物
+node_modules/
+dist/
+*.local
+*.tsbuildinfo

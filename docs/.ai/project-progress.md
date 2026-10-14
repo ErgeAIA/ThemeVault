@@ -29,6 +29,12 @@ description: >
   - **预览易读性改造（2026-10-11，impeccable typeset + layout）**：用户反馈「字太小、人类阅读费劲」。改造：`main` 列数 4/340px → 3/440px（1920 下 4→3 列、1280 下 3→2 列、375 下 1 列），间距 18→22px；字号整体上移（主题名 17、色值 12、角色名 11、代码块 13/1.7、meta 与徽标 12、tag 12.5，页面最小字号 9→11px）；色块 38px 高、minmax 96px；数字 `tabular-nums`；页脚/空状态 #667（3.1:1）提亮；窄屏代码块换行消溢出。验证：1920 三列卡片 609px 零溢出、375 单列零溢出、代码块 0/149 溢出；`impeccable detect` 零发现。
   - **主题中文名（2026-10-11）**：新增 `scripts/zh_names.json`（人工核定 113 个唯一主题名译名），`gen_index.py` 输出 `zhName`，预览标题「英文名 | 中文名」（分隔符取 `|`，避免与名字内连字符混淆），搜索支持中文名；onepage 显示名已含中文故不追加。覆盖 147/149（缺 2 个 onepage，已含中文）。见 DEC-016。
   - **「复制色板」徽章（2026-10-11）**：卡片中文名后加徽章，点击复制该主题完整调色板信息（`#编号 英文名 | 中文名`、家族/ID/方案/协议/来源/色板路径/主背景、全部语义角色色值、文本对比度、品牌色与按钮文字建议、取色提示），供外部 AI 直接取色适配；`navigator.clipboard` 不可用时回退 `execCommand`。验证：149 个徽章均渲染，复制文本 49 行结构完整，点击提示「已复制调色板信息，可直接发给 AI」。**阶段1「代码块模拟」已实现**（2026-10-10）——卡片内新增代码块，底色（`bg-surface` / ergemd `bg-code` / opencode `backgroundPanel`）+ 边框 + 语法色均取主题角色，家族感知解析三套命名（L1 `syntax-*` / ergemd `code-*` / opencode 驼峰 `syntaxXxx`），公式值（含 `var(`）沿用色块区口径降级为 text。冒烟验证：149 张卡片均渲染代码块，三套命名体系均取到正确角色色。**待用户验证实际观感**。后续可选扩展：基础组件（面板 / 按钮 / 状态徽章 / 链接）、终端 ANSI 模拟。
+- **今日（2026-10-14）**：新增字体搭配仿真器（React + Vite 前端子项目）并迁移至 pnpm + 配置 GitHub Pages 自动部署。
+  - 仿真器（`src/` + `index.html`）：切换标题/正文/代码/界面四类字体组合，实时预览真实渲染效果，支持逐角色微调与复制 CSS 变量；字体经 `src/lib/fontLoader.ts` 按需从 Google Fonts 加载。
+  - 包管理从 npm 切 pnpm：`pnpm-lock.yaml` 入库，`package.json` 锁定 `packageManager: pnpm@12.11.2`；新建 `pnpm-workspace.yaml`（`minimumReleaseAge: 0` 放宽供应链年龄校验）+ `.npmrc`（`verify-deps-before-run=false`）规避 pnpm 12 默认拦截。
+  - 部署：新增 `.github/workflows/deploy.yml`，push main 触发 `pnpm install --frozen-lockfile` + `GITHUB_PAGES=1 pnpm build`，发 GitHub Pages（`base=/ThemeVault/`，与仓库名一致）；Pages Source 已设为 GitHub Actions。
+  - 校验：`pnpm build`（tsc --noEmit + vite build）本地通过；`.gitignore` 补 `*.tsbuildinfo`。
+  - 后续：预览页「字体身份」与仿真器是否整合进 React 主页，待用户看 React 主页后定（preview.html 字体身份改动已单独提交）。
 - **当前分支**：main（已有提交，基线以 `git log` 为准）
 - **阶段**：资产仓维护（非运行时项目）；协作记忆已初始化
 - **代码**：`scripts/*.py` 生成器与校验器存在；无应用运行时
