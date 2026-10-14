@@ -495,6 +495,51 @@ code {
   color: var(--tv-dim);
 }
 
+/* 落地 hero（说明产品定位） */
+.gal-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  border-radius: var(--tv-radius);
+  border: 1px solid var(--tv-border);
+  background: color-mix(in srgb, var(--tv-accent) 8%, var(--tv-surface-2));
+}
+
+.gal-hero-text h2 {
+  font-size: 17px;
+  margin-bottom: 4px;
+}
+
+.gal-hero-text p {
+  font-size: 13px;
+  color: var(--tv-muted);
+  max-width: 640px;
+  line-height: 1.5;
+}
+
+.gal-hero-stats {
+  display: flex;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.gal-hero-stats span {
+  font-size: 12.5px;
+  color: var(--tv-muted);
+  white-space: nowrap;
+}
+
+.gal-hero-stats b {
+  display: block;
+  font-size: 20px;
+  color: var(--tv-accent);
+  font-variant-numeric: tabular-nums;
+}
+
 /* ===== 仿真界面 ===== */
 
 .sim {
@@ -783,6 +828,16 @@ a.sim-icon-btn {
   height: 6px;
   border-radius: 999px;
   background: var(--tv-accent);
+}
+
+.sim-demo-badge {
+  flex-shrink: 0;
+  font-size: 10.5px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px dashed color-mix(in srgb, var(--tv-dim) 60%, transparent);
+  color: var(--tv-dim);
+  white-space: nowrap;
 }
 
 /* 内容区 */
@@ -1660,8 +1715,29 @@ a.sim-icon-btn {
 /* ===== 响应式 ===== */
 
 @media (max-width: 960px) {
+  /* 侧栏改为滑出抽屉，而非直接隐藏（修复移动端导航消失） */
   .sim-side {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 50;
+    width: 240px;
+    transform: translateX(-100%);
+    transition: transform 0.22s ease;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .sim-side.open {
+    transform: translateX(0);
+  }
+
+  .sim-side.collapsed {
+    width: 240px;
+  }
+
+  .sim-backdrop {
+    display: block;
   }
 
   .sim-grid {
@@ -1679,4 +1755,73 @@ a.sim-icon-btn {
   .sim-search {
     display: none;
   }
+
+  /* 窄屏：顶栏换行、仿真顶栏横滚、隐藏次要控件 */
+  .top {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 12px;
+    gap: 8px 14px;
+  }
+
+  .top-ctrls {
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+
+  .top-ctrls select {
+    max-width: 150px;
+  }
+
+  .sim-top {
+    overflow-x: auto;
+  }
+
+  .sim-font-label,
+  .sim-bell {
+    display: none;
+  }
+
+  .sim-demo-badge {
+    display: none;
+  }
+}
+
+/* ===== 移动端抽屉遮罩（默认隐藏，仅 ≤960px 生效）===== */
+.sim-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.sim-backdrop.show {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== 全局 a11y ===== */
+:focus-visible {
+  outline: 2px solid var(--tv-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* 仿真框架可读性下限：低对比主题下仍可见分隔 */
+.sim-side,
+.sim-top {
+  box-shadow: inset 0 0 0 1px rgba(128, 128, 140, 0.14);
 }

@@ -1,5 +1,19 @@
-import { useState, type CSSProperties, type ReactNode } from 'react'
-import { fgFor, themeVars, type ThemeEntry } from '../data/tv'
+import { useEffect, useState, type CSSProperties, type ReactNode } from 'react'
+import { allThemes, fgFor, themeVars, type ThemeEntry } from '../data/tv'
+
+function useMediaQuery(query: string): boolean {
+  const [matches, setMatches] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia(query).matches,
+  )
+  useEffect(() => {
+    const mq = window.matchMedia(query)
+    const onChange = () => setMatches(mq.matches)
+    onChange()
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [query])
+  return matches
+}
 
 // 侧栏导航（结构参考 xieyi examples#sidebar，纯 CSS + --tv-* 变量实现）
 const NAV: { group: string; items: { label: string; icon: string; badge?: number }[] }[] = [
@@ -157,7 +171,7 @@ function Overview() {
 
   return (
     <>
-      <PageHead title="主题管理" desc="管理 ThemeVault 的主题资产与适配流程" action="新建主题" />
+      <PageHead title="概览" desc="主题应用后的界面演示 · 演示数据" action="新建主题" />
 
       <div className="sim-stats">
         {STATS.map((s) => (
@@ -368,7 +382,7 @@ function Analytics() {
   ]
   return (
     <>
-      <PageHead title="数据分析" desc="主题使用量与下载趋势洞察" action="导出报表" />
+      <PageHead title="数据分析" desc="界面演示 · 数据示例（非真实统计）" action="导出报表" />
       <div className="sim-stats">
         <div className="p stat">
           <div className="stat-label">本月下载</div>
@@ -410,7 +424,7 @@ function Analytics() {
               <tr>
                 <th>主题</th>
                 <th>家族</th>
-                <th className="td-num">下载</th>
+                <th className="td-num">下载(示例)</th>
               </tr>
             </thead>
             <tbody>
@@ -1023,10 +1037,31 @@ const PAGES: Record<string, () => ReactNode> = {
   成员: MembersPage,
 }
 
-export default function AppSim({ entry }: { entry: ThemeEntry }) {
+type SimMode = 'gallery' | 'sim'
+
+export default function AppSim({
+  entry,
+  fontId,
+  setFontId,
+  num,
+  setNum,
+  setMode,
+  fontSchemes,
+}: {
+  entry: ThemeEntry
+  fontId: string
+  setFontId: (id: string) => void
+  num: number
+  setNum: (n: number) => void
+  setMode: (m: SimMode) => void
+  fontSchemes: { id: string; name: string; description: string }[]
+}) {
   const [current, setCurrent] = useState('概览')
   const [collapsed, setCollapsed] = useState(false)
   const [example, setExample] = useState<string | null>(null)
+  const [drawer, setDrawer] = useState(false)
+  const isMobile = useMediaQuery('(max-width: 960px)')
+  const toggleSidebar = () => (isMobile ? setDrawer((d) => !d) : setCollapsed((c) => !c))
 
   // 侧栏分组 = 常规导航 + 示例子页直达
   const navGroups: { group: string; items: { label: string; icon: string; badge?: number; sub?: boolean }[] }[] = [
@@ -1040,8 +1075,14 @@ export default function AppSim({ entry }: { entry: ThemeEntry }) {
   return (
     <div className="sim" style={vars}>
       <div className="sim-shell">
+        {/* 抽屉遮罩（移动端） */}
+        <div
+          className={`sim-backdrop${drawer ? ' show' : ''}`}
+          onClick={() => setDrawer(false)}
+          aria-hidden="true"
+        />
         {/* 侧边栏 */}
-        <aside className={`sim-side${collapsed ? ' collapsed' : ''}`}>
+        <aside className={`sim-side${collapsed ? ' collapsed' : ''}${drawer ? ' open' : ''}`}>
           <div className="sim-brand">
             {collapsed ? (
               <span className="sim-brand-mark">
@@ -1074,6 +1115,7 @@ export default function AppSim({ entry }: { entry: ThemeEntry }) {
                           setCurrent(it.label)
                           setExample(null)
                         }
+                        setDrawer(false)
                       }}
                       title={it.label}
                     >
@@ -1119,8 +1161,9 @@ export default function AppSim({ entry }: { entry: ThemeEntry }) {
           <header className="sim-top">
             <button
               className="sim-icon-btn"
-              onClick={() => setCollapsed((c) => !c)}
-              aria-label={collapsed ? '展开侧边栏' : '收起侧边栏'}
+              onClick={toggleSidebar}
+              aria-label={isMobile ? '打开导航' : collapsed ? '展开侧边栏' : '收起侧边栏'}
+              aria-expanded={isMobile ? drawer : !collapsed}
             >
               ☰
             </button>
@@ -1137,8 +1180,52 @@ export default function AppSim({ entry }: { entry: ThemeEntry }) {
                 <span className="sim-crumb-cur">{current}</span>
               )}
             </div>
+            <span className="sim-demo-badge" title="该界面为所选主题的应用演示，数据为示例">
+              演示数据
+            </span>
             <div className="sim-top-right">
-              <input className="sim-search" placeholder="搜索… ⌘K" />
+              <input className="sim-search" placeholder="搜索…" aria-label="演示搜索" />
+              <nav className="top-modes" aria-label="视图切换">
+                <button className="on" onClick={() => setMode('gallery')}>
+                  ▦ 海选
+                </button>
+                <button onClick={() => setMode('sim')}>◱ 仿真</button>
+              </nav>
+              <div className="top-ctrls">
+                <label>
+                  主题
+                  <select value={num} onChange={(e) => setNum(Number(e.target.value))}>
+                    {allThemes.map(({ theme }) => (
+                      <option key={theme.number} value={theme.number}>
+                        #{theme.number} {theme.displayName}
+                        {theme.zhName ? ` · ${theme.zhName}` : ''}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                <label className="sim-font-label">
+                  字体
+                  <select value={fontId} onChange={(e) => setFontId(e.target.value)}>
+                    {fontSchemes.map((f) => (
+                      <option key={f.id} value={f.id}>
+                        {f.name}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+              <a
+                className="gh-link"
+                href="https://github.com/ErgeAIA/ThemeVault"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub 仓库"
+                aria-label="GitHub 仓库"
+              >
+                <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+                </svg>
+              </a>
               <a
                 className="sim-icon-btn sim-bell"
                 href="mailto:ergeaia@agent.qq.com"

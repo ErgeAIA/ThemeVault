@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState, useRef } from 'react'
 import {
   allThemes,
   badgeInfos,
@@ -119,12 +119,49 @@ export default function PaletteGallery({
     }
   }, [webFontsOn])
 
+  // ⌘K / "/" 聚焦搜索（真实可用的键盘加速器，便于快速跳主题）
+  const searchRef = useRef<HTMLInputElement>(null)
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const tag = (e.target as HTMLElement | null)?.tagName || ''
+      const typing = /INPUT|TEXTAREA|SELECT/.test(tag)
+      if (
+        (e.key === '/' && !typing) ||
+        ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')
+      ) {
+        e.preventDefault()
+        searchRef.current?.focus()
+        searchRef.current?.select()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
   return (
     <div className="gal">
+      <div className="gal-hero">
+        <div className="gal-hero-text">
+          <h2>ThemeVault · UI 主题色板资产仓库</h2>
+          <p>
+            收集 {allThemes.length} 套开源主题，规范化为可直接适配的语义色板。挑一套主题，点卡片即可在「界面仿真」里看真实界面效果。
+          </p>
+        </div>
+        <div className="gal-hero-stats">
+          <span>
+            <b>{allThemes.length}</b> 套主题
+          </span>
+          <span>
+            <b>{new Set(allThemes.map((e) => e.fam.family)).size}</b> 个家族
+          </span>
+        </div>
+      </div>
+
       <div className="gal-tools">
         <input
+          ref={searchRef}
           className="gal-search"
-          placeholder="搜索编号 / 名称 / 家族…"
+          placeholder="搜索编号 / 名称 / 家族…（⌘K）"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />

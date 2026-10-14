@@ -37,6 +37,7 @@ export interface TVFamily {
   family: string
   familyDisplayName: string
   license: string
+  sourceRepo?: string
   l1RoleMap?: Record<string, string>
   sections?: [string, string[]][]
   badgePairs?: [string, string][]
@@ -330,7 +331,6 @@ export function codeBlockLines(entry: ThemeEntry): { color: string; text: string
   const sm = SYNTAX_ROLE_MAP[fam] ?? SYNTAX_ROLE_MAP._default
   const tokens = entry.theme.tokens || {}
   const text = l1Value(entry, 'text') || '#e5e5e5'
-  const codeBg = usable(tokens[CODE_BG_ROLE[fam] ?? 'bg-surface'])
   const colorOf = (key: string): string => {
     const sem = CODE_TOKEN_MAP[key]
     const role = sem ? sm[sem] : null
