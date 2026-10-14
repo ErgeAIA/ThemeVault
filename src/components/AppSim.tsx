@@ -97,6 +97,7 @@ const NAV_ICONS: Record<string, string> = {
   members:
     'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8 M22 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75',
   sub: 'M9 18l6-6-6-6',
+  caret: 'M6 9l6 6 6-6',
 }
 
 function NavGlyph({ name }: { name: string }) {
@@ -1193,14 +1194,22 @@ export default function AppSim({
   const [collapsed, setCollapsed] = useState(false)
   const [example, setExample] = useState<string | null>(null)
   const [drawer, setDrawer] = useState(false)
+  const [openNav, setOpenNav] = useState<Record<string, boolean>>({ 示例: true })
   const isMobile = useMediaQuery('(max-width: 960px)')
   const toggleSidebar = () => (isMobile ? setDrawer((d) => !d) : setCollapsed((c) => !c))
 
-  // 侧栏分组 = 常规导航 + 示例子页直达
-  const navGroups: { group: string; items: { label: string; icon: string; sub?: boolean }[] }[] = [
-    ...NAV,
-    { group: '示例', items: EXAMPLES.map((e) => ({ label: e.title, icon: 'sub', sub: true })) },
-  ]
+  // 侧栏分组：示例子页作为「示例」菜单的子项（手风琴展开），不再单独成组
+  const navGroups: {
+    group: string
+    items: { label: string; icon: string; sub?: boolean; children?: { label: string; sub: boolean }[] }[]
+  }[] = NAV.map((g) => ({
+    ...g,
+    items: g.items.map((it) =>
+      it.label === '示例'
+        ? { ...it, children: EXAMPLES.map((e) => ({ label: e.title, sub: true })) }
+        : it,
+    ),
+  }))
 
   const vars = themeVars(entry) as unknown as CSSProperties
   const Page = PAGES[current] ?? Overview
@@ -1233,34 +1242,65 @@ export default function AppSim({
               <div key={g.group} className="sim-nav-group">
                 {!collapsed && <div className="sim-nav-title">{g.group}</div>}
                 {g.items.map((it) => {
+                  const hasChildren = !!it.children
+                  const expanded = !!openNav[it.label]
                   const active = it.sub
                     ? current === '示例' && example === it.label
                     : current === it.label && !(it.label === '示例' && example)
                   return (
-                    <button
-                      key={it.label}
-                      className={`sim-nav-item${active ? ' on' : ''}`}
-                      onClick={() => {
-                        if (it.sub) {
-                          setCurrent('示例')
-                          setExample(it.label)
-                        } else {
-                          setCurrent(it.label)
-                          setExample(null)
-                        }
-                        setDrawer(false)
-                      }}
-                      title={it.label}
-                    >
-                      <span className="sim-nav-icon">
-                        <NavGlyph name={it.icon} />
-                      </span>
-                      {!collapsed && (
-                        <>
-                          <span className="sim-nav-label">{it.label}</span>
-                        </>
-                      )}
-                    </button>
+                    <div key={it.label} className="sim-nav-wrap">
+                      <button
+                        className={`sim-nav-item${active ? ' on' : ''}${hasChildren ? ' has-children' : ''}${expanded ? ' expanded' : ''}`}
+                        onClick={() => {
+                          if (it.sub) {
+                            setCurrent('示例')
+                            setExample(it.label)
+                          } else {
+                            setCurrent(it.label)
+                            setExample(null)
+                          }
+                          if (hasChildren) {
+                            setOpenNav((o) => ({ ...o, [it.label]: !o[it.label] }))
+                          }
+                          setDrawer(false)
+                        }}
+                        title={it.label}
+                      >
+                        <span className="sim-nav-icon">
+                          <NavGlyph name={it.icon} />
+                        </span>
+                        {!collapsed && (
+                          <>
+                            <span className="sim-nav-label">{it.label}</span>
+                            {hasChildren && (
+                              <span className={`sim-nav-caret${expanded ? ' open' : ''}`}>
+                                <NavGlyph name="caret" />
+                              </span>
+                            )}
+                          </>
+                        )}
+                      </button>
+                      {!collapsed &&
+                        hasChildren &&
+                        expanded &&
+                        it.children!.map((c) => {
+                          const childActive = current === '示例' && example === c.label
+                          return (
+                            <button
+                              key={c.label}
+                              className={`sim-nav-item sub${childActive ? ' on' : ''}`}
+                              onClick={() => {
+                                setCurrent('示例')
+                                setExample(c.label)
+                                setDrawer(false)
+                              }}
+                              title={c.label}
+                            >
+                              <span className="sim-nav-label sub-label">{c.label}</span>
+                            </button>
+                          )
+                        })}
+                    </div>
                   )
                 })}
               </div>

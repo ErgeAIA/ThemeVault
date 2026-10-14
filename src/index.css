@@ -748,6 +748,29 @@ code {
   text-overflow: ellipsis;
 }
 
+.sim-nav-caret {
+  flex-shrink: 0;
+  margin-left: auto;
+  display: inline-flex;
+  color: var(--tv-dim);
+  transform: rotate(-90deg);
+  transition: transform 0.15s ease;
+}
+
+.sim-nav-item.expanded .sim-nav-caret {
+  transform: rotate(0deg);
+}
+
+.sim-nav-item.sub {
+  padding-left: 40px;
+  font-size: 12px;
+  color: var(--tv-muted);
+}
+
+.sim-nav-label.sub-label {
+  font-weight: 400;
+}
+
 .sim-user {
   flex-shrink: 0;
   display: flex;
