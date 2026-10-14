@@ -505,19 +505,29 @@ const EXAMPLES = [
   { title: '登录 / 注册页', desc: 'Tab 切换的认证卡片', tag: '认证类', usage: '产品入口' },
 ]
 
-function ExamplesPage() {
+function ExamplesPage({ onOpen }: { onOpen: (title: string) => void }) {
   return (
     <>
       <PageHead title="示例" desc="页面级布局示例与使用场景" action="新建示例" />
       <div className="ex-grid">
         {EXAMPLES.map((e) => (
-          <div className="p ex-card" key={e.title}>
+          <div
+            className="p ex-card"
+            key={e.title}
+            role="button"
+            tabIndex={0}
+            style={{ cursor: 'pointer' }}
+            onClick={() => onOpen(e.title)}
+            onKeyDown={(ev) => ev.key === 'Enter' && onOpen(e.title)}
+          >
             <span className={`st ${ST_TONE[e.tag]}`}>{e.tag}</span>
             <h4>{e.title}</h4>
             <p className="ex-desc">{e.desc}</p>
             <div className="ex-foot">
               <span className="td-dim">{e.usage}</span>
-              <button className="linkbtn">查看</button>
+              <button className="linkbtn" onClick={(ev) => { ev.stopPropagation(); onOpen(e.title) }}>
+                查看 →
+              </button>
             </div>
           </div>
         ))}
@@ -529,12 +539,12 @@ function ExamplesPage() {
 // ===== 资源 =====
 
 const RESOURCES = [
-  { name: 'shadcn/ui', desc: '可复制粘贴的 React 组件集合，与本站示例风格同源', cat: '组件库' },
-  { name: 'Tailwind CSS', desc: '原子化 CSS 框架，快速落地主题变量映射', cat: '样式' },
-  { name: 'Base UI', desc: '无样式的可访问原语，适合深度自定义换肤', cat: '原语' },
-  { name: 'Lucide Icons', desc: '开源图标库，侧栏/按钮图标首选', cat: '图标' },
-  { name: 'Framer Motion', desc: 'React 动画库，页面切换与微交互', cat: '动画' },
-  { name: 'Vercel AI SDK', desc: 'AI 应用开发工具链，配合主题生成流程', cat: 'AI' },
+  { name: 'shadcn/ui', desc: '可复制粘贴的 React 组件集合，与本站示例风格同源', cat: '组件库', url: 'https://ui.shadcn.com/' },
+  { name: 'Tailwind CSS', desc: '原子化 CSS 框架，快速落地主题变量映射', cat: '样式', url: 'https://tailwindcss.com/' },
+  { name: 'Base UI', desc: '无样式的可访问原语，适合深度自定义换肤', cat: '原语', url: 'https://base-ui.com/' },
+  { name: 'Lucide Icons', desc: '开源图标库，侧栏/按钮图标首选', cat: '图标', url: 'https://lucide.dev/' },
+  { name: 'Framer Motion', desc: 'React 动画库，页面切换与微交互', cat: '动画', url: 'https://motion.dev/' },
+  { name: 'Vercel AI SDK', desc: 'AI 应用开发工具链，配合主题生成流程', cat: 'AI', url: 'https://sdk.vercel.ai/' },
 ]
 
 function ResourcesPage() {
@@ -553,7 +563,9 @@ function ResourcesPage() {
                 </div>
                 <div className="res-desc">{r.desc}</div>
               </div>
-              <button className="btn ghost sm-btn">打开</button>
+              <button className="btn ghost sm-btn" onClick={() => window.open(r.url, '_blank', 'noopener')}>
+                打开
+              </button>
             </div>
           ))}
         </div>
@@ -746,11 +758,266 @@ function MembersPage() {
   )
 }
 
+// ===== 示例详情：mini 布局演示（用当前主题渲染）=====
+
+const POINTS: Record<string, string[]> = {
+  侧边栏布局: ['左侧固定分组导航（可收起为图标窄栏）', '顶栏：收起切换 + 面包屑 + 搜索/通知/头像', '内容区滚动，页头 + 指标卡 + 表格'],
+  数据面板: ['指标卡横排，涨跌色区分好坏', '趋势图占主视觉，时间粒度可切换', '动态流放侧位，按时间滚动'],
+  综合表单页: ['分区标题收束字段组，必填星号标注', '错误态就地提示，不打断填写', '底部操作区固定：取消 + 主操作'],
+  '数据列表管理': ['搜索先行，表格列头可排序', '行内状态徽章一眼可扫', '删除需二次确认，主按钮危险色'],
+  看板: ['列头带计数，卡片可跨列拖拽', '空列显示添加占位', '卡片信息密度克制，标签着色'],
+  '登录 / 注册页': ['Tab 切换登录 / 注册，减少跳转', '表单窄卡居中，社交登录为辅', '记住我与找回密码放密码行'],
+}
+
+function MiniSidebar() {
+  return (
+    <div className="mini-wrap">
+      <div style={{ display: 'flex' }}>
+        <div className="mini-side">
+          <div className="mini-brand">写意 v1.4</div>
+          <div className="mini-nav on">◈ 概览</div>
+          <div className="mini-nav">▲ 数据分析</div>
+          <div className="mini-nav">▣ 组件</div>
+          <div className="mini-nav">⚙ 设置</div>
+        </div>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div className="mini-top">首页 / 概览</div>
+          <div className="mini-body">
+            <table className="tbl">
+              <thead>
+                <tr>
+                  <th>组件</th>
+                  <th>分类</th>
+                  <th>状态</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="td-name">Button 按钮</td>
+                  <td className="td-dim">输入</td>
+                  <td><span className="st ok">已发布</span></td>
+                </tr>
+                <tr>
+                  <td className="td-name">Dialog 对话框</td>
+                  <td className="td-dim">浮层</td>
+                  <td><span className="st ok">已发布</span></td>
+                </tr>
+                <tr>
+                  <td className="td-name">Accordion 手风琴</td>
+                  <td className="td-dim">导航</td>
+                  <td><span className="st warn">审核中</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function MiniDashboard() {
+  const bars = [62, 78, 45, 91, 73, 96]
+  return (
+    <div className="mini-wrap">
+      <div className="mini-body">
+        <div className="mini-stats">
+          {['今日访问 1,284', '新增用户 86', '转化率 3.2%', '营收 ¥9,420'].map((s) => (
+            <div className="mini-stat" key={s}>{s}</div>
+          ))}
+        </div>
+        <div className="bars" style={{ height: 130 }}>
+          {bars.map((v, i) => (
+            <div className="bar-col" key={i}>
+              <i style={{ height: `${v}%` }} />
+              <span>{i + 5}月</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function MiniForm() {
+  return (
+    <div className="mini-wrap">
+      <div className="mini-top">账户资料</div>
+      <div className="mini-body">
+        <div className="form" style={{ maxWidth: 420 }}>
+          <label className="field">
+            <span>姓名 *</span>
+            <input className="input" placeholder="请输入姓名" />
+          </label>
+          <label className="field">
+            <span>邮箱 *</span>
+            <input className="input" placeholder="name@example.com" />
+          </label>
+          <label className="field">
+            <span>所在城市</span>
+            <input className="input" placeholder="用于本地化推荐" />
+          </label>
+          <div className="form-foot">
+            <button className="btn ghost sm-btn">取消</button>
+            <button className="btn primary sm-btn">保存更改</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function MiniTable() {
+  return (
+    <div className="mini-wrap">
+      <div className="mini-body">
+        <div className="alert danger" style={{ marginBottom: 12 }}>
+          <div className="alert-body">
+            <b>确认删除「项目 A」？</b>
+            <span>删除后不可恢复，关联的 3 条记录将一并移除。</span>
+          </div>
+          <div style={{ display: 'flex', gap: 6, flexShrink: 0 }}>
+            <button className="btn ghost sm-btn">取消</button>
+            <button className="btn danger sm-btn">确认删除</button>
+          </div>
+        </div>
+        <table className="tbl">
+          <thead>
+            <tr>
+              <th>名称</th>
+              <th>负责人</th>
+              <th>状态</th>
+              <th />
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="td-name">项目 A</td>
+              <td className="td-dim">李雷</td>
+              <td><span className="st info">进行中</span></td>
+              <td className="td-act"><button className="linkbtn danger">删除</button></td>
+            </tr>
+            <tr>
+              <td className="td-name">项目 B</td>
+              <td className="td-dim">韩梅梅</td>
+              <td><span className="st ok">已完成</span></td>
+              <td className="td-act"><button className="linkbtn danger">删除</button></td>
+            </tr>
+            <tr>
+              <td className="td-name">项目 C</td>
+              <td className="td-dim">张伟</td>
+              <td><span className="st warn">待审核</span></td>
+              <td className="td-act"><button className="linkbtn danger">删除</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
+function MiniKanban() {
+  const cols = [
+    { title: '待办', n: 2, cards: ['设计登录页', '编写文档'] },
+    { title: '进行中', n: 1, cards: ['搭建组件库'] },
+    { title: '已完成', n: 2, cards: ['需求评审', '项目初始化'] },
+  ]
+  return (
+    <div className="mini-wrap">
+      <div className="mini-body">
+        <div className="kanban">
+          {cols.map((c) => (
+            <div className="kan-col" key={c.title}>
+              <div className="kan-head">
+                <span>{c.title}</span>
+                <span className="td-dim">{c.n}</span>
+              </div>
+              {c.cards.map((k) => (
+                <div className="kan-card" key={k}>{k}</div>
+              ))}
+              <button className="kan-add">＋ 添加卡片</button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function MiniAuth() {
+  return (
+    <div className="mini-wrap">
+      <div className="auth-wrap">
+        <div className="auth-card">
+          <div className="tabs" style={{ alignSelf: 'flex-start' }}>
+            <button className="tab on">登录</button>
+            <button className="tab">注册</button>
+          </div>
+          <h4 style={{ marginTop: 10 }}>欢迎回来</h4>
+          <p className="ex-desc" style={{ marginTop: 3 }}>登录以继续管理你的账号</p>
+          <div className="form" style={{ marginTop: 12 }}>
+            <label className="field">
+              <span>邮箱</span>
+              <input className="input" placeholder="name@example.com" />
+            </label>
+            <label className="field">
+              <span>密码</span>
+              <input className="input" type="password" placeholder="••••••••" />
+            </label>
+            <button className="btn primary" style={{ justifyContent: 'center' }}>登录</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const MINI_MAP: Record<string, () => ReactNode> = {
+  侧边栏布局: MiniSidebar,
+  数据面板: MiniDashboard,
+  综合表单页: MiniForm,
+  数据列表管理: MiniTable,
+  看板: MiniKanban,
+  '登录 / 注册页': MiniAuth,
+}
+
+function ExampleDetail({ title, onBack }: { title: string; onBack: () => void }) {
+  const e = EXAMPLES.find((x) => x.title === title)
+  if (!e) return null
+  const Mini = MINI_MAP[title]
+  return (
+    <>
+      <div className="sim-pagehead">
+        <div>
+          <button className="btn ghost sm-btn" style={{ marginBottom: 10 }} onClick={onBack}>
+            ← 返回示例
+          </button>
+          <h2>{e.title}</h2>
+          <p>
+            {e.desc} · 典型场景:{e.usage}
+          </p>
+        </div>
+      </div>
+      <div className="p span2">
+        <CardHead title="布局演示" desc="用当前主题实时渲染的缩影" extra={<span className={`st ${ST_TONE[e.tag]}`}>{e.tag}</span>} />
+        {Mini ? <Mini /> : <div className="p-empty">该示例暂无演示</div>}
+      </div>
+      <div className="p span2">
+        <CardHead title="结构要点" desc="落地该布局需要抓住的关键组成" />
+        <ul className="points">
+          {POINTS[title]?.map((pt) => (
+            <li key={pt}>{pt}</li>
+          ))}
+        </ul>
+      </div>
+    </>
+  )
+}
+
 const PAGES: Record<string, () => ReactNode> = {
   概览: Overview,
   数据分析: Analytics,
   组件: ComponentsPage,
-  示例: ExamplesPage,
   资源: ResourcesPage,
   设置: SettingsPage,
   成员: MembersPage,
@@ -759,6 +1026,7 @@ const PAGES: Record<string, () => ReactNode> = {
 export default function AppSim({ entry }: { entry: ThemeEntry }) {
   const [current, setCurrent] = useState('概览')
   const [collapsed, setCollapsed] = useState(false)
+  const [example, setExample] = useState<string | null>(null)
 
   const vars = themeVars(entry) as unknown as CSSProperties
   const Page = PAGES[current] ?? Overview
@@ -788,7 +1056,10 @@ export default function AppSim({ entry }: { entry: ThemeEntry }) {
                   <button
                     key={it.label}
                     className={`sim-nav-item${current === it.label ? ' on' : ''}`}
-                    onClick={() => setCurrent(it.label)}
+                    onClick={() => {
+                      setCurrent(it.label)
+                      setExample(null)
+                    }}
                     title={it.label}
                   >
                     <span className="sim-nav-icon">{it.icon}</span>
@@ -830,7 +1101,15 @@ export default function AppSim({ entry }: { entry: ThemeEntry }) {
             <div className="sim-crumb">
               <span>首页</span>
               <span className="sim-crumb-sep">/</span>
-              <span className="sim-crumb-cur">{current}</span>
+              {example ? (
+                <>
+                  <button className="crumb-link" onClick={() => setExample(null)}>示例</button>
+                  <span className="sim-crumb-sep">/</span>
+                  <span className="sim-crumb-cur">{example}</span>
+                </>
+              ) : (
+                <span className="sim-crumb-cur">{current}</span>
+              )}
             </div>
             <div className="sim-top-right">
               <input className="sim-search" placeholder="搜索… ⌘K" />
@@ -842,7 +1121,13 @@ export default function AppSim({ entry }: { entry: ThemeEntry }) {
           </header>
 
           <div className="sim-content">
-            <Page />
+            {current === '示例' && example ? (
+              <ExampleDetail title={example} onBack={() => setExample(null)} />
+            ) : current === '示例' ? (
+              <ExamplesPage onOpen={setExample} />
+            ) : (
+              <Page />
+            )}
           </div>
         </div>
       </div>

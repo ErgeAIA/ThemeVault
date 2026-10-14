@@ -1332,6 +1332,166 @@ code {
   margin-top: 1px;
 }
 
+/* ===== 示例详情 mini 演示 ===== */
+
+.crumb-link {
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: var(--tv-dim);
+  font-size: 12.5px;
+}
+
+.crumb-link:hover {
+  color: var(--tv-text);
+}
+
+.mini-wrap {
+  border: 1px solid var(--tv-border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--tv-bg);
+}
+
+.mini-brand {
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--tv-border);
+  background: var(--tv-surface);
+}
+
+.mini-side {
+  width: 132px;
+  flex-shrink: 0;
+  background: var(--tv-surface);
+  border-right: 1px solid var(--tv-border);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mini-nav {
+  font-size: 11.5px;
+  padding: 5px 9px;
+  border-radius: 6px;
+  color: var(--tv-muted);
+}
+
+.mini-nav.on {
+  background: color-mix(in srgb, var(--tv-accent) 14%, transparent);
+  color: var(--tv-accent);
+  font-weight: 600;
+}
+
+.mini-top {
+  padding: 8px 12px;
+  font-size: 11px;
+  color: var(--tv-dim);
+  background: var(--tv-surface);
+  border-bottom: 1px solid var(--tv-border);
+}
+
+.mini-body {
+  padding: 12px;
+}
+
+.mini-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.mini-stat {
+  background: var(--tv-card);
+  border: 1px solid var(--tv-border);
+  border-radius: 9px;
+  padding: 9px 11px;
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.kanban {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.kan-col {
+  background: var(--tv-surface-2);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.kan-head {
+  font-size: 12.5px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2px;
+}
+
+.kan-card {
+  background: var(--tv-card);
+  border: 1px solid var(--tv-border);
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 12.5px;
+}
+
+.kan-add {
+  border: 1px dashed var(--tv-border-strong);
+  background: transparent;
+  color: var(--tv-dim);
+  font-size: 12px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.kan-add:hover {
+  color: var(--tv-accent);
+  border-color: var(--tv-accent);
+}
+
+.auth-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 22px 0;
+}
+
+.auth-card {
+  width: 330px;
+  max-width: 100%;
+  background: var(--tv-card);
+  border: 1px solid var(--tv-border);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.points {
+  margin: 0;
+  padding: 0 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--tv-muted);
+  line-height: 1.55;
+}
+
+.points li::marker {
+  color: var(--tv-accent);
+}
+
 /* ===== 响应式 ===== */
 
 @media (max-width: 960px) {
