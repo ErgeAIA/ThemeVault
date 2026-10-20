@@ -32,8 +32,8 @@
 
 | 用途 | 取 |
 |------|----|
-| 浅色阅读 | **#074** `onepage/warm-paper` |
-| 深色阅读 | **#073** `onepage/warm-brown` |
+| 浅色阅读 | **#076** `onepage/warm-paper` |
+| 深色阅读 | **#075** `onepage/warm-brown` |
 
 示例（warm-paper，值见 `themes/onepage/warm-paper/palette.md`）：
 
@@ -55,7 +55,7 @@
 /* bold/italic：ErgeMD 无变量时用自定义或省略 */
 ```
 
-warm-brown 同理读 `#073` palette；**禁止浅底配浅字**。
+warm-brown 同理读 `#075` palette；**禁止浅底配浅字**。
 
 ## 3. 实施步骤
 

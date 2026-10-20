@@ -122,7 +122,8 @@ python scripts/gen_index.py --write   # 校验契约覆盖 + 生成 INDEX.json +
 
 **S3 索引与校验**
 - `INDEX.md` 追加一行：**编号** + required 角色数 / 派生覆盖数（**以脚本输出为准**，禁止手抄错）。
-  编号由 `gen_index.py` 自动分配（新增主题追加 max+1、已有编号不变），INDEX.md 编号列抄脚本输出的 `#N`，勿手改。
+  编号由 `gen_index.py` 自动分配（新增主题追加 max+1、已有编号不变），INDEX.md 编号列抄脚本输出的 `#N`，勿手改；
+整体重编号是唯一例外，走 `python scripts/gen_index.py --renumber --write`（一次性迁移，见 DEC-019）。
 - 跑 `python scripts/gen_index.py --write`：要求全绿 —— 每套 `missing=0 out=0`、退出码 0；违规即修。
 
 **S4 预览更新**
@@ -174,6 +175,7 @@ docs/handoff/             会话交接文档
 | ---- | -------- | ---- |
 | 变更后校验与生成 | `python scripts/gen_index.py --write` | 本文件「变更后必跑」（内含 lint_intake） |
 | 仅校验不落盘 | `python scripts/gen_index.py` | 同上 |
+| 一次性整体重编号 | `python scripts/gen_index.py --renumber --write` | 编号不变式的唯一例外（DEC-019；erge 置顶，其余顺延） |
 | 纳入 provenance 门禁 | `python scripts/lint_intake.py [--strict]` | 新纳入用 `--strict` |
 | 旧家族回填 IR | `python scripts/backfill_intake_ir.py [--family <id>] [--force]` | 见 docs/intake-artifacts.md |
 | 生成 extract.json | `python scripts/extract_css_vars.py --src <css> --family <id> --pin <sha> --out themes/<id>/_source/extract.json` | 见 docs/intake-artifacts.md |

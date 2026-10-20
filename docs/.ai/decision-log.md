@@ -2,7 +2,7 @@
 title: Decision Log
 type: decision-log
 project: ThemeVault
-updated: 2026-10-14
+updated: 2026-10-20
 priority: higher-than-prd
 description: >
   开发过程决策日志，优先级高于 PRD；冲突时以本文件最新条目为准并回写 PRD/ADR。
@@ -15,6 +15,18 @@ description: >
 > **优先级高于 PRD**：冲突时以本文件最新决策为准，并回写 PRD/ADR。
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
+
+## DEC-019: 主题编号一次性重排（erge 置顶 #001/#002，其余 +2）
+
+- **日期**：2026-10-20
+- **背景**：用户要求把自有家族 erge（DEC-017 的 ErgeAIA 品牌色）置顶为 1/2 号，并给 `erge/dark` 起中文名「夜灯」、`erge/light` 起「晨光」。这直接冲击长期不变式「新增主题追加 max+1、已有编号永不变」（AI-MAP.md、AGENTS.md、docs/glossary.md 三处成文）。已向用户列出两个方案：A 真重编号（erge=#001/#002、其余 150 套 +2，需改 FAMILY_ORDER + 一次性 --renumber + 修备注保留键 + 手改若干人工编号表 + 给不变式开例外）；B 保编号（只把 erge 前置进家族分区，编号仍 #151/#152）。**用户选择方案 A。**
+- **决策**：
+  - 重排规则：`RENUMBER_HEAD_FAMILIES`（当前 `["erge"]`）家族优先置顶、按其主题 id 升序取 1..k；**其余全部按旧号升序顺延**。不可按家族顺序重算——2026-10-10 后补的 4 套 light 变体（dracula/light 旧 #147、nord/light 旧 #148、tokyonight/light 旧 #149、synthwave/light 旧 #150）旧号在末尾，按家族顺序重算会与「其余 +2」差 119/152 条。
+  - 实现：`scripts/gen_index.py --renumber --write`（一次性迁移；`--renumber` 必须与 `--write` 同用，否则报错退出 2）；打印 `renumber: N 套主题参与重排，M 套编号变化（旧 -> 新）`。`FAMILY_ORDER` 首位加 `erge`（同时改变家族分区顺序）。默认路径（不带参数）仍走 `assign_numbers` 的旧不变式。
+  - 工具层配套修复：`scripts/gen_docs_views.py` 的 INDEX.md 人工备注保留键由「行首编号」改为「主题目录 path」（`preserve_remarks` / `render_index_table`），否则重编号会让 74 条人工备注整体错配。
+  - 文档口径：不变式新增唯一例外并写明迁移命令（AGENTS.md 硬性规则 7 + Commands 表、AI-MAP.md 编号术语与坑列表、docs/glossary.md）；人工编号表同步 +2（`docs/brand-colors.md`、`docs/profiles/ergemd.md`、INDEX.md「检索提示」）；append-only 日志（本文件、project-progress、debug-log、audit、CHANGELOG 早期条目）保留旧编号不改写，仅在本条目与 2026-10-20 CHANGELOG 段说明映射。
+  - 中文名机制：走 `scripts/zh_names.json` 新增 `"erge": { "Dark": "夜灯", "Light": "晨光" }`——INDEX.json 的 `displayName` 仍为源码英文名 `Dark`/`Light`，`zhName` 承接中文名（卡片渲染「Dark | 夜灯」），家族成员表与英文名不受影响。未采用「把 README 显示名改中文」方案（会让英文名从索引消失），如用户后续要改可单点回退。
+- **验证**：`python scripts/gen_index.py --renumber --write` 退出码 0；152 套编号 1–152 唯一且与「erge=1/2、其余 old+2」逐条比对 0 例外；INDEX.md 数据行 152、人工备注与重排前差异 0；`erge/dark` = #001 zhName 夜灯、`erge/light` = #002 zhName 晨光；families 首项 erge；preview/data.js 含「夜灯」「晨光」；`gen_docs_views --check` / `gen_tokens --check` / `gen_family_mapping --check` / `lint_intake` 均通过。
 
 ## DEC-017: ErgeAIA 品牌色原创入库（erge 家族 Light/Dark）
 

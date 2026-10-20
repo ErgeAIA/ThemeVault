@@ -6,6 +6,17 @@
 
 ## [Unreleased]
 
+## 2026-10-20
+
+### 新增
+- 主题中文名：`erge/dark` = **夜灯**、`erge/light` = **晨光**（`scripts/zh_names.json`；预览卡片显示「Dark | 夜灯」，英文名保留）
+
+### 变更
+- 全局主题编号重排：`erge` 家族置顶为 **#001**（`erge/dark`）/ **#002**（`erge/light`），其余 150 套统一 `+2`（原 #001–#150 → #003–#152）；家族展示顺序同步前置。新增一次性迁移模式 `python scripts/gen_index.py --renumber --write`，旧 → 新映射见 `docs/.ai/decision-log.md` DEC-019
+- `INDEX.md` 人工备注的保留键由「编号」改为「主题目录」（`scripts/gen_docs_views.py`）：重编号不再造成备注错配
+- 人工速查表编号同步 `+2`：`docs/brand-colors.md`、`docs/profiles/ergemd.md`、`INDEX.md`「检索提示」
+- 历史日志（CHANGELOG 早期条目、`docs/.ai/decision-log.md`、`project-progress.md`、`debug-log.md`、`docs/.ai/audit/`）按 append-only 约定保留旧编号，不改写
+
 ## 2026-10-11
 
 ### 新增

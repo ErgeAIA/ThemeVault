@@ -6,6 +6,17 @@ This project has **no release artifacts**. Changes are separated by date, like a
 
 ## [Unreleased]
 
+## 2026-10-20
+
+### Added
+- Chinese theme names: `erge/dark` = **夜灯** (night lamp), `erge/light` = **晨光** (morning light) via `scripts/zh_names.json`; cards render "Dark | 夜灯" and keep the English name
+
+### Changed
+- Global theme renumbering: the `erge` family is promoted to **#001** (`erge/dark`) / **#002** (`erge/light`) and the other 150 themes shift by `+2` (former #001–#150 → #003–#152); family display order moves `erge` to the front. Added a one-shot migration mode `python scripts/gen_index.py --renumber --write`; the old → new map is DEC-019 in `docs/.ai/decision-log.md`
+- `INDEX.md` hand-written remarks are now preserved by theme path instead of theme number (`scripts/gen_docs_views.py`), so renumbering no longer mismatches them
+- Manual number tables synced by `+2`: `docs/brand-colors.md`, `docs/profiles/ergemd.md`, and the "search tips" section of `INDEX.md`
+- Historical logs (older CHANGELOG entries, `docs/.ai/decision-log.md`, `project-progress.md`, `debug-log.md`, `docs/.ai/audit/`) keep their old numbers under the append-only rule
+
 ## 2026-10-11
 
 ### Added

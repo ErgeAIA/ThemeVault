@@ -35,8 +35,9 @@
   颜色值原文照抄源码。
 - **INDEX.md**：人读总表（必维护）。
 - **INDEX.json**：机器可读副表，由 `scripts/gen_index.py` 生成（ADR-0003）。
-- **主题编号（theme number）**：每套主题的全局唯一数字引用号（INDEX.json 的 `theme.number`，001–074）。
-  由 `gen_index.py` 自动分配：新增主题追加 `max+1`，已有编号永不变。引用主题时直接说编号即可。
+- **主题编号（theme number）**：每套主题的全局唯一数字引用号（INDEX.json 的 `theme.number`，001–152）。
+  由 `gen_index.py` 自动分配：新增主题追加 `max+1`，已有编号永不变（2026-10-20 一次整体重排
+  除外，见 DEC-019）。引用主题时直接说编号即可。
 - **preview/（预览）**：`preview/data.js`（`gen_index.py` 生成）+ `preview.html` 数据驱动 SPA（ADR-0006）。
 - **令牌（token）**：一个语义角色及其颜色值；「色板表令牌」= palette.md 行数，
   「源码令牌」= tokens.css 变量数（含结构/焦点环非纯色令牌）。

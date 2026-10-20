@@ -2,7 +2,7 @@
 title: Project Progress
 type: project-progress
 project: ThemeVault
-updated: 2026-10-14
+updated: 2026-10-20
 description: >
   项目开发进度实时记录：阶段、分支、代码状态、最近进展。每次会话更新。
   AI 在本文件新增进展或修改当前状态后，必须同步更新 frontmatter 的 updated 字段为当日日期（YYYY-MM-DD）。
@@ -17,6 +17,8 @@ description: >
 
 ## 当前状态
 
+- **今日（2026-10-20）**：erge 中文名 + 全局编号重排（方案 A，用户选定，见 DEC-019）——`python scripts/gen_index.py --renumber --write` 一次性迁移：`erge/dark` → **#001「夜灯」**、`erge/light` → **#002「晨光」**，其余 150 套 `+2`（原 #001–#150 → #003–#152）；`FAMILY_ORDER` 与家族分区前置 erge；修复 `gen_docs_views.py` 人工备注保留键（编号 → 主题目录），INDEX.md 152 行备注零错配；同步 `docs/brand-colors.md`（71 个表编号 + 散文引用）、`docs/profiles/ergemd.md`、INDEX.md 检索提示、AI-MAP/AGENTS/glossary 编号口径（新增 DEC-019 例外条款），CHANGELOG 中英各增 2026-10-20 段。append-only 日志保留旧编号不改写。**结果待用户验证**；线上站点需在 GitHub Actions 手动 `workflow_dispatch` 跑 Deploy to GitHub Pages 才会反映。
+- **今日（2026-10-20）**：只读梳理会话——按 AGENTS 流程通读 AI-MAP / progress / decision-log / debug-log / 最新 handoff（2026-10-10 S2）与 INDEX.json，向用户复述项目现状与待确认项；未改动任何资产、脚本与生成物。
 - **今日（2026-10-10）**：导入决策已下（4 条）：①全量导入，落盘加 `opencode` 前缀区分；②同名同色池者也保留为 OpenCode 变体；③为 TV 缺失 light 的现有同名家族补 light 方案（取自 DSH 对应主题 light 方案）；④先核查协议。
   - **S0 协议核查(完成)**：DSH 仓库 `LICENSE`=MIT（FeatherHunter 2026，聚合层明确）；`THIRD_PARTY_NOTICES.md` 不存在(404)；37 主 json 均无内置 license/author 字段→协议需从上游确认。结论：DSH 以 MIT 聚合分发；主题上游协议对 TV 已收录同名来源复用（MIT/Apache-2.0），新名字多为知名 MIT/Apache 主题，落盘逐主题标注上游协议+必要署名（如 nord 的 Sven Greb）。**整体可落盘**。pin=`9839cb3`（v2.0.26）。
   - **S1 设计(已定)**：单一 `opencode` 家族（用户确认），数据驱动 `scripts/gen_opencode.py` 生成。DSH 主题 JSON 实为 **VS Code 风格原生角色**（background/text/accent/error/warning/success/info/primary/secondary/border*/syntax*/diff*/markdown* 共 50）；35 双方案(dark+light)+2 单方案(aura/ayu)。desktop-2.0 的 4 个与主 json 重复已去重。

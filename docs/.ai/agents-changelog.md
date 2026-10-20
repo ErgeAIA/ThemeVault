@@ -93,3 +93,8 @@ description: >
 
 - `<References 五组宽表「是什么/何时查」>` → update → 压成「何时 → 路径」短列表；AGENTS 全文入上下文，不写人读说明
 - `<纯裸指针>` → drop → 不退回无条件列表（保留触发条件）
+
+## 2026-10-20 · 编号不变式增列外（DEC-019 迁移命令）
+
+- `<S3「新增主题追加 max+1、已有编号永不变」无例外出口>` → update → 补「整体重编号是唯一例外，走 `python scripts/gen_index.py --renumber --write`（一次性迁移，见 DEC-019）」
+- `<Commands 表缺重编号命令>` → update → 新增行 `| 一次性整体重编号 | python scripts/gen_index.py --renumber --write | 编号不变式的唯一例外（DEC-019；erge 置顶，其余顺延） |`
