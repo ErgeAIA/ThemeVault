@@ -51,6 +51,7 @@ familyCount 24 / themeCount 152 / valueThemeCount 151 / skinCount 1 / tokenTotal
 
 | 家族 | 主题数 | 方案 | 契约版本 | required/derived | 角色命名 | 来源 |
 |------|--------|------|----------|------------------|----------|------|
+| erge | 2 | 1L+1D | v3 | 29/38 | L1 通用 | Custom |
 | opensquilla | 9 + 1 skin | 2L+7D+1both | v3 | 29/33 | L1 通用 | Apache-2.0 |
 | catppuccin | 4 | 1L+3D | v3 | 29/33 | L1 通用 | MIT |
 | ergemd | 14 | 2L+12D | v1 | 34/58 | ErgeMD 原生名 | AGPL-3.0 |
@@ -74,7 +75,6 @@ familyCount 24 / themeCount 152 / valueThemeCount 151 / skinCount 1 / tokenTotal
 | omni | 1 | 0L+1D | v1 | 29/12 | L1 通用 | MIT |
 | onepage | 2 | 1L+1D | v1 | 29/25 | L1 + typo 扩展 | MIT |
 | opencode | 72 | 32L+40D | v3 | 9/43 | L1 通用 | MIT |
-| erge | 2 | 1L+1D | v3 | 29/38 | L1 通用 | Custom |
 
 > 本表由 `scripts/gen_docs_views.py` 生成，禁止手改计数。
 <!-- END:generated family-status -->
@@ -84,8 +84,10 @@ familyCount 24 / themeCount 152 / valueThemeCount 151 / skinCount 1 / tokenTotal
 ### 3.1 家族（family）与主题（theme）
 - **家族** = 一个来源项目/体系的全部主题，共享一份 `_source/contract.json` 与继承关系。
 - **主题** = 一套具体配色（一个 `[data-theme]` 块或一份 palette）。每套一个目录。
-- **主题编号（theme number）**：每套主题的全局唯一引用号（INDEX.json 的 `theme.number`，001–072）。
+- **主题编号（theme number）**：每套主题的全局唯一引用号（INDEX.json 的 `theme.number`，001–152）。
   由 `gen_index.py` 自动分配（新增主题追加 `max+1`、已有编号永不变）；引用主题时直接说编号。
+  例外仅一次：2026-10-20 erge 置顶迁移（erge = 001/002，其余 `+2`），见 DEC-019 与
+  `--renumber`（一次性重排，须与 `--write` 同用）。
 - **品牌色（brand）**：每套主题的重点按钮/品牌强调主色（INDEX.json 的 `theme.brand`：
   `color` / `buttonText` / `contrast`），L1 家族取 `accent`、ergemd 取 `brand-primary`；
   `buttonText` = 品牌色块文字用深色（`dark`，#101014）还是浅色（`light`，#f5f5f7），
@@ -197,4 +199,5 @@ preview.html  ← 数据驱动卡片（瀑布流 + grid auto-fill + AA 徽标 + 
    INDEX.json 的 `fontStyle`/`fonts`/`structuralNote` 字段（源：主题 README「结构令牌」行）。
 9. **预览是自包含的**：不加载外部字体/图片，mono 效果用系统等宽族模拟；真机字体名以源项目为准。
 10. **编号勿手改**：`theme.number` 由 gen_index.py 自动分配（新增主题追加 `max+1`、已有编号不变）；
-    手工改它没用，还会与 INDEX.md 编号列、预览卡片编号 tag 漂移。
+    手工改它没用，还会与 INDEX.md 编号列、预览卡片编号 tag 漂移。确需整体重编号时走脚本
+    `python scripts/gen_index.py --renumber --write`（一次性迁移，见 DEC-019），勿手改。

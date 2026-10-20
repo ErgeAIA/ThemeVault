@@ -1,9 +1,240 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-14T06:36:11+00:00",
+  "generatedAt": "2026-10-20T07:39:06+00:00",
   "generator": "scripts/gen_index.py",
   "singleSourceOfTruth": "themes/<family>/_source/contract.json",
   "families": [
+    {
+      "family": "erge",
+      "familyDisplayName": "ErgeAIA",
+      "sourceProject": "erge",
+      "sourceRepo": null,
+      "license": null,
+      "contractPath": "themes/erge/_source/contract.json",
+      "contractVersion": 3,
+      "sections": [
+        [
+          "背景 / 文本 / 边框",
+          [
+            "bg",
+            "bg-surface",
+            "bg-surface-2",
+            "bg-elevated",
+            "bg-hover",
+            "text",
+            "text-muted",
+            "text-dim",
+            "border",
+            "border-strong",
+            "border-focus",
+            "card",
+            "hairline"
+          ]
+        ],
+        [
+          "强调色",
+          [
+            "accent",
+            "accent-hover",
+            "accent-deep",
+            "accent-secondary",
+            "accent-foreground"
+          ]
+        ],
+        [
+          "状态色",
+          [
+            "ok",
+            "ok-fill",
+            "warn",
+            "warn-fill",
+            "danger",
+            "danger-fill",
+            "info",
+            "info-fill",
+            "queued",
+            "queued-fill"
+          ]
+        ],
+        [
+          "语法高亮",
+          [
+            "syntax-comment",
+            "syntax-keyword",
+            "syntax-string",
+            "syntax-literal",
+            "syntax-title",
+            "syntax-attr"
+          ]
+        ]
+      ],
+      "badgePairs": [
+        [
+          "text",
+          "bg"
+        ],
+        [
+          "text-muted",
+          "bg"
+        ],
+        [
+          "text-dim",
+          "bg"
+        ]
+      ],
+      "l1RoleMap": null,
+      "themes": [
+        {
+          "id": "dark",
+          "displayName": "Dark",
+          "zhName": "夜灯",
+          "scheme": "dark",
+          "type": "value-theme",
+          "path": "themes/erge/dark",
+          "palettePath": "themes/erge/dark/palette.md",
+          "tokensPath": "themes/erge/dark/tokens.json",
+          "license": "Custom",
+          "licenseNote": null,
+          "fontStyle": null,
+          "fonts": [],
+          "structuralNote": null,
+          "tokenCount": 39,
+          "requiredCount": 29,
+          "requiredMissing": [],
+          "derivedOverrideCount": 10,
+          "outOfContractRoles": [],
+          "status": "extracted",
+          "brand": {
+            "color": "#F2570F",
+            "buttonText": "light",
+            "contrast": {
+              "white": 3.42,
+              "black": 6.15
+            }
+          },
+          "textContrast": {
+            "textOnBg": 15.37,
+            "textMutedOnBg": 10.11,
+            "textDimOnBg": 4.56
+          },
+          "tokens": {
+            "bg": "#1A1714",
+            "bg-surface": "#241F1B",
+            "bg-surface-2": "#2C2620",
+            "bg-elevated": "#2E2823",
+            "bg-hover": "#322A24",
+            "text": "#F3EDE7",
+            "text-muted": "#C9C2B8",
+            "text-dim": "#858079",
+            "border": "#3A342D",
+            "border-strong": "#4A4339",
+            "border-focus": "#C2460B",
+            "card": "#241F1B",
+            "hairline": "#2E2823",
+            "accent": "#F2570F",
+            "accent-hover": "#C2460B",
+            "accent-deep": "#9E3A08",
+            "accent-secondary": "#FF7A3D",
+            "accent-foreground": "#171614",
+            "ok": "#257552",
+            "ok-fill": "#2E8A5F",
+            "warn": "#8A6410",
+            "warn-fill": "#B2820B",
+            "danger": "#C2382E",
+            "danger-fill": "#E0564A",
+            "info": "#4353B8",
+            "info-fill": "#6478D9",
+            "queued": "#6B51C6",
+            "queued-fill": "#8B6FE0",
+            "ok-on-dark": "color-mix(in srgb, #257552 80%, #FFFFFF 20%)",
+            "warn-on-dark": "color-mix(in srgb, #8A6410 82%, #FFFFFF 18%)",
+            "danger-on-dark": "color-mix(in srgb, #C2382E 78%, #FFFFFF 22%)",
+            "info-on-dark": "color-mix(in srgb, #4353B8 74%, #FFFFFF 26%)",
+            "queued-on-dark": "color-mix(in srgb, #6B51C6 79%, #FFFFFF 21%)",
+            "syntax-comment": "#5F6B7A",
+            "syntax-keyword": "#8E24AA",
+            "syntax-string": "#2E7D32",
+            "syntax-literal": "#8A5700",
+            "syntax-title": "#1E55C7",
+            "syntax-attr": "#0E7490"
+          },
+          "notes": "",
+          "number": 1
+        },
+        {
+          "id": "light",
+          "displayName": "Light",
+          "zhName": "晨光",
+          "scheme": "light",
+          "type": "value-theme",
+          "path": "themes/erge/light",
+          "palettePath": "themes/erge/light/palette.md",
+          "tokensPath": "themes/erge/light/tokens.json",
+          "license": "Custom",
+          "licenseNote": null,
+          "fontStyle": null,
+          "fonts": [],
+          "structuralNote": null,
+          "tokenCount": 34,
+          "requiredCount": 29,
+          "requiredMissing": [],
+          "derivedOverrideCount": 5,
+          "outOfContractRoles": [],
+          "status": "extracted",
+          "brand": {
+            "color": "#FF6A2B",
+            "buttonText": "light",
+            "contrast": {
+              "white": 2.86,
+              "black": 7.35
+            }
+          },
+          "textContrast": {
+            "textOnBg": 16.21,
+            "textMutedOnBg": 6.98,
+            "textDimOnBg": 4.57
+          },
+          "tokens": {
+            "bg": "#FAF1E9",
+            "bg-surface": "#FBE8DD",
+            "bg-surface-2": "#EDE8DE",
+            "bg-elevated": "#FFFFFF",
+            "bg-hover": "#F3E5DB",
+            "text": "#171614",
+            "text-muted": "#55524C",
+            "text-dim": "#706E69",
+            "border": "#E2DDD3",
+            "border-strong": "#D2CCBE",
+            "border-focus": "#C9A48C",
+            "card": "#FFFFFF",
+            "hairline": "#F2E9E0",
+            "accent": "#FF6A2B",
+            "accent-hover": "#D15723",
+            "accent-deep": "#B84A14",
+            "accent-secondary": "#F07A3D",
+            "accent-foreground": "#171614",
+            "ok": "#257552",
+            "ok-fill": "#2E8A5F",
+            "warn": "#8A6410",
+            "warn-fill": "#B2820B",
+            "danger": "#C2382E",
+            "danger-fill": "#E0564A",
+            "info": "#4353B8",
+            "info-fill": "#6478D9",
+            "queued": "#6B51C6",
+            "queued-fill": "#8B6FE0",
+            "syntax-comment": "#5F6B7A",
+            "syntax-keyword": "#8E24AA",
+            "syntax-string": "#2E7D32",
+            "syntax-literal": "#8A5700",
+            "syntax-title": "#1E55C7",
+            "syntax-attr": "#0E7490"
+          },
+          "notes": "",
+          "number": 2
+        }
+      ]
+    },
     {
       "family": "opensquilla",
       "familyDisplayName": "OpenSquilla",
@@ -151,7 +382,7 @@
             "elev-highlight": "rgba(255,255,255,0.05)"
           },
           "notes": "Nord 衍生冷调（MIT，需署名 Sven Greb）",
-          "number": 1
+          "number": 3
         },
         {
           "id": "crt-green",
@@ -218,7 +449,7 @@
             "syntax-attr": "#38d9ff"
           },
           "notes": "绿屏 CRT，极简（仅 required 角色）",
-          "number": 2
+          "number": 4
         },
         {
           "id": "dark",
@@ -287,7 +518,7 @@
             "msg-bubble": "color-mix(in srgb, var(--text) 8%, var(--bg-surface))"
           },
           "notes": "中性石墨，含 6 通道状态谱；默认 ground",
-          "number": 3
+          "number": 5
         },
         {
           "id": "ember",
@@ -357,7 +588,7 @@
             "syntax-attr": "#ff8f6b"
           },
           "notes": "火山暖暗，含 world.css 辉光（装饰层，纯色板忽略）",
-          "number": 4
+          "number": 6
         },
         {
           "id": "light",
@@ -447,7 +678,7 @@
             "atmosphere-dawn": "linear-gradient(180deg, #D9E5F6 0%, #EEF0F5 48%, #F8E9D8 100%)"
           },
           "notes": "Lark 结构逻辑 + 暖橙品牌；含完整 sidebar 派生覆盖 + 浅色阴影 + atmosphere 渐变",
-          "number": 5
+          "number": 7
         },
         {
           "id": "miami",
@@ -522,7 +753,7 @@
             "elev-3": "0 0 0 1px var(--border-strong), 0 16px 40px -10px rgba(16,20,26,0.22)"
           },
           "notes": "迈阿密日光，含 world.css 极光",
-          "number": 6
+          "number": 8
         },
         {
           "id": "out-of-register",
@@ -548,7 +779,7 @@
           "textContrast": null,
           "tokens": null,
           "notes": "",
-          "number": 7
+          "number": 9
         },
         {
           "id": "synthwave",
@@ -618,7 +849,7 @@
             "syntax-attr": "#c9a0ff"
           },
           "notes": "retrowave 霓虹，含 world.css 网格",
-          "number": 8
+          "number": 10
         },
         {
           "id": "terminal",
@@ -687,7 +918,7 @@
             "syntax-attr": "#7fd0ff"
           },
           "notes": "琥珀 CRT，含 world.css 扫描线",
-          "number": 9
+          "number": 11
         },
         {
           "id": "vapor",
@@ -754,7 +985,7 @@
             "syntax-attr": "#c79bff"
           },
           "notes": "蒸汽波深葡萄，含 world.css 网格",
-          "number": 10
+          "number": 12
         }
       ]
     },
@@ -908,7 +1139,7 @@
             "queued-fill": "#babbf1"
           },
           "notes": "中深（官方 Frappe）；映射 mauve→accent / green→ok / red→danger / blue→info",
-          "number": 11
+          "number": 13
         },
         {
           "id": "latte",
@@ -980,7 +1211,7 @@
             "queued-fill": "#7287fd"
           },
           "notes": "浅色（官方 Latte）；映射 mauve→accent / green→ok / red→danger / blue→info",
-          "number": 12
+          "number": 14
         },
         {
           "id": "macchiato",
@@ -1052,7 +1283,7 @@
             "queued-fill": "#b7bdf8"
           },
           "notes": "深色（官方 Macchiato）；映射 mauve→accent / green→ok / red→danger / blue→info",
-          "number": 13
+          "number": 15
         },
         {
           "id": "mocha",
@@ -1124,7 +1355,7 @@
             "queued-fill": "#b4befe"
           },
           "notes": "最深（官方 Mocha，最流行）；映射 mauve→accent / green→ok / red→danger / blue→info",
-          "number": 14
+          "number": 16
         }
       ]
     },
@@ -1362,7 +1593,7 @@
             "brand-secondary-rgb": "197, 133, 192"
           },
           "notes": "暗色主题 视觉特色：青绿色调（cyan/teal），类似 VS Code One Dark 风格",
-          "number": 15
+          "number": 17
         },
         {
           "id": "cherry-blossom",
@@ -1492,7 +1723,7 @@
             "brand-secondary-rgb": "206, 147, 216"
           },
           "notes": "暗色主题 视觉特色：粉色/樱花系，柔和紫色调",
-          "number": 16
+          "number": 18
         },
         {
           "id": "cyberpunk",
@@ -1622,7 +1853,7 @@
             "brand-secondary-rgb": "255, 0, 255"
           },
           "notes": "赛博朋克霓虹色（高饱和青、品红、橙、绿色点缀） ================================================================================ */",
-          "number": 17
+          "number": 19
         },
         {
           "id": "dark",
@@ -1752,7 +1983,7 @@
             "brand-secondary-rgb": "187, 154, 247"
           },
           "notes": "暗色主题 优化方式：共性变量直接使用统一色板值，个性变量按 OKLCH 原则优化",
-          "number": 18
+          "number": 20
         },
         {
           "id": "desert-sunset",
@@ -1882,7 +2113,7 @@
             "brand-secondary-rgb": "206, 147, 216"
           },
           "notes": "沙漠日落暖色调（橙色、沙色、珊瑚红）+ 青色点缀 ================================================================================ */",
-          "number": 19
+          "number": 21
         },
         {
           "id": "falcon",
@@ -2012,7 +2243,7 @@
             "brand-secondary-rgb": "152, 118, 170"
           },
           "notes": "蓝紫色调 + 青色点缀，类似 Dracula/One Dark 风格 ================================================================================ */",
-          "number": 20
+          "number": 22
         },
         {
           "id": "forest",
@@ -2142,7 +2373,7 @@
             "brand-secondary-rgb": "149, 117, 205"
           },
           "notes": "暗色主题 视觉特色：森林绿色调 + 青色点缀",
-          "number": 21
+          "number": 23
         },
         {
           "id": "light",
@@ -2272,7 +2503,7 @@
             "brand-secondary-rgb": "123, 56, 237"
           },
           "notes": "亮色主题 视觉特色：清晰蓝色调，多色标题层级",
-          "number": 22
+          "number": 24
         },
         {
           "id": "monochrome",
@@ -2402,7 +2633,7 @@
             "brand-secondary-rgb": "138, 138, 138"
           },
           "notes": "纯灰度（无彩色）风格，必须保持纯灰度层次对比",
-          "number": 23
+          "number": 25
         },
         {
           "id": "neon-cyberpunk",
@@ -2532,7 +2763,7 @@
             "brand-secondary-rgb": "255, 0, 255"
           },
           "notes": "暗色主题 视觉特色：高饱和度霓虹色（C > 0.35），紫黑色背景",
-          "number": 24
+          "number": 26
         },
         {
           "id": "ocean",
@@ -2662,7 +2893,7 @@
             "brand-secondary-rgb": "126, 87, 194"
           },
           "notes": "海洋蓝色调（H≈190-220°） ================================================================================ */",
-          "number": 25
+          "number": 27
         },
         {
           "id": "solar-flare",
@@ -2792,7 +3023,7 @@
             "brand-secondary-rgb": "179, 136, 255"
           },
           "notes": "暗色主题 视觉特色：太阳耀斑暖色调（H≈40-85°，金/橙/黄色系）",
-          "number": 26
+          "number": 28
         },
         {
           "id": "solarized-light",
@@ -2922,7 +3153,7 @@
             "brand-secondary-rgb": "108, 113, 196"
           },
           "notes": "亮色主题 视觉特色：Solarized 护眼配色，暖色调背景（H≈90°），低饱和度文字",
-          "number": 27
+          "number": 29
         },
         {
           "id": "tokyo-night",
@@ -3052,7 +3283,7 @@
             "brand-secondary-rgb": "187, 154, 247"
           },
           "notes": "蓝紫色调（H≈200-285°），高对比度暗色背景 ================================================================================ */",
-          "number": 28
+          "number": 30
         }
       ]
     },
@@ -3214,7 +3445,7 @@
             "activitybar-inactive": "#525156"
           },
           "notes": "",
-          "number": 29
+          "number": 31
         },
         {
           "id": "soft-dark",
@@ -3294,7 +3525,7 @@
             "activitybar-inactive": "#525156"
           },
           "notes": "",
-          "number": 30
+          "number": 32
         }
       ]
     },
@@ -3455,7 +3686,7 @@
             "activitybar-inactive": "#6272a4"
           },
           "notes": "",
-          "number": 31
+          "number": 33
         },
         {
           "id": "light",
@@ -3528,7 +3759,7 @@
             "selection": "#d8d8d2"
           },
           "notes": "",
-          "number": 147
+          "number": 149
         }
       ]
     },
@@ -3688,7 +3919,7 @@
             "diff-remove": "#bf616a4d"
           },
           "notes": "",
-          "number": 32
+          "number": 34
         },
         {
           "id": "light",
@@ -3761,7 +3992,7 @@
             "selection": "#D8DEE9"
           },
           "notes": "",
-          "number": 148
+          "number": 150
         }
       ]
     },
@@ -3916,7 +4147,7 @@
             "text-secondary": "#839496"
           },
           "notes": "",
-          "number": 33
+          "number": 35
         },
         {
           "id": "light",
@@ -3989,7 +4220,7 @@
             "text-secondary": "#657b83"
           },
           "notes": "AA 已知偏差（不改值）：text(#657b83) 对 bg(#fdf6e3) 对比度 4.13 < 4.5；此为 solarized 设计特征（柔和低对比），属源主题事实，不改值。",
-          "number": 34
+          "number": 36
         }
       ]
     },
@@ -4143,7 +4374,7 @@
             "queued-fill": "#2e7de9"
           },
           "notes": "",
-          "number": 149
+          "number": 151
         },
         {
           "id": "moon",
@@ -4219,7 +4450,7 @@
             "terminal-black": "#444a73"
           },
           "notes": "",
-          "number": 35
+          "number": 37
         },
         {
           "id": "night",
@@ -4295,7 +4526,7 @@
             "terminal-black": "#414868"
           },
           "notes": "",
-          "number": 36
+          "number": 38
         },
         {
           "id": "storm",
@@ -4371,7 +4602,7 @@
             "terminal-black": "#414868"
           },
           "notes": "",
-          "number": 37
+          "number": 39
         }
       ]
     },
@@ -4525,7 +4756,7 @@
             "queued-fill": "#c162de"
           },
           "notes": "",
-          "number": 38
+          "number": 40
         }
       ]
     },
@@ -4680,7 +4911,7 @@
             "selection": "#4373c2"
           },
           "notes": "",
-          "number": 39
+          "number": 41
         },
         {
           "id": "light",
@@ -4753,7 +4984,7 @@
             "selection": "#7a8181ad"
           },
           "notes": "",
-          "number": 40
+          "number": 42
         }
       ]
     },
@@ -4908,7 +5139,7 @@
             "selection": "#ffffff20"
           },
           "notes": "",
-          "number": 41
+          "number": 43
         },
         {
           "id": "light",
@@ -4981,7 +5212,7 @@
             "selection": "#eeeeee"
           },
           "notes": "",
-          "number": 150
+          "number": 152
         }
       ]
     },
@@ -5136,7 +5367,7 @@
             "selection": "#4a548266"
           },
           "notes": "",
-          "number": 42
+          "number": 44
         },
         {
           "id": "light",
@@ -5209,7 +5440,7 @@
             "selection": "#aeb2c666"
           },
           "notes": "",
-          "number": 43
+          "number": 45
         }
       ]
     },
@@ -5363,7 +5594,7 @@
             "queued-fill": "#938AA9"
           },
           "notes": "",
-          "number": 44
+          "number": 46
         },
         {
           "id": "lotus",
@@ -5435,7 +5666,7 @@
             "queued-fill": "#766b90"
           },
           "notes": "",
-          "number": 45
+          "number": 47
         },
         {
           "id": "wave",
@@ -5507,7 +5738,7 @@
             "queued-fill": "#938AA9"
           },
           "notes": "",
-          "number": 46
+          "number": 48
         }
       ]
     },
@@ -5661,7 +5892,7 @@
             "queued-fill": "#d699b6"
           },
           "notes": "",
-          "number": 47
+          "number": 49
         },
         {
           "id": "light",
@@ -5733,7 +5964,7 @@
             "queued-fill": "#df69ba"
           },
           "notes": "",
-          "number": 48
+          "number": 50
         }
       ]
     },
@@ -5887,7 +6118,7 @@
             "queued-fill": "#907aa9"
           },
           "notes": "",
-          "number": 49
+          "number": 51
         },
         {
           "id": "main",
@@ -5959,7 +6190,7 @@
             "queued-fill": "#c4a7e7"
           },
           "notes": "",
-          "number": 50
+          "number": 52
         },
         {
           "id": "moon",
@@ -6031,7 +6262,7 @@
             "queued-fill": "#c4a7e7"
           },
           "notes": "",
-          "number": 51
+          "number": 53
         }
       ]
     },
@@ -6192,7 +6423,7 @@
             "queued-fill": "#d0a1ff"
           },
           "notes": "",
-          "number": 52
+          "number": 54
         },
         {
           "id": "light",
@@ -6271,7 +6502,7 @@
             "queued-fill": "#a176cb"
           },
           "notes": "",
-          "number": 53
+          "number": 55
         },
         {
           "id": "mirage",
@@ -6350,7 +6581,7 @@
             "queued-fill": "#ddbbff"
           },
           "notes": "",
-          "number": 54
+          "number": 56
         }
       ]
     },
@@ -6509,7 +6740,7 @@
             "queued-fill": "#FF92A5"
           },
           "notes": "",
-          "number": 55
+          "number": 57
         }
       ]
     },
@@ -6663,7 +6894,7 @@
             "queued-fill": "#FF2C70"
           },
           "notes": "",
-          "number": 56
+          "number": 58
         },
         {
           "id": "super-dark",
@@ -6735,7 +6966,7 @@
             "queued-fill": "#FF2C70"
           },
           "notes": "",
-          "number": 57
+          "number": 59
         }
       ]
     },
@@ -6892,7 +7123,7 @@
             "queued-fill": "#b58900"
           },
           "notes": "",
-          "number": 58
+          "number": 60
         },
         {
           "id": "high-contrast",
@@ -6968,7 +7199,7 @@
             "queued-fill": "#b58900"
           },
           "notes": "",
-          "number": 59
+          "number": 61
         }
       ]
     },
@@ -7129,7 +7360,7 @@
             "queued-fill": "#FF79C6"
           },
           "notes": "",
-          "number": 60
+          "number": 62
         },
         {
           "id": "dark-blue",
@@ -7208,7 +7439,7 @@
             "queued-fill": "#FF79C6"
           },
           "notes": "",
-          "number": 61
+          "number": 63
         },
         {
           "id": "dark-green",
@@ -7287,7 +7518,7 @@
             "queued-fill": "#FF79C6"
           },
           "notes": "",
-          "number": 62
+          "number": 64
         },
         {
           "id": "dark-green-islands",
@@ -7366,7 +7597,7 @@
             "queued-fill": "#FF79C6"
           },
           "notes": "",
-          "number": 63
+          "number": 65
         },
         {
           "id": "light-bean-green",
@@ -7445,7 +7676,7 @@
             "queued-fill": "#FF79C6"
           },
           "notes": "",
-          "number": 64
+          "number": 66
         },
         {
           "id": "light-buff",
@@ -7524,7 +7755,7 @@
             "queued-fill": "#FF79C6"
           },
           "notes": "",
-          "number": 65
+          "number": 67
         },
         {
           "id": "light-celadon",
@@ -7603,7 +7834,7 @@
             "queued-fill": "#FF79C6"
           },
           "notes": "",
-          "number": 66
+          "number": 68
         },
         {
           "id": "light-green",
@@ -7682,7 +7913,7 @@
             "queued-fill": "#FF79C6"
           },
           "notes": "",
-          "number": 67
+          "number": 69
         },
         {
           "id": "light-green-islands",
@@ -7761,7 +7992,7 @@
             "queued-fill": "#FF79C6"
           },
           "notes": "",
-          "number": 68
+          "number": 70
         },
         {
           "id": "light-grey",
@@ -7840,7 +8071,7 @@
             "queued-fill": "#FF79C6"
           },
           "notes": "",
-          "number": 69
+          "number": 71
         },
         {
           "id": "light-pink",
@@ -7919,7 +8150,7 @@
             "queued-fill": "#FF79C6"
           },
           "notes": "",
-          "number": 70
+          "number": 72
         },
         {
           "id": "light-yellow",
@@ -7998,7 +8229,7 @@
             "queued-fill": "#FF79C6"
           },
           "notes": "",
-          "number": 71
+          "number": 73
         }
       ]
     },
@@ -8159,7 +8390,7 @@
             "queued-fill": "#988bc7"
           },
           "notes": "",
-          "number": 72
+          "number": 74
         }
       ]
     },
@@ -8359,7 +8590,7 @@
             "graph-color-3": "var(--text-muted)"
           },
           "notes": "",
-          "number": 73
+          "number": 75
         },
         {
           "id": "warm-paper",
@@ -8451,7 +8682,7 @@
             "graph-color-3": "var(--text-muted)"
           },
           "notes": "",
-          "number": 74
+          "number": 76
         }
       ]
     },
@@ -8615,7 +8846,7 @@
             "markdownStrong": "#FFFFFF"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 75
+          "number": 77
         },
         {
           "id": "amoled-light",
@@ -8680,7 +8911,7 @@
             "markdownStrong": "#0A0A0A"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 76
+          "number": 78
         },
         {
           "id": "aura",
@@ -8767,7 +8998,7 @@
             "markdownText": "#edecee"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 77
+          "number": 79
         },
         {
           "id": "ayu",
@@ -8854,7 +9085,7 @@
             "markdownText": "#BFBDB6"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 78
+          "number": 80
         },
         {
           "id": "carbonfox",
@@ -8941,7 +9172,7 @@
             "markdownText": "#f2f4f8"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 79
+          "number": 81
         },
         {
           "id": "carbonfox-light",
@@ -9028,7 +9259,7 @@
             "markdownText": "#161616"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 80
+          "number": 82
         },
         {
           "id": "catppuccin",
@@ -9115,7 +9346,7 @@
             "markdownText": "#cdd6f4"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 81
+          "number": 83
         },
         {
           "id": "catppuccin-frappe",
@@ -9202,7 +9433,7 @@
             "markdownText": "#c6d0f5"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 82
+          "number": 84
         },
         {
           "id": "catppuccin-frappe-light",
@@ -9289,7 +9520,7 @@
             "markdownText": "#c6d0f5"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）；源 light 与 dark 取值相同（仅 1 个角色不同），本变体按 dark 归档（色值未改写）",
-          "number": 83
+          "number": 85
         },
         {
           "id": "catppuccin-light",
@@ -9376,7 +9607,7 @@
             "markdownText": "#4c4f69"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 84
+          "number": 86
         },
         {
           "id": "catppuccin-macchiato",
@@ -9463,7 +9694,7 @@
             "markdownText": "#cad3f5"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 85
+          "number": 87
         },
         {
           "id": "catppuccin-macchiato-light",
@@ -9550,7 +9781,7 @@
             "markdownText": "#cad3f5"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）；源 light 与 dark 取值相同（仅 1 个角色不同），本变体按 dark 归档（色值未改写）",
-          "number": 86
+          "number": 88
         },
         {
           "id": "cobalt2",
@@ -9637,7 +9868,7 @@
             "markdownText": "#ffffff"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 87
+          "number": 89
         },
         {
           "id": "cobalt2-light",
@@ -9724,7 +9955,7 @@
             "markdownText": "#193549"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 88
+          "number": 90
         },
         {
           "id": "cursor",
@@ -9811,7 +10042,7 @@
             "markdownText": "#e4e4e4"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 89
+          "number": 91
         },
         {
           "id": "cursor-light",
@@ -9898,7 +10129,7 @@
             "markdownText": "#141414"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 90
+          "number": 92
         },
         {
           "id": "dracula",
@@ -9985,7 +10216,7 @@
             "markdownText": "#f8f8f2"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 91
+          "number": 93
         },
         {
           "id": "dracula-light",
@@ -10072,7 +10303,7 @@
             "markdownText": "#282a36"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 92
+          "number": 94
         },
         {
           "id": "everforest",
@@ -10159,7 +10390,7 @@
             "markdownText": "#d3c6aa"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 93
+          "number": 95
         },
         {
           "id": "everforest-light",
@@ -10246,7 +10477,7 @@
             "markdownText": "#5c6a72"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 94
+          "number": 96
         },
         {
           "id": "flexoki",
@@ -10333,7 +10564,7 @@
             "markdownText": "#CECDC3"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 95
+          "number": 97
         },
         {
           "id": "flexoki-light",
@@ -10420,7 +10651,7 @@
             "markdownText": "#100F0F"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 96
+          "number": 98
         },
         {
           "id": "github",
@@ -10507,7 +10738,7 @@
             "markdownText": "#c9d1d9"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 97
+          "number": 99
         },
         {
           "id": "github-light",
@@ -10594,7 +10825,7 @@
             "markdownText": "#24292f"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 98
+          "number": 100
         },
         {
           "id": "gruvbox",
@@ -10681,7 +10912,7 @@
             "markdownText": "#ebdbb2"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 99
+          "number": 101
         },
         {
           "id": "gruvbox-light",
@@ -10768,7 +10999,7 @@
             "markdownText": "#3c3836"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 100
+          "number": 102
         },
         {
           "id": "kanagawa",
@@ -10855,7 +11086,7 @@
             "markdownText": "#DCD7BA"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 101
+          "number": 103
         },
         {
           "id": "kanagawa-light",
@@ -10942,7 +11173,7 @@
             "markdownText": "#54433A"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 102
+          "number": 104
         },
         {
           "id": "lucent-orng",
@@ -11031,7 +11262,7 @@
             "markdownText": "#eeeeee"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 103
+          "number": 105
         },
         {
           "id": "lucent-orng-light",
@@ -11120,7 +11351,7 @@
             "markdownText": "#1a1a1a"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 104
+          "number": 106
         },
         {
           "id": "material",
@@ -11207,7 +11438,7 @@
             "markdownText": "#eeffff"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 105
+          "number": 107
         },
         {
           "id": "material-light",
@@ -11294,7 +11525,7 @@
             "markdownText": "#263238"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 106
+          "number": 108
         },
         {
           "id": "matrix",
@@ -11381,7 +11612,7 @@
             "markdownText": "#62ff94"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 107
+          "number": 109
         },
         {
           "id": "matrix-light",
@@ -11468,7 +11699,7 @@
             "markdownText": "#203022"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 108
+          "number": 110
         },
         {
           "id": "mercury",
@@ -11555,7 +11786,7 @@
             "markdownText": "#dddde5"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 109
+          "number": 111
         },
         {
           "id": "mercury-light",
@@ -11642,7 +11873,7 @@
             "markdownText": "#363644"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 110
+          "number": 112
         },
         {
           "id": "monokai",
@@ -11729,7 +11960,7 @@
             "markdownText": "#f8f8f2"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 111
+          "number": 113
         },
         {
           "id": "monokai-light",
@@ -11816,7 +12047,7 @@
             "markdownText": "#272822"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 112
+          "number": 114
         },
         {
           "id": "nightowl",
@@ -11903,7 +12134,7 @@
             "markdownText": "#d6deeb"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 113
+          "number": 115
         },
         {
           "id": "nightowl-light",
@@ -11990,7 +12221,7 @@
             "markdownText": "#d6deeb"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）；源 light 与 dark 取值相同（仅 0 个角色不同），本变体按 dark 归档（色值未改写）",
-          "number": 114
+          "number": 116
         },
         {
           "id": "nord",
@@ -12077,7 +12308,7 @@
             "markdownText": "#D8DEE9"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 115
+          "number": 117
         },
         {
           "id": "nord-light",
@@ -12164,7 +12395,7 @@
             "markdownText": "#2E3440"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 116
+          "number": 118
         },
         {
           "id": "oc-2",
@@ -12229,7 +12460,7 @@
             "markdownStrong": "#EDEDED"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 117
+          "number": 119
         },
         {
           "id": "oc-2-light",
@@ -12294,7 +12525,7 @@
             "markdownStrong": "#171717"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 118
+          "number": 120
         },
         {
           "id": "one-dark",
@@ -12381,7 +12612,7 @@
             "markdownText": "#abb2bf"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 119
+          "number": 121
         },
         {
           "id": "one-dark-light",
@@ -12468,7 +12699,7 @@
             "markdownText": "#383a42"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 120
+          "number": 122
         },
         {
           "id": "onedarkpro",
@@ -12533,7 +12764,7 @@
             "markdownStrong": "#ABB2BF"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 121
+          "number": 123
         },
         {
           "id": "onedarkpro-light",
@@ -12598,7 +12829,7 @@
             "markdownStrong": "#2B303B"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 122
+          "number": 124
         },
         {
           "id": "opencode",
@@ -12685,7 +12916,7 @@
             "markdownText": "#eeeeee"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 123
+          "number": 125
         },
         {
           "id": "opencode-light",
@@ -12772,7 +13003,7 @@
             "markdownText": "#1a1a1a"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 124
+          "number": 126
         },
         {
           "id": "orng",
@@ -12860,7 +13091,7 @@
             "markdownText": "#eeeeee"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 125
+          "number": 127
         },
         {
           "id": "orng-light",
@@ -12948,7 +13179,7 @@
             "markdownText": "#1a1a1a"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 126
+          "number": 128
         },
         {
           "id": "osaka-jade",
@@ -13035,7 +13266,7 @@
             "markdownText": "#C1C497"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 127
+          "number": 129
         },
         {
           "id": "osaka-jade-light",
@@ -13122,7 +13353,7 @@
             "markdownText": "#111c18"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 128
+          "number": 130
         },
         {
           "id": "palenight",
@@ -13209,7 +13440,7 @@
             "markdownText": "#a6accd"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 129
+          "number": 131
         },
         {
           "id": "palenight-light",
@@ -13296,7 +13527,7 @@
             "markdownText": "#292d3e"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 130
+          "number": 132
         },
         {
           "id": "rosepine",
@@ -13383,7 +13614,7 @@
             "markdownText": "#e0def4"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 131
+          "number": 133
         },
         {
           "id": "rosepine-light",
@@ -13470,7 +13701,7 @@
             "markdownText": "#575279"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 132
+          "number": 134
         },
         {
           "id": "shadesofpurple",
@@ -13535,7 +13766,7 @@
             "markdownStrong": "#F5F0FF"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 133
+          "number": 135
         },
         {
           "id": "shadesofpurple-light",
@@ -13600,7 +13831,7 @@
             "markdownStrong": "#3B2C59"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 134
+          "number": 136
         },
         {
           "id": "solarized",
@@ -13687,7 +13918,7 @@
             "markdownText": "#839496"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 135
+          "number": 137
         },
         {
           "id": "solarized-light",
@@ -13774,7 +14005,7 @@
             "markdownText": "#657b83"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）；**AA 已知偏差（不改值）**：text(#657b83) 对 background(#fdf6e3) 对比度 4.13 < 4.5；此为 solarized 设计特征（柔和低对比），属源主题事实，不改值。",
-          "number": 136
+          "number": 138
         },
         {
           "id": "synthwave84",
@@ -13861,7 +14092,7 @@
             "markdownText": "#ffffff"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 137
+          "number": 139
         },
         {
           "id": "synthwave84-light",
@@ -13948,7 +14179,7 @@
             "markdownText": "#262335"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 138
+          "number": 140
         },
         {
           "id": "tokyonight",
@@ -14035,7 +14266,7 @@
             "markdownText": "#c8d3f5"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 139
+          "number": 141
         },
         {
           "id": "tokyonight-light",
@@ -14122,7 +14353,7 @@
             "markdownText": "#3760bf"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 140
+          "number": 142
         },
         {
           "id": "vercel",
@@ -14209,7 +14440,7 @@
             "markdownText": "#EDEDED"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 141
+          "number": 143
         },
         {
           "id": "vercel-light",
@@ -14296,7 +14527,7 @@
             "markdownText": "#171717"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 142
+          "number": 144
         },
         {
           "id": "vesper",
@@ -14383,7 +14614,7 @@
             "markdownText": "#FFF"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 143
+          "number": 145
         },
         {
           "id": "vesper-light",
@@ -14470,7 +14701,7 @@
             "markdownText": "#101010"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 144
+          "number": 146
         },
         {
           "id": "zenburn",
@@ -14557,7 +14788,7 @@
             "markdownText": "#dcdccc"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 145
+          "number": 147
         },
         {
           "id": "zenburn-light",
@@ -14644,238 +14875,7 @@
             "markdownText": "#3f3f3f"
           },
           "notes": "OpenCode 移植版；DSH 以 MIT 聚合；上游协议以原项目为准（Nord 衍生需保留 Sven Greb 署名）",
-          "number": 146
-        }
-      ]
-    },
-    {
-      "family": "erge",
-      "familyDisplayName": "ErgeAIA",
-      "sourceProject": "erge",
-      "sourceRepo": null,
-      "license": null,
-      "contractPath": "themes/erge/_source/contract.json",
-      "contractVersion": 3,
-      "sections": [
-        [
-          "背景 / 文本 / 边框",
-          [
-            "bg",
-            "bg-surface",
-            "bg-surface-2",
-            "bg-elevated",
-            "bg-hover",
-            "text",
-            "text-muted",
-            "text-dim",
-            "border",
-            "border-strong",
-            "border-focus",
-            "card",
-            "hairline"
-          ]
-        ],
-        [
-          "强调色",
-          [
-            "accent",
-            "accent-hover",
-            "accent-deep",
-            "accent-secondary",
-            "accent-foreground"
-          ]
-        ],
-        [
-          "状态色",
-          [
-            "ok",
-            "ok-fill",
-            "warn",
-            "warn-fill",
-            "danger",
-            "danger-fill",
-            "info",
-            "info-fill",
-            "queued",
-            "queued-fill"
-          ]
-        ],
-        [
-          "语法高亮",
-          [
-            "syntax-comment",
-            "syntax-keyword",
-            "syntax-string",
-            "syntax-literal",
-            "syntax-title",
-            "syntax-attr"
-          ]
-        ]
-      ],
-      "badgePairs": [
-        [
-          "text",
-          "bg"
-        ],
-        [
-          "text-muted",
-          "bg"
-        ],
-        [
-          "text-dim",
-          "bg"
-        ]
-      ],
-      "l1RoleMap": null,
-      "themes": [
-        {
-          "id": "dark",
-          "displayName": "Dark",
-          "zhName": null,
-          "scheme": "dark",
-          "type": "value-theme",
-          "path": "themes/erge/dark",
-          "palettePath": "themes/erge/dark/palette.md",
-          "tokensPath": "themes/erge/dark/tokens.json",
-          "license": "Custom",
-          "licenseNote": null,
-          "fontStyle": null,
-          "fonts": [],
-          "structuralNote": null,
-          "tokenCount": 39,
-          "requiredCount": 29,
-          "requiredMissing": [],
-          "derivedOverrideCount": 10,
-          "outOfContractRoles": [],
-          "status": "extracted",
-          "brand": {
-            "color": "#F2570F",
-            "buttonText": "light",
-            "contrast": {
-              "white": 3.42,
-              "black": 6.15
-            }
-          },
-          "textContrast": {
-            "textOnBg": 15.37,
-            "textMutedOnBg": 10.11,
-            "textDimOnBg": 4.56
-          },
-          "tokens": {
-            "bg": "#1A1714",
-            "bg-surface": "#241F1B",
-            "bg-surface-2": "#2C2620",
-            "bg-elevated": "#2E2823",
-            "bg-hover": "#322A24",
-            "text": "#F3EDE7",
-            "text-muted": "#C9C2B8",
-            "text-dim": "#858079",
-            "border": "#3A342D",
-            "border-strong": "#4A4339",
-            "border-focus": "#C2460B",
-            "card": "#241F1B",
-            "hairline": "#2E2823",
-            "accent": "#F2570F",
-            "accent-hover": "#C2460B",
-            "accent-deep": "#9E3A08",
-            "accent-secondary": "#FF7A3D",
-            "accent-foreground": "#171614",
-            "ok": "#257552",
-            "ok-fill": "#2E8A5F",
-            "warn": "#8A6410",
-            "warn-fill": "#B2820B",
-            "danger": "#C2382E",
-            "danger-fill": "#E0564A",
-            "info": "#4353B8",
-            "info-fill": "#6478D9",
-            "queued": "#6B51C6",
-            "queued-fill": "#8B6FE0",
-            "ok-on-dark": "color-mix(in srgb, #257552 80%, #FFFFFF 20%)",
-            "warn-on-dark": "color-mix(in srgb, #8A6410 82%, #FFFFFF 18%)",
-            "danger-on-dark": "color-mix(in srgb, #C2382E 78%, #FFFFFF 22%)",
-            "info-on-dark": "color-mix(in srgb, #4353B8 74%, #FFFFFF 26%)",
-            "queued-on-dark": "color-mix(in srgb, #6B51C6 79%, #FFFFFF 21%)",
-            "syntax-comment": "#5F6B7A",
-            "syntax-keyword": "#8E24AA",
-            "syntax-string": "#2E7D32",
-            "syntax-literal": "#8A5700",
-            "syntax-title": "#1E55C7",
-            "syntax-attr": "#0E7490"
-          },
-          "notes": "",
-          "number": 151
-        },
-        {
-          "id": "light",
-          "displayName": "Light",
-          "zhName": null,
-          "scheme": "light",
-          "type": "value-theme",
-          "path": "themes/erge/light",
-          "palettePath": "themes/erge/light/palette.md",
-          "tokensPath": "themes/erge/light/tokens.json",
-          "license": "Custom",
-          "licenseNote": null,
-          "fontStyle": null,
-          "fonts": [],
-          "structuralNote": null,
-          "tokenCount": 34,
-          "requiredCount": 29,
-          "requiredMissing": [],
-          "derivedOverrideCount": 5,
-          "outOfContractRoles": [],
-          "status": "extracted",
-          "brand": {
-            "color": "#FF6A2B",
-            "buttonText": "light",
-            "contrast": {
-              "white": 2.86,
-              "black": 7.35
-            }
-          },
-          "textContrast": {
-            "textOnBg": 16.21,
-            "textMutedOnBg": 6.98,
-            "textDimOnBg": 4.57
-          },
-          "tokens": {
-            "bg": "#FAF1E9",
-            "bg-surface": "#FBE8DD",
-            "bg-surface-2": "#EDE8DE",
-            "bg-elevated": "#FFFFFF",
-            "bg-hover": "#F3E5DB",
-            "text": "#171614",
-            "text-muted": "#55524C",
-            "text-dim": "#706E69",
-            "border": "#E2DDD3",
-            "border-strong": "#D2CCBE",
-            "border-focus": "#C9A48C",
-            "card": "#FFFFFF",
-            "hairline": "#F2E9E0",
-            "accent": "#FF6A2B",
-            "accent-hover": "#D15723",
-            "accent-deep": "#B84A14",
-            "accent-secondary": "#F07A3D",
-            "accent-foreground": "#171614",
-            "ok": "#257552",
-            "ok-fill": "#2E8A5F",
-            "warn": "#8A6410",
-            "warn-fill": "#B2820B",
-            "danger": "#C2382E",
-            "danger-fill": "#E0564A",
-            "info": "#4353B8",
-            "info-fill": "#6478D9",
-            "queued": "#6B51C6",
-            "queued-fill": "#8B6FE0",
-            "syntax-comment": "#5F6B7A",
-            "syntax-keyword": "#8E24AA",
-            "syntax-string": "#2E7D32",
-            "syntax-literal": "#8A5700",
-            "syntax-title": "#1E55C7",
-            "syntax-attr": "#0E7490"
-          },
-          "notes": "",
-          "number": 152
+          "number": 148
         }
       ]
     }
