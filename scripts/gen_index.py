@@ -9,7 +9,9 @@ family contract, and emits a machine-readable INDEX.json at repo root.
 Exit code 1 if any value theme violates the contract (missing required role
 or out-of-contract role), so it can run as a CI gate.
 
-Usage: python scripts/gen_index.py [--write]   (--write persists INDEX.json)
+Usage: python scripts/gen_index.py [--write] [--renumber]
+       --write    persists INDEX.json
+       --renumber one-shot global renumbering (requires --write)
 """
 import json
 import re
@@ -227,7 +229,7 @@ def text_contrast_of(tokens: dict, family: str) -> dict | None:
 
 
 # 家族展示/编号顺序（与 INDEX.md 家族分组一致）；不在列表中的新家族排在末尾。
-FAMILY_ORDER = ["opensquilla", "catppuccin", "ergemd", "aura", "dracula", "nord", "solarized",
+FAMILY_ORDER = ["erge", "opensquilla", "catppuccin", "ergemd", "aura", "dracula", "nord", "solarized",
                 "tokyonight", "one-dark-pro", "night-owl", "synthwave", "iceberg",
                 "kanagawa", "everforest", "rose-pine", "ayu", "jellyfish", "shades",
                 "vue", "falcon", "omni", "onepage", "opencode"]
@@ -243,6 +245,9 @@ FAMILY_DISPLAY_NAMES = {
     "vue": "Vue Theme", "falcon": "Falcon", "omni": "Omni", "onepage": "OnePage",
     "opencode": "OpenCode",
 }
+
+# 一次性重排（--renumber）时置顶的家族：按此顺序排在编号最前，其余家族按旧号升序顺延。
+RENUMBER_HEAD_FAMILIES = ["erge"]
 
 
 # ── 家族感知预览配置（生成进 INDEX.json 的 family.sections / badgePairs / l1RoleMap）──
@@ -367,6 +372,40 @@ def assign_numbers(families: list[dict]) -> None:
                 next_num += 1
 
 
+def renumber_themes(families: list[dict]) -> dict[tuple[str, str], tuple[int, int]]:
+    """一次性全局重排编号（就地修改）：置顶家族优先，其余按旧号升序顺延。
+
+    与 assign_numbers（追加分配、已有编号永不变）不同，本函数会改变已有编号，
+    仅供 `--renumber` 显式迁移使用。返回 {(family, id): (旧号, 新号)} 供打印迁移映射。
+    """
+    old = load_old_numbers(INDEX_JSON)
+    if not old:
+        raise SystemExit(
+            "ERROR: INDEX.json 不存在或缺编号，无法重排；先运行 "
+            "python scripts/gen_index.py --write。"
+        )
+    head: list[tuple[dict, dict, tuple[str, str]]] = []
+    rest: list[tuple[dict, dict, tuple[str, str]]] = []
+    for fam in families:
+        for theme in fam["themes"]:
+            key = (fam["family"], theme["id"])
+            if key not in old:
+                raise SystemExit(
+                    f"ERROR: [{fam['family']}/{theme['id']}] 尚无旧编号，"
+                    "先运行 python scripts/gen_index.py --write 补齐后再重排。"
+                )
+            (head if fam["family"] in RENUMBER_HEAD_FAMILIES else rest).append((fam, theme, key))
+    head.sort(key=lambda it: (RENUMBER_HEAD_FAMILIES.index(it[0]["family"]), it[1]["id"]))
+    rest.sort(key=lambda it: old[it[2]])
+    moved: dict[tuple[str, str], tuple[int, int]] = {}
+    for n, _item in enumerate(head + rest, start=1):
+        theme = _item[1]
+        key = _item[2]
+        theme["number"] = n
+        moved[key] = (old[key], n)
+    return moved
+
+
 def needs_write(path: Path, canonical: str, prefix: str = "", suffix: str = "") -> bool:
     """与磁盘既有内容比对（剔除 generatedAt 后重序列化）；一致返回 False 以跳过重写。
 
@@ -392,6 +431,13 @@ def main() -> int:
         print(__doc__)
         return 0
     write = "--write" in sys.argv[1:]
+    renumber = "--renumber" in sys.argv[1:]
+    if renumber and not write:
+        print(
+            "ERROR: --renumber 必须与 --write 同用（该模式会改变已有编号）。",
+            file=sys.stderr,
+        )
+        return 2
 
     # 纳入 DoD / provenance（P3）：与契约覆盖同门禁；缺 IR 的旧家族仅警告。
     try:
@@ -520,7 +566,17 @@ def main() -> int:
         })
 
     # 全局编号：沿用旧号 + 新主题追加 max+1（新增主题不改变已有编号）。
-    assign_numbers(families)
+    # --renumber：一次性迁移——RENUMBER_HEAD_FAMILIES 家族置顶，其余按旧号升序顺延。
+    if renumber:
+        moved = renumber_themes(families)
+        changed = sorted(
+            ((k, o, n) for k, (o, n) in moved.items() if o != n), key=lambda x: x[1]
+        )
+        print(f"renumber: {len(moved)} 套主题参与重排，{len(changed)} 套编号变化（旧 -> 新）")
+        for (fam, tid), o, n in changed:
+            print(f"  {fam}/{tid}: {o:03d} -> {n:03d}")
+    else:
+        assign_numbers(families)
 
     stats = {
         "familyCount": len(families),

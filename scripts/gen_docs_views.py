@@ -2,7 +2,7 @@
 """Render human views from INDEX.json: INDEX.md table/stats + AI-MAP counts.
 
 Generated regions are delimited by HTML comments; prose outside is hand-written.
-Remarks in INDEX.md are preserved by theme number.
+Remarks in INDEX.md are preserved by theme path (survives renumbering).
 
 Usage:
   python scripts/gen_docs_views.py          # rewrite generated blocks
@@ -41,16 +41,17 @@ def replace_block(text: str, name: str, body: str) -> str:
     return text
 
 
-def preserve_remarks(md: str) -> dict[int, str]:
-    remarks: dict[int, str] = {}
+def preserve_remarks(md: str) -> dict[str, str]:
+    """按主题目录保留人工备注；编号重排不改变归属。"""
+    remarks: dict[str, str] = {}
     for line in md.splitlines():
-        m = re.match(r"^\| (\d{3}) \|.*\| ([^|]*) \|$", line)
+        m = re.match(r"^\| \d{3} \| `([^`]+)` \|.*\| ([^|]*) \|$", line)
         if m:
-            remarks[int(m.group(1))] = m.group(2).strip()
+            remarks[m.group(1)] = m.group(2).strip()
     return remarks
 
 
-def render_index_table(index: dict, remarks: dict[int, str]) -> str:
+def render_index_table(index: dict, remarks: dict[str, str]) -> str:
     lines = [
         "| 编号 | 主题目录 | 来源项目 | 主题 ID | 显示名 | 协议 | 方案 | required 角色 | 派生覆盖 | 状态 | 备注 |",
         "|-----|----------|----------|---------|--------|------|------|---------------|----------|------|------|",
@@ -68,7 +69,7 @@ def render_index_table(index: dict, remarks: dict[int, str]) -> str:
             req = str(t["requiredCount"])
             der = str(t.get("derivedOverrideCount", 0))
             status = "✅ 已提取"
-        note = remarks.get(n, "")
+        note = remarks.get(t["path"], "")
         scheme = t.get("scheme") or "—"
         lines.append(
             f"| {n:03d} | `{t['path']}` | {fam} | {t['id']} | "
