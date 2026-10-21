@@ -6,6 +6,12 @@
 
 ## [Unreleased]
 
+## 2026-10-22
+
+### 变更
+- `erge` 家族配色优化按 shese 机检审查落值（DEC-020）：dark **#001 夜灯** 8 键（`--bg` #1A1714→#16120E、`--bg-surface` #241F1B→#201A15、`--text` #F3EDE7→#EDE4D8、`--text-muted` #C9C2B8→#C0B7A9、`--text-dim` #858079→#A39D93、`--border-focus` #C2460B→#D95C1E、`--accent-secondary` #FF7A3D→#FFB380、`--queued` #6B51C6→#8D73E3）；light **#002 晨光** 3 键（`--border-focus` #C9A48C→#B06A3F、`--accent-secondary` #F07A3D→#8C3A12、`--queued` #6B51C6→#8D73E3）；dark `--queued-on-dark` 公式基值同步 #8D73E3。判读口径：APCA Lc 主档 + WCAG 记账双轨，语义色按四色盲象限 ΔE 成对判定
+- `themes/erge/_source/extract.json` 值账本按 schemaVersion 2 全量重建（48 值，provenance 记 2026-10-22 shese 审查优化值更新）；`INDEX.json`、`preview/data.js`、`tokens.json` 均由脚本再生，六项校验全绿（`gen_index --write/--check`、`gen_tokens --check`、`gen_docs_views --check`、`gen_family_mapping --check`、`lint_intake`）
+
 ## 2026-10-20
 
 ### 新增

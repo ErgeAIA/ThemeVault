@@ -4,12 +4,22 @@
   "pin": "DEC-017 @ 2026-10-14 (本对话推导)",
   "kind": "value-ledger",
   "provenance": "full",
+  "provenanceNote": "2026-10-22 shese 审查优化值更新（#001 夜灯 / #002 晨光，用户已认可）",
   "values": {
     "#0E7490": {
       "kind": "hex",
       "witness": {
         "sourceFile": "palette.md",
         "var": "syntax-attr",
+        "selector": ":root"
+      },
+      "hits": 2
+    },
+    "#16120E": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "bg",
         "selector": ":root"
       },
       "hits": 1
@@ -21,16 +31,7 @@
         "var": "accent-foreground",
         "selector": ":root"
       },
-      "hits": 2
-    },
-    "#1A1714": {
-      "kind": "hex",
-      "witness": {
-        "sourceFile": "palette.md",
-        "var": "bg",
-        "selector": ":root"
-      },
-      "hits": 1
+      "hits": 3
     },
     "#1E55C7": {
       "kind": "hex",
@@ -39,16 +40,25 @@
         "var": "syntax-title",
         "selector": ":root"
       },
-      "hits": 1
+      "hits": 2
     },
-    "#241F1B": {
+    "#201A15": {
       "kind": "hex",
       "witness": {
         "sourceFile": "palette.md",
         "var": "bg-surface",
         "selector": ":root"
       },
-      "hits": 2
+      "hits": 1
+    },
+    "#241F1B": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "card",
+        "selector": ":root"
+      },
+      "hits": 1
     },
     "#257552": {
       "kind": "hex",
@@ -57,7 +67,7 @@
         "var": "ok",
         "selector": ":root"
       },
-      "hits": 1
+      "hits": 3
     },
     "#2C2620": {
       "kind": "hex",
@@ -84,7 +94,7 @@
         "var": "syntax-string",
         "selector": ":root"
       },
-      "hits": 1
+      "hits": 2
     },
     "#2E8A5F": {
       "kind": "hex",
@@ -93,7 +103,7 @@
         "var": "ok-fill",
         "selector": ":root"
       },
-      "hits": 1
+      "hits": 2
     },
     "#322A24": {
       "kind": "hex",
@@ -120,7 +130,7 @@
         "var": "info",
         "selector": ":root"
       },
-      "hits": 1
+      "hits": 3
     },
     "#4A4339": {
       "kind": "hex",
@@ -147,7 +157,7 @@
         "var": "syntax-comment",
         "selector": ":root"
       },
-      "hits": 1
+      "hits": 2
     },
     "#6478D9": {
       "kind": "hex",
@@ -156,27 +166,9 @@
         "var": "info-fill",
         "selector": ":root"
       },
-      "hits": 1
-    },
-    "#6B51C6": {
-      "kind": "hex",
-      "witness": {
-        "sourceFile": "palette.md",
-        "var": "queued",
-        "selector": ":root"
-      },
-      "hits": 1
+      "hits": 2
     },
     "#706E69": {
-      "kind": "hex",
-      "witness": {
-        "sourceFile": "palette.md",
-        "var": "text-dim",
-        "selector": ":root"
-      },
-      "hits": 1
-    },
-    "#858079": {
       "kind": "hex",
       "witness": {
         "sourceFile": "palette.md",
@@ -192,7 +184,7 @@
         "var": "syntax-literal",
         "selector": ":root"
       },
-      "hits": 1
+      "hits": 2
     },
     "#8A6410": {
       "kind": "hex",
@@ -201,7 +193,7 @@
         "var": "warn",
         "selector": ":root"
       },
-      "hits": 1
+      "hits": 3
     },
     "#8B6FE0": {
       "kind": "hex",
@@ -210,7 +202,25 @@
         "var": "queued-fill",
         "selector": ":root"
       },
+      "hits": 2
+    },
+    "#8C3A12": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "accent-secondary",
+        "selector": ":root"
+      },
       "hits": 1
+    },
+    "#8D73E3": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "queued",
+        "selector": ":root"
+      },
+      "hits": 3
     },
     "#8E24AA": {
       "kind": "hex",
@@ -219,13 +229,31 @@
         "var": "syntax-keyword",
         "selector": ":root"
       },
-      "hits": 1
+      "hits": 2
     },
     "#9E3A08": {
       "kind": "hex",
       "witness": {
         "sourceFile": "palette.md",
         "var": "accent-deep",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#A39D93": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "text-dim",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#B06A3F": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "border-focus",
         "selector": ":root"
       },
       "hits": 1
@@ -237,13 +265,22 @@
         "var": "warn-fill",
         "selector": ":root"
       },
-      "hits": 1
+      "hits": 2
     },
     "#B84A14": {
       "kind": "hex",
       "witness": {
         "sourceFile": "palette.md",
         "var": "accent-deep",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
+    "#C0B7A9": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "text-muted",
         "selector": ":root"
       },
       "hits": 1
@@ -255,31 +292,13 @@
         "var": "danger",
         "selector": ":root"
       },
-      "hits": 1
+      "hits": 3
     },
     "#C2460B": {
       "kind": "hex",
       "witness": {
         "sourceFile": "palette.md",
         "var": "accent-hover",
-        "selector": ":root"
-      },
-      "hits": 2
-    },
-    "#C9A48C": {
-      "kind": "hex",
-      "witness": {
-        "sourceFile": "palette.md",
-        "var": "border-focus",
-        "selector": ":root"
-      },
-      "hits": 1
-    },
-    "#C9C2B8": {
-      "kind": "hex",
-      "witness": {
-        "sourceFile": "palette.md",
-        "var": "text-muted",
         "selector": ":root"
       },
       "hits": 1
@@ -302,6 +321,15 @@
       },
       "hits": 1
     },
+    "#D95C1E": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "border-focus",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
     "#E0564A": {
       "kind": "hex",
       "witness": {
@@ -309,7 +337,7 @@
         "var": "danger-fill",
         "selector": ":root"
       },
-      "hits": 1
+      "hits": 2
     },
     "#E2DDD3": {
       "kind": "hex",
@@ -320,20 +348,20 @@
       },
       "hits": 1
     },
+    "#EDE4D8": {
+      "kind": "hex",
+      "witness": {
+        "sourceFile": "palette.md",
+        "var": "text",
+        "selector": ":root"
+      },
+      "hits": 1
+    },
     "#EDE8DE": {
       "kind": "hex",
       "witness": {
         "sourceFile": "palette.md",
         "var": "bg-surface-2",
-        "selector": ":root"
-      },
-      "hits": 1
-    },
-    "#F07A3D": {
-      "kind": "hex",
-      "witness": {
-        "sourceFile": "palette.md",
-        "var": "accent-secondary",
         "selector": ":root"
       },
       "hits": 1
@@ -365,15 +393,6 @@
       },
       "hits": 1
     },
-    "#F3EDE7": {
-      "kind": "hex",
-      "witness": {
-        "sourceFile": "palette.md",
-        "var": "text",
-        "selector": ":root"
-      },
-      "hits": 1
-    },
     "#FAF1E9": {
       "kind": "hex",
       "witness": {
@@ -401,7 +420,7 @@
       },
       "hits": 1
     },
-    "#FF7A3D": {
+    "#FFB380": {
       "kind": "hex",
       "witness": {
         "sourceFile": "palette.md",
@@ -414,10 +433,10 @@
       "kind": "hex",
       "witness": {
         "sourceFile": "palette.md",
-        "var": "bg-elevated",
+        "var": "ok-on-dark",
         "selector": ":root"
       },
-      "hits": 2
+      "hits": 7
     }
   }
 }

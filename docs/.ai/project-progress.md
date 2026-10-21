@@ -2,7 +2,7 @@
 title: Project Progress
 type: project-progress
 project: ThemeVault
-updated: 2026-10-20
+updated: 2026-10-22
 description: >
   项目开发进度实时记录：阶段、分支、代码状态、最近进展。每次会话更新。
   AI 在本文件新增进展或修改当前状态后，必须同步更新 frontmatter 的 updated 字段为当日日期（YYYY-MM-DD）。
@@ -16,6 +16,8 @@ description: >
 ---
 
 ## 当前状态
+
+- **今日（2026-10-22）**：erge #001 夜灯 / #002 晨光配色优化值落盘（DEC-020，外部 shese 技能审查 + 用户对照页认可后执行）：dark 十处 / light 三处（bg/surface/text/muted/dim/focus/secondary/queued 及 queued-on-dark 基值），extract.json 值账本同步重建，INDEX.json / preview/data.js / tokens.json 再生；六项校验全绿（gen_index --write 与 --check、gen_tokens、gen_docs_views、gen_family_mapping、lint_intake）。机检外人眼四类待用户通过预览页复核；线上站点需手动 workflow_dispatch 跑 Deploy to GitHub Pages。
 
 - **今日（2026-10-20）**：erge 中文名 + 全局编号重排（方案 A，用户选定，见 DEC-019）——`python scripts/gen_index.py --renumber --write` 一次性迁移：`erge/dark` → **#001「夜灯」**、`erge/light` → **#002「晨光」**，其余 150 套 `+2`（原 #001–#150 → #003–#152）；`FAMILY_ORDER` 与家族分区前置 erge；修复 `gen_docs_views.py` 人工备注保留键（编号 → 主题目录），INDEX.md 152 行备注零错配；同步 `docs/brand-colors.md`（71 个表编号 + 散文引用）、`docs/profiles/ergemd.md`、INDEX.md 检索提示、AI-MAP/AGENTS/glossary 编号口径（新增 DEC-019 例外条款），CHANGELOG 中英各增 2026-10-20 段。append-only 日志保留旧编号不改写。**结果待用户验证**；线上站点需在 GitHub Actions 手动 `workflow_dispatch` 跑 Deploy to GitHub Pages 才会反映。
 - **今日（2026-10-20）**：只读梳理会话——按 AGENTS 流程通读 AI-MAP / progress / decision-log / debug-log / 最新 handoff（2026-10-10 S2）与 INDEX.json，向用户复述项目现状与待确认项；未改动任何资产、脚本与生成物。

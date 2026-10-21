@@ -18,7 +18,7 @@
 | `--text-dim` | `#706E69` | 中性 | 弱文本（OKLCH 推导加深，on bg 4.57 过 AA） |
 | `--border` | `#E2DDD3` | 中性 | 边框（暖灰） |
 | `--border-strong` | `#D2CCBE` | 中性 | 强边框 |
-| `--border-focus` | `#C9A48C` | 中性 | 焦点边框（主色染） |
+| `--border-focus` | `#B06A3F` | 中性 | 焦点边框（主色染，对 bg 3.78:1 过 3:1 控件线 / APCA 61.33） |
 | `--card` | `#FFFFFF` | 中性 | 卡片底 |
 | `--hairline` | `#F2E9E0` | 中性 | 极淡分隔线 |
 
@@ -29,7 +29,7 @@
 | `--accent` | `#FF6A2B` | 强调 | 主行动色（ErgeAIA 品牌色） |
 | `--accent-hover` | `#D15723` | 强调 | hover / deep |
 | `--accent-deep` | `#B84A14` | 强调 | 更深 |
-| `--accent-secondary` | `#F07A3D` | 强调 | 次强调 |
+| `--accent-secondary` | `#8C3A12` | 强调 | 次强调（vs accent ΔE-OK 0.2586；白卡 7.69:1 可行文） |
 | `--accent-foreground` | `#171614` | 强调 | 主色上的文字（近黑，WCAG 达标） |
 
 ## 功能状态色（6 通道）
@@ -44,7 +44,7 @@
 | `--danger-fill` | `#E0564A` | 功能 | 危险填充 |
 | `--info` | `#4353B8` | 功能 | 信息 |
 | `--info-fill` | `#6478D9` | 功能 | 信息填充 |
-| `--queued` | `#6B51C6` | 功能 | 排队中（第 6 通道） |
+| `--queued` | `#8D73E3` | 功能 | 排队中（第 6 通道；vs info 四象限 ΔE 全过，WCAG 3.31 过 3:1） |
 | `--queued-fill` | `#8B6FE0` | 功能 | 排队中填充 |
 
 ## 语法高亮色（仅代码块场景）

@@ -2,7 +2,7 @@
 title: Decision Log
 type: decision-log
 project: ThemeVault
-updated: 2026-10-20
+updated: 2026-10-22
 priority: higher-than-prd
 description: >
   开发过程决策日志，优先级高于 PRD；冲突时以本文件最新条目为准并回写 PRD/ADR。
@@ -15,6 +15,16 @@ description: >
 > **优先级高于 PRD**：冲突时以本文件最新决策为准，并回写 PRD/ADR。
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
+
+## DEC-020: erge #001/#002 配色优化值落盘（shese 审查产出）
+
+- **日期**：2026-10-22
+- **背景**：外部 shese 技能对 #001 夜灯 / #002 晨光做机检审查（APCA Lc 判定口径 + ΔE-OK + WCAG 记账），产出十处优化值；用户在对照页（现版 vs 优化版双栏）确认「认可，对比看到的效果就非常好，能看到明显的改善」，随后指示落盘（「先做2再做1」中的步骤①）。erge 是自有派生家族（DEC-017），不适用「色值原文不可改」的来源保护——该规则保护来源主题；erge 的色即本仓库原创设计，可按用户确认改。
+- **决策**（十处，均挂 shese 实测依据）：
+  - dark（#001）：--bg #1A1714→**#16120E**、--bg-surface #241F1B→**#201A15**（照度受限律：面层差收敛）、--text #F3EDE7→**#EDE4D8**（WCAG 14.19:1 ≤15:1 长文天花板；APCA 16px -90.04 过 90 线）、--text-muted #C9C2B8→**#C0B7A9**、--text-dim #858079→**#A39D93**（hint@13px APCA -48.54，须 16px 用；WCAG 6.63）、--border-focus #C2460B→**#D95C1E**（对 bg 4.67:1 过 3:1 控件线）、--accent-secondary #FF7A3D→**#FFB380**（vs accent ΔE-OK 0.1971 可辨）、--queued #6B51C6→**#8D73E3**（vs info 四象限 ΔE 全过 0.126–0.154）、--queued-on-dark 公式基值同步 #8D73E3（倍率不变）。
+  - light（#002）：--border-focus #C9A48C→**#B06A3F**（3.78:1 / APCA 61.33 过）、--accent-secondary #F07A3D→**#8C3A12**（vs accent ΔE-OK 0.2586；白卡 7.69:1 可行文）、--queued #6B51C6→**#8D73E3**（WCAG 3.31 过 3:1）。
+  - extract.json 值账本重建（48 值，全量覆盖两 palette；provenanceNote 记 2026-10-22 更新）；intent.json 未动；INDEX.json / preview/data.js / tokens.json / mapping 由脚本再生。
+- **验证**：gen_index.py --write exit 0（erge/dark #001 tokens=39 missing=0、erge/light #002 tokens=34 missing=0）；gen_tokens --check / gen_docs_views --check / gen_family_mapping --check / lint_intake 全 OK（唯一 WARN [erge] intent.source.repo 为空 为 legacy 回填历史常态）；gen_index.py --check exit 0。机检外的四类人眼复核（品牌分量 / 层次存在感 / 冷暖统一 / 图标语义一致）待用户看预览页确认。
 
 ## DEC-019: 主题编号一次性重排（erge 置顶 #001/#002，其余 +2）
 
