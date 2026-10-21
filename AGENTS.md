@@ -213,6 +213,7 @@ docs/handoff/             会话交接文档
 - 外部项目适配 / 取色转译 → 见 docs/migration-guide.md
 - 目标分发映射（如 ErgeMD）→ 见 docs/profiles/
 - 按钮配色 / 文字建议 → 见 docs/brand-colors.md
+- 判「数值达标但看着晃眼」/ 立配色判据与文献出处 → 见 docs/color-comfort-criteria.md
 - 术语口径 → 见 docs/glossary.md
 - 规则冲突 / 回溯口径 → 见 docs/adr/
 - 预览验收 / AA 徽标 → 见 preview.html

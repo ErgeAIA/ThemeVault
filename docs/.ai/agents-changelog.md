@@ -2,7 +2,7 @@
 title: AGENTS.md Changelog
 type: agents-changelog
 project: ThemeVault
-updated: 2026-09-24
+updated: 2026-10-21
 description: >
   AGENTS.md 的变更记录，AGENTS.md 每改动一次就追加一行，不随日常开发更新。
   只追加，不删除或改写历史。AI 在本文件新增或修改任何条目后，必须同步更新 frontmatter 的 updated 字段为当日日期（YYYY-MM-DD）。
@@ -98,3 +98,8 @@ description: >
 
 - `<S3「新增主题追加 max+1、已有编号永不变」无例外出口>` → update → 补「整体重编号是唯一例外，走 `python scripts/gen_index.py --renumber --write`（一次性迁移，见 DEC-019）」
 - `<Commands 表缺重编号命令>` → update → 新增行 `| 一次性整体重编号 | python scripts/gen_index.py --renumber --write | 编号不变式的唯一例外（DEC-019；erge 置顶，其余顺延） |`
+
+## 2026-10-21 · References 补配色判据去处
+
+- `<References 只有 docs/brand-colors.md（按钮取色），无「数值达标但看着晃眼」类判据的去处>` → update → 新增一条「判『数值达标但看着晃眼』/ 立配色判据与文献出处 → 见 docs/color-comfort-criteria.md」
+- `<无该文档>` → merge → 同批落 `docs/color-comfort-criteria.md`：可见/舒适/层次/识别/生理五层 × 八自变量（角色·极性·字号·字重·表面·彩度·空间频率·时间）、角色判据表、九条负向清单、机检十项、24 条文献分级清单、三个已知空白；实测锚点取自 AI Vault 夜灯(#001)/晨光(#002) 迁移（2026-10-21）。README 与 AI-MAP 的 docs 目录树同步登记

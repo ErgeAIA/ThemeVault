@@ -28,6 +28,7 @@ ThemeVault/
 │   └── gen_vscode.py            #   VS Code theme 6 家族生成器（jsonc/YAML → palette.md + 契约）
 ├── docs/
 │   ├── migration-guide.md       # ★ 全局迁移指南：L1 角色映射矩阵 + 多目标栈实施（适配时必读）
+│   ├── color-comfort-criteria.md # 配色判据分层（可见/舒适/层次/识别/生理五层 + 负向清单）与文献清单（取色后判「达没达标、晃不晃」时查）
 │   ├── glossary.md              # 术语表（family/theme/skin/required/derivedOptional…）
 │   └── adr/                     # 架构决策记录（宪法，0001-0007）
 ├── preview/                     # data.js（SPA 数据源，由 gen_index.py 生成，勿手改）

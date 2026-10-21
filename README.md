@@ -48,6 +48,7 @@ ThemeVault/
 ├── docs/
 │   ├── migration-guide.md       # 全局通用迁移指南（适配多目标栈）
 │   ├── brand-colors.md          # 品牌主色速查（每套主题的重点按钮主色 + 按钮文字建议）
+│   ├── color-comfort-criteria.md # 配色判据分层（角色×极性×字号×表面 + 舒适上限）与视觉科学文献清单
 │   ├── glossary.md              # 术语表
 │   └── adr/                     # 架构决策记录（宪法，0001-0007）
 ├── preview/                     # data.js（SPA 数据源，由 gen_index.py 生成，勿手改）
