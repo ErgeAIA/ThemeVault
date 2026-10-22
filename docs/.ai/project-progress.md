@@ -23,7 +23,9 @@ description: >
   - 验收：`npx tsc --noEmit` EXIT 0；`node dev.mjs build` EXIT 0（55 modules，css 61.22 kB / js 702.82 kB）；`node tools/examples/verify-app.mjs` **36 项 / PASS 36 / WARN 2 / FAIL 0 / 退出码 0**（WARN 全为既有 Google Fonts 基线豁免）；`node tools/examples/lint-tokens-app.mjs` PASS 3 / WARN 2 / FAIL 0 / 退出码 0（`--selftest` 34 项通过）。
   - 废弃：早期单文件方案 `examples/page-gallery.html` 与配套 `token-lint.mjs` / `verify-page.mjs` 已移入 `.tmp/superseded/`（未入库），原因见 DEC-021。
   - 遗留 token 缺口（只记不改源值）：无 `--tv-divider`（用 `color-mix(border 60%/34%)` 派生）、无 disabled 主色语义、无 `--tv-queued-fill`、无 `--tv-shadow` / `--tv-accent-soft`；另 `accent` 对 `accent-fg` 无对比度数据字段，实测 151 套中可测 62 套里 18 套 < 4.5:1（light 最差 #149 dracula 1.30）。
-  - 待办：本次改动尚未 `git commit` / `push`；线上站点需推 main 后手动 `workflow_dispatch` 跑 Deploy to GitHub Pages。
+  - 交付：已提交 `6b65dd3`（9 页源码）与 `6b0923f`（脚本 + DEC-021），已 `git push origin main`；`gh workflow run deploy.yml` 触发 run 39748769630，结论 success。
+  - 线上验证：`https://ergeaia.github.io/ThemeVault/` 返回 200，index.html 引用 `assets/index-Cl9KCmkw.js` + `assets/index-DoYj7iEG.css`（与本地 dist 同 hash）；bundle 内 9 个侧栏 key 字符串全部命中；CDP 实截图确认「界面仿真 → 页面示例」9 项可点、h2 与 key 一致、页面完整渲染。
+  - 待办：无（剩余 token 缺口属「只记不改源值」的已知项，需用户决定是否补 token 角色）。
 
 - **今日（2026-10-22）**：erge #001 夜灯 / #002 晨光配色优化值落盘（DEC-020，外部 shese 技能审查 + 用户对照页认可后执行）：dark 十处 / light 三处（bg/surface/text/muted/dim/focus/secondary/queued 及 queued-on-dark 基值），extract.json 值账本同步重建，INDEX.json / preview/data.js / tokens.json 再生；六项校验全绿（gen_index --write 与 --check、gen_tokens、gen_docs_views、gen_family_mapping、lint_intake）。机检外人眼四类待用户通过预览页复核；线上站点需手动 workflow_dispatch 跑 Deploy to GitHub Pages。
 
