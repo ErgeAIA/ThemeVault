@@ -128,7 +128,8 @@ def main(argv: list[str] | None = None) -> int:
     if args.out:
         args.out.parent.mkdir(parents=True, exist_ok=True)
         args.out.write_text(payload, encoding="utf-8")
-        print(f"wrote {args.out} entries={len(doc['entries'])}")
+        # value-ledger（schemaVersion 2）按唯一色值记账，键是 values 不是 entries
+        print(f"wrote {args.out} values={len(doc['values'])}")
     else:
         sys.stdout.write(payload)
     return 0

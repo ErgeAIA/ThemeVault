@@ -19,6 +19,8 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+import _tvcommon
+
 ROOT = Path(__file__).resolve().parent.parent
 THEMES = ROOT / "themes"
 INDEX_JSON = ROOT / "INDEX.json"
@@ -44,26 +46,23 @@ def zh_name_of(family: str, display_name: str) -> str | None:
     """主题中文名；未登记返回 None（预览不追加分隔符）。"""
     return ZH_NAMES.get(family, {}).get(display_name)
 
-ROLE_RE = re.compile(r"^\|\s*`(--[a-zA-Z0-9-]+)`\s*\|\s*`([^`]*)`\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|$")
+# 角色表正则已收拢到 _tvcommon（parse_palette 直接复用，避免四份正则漂移）。
 META_RE = re.compile(r"^\s*(?:-\s+)?\*\*(.+?)\*\*[：:]\s*(.+?)\s*$")
 FAMILY_SRC_RE = re.compile(r"来源项目[：:]\s*\[?([^\]]*?)\]?\(([^)]*)\)?")
 LICENSE_RE = re.compile(r"（([^（）]*?(?:Apache-2\.0|MIT|AGPL-3\.0)[^（）]*?)）")
 
 
 def parse_palette(path: Path) -> dict:
-    """Return {role: {"value": str, "kind": str, "note": str}} from palette.md."""
-    tokens: dict[str, dict] = {}
-    for line in path.read_text(encoding="utf-8").splitlines():
-        m = ROLE_RE.match(line)
-        if not m:
-            continue
-        role, value, kind, note = m.group(1)[2:], m.group(2).strip(), m.group(3).strip(), m.group(4).strip()
-        tokens[role] = {"value": value, "kind": kind, "note": note}
-    return tokens
+    """Return {role: {"value": str, "kind": str, "note": str}} from palette.md.
+
+    走 _tvcommon 的跨模块缓存：同一次运行里 lint_intake / gen_tokens /
+    gen_family_mapping 也要这份结果，共用后每个 palette.md 只解析一次。
+    """
+    return _tvcommon.parse_palette(str(path))
 
 
 def parse_theme_readme(path: Path) -> dict:
-    text = path.read_text(encoding="utf-8")
+    text = _tvcommon.read_text(str(path))
     meta: dict[str, str] = {}
     in_meta = False
     for line in text.splitlines():
@@ -85,7 +84,7 @@ def parse_theme_readme(path: Path) -> dict:
 
 
 def parse_family_readme(path: Path) -> dict:
-    text = path.read_text(encoding="utf-8")
+    text = _tvcommon.read_text(str(path))
     info: dict[str, str] = {}
     m = FAMILY_SRC_RE.search(text)
     if m:
@@ -487,7 +486,7 @@ def main() -> int:
             errors.append(f"[{fam_dir.name}] missing _source/contract.json")
             continue
         try:
-            contract = json.loads(contract_path.read_text(encoding="utf-8"))
+            contract = _tvcommon.load_contract(str(contract_path))
         except json.JSONDecodeError as e:
             print(f"ERROR: 契约解析失败 {contract_path}: {e}", file=sys.stderr)
             return 1

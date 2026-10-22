@@ -17,23 +17,18 @@ import re
 import sys
 from pathlib import Path
 
+import _tvcommon
+
 ROOT = Path(__file__).resolve().parent.parent
 THEMES = ROOT / "themes"
-ROLE_RE = re.compile(
-    r"^\|\s*`(--[a-zA-Z0-9-]+)`\s*\|\s*`([^`]*)`\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|$"
-)
+# 角色表解析统一在 _tvcommon（四脚本共用一份缓存结果）。
+ROLE_RE = _tvcommon.ROLE_RE
 SRC_HINT_RE = re.compile(r"(`--[a-zA-Z0-9-]+`|--[a-zA-Z0-9-]+|`[a-zA-Z][a-zA-Z0-9_.-]{1,40}`)")
 
 
 def parse_palette(path: Path) -> dict[str, dict]:
-    tokens: dict[str, dict] = {}
-    for line in path.read_text(encoding="utf-8").splitlines():
-        m = ROLE_RE.match(line)
-        if not m:
-            continue
-        role = m.group(1)[2:]
-        tokens[role] = {"value": m.group(2).strip(), "kind": m.group(3).strip(), "note": m.group(4).strip()}
-    return tokens
+    """解析 palette.md 角色表；走 _tvcommon 的跨模块缓存。"""
+    return _tvcommon.parse_palette(str(path))
 
 
 def source_hints(note: str, value: str, family: str, role: str) -> list[str]:
@@ -52,6 +47,11 @@ def source_hints(note: str, value: str, family: str, role: str) -> list[str]:
     return found
 
 
+# 家族 README 对照表的列切分/令牌识别正则；原先写在逐行循环里，每次都要回 re 缓存查表。
+COL_SPLIT_RE = re.compile(r"[\s,/、]+")
+TOKEN_RE = re.compile(r"[A-Za-z][A-Za-z0-9_.#-]{1,48}")
+TOKEN_FULL_RE = re.compile(r"[A-Za-z][A-Za-z0-9_.#-]{1,48}")
+
 README_ROW_RE = re.compile(
     r"^\|\s*`([a-z0-9-]+)`\s*\|([^|]+)\|([^|]*)\|",
     re.M,
@@ -63,16 +63,16 @@ def parse_family_readme_map(path: Path) -> dict[str, list[str]]:
     if not path.exists():
         return {}
     out: dict[str, list[str]] = {}
-    for m in README_ROW_RE.finditer(path.read_text(encoding="utf-8")):
+    for m in README_ROW_RE.finditer(_tvcommon.read_text(str(path))):
         role, col2, col3 = m.group(1), m.group(2), m.group(3)
         toks = []
-        for part in re.split(r"[\s,/、]+", col2.strip().strip("`")):
+        for part in COL_SPLIT_RE.split(col2.strip().strip("`")):
             part = part.strip("`").strip()
             if part and not part.startswith("#") and part != role:
                 # nord0 / accent12 / --background-primary / editor.background
-                if re.fullmatch(r"[A-Za-z][A-Za-z0-9_.#-]{1,48}", part) or part.startswith("--"):
+                if TOKEN_FULL_RE.fullmatch(part) or part.startswith("--"):
                     toks.append(part)
-        for part in re.findall(r"[A-Za-z][A-Za-z0-9_.#-]{1,48}", col3):
+        for part in TOKEN_RE.findall(col3):
             if any(x in part.lower() for x in ("background", "foreground", "color", "border", "accent", "editor", "list", "button", "side", "status", "title", "terminal", "dropdown", "input", "panel", "tab.", "widget", "selection", "cursor", "comment", "string", "keyword", "constant", "entity", "storage", "meta", "variable", "invalid", "diff", "banner", "badge", "shadow", "focus", "hover", "line", "guide", "ansi")):
                 toks.append(part)
         if toks:
@@ -122,14 +122,18 @@ def build_family_mapping(fam_dir: Path) -> dict:
     }
 
 
-def check_family_consistency(fam_dir: Path) -> list[str]:
+def load_required(fam_dir: Path) -> set[str]:
+    """家族契约 required 角色集（同族共享，按路径缓存，一次运行只读一次）。"""
+    contract_p = fam_dir / "_source" / "contract.json"
+    if not contract_p.exists():
+        return set()
+    return set(_tvcommon.load_contract(str(contract_p)).get("required", []))
+
+
+def check_family_consistency(fam_dir: Path, required: set[str]) -> list[str]:
     """required 角色集必须同族一致；derivedOptional 允许仅覆盖分歧处。"""
     errors = []
     fam = fam_dir.name
-    contract_p = fam_dir / "_source" / "contract.json"
-    required: set[str] = set()
-    if contract_p.exists():
-        required = set(json.loads(contract_p.read_text(encoding="utf-8")).get("required", []))
     for theme_dir in sorted(p for p in fam_dir.iterdir() if p.is_dir() and not p.name.startswith("_")):
         pal_p = theme_dir / "palette.md"
         if not pal_p.exists():
@@ -152,16 +156,13 @@ def main(argv: list[str] | None = None) -> int:
     for fam_dir in sorted(p for p in THEMES.iterdir() if p.is_dir() and not p.name.startswith("_")):
         if not (fam_dir / "_source" / "contract.json").exists():
             continue
-        cons = check_family_consistency(fam_dir)
+        required = load_required(fam_dir)
+        cons = check_family_consistency(fam_dir, required)
         for e in cons:
             print(f"ERROR: {e}", file=sys.stderr)
             errors += 1
         doc = build_family_mapping(fam_dir)
         # A2：required 角色不得零来源线索（允许显式契约兜底角色仍要有来源说明）
-        contract_p = fam_dir / "_source" / "contract.json"
-        required = set()
-        if contract_p.exists():
-            required = set(json.loads(contract_p.read_text(encoding="utf-8")).get("required", []))
         for role in sorted(required):
             meta = doc["map"].get(role)
             if meta is not None and not meta.get("sources"):

@@ -152,6 +152,7 @@ python scripts/gen_index.py --write   # 校验契约覆盖 + 生成 INDEX.json +
 ```
 AGENTS.md                  本文件（操作规则：硬性规则 / 工作流唯一详版 / 约定）
 scripts/        gen_index / gen_catppuccin / gen_ergemd / gen_vscode（生成+校验，勿手改产物）
+                 _tvcommon.py：跨脚本只读缓存层（ROLE_RE / read_text / parse_palette / load_contract）
 themes/         22 家族，每套主题 = palette.md + README.md；_source/ 为只读快照+契约
 docs/           migration-guide / glossary / adr（宪法）
 preview/        data.js（生成物，SPA 数据源）

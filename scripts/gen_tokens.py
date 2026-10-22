@@ -17,29 +17,24 @@ import re
 import sys
 from pathlib import Path
 
+import _tvcommon
+
 ROOT = Path(__file__).resolve().parent.parent
 THEMES = ROOT / "themes"
 L1_ROLES = ROOT / "docs" / "l1-roles.md"
-ROLE_RE = re.compile(
-    r"^\|\s*`(--[a-z0-9-]+)`\s*\|\s*`([^`]*)`\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|$"
-)
+# 角色表解析统一在 _tvcommon（四脚本共用一份缓存结果，正则大小写敏感见该模块）。
+ROLE_RE = _tvcommon.ROLE_RE
 FALLBACK_NOTE = re.compile(r"契约兜底|豁免|约定|HEX 显示|继承|oklch|推导|未提供")
+# 逐角色跑的正则提到模块级：原先在 7152 次循环里现写 re.search 字面量，
+# 每次都要过 re 内部缓存查找（实测 4 万次 _compile）。
+CONTRACT_FALLBACK_RE = re.compile(r"契约兜底|豁免|继承")
+DISPLAY_EXEMPTION_RE = re.compile(r"HEX 显示")
+DERIVED_HINT_RE = re.compile(r"推导|oklch|约定|未提供")
 
 
 def parse_palette(path: Path) -> dict[str, dict]:
-    tokens: dict[str, dict] = {}
-    for line in path.read_text(encoding="utf-8").splitlines():
-        m = ROLE_RE.match(line)
-        if not m:
-            continue
-        role, value, kind, note = (
-            m.group(1)[2:],
-            m.group(2).strip(),
-            m.group(3).strip(),
-            m.group(4).strip(),
-        )
-        tokens[role] = {"value": value, "kind": kind, "note": note}
-    return tokens
+    """解析 palette.md 角色表；走 _tvcommon 的跨模块缓存。"""
+    return _tvcommon.parse_palette(str(path))
 
 
 def parse_l1_layers(path: Path) -> tuple[set[str], set[str]]:
@@ -78,9 +73,9 @@ def build_tokens(
             "kind": meta["kind"],
             "layer": layer,
             # 对抗审查 B1：拆开「无独立源值」与「纳入期显示豁免」
-            "contractFallback": bool(re.search(r"契约兜底|豁免|继承", meta["note"])),
-            "displayExemption": bool(re.search(r"HEX 显示", meta["note"])),
-            "derivedHint": bool(re.search(r"推导|oklch|约定|未提供", meta["note"])),
+            "contractFallback": bool(CONTRACT_FALLBACK_RE.search(meta["note"])),
+            "displayExemption": bool(DISPLAY_EXEMPTION_RE.search(meta["note"])),
+            "derivedHint": bool(DERIVED_HINT_RE.search(meta["note"])),
             "fallback": bool(FALLBACK_NOTE.search(meta["note"])),
             "note": meta["note"],
         }
@@ -94,10 +89,19 @@ def build_tokens(
 
 
 def tokens_equal(a: dict, b: dict) -> bool:
-    # ignore whitespace-only diffs in values via canonical json
-    return json.dumps(a, ensure_ascii=False, sort_keys=True) == json.dumps(
-        b, ensure_ascii=False, sort_keys=True
-    )
+    # 已从磁盘 json.loads 出来、已是规范化结构，直接比较即可；
+    # 原先两侧各 json.dumps 一次（每主题 2 次 ~500 项编码）纯属重复编码开销。
+    return a == b
+
+
+def load_required(contract_p: Path) -> set[str] | None:
+    """读取家族契约的 required 角色集（同族共享，按路径缓存）。
+
+    返回 None 表示该家族没有 contract.json（跳过），与「契约存在但 required 为空」区分开。
+    """
+    if not contract_p.exists():
+        return None
+    return set(_tvcommon.load_contract(str(contract_p)).get("required", []))
 
 
 def process_theme(
@@ -106,16 +110,13 @@ def process_theme(
     core: set[str],
     reading: set[str],
     write: bool,
+    required: set[str],
 ) -> tuple[str | None, dict | None]:
     palette_p = theme_dir / "palette.md"
     if not palette_p.exists():
         return None, None
     fam = fam_dir.name
     tid = theme_dir.name
-    contract_p = fam_dir / "_source" / "contract.json"
-    required: set[str] = set()
-    if contract_p.exists():
-        required = set(json.loads(contract_p.read_text(encoding="utf-8")).get("required", []))
     palette = parse_palette(palette_p)
     doc = build_tokens(fam, tid, palette, core, reading, required)
     out_p = theme_dir / "tokens.json"
@@ -142,17 +143,16 @@ def main(argv: list[str] | None = None) -> int:
         print("ERROR: 无法从 docs/l1-roles.md 解析 core/reading", file=sys.stderr)
         return 1
     errors = 0
-    written = 0
     for fam_dir in sorted(p for p in THEMES.iterdir() if p.is_dir() and not p.name.startswith("_")):
-        if not (fam_dir / "_source" / "contract.json").exists():
+        # 契约 required 同族共享：原先每主题重读一次 contract.json（151 次 → 24 次）
+        required = load_required(fam_dir / "_source" / "contract.json")
+        if required is None:
             continue
         for theme_dir in sorted(p for p in fam_dir.iterdir() if p.is_dir() and not p.name.startswith("_")):
-            err, doc = process_theme(fam_dir, theme_dir, core, reading, write=not args.check)
+            err, doc = process_theme(fam_dir, theme_dir, core, reading, write=not args.check, required=required)
             if err:
                 print(f"ERROR: {err}", file=sys.stderr)
                 errors += 1
-            elif not args.check and doc is not None and (theme_dir / "tokens.json").exists():
-                written += 1
     if args.check:
         print(f"gen_tokens --check: {'OK' if errors == 0 else f'{errors} error(s)'}")
         return 1 if errors else 0

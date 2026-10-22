@@ -16,6 +16,8 @@ import re
 import sys
 from pathlib import Path
 
+import _tvcommon
+
 ROOT = Path(__file__).resolve().parent.parent
 INDEX_JSON = ROOT / "INDEX.json"
 INDEX_MD = ROOT / "INDEX.md"
@@ -127,7 +129,7 @@ def render_ai_map(index: dict) -> str:
         contract_p = ROOT / "themes" / fam["family"] / "_source" / "contract.json"
         ver, req, der = "?", "?", "?"
         if contract_p.exists():
-            c = json.loads(contract_p.read_text(encoding="utf-8"))
+            c = _tvcommon.load_contract(str(contract_p))
             ver = c.get("version", "?")
             req = len(c.get("required", []))
             der = len(c.get("derivedOptional", []))

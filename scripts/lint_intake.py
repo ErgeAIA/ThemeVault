@@ -14,13 +14,21 @@ import re
 import sys
 from pathlib import Path
 
+import _tvcommon
+
 ROOT = Path(__file__).resolve().parent.parent
 THEMES = ROOT / "themes"
-ROLE_RE = re.compile(r"^\|\s*`(--[a-zA-Z0-9-]+)`\s*\|\s*`([^`]*)`\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|$")
+# 角色表正则与 palette 解析统一在 _tvcommon（四脚本共用一份缓存结果）。
+ROLE_RE = _tvcommon.ROLE_RE
 FALLBACK_NOTE = re.compile(
     r"契约兜底|豁免|约定|HEX 显示|继承|oklch|推导|未提供"
 )
 FORMULA_START = ("color-mix(", "var(", "rgb(", "rgba(", "linear-gradient(")
+# 逐角色校验时复用同一份编译结果：原先把这几个正则写在 151×N 的循环里，
+# 每次都要走 re 模块的缓存查找（实测 4 万次 _compile 调用）。
+HEX3_RE = re.compile(r"#[0-9a-f]{3}")
+HEX8_RE = re.compile(r"#[0-9a-fA-F]{8}")
+RGB_TRIPLET_RE = re.compile(r"\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}")
 
 
 def rgb_to_hex(value: str) -> str | None:
@@ -33,7 +41,7 @@ def rgb_to_hex(value: str) -> str | None:
 
 def norm_hex(v: str) -> str:
     v = v.strip().lower()
-    if re.fullmatch(r"#[0-9a-f]{3}", v):
+    if HEX3_RE.fullmatch(v):
         v = "#" + v[1] * 2 + v[2] * 2 + v[3] * 2
     return v
 
@@ -43,14 +51,8 @@ def is_formula(v: str) -> bool:
 
 
 def load_palette(path: Path) -> dict[str, dict]:
-    tokens = {}
-    for line in path.read_text(encoding="utf-8").splitlines():
-        m = ROLE_RE.match(line)
-        if not m:
-            continue
-        role, value, kind, note = m.group(1)[2:], m.group(2).strip(), m.group(3).strip(), m.group(4).strip()
-        tokens[role] = {"value": value, "kind": kind, "note": note}
-    return tokens
+    """解析 palette.md 角色表；走 _tvcommon 的跨模块缓存。"""
+    return _tvcommon.parse_palette(str(path))
 
 
 def extract_index(extract: dict) -> tuple[set[str], set[str], bool]:
@@ -161,11 +163,11 @@ def lint_family(fam_dir: Path, strict: bool) -> tuple[list[str], list[str]]:
             nv = norm_hex(value)
             if value in vals or value.lower() in vals or nv in hexes:
                 continue
-            if re.fullmatch(r"#[0-9a-fA-F]{8}", value) and norm_hex(value[:7]) in hexes:
+            if HEX8_RE.fullmatch(value) and norm_hex(value[:7]) in hexes:
                 continue
-            if re.fullmatch(r"#[0-9a-fA-F]{8}", nv) and nv[:7] in hexes:
+            if HEX8_RE.fullmatch(nv) and nv[:7] in hexes:
                 continue
-            if re.fullmatch(r"\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}", value):
+            if RGB_TRIPLET_RE.fullmatch(value):
                 alt = f"rgb({value})"
                 if any(
                     value.replace(" ", "") == ev.replace(" ", "") or value in ev or alt in ev

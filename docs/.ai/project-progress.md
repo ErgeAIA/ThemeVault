@@ -17,6 +17,11 @@ description: >
 
 ## 当前状态
 
+- **今日（2026-10-22）scripts/ 性能审查与优化 + tokens.json 角色补齐（DEC-022 / BUG-002）**：按 python-performance-optimization 方法先 profile 后改——新建只读缓存层 `scripts/_tvcommon.py`（`ROLE_RE` / `read_text` / `parse_palette` / `load_contract` 均 `@lru_cache`），gen_index / gen_tokens / lint_intake / gen_family_mapping / gen_docs_views 五个脚本改为共用，重复解析与重复 I/O 大幅收敛。
+  - 顺手修掉两处真实缺陷：① `scripts/gen_tokens.py` 的 `ROLE_RE` 原为 `[a-z0-9-]`，opencode 家族的 camelCase 角色（`--backgroundElement` / `--textMuted` / `--syntaxComment` 等）被静默丢弃 → 72 套 opencode `tokens.json` 角色补齐（+27203 行，全为新增角色，其余 79 个主题无变化）；② `scripts/extract_css_vars.py:131` 读 `doc['entries']` 崩溃 → 改为 value-ledger 的实际键 `doc['values']`。
+  - 实测：`gen_index --check` 249.4ms → ~185ms；单次运行的 `read_text` 调用 1435 → 582 次、contract.json 读取 120 → 24 次（收敛为每家族恰好一次）；`tokens_equal` 去掉每主题两次 `json.dumps` 往返。
+  - 门禁全绿：`gen_index --write` 退出 0 且四个产物哈希与优化前逐字节相同（INDEX.json `CAD60F92…` / INDEX.md `8961C94B…` / AI-MAP.md `9B602521…` / preview/data.js `D60E33D6…`）；`lint_intake --strict` 0 warning；`gen_tokens --check` / `gen_family_mapping --check` / `gen_docs_views --check` 均 OK；`.tmp/probe-drift.py` 校验 151 主题 `tokens.json` 角色数 == INDEX.tokenCount，mismatch 0。
+
 - **今日（2026-10-22）新增「界面示例」9 页（DEC-021）**：9 页挂在既有「示例」菜单（手风琴）下，与原 6 项布局缩影合成**一条 15 项扁平列表、不分段**（按用户要求：示例就是各种场景的页面模板，按顺序排即可，不设「页面示例 / 结构示例」分隔标题）；顺序为界面示例页 9 项（外观设置页 → 状态页合集 → 表单状态穷举 → 详情主从布局 → 消息会话界面 → 图表专区 → 富文本 diff → 日历日程 → 营销定价页，按预览主题的使用顺序）+ 原布局缩影 6 项；15 项**每一项都配语义徽章 SVG 图标**（registry / EXAMPLES 的 `icon` 字段，currentColor 描边，侧栏与「示例」首页卡片共用），全部走 `themeVars()` 实时换肤、双方案自动成立、颜色零裸值。
   - 新增目录：`src/components/examples/`（shell.tsx + registry.tsx + 9 个页面组件）、`src/styles/`（examples.css / examples-p1.css / examples-p2.css）、`tools/examples/`（verify-app.mjs / lint-tokens-app.mjs / serve-dist.mjs）。
   - 改动：`src/components/AppSim.tsx` 最小接线（`exPage` 状态 + `EXAMPLE_ENTRIES` 扁平总表把 EXAMPLES 与 EXAMPLE_PAGES 合并为「示例」的 15 项 children 并带 `kind: 'page' | 'demo'` 与 `icon` + 面包屑 + `sim-content` 首分支）；`ExamplesPage` 改为单张「页面模板」卡（15 张卡片不分组）；`EXAMPLES` 6 项各补 `icon`；`shell.tsx` 新增 `ExampleGlyph`；`registry.tsx` 新增 `icon` 字段（9 条语义 path）；`src/index.css` 新增 `.sim-nav-icon.sub-icon` / `.ex-card-title` / `.ex-card-glyph`，删除已废弃的 `.sim-nav-sub-title` 与 `.no-icon`。未碰 INDEX.json / preview/data.js / themes/ / scripts/。

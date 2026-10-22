@@ -2,7 +2,7 @@
 title: AGENTS.md Changelog
 type: agents-changelog
 project: ThemeVault
-updated: 2026-10-21
+updated: 2026-10-22
 description: >
   AGENTS.md 的变更记录，AGENTS.md 每改动一次就追加一行，不随日常开发更新。
   只追加，不删除或改写历史。AI 在本文件新增或修改任何条目后，必须同步更新 frontmatter 的 updated 字段为当日日期（YYYY-MM-DD）。
@@ -103,3 +103,7 @@ description: >
 
 - `<References 只有 docs/brand-colors.md（按钮取色），无「数值达标但看着晃眼」类判据的去处>` → update → 新增一条「判『数值达标但看着晃眼』/ 立配色判据与文献出处 → 见 docs/color-comfort-criteria.md」
 - `<无该文档>` → merge → 同批落 `docs/color-comfort-criteria.md`：可见/舒适/层次/识别/生理五层 × 八自变量（角色·极性·字号·字重·表面·彩度·空间频率·时间）、角色判据表、九条负向清单、机检十项、24 条文献分级清单、三个已知空白；实测锚点取自 AI Vault 夜灯(#001)/晨光(#002) 迁移（2026-10-21）。README 与 AI-MAP 的 docs 目录树同步登记
+
+## 2026-10-22 · 目录速览登记 _tvcommon
+
+- `<目录速览 scripts/ 行只列 gen_index / gen_catppuccin / gen_ergemd / gen_vscode>` → update → 追加一行 `_tvcommon.py：跨脚本只读缓存层（ROLE_RE / read_text / parse_palette / load_contract）`，避免后来者另起一份正则或重复解析（DEC-022 / BUG-002）

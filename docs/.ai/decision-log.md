@@ -16,6 +16,14 @@ description: >
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
 
+## DEC-022: scripts/ 引入共享只读缓存层 `_tvcommon`，不改变任何产物
+
+- **日期**：2026-10-22
+- **背景**：`gen_index.py --write` 会在同进程内依次调用 lint_intake / gen_tokens / gen_family_mapping / gen_docs_views，四个子脚本各自解析同一批 `palette.md`、各自读同一份 `contract.json`。实测单次运行 `read_text` 被调用 **1435 次、覆盖 580 个唯一文件**，其中 `themes/opencode/_source/contract.json` 被读 **76 次**；`palette.md` 全仓仅 151 份却被读 755 次。cProfile 显示 tottime 首位就是 `_io.open`，算法层无热点——瓶颈是**重复 I/O 与重复解析**，非算法复杂度。
+- **决策**：新建 `scripts/_tvcommon.py` 作为跨模块只读缓存层，提供 `ROLE_RE` / `read_text` / `parse_palette` / `load_contract` / `clear()`，全部用 `@lru_cache(maxsize=None)`；五个脚本改为调用它，不再各自维护正则与解析函数。**不改任何输出格式、不改契约语义、不引入第三方依赖**。
+  - 备选方案（否决）：① 把四个子脚本合并成一个大脚本——破坏 AGENTS.md 已登记的独立命令表与 `--check` 单跑能力；② 用 `functools.cache` 加文件 mtime 校验做可失效缓存——`gen_index` 是单次进程内批量生成，一次性全局清空已够用，mtime 校验是多余复杂度；③ 只加进程内 dict memo 而不抽模块——三份正则与三份解析函数会继续漂移（本次 camelCase 缺陷正是漂移产物）。
+- **验证**：`gen_index --write` 退出码 0，四个产物 SHA256 与优化前**逐字节相同**（产物零变化是本决策的硬约束）；`lint_intake --strict` 0 warning、`gen_tokens --check` / `gen_family_mapping --check` / `gen_docs_views --check` 全 OK；`read_text` 调用 1435 → 582 次、`contract.json` 120 → 24 次；`gen_index --check` 249.4ms → ~185ms。唯一有意的数据变更是 opencode 家族 `tokens.json` 角色补齐（见 BUG-002）。
+
 ## DEC-021: 新增「页面示例」9 页（工作台内 React 组件，非独立 HTML）
 
 - **日期**：2026-10-22
