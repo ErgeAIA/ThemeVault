@@ -17,14 +17,15 @@ description: >
 
 ## 当前状态
 
-- **今日（2026-10-22）新增「页面示例」9 页（DEC-021）**：工作台侧栏新增「页面示例」分组，9 个示例页按 P0→P1→P2 排列，全部走 `themeVars()` 实时换肤、双方案自动成立、颜色零裸值。
+- **今日（2026-10-22）新增「页面示例」9 页（DEC-021）**：示例页并入既有「示例」菜单（手风琴）下，与原有「结构示例」同组，靠 `.sim-nav-sub-title` 分隔为「页面示例 / 结构示例」两段；9 个示例页按**预览主题的使用顺序**排列（外观设置页 → 状态页合集 → 表单状态穷举 → 详情主从布局 → 消息会话界面 → 图表专区 → 富文本 diff → 日历日程 → 营销定价页），全部走 `themeVars()` 实时换肤、双方案自动成立、颜色零裸值。
   - 新增目录：`src/components/examples/`（shell.tsx + registry.tsx + 9 个页面组件）、`src/styles/`（examples.css / examples-p1.css / examples-p2.css）、`tools/examples/`（verify-app.mjs / lint-tokens-app.mjs / serve-dist.mjs）。
-  - 改动：`src/components/AppSim.tsx` 最小接线（`exPage` 状态 + 导航三分支 + 面包屑 + `sim-content` 首分支）。未碰 INDEX.json / preview/data.js / themes/ / scripts/。
-  - 验收：`npx tsc --noEmit` EXIT 0；`node dev.mjs build` EXIT 0（55 modules，css 61.22 kB / js 702.82 kB）；`node tools/examples/verify-app.mjs` **36 项 / PASS 36 / WARN 2 / FAIL 0 / 退出码 0**（WARN 全为既有 Google Fonts 基线豁免）；`node tools/examples/lint-tokens-app.mjs` PASS 3 / WARN 2 / FAIL 0 / 退出码 0（`--selftest` 34 项通过）。
+  - 改动：`src/components/AppSim.tsx` 最小接线（`exPage` 状态 + `navGroups` 把 EXAMPLES 与 EXAMPLE_PAGES 合并为「示例」的 children 并带 `kind: 'page' | 'demo'` + 子项分组标题 + 面包屑 + `sim-content` 首分支）；`ExamplesPage` 拆成「页面示例 / 结构示例」两张卡；`src/index.css` 新增 `.sim-nav-sub-title`。未碰 INDEX.json / preview/data.js / themes/ / scripts/。
+  - 验收：`npx tsc --noEmit` EXIT 0；`node dev.mjs build` EXIT 0（55 modules，css 61.39 kB / js 704.45 kB）；`node tools/examples/verify-app.mjs` **37 项 / PASS 37 / WARN 2 / FAIL 0 / 退出码 0**（WARN 全为既有 Google Fonts 基线豁免）；`node tools/examples/lint-tokens-app.mjs` PASS 3 / WARN 2 / FAIL 0 / 退出码 0（`--selftest` 34 项通过）；`python scripts/gen_index.py --check` EXIT 0（familyCount 24 / themeCount 152）。
+  - 侧栏实测（CDP）：`内容` 分组下的 `示例` 手风琴展开后为「页面示例」9 项 + 「结构示例」6 项，两段分隔标题齐全；9 页逐一点击，h2 与侧栏项 100% 一致、面包屑为「首页 / 示例 / <页名>」、`.points li` 均 5 条。
   - 废弃：早期单文件方案 `examples/page-gallery.html` 与配套 `token-lint.mjs` / `verify-page.mjs` 已移入 `.tmp/superseded/`（未入库），原因见 DEC-021。
   - 遗留 token 缺口（只记不改源值）：无 `--tv-divider`（用 `color-mix(border 60%/34%)` 派生）、无 disabled 主色语义、无 `--tv-queued-fill`、无 `--tv-shadow` / `--tv-accent-soft`；另 `accent` 对 `accent-fg` 无对比度数据字段，实测 151 套中可测 62 套里 18 套 < 4.5:1（light 最差 #149 dracula 1.30）。
   - 交付：已提交 `6b65dd3`（9 页源码）与 `6b0923f`（脚本 + DEC-021），已 `git push origin main`；`gh workflow run deploy.yml` 触发 run 39748769630，结论 success。
-  - 线上验证：`https://ergeaia.github.io/ThemeVault/` 返回 200，index.html 引用 `assets/index-Cl9KCmkw.js` + `assets/index-DoYj7iEG.css`（与本地 dist 同 hash）；bundle 内 9 个侧栏 key 字符串全部命中；CDP 实截图确认「界面仿真 → 页面示例」9 项可点、h2 与 key 一致、页面完整渲染。
+  - 线上验证：`https://ergeaia.github.io/ThemeVault/` 返回 200，index.html 引用 `assets/index-Cl9KCmkw.js` + `assets/index-DoYj7iEG.css`（与本地 dist 同 hash）；bundle 内 9 个侧栏 key 字符串全部命中；CDP 实截图确认「界面仿真 → 示例 → 页面示例」9 项可点、h2 与 key 一致、页面完整渲染。
   - 待办：无（剩余 token 缺口属「只记不改源值」的已知项，需用户决定是否补 token 角色）。
 
 - **今日（2026-10-22）**：erge #001 夜灯 / #002 晨光配色优化值落盘（DEC-020，外部 shese 技能审查 + 用户对照页认可后执行）：dark 十处 / light 三处（bg/surface/text/muted/dim/focus/secondary/queued 及 queued-on-dark 基值），extract.json 值账本同步重建，INDEX.json / preview/data.js / tokens.json 再生；六项校验全绿（gen_index --write 与 --check、gen_tokens、gen_docs_views、gen_family_mapping、lint_intake）。机检外人眼四类待用户通过预览页复核；线上站点需手动 workflow_dispatch 跑 Deploy to GitHub Pages。

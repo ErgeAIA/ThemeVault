@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react'
+import { Fragment, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import Prism from 'prismjs'
 import 'prismjs/components/prism-typescript'
 import { allThemes, fgFor, themeVars, type FontStacks, type ThemeEntry } from '../data/tv'
@@ -233,6 +233,14 @@ const ST_TONE: Record<string, 'ok' | 'warn' | 'dim' | 'info'> = {
   审核中: 'warn',
   草稿: 'dim',
   布局类: 'info',
+  设置类: 'info',
+  状态类: 'warn',
+  表单类: 'info',
+  主从类: 'info',
+  会话类: 'info',
+  数据类: 'ok',
+  内容类: 'info',
+  营销类: 'warn',
 }
 
 const CODE = `import { themeVars } from '@themevault/core'
@@ -713,32 +721,98 @@ const EXAMPLES = [
   { title: '登录 / 注册页', desc: 'Tab 切换的认证卡片', tag: '认证类', usage: '产品入口' },
 ]
 
-function ExamplesPage({ onOpen }: { onOpen: (title: string) => void }) {
+/** 页面示例的分类标签：与各页 meta.tag 保持一致，仅用于「示例」首页卡片。 */
+const EXAMPLE_TAGS: Record<string, string> = {
+  外观设置页: '设置类',
+  状态页合集: '状态类',
+  表单状态穷举: '表单类',
+  详情主从布局: '主从类',
+  消息会话界面: '会话类',
+  图表专区: '数据类',
+  '富文本 diff': '内容类',
+  日历日程: '数据类',
+  营销定价页: '营销类',
+}
+
+/**
+ * 「示例」首页：先列页面示例（registry 登记，按预览主题的使用顺序），
+ * 再列原有结构示例。两组共用卡片样式，只是数据来源不同。
+ */
+function ExamplesPage({
+  onOpen,
+  onOpenPage,
+}: {
+  onOpen: (title: string) => void
+  onOpenPage: (key: string) => void
+}) {
   return (
     <>
-      <PageHead title="示例" desc="页面级布局示例与使用场景" action="新建示例" />
-      <div className="ex-grid">
-        {EXAMPLES.map((e) => (
-          <div
-            className="p ex-card"
-            key={e.title}
-            role="button"
-            tabIndex={0}
-            style={{ cursor: 'pointer' }}
-            onClick={() => onOpen(e.title)}
-            onKeyDown={(ev) => ev.key === 'Enter' && onOpen(e.title)}
-          >
-            <span className={`st ${ST_TONE[e.tag]}`}>{e.tag}</span>
-            <h4>{e.title}</h4>
-            <p className="ex-desc">{e.desc}</p>
-            <div className="ex-foot">
-              <span className="td-dim">{e.usage}</span>
-              <button className="linkbtn" onClick={(ev) => { ev.stopPropagation(); onOpen(e.title) }}>
-                查看 →
-              </button>
+      <PageHead
+        title="示例"
+        desc="页面级示例：页面示例按预览顺序排列，结构示例为通用布局缩影"
+      />
+
+      <div className="p">
+        <CardHead
+          title="页面示例"
+          desc="在真实页面结构里检验主题，点击进入后随当前主题实时渲染"
+          extra={<span className="sim-badge">{EXAMPLE_PAGES.length} 页</span>}
+        />
+        <div className="ex-grid">
+          {EXAMPLE_PAGES.map((p) => (
+            <div
+              className="ex-card"
+              key={p.key}
+              role="button"
+              tabIndex={0}
+              style={{ cursor: 'pointer' }}
+              onClick={() => onOpenPage(p.key)}
+              onKeyDown={(ev) => ev.key === 'Enter' && onOpenPage(p.key)}
+            >
+              <span className={`st ${ST_TONE[EXAMPLE_TAGS[p.key]] ?? 'info'}`}>
+                {EXAMPLE_TAGS[p.key] ?? p.prio}
+              </span>
+              <h4>{p.key}</h4>
+              <p className="ex-desc">{p.brief}</p>
+              <div className="ex-foot">
+                <span className="td-dim">{p.prio}</span>
+                <button
+                  className="linkbtn"
+                  onClick={(ev) => { ev.stopPropagation(); onOpenPage(p.key) }}
+                >
+                  查看 →
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+      </div>
+
+      <div className="p" style={{ marginTop: 13 }}>
+        <CardHead title="结构示例" desc="通用布局缩影，只演练骨架不换主题" />
+        <div className="ex-grid">
+          {EXAMPLES.map((e) => (
+            <div
+              className="ex-card"
+              key={e.title}
+              role="button"
+              tabIndex={0}
+              style={{ cursor: 'pointer' }}
+              onClick={() => onOpen(e.title)}
+              onKeyDown={(ev) => ev.key === 'Enter' && onOpen(e.title)}
+            >
+              <span className={`st ${ST_TONE[e.tag]}`}>{e.tag}</span>
+              <h4>{e.title}</h4>
+              <p className="ex-desc">{e.desc}</p>
+              <div className="ex-foot">
+                <span className="td-dim">{e.usage}</span>
+                <button className="linkbtn" onClick={(ev) => { ev.stopPropagation(); onOpen(e.title) }}>
+                  查看 →
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   )
@@ -1442,25 +1516,32 @@ export default function AppSim({
       icon: string
       sub?: boolean
       href?: string
-      children?: { label: string; sub: boolean }[]
+      children?: { label: string; sub: boolean; kind?: 'page' | 'demo' }[]
     }[]
-  }[] = [
-    ...NAV.map((g) => ({
-      ...g,
-      items: g.items.map((it) =>
-        it.label === '示例'
-          ? { ...it, children: EXAMPLES.map((e) => ({ label: e.title, sub: true })) }
-          : it,
-      ),
-    })),
-    // 页面示例：每项对应一个独立示例页（examples/registry 登记）
-    {
-      group: '页面示例',
-      items: [
-        ...EXAMPLE_PAGES.map((p) => ({ label: p.key, icon: 'examples' })),
-      ],
-    },
-  ]
+  }[] = NAV.map((g) => ({
+    ...g,
+    items: g.items.map((it) =>
+      it.label === '示例'
+        ? {
+            ...it,
+            // 「示例」下级：页面示例（registry 登记，按预览主题的使用顺序）在前，
+            // 原有结构示例在后
+            children: [
+              ...EXAMPLE_PAGES.map((p) => ({
+                label: p.key,
+                sub: true,
+                kind: 'page' as const,
+              })),
+              ...EXAMPLES.map((e) => ({
+                label: e.title,
+                sub: true,
+                kind: 'demo' as const,
+              })),
+            ],
+          }
+        : it,
+    ),
+  }))
 
   const vars = themeVars(entry) as unknown as CSSProperties
   const Page = PAGES[current] ?? Overview
@@ -1498,12 +1579,9 @@ export default function AppSim({
                 {g.items.map((it) => {
                   const hasChildren = !!it.children
                   const expanded = !!openNav[it.label]
-                  const isExPage = !!EXAMPLE_MAP[it.label]
                   const active = it.sub
                     ? current === '示例' && example === it.label
-                    : isExPage
-                      ? current === '页面示例' && exPage === it.label
-                      : current === it.label && !(it.label === '示例' && example)
+                    : current === it.label && !(it.label === '示例' && (example || exPage))
                   return (
                     <div key={it.label} className="sim-nav-wrap">
                       {it.href ? (
@@ -1527,10 +1605,6 @@ export default function AppSim({
                               setCurrent('示例')
                               setExample(it.label)
                               setExPage(null)
-                            } else if (isExPage) {
-                              setCurrent('页面示例')
-                              setExPage(it.label)
-                              setExample(null)
                             } else {
                               setCurrent(it.label)
                               setExample(null)
@@ -1561,21 +1635,39 @@ export default function AppSim({
                       {!collapsed &&
                         hasChildren &&
                         expanded &&
-                        it.children!.map((c) => {
-                          const childActive = current === '示例' && example === c.label
+                        it.children!.map((c, ci) => {
+                          const isPageChild = c.kind === 'page'
+                          const childActive = isPageChild
+                            ? current === '示例' && exPage === c.label
+                            : current === '示例' && example === c.label
+                          // 两组子项之间插一条分隔标题，说明「页面示例 / 结构示例」的分工
+                          const showSep = ci > 0 && it.children![ci - 1].kind !== c.kind
                           return (
-                            <button
-                              key={c.label}
-                              className={`sim-nav-item sub${childActive ? ' on' : ''}`}
-                              onClick={() => {
-                                setCurrent('示例')
-                                setExample(c.label)
-                                setDrawer(false)
-                              }}
-                              title={c.label}
-                            >
-                              <span className="sim-nav-label sub-label">{c.label}</span>
-                            </button>
+                            <Fragment key={c.label}>
+                              {showSep && (
+                                <div className="sim-nav-sub-title">结构示例</div>
+                              )}
+                              {ci === 0 && isPageChild && (
+                                <div className="sim-nav-sub-title">页面示例</div>
+                              )}
+                              <button
+                                className={`sim-nav-item sub${childActive ? ' on' : ''}`}
+                                onClick={() => {
+                                  setCurrent('示例')
+                                  if (isPageChild) {
+                                    setExPage(c.label)
+                                    setExample(null)
+                                  } else {
+                                    setExample(c.label)
+                                    setExPage(null)
+                                  }
+                                  setDrawer(false)
+                                }}
+                                title={c.label}
+                              >
+                                <span className="sim-nav-label sub-label">{c.label}</span>
+                              </button>
+                            </Fragment>
                           )
                         })}
                     </div>
@@ -1630,7 +1722,7 @@ export default function AppSim({
                 </>
               ) : exPage ? (
                 <>
-                  <button className="crumb-link" onClick={() => setExPage(null)}>页面示例</button>
+                  <button className="crumb-link" onClick={() => setExPage(null)}>示例</button>
                   <span className="sim-crumb-sep">/</span>
                   <span className="sim-crumb-cur">{exPage}</span>
                 </>
@@ -1683,7 +1775,13 @@ export default function AppSim({
             ) : current === '示例' && example ? (
               <ExampleDetail title={example} onBack={() => setExample(null)} />
             ) : current === '示例' ? (
-              <ExamplesPage onOpen={setExample} />
+              <ExamplesPage
+                onOpen={setExample}
+                onOpenPage={(key) => {
+                  setExPage(key)
+                  setExample(null)
+                }}
+              />
             ) : current === '概览' ? (
               <Overview onExport={() => setExportOpen(true)} />
             ) : (

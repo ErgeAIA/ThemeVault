@@ -777,6 +777,19 @@ a.sim-nav-item {
   font-weight: 400;
 }
 
+/* 「示例」下级的两组分隔标题：页面示例 / 结构示例 */
+.sim-nav-sub-title {
+  padding: 9px 9px 3px 40px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--tv-dim);
+}
+
+.sim-nav-sub-title:first-of-type {
+  padding-top: 5px;
+}
+
 .sim-user {
   flex-shrink: 0;
   display: flex;

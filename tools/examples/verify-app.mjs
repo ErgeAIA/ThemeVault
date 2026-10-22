@@ -41,12 +41,18 @@ const BASELINE_EXTERNAL_HOSTS = [
   'fonts.gstatic.com',    // 同上：Google Fonts CSS 引出的字体文件域名
 ];
 
-/** 侧栏「页面示例」分组应有的顺序（与 src/components/examples/registry.tsx:27-37 的 EXAMPLE_PAGES 一致）。 */
+/**
+ * 「示例」分组下「页面示例」子组的应有顺序
+ * （与 src/components/examples/registry.tsx 的 EXAMPLE_PAGES 一致，按预览主题的使用顺序）。
+ */
 const EXPECTED_PAGES = [
-  '外观设置页', '图表专区', '状态页合集',
-  '表单状态穷举', '详情主从布局', '消息会话界面',
+  '外观设置页', '状态页合集', '表单状态穷举',
+  '详情主从布局', '消息会话界面', '图表专区',
   '富文本 diff', '日历日程', '营销定价页',
 ];
+
+/** 原有「结构示例」子组的侧栏项（不参与页面示例断言，仅用于校验两组分区存在）。 */
+const EXPECTED_DEMO_MIN = 1;
 
 const CHROME_CANDIDATES = [
   process.env.CHROME_PATH,
@@ -266,23 +272,47 @@ const FN_CLICK_TEXT = 'function(txt){' +
   'if(!b)return "no-button";' +
   'b.click();return "ok";}';
 
-/** 侧栏分组列表 */
+/**
+ * 侧栏分组列表。除组名与全量侧栏项外，额外按组内 .sim-nav-sub-title 分隔标题
+ * 把子项切成 pages（页面示例）/ demos（结构示例）两段，用于断言分区与顺序。
+ */
 const FN_NAV = 'function(){' +
   'var groups=Array.prototype.slice.call(document.querySelectorAll(".sim-nav-group"));' +
   'return groups.map(function(g){' +
   'var t=g.querySelector(".sim-nav-title");' +
   'var items=Array.prototype.slice.call(g.querySelectorAll(".sim-nav-item"));' +
-  'return {title:t?(t.textContent||"").trim():"",items:items.map(function(i){var l=i.querySelector(".sim-nav-label");return l?(l.textContent||"").trim():(i.textContent||"").trim();})};});}';
+  'var sub=null,pages=[],demos=[];' +
+  'var kids=Array.prototype.slice.call(g.querySelectorAll(".sim-nav-sub-title, .sim-nav-item"));' +
+  'kids.forEach(function(el){' +
+  'if(el.classList.contains("sim-nav-sub-title")){sub=(el.textContent||"").trim();return;}' +
+  // 离开「示例」手风琴（遇到同级非 .sub 菜单项）即结束子项区段，
+  // 否则会把它后面的「资源」等常规菜单项误算进「结构示例」
+  'if(!el.classList.contains("sub")){sub=null;return;}' +
+  'var l=el.querySelector(".sim-nav-label");' +
+  'var s=l?(l.textContent||"").trim():(el.textContent||"").trim();' +
+  'if(sub==="页面示例")pages.push(s);else if(sub==="结构示例")demos.push(s);});' +
+  'var subTitles=Array.prototype.slice.call(g.querySelectorAll(".sim-nav-sub-title")).map(function(x){return (x.textContent||"").trim();});' +
+  'return {title:t?(t.textContent||"").trim():"",' +
+  'items:items.map(function(i){var l=i.querySelector(".sim-nav-label");return l?(l.textContent||"").trim():(i.textContent||"").trim();}),' +
+  'pages:pages,demos:demos,subTitles:subTitles};});}';
 
-/** 点击「页面示例」分组里的某个侧栏项 */
+/**
+ * 点击「示例」菜单下「页面示例」子组里的某个侧栏项。
+ * 子项带 .sub 类，且被 .sim-nav-sub-title（页面示例 / 结构示例）分隔，
+ * 故这里按分隔标题定位「页面示例」段，避免误点到同组的结构示例。
+ */
 const FN_CLICK_NAV = 'function(label){' +
-  'var groups=Array.prototype.slice.call(document.querySelectorAll(".sim-nav-group"));' +
-  'var g=groups.filter(function(x){var t=x.querySelector(".sim-nav-title");return t&&(t.textContent||"").trim()==="页面示例";})[0];' +
-  'if(!g)return "no-group";' +
-  'var items=Array.prototype.slice.call(g.querySelectorAll(".sim-nav-item"));' +
-  'var b=items.filter(function(x){var l=x.querySelector(".sim-nav-label");var s=l?(l.textContent||"").trim():(x.textContent||"").trim();return s===label;})[0];' +
-  'if(!b)return "no-item";' +
-  'b.click();return "ok";}';
+  'var kids=Array.prototype.slice.call(document.querySelectorAll(".sim-nav-group .sim-nav-sub-title, .sim-nav-group .sim-nav-item.sub"));' +
+  'if(!kids.length)return "no-group";' +
+  'var sub=null,hit=null;' +
+  'kids.forEach(function(el){' +
+  'if(el.classList.contains("sim-nav-sub-title")){sub=(el.textContent||"").trim();return;}' +
+  'if(hit||sub!=="页面示例")return;' +
+  'var l=el.querySelector(".sim-nav-label");' +
+  'var s=l?(l.textContent||"").trim():(el.textContent||"").trim();' +
+  'if(s===label)hit=el;});' +
+  'if(!hit)return "no-item";' +
+  'hit.click();return "ok";}';
 
 /** 当前示例页状态：标题 / 结构 / 未解析 var() */
 const FN_EXSTATE = 'function(){' +
@@ -513,24 +543,35 @@ async function main() {
     if (clicked === 'ok' && simReady > 0) pass('[2.0] 已切换到「界面仿真」视图', '点击按钮 => .sim 存在');
     else fail('[2.0] 已切换到「界面仿真」视图', 'click=' + clicked + ' sim=' + simReady);
 
-    // 断言 2：侧栏分组「页面示例」及其侧栏项
+    // 断言 2：「示例」分组下「页面示例」子组的侧栏项（页面示例与结构示例同组，靠分隔标题区分）
     const nav = await evaluate(evalFn(FN_NAV, []));
-    const exGroup = (nav || []).filter(function (g) { return g.title === '页面示例'; })[0];
-    const exItems = exGroup ? exGroup.items : [];
+    // 「示例」菜单挂在「内容」分组下，分组标题不叫「示例」，
+    // 故以「组内出现 .sim-nav-sub-title = 页面示例」定位承载它的分组。
+    const exGroup = (nav || []).filter(function (g) { return (g.subTitles || []).indexOf('页面示例') >= 0; })[0];
+    const exItems = exGroup ? exGroup.pages : [];
+    const demoItems = exGroup ? exGroup.demos : [];
     const expectN = EXPECTED_PAGES.length;
     const orderOk = exItems.length === expectN && EXPECTED_PAGES.every(function (k, i) { return exItems[i] === k; });
     if (orderOk) {
-      pass('[2.1] 侧栏「页面示例」分组含 ' + expectN + ' 项且顺序一致', exItems.join(' / '));
+      pass('[2.1] 侧栏「示例」菜单·页面示例子组含 ' + expectN + ' 项且顺序一致', exItems.join(' / '));
     } else {
       const diff = [];
       for (let i = 0; i < Math.max(expectN, exItems.length); i++) {
         if (exItems[i] !== EXPECTED_PAGES[i]) diff.push('#' + (i + 1) + ' 期望 ' + JSON.stringify(EXPECTED_PAGES[i] || '(无)') + ' 实得 ' + JSON.stringify(exItems[i] || '(无)'));
       }
-      fail('[2.1] 侧栏「页面示例」分组含 ' + expectN + ' 项且顺序一致',
+      fail('[2.1] 侧栏「示例」菜单·页面示例子组含 ' + expectN + ' 项且顺序一致',
         '实得 ' + exItems.length + ' 项: ' + (exItems.join(' / ') || '(空)') + ' ；首个差异: ' + diff[0]);
     }
-    if (exItems.length > 0) pass('[2.2] 「页面示例」分组下有侧栏项', exItems.length + ' 项');
-    else fail('[2.2] 「页面示例」分组下有侧栏项', '0 项');
+    if (exItems.length > 0) pass('[2.2] 「页面示例」子组下有侧栏项', exItems.length + ' 项');
+    else fail('[2.2] 「页面示例」子组下有侧栏项', '0 项');
+    // [2.2b] 页面示例与结构示例同属「示例」分组，靠 .sim-nav-sub-title 分隔
+    const subs = exGroup ? exGroup.subTitles : [];
+    if (subs[0] === '页面示例' && subs.indexOf('结构示例') > 0 && demoItems.length >= EXPECTED_DEMO_MIN) {
+      pass('[2.2b] 「示例」分组含「页面示例 / 结构示例」两段', subs.join(' + ') + '（结构示例 ' + demoItems.length + ' 项）');
+    } else {
+      fail('[2.2b] 「示例」分组含「页面示例 / 结构示例」两段',
+        '分隔标题 ' + JSON.stringify(subs) + '，结构示例 ' + demoItems.length + ' 项');
+    }
 
     const SAFE_BAD = String.fromCharCode(92) + '/:*?"<>| ';
     const safeName = function (s) {
