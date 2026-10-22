@@ -16,6 +16,19 @@ description: >
 > 格式：`## DEC-NNN: 标题`，新条目置顶，NNN 三位递增。
 > 字段：`- **日期**：` / `- **背景**：` / `- **决策**：` / `- **验证**：`
 
+## DEC-021: 新增「页面示例」9 页（工作台内 React 组件，非独立 HTML）
+
+- **日期**：2026-10-22
+- **背景**：用户诉求「预览主题时要能看到页面长什么样」，原预览站只有色板卡片与字体仿真，无法判断一套主题落到真实界面上是什么观感。用户给出 9 个示例页优先级表（P0：外观设置页 / 图表专区 / 状态页合集；P1：表单状态穷举 / 详情主从布局 / 消息会话界面；P2：富文本 diff / 日历日程 / 营销定价页）。曾先做过一版单文件静态 HTML（`examples/page-gallery.html`，双 scheme 手抄 token），但它是「一次性的独立页面」，无法随当前选中主题实时换肤，与本仓库「主题资产 + 实时换肤工作台」的定位不吻合——故废弃，产物移入 `.tmp/superseded/`（未入库）。
+- **决策**：
+  - 示例页做成 `src/components/examples/` 下的 React 组件，走既有的 `themeVars(entry)` CSS 变量注入链路，**颜色只允许** `var(--tv-*)` 与 `color-mix()`，禁裸色值 / 自造变量名，从而「切主题即换肤、双方案自动成立」。
+  - 统一壳 `ExampleShell`（页头 + 典型场景 + 演示台 + 结构要点）+ `ExSection` / `ExFrame`；样式分三个文件：`src/styles/examples.css`（公共壳）、`examples-p1.css`、`examples-p2.css`，类名前缀 `ex-` / `p1-` / `p2-` 互不冲突。
+  - 登记表 `src/components/examples/registry.tsx` 为唯一入口，侧栏「页面示例」分组由它生成；`key` 与页面 h2 标题严格一致（便于验收脚本逐项比对）。
+  - AppSim.tsx 只做最小接线：`exPage` 状态 + 导航三分支 + 面包屑分支 + `sim-content` 首分支渲染 `EXAMPLE_MAP[exPage].Component`。
+  - 验收与审计脚本化：`tools/examples/verify-app.mjs`（CDP 无头，36 项断言）与 `tools/examples/lint-tokens-app.mjs`（静态 token 审计，6 类检查）。二者均为零依赖 ESM，不入 `package.json`。
+- **理由**：示例页的价值在于「同一批 DOM 在不同主题下渲染」，独立 HTML 把 token 手抄一遍即失去这个价值；组件化后新增主题自动被示例页覆盖，不必逐主题重生成。
+- **验证**：`npx tsc --noEmit` EXIT 0；`node dev.mjs build` EXIT 0（55 modules，css 61.22 kB / js 702.82 kB）；`node tools/examples/verify-app.mjs` 检查项 36 / PASS 36 / FAIL 0 / 退出码 0；`node tools/examples/lint-tokens-app.mjs` PASS 3 / WARN 2 / FAIL 0 / 退出码 0（`--selftest` 34 项断言通过）。
+
 ## DEC-020: erge #001/#002 配色优化值落盘（shese 审查产出）
 
 - **日期**：2026-10-22
