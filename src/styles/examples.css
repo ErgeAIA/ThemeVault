@@ -1,0 +1,486 @@
+/* ============================================================
+   示例页公共外壳与工具类（供 src/components/examples/* 使用）
+   颜色只允许 var(--tv-*) 与 color-mix 派生；不引入新变量名。
+   ============================================================ */
+
+.ex-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* ---- 页头：标题 + 场景说明 ---- */
+
+.ex-hd {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ex-hd-text h2 {
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+
+.ex-scene {
+  margin-top: 5px;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 7px;
+  font-size: 12.5px;
+  color: var(--tv-muted);
+  line-height: 1.6;
+  max-width: 94ch;
+}
+
+.ex-scene-tag {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 8px;
+  border-radius: 999px;
+  color: var(--tv-accent);
+  background: color-mix(in srgb, var(--tv-accent) 13%, transparent);
+}
+
+.ex-sep {
+  color: var(--tv-dim);
+}
+
+/* ---- 演示台 ---- */
+
+.ex-stage {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--tv-surface);
+  overflow: hidden;
+}
+
+.ex-sec {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.ex-sec-head {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.ex-sec-head h4 {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ex-cap {
+  font-size: 11.5px;
+  color: var(--tv-dim);
+}
+
+/* ---- 通用小卡 / 栅格 ---- */
+
+.ex-sub {
+  background: var(--tv-card);
+  border: 1px solid var(--tv-border);
+  border-radius: var(--tv-radius);
+  padding: 14px;
+  min-width: 0;
+}
+
+.ex-grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ex-grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ex-split {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+  gap: 12px;
+  align-items: start;
+}
+
+/* ---- 工具条 / 键值 / 标签 ---- */
+
+.ex-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ex-bar-right {
+  margin-left: auto;
+}
+
+.ex-kv {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12.5px;
+  padding: 7px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--tv-border) 55%, transparent);
+}
+
+.ex-kv:last-child {
+  border-bottom: none;
+}
+
+.ex-kv dt {
+  color: var(--tv-dim);
+  flex-shrink: 0;
+}
+
+.ex-kv dd {
+  margin: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  word-break: break-all;
+}
+
+.ex-scroll {
+  max-height: 236px;
+  overflow: auto;
+}
+
+.ex-mono {
+  font-family: var(--tv-font-code);
+  font-variant-ligatures: none;
+}
+
+/* ---- 模态/窗口示意框 ---- */
+
+.ex-frame {
+  border: 1px solid var(--tv-border);
+  border-radius: var(--tv-radius);
+  overflow: hidden;
+  background: var(--tv-bg);
+}
+
+.ex-frame-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  background: var(--tv-surface-2);
+  border-bottom: 1px solid var(--tv-border);
+  font-size: 11px;
+  color: var(--tv-dim);
+}
+
+.ex-frame-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.ex-frame-dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--tv-border-strong);
+}
+
+.ex-frame-body {
+  padding: 14px;
+  min-height: 120px;
+}
+
+/* ---- 色板缩略卡（外观设置页）---- */
+
+.ex-sw {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid var(--tv-border);
+  border-radius: 9px;
+  background: var(--tv-card);
+  cursor: pointer;
+  min-width: 0;
+  text-align: left;
+  transition: border-color 0.12s;
+}
+
+.ex-sw:hover {
+  border-color: var(--tv-border-strong);
+}
+
+.ex-sw-bars {
+  display: flex;
+  width: 100%;
+  height: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid var(--tv-border);
+}
+
+.ex-sw-bars i {
+  flex: 1;
+}
+
+.ex-sw-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.ex-sw-name {
+  font-size: 10.5px;
+  color: var(--tv-dim);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---- 图例 / 柱 / 热力（图表专区）---- */
+
+.ex-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  color: var(--tv-muted);
+}
+
+.ex-legend i {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.ex-bars {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+  height: 138px;
+  padding-top: 6px;
+}
+
+.ex-bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.ex-bar-col > span {
+  font-size: 10.5px;
+  color: var(--tv-dim);
+}
+
+.ex-bar-pair {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.ex-bar-pair i {
+  width: 13px;
+  border-radius: 4px 4px 1px 1px;
+  min-height: 3px;
+}
+
+.ex-heat {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ex-heat-row {
+  display: grid;
+  grid-template-columns: 40px repeat(6, minmax(0, 1fr));
+  gap: 5px;
+  align-items: center;
+}
+
+.ex-heat-head span {
+  font-size: 10.5px;
+  color: var(--tv-dim);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.ex-heat-axis {
+  font-size: 10.5px;
+  color: var(--tv-dim);
+  text-align: left;
+}
+
+.ex-heat-cell {
+  display: grid;
+  place-items: center;
+  height: 26px;
+  border-radius: 5px;
+  font-size: 10.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--tv-text);
+  border: 1px solid color-mix(in srgb, var(--tv-border) 45%, transparent);
+}
+
+.ex-heat-legend {
+  width: 18px;
+  height: 13px;
+  border-radius: 3px;
+  border: 1px solid color-mix(in srgb, var(--tv-border) 45%, transparent);
+}
+
+.ex-mini-bar {
+  height: 5px;
+  border-radius: 999px;
+  background: var(--tv-surface-2);
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.ex-mini-bar i {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+/* ---- 状态页（空 / 错误 / 骨架）---- */
+
+.ex-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 26px 16px 20px;
+}
+
+.ex-state-art {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  margin-bottom: 13px;
+  border: 1px solid color-mix(in srgb, currentColor 26%, transparent);
+  background: color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.ex-state-art.info {
+  color: var(--tv-info);
+}
+
+.ex-state-art.warn {
+  color: var(--tv-warn);
+}
+
+.ex-state-art.danger {
+  color: var(--tv-danger);
+}
+
+.ex-state-art.dim {
+  color: var(--tv-dim);
+}
+
+.ex-state-title {
+  font-size: 15px;
+  color: var(--tv-text);
+}
+
+.ex-state-desc {
+  margin-top: 6px;
+  font-size: 12.5px;
+  color: var(--tv-muted);
+  line-height: 1.6;
+  max-width: 46ch;
+}
+
+.ex-spin {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 2.5px solid color-mix(in srgb, currentColor 24%, transparent);
+  border-top-color: currentColor;
+  animation: ex-spin 0.85s linear infinite;
+}
+
+@keyframes ex-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ex-skel {
+  display: block;
+  height: 11px;
+  border-radius: 6px;
+  background: var(--tv-surface-2);
+  margin-bottom: 9px;
+  animation: ex-pulse 1.4s ease-in-out infinite;
+}
+
+.ex-skel:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes ex-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ex-spin,
+  .ex-skel {
+    animation: none;
+  }
+}
+
+/* 小节分隔线：比面板边框更轻一级 */
+.ex-divider {
+  height: 1px;
+  margin: 14px 0;
+  background: color-mix(in srgb, var(--tv-border) 60%, transparent);
+}
+
+/* ---- 响应式（与工作台断点一致）---- */
+
+@media (max-width: 1120px) {
+  .ex-grid3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .ex-grid2,
+  .ex-grid3,
+  .ex-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ex-stage {
+    padding: 13px;
+  }
+}

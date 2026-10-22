@@ -1,0 +1,1029 @@
+/* ============================================================
+   示例页 P2 共用样式：富文本 / diff、日历 / 日程、营销 / 定价
+   颜色只允许 var(--tv-*) 与 color-mix 派生；类名统一 p2- 前缀。
+   ============================================================ */
+
+/* ==================== 一、富文本 / diff ==================== */
+
+.p2-pane {
+  min-width: 0;
+}
+
+.p2-pane-scroll {
+  max-height: 380px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+/* ---- Markdown 手工渲染：标题 / 正文 / 行内码 / 引用 / 列表 / 表格 / 分隔线 / 链接 ---- */
+
+.p2-md {
+  font-size: 13px;
+  line-height: 1.72;
+  color: var(--tv-text);
+  min-width: 0;
+  max-width: 76ch;
+}
+
+.p2-md h1 {
+  font-size: 21px;
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  padding-bottom: 8px;
+  margin: 0 0 10px;
+  border-bottom: 1px solid color-mix(in srgb, var(--tv-border) 70%, transparent);
+}
+
+.p2-md h2 {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 17px 0 7px;
+}
+
+.p2-md h3 {
+  font-size: 13.5px;
+  line-height: 1.4;
+  margin: 13px 0 5px;
+  color: var(--tv-muted);
+}
+
+.p2-md p {
+  margin: 8px 0;
+}
+
+.p2-md strong {
+  font-weight: 700;
+}
+
+.p2-md-code {
+  padding: 1px 5px;
+  border-radius: 5px;
+  border: 1px solid color-mix(in srgb, var(--tv-border) 70%, transparent);
+  background: var(--tv-surface-2);
+  color: var(--tv-accent);
+  font-family: var(--tv-font-code);
+  font-size: 0.92em;
+  white-space: nowrap;
+}
+
+.p2-md-quote {
+  margin: 11px 0;
+  padding: 1px 0 1px 12px;
+  border-left: 3px solid var(--tv-accent);
+  color: var(--tv-muted);
+  line-height: 1.66;
+}
+
+.p2-md-quote p {
+  margin: 4px 0;
+}
+
+.p2-md-list {
+  margin: 8px 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--tv-text);
+}
+
+.p2-md-list li::marker {
+  color: var(--tv-accent);
+}
+
+.p2-md-link {
+  color: var(--tv-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.p2-md-hr {
+  height: 1px;
+  margin: 15px 0;
+  border: none;
+  background: color-mix(in srgb, var(--tv-border) 70%, transparent);
+}
+
+/* ---- 代码块：只吃 syntax-* 角色色，不吃语义色 ---- */
+
+.p2-code {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 9px;
+  border: 1px solid var(--tv-border);
+  background: var(--tv-surface-2);
+  color: var(--tv-text);
+  font-family: var(--tv-font-code);
+  font-size: 12px;
+  line-height: 1.72;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.p2-code code {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.p2-tk-com {
+  color: var(--tv-syn-comment);
+}
+
+.p2-tk-kw {
+  color: var(--tv-syn-keyword);
+}
+
+.p2-tk-str {
+  color: var(--tv-syn-string);
+}
+
+.p2-tk-num {
+  color: var(--tv-syn-literal);
+}
+
+.p2-tk-fn {
+  color: var(--tv-syn-function);
+}
+
+.p2-tk-var {
+  color: var(--tv-syn-variable);
+}
+
+.p2-tk-type {
+  color: var(--tv-syn-type);
+}
+
+.p2-tk-op {
+  color: var(--tv-syn-operator);
+}
+
+/* ---- 源码对比：底色 + 竖条承担语义，文字一律 --tv-text ---- */
+
+.p2-diff {
+  border: 1px solid var(--tv-border);
+  border-radius: 9px;
+  overflow: hidden;
+  background: var(--tv-surface-2);
+  font-family: var(--tv-font-code);
+  font-size: 11.5px;
+  line-height: 1.62;
+}
+
+.p2-diff-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 11px;
+  background: var(--tv-surface);
+  border-bottom: 1px solid var(--tv-border);
+  color: var(--tv-dim);
+  font-size: 11px;
+}
+
+.p2-diff-hunk {
+  padding: 5px 11px;
+  background: color-mix(in srgb, var(--tv-border) 30%, transparent);
+  color: var(--tv-muted);
+  font-size: 11px;
+  border-top: 1px solid color-mix(in srgb, var(--tv-border) 55%, transparent);
+}
+
+.p2-diff-hunk:first-of-type {
+  border-top: none;
+}
+
+.p2-diff-row {
+  display: grid;
+  grid-template-columns: 32px 32px 13px minmax(0, 1fr);
+  align-items: stretch;
+  border-left: 3px solid transparent;
+  min-width: 0;
+}
+
+.p2-diff-row.p2-add {
+  background: color-mix(in srgb, var(--tv-ok) 12%, transparent);
+  border-left-color: var(--tv-ok);
+}
+
+.p2-diff-row.p2-del {
+  background: color-mix(in srgb, var(--tv-danger) 12%, transparent);
+  border-left-color: var(--tv-danger);
+}
+
+.p2-diff-num {
+  padding: 1px 6px;
+  text-align: right;
+  color: var(--tv-dim);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+}
+
+.p2-diff-sign {
+  padding: 1px 0;
+  color: var(--tv-dim);
+  font-size: 11px;
+  user-select: none;
+}
+
+.p2-diff-code {
+  margin: 0;
+  padding: 1px 10px 1px 0;
+  color: var(--tv-text);
+  font-family: inherit;
+  font-size: inherit;
+  white-space: pre;
+  overflow-x: auto;
+  min-width: 0;
+}
+
+/* ---- 词级 diff ---- */
+
+.p2-wdiff {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 11px;
+  border: 1px solid var(--tv-border);
+  border-radius: 9px;
+  background: var(--tv-surface-2);
+  font-family: var(--tv-font-code);
+  font-size: 11.5px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+.p2-wd-num {
+  flex-shrink: 0;
+  color: var(--tv-dim);
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.p2-wdiff code {
+  color: var(--tv-text);
+  white-space: pre;
+}
+
+.p2-wd-del {
+  padding: 1px 2px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--tv-danger) 12%, transparent);
+  color: var(--tv-text);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--tv-danger) 55%, transparent);
+}
+
+.p2-wd-add {
+  padding: 1px 2px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--tv-ok) 12%, transparent);
+  color: var(--tv-text);
+}
+
+.p2-wd-sep {
+  color: var(--tv-dim);
+}
+
+/* ---- 语法色板 10 色横排 ---- */
+
+.p2-synpal {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.p2-syn-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.p2-syn-sw {
+  height: 27px;
+  border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--tv-border) 50%, transparent);
+}
+
+.p2-syn-name {
+  font-family: var(--tv-font-code);
+  font-size: 9.5px;
+  color: var(--tv-dim);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---- 并排视图右侧的源码行号栏 ---- */
+
+.p2-src {
+  font-size: 11.5px;
+  line-height: 1.7;
+}
+
+.p2-src-line {
+  display: block;
+  min-width: 0;
+}
+
+.p2-src-no {
+  display: inline-block;
+  width: 24px;
+  margin-right: 10px;
+  text-align: right;
+  color: var(--tv-dim);
+  user-select: none;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==================== 二、日历 / 日程 ==================== */
+
+.p2-cal {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 252px;
+  gap: 12px;
+  align-items: start;
+}
+
+.p2-cal-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.p2-cal-wd {
+  padding: 3px 0 5px;
+  text-align: center;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--tv-dim);
+}
+
+.p2-day {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-height: 78px;
+  padding: 5px 5px 6px;
+  border: 1px solid color-mix(in srgb, var(--tv-border) 60%, transparent);
+  border-radius: 7px;
+  background: var(--tv-card);
+  color: var(--tv-text);
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  min-width: 0;
+  transition: border-color 0.12s, background 0.12s;
+}
+
+.p2-day:hover:not(:disabled) {
+  border-color: var(--tv-border-strong);
+}
+
+.p2-day:disabled {
+  cursor: default;
+}
+
+.p2-day.p2-out {
+  background: transparent;
+  border-style: dashed;
+}
+
+.p2-day.p2-out .p2-day-num {
+  color: var(--tv-dim);
+}
+
+.p2-day.p2-today {
+  border-color: color-mix(in srgb, var(--tv-accent) 62%, transparent);
+}
+
+.p2-day.p2-sel {
+  border-color: var(--tv-accent);
+  background: color-mix(in srgb, var(--tv-accent) 9%, var(--tv-card));
+}
+
+.p2-day-num {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--tv-text);
+}
+
+.p2-day-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--tv-accent);
+  flex-shrink: 0;
+}
+
+/* 事件块：15% 底 + 实色左侧竖条 + 9% 边框，文字一律 --tv-text */
+.p2-ev {
+  display: block;
+  padding: 2px 5px;
+  border: 1px solid transparent;
+  border-left-width: 3px;
+  border-radius: 4px;
+  font-size: 10px;
+  line-height: 1.35;
+  color: var(--tv-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.p2-ev.p2-accent,
+.p2-wev.p2-accent {
+  background: color-mix(in srgb, var(--tv-accent) 15%, transparent);
+  border-color: color-mix(in srgb, var(--tv-accent) 9%, transparent);
+  border-left-color: var(--tv-accent);
+}
+
+.p2-ev.p2-ok,
+.p2-wev.p2-ok {
+  background: color-mix(in srgb, var(--tv-ok) 15%, transparent);
+  border-color: color-mix(in srgb, var(--tv-ok) 9%, transparent);
+  border-left-color: var(--tv-ok);
+}
+
+.p2-ev.p2-warn,
+.p2-wev.p2-warn {
+  background: color-mix(in srgb, var(--tv-warn) 15%, transparent);
+  border-color: color-mix(in srgb, var(--tv-warn) 9%, transparent);
+  border-left-color: var(--tv-warn);
+}
+
+.p2-ev.p2-danger,
+.p2-wev.p2-danger {
+  background: color-mix(in srgb, var(--tv-danger) 15%, transparent);
+  border-color: color-mix(in srgb, var(--tv-danger) 9%, transparent);
+  border-left-color: var(--tv-danger);
+}
+
+.p2-ev.p2-info,
+.p2-wev.p2-info {
+  background: color-mix(in srgb, var(--tv-info) 15%, transparent);
+  border-color: color-mix(in srgb, var(--tv-info) 9%, transparent);
+  border-left-color: var(--tv-info);
+}
+
+.p2-ev.p2-queued,
+.p2-wev.p2-queued {
+  background: color-mix(in srgb, var(--tv-queued) 15%, transparent);
+  border-color: color-mix(in srgb, var(--tv-queued) 9%, transparent);
+  border-left-color: var(--tv-queued);
+}
+
+.p2-clamp2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.p2-ev.p2-clamp2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+  overflow: hidden;
+}
+
+.p2-ev.p2-wrap {
+  white-space: normal;
+  overflow: hidden;
+}
+
+.p2-ev-tall {
+  min-height: 42px;
+}
+
+/* 图例：竖条与事件块左侧竖条同形 */
+.p2-lg {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.p2-lg-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11.5px;
+  color: var(--tv-muted);
+}
+
+.p2-lg-bar {
+  flex-shrink: 0;
+  width: 3px;
+  height: 13px;
+  border-radius: 2px;
+}
+
+/* 周视图 */
+.p2-week-scroll {
+  overflow-x: auto;
+}
+
+.p2-week {
+  min-width: 540px;
+  border: 1px solid var(--tv-border);
+  border-radius: 9px;
+  overflow: hidden;
+  background: var(--tv-card);
+}
+
+.p2-week-head {
+  display: grid;
+  grid-template-columns: 44px repeat(7, minmax(0, 1fr));
+  background: var(--tv-surface-2);
+  border-bottom: 1px solid var(--tv-border);
+}
+
+.p2-week-hd {
+  padding: 5px 0;
+  text-align: center;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--tv-muted);
+  border-left: 1px solid color-mix(in srgb, var(--tv-border) 45%, transparent);
+}
+
+.p2-week-hd.p2-today {
+  color: var(--tv-accent);
+}
+
+.p2-week-hd-t {
+  display: block;
+  font-size: 9.5px;
+  font-weight: 400;
+  color: var(--tv-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.p2-week-body {
+  display: grid;
+  grid-template-columns: 44px repeat(7, minmax(0, 1fr));
+}
+
+.p2-week-rail {
+  display: flex;
+  flex-direction: column;
+}
+
+.p2-rail-time {
+  height: 30px;
+  padding-right: 6px;
+  line-height: 29px;
+  text-align: right;
+  font-size: 9.5px;
+  color: var(--tv-dim);
+  font-variant-numeric: tabular-nums;
+  border-bottom: 1px solid color-mix(in srgb, var(--tv-border) 40%, transparent);
+}
+
+.p2-week-col {
+  position: relative;
+  min-width: 0;
+  border-left: 1px solid color-mix(in srgb, var(--tv-border) 45%, transparent);
+}
+
+.p2-slot {
+  display: block;
+  height: 30px;
+  border-bottom: 1px dashed color-mix(in srgb, var(--tv-border) 40%, transparent);
+}
+
+/* 周视图事件：绝对定位覆盖 slot 高度 */
+.p2-wev {
+  position: absolute;
+  padding: 3px 5px;
+  border: 1px solid transparent;
+  border-left-width: 3px;
+  border-radius: 5px;
+  color: var(--tv-text);
+  font-size: 10px;
+  line-height: 1.3;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.p2-wev-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.p2-wev-meta {
+  margin-top: 2px;
+  font-size: 9px;
+  color: var(--tv-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.p2-wev.p2-half-l {
+  left: 2px;
+  width: calc(50% - 3px);
+}
+
+.p2-wev.p2-half-r {
+  left: calc(50% + 1px);
+  width: calc(50% - 3px);
+}
+
+/* 侧栏日程 */
+.p2-sched {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.p2-sched-item {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--tv-border) 50%, transparent);
+}
+
+.p2-sched-item:last-child {
+  border-bottom: none;
+}
+
+.p2-sched-time {
+  font-size: 10.5px;
+  color: var(--tv-dim);
+  font-variant-numeric: tabular-nums;
+  padding-top: 1px;
+}
+
+.p2-sched-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tv-text);
+  line-height: 1.42;
+  word-break: break-word;
+}
+
+.p2-sched-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+  font-size: 10.5px;
+  color: var(--tv-muted);
+}
+
+.p2-sched-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.p2-sched-empty {
+  padding: 14px 0;
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--tv-dim);
+}
+
+/* ==================== 三、营销 / 定价 ==================== */
+
+.p2-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 20px 22px;
+  text-align: center;
+  border: 1px solid var(--tv-border);
+  border-radius: var(--tv-radius);
+  background: color-mix(in srgb, var(--tv-accent) 7%, var(--tv-surface));
+}
+
+.p2-hero h2 {
+  font-size: 34px;
+  line-height: 1.26;
+  letter-spacing: -0.022em;
+  max-width: 20ch;
+}
+
+.p2-hero-sub {
+  max-width: 58ch;
+  font-size: 13px;
+  line-height: 1.68;
+  color: var(--tv-muted);
+}
+
+.p2-hero-cta {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3px;
+}
+
+.p2-hero-note {
+  font-size: 11.5px;
+  color: var(--tv-dim);
+}
+
+.btn.p2-cta {
+  padding: 9px 20px;
+  font-size: 13.5px;
+  border-radius: 9px;
+}
+
+/* 计费切换条 */
+.p2-billing {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 9px 13px;
+  border: 1px solid var(--tv-border);
+  border-radius: 9px;
+  background: var(--tv-surface-2);
+  font-size: 12.5px;
+}
+
+.p2-billing b {
+  font-size: 12.5px;
+}
+
+.p2-billing-note {
+  font-size: 11.5px;
+  color: var(--tv-dim);
+}
+
+.p2-billing-label {
+  font-size: 11.5px;
+  color: var(--tv-dim);
+  transition: color 0.12s;
+}
+
+.p2-billing-label.p2-on {
+  color: var(--tv-text);
+  font-weight: 600;
+}
+
+.p2-save {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--tv-ok) 13%, transparent);
+  color: var(--tv-ok);
+  font-size: 10.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* 三档定价卡 */
+.p2-plans {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.p2-plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 16px 15px 15px;
+  border: 1px solid var(--tv-border);
+  border-radius: var(--tv-radius);
+  background: var(--tv-card);
+  min-width: 0;
+}
+
+.p2-plan.p2-reco {
+  padding: 15px 14px 14px;
+  border: 2px solid var(--tv-accent);
+  background: color-mix(in srgb, var(--tv-accent) 13%, var(--tv-card));
+}
+
+.p2-plan-badge {
+  position: absolute;
+  top: -10px;
+  left: 14px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--tv-accent);
+  color: var(--tv-accent-fg);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.p2-plan-name {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.p2-plan-desc {
+  min-height: 2.7em;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--tv-dim);
+}
+
+.p2-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.p2-price-cur {
+  font-size: 13px;
+  color: var(--tv-muted);
+}
+
+.p2-price-num {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.p2-price-unit {
+  font-size: 11px;
+  color: var(--tv-dim);
+}
+
+.p2-price-note {
+  font-size: 10.5px;
+  color: var(--tv-dim);
+  min-height: 1.4em;
+  font-variant-numeric: tabular-nums;
+}
+
+.p2-feats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.p2-feats li {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  line-height: 1.45;
+  color: var(--tv-text);
+}
+
+.p2-feats li.p2-off {
+  color: var(--tv-dim);
+}
+
+.p2-feats li.p2-off s {
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--tv-dim) 70%, transparent);
+}
+
+.p2-check {
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  margin-top: 2px;
+  color: var(--tv-ok);
+}
+
+.p2-dash {
+  flex-shrink: 0;
+  width: 13px;
+  margin-top: 0;
+  color: var(--tv-dim);
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.p2-cmp-yes {
+  color: var(--tv-ok);
+  font-weight: 700;
+}
+
+.p2-cmp-no {
+  color: var(--tv-dim);
+}
+
+.p2-cmp-num {
+  font-variant-numeric: tabular-nums;
+  color: var(--tv-text);
+}
+
+/* 信任条 */
+.p2-trust {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.p2-logo {
+  display: grid;
+  place-items: center;
+  height: 48px;
+  border: 1px dashed color-mix(in srgb, var(--tv-border) 85%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--tv-border) 12%, transparent);
+  color: var(--tv-dim);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 0 6px;
+}
+
+
+/* 月视图网格（7 列） */
+.p2-month {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+  align-content: start;
+}
+
+.p2-month-foot {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.p2-week-col.p2-today {
+  background: color-mix(in srgb, var(--tv-accent) 6%, transparent);
+}
+
+.p2-clamp-demo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px;
+}
+
+/* ==================== 响应式 ==================== */
+
+@media (max-width: 1120px) {
+  .p2-cal {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .p2-synpal {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .p2-hero h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 900px) {
+  .p2-clamp-demo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .p2-plans {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .p2-plan.p2-reco {
+    padding: 16px 15px 15px;
+  }
+  .p2-trust {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .p2-hero {
+    padding: 18px 14px;
+  }
+  .p2-hero h2 {
+    font-size: 24px;
+  }
+  .p2-diff-row {
+    grid-template-columns: 26px 26px 12px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .p2-trust {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .p2-synpal {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

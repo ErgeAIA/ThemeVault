@@ -3,6 +3,7 @@ import Prism from 'prismjs'
 import 'prismjs/components/prism-typescript'
 import { allThemes, fgFor, themeVars, type FontStacks, type ThemeEntry } from '../data/tv'
 import { paletteText } from './PaletteGallery'
+import { EXAMPLE_PAGES, EXAMPLE_MAP } from './examples/registry'
 
 function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState(
@@ -1426,6 +1427,7 @@ export default function AppSim({
   const [current, setCurrent] = useState('概览')
   const [collapsed, setCollapsed] = useState(false)
   const [example, setExample] = useState<string | null>(null)
+  const [exPage, setExPage] = useState<string | null>(null)
   const [drawer, setDrawer] = useState(false)
   const [openNav, setOpenNav] = useState<Record<string, boolean>>({ 示例: true })
   const [exportOpen, setExportOpen] = useState(false)
@@ -1442,18 +1444,29 @@ export default function AppSim({
       href?: string
       children?: { label: string; sub: boolean }[]
     }[]
-  }[] = NAV.map((g) => ({
-    ...g,
-    items: g.items.map((it) =>
-      it.label === '示例'
-        ? { ...it, children: EXAMPLES.map((e) => ({ label: e.title, sub: true })) }
-        : it,
-    ),
-  }))
+  }[] = [
+    ...NAV.map((g) => ({
+      ...g,
+      items: g.items.map((it) =>
+        it.label === '示例'
+          ? { ...it, children: EXAMPLES.map((e) => ({ label: e.title, sub: true })) }
+          : it,
+      ),
+    })),
+    // 页面示例：每项对应一个独立示例页（examples/registry 登记）
+    {
+      group: '页面示例',
+      items: [
+        ...EXAMPLE_PAGES.map((p) => ({ label: p.key, icon: 'examples' })),
+      ],
+    },
+  ]
 
   const vars = themeVars(entry) as unknown as CSSProperties
   const Page = PAGES[current] ?? Overview
   const schemeName = fontSchemes.find((f) => f.id === fontId)?.name ?? fontId
+  // 页面示例：registry 登记 key → 组件；未登记 key 视为无效，回落到常规页面
+  const ExPage = exPage ? EXAMPLE_MAP[exPage]?.Component : undefined
 
   return (
     <div className="sim" style={vars}>
@@ -1485,9 +1498,12 @@ export default function AppSim({
                 {g.items.map((it) => {
                   const hasChildren = !!it.children
                   const expanded = !!openNav[it.label]
+                  const isExPage = !!EXAMPLE_MAP[it.label]
                   const active = it.sub
                     ? current === '示例' && example === it.label
-                    : current === it.label && !(it.label === '示例' && example)
+                    : isExPage
+                      ? current === '页面示例' && exPage === it.label
+                      : current === it.label && !(it.label === '示例' && example)
                   return (
                     <div key={it.label} className="sim-nav-wrap">
                       {it.href ? (
@@ -1510,9 +1526,15 @@ export default function AppSim({
                             if (it.sub) {
                               setCurrent('示例')
                               setExample(it.label)
+                              setExPage(null)
+                            } else if (isExPage) {
+                              setCurrent('页面示例')
+                              setExPage(it.label)
+                              setExample(null)
                             } else {
                               setCurrent(it.label)
                               setExample(null)
+                              setExPage(null)
                             }
                             if (hasChildren) {
                               setOpenNav((o) => ({ ...o, [it.label]: !o[it.label] }))
@@ -1606,6 +1628,12 @@ export default function AppSim({
                   <span className="sim-crumb-sep">/</span>
                   <span className="sim-crumb-cur">{example}</span>
                 </>
+              ) : exPage ? (
+                <>
+                  <button className="crumb-link" onClick={() => setExPage(null)}>页面示例</button>
+                  <span className="sim-crumb-sep">/</span>
+                  <span className="sim-crumb-cur">{exPage}</span>
+                </>
               ) : (
                 <span className="sim-crumb-cur">{current}</span>
               )}
@@ -1648,7 +1676,11 @@ export default function AppSim({
           </header>
 
           <div className="sim-content">
-            {current === '示例' && example ? (
+            {ExPage ? (
+              <ExPage
+                ctx={{ entry, num, setNum, fontId, setFontId, fontSchemes, allThemes }}
+              />
+            ) : current === '示例' && example ? (
               <ExampleDetail title={example} onBack={() => setExample(null)} />
             ) : current === '示例' ? (
               <ExamplesPage onOpen={setExample} />
