@@ -42,7 +42,7 @@ const BASELINE_EXTERNAL_HOSTS = [
 ];
 
 /**
- * 「示例」分组下「页面示例」子组的应有顺序
+ * 「示例」菜单下界面示例页的应有顺序（列表前 9 项）
  * （与 src/components/examples/registry.tsx 的 EXAMPLE_PAGES 一致，按预览主题的使用顺序）。
  */
 const EXPECTED_PAGES = [
@@ -51,8 +51,14 @@ const EXPECTED_PAGES = [
   '富文本 diff', '日历日程', '营销定价页',
 ];
 
-/** 原有「结构示例」子组的侧栏项（不参与页面示例断言，仅用于校验两组分区存在）。 */
-const EXPECTED_DEMO_MIN = 1;
+/** 「示例」菜单下接在界面示例页之后的原有布局缩影（列表后 6 项）。 */
+const EXPECTED_DEMOS = [
+  '侧边栏布局', '数据面板', '综合表单页',
+  '数据列表管理', '看板', '登录 / 注册页',
+];
+
+/** 「示例」菜单下应有的一条扁平列表（不分段）。 */
+const EXPECTED_ALL = EXPECTED_PAGES.concat(EXPECTED_DEMOS);
 
 const CHROME_CANDIDATES = [
   process.env.CHROME_PATH,
@@ -273,30 +279,23 @@ const FN_CLICK_TEXT = 'function(txt){' +
   'b.click();return "ok";}';
 
 /**
- * 侧栏分组列表。除组名与全量侧栏项外，额外按组内 .sim-nav-sub-title 分隔标题
- * 把子项切成 pages（页面示例）/ demos（结构示例）两段，用于断言分区与顺序。
+ * 侧栏分组列表。每个组返回组名、全量侧栏项，以及「示例」手风琴里
+ * .sim-nav-item.sub 子项的扁平列表（subs）、分隔标题（subTitles）与全部标题（allTitles）。
  */
 const FN_NAV = 'function(){' +
   'var groups=Array.prototype.slice.call(document.querySelectorAll(".sim-nav-group"));' +
   'return groups.map(function(g){' +
   'var t=g.querySelector(".sim-nav-title");' +
   'var items=Array.prototype.slice.call(g.querySelectorAll(".sim-nav-item"));' +
-  // 界面示例页直接挂在「示例」下（无分隔标题），从「结构示例」分隔标题起才是结构示例组
-  'var inDemos=false,pages=[],demos=[];' +
-  'var kids=Array.prototype.slice.call(g.querySelectorAll(".sim-nav-sub-title, .sim-nav-item"));' +
-  'kids.forEach(function(el){' +
-  'if(el.classList.contains("sim-nav-sub-title")){inDemos=true;return;}' +
-  // 离开「示例」手风琴（遇到同级非 .sub 菜单项）即结束子项区段，
-  // 否则会把它后面的「资源」等常规菜单项误算进「结构示例」
-  'if(!el.classList.contains("sub")){inDemos=false;return;}' +
+  'var subs=[];' +
+  'Array.prototype.slice.call(g.querySelectorAll(".sim-nav-item.sub")).forEach(function(el){' +
   'var l=el.querySelector(".sim-nav-label");' +
-  'var s=l?(l.textContent||"").trim():(el.textContent||"").trim();' +
-  'if(inDemos)demos.push(s);else pages.push(s);});' +
+  'subs.push(l?(l.textContent||"").trim():(el.textContent||"").trim());});' +
   'var subTitles=Array.prototype.slice.call(g.querySelectorAll(".sim-nav-sub-title")).map(function(x){return (x.textContent||"").trim();});' +
   'var allTitles=Array.prototype.slice.call(g.querySelectorAll(".sim-nav-item .sim-nav-label, .sim-nav-sub-title")).map(function(x){return (x.textContent||"").trim();});' +
   'return {title:t?(t.textContent||"").trim():"",' +
   'items:items.map(function(i){var l=i.querySelector(".sim-nav-label");return l?(l.textContent||"").trim():(i.textContent||"").trim();}),' +
-  'pages:pages,demos:demos,subTitles:subTitles,allTitles:allTitles};});}';
+  'subs:subs,subTitles:subTitles,allTitles:allTitles};});}';
 
 /** 统计「示例」菜单下界面示例页子项里带徽章 SVG 的数量与缺失项。 */
 const FN_NAV_ICONS = 'function(labels){' +
@@ -310,18 +309,13 @@ const FN_NAV_ICONS = 'function(labels){' +
   'if(svg&&p&&(p.getAttribute("d")||"").length>0)have.push(name);else miss.push(name);});' +
   'return {have:have,miss:miss};}';
 
-/**
- * 点击「示例」菜单下「页面示例」子组里的某个侧栏项。
- * 子项带 .sub 类，且被 .sim-nav-sub-title（页面示例 / 结构示例）分隔，
- * 故这里按分隔标题定位「页面示例」段，避免误点到同组的结构示例。
- */
+/** 点击「示例」菜单下某个子项（子项是一条扁平列表，靠文字精确匹配定位）。 */
 const FN_CLICK_NAV = 'function(label){' +
-  'var kids=Array.prototype.slice.call(document.querySelectorAll(".sim-nav-group .sim-nav-sub-title, .sim-nav-group .sim-nav-item.sub"));' +
+  'var kids=Array.prototype.slice.call(document.querySelectorAll(".sim-nav-group .sim-nav-item.sub"));' +
   'if(!kids.length)return "no-group";' +
-  'var inDemos=false,hit=null;' +
+  'var hit=null;' +
   'kids.forEach(function(el){' +
-  'if(el.classList.contains("sim-nav-sub-title")){inDemos=true;return;}' +
-  'if(hit||inDemos)return;' +
+  'if(hit)return;' +
   'var l=el.querySelector(".sim-nav-label");' +
   'var s=l?(l.textContent||"").trim():(el.textContent||"").trim();' +
   'if(s===label)hit=el;});' +
@@ -347,6 +341,18 @@ const FN_EXSTATE = 'function(){' +
   'for(var k=0;k<all.length;k++){var r=all[k].getBoundingClientRect();' +
   'if(r.width>0&&r.height>0&&getComputedStyle(all[k]).visibility!=="hidden")vis++;}}' +
   'return {title:h2?(h2.textContent||"").trim():"",hasShell:!!shell,hasStage:!!stage,points:pts,varBad:bad.slice(0,8),varBadCount:bad.length,stageEls:stage?stage.querySelectorAll("*").length:0,visEls:vis};}';
+
+/** 布局缩影页（ExampleDetail）状态：标题 / .mini-wrap 是否存在 / 结构要点条数 / 可见元素数 */
+const FN_MINI_STATE = 'function(){' +
+  'var sc=document.querySelector(".sim-content");' +
+  'var h2=sc?sc.querySelector("h2"):document.querySelector("h2");' +
+  'var mini=document.querySelector(".mini-wrap");' +
+  'var pts=document.querySelectorAll(".points li").length;' +
+  'var vis=0;' +
+  'if(sc){var all=Array.prototype.slice.call(sc.querySelectorAll("*"));' +
+  'for(var k=0;k<all.length;k++){var r=all[k].getBoundingClientRect();' +
+  'if(r.width>0&&r.height>0&&getComputedStyle(all[k]).visibility!=="hidden")vis++;}}' +
+  'return {title:h2?(h2.textContent||"").trim():"",miniWrap:!!mini,points:pts,visEls:vis};}';
 
 /** 主题状态：--tv-bg / 生效背景 / body 背景 / 下拉当前文案 */
 const FN_THEME = 'function(){' +
@@ -557,14 +563,14 @@ async function main() {
     if (clicked === 'ok' && simReady > 0) pass('[2.0] 已切换到「界面仿真」视图', '点击按钮 => .sim 存在');
     else fail('[2.0] 已切换到「界面仿真」视图', 'click=' + clicked + ' sim=' + simReady);
 
-    // 断言 2：「示例」菜单下界面示例页的侧栏项（示例页直接挂在「示例」下，
-    // 之后才是「结构示例」分隔标题 + 原有结构示例；靠 .sim-nav-sub-title 区分两段）
+    // 断言 2：「示例」菜单下是一条扁平列表（不分段）：
+    // 前 9 项为界面示例页（按预览使用顺序），其后接原有布局缩影，全程无分隔标题
     const nav = await evaluate(evalFn(FN_NAV, []));
-    // 「示例」菜单挂在「内容」分组下，分组标题不叫「示例」，
-    // 故以「组内出现 .sim-nav-sub-title = 结构示例」定位承载它的分组。
-    const exGroup = (nav || []).filter(function (g) { return (g.subTitles || []).indexOf('结构示例') >= 0; })[0];
-    const exItems = exGroup ? exGroup.pages : [];
-    const demoItems = exGroup ? exGroup.demos : [];
+    // 「示例」菜单挂在「内容」分组下，分组标题不叫「示例」，故以「含 9 个界面示例页」定位该分组
+    const exGroup = (nav || []).filter(function (g) { return (g.subs || []).indexOf(EXPECTED_PAGES[0]) >= 0; })[0];
+    const allSubs = exGroup ? exGroup.subs : [];
+    // 页面类断言只看前 9 项（界面示例页）；后 6 项布局缩影走 [2.6] 单独断言
+    const exItems = allSubs.slice(0, EXPECTED_PAGES.length);
     const expectN = EXPECTED_PAGES.length;
     const orderOk = exItems.length === expectN && EXPECTED_PAGES.every(function (k, i) { return exItems[i] === k; });
     if (orderOk) {
@@ -577,26 +583,35 @@ async function main() {
       fail('[2.1] 侧栏「示例」菜单下界面示例页含 ' + expectN + ' 项且顺序一致',
         '实得 ' + exItems.length + ' 项: ' + (exItems.join(' / ') || '(空)') + ' ；首个差异: ' + diff[0]);
     }
+    // [2.1b] 扁平列表全量顺序：9 个界面示例页 + 6 个布局缩影，一个不差
+    const allOk = allSubs.length === EXPECTED_ALL.length && EXPECTED_ALL.every(function (k, i) { return allSubs[i] === k; });
+    if (allOk) {
+      pass('[2.1b] 「示例」菜单为一条扁平列表（' + EXPECTED_ALL.length + ' 项）且顺序一致',
+        '前 ' + expectN + ' 项界面示例页 + 后 ' + EXPECTED_DEMOS.length + ' 项布局缩影');
+    } else {
+      const diff2 = [];
+      for (let i = 0; i < Math.max(EXPECTED_ALL.length, allSubs.length); i++) {
+        if (allSubs[i] !== EXPECTED_ALL[i]) diff2.push('#' + (i + 1) + ' 期望 ' + JSON.stringify(EXPECTED_ALL[i] || '(无)') + ' 实得 ' + JSON.stringify(allSubs[i] || '(无)'));
+      }
+      fail('[2.1b] 「示例」菜单为一条扁平列表（' + EXPECTED_ALL.length + ' 项）且顺序一致',
+        '实得 ' + allSubs.length + ' 项 ；首个差异: ' + diff2[0]);
+    }
     if (exItems.length > 0) pass('[2.2] 「示例」菜单下有界面示例页', exItems.length + ' 项');
     else fail('[2.2] 「示例」菜单下有界面示例页', '0 项');
-    // [2.2a] 每个示例页侧栏项都带一枚语义徽章图标（.sim-nav-icon.sub-icon > svg > path）
-    const iconStat = await evaluate(evalFn(FN_NAV_ICONS, [EXPECTED_PAGES]));
-    if (iconStat && iconStat.miss.length === 0 && iconStat.have.length === EXPECTED_PAGES.length) {
-      pass('[2.2a] 9 个示例页侧栏项均带徽章图标', iconStat.have.length + ' / ' + EXPECTED_PAGES.length);
+    // [2.2a] 扁平列表里每一项（含布局缩影）都带一枚语义徽章图标
+    const iconStat = await evaluate(evalFn(FN_NAV_ICONS, [EXPECTED_ALL]));
+    if (iconStat && iconStat.miss.length === 0 && iconStat.have.length === EXPECTED_ALL.length) {
+      pass('[2.2a] 示例列表 ' + EXPECTED_ALL.length + ' 项均带徽章图标', iconStat.have.length + ' / ' + EXPECTED_ALL.length);
     } else {
-      fail('[2.2a] 9 个示例页侧栏项均带徽章图标',
+      fail('[2.2a] 示例列表 ' + EXPECTED_ALL.length + ' 项均带徽章图标',
         '有图标 ' + (iconStat ? iconStat.have.length : 0) + ' 项，缺失 ' + JSON.stringify(iconStat ? iconStat.miss : []));
     }
-    // [2.2b] 界面示例页直接接在「示例」下方，只有「结构示例」一条分隔标题，
-    //        且「页面示例」字样不得再出现在侧栏
+    // [2.2b] 示例列表不得再出现任何分隔标题（「页面示例」「结构示例」都要消失）
     const subs = exGroup ? exGroup.subTitles : [];
-    const noPageTitle = !(exGroup && exGroup.allTitles.indexOf('页面示例') >= 0);
-    if (subs.length === 1 && subs[0] === '结构示例' && demoItems.length >= EXPECTED_DEMO_MIN && noPageTitle) {
-      pass('[2.2b] 示例页直接挂在「示例」下，仅「结构示例」一条分隔标题',
-        '分隔标题 ' + subs.join(' / ') + '（结构示例 ' + demoItems.length + ' 项，页面示例字样已移除）');
+    if (subs.length === 0) {
+      pass('[2.2b] 「示例」菜单下无任何分隔标题（扁平列表）', '分隔标题 0 条');
     } else {
-      fail('[2.2b] 示例页直接挂在「示例」下，仅「结构示例」一条分隔标题',
-        '分隔标题 ' + JSON.stringify(subs) + '，结构示例 ' + demoItems.length + ' 项，页面示例字样残留=' + !noPageTitle);
+      fail('[2.2b] 「示例」菜单下无任何分隔标题（扁平列表）', '分隔标题 ' + JSON.stringify(subs));
     }
 
     const SAFE_BAD = String.fromCharCode(92) + '/:*?"<>| ';
@@ -663,6 +678,23 @@ async function main() {
       } else {
         fail('[2.5] 9 页 .points li 数量一致且 >= 3', '实测值 ' + uniq[0] + ' < 3: ' + summary);
       }
+    }
+
+    // [2.6] 扁平列表后 6 项原有布局缩影：点开后是 ExampleDetail（.mini-wrap + 结构要点），
+    //       不是 .ex-stage 那套示例页外壳，故单独断言
+    for (let i = 0; i < EXPECTED_DEMOS.length; i++) {
+      const label = EXPECTED_DEMOS[i];
+      const tag = '[2.6.' + (i + 1) + '] 布局缩影 ' + label;
+      const clickRes = await evaluate(evalFn(FN_CLICK_NAV, [label]));
+      await sleep(500);
+      const st = await evaluate(evalFn(FN_MINI_STATE, []));
+      const ok = clickRes === 'ok' && st.title === label && st.points >= 3 && st.miniWrap === true && st.visEls > 20;
+      const detail = 'click=' + clickRes + ' h2=' + JSON.stringify(st.title) +
+        ' .points li=' + st.points + ' .mini-wrap=' + (st.miniWrap ? 'ok' : 'missing') +
+        ' 可见元素=' + st.visEls;
+      if (ok) pass(tag, detail);
+      else fail(tag, detail);
+      await screenshot(path.join(SHOT_DIR, 'app-demo-' + (i + 1) + '-' + safeName(label) + '.png'));
     }
 
     // 断言 3：在同一个示例页内切换主题下拉（dark / light 各一次）

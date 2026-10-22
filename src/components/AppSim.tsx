@@ -234,6 +234,8 @@ const ST_TONE: Record<string, 'ok' | 'warn' | 'dim' | 'info'> = {
   审核中: 'warn',
   草稿: 'dim',
   布局类: 'info',
+  列表类: 'info',
+  认证类: 'info',
   设置类: 'info',
   状态类: 'warn',
   表单类: 'info',
@@ -713,16 +715,59 @@ function ComponentsPage() {
 
 // ===== 示例 =====
 
+/** 示例列表右侧的布局缩影（ExampleDetail 用）。 */
 const EXAMPLES = [
-  { title: '侧边栏布局', desc: '左侧分组导航 + 顶栏 + 内容区', tag: '布局类', usage: '管理后台 / 工作台' },
-  { title: '数据面板', desc: '指标卡 + 趋势图 + 动态流', tag: '布局类', usage: 'SaaS 指标页' },
-  { title: '综合表单页', desc: '输入/下拉/开关/上传，含必填与错误态', tag: '表单类', usage: '账户设置' },
-  { title: '数据列表管理', desc: '搜索 + 表格 + 删除确认', tag: '列表类', usage: '后台管理' },
-  { title: '看板', desc: '待办 / 进行中 / 已完成三列', tag: '布局类', usage: '项目看板' },
-  { title: '登录 / 注册页', desc: 'Tab 切换的认证卡片', tag: '认证类', usage: '产品入口' },
+  {
+    title: '侧边栏布局',
+    desc: '左侧分组导航 + 顶栏 + 内容区',
+    tag: '布局类',
+    usage: '管理后台 / 工作台',
+    // 顶栏 + 左侧栏：标准后台骨架
+    icon: 'M3 4h18v16H3z M3 9h18 M9 9v11',
+  },
+  {
+    title: '数据面板',
+    desc: '指标卡 + 趋势图 + 动态流',
+    tag: '数据类',
+    usage: 'SaaS 指标页',
+    // 四宫格指标卡
+    icon: 'M4 4h7v6H4z M13 4h7v6h-7z M4 14h7v6H4z M13 14h7v6h-7z',
+  },
+  {
+    title: '综合表单页',
+    desc: '输入/下拉/开关/上传，含必填与错误态',
+    tag: '表单类',
+    usage: '账户设置',
+    // 勾选框 + 说明行：含必填与选择项的复合表单
+    icon: 'M4 6h3.6v3.6H4z M11 7.8h9 M4 14.2h3.6v3.6H4z M11 16h9',
+  },
+  {
+    title: '数据列表管理',
+    desc: '搜索 + 表格 + 删除确认',
+    tag: '列表类',
+    usage: '后台管理',
+    // 项目符号 + 行内容：可检索的数据列表
+    icon: 'M4 6h2 M9.5 6h10.5 M4 12h2 M9.5 12h10.5 M4 18h2 M9.5 18h10.5',
+  },
+  {
+    title: '看板',
+    desc: '待办 / 进行中 / 已完成三列',
+    tag: '布局类',
+    usage: '项目看板',
+    // 三列泳道：看板分栏
+    icon: 'M3 4h18v16H3z M9 4v16 M15 4v16',
+  },
+  {
+    title: '登录 / 注册页',
+    desc: 'Tab 切换的认证卡片',
+    tag: '认证类',
+    usage: '产品入口',
+    // 锁：认证入口
+    icon: 'M5.5 10.5h13v10h-13z M8.5 10.5V7.2a3.5 3.5 0 0 1 7 0v3.3 M12 14.4v2.2',
+  },
 ]
 
-/** 页面示例的分类标签：与各页 meta.tag 保持一致，仅用于「示例」首页卡片。 */
+/** 界面示例的分类标签：与各页 meta.tag 保持一致，仅用于「示例」首页卡片。 */
 const EXAMPLE_TAGS: Record<string, string> = {
   外观设置页: '设置类',
   状态页合集: '状态类',
@@ -735,9 +780,45 @@ const EXAMPLE_TAGS: Record<string, string> = {
   营销定价页: '营销类',
 }
 
+/** 「示例」列表项：界面示例页与布局缩影合成一条扁平列表，不分组。 */
+type ExampleEntry = {
+  key: string
+  tag: string
+  brief: string
+  /** 右侧脚注：界面示例页显示优先级，布局缩影显示适用场景。 */
+  foot: string
+  icon: string
+  kind: 'page' | 'demo'
+}
+
 /**
- * 「示例」首页：先列页面示例（registry 登记，按预览主题的使用顺序），
- * 再列原有结构示例。两组共用卡片样式，只是数据来源不同。
+ * 示例总表（顺序即侧栏与「示例」首页的展示顺序）：
+ * 先排 9 个界面示例页（按预览一套主题的使用顺序），
+ * 再接原有布局缩影。两者都是「某类场景的页面模板」，故不分段。
+ */
+const EXAMPLE_ENTRIES: ExampleEntry[] = [
+  ...EXAMPLE_PAGES.map((p) => ({
+    key: p.key,
+    tag: EXAMPLE_TAGS[p.key] ?? '示例',
+    brief: p.brief,
+    foot: p.prio,
+    icon: p.icon,
+    kind: 'page' as const,
+  })),
+  ...EXAMPLES.map((e) => ({
+    key: e.title,
+    tag: e.tag,
+    brief: e.desc,
+    foot: e.usage,
+    icon: e.icon,
+    kind: 'demo' as const,
+  })),
+]
+
+/**
+ * 「示例」首页：一条扁平卡片列表（不分段）。
+ * 前 9 张是界面示例页（registry 登记，按预览主题的使用顺序），
+ * 后 6 张是布局缩影；两者都是「某类场景的页面模板」，故共用同一套卡片。
  */
 function ExamplesPage({
   onOpen,
@@ -750,74 +831,51 @@ function ExamplesPage({
     <>
       <PageHead
         title="示例"
-        desc="界面示例按预览主题的顺序排列，结构示例为通用布局缩影"
+        desc="页面模板按预览主题的顺序排列，点击进入后随当前主题实时渲染"
       />
 
       <div className="p">
         <CardHead
-          title="界面示例"
-          desc="在真实页面结构里检验主题，点击进入后随当前主题实时渲染"
-          extra={<span className="sim-badge">{EXAMPLE_PAGES.length} 页</span>}
+          title="页面模板"
+          desc="覆盖常见场景的整页结构，用来检验一套主题落到真实页面的样子"
+          extra={<span className="sim-badge">{EXAMPLE_ENTRIES.length} 页</span>}
         />
         <div className="ex-grid">
-          {EXAMPLE_PAGES.map((p) => (
-            <div
-              className="ex-card"
-              key={p.key}
-              role="button"
-              tabIndex={0}
-              style={{ cursor: 'pointer' }}
-              onClick={() => onOpenPage(p.key)}
-              onKeyDown={(ev) => ev.key === 'Enter' && onOpenPage(p.key)}
-            >
-              <span className={`st ${ST_TONE[EXAMPLE_TAGS[p.key]] ?? 'info'}`}>
-                {EXAMPLE_TAGS[p.key] ?? p.prio}
-              </span>
-              <h4 className="ex-card-title">
-                <span className="ex-card-glyph">
-                  <ExampleGlyph path={p.icon} size={15} />
-                </span>
-                {p.key}
-              </h4>
-              <p className="ex-desc">{p.brief}</p>
-              <div className="ex-foot">
-                <span className="td-dim">{p.prio}</span>
-                <button
-                  className="linkbtn"
-                  onClick={(ev) => { ev.stopPropagation(); onOpenPage(p.key) }}
-                >
-                  查看 →
-                </button>
+          {EXAMPLE_ENTRIES.map((p) => {
+            const open = () => (p.kind === 'page' ? onOpenPage(p.key) : onOpen(p.key))
+            return (
+              <div
+                className="ex-card"
+                key={p.key}
+                role="button"
+                tabIndex={0}
+                style={{ cursor: 'pointer' }}
+                onClick={open}
+                onKeyDown={(ev) => ev.key === 'Enter' && open()}
+              >
+                <span className={`st ${ST_TONE[p.tag] ?? 'info'}`}>{p.tag}</span>
+                <h4 className="ex-card-title">
+                  <span className="ex-card-glyph">
+                    <ExampleGlyph path={p.icon} size={15} />
+                  </span>
+                  {p.key}
+                </h4>
+                <p className="ex-desc">{p.brief}</p>
+                <div className="ex-foot">
+                  <span className="td-dim">{p.foot}</span>
+                  <button
+                    className="linkbtn"
+                    onClick={(ev) => {
+                      ev.stopPropagation()
+                      open()
+                    }}
+                  >
+                    查看 →
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="p" style={{ marginTop: 13 }}>
-        <CardHead title="结构示例" desc="通用布局缩影，只演练骨架不换主题" />
-        <div className="ex-grid">
-          {EXAMPLES.map((e) => (
-            <div
-              className="ex-card"
-              key={e.title}
-              role="button"
-              tabIndex={0}
-              style={{ cursor: 'pointer' }}
-              onClick={() => onOpen(e.title)}
-              onKeyDown={(ev) => ev.key === 'Enter' && onOpen(e.title)}
-            >
-              <span className={`st ${ST_TONE[e.tag]}`}>{e.tag}</span>
-              <h4>{e.title}</h4>
-              <p className="ex-desc">{e.desc}</p>
-              <div className="ex-foot">
-                <span className="td-dim">{e.usage}</span>
-                <button className="linkbtn" onClick={(ev) => { ev.stopPropagation(); onOpen(e.title) }}>
-                  查看 →
-                </button>
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </>
@@ -1530,21 +1588,14 @@ export default function AppSim({
       it.label === '示例'
         ? {
             ...it,
-            // 「示例」下级：界面示例页（registry 登记，按预览主题的使用顺序）直接排在最前，
-            // 之后接原有结构示例，两组之间用一条「结构示例」分隔标题区隔
-            children: [
-              ...EXAMPLE_PAGES.map((p) => ({
-                label: p.key,
-                sub: true,
-                kind: 'page' as const,
-                icon: p.icon,
-              })),
-              ...EXAMPLES.map((e) => ({
-                label: e.title,
-                sub: true,
-                kind: 'demo' as const,
-              })),
-            ],
+            // 「示例」下级是一条扁平列表（不分段）：界面示例页在前，
+            // 原有布局缩影接在后面，顺序与 EXAMPLE_ENTRIES 一致
+            children: EXAMPLE_ENTRIES.map((e) => ({
+              label: e.key,
+              sub: true,
+              kind: e.kind,
+              icon: e.icon,
+            })),
           }
         : it,
     ),
@@ -1642,20 +1693,16 @@ export default function AppSim({
                       {!collapsed &&
                         hasChildren &&
                         expanded &&
-                        it.children!.map((c, ci) => {
+                        it.children!.map((c) => {
                           const isPageChild = c.kind === 'page'
                           const childActive = isPageChild
                             ? current === '示例' && exPage === c.label
                             : current === '示例' && example === c.label
-                          // 只保留「结构示例」这条分隔标题；界面示例页直接接在「示例」下方
-                          const showSep = ci > 0 && it.children![ci - 1].kind !== c.kind
+                          // 一条扁平列表，不再插入任何分隔标题
                           return (
                             <Fragment key={c.label}>
-                              {showSep && (
-                                <div className="sim-nav-sub-title">结构示例</div>
-                              )}
                               <button
-                                className={`sim-nav-item sub${c.icon ? '' : ' no-icon'}${childActive ? ' on' : ''}`}
+                                className={`sim-nav-item sub${childActive ? ' on' : ''}`}
                                 onClick={() => {
                                   setCurrent('示例')
                                   if (isPageChild) {
@@ -1669,11 +1716,9 @@ export default function AppSim({
                                 }}
                                 title={c.label}
                               >
-                                {c.icon && (
-                                  <span className="sim-nav-icon sub-icon">
-                                    <ExampleGlyph path={c.icon} size={14} />
-                                  </span>
-                                )}
+                                <span className="sim-nav-icon sub-icon">
+                                  <ExampleGlyph path={c.icon ?? ''} size={14} />
+                                </span>
                                 <span className="sim-nav-label sub-label">{c.label}</span>
                               </button>
                             </Fragment>
