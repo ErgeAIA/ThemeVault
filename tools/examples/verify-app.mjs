@@ -281,20 +281,34 @@ const FN_NAV = 'function(){' +
   'return groups.map(function(g){' +
   'var t=g.querySelector(".sim-nav-title");' +
   'var items=Array.prototype.slice.call(g.querySelectorAll(".sim-nav-item"));' +
-  'var sub=null,pages=[],demos=[];' +
+  // 界面示例页直接挂在「示例」下（无分隔标题），从「结构示例」分隔标题起才是结构示例组
+  'var inDemos=false,pages=[],demos=[];' +
   'var kids=Array.prototype.slice.call(g.querySelectorAll(".sim-nav-sub-title, .sim-nav-item"));' +
   'kids.forEach(function(el){' +
-  'if(el.classList.contains("sim-nav-sub-title")){sub=(el.textContent||"").trim();return;}' +
+  'if(el.classList.contains("sim-nav-sub-title")){inDemos=true;return;}' +
   // 离开「示例」手风琴（遇到同级非 .sub 菜单项）即结束子项区段，
   // 否则会把它后面的「资源」等常规菜单项误算进「结构示例」
-  'if(!el.classList.contains("sub")){sub=null;return;}' +
+  'if(!el.classList.contains("sub")){inDemos=false;return;}' +
   'var l=el.querySelector(".sim-nav-label");' +
   'var s=l?(l.textContent||"").trim():(el.textContent||"").trim();' +
-  'if(sub==="页面示例")pages.push(s);else if(sub==="结构示例")demos.push(s);});' +
+  'if(inDemos)demos.push(s);else pages.push(s);});' +
   'var subTitles=Array.prototype.slice.call(g.querySelectorAll(".sim-nav-sub-title")).map(function(x){return (x.textContent||"").trim();});' +
+  'var allTitles=Array.prototype.slice.call(g.querySelectorAll(".sim-nav-item .sim-nav-label, .sim-nav-sub-title")).map(function(x){return (x.textContent||"").trim();});' +
   'return {title:t?(t.textContent||"").trim():"",' +
   'items:items.map(function(i){var l=i.querySelector(".sim-nav-label");return l?(l.textContent||"").trim():(i.textContent||"").trim();}),' +
-  'pages:pages,demos:demos,subTitles:subTitles};});}';
+  'pages:pages,demos:demos,subTitles:subTitles,allTitles:allTitles};});}';
+
+/** 统计「示例」菜单下界面示例页子项里带徽章 SVG 的数量与缺失项。 */
+const FN_NAV_ICONS = 'function(labels){' +
+  'var btns=Array.prototype.slice.call(document.querySelectorAll(".sim-nav-item.sub"));' +
+  'var have=[],miss=[];' +
+  'labels.forEach(function(name){' +
+  'var b=btns.filter(function(x){var l=x.querySelector(".sim-nav-label");return l&&(l.textContent||"").trim()===name;})[0];' +
+  'if(!b){miss.push(name+"(无侧栏项)");return;}' +
+  'var svg=b.querySelector(".sim-nav-icon.sub-icon svg");' +
+  'var p=svg?svg.querySelector("path"):null;' +
+  'if(svg&&p&&(p.getAttribute("d")||"").length>0)have.push(name);else miss.push(name);});' +
+  'return {have:have,miss:miss};}';
 
 /**
  * 点击「示例」菜单下「页面示例」子组里的某个侧栏项。
@@ -304,10 +318,10 @@ const FN_NAV = 'function(){' +
 const FN_CLICK_NAV = 'function(label){' +
   'var kids=Array.prototype.slice.call(document.querySelectorAll(".sim-nav-group .sim-nav-sub-title, .sim-nav-group .sim-nav-item.sub"));' +
   'if(!kids.length)return "no-group";' +
-  'var sub=null,hit=null;' +
+  'var inDemos=false,hit=null;' +
   'kids.forEach(function(el){' +
-  'if(el.classList.contains("sim-nav-sub-title")){sub=(el.textContent||"").trim();return;}' +
-  'if(hit||sub!=="页面示例")return;' +
+  'if(el.classList.contains("sim-nav-sub-title")){inDemos=true;return;}' +
+  'if(hit||inDemos)return;' +
   'var l=el.querySelector(".sim-nav-label");' +
   'var s=l?(l.textContent||"").trim():(el.textContent||"").trim();' +
   'if(s===label)hit=el;});' +
@@ -543,34 +557,46 @@ async function main() {
     if (clicked === 'ok' && simReady > 0) pass('[2.0] 已切换到「界面仿真」视图', '点击按钮 => .sim 存在');
     else fail('[2.0] 已切换到「界面仿真」视图', 'click=' + clicked + ' sim=' + simReady);
 
-    // 断言 2：「示例」分组下「页面示例」子组的侧栏项（页面示例与结构示例同组，靠分隔标题区分）
+    // 断言 2：「示例」菜单下界面示例页的侧栏项（示例页直接挂在「示例」下，
+    // 之后才是「结构示例」分隔标题 + 原有结构示例；靠 .sim-nav-sub-title 区分两段）
     const nav = await evaluate(evalFn(FN_NAV, []));
     // 「示例」菜单挂在「内容」分组下，分组标题不叫「示例」，
-    // 故以「组内出现 .sim-nav-sub-title = 页面示例」定位承载它的分组。
-    const exGroup = (nav || []).filter(function (g) { return (g.subTitles || []).indexOf('页面示例') >= 0; })[0];
+    // 故以「组内出现 .sim-nav-sub-title = 结构示例」定位承载它的分组。
+    const exGroup = (nav || []).filter(function (g) { return (g.subTitles || []).indexOf('结构示例') >= 0; })[0];
     const exItems = exGroup ? exGroup.pages : [];
     const demoItems = exGroup ? exGroup.demos : [];
     const expectN = EXPECTED_PAGES.length;
     const orderOk = exItems.length === expectN && EXPECTED_PAGES.every(function (k, i) { return exItems[i] === k; });
     if (orderOk) {
-      pass('[2.1] 侧栏「示例」菜单·页面示例子组含 ' + expectN + ' 项且顺序一致', exItems.join(' / '));
+      pass('[2.1] 侧栏「示例」菜单下界面示例页含 ' + expectN + ' 项且顺序一致', exItems.join(' / '));
     } else {
       const diff = [];
       for (let i = 0; i < Math.max(expectN, exItems.length); i++) {
         if (exItems[i] !== EXPECTED_PAGES[i]) diff.push('#' + (i + 1) + ' 期望 ' + JSON.stringify(EXPECTED_PAGES[i] || '(无)') + ' 实得 ' + JSON.stringify(exItems[i] || '(无)'));
       }
-      fail('[2.1] 侧栏「示例」菜单·页面示例子组含 ' + expectN + ' 项且顺序一致',
+      fail('[2.1] 侧栏「示例」菜单下界面示例页含 ' + expectN + ' 项且顺序一致',
         '实得 ' + exItems.length + ' 项: ' + (exItems.join(' / ') || '(空)') + ' ；首个差异: ' + diff[0]);
     }
-    if (exItems.length > 0) pass('[2.2] 「页面示例」子组下有侧栏项', exItems.length + ' 项');
-    else fail('[2.2] 「页面示例」子组下有侧栏项', '0 项');
-    // [2.2b] 页面示例与结构示例同属「示例」分组，靠 .sim-nav-sub-title 分隔
-    const subs = exGroup ? exGroup.subTitles : [];
-    if (subs[0] === '页面示例' && subs.indexOf('结构示例') > 0 && demoItems.length >= EXPECTED_DEMO_MIN) {
-      pass('[2.2b] 「示例」分组含「页面示例 / 结构示例」两段', subs.join(' + ') + '（结构示例 ' + demoItems.length + ' 项）');
+    if (exItems.length > 0) pass('[2.2] 「示例」菜单下有界面示例页', exItems.length + ' 项');
+    else fail('[2.2] 「示例」菜单下有界面示例页', '0 项');
+    // [2.2a] 每个示例页侧栏项都带一枚语义徽章图标（.sim-nav-icon.sub-icon > svg > path）
+    const iconStat = await evaluate(evalFn(FN_NAV_ICONS, [EXPECTED_PAGES]));
+    if (iconStat && iconStat.miss.length === 0 && iconStat.have.length === EXPECTED_PAGES.length) {
+      pass('[2.2a] 9 个示例页侧栏项均带徽章图标', iconStat.have.length + ' / ' + EXPECTED_PAGES.length);
     } else {
-      fail('[2.2b] 「示例」分组含「页面示例 / 结构示例」两段',
-        '分隔标题 ' + JSON.stringify(subs) + '，结构示例 ' + demoItems.length + ' 项');
+      fail('[2.2a] 9 个示例页侧栏项均带徽章图标',
+        '有图标 ' + (iconStat ? iconStat.have.length : 0) + ' 项，缺失 ' + JSON.stringify(iconStat ? iconStat.miss : []));
+    }
+    // [2.2b] 界面示例页直接接在「示例」下方，只有「结构示例」一条分隔标题，
+    //        且「页面示例」字样不得再出现在侧栏
+    const subs = exGroup ? exGroup.subTitles : [];
+    const noPageTitle = !(exGroup && exGroup.allTitles.indexOf('页面示例') >= 0);
+    if (subs.length === 1 && subs[0] === '结构示例' && demoItems.length >= EXPECTED_DEMO_MIN && noPageTitle) {
+      pass('[2.2b] 示例页直接挂在「示例」下，仅「结构示例」一条分隔标题',
+        '分隔标题 ' + subs.join(' / ') + '（结构示例 ' + demoItems.length + ' 项，页面示例字样已移除）');
+    } else {
+      fail('[2.2b] 示例页直接挂在「示例」下，仅「结构示例」一条分隔标题',
+        '分隔标题 ' + JSON.stringify(subs) + '，结构示例 ' + demoItems.length + ' 项，页面示例字样残留=' + !noPageTitle);
     }
 
     const SAFE_BAD = String.fromCharCode(92) + '/:*?"<>| ';

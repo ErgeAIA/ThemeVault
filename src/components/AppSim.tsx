@@ -4,6 +4,7 @@ import 'prismjs/components/prism-typescript'
 import { allThemes, fgFor, themeVars, type FontStacks, type ThemeEntry } from '../data/tv'
 import { paletteText } from './PaletteGallery'
 import { EXAMPLE_PAGES, EXAMPLE_MAP } from './examples/registry'
+import { ExampleGlyph } from './examples/shell'
 
 function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState(
@@ -749,12 +750,12 @@ function ExamplesPage({
     <>
       <PageHead
         title="示例"
-        desc="页面级示例：页面示例按预览顺序排列，结构示例为通用布局缩影"
+        desc="界面示例按预览主题的顺序排列，结构示例为通用布局缩影"
       />
 
       <div className="p">
         <CardHead
-          title="页面示例"
+          title="界面示例"
           desc="在真实页面结构里检验主题，点击进入后随当前主题实时渲染"
           extra={<span className="sim-badge">{EXAMPLE_PAGES.length} 页</span>}
         />
@@ -772,7 +773,12 @@ function ExamplesPage({
               <span className={`st ${ST_TONE[EXAMPLE_TAGS[p.key]] ?? 'info'}`}>
                 {EXAMPLE_TAGS[p.key] ?? p.prio}
               </span>
-              <h4>{p.key}</h4>
+              <h4 className="ex-card-title">
+                <span className="ex-card-glyph">
+                  <ExampleGlyph path={p.icon} size={15} />
+                </span>
+                {p.key}
+              </h4>
               <p className="ex-desc">{p.brief}</p>
               <div className="ex-foot">
                 <span className="td-dim">{p.prio}</span>
@@ -1516,7 +1522,7 @@ export default function AppSim({
       icon: string
       sub?: boolean
       href?: string
-      children?: { label: string; sub: boolean; kind?: 'page' | 'demo' }[]
+      children?: { label: string; sub: boolean; kind?: 'page' | 'demo'; icon?: string }[]
     }[]
   }[] = NAV.map((g) => ({
     ...g,
@@ -1524,13 +1530,14 @@ export default function AppSim({
       it.label === '示例'
         ? {
             ...it,
-            // 「示例」下级：页面示例（registry 登记，按预览主题的使用顺序）在前，
-            // 原有结构示例在后
+            // 「示例」下级：界面示例页（registry 登记，按预览主题的使用顺序）直接排在最前，
+            // 之后接原有结构示例，两组之间用一条「结构示例」分隔标题区隔
             children: [
               ...EXAMPLE_PAGES.map((p) => ({
                 label: p.key,
                 sub: true,
                 kind: 'page' as const,
+                icon: p.icon,
               })),
               ...EXAMPLES.map((e) => ({
                 label: e.title,
@@ -1640,18 +1647,15 @@ export default function AppSim({
                           const childActive = isPageChild
                             ? current === '示例' && exPage === c.label
                             : current === '示例' && example === c.label
-                          // 两组子项之间插一条分隔标题，说明「页面示例 / 结构示例」的分工
+                          // 只保留「结构示例」这条分隔标题；界面示例页直接接在「示例」下方
                           const showSep = ci > 0 && it.children![ci - 1].kind !== c.kind
                           return (
                             <Fragment key={c.label}>
                               {showSep && (
                                 <div className="sim-nav-sub-title">结构示例</div>
                               )}
-                              {ci === 0 && isPageChild && (
-                                <div className="sim-nav-sub-title">页面示例</div>
-                              )}
                               <button
-                                className={`sim-nav-item sub${childActive ? ' on' : ''}`}
+                                className={`sim-nav-item sub${c.icon ? '' : ' no-icon'}${childActive ? ' on' : ''}`}
                                 onClick={() => {
                                   setCurrent('示例')
                                   if (isPageChild) {
@@ -1665,6 +1669,11 @@ export default function AppSim({
                                 }}
                                 title={c.label}
                               >
+                                {c.icon && (
+                                  <span className="sim-nav-icon sub-icon">
+                                    <ExampleGlyph path={c.icon} size={14} />
+                                  </span>
+                                )}
                                 <span className="sim-nav-label sub-label">{c.label}</span>
                               </button>
                             </Fragment>

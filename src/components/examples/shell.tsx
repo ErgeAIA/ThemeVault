@@ -71,6 +71,37 @@ export function ExampleShell({
   )
 }
 
+/**
+ * 示例页徽章图标：线条风格 SVG，颜色统一走 currentColor，
+ * 故随所在位置（侧栏 / 卡片 / 页头）的主题色自适应，不引入任何色值。
+ */
+export function ExampleGlyph({
+  path,
+  size = 15,
+  className,
+}: {
+  path: string
+  size?: number
+  className?: string
+}) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d={path} />
+    </svg>
+  )
+}
+
 /** 演示区内部的小节标题（比 .p-head 轻一级）。 */
 export function ExSection({
   title,

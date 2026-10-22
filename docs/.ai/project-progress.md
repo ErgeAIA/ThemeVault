@@ -17,11 +17,11 @@ description: >
 
 ## 当前状态
 
-- **今日（2026-10-22）新增「页面示例」9 页（DEC-021）**：示例页并入既有「示例」菜单（手风琴）下，与原有「结构示例」同组，靠 `.sim-nav-sub-title` 分隔为「页面示例 / 结构示例」两段；9 个示例页按**预览主题的使用顺序**排列（外观设置页 → 状态页合集 → 表单状态穷举 → 详情主从布局 → 消息会话界面 → 图表专区 → 富文本 diff → 日历日程 → 营销定价页），全部走 `themeVars()` 实时换肤、双方案自动成立、颜色零裸值。
+- **今日（2026-10-22）新增「界面示例」9 页（DEC-021）**：9 页直接挂在既有「示例」菜单（手风琴）下，其后才是原有结构示例，两者之间只保留一条「结构示例」分隔标题（「页面示例」字样已按用户要求删除）；9 个示例页按**预览主题的使用顺序**排列（外观设置页 → 状态页合集 → 表单状态穷举 → 详情主从布局 → 消息会话界面 → 图表专区 → 富文本 diff → 日历日程 → 营销定价页），每页配一枚语义徽章 SVG 图标（registry 的 `icon` 字段，currentColor 描边，侧栏与「示例」首页卡片共用），全部走 `themeVars()` 实时换肤、双方案自动成立、颜色零裸值。
   - 新增目录：`src/components/examples/`（shell.tsx + registry.tsx + 9 个页面组件）、`src/styles/`（examples.css / examples-p1.css / examples-p2.css）、`tools/examples/`（verify-app.mjs / lint-tokens-app.mjs / serve-dist.mjs）。
-  - 改动：`src/components/AppSim.tsx` 最小接线（`exPage` 状态 + `navGroups` 把 EXAMPLES 与 EXAMPLE_PAGES 合并为「示例」的 children 并带 `kind: 'page' | 'demo'` + 子项分组标题 + 面包屑 + `sim-content` 首分支）；`ExamplesPage` 拆成「页面示例 / 结构示例」两张卡；`src/index.css` 新增 `.sim-nav-sub-title`。未碰 INDEX.json / preview/data.js / themes/ / scripts/。
+  - 改动：`src/components/AppSim.tsx` 最小接线（`exPage` 状态 + `navGroups` 把 EXAMPLES 与 EXAMPLE_PAGES 合并为「示例」的 children 并带 `kind: 'page' | 'demo'` + 子项徽章图标 + 面包屑 + `sim-content` 首分支）；`ExamplesPage` 拆成「界面示例 / 结构示例」两张卡；`src/components/examples/shell.tsx` 新增 `ExampleGlyph`；`registry.tsx` 新增 `icon` 字段（9 条语义 path）；`src/index.css` 新增 `.sim-nav-icon.sub-icon` / `.sim-nav-sub-title` / `.ex-card-title`。未碰 INDEX.json / preview/data.js / themes/ / scripts/。
   - 验收：`npx tsc --noEmit` EXIT 0；`node dev.mjs build` EXIT 0（55 modules，css 61.39 kB / js 704.45 kB）；`node tools/examples/verify-app.mjs` **37 项 / PASS 37 / WARN 2 / FAIL 0 / 退出码 0**（WARN 全为既有 Google Fonts 基线豁免）；`node tools/examples/lint-tokens-app.mjs` PASS 3 / WARN 2 / FAIL 0 / 退出码 0（`--selftest` 34 项通过）；`python scripts/gen_index.py --check` EXIT 0（familyCount 24 / themeCount 152）。
-  - 侧栏实测（CDP）：`内容` 分组下的 `示例` 手风琴展开后为「页面示例」9 项 + 「结构示例」6 项，两段分隔标题齐全；9 页逐一点击，h2 与侧栏项 100% 一致、面包屑为「首页 / 示例 / <页名>」、`.points li` 均 5 条。
+  - 侧栏实测（CDP）：`内容` 分组下的 `示例` 手风琴展开后为 9 个界面示例页（均带徽章图标）+「结构示例」分隔标题 + 6 项结构示例；9 页逐一点击，h2 与侧栏项 100% 一致、面包屑为「首页 / 示例 / <页名>」、`.points li` 均 5 条（verify-app 已加 `[2.2a]` 图标断言与 `[2.2b]` 单分隔标题断言）。
   - 废弃：早期单文件方案 `examples/page-gallery.html` 与配套 `token-lint.mjs` / `verify-page.mjs` 已移入 `.tmp/superseded/`（未入库），原因见 DEC-021。
   - 遗留 token 缺口（只记不改源值）：无 `--tv-divider`（用 `color-mix(border 60%/34%)` 派生）、无 disabled 主色语义、无 `--tv-queued-fill`、无 `--tv-shadow` / `--tv-accent-soft`；另 `accent` 对 `accent-fg` 无对比度数据字段，实测 151 套中可测 62 套里 18 套 < 4.5:1（light 最差 #149 dracula 1.30）。
   - 交付：已提交 `6b65dd3`（9 页源码）与 `6b0923f`（脚本 + DEC-021），已 `git push origin main`；`gh workflow run deploy.yml` 触发 run 39748769630，结论 success。

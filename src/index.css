@@ -768,26 +768,39 @@ a.sim-nav-item {
 }
 
 .sim-nav-item.sub {
-  padding-left: 40px;
+  /* 17 + 14(图标) + 9(gap) = 40，与无图标子项的文字缩进对齐 */
+  padding-left: 17px;
   font-size: 12px;
   color: var(--tv-muted);
+}
+
+/* 无徽章图标的子项（结构示例那一组）保持原来的缩进，与有图标的条目对齐 */
+.sim-nav-item.sub.no-icon {
+  padding-left: 40px;
 }
 
 .sim-nav-label.sub-label {
   font-weight: 400;
 }
 
-/* 「示例」下级的两组分隔标题：页面示例 / 结构示例 */
+/* 「示例」下级子项的徽章图标：比一级图标小一号，颜色跟随条目当前色 */
+.sim-nav-icon.sub-icon {
+  width: 14px;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.sim-nav-item.sub.on .sim-nav-icon.sub-icon {
+  opacity: 1;
+}
+
+/* 「示例」下级的分隔标题：仅用于「结构示例」那一组 */
 .sim-nav-sub-title {
   padding: 9px 9px 3px 40px;
   font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.05em;
   color: var(--tv-dim);
-}
-
-.sim-nav-sub-title:first-of-type {
-  padding-top: 5px;
 }
 
 .sim-user {
@@ -1597,6 +1610,18 @@ a.sim-icon-btn {
 
 .ex-card h4 {
   font-size: 14.5px;
+}
+
+/* 页面示例卡片标题前的徽章图标：与侧栏同一套 path，颜色跟随标题 */
+.ex-card-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ex-card-glyph {
+  display: inline-flex;
+  color: var(--tv-accent);
 }
 
 .ex-desc {
